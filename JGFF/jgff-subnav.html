@@ -1,0 +1,207 @@
+<!-- jgff-subnav.html -- CHW
+     Fetched sidebar component shared across all JGFF pages.
+     Pure HTML and CSS only -- no inline script.
+     All initialization logic lives in /jg/scripts/jg-jgff.js,
+     which must be loaded on every JGFF page and called via
+     initJgffSubnav() after this component is injected.
+
+     Host page sets data-jgff-page on the placeholder div:
+       home | search | list | modify | add | faq
+
+     Two boxes:
+       1. Nav box -- Back button + section links
+       2. FAQ language box -- rendered by initJgffSubnav()
+----------------------------------------------------------- -->
+<style>
+/* -- JGFF sub-nav component -- CHW ------------------------- */
+.jgff-subnav-box {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+}
+body.dark-mode .jgff-subnav-box {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+.jgff-subnav-box:last-child { margin-bottom: 0; }
+
+/* -- Back button ------------------------------------------- */
+.jgff-subnav-back {
+    display: block;
+    background-color: #09497a;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 14px;
+    transition: filter 0.15s ease;
+}
+.jgff-subnav-back:hover { filter: brightness(1.12); color: #ffffff; text-decoration: none; }
+body.dark-mode .jgff-subnav-back { background-color: #0d2a45; }
+
+/* -- Box heading ------------------------------------------- */
+.jgff-subnav-heading {
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    color: var(--navy);
+    margin: 0 0 12px 0;
+    padding-bottom: 8px;
+    position: relative;
+}
+body.dark-mode .jgff-subnav-heading { color: #e0e0e0; }
+.jgff-subnav-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 34px;
+    height: 3px;
+    background-color: var(--sage);
+    border-radius: 2px;
+}
+
+/* -- Nav list ---------------------------------------------- */
+.jgff-subnav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.jgff-subnav-list li { border-bottom: 1px dotted #d1caba; }
+.jgff-subnav-list li:last-child { border-bottom: none; }
+body.dark-mode .jgff-subnav-list li { border-bottom-color: #333; }
+.jgff-subnav-list a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 4px;
+    color: var(--navy);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: background-color 0.15s, padding-left 0.15s;
+    border-radius: 4px;
+}
+body.dark-mode .jgff-subnav-list a { color: #e0e0e0; }
+.jgff-subnav-list a:hover,
+.jgff-subnav-list a:focus {
+    background-color: rgba(147,155,81,0.10);
+    padding-left: 10px;
+    outline: none;
+}
+.jgff-subnav-list a::after {
+    content: '\203A';
+    color: var(--sage);
+    font-weight: bold;
+    opacity: 0;
+    margin-left: auto;
+    transition: opacity 0.15s;
+}
+.jgff-subnav-list a:hover::after,
+.jgff-subnav-list a:focus::after { opacity: 1; }
+
+/* -- Language list ----------------------------------------- */
+.jgff-subnav-lang-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.jgff-subnav-lang-list li { border-bottom: 1px dotted #d1caba; }
+.jgff-subnav-lang-list li:last-child { border-bottom: none; }
+body.dark-mode .jgff-subnav-lang-list li { border-bottom-color: #333; }
+
+/* Shared style for both <a> links and <button> lang-toggles */
+.jgff-subnav-lang-list a,
+.jgff-subnav-lang-list .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 4px;
+    color: var(--navy);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.15s, padding-left 0.15s;
+    border-radius: 4px;
+}
+body.dark-mode .jgff-subnav-lang-list a,
+body.dark-mode .jgff-subnav-lang-list .lang-toggle { color: #e0e0e0; }
+.jgff-subnav-lang-list a:hover,
+.jgff-subnav-lang-list a:focus,
+.jgff-subnav-lang-list .lang-toggle:hover,
+.jgff-subnav-lang-list .lang-toggle:focus {
+    background-color: rgba(147,155,81,0.10);
+    padding-left: 10px;
+    outline: none;
+}
+.jgff-subnav-lang-list .lang-toggle.active {
+    font-weight: bold;
+    background-color: rgba(147,155,81,0.10);
+    padding-left: 10px;
+}
+.jgff-subnav-lang-list a::after {
+    content: '\203A';
+    color: var(--sage);
+    font-weight: bold;
+    opacity: 0;
+    margin-left: auto;
+    transition: opacity 0.15s;
+}
+.jgff-subnav-lang-list a:hover::after,
+.jgff-subnav-lang-list a:focus::after { opacity: 1; }
+
+/* -- Language tag pill ------------------------------------- */
+.jgff-subnav-lang-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--cream);
+    color: var(--charcoal);
+    border: 1px solid #c5bca8;
+    border-radius: 3px;
+    padding: 1px 5px;
+    min-width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+}
+</style>
+
+<!-- BOX 1: Navigation -->
+<div class="jgff-subnav-box" role="navigation" aria-label="JGFF section navigation">
+    <a id="jgff-subnav-back" class="jgff-subnav-back" href="/JGFF/">&larr; Back to Family Finder</a>
+    <h2 class="jgff-subnav-heading">Family Finder</h2>
+    <ul class="jgff-subnav-list" role="list">
+        <li data-jgff-nav="search">
+            <a href="/JGFF/jgff-search.html">Search the database</a>
+        </li>
+        <li data-jgff-nav="list">
+            <a href="/JGFF/jgff-list.php">List my entries</a>
+        </li>
+        <li data-jgff-nav="modify">
+            <a href="/JGFF/jgff-addmodify.php">Modify entries</a>
+        </li>
+        <li data-jgff-nav="add">
+            <a href="/JGFF/jgff-addmodify.php?add=Y">Add new entries</a>
+        </li>
+    </ul>
+</div>
+
+<!-- BOX 2: FAQ language selector (populated by initJgffSubnav()) -->
+<div class="jgff-subnav-box">
+    <h2 class="jgff-subnav-heading">JGFF FAQ</h2>
+    <ul class="jgff-subnav-lang-list" id="jgff-subnav-lang-list" role="list">
+        <!-- Rendered by initJgffSubnav() in jg-jgff.js -->
+    </ul>
+</div>

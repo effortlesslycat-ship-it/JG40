@@ -1,0 +1,1 @@
+php \testroot\Auth0\vendor\friendsofphp\php-cs-fixer\php-cs-fixer.php fix .

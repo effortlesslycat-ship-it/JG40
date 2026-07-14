@@ -1,0 +1,615 @@
+<%
+' /JGFF/index.asp -- CHW JG40 redesign
+' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%>
+<!--#include virtual="/JGFF/utils.inc"-->
+<%
+' Check login state and set card disable classes accordingly.
+' GreyedOutCard mirrors the legacy GreyedOutBox pattern.
+
+ListBoxClass   = ""
+ModifyBoxClass = ""
+AddBoxClass    = ""
+jgid = request.cookies("jgcure")("jgid")
+
+If (jgid) Then
+    If jgid = "" Or Not IsNumeric(jgid) Then
+        Response.Write ("Invalid Key: '" & jgid & "'")
+        Response.End
+    End If
+
+    jgrecords = JGFF_Get_Num_Entries(jgid)
+
+    If (jgrecords = 0) Then
+        ListBoxClass   = "jgff-action-card--disabled"
+        ModifyBoxClass = "jgff-action-card--disabled"
+    End If
+
+    isReadOnly = isUserReadOnly(jgid)
+
+    If isReadOnly Then
+        ListBoxClass   = "jgff-action-card--disabled"
+        ModifyBoxClass = "jgff-action-card--disabled"
+        AddBoxClass    = "jgff-action-card--disabled"
+    End If
+End If
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JewishGen Family Finder (JGFF) &ndash; JewishGen</title>
+<meta name="description" content="Search the JewishGen Family Finder (JGFF) - a database of ancestral towns and surnames researched by over 110,000 Jewish genealogists worldwide.">
+
+<!-- 1. Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<!-- 2. JewishGen Global Design System -->
+<link rel="stylesheet" href="/jg-global.css">
+<!-- 3. Page-specific styles -->
+<style>
+/* == JGFF Index page styles -- CHW ==========================
+   =========================================================== */
+/* == Page title band == */
+.page-title-band {
+    background-color: var(--navy);
+    padding: 44px 50px;
+    text-align: center;
+}
+.page-title-band h1 {
+    margin: 0 0 10px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    line-height: 1.15;
+    color: #ffffff;
+}
+.page-title-band p.hero-subtitle {
+    margin: 0 auto;
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 560px;
+    line-height: 1.6;
+}
+
+body.dark-mode .page-title-band {
+    background-color: #0d2a45;
+}
+
+/* -- Stats bar --------------------------------------------- */
+/* TODO: Replace static figures with live PHP endpoint        */
+.jgff-stats {
+    background-color: var(--cream);
+    border-bottom: 1px solid #d1caba;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+body.dark-mode .jgff-stats {
+    background-color: #1a1a1a;
+    border-bottom-color: #333;
+}
+.jgff-stat {
+    text-align: center;
+    padding: 10px 40px;
+    border-right: 1px solid #c5bca8;
+}
+.jgff-stat:last-child { border-right: none; }
+body.dark-mode .jgff-stat { border-right-color: #333; }
+.jgff-stat__num {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #09497a;
+    line-height: 1.1;
+}
+body.dark-mode .jgff-stat__num { color: #a8b361; }
+.jgff-stat__label {
+    display: block;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--charcoal);
+    margin-top: 3px;
+}
+
+/* -- Ecru content wrap ------------------------------------- */
+.jgff-ecru-wrap {
+    background-color: var(--ecru);
+    padding: 3rem 2rem;
+}
+.jgff-ecru-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* -- Main 70 / 30 grid ------------------------------------- */
+.jgff-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    gap: 28px;
+    align-items: start;
+}
+
+/* -- Left column stacking ---------------------------------- */
+.jgff-left > * + * { margin-top: 28px; }
+
+/* -- Section headings -------------------------------------- */
+.jgff-section-heading {
+    margin: 0 0 16px 0;
+    font-size: 1.125rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--navy);
+    position: relative;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+body.dark-mode .jgff-section-heading { color: #e0e0e0; }
+.jgff-section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--sage);
+    border-radius: 2px;
+}
+
+/* -- Intro text -------------------------------------------- */
+.jgff-intro p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin: 0;
+}
+
+/* -- Action cards 2x2 grid --------------------------------- */
+.jgff-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+.jgff-action-card {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-top: 3px solid #09497a;
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+.jgff-action-card:hover {
+    border-top-color: var(--sage);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+body.dark-mode .jgff-action-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    border-top-color: #09497a;
+}
+body.dark-mode .jgff-action-card:hover { border-top-color: #a8b361; }
+.jgff-action-card h2 {
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--navy);
+    font-family: Georgia, 'Times New Roman', serif;
+}
+body.dark-mode .jgff-action-card h2 { color: #e0e0e0; }
+.jgff-action-card p {
+    margin: 0 0 12px 0;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--charcoal);
+    flex: 1;
+}
+body.dark-mode .jgff-action-card p { color: #a0a0a0; }
+.jgff-action-card__arrow {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--sage);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: auto;
+}
+.jgff-action-card:hover .jgff-action-card__arrow { color: var(--navy); }
+body.dark-mode .jgff-action-card:hover .jgff-action-card__arrow { color: #a8b361; }
+
+/* Disabled card state -- mirrors legacy GreyedOutBox */
+.jgff-action-card--disabled {
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* -- Entry count (shown when logged in) -------------------- */
+.jgff-entry-count {
+    font-size: 0.875rem;
+    color: var(--charcoal);
+    margin-top: 10px;
+    text-align: center;
+}
+body.dark-mode .jgff-entry-count { color: #a0a0a0; }
+
+/* -- About / description block ----------------------------- */
+.jgff-about {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 22px 24px;
+}
+body.dark-mode .jgff-about {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+.jgff-about p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin: 0 0 0.75rem 0;
+}
+.jgff-about p:last-child { margin-bottom: 0; }
+
+/* -- Disclaimer / cost block ------------------------------- */
+.jgff-disclaimer {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-left: 4px solid var(--sage);
+    border-radius: 8px;
+    padding: 18px 20px;
+}
+body.dark-mode .jgff-disclaimer {
+    background-color: #1e1e1e;
+    border-color: #333;
+    border-left-color: var(--sage);
+}
+.jgff-disclaimer p {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 0 0 0.6rem 0;
+}
+.jgff-disclaimer p:last-child { margin-bottom: 0; }
+.jgff-disclaimer a { color: var(--navy); }
+.jgff-disclaimer a:hover { color: var(--sage); }
+.jgff-disclaimer .jgff-section-heading { margin-top: 20px; }
+.jgff-disclaimer .jgff-section-heading:first-child { margin-top: 0; }
+
+/* -- Right sidebar ----------------------------------------- */
+.jgff-sidebar {
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.jgff-sidebar-box {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 18px 20px;
+}
+body.dark-mode .jgff-sidebar-box {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+.jgff-sidebar-box h2 {
+    margin: 0 0 14px 0;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    color: var(--navy);
+    position: relative;
+    padding-bottom: 8px;
+}
+body.dark-mode .jgff-sidebar-box h2 { color: #e0e0e0; }
+.jgff-sidebar-box h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 34px;
+    height: 3px;
+    background-color: var(--sage);
+    border-radius: 2px;
+}
+.jgff-sidebar-box p {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 0 0 12px 0;
+}
+body.dark-mode .jgff-sidebar-box p { color: #a0a0a0; }
+
+/* -- FAQ language list ------------------------------------- */
+.jgff-lang-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.jgff-lang-list li { border-bottom: 1px dotted #d1caba; }
+.jgff-lang-list li:last-child { border-bottom: none; }
+body.dark-mode .jgff-lang-list li { border-bottom-color: #333; }
+.jgff-lang-list a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 4px;
+    color: var(--navy);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: background-color 0.15s, padding-left 0.15s;
+}
+body.dark-mode .jgff-lang-list a { color: #e0e0e0; }
+.jgff-lang-list a:hover,
+.jgff-lang-list a:focus {
+    background-color: rgba(147,155,81,0.10);
+    padding-left: 10px;
+    outline: none;
+}
+.jgff-lang-list a::after {
+    content: "\203A";
+    color: var(--sage);
+    font-weight: bold;
+    opacity: 0;
+    margin-left: auto;
+    transition: opacity 0.15s;
+}
+.jgff-lang-list a:hover::after,
+.jgff-lang-list a:focus::after { opacity: 1; }
+.jgff-lang-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--cream);
+    color: var(--charcoal);
+    border: 1px solid #c5bca8;
+    border-radius: 3px;
+    padding: 1px 5px;
+    min-width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* -- Responsive -------------------------------------------- */
+@media (max-width: 768px) {
+    .jgff-grid { grid-template-columns: 1fr; }
+    .jgff-sidebar { position: static; }
+    .jgff-stats { padding: 16px 20px; }
+    .jgff-stat  { padding: 8px 20px; }
+    .page-title-band { padding: 32px 24px; }
+    .page-title-band h1 { font-size: 1.75rem; }
+    .jgff-ecru-wrap { padding: 2rem 1rem; }
+    .jgff-actions-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER + NAV
+========================================================= -->
+<div id="site-header"></div>
+
+<!-- =========================================================
+     PAGE TITLE BAND
+========================================================= -->
+<div class="page-title-band" role="banner">
+    <span class="tagline">JewishGen Family Finder</span>
+    <h1>JewishGen Family Finder</h1>
+    <p class="hero-subtitle">
+        A database of ancestral towns and surnames currently being researched
+        by Jewish genealogists around the world.
+    </p>
+</div>
+
+<!-- =========================================================
+     STATS BAR
+     TODO: Replace static figures with live PHP endpoint.
+     Endpoint will need to return: researcher count,
+     total entries, surname count, town count.
+     Keep in sync with: JGFF FAQ Q#1.3 and Databases Index.
+========================================================= -->
+<div class="jgff-stats" role="region" aria-label="JGFF database statistics">
+    <div class="jgff-stat">
+        <span class="jgff-stat__num">110,000+</span>
+        <span class="jgff-stat__label">Researchers Worldwide</span>
+    </div>
+    <div class="jgff-stat">
+        <span class="jgff-stat__num">585,000+</span>
+        <span class="jgff-stat__label">Total Entries</span>
+    </div>
+    <div class="jgff-stat">
+        <span class="jgff-stat__num">140,000</span>
+        <span class="jgff-stat__label">Ancestral Surnames</span>
+    </div>
+    <div class="jgff-stat">
+        <span class="jgff-stat__num">18,000+</span>
+        <span class="jgff-stat__label">Town Names</span>
+    </div>
+</div>
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+<div class="jgff-ecru-wrap">
+    <div class="jgff-ecru-inner">
+        <div class="jgff-grid">
+
+            <!-- LEFT COLUMN --------------------------------- -->
+            <div class="jgff-left">
+
+                <!-- Intro blurb -->
+                <div class="jgff-intro">
+                    <p>
+                        The <strong>JewishGen Family Finder (JGFF)</strong> is a compilation of surnames
+                        and ancestral towns currently being researched by Jewish genealogists worldwide.
+                        Search the JGFF to find other researchers with similar interests, then reach out
+                        to exchange information and expand your family history. You must be
+                        <a href="/login">logged in</a> to add or manage your own entries.
+                    </p>
+                </div>
+
+                <!-- Action cards -->
+                <div role="navigation" aria-label="JGFF actions">
+                    <div class="jgff-actions-grid">
+
+                        <a class="jgff-action-card" href="/jgff/jgff-search.html">
+                            <h2>Search</h2>
+                            <p>Find genealogists researching the same surnames or ancestral towns as you.</p>
+                            <span class="jgff-action-card__arrow" aria-hidden="true">Search the database &rsaquo;</span>
+                        </a>
+
+                        <a class="jgff-action-card" href="/jgff/jgff-list.php">
+                            <h2>List</h2>
+                            <p>View all of your existing JGFF entries in one place.</p>
+                            <span class="jgff-action-card__arrow" aria-hidden="true">View your entries &rsaquo;</span>
+                        </a>
+
+                        <a class="jgff-action-card" href="/jgff/jgff-addmodify.php">
+                            <h2>Modify</h2>
+                            <p>Edit or update surnames and towns you have already submitted.</p>
+                            <span class="jgff-action-card__arrow" aria-hidden="true">Edit your entries &rsaquo;</span>
+                        </a>
+
+                        <a class="jgff-action-card" href="/jgff/jgff-addmodify.php?add=Y">
+                            <h2>Enter</h2>
+                            <p>Add new ancestral surnames and towns to the database.</p>
+                            <span class="jgff-action-card__arrow" aria-hidden="true">Add new entries &rsaquo;</span>
+                        </a>
+
+                    </div>
+
+                    <% If (jgid) Then %>
+                    <p class="jgff-entry-count">
+                        You have <strong><%= jgrecords %></strong> JGFF <% If jgrecords = 1 Then %>entry<% Else %>entries<% End If %>.
+                    </p>
+                    <% End If %>
+                </div>
+
+                <!-- About -->
+                <div class="jgff-about">
+                    <h2 class="jgff-section-heading">About the JGFF</h2>
+                    <p>
+                        The JGFF is indexed and cross-referenced by both surname and town name, making
+                        it easy to find researchers with overlapping interests. All Jewish genealogists
+                        are encouraged to participate by adding their own ancestral surnames and towns.
+                    </p>
+                    <p>
+                        For complete information about the database, including instructions for searching
+                        and adding entries, see the
+                        <a href="/jgff/FAQ/">JGFF Frequently Asked Questions</a>.
+                    </p>
+                </div>
+
+                <!-- Disclaimer and cost -->
+                <div class="jgff-disclaimer">
+                    <h2 class="jgff-section-heading">Disclaimer &amp; Terms of Use</h2>
+                    <p>
+                        JewishGen Inc. is not responsible for the accuracy of information contained in
+                        this database. This database is provided as a public service.
+                    </p>
+                    <p>
+                        The information in this database is presented as a means to contact those listed
+                        herein <em>solely for your own <strong>personal</strong> genealogical research</em>
+                        and may <strong>not</strong> be used, without the prior written permission of
+                        JewishGen, Inc., for any other purpose including, but not limited to: solicitation
+                        of paid research, school-related research projects or term papers, interviews, or
+                        for purposes of publication.
+                    </p>
+                    <p>
+                        See the standard
+                        <a href="/JewishGen/disclaimer.html">JewishGen disclaimer notice on site use and privacy</a>.
+                    </p>
+
+                    <h2 class="jgff-section-heading">Cost</h2>
+                    <p>
+                        There is no charge to search or submit entries to the JewishGen Family Finder.
+                        JewishGen, Inc. is a 501(c)(3) non-profit corporation with U.S. Federal
+                        tax-exempt status, and there is no charge for any of JewishGen&#39;s services.
+                    </p>
+                    <p>
+                        We do ask that you consider a
+                        <a href="/jewishgen-erosity/">voluntary contribution</a>
+                        to help us continue providing and enhancing this and other services to the
+                        Jewish genealogical community.
+                    </p>
+                </div>
+
+            </div><!-- /jgff-left -->
+
+            <!-- RIGHT SIDEBAR ------------------------------- -->
+            <aside class="jgff-sidebar" aria-label="JGFF resources">
+		<div id="jgff-subnav" data-jgff-page="home">
+		</div>
+            </aside>
+
+        </div><!-- /jgff-grid -->
+    </div><!-- /jgff-ecru-inner -->
+</div><!-- /jgff-ecru-wrap -->
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<div id="site-footer"></div>
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="/jg/scripts/jg-jgff.js"></script>
+
+<script>
+/* -- Component loader -- CHW --------------------------------
+   Loads shared header and footer into placeholder divs.
+----------------------------------------------------------- */
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function(r) {
+            if (!r.ok) throw new Error('Could not load ' + file);
+            return r.text();
+        })
+        .then(function(html) {
+            document.getElementById(id).innerHTML = html;
+        })
+        .catch(function(err) { console.warn(err); });
+}
+
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html'),
+    loadComponent('jgff-subnav', '/jgff/jgff-subnav.html')
+])
+
+.then(function() {
+    initJgffSubnav();
+    document.querySelectorAll('.jg-nav .dropbtn').forEach(function(btn) {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                var menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = expanded ? 'none' : 'block';
+            }
+            if (e.key === 'Escape') {
+                this.setAttribute('aria-expanded', 'false');
+                var menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
