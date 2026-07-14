@@ -1,0 +1,39 @@
+<html>
+<head>
+   <title>JGFF Audit Report</title>
+   <LINK REL="STYLESHEET" HREF="/jg_style.css">
+</head>
+
+<body>
+
+<!--#include virtual="/jgff/header.txt"-->
+
+<center>
+<h1>JGFF Audit Report</h1>
+</center>
+
+<hr>
+
+<form METHOD="POST" ACTION="http://data.jewishgen.org/wconnect/wc.isa?jg~jgsys~jgffaudt">
+
+<P><b>Audit Type: </b>
+<select NAME="audit">
+   <option VALUE="DATA">Data Records
+   <option VALUE="RESEARCHER">Researcher Records
+</select>
+</P>
+
+<P>
+<input TYPE="submit" VALUE="Send Request">
+</P>
+
+</form>
+
+<hr>
+
+<!--#include virtual="/jgff/footer.txt"-->
+<cite>Last update July 14 2003  MT</cite></p>
+
+</body>
+</html>
+

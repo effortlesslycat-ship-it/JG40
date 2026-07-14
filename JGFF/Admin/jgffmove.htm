@@ -1,0 +1,49 @@
+<html>
+<head>
+   <title>JGFF Data Records Mover</title>
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</head>
+
+<body>
+
+<!--#include virtual="/JG/header.txt"-->
+
+<CENTER>
+<H1>JGFF Data Researcher Merge</H1>
+</CENTER>
+
+
+<P>Use this form to move surname/town records from one researcher code
+to another researcher code and then delete the first researcher.</P>
+
+<form Method="POST"
+      Action="http://data.jewishgen.org/wconnect/wc.dll?jg~jgsys~jgffmove2">
+
+<P><b>Enter your password: </b>
+<input NAME="Pass" type="password" VALUE SIZE="10" MAXLENGTH="10"></P>
+
+<P>
+Find researcher code
+   <input TYPE="text" NAME="code1" VALUE size="6"> and move
+all of the associated data records to researcher
+   <input TYPE="text" NAME="code2" VALUE size="6">.
+</P>
+
+<P>When finished, remove the first researcher from the JGFF data.</P>
+
+<P>
+<input TYPE="submit" VALUE=" Send Request ">
+</P>
+</form>
+
+
+<HR>
+
+
+<!--#include virtual="/jgff/footer.txt"-->
+
+<P CLASS="smalltext" ALIGN="RIGHT">
+<I>Last update 1 April 2004 MT</I>
+</P>
+
+<!--#include virtual="/JG/footer.txt"-->

@@ -1,0 +1,255 @@
+
+JewishGen Family Finder
+Editing Rules - Localities:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Notes for the Editor of the JGFF, regarding JGFF standards.
+Warren Blatt, 7/22/99, 8/21/99, 10/12/99, 7/2/2005,
+
+
+Adding new Towns to the JGFF:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The JGFF does not allow users to enter town names which have not
+been previously entered into the system.  Only the JGFF Editor
+can add new towns.  Users can request that a new town be added
+via the JGFF's "Questionable Town Query Form" at
+< https://www.jewishgen.org/JGFF/TownQ.asp >.  The JGFF Editor 
+should validate each user's request, to ensure that it is
+a proper modern native place-name, before adding that town
+into the system.  Many user requests are simply alternate 
+spellings of a town already in the system, or they've placed 
+the town in the wrong country, etc.  See "Typical Problems" 
+at the bottom of this document.
+
+
+The JGFF Editor should access the "JGFF Towns Admin Panel"
+via the page < https://www.jewishgen.org/JGFF/Admin >.
+There, click on the "JGFF Towns Admin Panel" link.
+
+The initial filter view is for towns in Lithuania, sorted
+by the number of entries in the JGFF.  The filter and
+sort order can be changed, by using the column headings.
+To change the Country filter, fill in any country-name
+abbreviation into the "Country" field, or the word "ALL"
+for no filter.  The sort order can be changed by using the
+arrows at the top of each column.
+
+To add a record for a NEW Town, click the "Add a new record"
+link at the top left of the Admin Panel.  
+This brings up the "JGFFTowns Data - Add New" Page. 
+ - fill in the Town Name;
+ - select a Country from the drop-down list;
+ - enter the town's USBGN Feature Code Number.
+
+USBGN Feature Code Numbers:
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+A town's USBGN Feature Code Number can be found via the 
+JewishGen ShtetlSeeker at
+< https://www.jewishgen.org/ShtetlSeeker/LocTown.asp >.
+Append #JG# to the search parameter to have the ShtetlSeeker
+display the USBGN Code Number.  Note that most USBGN Feature
+Code Numbers are negative numbers -- be sure to include the 
+leading minus sign.
+
+For localities not in Central and Eastern Europe (i.e.,
+in the USA and Canada, Israel, western Europe, etc.), 
+leave the USBGN Feature Code field blank.
+
+
+After pressing the "Save new JGFF Town" button at the bottom
+of the page, the system will add the new town into the
+JGFFTOWNS.DBF table.  If a USBGN Code Number was present,
+the system will lookup that record in the ShtetlSeeker
+database, and add all *unique* alternate names for that
+town to the JGFF Synonyms (JGFFSYN.DBF) Table.
+
+
+Locality Names:
+~~~~~~~~~~~~~~
+
+Much of this information is from the "JGFF FAQ", 
+Question 4.2: "How do I enter town names?" --
+< https://www.jewishgen.org/jgff/FAQ/#q4.2 >.
+
+   The JGFF always uses the *modern* contemporary name of each town.  
+Many cities and towns, especially in Eastern Europe, have alternative 
+town names or spellings, due to political changes over time, and
+various transliteration standards.
+
+   For example, the city of "Lviv, Ukraine", was formerly known 
+as "Lemberg, Austria" before World War I.  Between the wars it 
+was known as "Lwow, Poland".  After WWII it was "L'vov, U.S.S.R."  
+And since the breakup of the former Soviet Union, it has been
+known as "Lviv, Ukraine".
+
+   As genealogists, we need to be able to identify each locality
+uniquely, so that ALL references to that locality will appear
+together.  Because of all these variant names, and the need for 
+all researchers to be able to find each other, the JGFF standard 
+has been to always use the modern contemporary town and country
+name for all localities, regardless of whenever your ancestors
+lived there.
+
+   You must use the name of the locality as it is known *today*.  
+In addition, it must be that name which is used by the native country,
+as written in the Roman alphabet, not the Anglicized version.  
+Towns now in Poland will be written in Polish; towns in Lithuania 
+are to be written in Lithuanian, etc.  Omit any accents or diacritical 
+marks.  Each locality has one and only one official name.  List only 
+that modern name, not any variant.
+
+Some examples: 
+
+ - Warszawa, not Warsaw (Poland) 
+ - Vilnius, not Vilna (Lithuania) 
+ - Kaunas, not Kovno (Lithuania) 
+ - Wien, not Vienna (Austria) 
+ - Praha, not Prague (Czech Republic) 
+ - Moskva, not Moscow (Russia) 
+ - Kyyev, not Kiev (Ukraine) 
+ - Munchen, not Munich (Germany) 
+ - Gdansk, not Danzig (Poland) 
+ - Bucuresti, not Bucharest (Romania) 
+ - Iasi, not Jassi (Romania) 
+ - Koln, not Cologne (Germany) 
+
+The best source for correct town names is "Where Once We Walked: 
+A Guide to the Jewish Communities Destroyed in the Holocaust", 
+Revised Edition, by Gary Mokotoff and Sallyann Amdur Sack with
+Alexander Sharon (Teaneck, NJ: Avotaynu, Inc., 2002).  
+Another good source is "The Times Atlas of the World".  
+The JewishGen ShtetlSeeker,
+< https://www.jewishgen.org/ShtetlSeeker/LocTown.asp > is another
+good source -- use the BOLD (Native) version of the town name.
+
+
+Country Names:
+~~~~~~~~~~~~~
+
+   For country, enter the country in which the town is located TODAY. 
+This means that locations such as Prussia, Austria-Hungary, Galicia,
+Czechoslovakia, Bessarabia, Bukovina, etc., are unacceptable, 
+as these political entities do not exist today. 
+
+   You must fill in the country name.  Do not assume that everyone 
+knows what country your town is in; fill in the country field with 
+the correct modern country name where the town is located TODAY. 
+
+
+USA and Canada: 
+~~~~~~~~~~~~~~
+
+   To specify an ancestral town in the United States or Canada, indicate 
+the state or province (using its official two-letter postal abbreviation)
+(see < https://www.jewishgen.org/InfoFiles/codes.txt > for a listing) 
+as part of the town name, separating the town and state name by a comma 
+followed by a space.  Then enter 'USA' or 'Canada' as the country name. 
+
+    For example: 
+    * New York, NY 
+    * Toronto, ON 
+
+   Do NOT spell out the state name.  Do NOT omit the state name.
+Always use the two-letter state or province abbreviation.
+
+
+"Any" town:
+~~~~~~~~~~
+
+   When a researcher wants to specify an unknown town within a country,
+i.e. they know the country but not the town of origin, the JGFF's 
+convention is to use the word "Any" in the Town field for this purpose.
+For example: "Any, Poland", or "Any, USA".  
+
+   Do NOT use "Unknown", or "Any Town", or "Any City", or "?", or "-", 
+or "DontKnow", or "All", or "Not Sure", or leave the Town field blank.  
+Use the keyword "Any".
+
+ * Enter only one town per entry.  Use only the 26 letters of the alphabet.
+Do not use slashes, dashes, hyphens, parenthesis, brackets, numbers, or 
+any accented characters.  For a town name like 'Frankfurt-am-Main', enter
+using spaces: 'Frankfurt am Main'. 
+
+
+Region names:
+~~~~~~~~~~~~
+
+ * Every entry in the "Town" field MUST be a valid town name within that
+country, with three exceptions: the keyword "Any", Region names, and
+ambiguous towns with a parenthetial qualifier.
+
+   Region names are allowed, but discouraged. (A more specific town name
+is preferred).  A region name is always specified with a regional qualifier
+in parenthesis, following a comma and space.
+Some examples:
+
+   Town                        Country
+   ~~~~                        ~~~~~~~
+ - "Galicia, (region)"         "Poland"
+ - "Bohemia, (region)"         "Czech Republic"
+ - "Ohio, (state)"             "USA"
+ - "Vilna, (gubernia)"         "Lithuania"
+ - "Alsace Lorraine, (region)" "France"
+ - "Quebec, (province)"        "Canada"
+ - "Entre Rios, (provincia)"   "Argentina"
+
+   The Country should be the *modern* country where the region is
+located today.  For cases where the region spans modern countries, 
+the country where the region's capital is today should be used as 
+the country field.
+
+
+Ambiguous Towns:
+~~~~~~~~~~~~~~~
+
+ * Sometimes there is more than one town with the same name in a
+country.  Most often, there is one large town, and several smaller
+towns/villages with the same name.  In most cases, it's obvious
+which town is being referred to -- the largest town (the town with
+the largest Jewish population).  If a researcher wants to specify
+one of the smaller towns, they can do so using a parenthetical
+qualifier, as does "Where Once We Walked".  
+
+   The phrase in parenthesis should follow a comma and a space.
+For example, "Ostroleka, (near Krakow)".
+
+
+Typical Problems:
+~~~~~~~~~~~~~~~~
+
+Typical problem entries that we've seen include:
+
+ * Towns in the wrong country.  Often people will place the town in
+the country that it was when their immigrant ancestor left there, e.g.
+the locality name found on a passenger list or naturalization paper.
+Towns in pre-WWI "Russia" are usually in modern Belarus, Ukraine,
+Lithuania, Latvia, Poland, and Moldova.  Towns in pre-WWI "Austria"
+are usually in Poland, Slovakia, or Ukraine today.  Towns in inter-war
+Poland may be in Belarus, Lithuania, or Ukraine today, etc.  Use the
+name of the town and the country where the town in located TODAY.
+
+ * Phonetic renditions of town names and Yiddish version of town names.
+These can typically be rectified using "Where Once We Walked" and the
+Daitch-Mokotoff Soundex feature of WOWW and the JewishGen ShtetlSeeker.
+
+ * Adjectival forms of the town name.  For example "Apter" instead of
+"Apt" (Yiddish name for Opatow, Poland).  The adjectival form of the
+name is often used in landsmanshaft and burial society names, such as
+"Ostrover Benevolent Society".  Remove the '-er' suffix to form the
+nominative town name (in this example, Ostrow).
+
+ * Regional accents distort town names, when the name of the town is
+transmitted orally to the next generation.  A Brooklyn accent can add
+an "R" (Example: "Riger" for "Riga").  A Boston accent can remove an
+"R" (Example: "Chanovitz" for "Chernovitz").
+
+ * Language orthography.  In various languages, letters have different
+sounds than they do in English.  For example, the letters "ch" have the
+English "sh" sound in French and Portuguese; the letter "j" has the
+guttural "kh" sound in Spanish.  It can be helpful to know the native
+language of the person making the entry.  For example, the entry of
+"Jerson", if made by someone in Latin America, is obviously "Kherson"!
+
+
+WSB 10/12/1999, 7/2/2005.

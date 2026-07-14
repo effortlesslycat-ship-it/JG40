@@ -1,0 +1,21 @@
+
+<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="5" ALIGN="RIGHT">
+<TR>
+<TD ALIGN="CENTER" CLASS="lgtext"><B>
+<A HREF="/JGFF/LANG_SP/jgff-faq.html" STYLE="text-decoration: none">JGFF FAQ<BR>
+en Espa&ntilde;ol</A>
+<HR>
+<A HREF="/JGFF/LANG_FR/jgff-faq.html" STYLE="text-decoration: none">JGFF FAQ<BR>
+en Fran&ccedil;ais</A>
+<HR>
+<A HREF="/JGFF/LANG_RU/jgff-faq.html" STYLE="text-decoration: none">JGFF FAQ<BR>
+&#1085;&#1072; &#1056;&#1091;&#1089;&#1089;&#1082;&#1086;&#1084;</A>
+<HR>
+<A HREF="/JGFF/LANG_HE/jgff-faq.html" STYLE="text-decoration: none">JGFF FAQ<BR>
+&#1506;&#1489;&#1512;&#1497;&#1514;
+<HR>
+<A HREF="/JGFF/FAQ/" STYLE="text-decoration: none">JGFF FAQ<BR>
+in English</A></B></FONT>
+</TD></TR>
+</TABLE>
+

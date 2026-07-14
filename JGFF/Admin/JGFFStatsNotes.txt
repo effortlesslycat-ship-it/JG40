@@ -1,0 +1,12 @@
+JGFF Statistics notes:
+
+Places to updates figures:
+
+- JGFF FAQ, Section 1.3:  /jgff/jgff-faq.html
+- JGFF Home Page:  /jgff/index.htm
+- JewishGen FAQ:  /infofiles/faq.html
+- JewishGen Home Page: /index.html
+- FactSheet:  /JewishGen/factsheet.htm
+- Database index page: /databases/index.html
+
+Warren

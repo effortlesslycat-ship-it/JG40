@@ -1,0 +1,65 @@
+<HTML>
+
+<HEAD>
+   <TITLE>JGFF - Blind Emails Sent</TITLE>
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</HEAD>
+
+<BODY onload="initEvents(); document.f.pc.focus();">
+
+<!--#include virtual="/JG/header.txt"-->
+
+<SCRIPT SRC="/JG/Scripts/HighlightForm.js"></SCRIPT>
+<SCRIPT SRC="/JG/Scripts/DataChecks.js"></SCRIPT>
+
+
+<CENTER>
+<H1>Blind Contact Emails Sent</H1>
+</CENTER>
+
+
+<FORM name="f" Method="GET"
+      Action="blindemails.php">
+
+<TABLE BORDER="1" CELLPADDING="10" rules="rows" ALIGN="CENTER"
+       BORDERCOLOR="#DDD6E4" BGCOLOR="#F5F5F5">
+<TR><TD>
+
+<P>Report on the top
+<input type="text" size="3" maxlength="3" name="pc" value="2"
+       onkeypress="return numbersonly(event)">
+number of Blind Contact Emails over the past
+<input type="text" size="3" maxlength="3" name="dys" value="180"
+       onkeypress="return numbersonly(event)">
+days.
+</P>
+
+<P ALIGN="CENTER">
+<input TYPE="submit" VALUE=" Search ">
+</P>
+
+</TD></TR>
+</TABLE>
+
+</FORM>
+
+<P>
+<B>Quick links:</B>
+<UL>
+<li><A href="http://www.jewishgen.org/jgff/admin/blindemails.php?pc=10&dys=7">Top 10
+     Blind Contact Emails in the past 7 days</A>.</li>
+</UL>
+</P>
+
+
+<HR>
+
+
+<!--#include virtual="/jgff/footer.txt"-->
+
+<P CLASS="smalltext" ALIGN="RIGHT">
+<I>Last Update: 15 Aug 2017 &nbsp; MT</I>
+</P>
+
+<!--#include virtual="/JG/footer.txt"-->
+

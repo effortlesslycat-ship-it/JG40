@@ -1,0 +1,31 @@
+
+<TABLE BORDER="0" WIDTH="100%">
+<TR VALIGN="center">
+
+<TD>
+<A href="/jgff/FAQ/">
+<img SRC="/images/ArrowHome.gif" TITLE="FAQ" BORDER="0" ALIGN="CENTER"></A>
+</TD>
+
+<TD>
+<SPAN CLASS="sanserif" STYLE="font-size: 14pt;">
+<A href="/jgff/FAQ/">
+<B><I>JGFF FAQ: Frequently Asked Questions about the JGFF</I></B></A>
+</SPAN>
+<BR>
+<SPAN CLASS="sanserif" STYLE="font-weight: bold;">
+[<A href="/jgff/FAQ/">English</A>]&nbsp;&#183;
+[<A href="/jgff/LANG_SP/jgff-faq.html">Español</A>]&nbsp;&#183;
+[<A href="/jgff/LANG_FR/jgff-faq.html">Fran&ccedil;ais</A>]&nbsp;&#183;
+[<A href="/jgff/LANG_RU/jgff-faq.html">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</A>]&nbsp;&#183;
+[<A href="/jgff/LANG_HE/jgff-faq.html">&#1506;&#1489;&#1512;&#1497;&#1514;</A>]
+</SPAN>
+</TD>
+
+<TD ALIGN="RIGHT">
+<A CLASS="jgbacklink" HREF="/JGFF/">JGFF Start</A>
+</TD>
+
+</TR>
+</TABLE>
+

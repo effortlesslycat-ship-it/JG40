@@ -1,0 +1,64 @@
+<HTML>
+
+<HEAD>
+   <TITLE>JGFF - Search the Searches - Town-Only Searches</TITLE>
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</HEAD>
+
+<BODY onload="initEvents(); document.f.pc.focus();">
+
+<!--#include virtual="/JG/header.txt"-->
+
+<SCRIPT SRC="/JG/Scripts/HighlightForm.js"></SCRIPT>
+<SCRIPT SRC="/JG/Scripts/DataChecks.js"></SCRIPT>
+
+<CENTER>
+<H1>Search the JGFF search history log:<BR>Town-Only Searches</H1>
+</CENTER>
+
+
+<FORM name="f" Method="POST"
+      Action="http://data.jewishgen.org/wconnect/wc.dll?jg~jgsys~jgffsearches">
+
+<TABLE BORDER="1" CELLPADDING="10" rules="rows" ALIGN="CENTER"
+       BORDERCOLOR="#DDD6E4" BGCOLOR="#F5F5F5">
+<TR><TD>
+
+<P>Report on the top
+   <input type="text" size="3" maxlength="3" name="pc" value="2"
+          onkeypress="return numbersonly(event)">
+   percent of hitters over the past
+   <input type="text" size="3" maxlength="3" name="dys" value="180"
+          onkeypress="return numbersonly(event)">
+   days.
+</P>
+
+<P ALIGN="CENTER">
+<input TYPE="submit" VALUE=" Search ">
+</P>
+
+</TD></TR>
+</TABLE>
+
+</FORM>
+
+
+<P>
+<B>Quick links:</B>
+<UL>
+<li><A href="http://data.jewishgen.org/wconnect/wc.dll?jg~jgsys~jgffsearches~100~1">All Town-Only searches in the past DAY</A>.</li>
+<li><A href="http://data.jewishgen.org/wconnect/wc.dll?jg~jgsys~jgffsearches~100~.041667">All Town-Only searches in the past HOUR</A>.</li>
+</UL>
+</P>
+
+
+<HR>
+
+
+<!--#include virtual="/jgff/Admin/footer.txt"-->
+
+<P CLASS="smalltext" ALIGN="RIGHT">
+<I>Last Update: 25 Oct 2005 &nbsp; WSB</I>
+</P>
+
+<!--#include virtual="/JG/footer.txt"-->

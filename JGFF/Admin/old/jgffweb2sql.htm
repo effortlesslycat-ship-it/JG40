@@ -1,0 +1,42 @@
+<html>
+
+<head>
+   <title>CURE Admin: User Contact Info Searches</title>
+   <LINK REL="STYLESHEET" HREF="/jg_style.css">
+</head>
+
+<body>
+
+<!--#include virtual="/CURE/header.txt"-->
+
+<center>
+<H1>User Searches in the Goldmine Database</H1>
+</center>
+
+<hr>
+
+<p>This form allows you to search for JewishGen Users in the Goldmine database.</p>
+
+<form Method="POST" Action="http://data.jewishgen.org/wconnect/wc.dll?jg~jgsys~jgff2">
+<a name="form"></a>
+
+<p>
+<b>Search for researcher records containing: </b>
+<input type="text" size="20" maxlength="20" name="Name1">
+</p>
+<p>
+Password? <input type="password" size="20" maxlength="20" name="pass1">
+<p><input type="submit" value="Search"></p>
+</form>
+
+
+<HR>
+
+<!--#include virtual="/CURE/footer.txt"-->
+
+<cite>
+Last update 6 May 2004 &nbsp; WSB
+</cite>
+
+</body>
+</html>

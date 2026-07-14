@@ -1,0 +1,132 @@
+
+JGFF Editing Rules
+~~~~~~~~~~~~~~~~~~
+
+Some notes for the editor of the JGFF, regarding JGFF standards.
+Warren Blatt, 7/22/99, 8/21/99.
+
+Researcher Information:
+~~~~~~~~~~~~~~~~~~~~~~
+
+Ensure that the researcher information includes:
+ - a full name -- given name(s) plus surname 
+      No one-word nicknames, etc.
+ - a valid snail-mail address
+ - a valid e-mail address
+
+
+Town Names:
+~~~~~~~~~~
+
+See <http://www.jewishgen.org/jgff/Admin/editing_rules_towns.txt>.
+
+
+
+> -----Original Message-----
+> From: Michael Tobias [mailto:Michael@mtobias.demon.co.uk]
+> Sent: Sunday, June 06, 1999 8:13 PM
+> To: Warren Blatt; Susan.king; Carol W. Skydell; Gary Mokotoff
+> Subject: Re: JGFF Hardcopy
+>
+> OK guys, here is the JGFF data ready for clean-up.
+>
+> I have uploaded to e:\data\jgffphd a file called
+>
+> june1999.zip
+>
+> It contains 3 files:
+>
+> june1999.dbf (a copy of the data file)
+> country2.dbf (a database of country names and abbreviated codes used)
+> jgffsyn.dbf (a copy of the synonym database used for auto-corrections)
+>
+> The structure of the main database, june1999.dbf is as follows:
+>
+> Structure for table:   JUNE1999.DBF
+> Number of data records:       135836
+> Date of last update:          06/07/99
+> Field     Field Name     Type           Width   Notes
+> 1         CODE           Character         5    JGFF code number
+> 2         SURNAME        Character        20    Surname
+> 3         TOWN           Character        25    Town
+> 4         COUNTRY        Character         4    Country Abbreviated Code
+> 5         SOURCE         Character        25    'Comments'
+> 6         GOTCHA         Character         1    Gotcha Flag
+> 7         LASTCHANGE     Character         8    Date Record Last changed
+> 8         GOTCHA598      Character         1    Gotcha Flag in May 1998
+> 9         RECORDS        Numeric          10    Number of records for
+>                                                 this town/country pair
+>
+> The Gotcha flags can take 1 of FOUR values:
+>
+> BLANK = no apparent problem with this record
+>
+> 1 = this town/country pair has not appeared in a CLEAN JGFF data file
+> before but for this country we are not convinced we have all
+> town/country pairs
+>
+> 2 = this town/country pair has not appeared in a CLEAN JGFF data file
+> before AND for this country we ARE convinced we have all town/country
+> pairs and so this town name is suspect.  The Researcher has FORCED this
+> entry to be accepted by entering 'ACCEPT' in the 'Source' field.
+>
+> 3 = this town/country pair has appeared in previous JGFF data files and
+> we have an entry in our SYNONYM file to change it as we are sure the
+> spelling and/or country is WRONG.  We changed it automatically when the
+> researcher entered the data, but they have INSISTED their entry was
+> correct exactly as originally entered.  The Researcher has FORCED the
+> entry to be kept as they entered it by entering 'NOCHANGE' in the
+> 'Source' field.
+>
+> Note:  Many people enter the words ACCEPT or ACCEPTED or NOCHANGE in the
+> Source field even when they do not need to.  Ignore these entries.
+> Trust only the values shown in the GOTCHA fields.
+>
+> The FIELD Records has been calculated to show the number of entries in
+> the datafile for this town/country pair.  This should help when
+> determining if the entries are correct or not (the larger the number the
+> higher the chance of the entry being OK (as long as all entries were not
+> made by the same researcher!)).
+>
+> The database june1999.dbf should be left UNALTERED.  Do NOT make any
+> changes to it.  All changes required should be entered into a 'changes'
+> database with structure as follows:
+>
+> Structure for table:   CHANGES.DBF
+> Field     Field Name      Type        Width  Notes
+> 1         TOWN            Character     25   Town entered
+> 2         COUNTRY         Character      4   Country entered
+> 3         NEWTOWN         Character     25   Revised Town entry
+> 4         NEWCOUNTRY      Character      4   Revised Country entry
+> 5         ADDTOSYN        Character      1   Add to synonym file Yes/No
+>
+> Note:  All country information shown uses our agreed 4-character
+> abbreviated codes.  For a full list of these see the COUNTRY2.DBF file
+> included.  Please ensure that the correct country codes are used!!
+> Using the wrong codes can cause REAL problems! (be very careful with
+> Australia/Austria...).
+>
+> The ADDTOSYN flag is Y for those changes that should be added to the
+> list of ongoing automatic changes.  If the change required is thought to
+> be a one-off (ie never-to-be-repeated) then set this flag to 'N'.
+> Remember not to bother setting the flag to 'Y' for cases that have
+> gotcha flag =3.  These cases already have an entry in the JGFFSYN file
+> but the reseacher insisted they wanted to keep the originally entered
+> data.  If you are convinced the researcher is wrong (we estimate 90%+
+> were wrong in May 1998) then simply add a record to the changes file but
+> leave the ADDTOSYN entry as 'N'.
+>
+> I'm sure I have forgotten something here, but this is hopefully ok for
+> starters..........
+> --
+> Michael
+
+
+Note: Another type of cleanup that needs to be done is the elimination
+of bogus and duplicate researchers.  Many researchers have registered
+twice, i.e. have two different JGFF Researcher IDs, and often have the
+same or similar information entered under both IDs.  When duplicate
+researchers are encountered, the records should be merged, and one
+researcher record eliminated.  The researcher should be notified of 
+the merge.
+

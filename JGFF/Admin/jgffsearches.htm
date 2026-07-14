@@ -1,0 +1,61 @@
+<HTML>
+
+<HEAD>
+   <TITLE>JGFF - Search the Searches</TITLE>
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</HEAD>
+
+<BODY onload="initEvents(); document.f.srch.focus();">
+
+<!--#include virtual="/JG/header.txt"-->
+
+<SCRIPT SRC="/JG/Scripts/HighlightForm.js"></SCRIPT>
+
+<CENTER>
+<H1>JGFF: Search the Searches</H1>
+<H3>Search the JGFF's Search History Log</H3>
+</CENTER>
+
+
+
+<FORM name="f" Method="POST"
+      Action="http://data.jewishgen.org/wconnect/wc.dll?jg~jgsearch~model1~[jgffe]searches">
+
+<TABLE BORDER="1" CELLPADDING="10" rules="rows" ALIGN="CENTER"
+       BORDERCOLOR="#DDD6E4" BGCOLOR="#F5F5F5">
+<TR><TD>
+
+<P>Search for Surname/Town:
+<input type="text" size="15" maxlength="20" name="srch">
+</P>
+
+<P>
+Type of search: <SELECT NAME="srch2">
+  <OPTION VALUE="SD" SELECTED>Surname -- Daitch-Mokotoff Soundex
+  <OPTION VALUE="SE">Surname -- Exact Spelling
+  <OPTION VALUE="TD">Town -- Daitch-Mokotoff Soundex
+  <OPTION VALUE="TE">Town -- Exact Spelling
+  <OPTION VALUE="GT">Global text search of ALL fields
+</SELECT>
+</P>
+
+<P ALIGN="CENTER">
+<input TYPE="submit" VALUE=" Search ">
+</P>
+
+</TD></TR>
+</TABLE>
+
+</FORM>
+
+
+<HR>
+
+
+<!--#include virtual="/jgff/footer.txt"-->
+
+<P CLASS="smalltext" ALIGN="RIGHT">
+<I>Last Update: 30 Oct 2007 &nbsp; MT</I>
+</P>
+
+<!--#include virtual="/JG/footer.txt"-->

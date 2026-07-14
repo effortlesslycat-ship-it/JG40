@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JGFF FAQ &ndash; JewishGen</title>
+<meta name="description" content="Frequently Asked Questions about the JewishGen Family Finder (JGFF).">
+
+<!-- 1. Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<!-- 2. JewishGen Global Design System -->
+<link rel="stylesheet" href="/jg-global.css">
+<!-- 3. Page-specific styles -->
+<style>
+/* == JGFF FAQ shell styles -- CHW ==========================
+   jg-collapsible styles live in jg-global.css.
+   page-title-band dark mode already handled in jg-global.css.
+   ========================================================== */
+
+/* -- Page title band --------------------------------------- */
+.page-title-band {
+    background-color: var(--navy);
+    padding: 44px 50px;
+    text-align: center;
+}
+.page-title-band .tagline {
+    display: inline-block;
+    background-color: var(--sage);
+    color: #ffffff;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+}
+.page-title-band h1 {
+    margin: 0 0 10px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    line-height: 1.15;
+    color: #ffffff;
+}
+.page-title-band p.hero-subtitle {
+    margin: 0 auto;
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 720px;
+    line-height: 1.6;
+}
+
+/* -- Ecru content wrap ------------------------------------- */
+.jgff-ecru-wrap {
+    background-color: var(--ecru);
+    padding: 3rem 2rem;
+}
+.jgff-ecru-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* -- 70 / 30 grid ------------------------------------------ */
+.jgff-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    gap: 28px;
+    align-items: start;
+}
+
+/* -- Section headings (used inside content fragments) ------ */
+.jgff-section-heading {
+    margin: 0 0 16px 0;
+    font-size: 1.125rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--navy);
+    position: relative;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+body.dark-mode .jgff-section-heading { color: #e0e0e0; }
+.jgff-section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--sage);
+    border-radius: 2px;
+}
+
+/* -- Right sidebar ----------------------------------------- */
+.jgff-sidebar {
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.jgff-sidebar-box {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 18px 20px;
+}
+body.dark-mode .jgff-sidebar-box {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+.jgff-sidebar-box h2 {
+    margin: 0 0 14px 0;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    color: var(--navy);
+    position: relative;
+    padding-bottom: 8px;
+}
+body.dark-mode .jgff-sidebar-box h2 { color: #e0e0e0; }
+.jgff-sidebar-box h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 34px;
+    height: 3px;
+    background-color: var(--sage);
+    border-radius: 2px;
+}
+
+/* -- Language list ----------------------------------------- */
+.jgff-lang-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.jgff-lang-list li { border-bottom: 1px dotted #d1caba; }
+.jgff-lang-list li:last-child { border-bottom: none; }
+body.dark-mode .jgff-lang-list li { border-bottom-color: #333; }
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 8px 4px;
+    color: var(--navy);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.15s, padding-left 0.15s;
+}
+.lang-toggle:hover,
+.lang-toggle:focus,
+.lang-toggle.active {
+    background-color: rgba(147,155,81,0.10);
+    padding-left: 10px;
+    outline: none;
+    font-weight: bold;
+}
+body.dark-mode .lang-toggle { color: #e0e0e0; }
+
+.jgff-lang-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--cream);
+    color: var(--charcoal);
+    border: 1px solid #c5bca8;
+    border-radius: 3px;
+    padding: 1px 5px;
+    min-width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* -- Loading state ----------------------------------------- */
+.jgff-loading {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--charcoal);
+    font-style: italic;
+    opacity: 0.6;
+}
+
+/* -- Utility: hide inactive title-band language strings ---- */
+.hidden { display: none !important; }
+
+/* -- Responsive -------------------------------------------- */
+@media (max-width: 768px) {
+    .jgff-grid { grid-template-columns: 1fr; }
+    .jgff-sidebar { position: static; }
+    .page-title-band { padding: 32px 24px; }
+    .page-title-band h1 { font-size: 1.75rem; }
+    .jgff-ecru-wrap { padding: 2rem 1rem; }
+}
+
+/* -- Accordion (defensive -- jg-global.css should cover this) -- */
+.jg-collapsible-trigger {
+    width: 100%;
+    background-color: var(--white);
+    border: none;
+    text-align: left;
+    padding: 16px 20px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: var(--navy);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.jg-chevron { font-size: 10px; transition: transform 0.2s; }
+.jg-collapsible-trigger.open .jg-chevron { transform: rotate(180deg); }
+.jg-collapsible-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #f8f9fa;
+}
+body.dark-mode .jg-collapsible-body { background-color: #121212; }
+.jg-collapsible-body.open { max-height: 1000px; }
+.jg-collapsible-inner {
+    padding: 20px;
+    font-size: 0.875rem;
+    color: var(--navy);
+    line-height: 1.5;
+}
+body.dark-mode .jg-collapsible-inner { color: #c8c0b0; }
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     HEADER + NAV
+========================================================= -->
+<div id="site-header"></div>
+
+<!-- =========================================================
+     PAGE TITLE BAND
+     Short strings kept inline so they switch instantly
+     with no fetch delay. Heavy accordion content is fetched.
+========================================================= -->
+<div class="page-title-band" role="banner">
+    <span class="tagline" data-lang="en">Frequently Asked Questions</span>
+    <span class="tagline hidden" data-lang="es">Preguntas Frecuentes</span>
+    <span class="tagline hidden" data-lang="fr">Foire Aux Questions</span>
+    <span class="tagline hidden" data-lang="ru">&#1063;&#1072;&#1089;&#1090;&#1086; &#1047;&#1072;&#1076;&#1072;&#1074;&#1072;&#1077;&#1084;&#1099;&#1077; &#1042;&#1086;&#1087;&#1088;&#1086;&#1089;&#1099;</span>
+    <span class="tagline hidden" data-lang="he">&#1513;&#1488;&#1500;&#1493;&#1514; &#1504;&#1508;&#1493;&#1510;&#1493;&#1514;</span>
+
+    <h1 data-lang="en">JGFF FAQ</h1>
+    <h1 class="hidden" data-lang="es">JGFF Preguntas Frecuentes</h1>
+    <h1 class="hidden" data-lang="fr">JGFF FAQ</h1>
+    <h1 class="hidden" data-lang="ru">JGFF &#1063;&#1040;&#1042;&#1054;</h1>
+    <h1 class="hidden" data-lang="he">JGFF &#1513;&#1488;&#1500;&#1493;&#1514; &#1504;&#1508;&#1493;&#1510;&#1493;&#1514;</h1>
+
+    <p class="hero-subtitle" data-lang="en">Everything you need to know about searching and contributing to the JewishGen Family Finder.</p>
+    <p class="hero-subtitle hidden" data-lang="es">Todo lo que necesita saber sobre la b&uacute;squeda y contribuci&oacute;n al JewishGen Family Finder.</p>
+    <p class="hero-subtitle hidden" data-lang="fr">Tout ce que vous devez savoir sur la recherche et la contribution au JewishGen Family Finder.</p>
+    <p class="hero-subtitle hidden" data-lang="ru">&#1042;&#1089;&#1105;, &#1095;&#1090;&#1086; &#1074;&#1072;&#1084; &#1085;&#1091;&#1078;&#1085;&#1086; &#1079;&#1085;&#1072;&#1090;&#1100; &#1086; &#1087;&#1086;&#1080;&#1089;&#1082;&#1077; &#1080; &#1091;&#1095;&#1072;&#1089;&#1090;&#1080;&#1080; &#1074; JewishGen Family Finder.</p>
+    <p class="hero-subtitle hidden" data-lang="he">&#1499;&#1500; &#1502;&#1492; &#1513;&#1510;&#1512;&#1497;&#1498; &#1500;&#1491;&#1506;&#1514; &#1506;&#1500; &#1495;&#1497;&#1508;&#1493;&#1513; &#1493;&#1514;&#1512;&#1493;&#1502;&#1492; &#1500;-JewishGen Family Finder.</p>
+</div>
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+<div class="jgff-ecru-wrap">
+    <div class="jgff-ecru-inner">
+        <div class="jgff-grid">
+
+            <!-- LEFT: fetched FAQ content lives here -------- -->
+            <div id="faq-content-area" dir="ltr">
+                <p class="jgff-loading">Loading&hellip;</p>
+            </div>
+
+            <!-- RIGHT: sidebar (direct grid child -- keeps 70/30) -->
+            <aside class="jgff-sidebar" aria-label="FAQ Language Selection">
+    		<div id="jgff-subnav" data-jgff-page="faq"></div>
+	   </aside>
+
+        </div><!-- /jgff-grid -->
+    </div><!-- /jgff-ecru-inner -->
+</div><!-- /jgff-ecru-wrap -->
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<div id="site-footer"></div>
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/jg/scripts/jg-jgff.js"></script>
+<script>
+/* -- Component loader -- CHW -------------------------------- */
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function(r) {
+            if (!r.ok) throw new Error('Could not load ' + file);
+            return r.text();
+        })
+        .then(function(html) {
+            document.getElementById(id).innerHTML = html;
+        })
+        .catch(function(err) { console.warn(err); });
+}
+
+/* -- FAQ Language System -- CHW ----------------------------
+   langCache: stores fetched fragments so we only hit the
+   server once per language per session.
+   initAccordions: must run after every content injection
+   because the new DOM nodes need fresh event listeners.
+----------------------------------------------------------- */
+var langCache  = {};
+var currentLang = 'en';
+
+function loadLanguage(lang) {
+    var contentArea = document.getElementById('faq-content-area');
+	const _b={en:'Back to JGFF',es:'Volver al JGFF',fr:'Retour au JGFF',ru:'\u0412\u0435\u0440\u043d\u0443\u0442\u044c\u0441\u044f \u043d\u0430 JGFF',he:'\u05d7\u05d6\u05e8\u05d4 \u05dc-JGFF'}; 
+	var bl=document.getElementById('back-label'); if(bl){bl.textContent=_b[lang]||_b.en;
+}
+
+    /* RTL for Hebrew */
+    contentArea.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
+
+
+
+    /* Switch title-band strings (inline, so instant) */
+    document.querySelectorAll('[data-lang]').forEach(function(el) {
+        /* Skip the sidebar heading -- handled separately below */
+        if (el.closest('#faq-content-area')) return;
+        el.classList.toggle('hidden', el.getAttribute('data-lang') !== lang);
+    });
+
+    /* Update sidebar button active state + page title */
+    document.querySelectorAll('.lang-toggle').forEach(function(btn) {
+        var isActive = btn.getAttribute('data-target-lang') === lang;
+        btn.classList.toggle('active', isActive);
+        if (isActive) {
+            var t = btn.getAttribute('data-page-title');
+            if (t) document.title = t;
+        }
+    });
+
+    /* If already cached, inject immediately */
+    if (langCache[lang]) {
+        contentArea.innerHTML = langCache[lang];
+        initAccordions();
+        return;
+    }
+
+    /* Show loading state while fetching */
+    contentArea.innerHTML = '<p class="jgff-loading">Loading&hellip;</p>';
+
+    fetch('faq-content-' + lang + '.html')
+        .then(function(r) {
+            if (!r.ok) throw new Error('Fragment not found: faq-content-' + lang + '.html');
+            return r.text();
+        })
+        .then(function(html) {
+            langCache[lang] = html;
+            contentArea.innerHTML = html;
+            initAccordions();
+        })
+        .catch(function(err) {
+            console.warn(err);
+            contentArea.innerHTML = '<p class="jgff-loading">Content unavailable. Please try again.</p>';
+        });
+}
+
+
+function initAccordions() {
+    /* Re-bind accordion triggers after content injection.
+       Existing listeners on old nodes are discarded with innerHTML. */
+    document.querySelectorAll('#faq-content-area .jg-collapsible-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            var body = this.nextElementSibling;
+            var isOpen = this.classList.contains('open');
+            this.classList.toggle('open', !isOpen);
+            this.setAttribute('aria-expanded', String(!isOpen));
+            body.classList.toggle('open', !isOpen);
+        });
+    });
+}
+
+/* -- Boot -------------------------------------------------- */
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html'),
+    loadComponent('jgff-subnav', '/jgff/jgff-subnav.html')
+]).then(function() {
+    initJgffSubnav();
+    /* Nav keyboard accessibility */
+    document.querySelectorAll('.jg-nav .dropbtn').forEach(function(btn) {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                var menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = expanded ? 'none' : 'block';
+            }
+            if (e.key === 'Escape') {
+                this.setAttribute('aria-expanded', 'false');
+                var menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = 'none';
+            }
+        });
+    });
+});
+
+/* Language button click handlers */
+document.querySelectorAll('.lang-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var lang = this.getAttribute('data-target-lang');
+        if (lang !== currentLang) {
+            currentLang = lang;
+            loadLanguage(lang);
+        }
+    });
+});
+
+/* Load language on page init -- respect ?lang= URL param -- CHW */
+var urlLang = new URLSearchParams(window.location.search).get('lang');
+if (urlLang && ['en','es','fr','ru','he'].indexOf(urlLang) !== -1) {
+    currentLang = urlLang;
+}
+loadLanguage(currentLang);
+
+</script>
+
+</body>
+</html>

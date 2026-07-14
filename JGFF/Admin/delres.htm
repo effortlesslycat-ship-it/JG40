@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+   <TITLE>JGFF Admin - Delete JGFF Data Records</TITLE>
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</HEAD>
+
+<BODY onload="initEvents(); document.f.Code.focus();">
+
+<!--#include virtual="/JG/header.txt"-->
+
+<SCRIPT SRC="/JG/Scripts/HighlightForm.js"></SCRIPT>
+<SCRIPT SRC="/JG/Scripts/DataChecks.js"></SCRIPT>
+
+<center>
+<H1>Delete JGFF Data Records</h1>
+</center>
+
+
+<BLOCKQUOTE>
+<P>This program deletes all JGFF Data records (Surname/Town records)
+for a researcher.&nbsp; It ignores the Goldmine record.&nbsp;
+To delete surname/town information in the JewishGen Family Finder,
+you must have the user's JewishGen ID and the administrative password.
+</P>
+</BLOCKQUOTE>
+
+
+<FORM Method="POST" Name="f"
+      Action="http://data.jewishgen.org/wconnect/wc.dll?jg~jgsys~jgffview">
+
+<TABLE BORDER="1" CELLPADDING="10" rules="rows" ALIGN="CENTER"
+       BORDERCOLOR="#DDD6E4" BGCOLOR="#F5F5F5">
+<TR><TD>
+
+<P>
+<B>JGID Number: </B>
+<input name="Code" type="text" maxlength="6" size="6"
+       onkeypress="return numbersonly(event)">
+&nbsp;
+<B>Password: </B> <input name="Pass" type="password" maxlength="8" size="8">
+</P>
+
+<input TYPE="hidden" NAME="case" VALUE="DELRES">
+<input TYPE="hidden" NAME="input16" VALUE="0">
+
+<P ALIGN="CENTER">
+<input TYPE="Submit" VALUE=" Continue ">
+</P>
+
+</TD></TR>
+</TABLE>
+
+</FORM>
+
+
+<HR>
+
+
+<!--#include virtual="/jgff/footer.txt"-->
+
+<!--#include virtual="/JG/footer.txt"-->
