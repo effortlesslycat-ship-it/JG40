@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JewishGen-erosity Wall of Honor - JewishGen</title>
+
+    <!-- 1. Bootstrap 5.3.3 (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- 2. Global Styles (Tokens, Dark Mode, Nav, Band) -->
+    <link href="/jg-global.css" rel="stylesheet">
+
+    <!-- 4. Page-specific CSS -->
+    <style>
+        /* The Masonry Wrapper */
+        .jg-wall-masonry {
+            column-count: 3;
+            column-gap: 1.5rem;
+            padding: 2rem 0;
+        }
+
+        /* The Individual Plaque */
+        .jg-plaque-card {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            background-color: var(--ecru);
+            border: 1px solid var(--sage);
+            border-radius: 2px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        /* Typography Hierarchy */
+        .jg-pc-intent {
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .jg-pc-honoree {
+            font-family: Georgia, serif; /* Assuming fallback for standard serif */
+            font-size: 1.3rem;
+            color: var(--navy); 
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .jg-pc-message {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* Push donor to the bottom and separate visually */
+        .jg-pc-donor {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--sage);
+            text-align: right;
+            margin-top: auto; 
+            border-top: 1px solid var(--light-blue);
+            padding-top: 0.75rem;
+        }
+
+        /* Navigational Hazard Avoidance: Styling for the safe pagination div */
+        .jg-wall-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--light-blue);
+        }
+
+        /* Responsive Degradation */
+        @media (max-width: 992px) {
+            .jg-wall-masonry {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .jg-wall-masonry {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Shared Header Injected Here -->
+    <div id="site-header"></div>
+
+    <!-- Standard Canonical Page Title Band -->
+    <div class="page-title-band">
+        <span class="tagline">JewishGen-erosity</span>
+        <h1>Wall of Honor</h1>
+        <p class="hero-subtitle">&quot;To honor, to thank, to cherish the memory&quot;</p>
+        <span class="stat-line">2-Apr-2026 &mdash; 2-May-2026</span>
+    </div>
+
+    <!-- Shared Wrapper for content sitting below the band -->
+    <div class="container jg-band-content">
+        
+        <div class="jg-wall-masonry">
+            
+            <!-- Standard Plaque (No Message) -->
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Memory Of</div>
+                <h2 class="jg-pc-honoree">Hyman Brown</h2>
+                <div class="jg-pc-donor">From Anonymous</div>
+            </div>
+
+            <!-- Standard Plaque (No Message) -->
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Memory Of</div>
+                <h2 class="jg-pc-honoree">David Borodaty</h2>
+                <div class="jg-pc-donor">From Yoram Borodaty</div>
+            </div>
+
+            <!-- Expanded Plaque (With Message) -->
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Memory Of</div>
+                <h2 class="jg-pc-honoree">Richard J Rosenzweig</h2>
+                <div class="jg-pc-message">
+                    To my dear Brother Richard, may you rest in peace and may God be with you. Your Loving Brother, David.
+                </div>
+                <div class="jg-pc-donor">From David Rosenzweig</div>
+            </div>
+
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Memory Of</div>
+                <h2 class="jg-pc-honoree">Barbara &amp; Ervin Zilahi</h2>
+                <div class="jg-pc-donor">From Anonymous</div>
+            </div>
+
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Memory Of</div>
+                <h2 class="jg-pc-honoree">Lucy Roykov</h2>
+                <div class="jg-pc-donor">From Anthony Kemp</div>
+            </div>
+
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Honor Of</div>
+                <h2 class="jg-pc-honoree">Jacques Kornbrot</h2>
+                <div class="jg-pc-donor">From Diana Kornbrot</div>
+            </div>
+
+            <!-- Expanded Plaque (With Message) -->
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Honor Of</div>
+                <h2 class="jg-pc-honoree">Monique Halberstein</h2>
+                <div class="jg-pc-message">
+                    With great gratitude for your stalwart tenacity in moulding your little boy into a dedicated, disciplined, eclectic, excellent, fabulously generous, haimish, iconic, jovial, kind, loving, meticulous, noble, passionately professional, respectful, sincere, thoughtful, tolerant, understanding, uplifting, vibrant, wonderful, Xquisite, yeoManly, anD zestful, ever-young man. Love ya Eema PS Henry Louis Gates has squat on This
+                </div>
+                <div class="jg-pc-donor">From Arieh Greenwald</div>
+            </div>
+
+            <!-- Note the strictly ASCII encoding on Kunágota -->
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Memory Of</div>
+                <h2 class="jg-pc-honoree">The Jewish Families of Kun&aacute;gota</h2>
+                <div class="jg-pc-donor">From Gizella Czene</div>
+            </div>
+
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Memory Of</div>
+                <h2 class="jg-pc-honoree">Alan L. Schwartz</h2>
+                <div class="jg-pc-message">May his memory be a blessing.</div>
+                <div class="jg-pc-donor">From Harold Schwartz</div>
+            </div>
+
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Memory Of</div>
+                <h2 class="jg-pc-honoree">The Gomel Rapoports and Rovno/Zviagel Ge</h2>
+                <div class="jg-pc-donor">From Heidi Lazar Meyn</div>
+            </div>
+
+            <div class="jg-plaque-card">
+                <div class="jg-pc-intent">In Honor Of</div>
+                <h2 class="jg-pc-honoree">Hirschland Family</h2>
+                <div class="jg-pc-donor">From Anonymous</div>
+            </div>
+
+        </div>
+
+        <!-- Safe Pagination avoiding semantic <nav> per standards -->
+        <div role="navigation" class="jg-wall-pagination">
+            <a href="#" class="btn btn-outline-secondary btn-sm">&larr; Previous Month</a>
+            <a href="#" class="btn btn-outline-secondary btn-sm">Next Month &rarr;</a>
+        </div>
+
+    </div>
+
+    <!-- Shared Footer Injected Here -->
+    <div id="site-footer"></div>
+
+    <!-- Component Loading Script -->
+    <script>
+        // Assuming your standard loadComponent function lives globally or is defined here
+        function loadComponent(id, file) {
+            return fetch(file)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(id).innerHTML = html;
+                })
+                .catch(err => console.warn('Something went wrong loading ' + file, err));
+        }
+
+        Promise.all([
+            loadComponent('site-header', '/Header_NavBar.html'),
+            loadComponent('site-footer', '/Footer.html')
+        ]).then(function () {
+            // Any initialization logic for header nav components goes here, 
+            // safely executing after the innerHTML is fully injected.
+        });
+    </script>
+</body>
+</html>
