@@ -1,0 +1,58 @@
+JewishGen is pleased to announce the "JewishGen France Database",
+a multi-database search facility containing more than 150,000 records 
+of Jews living in France and other French-speaking regions.  
+It is JewishGen's 14th "All Country" database.
+
+
+The "JewishGen France Database" searches all of JewishGen's records
+for France, other French-speaking areas such as Belgium, Luxembourg 
+and Switzerland, and former French colonies and protectorates such as 
+Tunisia, Algeria, and Morocco.  The database is a work in progress, 
+and new entries will being added regularly. 
+
+The "JewishGen France Database" is located at:
+http://www.jewishgen.org/databases/France
+
+
+Components of the "JewishGen France Database" include:
+
+* Jewish Marriages in Alsace, 1792-1899 --  
+Records of 22,000 Jewish marriages in the départements of Bas-Rhin 
+and Haut-Rhin, compiled by Pierre Hahn.
+
+* The JewishGen Online Worldwide Burial Registry (JOWBR) --
+70,000 records of Jewish burials in cemeteries in France and 
+French-speaking regions:
+    + France     (643 cemeteries, 42,631 burials)
+    + Belgium     (72 cemeteries,  4,535 burials)	
+    + Luxembourg   (4 cemeteries,    315 burials)	
+    + Switzerland (23 cemeteries, 15,554 burials)
+    + Algeria     (30 cemeteries,  4,717 burials)      
+    + Morocco     (22 cemeteries,  8,277 burials)      
+    + Tunisia     (10 cemeteries,    183 burials)      
+
+* The JewishGen Family Finder (JGFF) --
+More than 14,000 surnames and towns of Jewish families
+of interest to genealogists researching French Jewry.
+
+* The JewishGen Memorial Plaques Database --
+Information from synagogue yahrzeit plaques.
+
+* Component datsets of the "JewishGen Holocaust Database" which
+relate to French Jewry, more than 40,000 records, including:
+    + French Jews who were issued immigration visas to Brazil 
+    + French Prisoners in the Stutthof concentration camp
+    + "Certificates of Disappearance" for French female deportees 
+    + Hidden Children in France
+    + Gurs Deportations to Auschwitz-Birkenau
+    + Rivesaltes Deportations to Auschwitz-Birkenau
+    + Jewish Arrivals in Switzerland, 1938-1945
+
+
+The "JewishGen France Database" can be found at:
+http://www.jewishgen.org/databases/France
+
+Warren
+
+Warren Blatt
+Managing Director, JewishGen
