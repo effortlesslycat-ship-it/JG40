@@ -1,0 +1,72 @@
+"JewishGen's Latin America Database"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Items which could be included:
+
+
+* JOWBR -- (for all ~20 countries)
+	As of Nov 2014: Argentina 7.5K, Bolivia 1.7K, Brazil 4.6K, Mexico 2K, 
+		Suriname 1.6K, Venezuela 2.9K = ~20K
+	As of Nov 2015: Argentina 7.7K, Bolivia 1.7K, Brazil 4.6K,  
+		Colombia 206, Ecuador 88, Mexico 2K, Peru 3.1K,  
+		Suriname 1.6K, Venezuela 2.9K = ~25K
+	As of Dec 2015: +230K Argentina, 9K Chile, 20K Uruguay 
+		= 279K total
+		
+	AGJA (Asociacion de Genealogia Judia de Argentina), David Thaler 
+		says they have many more (email 20-Nov-2014).
+
+* JGFF -- (for all ~20 countries) = ~9K
+	http://www.jewishgen.org/jgff/FAQ/#q1.3
+
+* Memorial Plaques -- (for all ~20 countries) -- 
+	1.1K for 3 Argentina synagogues (Dec 2015)
+
+
+* Holocaust DB datasets...  
+	http://www.jewishgen.org/databases/Holocaust/0073_Jewish_refugees_France-Brazil.html	
+	   (471 records)
+	http://www.jewishgen.org/databases/Holocaust/0227_Paraguay_arrivals.html
+	   (254 records)
+	http://www.jewishgen.org/databases/holocaust/0222_Peruvian_records.html 
+	   (671 records)
+	   
+	   
+
+* Yoni Kupchik's "Jewish immigrants in colonies in South America" project":
+	http://www.jewishgen.org/JewishGen-erosity/projectdesc/LA_Immigrants.html
+
+* Argentina Obituaries -- 
+	9,500 records, 2001-2012
+	Compiled by Estela Rappaportt
+	data & intro in "/databases/LatinAmerica/working/".
+	
+* Additional material from AGJA:
+	See Email from Esterla Rappoport, 9-Nov-2015
+      + 15.000 records of marriages in several synagogues since 1929, 
+      		most of them with pictures of the ktuvot
+      + 40.000 arrivals of passengers to Buenos Aires, with Jewish surnames
+      + Argentine Census of 1895.
+      + 500 records of Bar Mitzvot since 1919
+      + Jewish merchants guide of 1952
+      + 5.000 records of children in 2 Jewish children's asylum
+      + 5.000 records of old people in Jewish asylum
+
+--------
+
+COUNTRIES:
+
+* South America (12):
+	Argentina, Bolivia, Brazil, Chile, Colombia, Ecuador, Guyana, 
+	Paraguay, Peru, Suriname, Uruguay, Venezuela
+* Central America (7):
+	Belize, Costa Rica, El Salvador, Guatemala, Honduras, 
+	Nicaragua, Panama.
+* Mexico (1):
+	Mexico
+* Carribean islands (??):
+	Cuba, Haiti, Jamaica, 
+	"West Indies" (Dominican Republic, Grenada, Saint Kitts and Nevis, 
+	St. Lucia, St. Vincent, Trinidad & Tobago...)
+
+--------
