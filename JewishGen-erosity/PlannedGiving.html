@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planned Giving &ndash; JewishGen</title>
+
+<!-- 1. Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<!-- 2. JewishGen Global Design System -->
+<link rel="stylesheet" href="/jg-global.css">
+<!-- 3. Page-specific styles -->
+<style>
+a { text-decoration: none; color: inherit; }
+
+/* -- Dark mode page-specific overrides -- */
+body.dark-mode .page-title-band { background-color: #0d2a45 !important; }
+body.dark-mode .page-title-band p.hero-subtitle { color: rgba(255,255,255,0.85) !important; }
+body.dark-mode .page-title-band .tagline { background-color: #a8b361 !important; color: #121212 !important; }
+body.dark-mode .pg-intro { color: #c8c8c8 !important; }
+body.dark-mode .ways-card,
+body.dark-mode .tols-callout,
+body.dark-mode .contact-card { background-color: #1e1e1e !important; border-color: #333 !important; }
+body.dark-mode .ways-card:hover,
+body.dark-mode .contact-card:hover { border-color: var(--sage) !important; }
+body.dark-mode .tols-callout { border-top-color: #a8b361 !important; }
+body.dark-mode .tols-callout .tols-eyebrow { color: #a8b361 !important; }
+body.dark-mode .ways-card h3,
+body.dark-mode .tols-callout h2,
+body.dark-mode .contact-card h3,
+body.dark-mode .ways-section h2 { color: #e0e0e0 !important; }
+body.dark-mode .ways-card p,
+body.dark-mode .tols-callout p,
+body.dark-mode .contact-card p { color: #c0c0c0 !important; }
+body.dark-mode .contact-card a { color: #e0e0e0 !important; }
+body.dark-mode .contact-card a:hover { color: var(--sage) !important; }
+body.dark-mode .disclaimer { color: #a0a0a0 !important; }
+
+/* -- Page title band -- */
+.page-title-band {
+    background-color: var(--navy);
+    padding: 44px 50px;
+    text-align: center;
+}
+.page-title-band h1 {
+    margin: 0 0 10px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    line-height: 1.15;
+    color: #ffffff;
+}
+.page-title-band p.hero-subtitle {
+    margin: 0 auto;
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 720px;
+    line-height: 1.6;
+}
+
+.page-title-band .jg-tag-sage { margin-bottom: 14px; 
+
+}
+
+/* -- Ecru content wrap -- */
+.pg-ecru-wrap {
+    background-color: var(--ecru);
+    padding: 3rem 2rem;
+}
+.pg-ecru-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* -- Intro paragraph -- */
+.pg-intro {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--charcoal);
+    max-width: 820px;
+    margin: 0 auto 36px auto;
+    text-align: center;
+}
+
+/* -- Section headings with 40px sage underline bar -- */
+.section-heading {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--navy);
+    position: relative;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--sage);
+    border-radius: 2px;
+}
+
+/* -- Ways to Give: 2-column card grid -- */
+.ways-section { margin-bottom: 40px; }
+.ways-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+.ways-card {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 18px 20px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    display: flex;
+    flex-direction: column;
+}
+.ways-card:hover {
+    border-color: var(--sage);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+.ways-card h3 {
+    color: var(--navy);
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.3;
+}
+.ways-card p {
+    margin: 0 0 14px 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    flex: 1;
+}
+.ways-card a.ways-link {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--sage);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: auto;
+}
+.ways-card a.ways-link:hover { color: var(--navy); }
+
+/* -- Tree of Life Society callout -- */
+.tols-callout {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-top: 3px solid var(--sage);
+    border-radius: 8px;
+    padding: 28px 32px 30px 32px;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 40px auto;
+}
+.tols-callout .tols-eyebrow {
+    display: block;
+    color: var(--sage);
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+.tols-callout h2 {
+    color: var(--navy);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 0 0 14px 0;
+}
+.tols-callout p {
+    color: var(--charcoal);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    margin: 0 auto;
+    max-width: 680px;
+}
+
+/* -- Inline contact card -- */
+.contact-card {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 22px 26px;
+    max-width: 580px;
+    margin: 0 auto 24px auto;
+    text-align: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.contact-card:hover {
+    border-color: var(--sage);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.contact-card h3 {
+    color: var(--navy);
+    font-size: 0.75rem;
+    margin: 0 0 12px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.contact-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 0 0 8px 0;
+}
+.contact-card p:last-child { margin-bottom: 0; }
+.contact-card a {
+    color: var(--navy);
+    font-weight: bold;
+    text-decoration: underline dotted;
+}
+.contact-card a:hover { color: var(--sage); }
+
+/* -- Disclaimer -- */
+.disclaimer {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--charcoal);
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* -- Responsive -- */
+@media (max-width: 768px) {
+    .page-title-band { padding: 30px 20px; }
+    .page-title-band h1 { font-size: 1.75rem; }
+    .pg-ecru-wrap { padding: 2rem 1.25rem; }
+    .tols-callout { padding: 22px 22px; }
+    .tols-callout h2 { font-size: 1.3rem; }
+}
+@media (max-width: 640px) {
+    .ways-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="site-header"></div>
+
+<!-- PAGE TITLE BAND -->
+<div class="page-title-band">
+    <span class="jg-tag-sage">JewishGen-erosity</span>
+    <h1>Planned Giving</h1>
+    <p class="hero-subtitle">A planned gift creates a meaningful personal legacy at JewishGen, while securing the future of this important organization and its mission of preserving Jewish history for generations to come.</p>
+</div>
+
+<!-- MAIN CONTENT  -  ecru wrap -->
+<main class="pg-ecru-wrap">
+<div class="pg-ecru-inner">
+
+    <p class="pg-intro">Contribute to the future of JewishGen by planning for a special kind of gift. There are many ways to include JewishGen in your charitable giving and estate planning &mdash; choose the path that best fits your goals.</p>
+
+    <!-- WAYS TO GIVE -->
+    <section class="ways-section" aria-labelledby="ways-heading">
+        <h2 id="ways-heading" class="section-heading">Ways to Give</h2>
+
+        <div class="ways-grid">
+
+            <article class="ways-card">
+                <h3>Bequest</h3>
+                <p>One of the easiest and most important ways to support JewishGen's future is by naming JewishGen as a beneficiary in your will. A bequest may be made with a specific dollar amount, asset, or percentage of your estate. Please let us know if you have made a provision for JewishGen in your estate plans, so that we may honor you on JewishGen's <em>Tree of Life Society</em>.</p>
+                <a class="ways-link" href="https://docs.google.com/forms/d/1iyZwbS367aD6J_NYZ1Bif6XhuEODLfdgwatUf-VhePE/viewform?usp=send_form">Submit a Letter of Intent &rsaquo;</a>
+            </article>
+
+            <article class="ways-card">
+                <h3>Retirement Plans &amp; Beneficiary Designations</h3>
+                <p>Retirement (e.g., IRA), life insurance, and real estate assets may all be donated to JewishGen. Making a gift in this manner can mean significant tax advantages for your estate and your heirs.</p>
+                <a class="ways-link" href="mailto:development@mjhnyc.org?subject=Planned%20Giving%20Inquiry">Discuss the Options &rsaquo;</a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- TREE OF LIFE SOCIETY CALLOUT -->
+    <aside class="tols-callout" aria-labelledby="tols-heading">
+        <span class="tols-eyebrow">Recognition</span>
+        <h2 id="tols-heading">Tree of Life Society</h2>
+        <p>Donors who contribute through a planned gift &mdash; or notify us that they have made a provision for JewishGen in their estate plans &mdash; are honored and recognized as members of JewishGen's <em>Tree of Life Society</em>. Together with your own financial planners, we can help you create a legacy that meets your unique financial, tax, and estate planning goals while ensuring JewishGen's mission of preserving our history for future generations continues.</p>
+    </aside>
+
+    <!-- CONTACT CARD -->
+    <div class="contact-card">
+        <h3>Get in Touch</h3>
+        <p>To discuss a planned gift, bequest, or legacy giving opportunity, please contact the Development department at the Museum of Jewish Heritage.</p>
+        <p><a href="mailto:development@mjhnyc.org?subject=JewishGen%20Planned%20Giving" aria-label="Email development@mjhnyc.org regarding JewishGen planned giving">development@mjhnyc.org</a></p>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <p class="disclaimer">JewishGen is the Jewish Genealogy Research Division of the Museum of Jewish Heritage - A Living Memorial to the Holocaust, which is a qualified 501(c)(3) tax-exempt organization. All donations are tax-deductible to the full extent of the law. Our Tax ID# is 13-3376265.</p>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(r => { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(html => { document.getElementById(id).innerHTML = html; })
+        .catch(err => console.warn(err));
+}
+
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html')
+]).then(() => {
+    document.querySelectorAll('.jg-nav .dropbtn').forEach(btn => {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                const menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = expanded ? 'none' : 'block';
+            }
+            if (e.key === 'Escape') {
+                this.setAttribute('aria-expanded', 'false');
+                const menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>

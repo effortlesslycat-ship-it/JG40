@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The General Fund & Value-Added Services - JewishGen</title>
+
+<!-- 1. Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<!-- 2. JewishGen Global Design System -->
+<link rel="stylesheet" href="/jg-global.css">
+
+<!-- 3. Page-specific styles -->
+<style>
+a { text-decoration: none; color: inherit; }
+
+/* == Page title band == */
+.page-title-band {
+    background-color: var(--navy);
+    padding: 44px 50px;
+    text-align: center;
+}
+.page-title-band h1 {
+    margin: 0 0 10px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    line-height: 1.15;
+    color: var(--white);
+}
+.page-title-band p.hero-subtitle {
+    margin: 0 auto;
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 720px;
+    line-height: 1.6;
+}
+
+/* == Main Wrap == */
+.support-ecru-wrap {
+    background-color: var(--ecru);
+    padding: 3rem 2rem;
+}
+.support-ecru-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+/* == Section Headings == */
+.section-heading {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--navy);
+    position: relative;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--sage);
+    border-radius: 2px;
+}
+
+/* == Intro == */
+.intro-block {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 48px auto;
+}
+.intro-block p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin: 0 0 28px 0;
+}
+
+/* Local override to ensure the big green donate button renders correctly */
+.btn-donate-hero {
+    display: inline-block;
+    background-color: var(--sage);
+    color: #ffffff !important;
+    font-weight: bold;
+    font-size: 1.0625rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 32px;
+    border-radius: 4px;
+    transition: filter 0.2s, transform 0.15s;
+    text-decoration: none;
+}
+.btn-donate-hero:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+/* == Ops Grid (What your gift supports) == */
+.ops-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+    align-items: stretch;
+}
+.ops-card {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 24px 20px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    display: flex;
+    flex-direction: column;
+}
+.ops-card:hover {
+    border-color: var(--sage);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+.ops-card h3 {
+    color: var(--navy);
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.ops-card p {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--charcoal);
+}
+
+/* == Value-Added Services Grid (Horizontal Tiles) == */
+.vas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+    margin-bottom: 48px;
+    align-items: stretch;
+}
+.vas-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--sage);
+    border-left: 6px solid var(--sage);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+}
+.vas-card h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: var(--navy);
+    margin: 0 0 16px 0;
+}
+.vas-card p {
+    font-size: 0.9375rem;
+    color: var(--charcoal);
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+.vas-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* == Dark Mode Overrides == */
+body.dark-mode .support-ecru-wrap { background-color: #141414 !important; }
+body.dark-mode .ops-card, body.dark-mode .vas-card { background-color: #1e1e1e !important; border-color: #333 !important; }
+body.dark-mode .ops-card:hover { border-color: var(--sage) !important; }
+body.dark-mode .vas-card { border-left-color: var(--sage) !important; }
+body.dark-mode .section-heading, body.dark-mode .ops-card h3, body.dark-mode .vas-card h3 { color: #e0e0e0 !important; }
+body.dark-mode .intro-block p, body.dark-mode .ops-card p, body.dark-mode .vas-card p { color: #c0c0c0 !important; }
+body.dark-mode .btn-donate-hero { background-color: #a8b361; color: #121212 !important; }
+
+/* == Responsive == */
+@media (max-width: 960px) {
+    .ops-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .vas-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+    .ops-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="site-header"></div>
+
+<!-- PAGE TITLE BAND -->
+<div class="page-title-band">
+    <span class="jg-tag-sage" style="margin-bottom: 14px;">JewishGen-erosity</span>
+    <h1>The JewishGen General Fund</h1>
+    <p class="hero-subtitle">Your gift fuels our mission to preserve the history of the Jewish people.</p>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="support-ecru-wrap">
+    <div class="support-ecru-inner">
+        
+        <!-- Intro & Call to Action -->
+        <div class="intro-block">
+            <p>JewishGen is the premier online resource for Jewish genealogy. We rely on the generosity of our community to maintain and expand our vast databases, host millions of records, and provide educational resources to researchers worldwide. Please contribute whatever you are able at this time &ndash; it will make an immediate difference.</p>
+            <a href="https://jewishgen.net/donation/jewishgen-general-fund" class="btn-donate-hero">Support the General Fund</a>
+        </div>
+
+        <!-- Operations Support -->
+        <section aria-labelledby="impact-heading" style="margin-bottom: 64px;">
+            <h2 id="impact-heading" class="section-heading">What Your Gift Supports</h2>
+            <div class="ops-grid">
+                <article class="ops-card">
+                    <h3>Database Expansion</h3>
+                    <p>Funding the acquisition, translation, and transcription of new historical records, ensuring that our searchable collections continue to grow every year.</p>
+                </article>
+                <article class="ops-card">
+                    <h3>Technology & Hosting</h3>
+                    <p>Maintaining the robust servers and software architecture required to support millions of searches by researchers across the globe without interruption.</p>
+                </article>
+                <article class="ops-card">
+                    <h3>Educational Programming</h3>
+                    <p>Developing webinars, online classes, and research guides that help genealogists of all skill levels learn how to trace their heritage effectively.</p>
+                </article>
+                <article class="ops-card">
+                    <h3>Global Volunteer Support</h3>
+                    <p>Providing our dedicated network of thousands of volunteers with the tools and infrastructure they need to index records and support the community.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Value-Added Services -->
+        <section aria-labelledby="vas-heading" style="margin-bottom: 64px;">
+            <h2 id="vas-heading" class="section-heading">Value-Added Services (VAS)</h2>
+            <p style="margin-bottom: 32px; font-size: 1rem; color: var(--charcoal); line-height: 1.6;">
+                As a token of our appreciation, researchers who contribute <strong>$100 or more</strong> to the Annual Fund receive automatic access to Value-Added Services for 12 months. These Value-Added Services currently include:
+            </p>
+
+            <div class="vas-grid">
+                <div class="vas-card">
+                    <h3>The JGFFAlert System</h3>
+                    <p>The JGFFAlert System is an &ldquo;immediate advisory system&rdquo;, which constantly monitors all entries and changes made to the JewishGen Family Finder (JGFF), and alerts participants immediately if a new entry into the JGFF is a potential match with one of their own entries.</p>
+                    <p>As a participant in the Value-Added Services, whenever any JGFF entry is made which matches any of your current JGFF entries, the JGFFAlert System will notify you immediately via e-mail, alerting you about the matching entry. The JGFFAlert System relieves you of the need to check periodically for new entries... JewishGen does it for you!</p>
+                    <p>For more information about the JGFFAlert System, see the JGFF FAQ, 3.7.</p>
+                </div>
+                
+                <div class="vas-card">
+                    <h3>Advanced Database Search Features</h3>
+                    <p>In JewishGen's &ldquo;All Country Databases&rdquo;, participants in the Value-Added Services program will have the ability to use our Advanced Database Search Features, which let you combine multiple search criteria, using Boolean AND/OR searches. This allows more focused, targeted searches.</p>
+                    <p>For example, you can search for all persons whose surname sounds like "Katz" and whose first name starts with "Abr". Or you can search for family groups containing a particular set of given names, within a particular town.</p>
+                    <p>While we never subtract anything from the free basic search capabilities which always have been available, and will continue to be freely available to all, the Advanced Database Search Features is a Value-Added Service &mdash; our way of saying &ldquo;Thank You&rdquo; to those who provide financial support and help us pay the bills for all the programs and projects which JewishGen offers as a public service.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(r => { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(html => { document.getElementById(id).innerHTML = html; })
+        .catch(err => console.warn(err));
+}
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html')
+]);
+</script>
+
+</body>
+</html>
