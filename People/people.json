@@ -1,0 +1,414 @@
+[
+  {
+    "id": "paul-radensky",
+    "name": "Paul Radensky",
+    "photo": "/people/images/PRad.jpg",
+    "bio": "Paul Radensky previously was in the Education Department of the Museum of Jewish Heritage, JewishGen's parent institution, where he worked with Jewish schools, professional development, interfaith activities, the Speakers Bureau, and Visitor Services. Paul completed his Ph.D. in Jewish history at the Jewish Theological Seminary and his master's in history at Columbia University. Prior to coming to the Museum, Paul worked at the Conference of Material Claims Against Germany, the North Shore Hebrew Academy High School, the 92nd Street Y, and the Sholem Aleichem Cultural Center in the Bronx. Paul is the president of the Old Broadway Synagogue in West Harlem.",
+    "email": "pradensky@jewishgen.org"
+  },
+  {
+    "id": "caitlin-hollander-waas",
+    "name": "Caitlin Hollander Waas",
+    "photo": "/people/images/CHWa.jpg",
+    "bio": "Caitlin Hollander Waas is JewishGen's chief genealogist, as well as being on staff at the Peter and Mary Kalikow Jewish Genealogy Center at the Museum of Jewish Heritage. She has been a professional genealogist for over a decade, beginning in the world of forensic genealogy as a specialist in high value estate cases, as well as researching for private clients and consulting for books. In addition, her citizenship reclamation work has been featured in <em>Family Tree Magazine</em>, <em>The Times of Israel</em>, and the <em>South Florida Sun Sentinel</em>, among other publications. She holds a degree in Anthropology, as well as additional certificates in Jewish Studies and Holocaust and Genocide Studies.",
+    "email": "chollander@jewishgen.org"
+  },
+  {
+    "id": "alex-calzareth",
+    "name": "Alex Calzareth",
+    "photo": "/people/images/ACalz.jpg",
+    "bio": "Alex Calzareth is a genealogist focusing on Southwest Germany, the Czech Republic, and Southern Italy who began researching his family roots twenty-five years ago. He is a board member for Reclaim The Records and the Jewish Genealogy Society of Long Island. Alex is also Director of the JewishGen German Research Division.",
+    "email": "acalzareth@jewishgen.org"
+  },
+  {
+    "id": "chaya-sara-herman",
+    "name": "Chaya Sara Herman",
+    "photo": "/people/images/CSHer.jpg",
+    "bio": "Chaya Sara Herman is a professional genealogist located in Brooklyn, New York. She is on the Executive Council of the Jewish Genealogical Society of New York and a member of the Association of Professional Genealogists. She specializes in Eastern European Jewish research with a focus on Lithuania. Chaya Sara's research has been featured in articles published in <em>Mishpacha</em> magazine since 2021.",
+    "email": ""
+  },
+  {
+    "id": "scott-kalmikoff",
+    "name": "Scott Kalmikoff",
+    "photo": "/people/images/SKal.jpg",
+    "bio": "Rabbi Scott Kalmikoff received a BA in Jewish Studies from Yeshiva University and studied at Yeshivat Chovevei Torah. Scott currently serves as the Director of Community Engagement at the Riverdale Y. He also started his own business, Genealogy with Rabbi Scott, conducting genealogical research for private clients and facilitating Jewish genealogy workshops.",
+    "email": ""
+  },
+  {
+    "id": "michael-waas",
+    "name": "Michael Waas",
+    "photo": "/people/images/MWaa.jpg",
+    "bio": "Michael Waas is a professional genealogist and historian, specializing in Sephardic Jewry, with his firm, Hollander-Waas Jewish Heritage Services. He has lectured globally on Jewish genealogy and Sephardic history, in Portugal, Israel, the UK, in the US, and virtually for several organizations. Waas is the co-administrator of AvotaynuDNA's ongoing Genetic Census of the Jewish People as well as Associate Director of the Sephardic Researcher Division of JewishGen. Currently, Waas is the Scholar-in-Residence at the New York Genealogical &amp; Biographical Society, where he is surveying their archive and collection for Jewish-related materials.",
+    "email": "mwaas@jewishgen.org"
+  },
+  {
+    "id": "lara-diamond",
+    "name": "Lara Diamond",
+    "photo": "/people/images/LDia.png",
+    "bio": "Lara Diamond has been researching her family for 25 years, starting as a middle school student. She has traced all branches of her family multiple generations back in Europe using Russian Empire-era and Austria-Hungarian Empire records. Most of her research is in modern-day Ukraine, with a smattering of Belarus and Poland. As she is an Ashkenazic Jew, she gets to have particular fun with her completely endogamous genome. In addition to serving as Director of the Subcarpathia Research Division, she is president of the Jewish Genealogy Society of Maryland. She also runs multiple district- and town-focused projects to collect documentation to assist all those researching ancestors from common towns. She blogs about DNA and her Eastern European research at <a href=\"https://larasgenealogy.blogspot.com\" target=\"_blank\" rel=\"noopener noreferrer\"><em>Lara&rsquo;s Jewnealogy</em></a>.",
+    "email": "ldiamond@jewishgen.org"
+  },
+  {
+    "id": "dave-feldman",
+    "name": "Dave Feldman",
+    "photo": "/people/images/DFel.jpg",
+    "bio": "David Feldman is currently a senior partner in SDR consulting services, providing consulting, research, and advanced modeling services to hundreds of organizations, including many of the world's largest companies and several well-known management and marketing consulting firms. Dave got involved with Jewish genealogy after taking a trip to his family hometown in Shereshevo, Belarus, in 2007. Since 2007 he has overseen the operations of the JewishGen Belarus Research Division. Access to new sources of genealogy records has always been an issue for this research group, and he is currently co-developing a surname project that is anticipated to allow access to many more records sources at lower costs.",
+    "email": "dfeldman@jewishgen.org"
+  },
+  {
+    "id": "paul-zoglin",
+    "name": "Paul Zoglin",
+    "photo": "/people/images/PZog.jpg",
+    "bio": "Paul Zoglin got involved in genealogy after a family reunion in 2004. Frustrated by the lack of translated records from Belarus (where his paternal ancestors are from), he volunteered to be the database coordinator for the JewishGen Belarus Research Division in 2010 and has overseen the uploading of approximately 300,000 records to the JewishGen Belarus database. Paul is a native of Kansas City but currently lives and works in New York City.",
+    "email": "pzoglin@jewishgen.org"
+  },
+  {
+    "id": "michael-moritz",
+    "name": "Michael Moritz",
+    "photo": "/people/images/MMor.jpg",
+    "bio": "",
+    "email": "mmoritz@jewishgen.org"
+  },
+  {
+    "id": "dana-lugassy",
+    "name": "Dana Lugassy",
+    "photo": "/people/images/DLug.jpg",
+    "bio": "",
+    "email": "dlugassy@jewishgen.org"
+  },
+  {
+    "id": "arlene-beare",
+    "name": "Arlene Beare",
+    "photo": "/people/images/Abea.jpg",
+    "bio": "Arlene Beare was one of the founders of the JewishGen Latvia Database. She is a retired Consultant physician and lives in the UK. She was awarded a Lifetime Achievement award by the JewishGen Latvia Special Interest Group. She is the webmaster for the KehilaLinks <a href=\"https://kehilalinks.jewishgen.org/riga/rigapage.htm\" target=\"_blank\" rel=\"noopener noreferrer\">Riga</a> and <a href=\"https://kehilalinks.jewishgen.org/Jekabpils/Jekabpils.htm\" target=\"_blank\" rel=\"noopener noreferrer\">Jekabpils</a> pages and has written <em>A Guide to Jewish Genealogy in Latvia and Estonia</em>.",
+    "email": "abeare@jewishgen.org"
+  },
+  {
+    "id": "paul-cheifitz",
+    "name": "Paul Cheifitz",
+    "photo": "/people/images/PChe.jpg",
+    "bio": "",
+    "email": "pcheifitz@jewishgen.org"
+  },
+  {
+    "id": "randy-schoenberg",
+    "name": "E. Randol Schoenberg",
+    "photo": "/people/images/ERSch.jpg",
+    "bio": "E. Randol Schoenberg was the co-founding partner of Burris, Schoenberg & Walden, LLP, where he handled a number of complex business litigation matters, specializing in cases involving looted art and the recovery of property stolen by the Nazi authorities during the Holocaust. He won the return of five famous Klimt paintings for his client, Maria Altmann. In 2007, Mr. Schoenberg received the California Lawyer Attorney of the Year award for outstanding achievement in the field of litigation. He also received the 2006 Jurisprudence Award from the Anti-Defamation League and the Justice Louis D. Brandeis Award from the American Jewish Congress.<br><br>Mr. Schoenberg served as President of Los Angeles Museum of the Holocaust from 2005-2015, during which time the museum constructed its new building in Pan Pacific Park. Mr. Schoenberg led the redesign of the permanent exhibit for the new museum. In 2013, he served as acting executive director while the Museum conducted a search for its new executive director.<br>He serves on the board of the Los Angeles Opera, the Los Angeles Museum of the Holocaust, Sinai Akiba Academy, Southwest Chamber Music Society, JewishGen, Choral Society of Southern California, and the L.A. Jewish Symphony. He has been an avid genealogist since he was 8 years old, maintains a huge family tree both on JewishGen and Geni, and is the director of the JewishGen Austria-Czech Research Division. He is the author of the Beginner's Guide to Austrian-Jewish Genealogy and the co-author of Getting Started with Czech-Jewish Genealogy.",
+    "email": "rschoenberg@JewishGen.org"
+  },
+  {
+    "id": "yefim-kogan",
+    "name": "Yefim Kogan",
+    "photo": "/people/images/YKogan.jpg",
+    "bio": "Yefim Kogan was born in Kishinev, Moldova. After he with his family emigrated from the Soviet Union in 1989, he did extensive genealogical and historical research.<br> In 2012 Yefim received a Master of Jewish Liberal Studies from Hebrew College, Boston with focus in Jewish Cultural History. He was active in Jewish Genealogical Society of Greater Boston, taught classes on Jewish Genealogy for the local Jewish and Russian communities of Brookline and Boston.<br>In 2011 he founded the Bessarabia Special Interest group at JewishGen.org and developed a website for the SIG as well as KehilaLinks for the towns of Kaushany, Dubossary and Kamenka, Tarutino, Leipzig. He stared and lead a number of projects for Bessarabia SIG: Revision List project, Cemeteries project, etc. Yefim has participated on a number of Jewish Genealogical conference where presented on topics related to the Bessarabia/Moldova region.",
+    "email": "ykogan@jewishgen.org"
+  },
+  {
+    "id": "roberta-jaffer",
+    "name": "Roberta Jaffer",
+    "photo": "/people/images/RJaf.jpg",
+    "bio": "",
+    "email": ""
+  },
+  {
+    "id": "harvey-kabaker",
+    "name": "Harvey Kabaker",
+    "photo": "/people/images/HKab.jpg",
+    "bio": "",
+    "email": ""
+  },
+  {
+    "id": "jeffrey-wexler",
+    "name": "Jeffrey Wexler",
+    "photo": "/people/images/JWex.jpg",
+    "bio": "",
+    "email": ""
+  },
+  {
+    "id": "alan-levitt",
+    "name": "Alan Levitt",
+    "photo": "/people/images/ALevitt.jpg",
+    "bio": "",
+    "email": ""
+  },
+  {
+    "id": "emilia-alexeeva",
+    "name": "Emilia Alexeeva",
+    "photo": "/people/images/EAle.jpg",
+    "bio": "",
+    "email": ""
+  },
+  {
+    "id": "sheli-fain",
+    "name": "Sheli Fain",
+    "photo": "/people/images/SFai.jpg",
+    "bio": "",
+    "email": ""
+  },
+  {
+    "id": "ala-gamulka",
+    "name": "Ala Gamulka",
+    "photo": "/people/images/AGam.jpg",
+    "bio": "",
+    "email": ""
+  },
+  {
+    "id": "alan-levine",
+    "name": "Alan Levine",
+    "photo": "/people/images/ALevine.jpg",
+    "bio": "",
+    "email": ""
+  },
+  {
+    "id": "terry-lasky",
+    "name": "Terry Lasky",
+    "photo": "/people/images/TLas.jpg",
+    "bio": "",
+    "email": ""
+  },
+  {
+    "id": "vivian-kahn",
+    "name": "Vivian Kahn",
+    "photo": "/people/images/VKah.jpg",
+    "bio": "Vivian is the Director of the Hungarian Research Division.<br>She has presented workshops on Jewish genealogy and, especially, Hungarian Jewish family research at IAJGS annual conferences, for Jewish genealogy societies, and to other groups including a gathering of descendants of families from Sighet, Romania. <br>Since beginning research on her own family from greater Hungary more than 25 years ago, she has identified and used a wide range of archival, print, and on-line resources to research families from Hungary, Moravia, Slovakia, Romania, and Galicia and has made research trips to Hungary, Slovakia, Romania, and Israel. Vivian has also written several articles on Hungarian Jewish family research that appeared in the print and on-line versions of Avotaynu and in other Jewish genealogy publications. Vivian was recognized as JewishGen's Volunteer of the Year in 2021. <br><br>When she isn't engaged in family research, Vivian works as an urban planning and development consultant and teaches planning classes for University of California extension programs. She lives in Sonoma County, California.",
+    "email": "vkahn@jewishgen.org"
+  },
+  {
+    "id": "eric-bloch",
+    "name": "Eric Bloch",
+    "photo": "/people/images/EBlo.jpg",
+    "bio": "Eric's interest in genealogy began after writing a high school term paper on a history of the Jewish Community in Wichita, Kansas, his hometown. After its completion, he realized he had written about total strangers, while knowing nothing about his own family's history. Thus began his 60-year journey delving into his various ancestral families, eventually including his wife's ancestral families as well. <br><br>Although a graduate mechanical engineer, Eric's natural curiosity led him into a career as an industrial marketing researcher, in which he still serves as a consultant. With his enjoyment of 'the hunt,' Eric's first foray as a volunteer in genealogy was gathering historical information for inclusion in his synagogue's centennial booklet in 1985. <br><br>Recognizing the genealogical value of online databases appearing on the fledgling JewishGen website, Eric wanted to join the growing network of volunteers helping to create such databases. In 2002, he coordinated an effort to transcribe the 1828 Hungarian Property Tax Census. In 2006, he became coordinator of the already-established Other Hungarian Census database - 1735-1885, which now comprises 120,000 records and remains a work in progress. Eric next spent eight years, from 2008 to 2016, coordinating completion of the 1801-1880 Lemberg/Lvov/Lviv Vital Records database project, comprising 141,000 records.<br><br>Eric resides in Glendale, Wisconsin, and dedicates his future genealogical efforts in memory of his late wife, Judy, who passed away in September 2022.",    "email": ""
+  },
+  {
+    "id": "sarina-roffe",
+    "name": "Sarina Roff&eacute;",
+    "photo": "/people/images/SRof.jpg",
+    "bio": "Sarina Roff&eacute; is a professional genealogist, editor of the journal DOROT, and founder of the Sephardic Heritage Project. She is the author of Branching Out From Sepharad (Sephardic Heritage Project, 2017), which outlines the history of Jews in Spain, the 1492 expulsion, their history in Syria, and their immigration to the Americas. In addition to serving as the Director of the JewishGen Sephardic Research Division, she is co-Chair of the Brooklyn Jewish Historical Initiative. Sarina is also the author of Backyard Kitchen: Mediterranean Salads, a cooking app called Sarina's Sephardic Cuisine, available in the Apple Store, as well as hundreds of articles. She is responsible for the translation and databasing of marriage and brit milah records on JewishGen. She acquired several databases of Sephardic records including cemetery records from Mexico, Venezuela, Cuba, and Argentina. Sarina presents often at IAJGS Conferences and has completed over a dozen genealogies, through her genealogy consulting business, Sephardic Genealogical Journeys.",
+    "email": "sroffe@jewishgen.org"
+  },
+  {
+    "id": "bill-multack",
+    "name": "Bill Multack",
+    "photo": "/people/images/BMul.jpg",
+    "bio": "In a weekly JewishGen newsletter, I saw a request for volunteers with computer experience to work in the Ukrainian division. This was just as Russia was getting ready to invade. I responded immediately because I was researching my ancestors who were all from Zhitomir. My qualifications included over 60 years of programming experience, a deep interest in Ukraine, and the ability to pronounce Cyrillic, thanks to taking Russian as a foreign language in high school. I heard back from Gary Pokrassa within hours, and it's been teamwork ever since. To date, I have downloaded from Ukrainian servers and uploaded to JewishGen about 700,000 pages of historical documents. Originally from Chicago, I graduated from the University of Illinois in 1968 with a degree in accounting but had taken all the computer courses available at the time. I went to work for IBM's data processing division before enlisting in the U.S. Navy during the Vietnam War. After my service, I spent 30 years working at Fedco, Inc., a chain of discount health and beauty aid pharmacies throughout South Florida, eventually becoming President and CEO. After retiring in 2004, I dedicated most of my time to volunteering. I have been on the board of the Mount Sinai Medical Center Foundation for approximately 30 years, served on the board of the Florida Breast Cancer Research Foundation, and spent several years volunteering as a math tutor for Communities In Schools of Miami before joining its board and eventually becoming Chairman. In addition to volunteering, my main passion is competitive bridge, which I play several days a week and travel to tournaments. I live in Miami but spend almost half the year in Vail, Colorado, where I enjoy outdoor activities and leatherworking in my workshop.",
+    "email": ""
+  },
+  {
+    "id": "beth-garfinkel",
+    "name": "Beth Garfinkel",
+    "photo": "/people/images/BGar.jpg",
+    "bio": "Beth is a Management Consultant providing project management support to a variety of industries over the past 25 years. Beth began researching her family about 10 years ago and became a JewishGen volunteer in 2024. Originally from Los Angeles and now in the cold Midwest. All 4 of Beth's grandparents immigrated to the US in the early 1900s from “Russia” and initially settled in Chicago.",
+    "email": ""
+  },
+  {
+    "id": "claire-fagan",
+    "name": "Claire Fagan",
+    "photo": "/people/images/CFagan.jpg",
+    "bio": "I am a special needs teacher and have been conducting research into various aspects of my family and that of some of my friends. As a way of giving something back to JewishGen for all the information gained to support this research, I became a volunteer. I have volunteered for the Ukraine project and found this to be a satisfying way to say thank you for everything the website has given to me.",
+    "email": ""
+  },
+  {
+    "id": "eleanor-adika",
+    "name": "Eleanor Adika",
+    "photo": "/people/images/EAdi.jpg",
+    "bio": "My name is Eleanor Kole Adika. I currently live in Jerusalem with my husband and have my daughter and grandson nearby. My son lives in NY where I grew up. I finished high school in Mount Vernon, NY and then came to Israel on the Young Judaea Year Course in 1968. I had found my element in Israel. I came and went between the states and Israel until 1986 having completed studies as a Technical Handicrafts teacher at the David Yellin College in Jerusalem, a BS at Empire State College, NY and a Masters of Ed. in computer science at Beaver College in PA. I was a career educator, both in the states and in Israel. I was part of an innovative program called “Tomorrow 1998” between the Ministry of Education of Israel and the Technion to promote the innovative inclusion of computer technology in the classroom, where we pioneered the use of mixed media for children to present their ideas.<br><br>Throughout my career, I taught the ages of pre-kindergarten through college level. I completed my professional career as the coordinator of the computer technology department and instructor at the David Yellin College of Education in Jerusalem (my old alma mater). Currently, I am retired, spending time with my family, at the gym, swimming, drawing, doing ceramics, and gardening, working on my family tree and trying to make my dad's story in connection with the formation of Israel more well known. Most importantly, I am trying to make a difference in this crazy world, though I am very often discouraged. But what can I say, try and try again.",
+    "email": ""
+  },
+  {
+    "id": "ilya-zeldes",
+    "name": "Ilya Zeldes",
+    "photo": "/people/images/IZel.jpg",
+    "bio": "For 50 years, Ilya worked as a Forensic Scientist in the former Soviet Union and the United States. In 1992, Ilya retired and settled in Florida. Since Susan King started JewishGen, Ilya has volunteered and researched. He published 3 books on the genealogy of the ZELDES and AINBINDER families, an article in Avotaynu, and has given many presentations.",
+    "email": ""
+  },
+  {
+    "id": "michael-vinogradov",
+    "name": "Michael Vinogradov",
+    "photo": "/people/images/MVin.jpg",
+    "bio": "I was born and lived almost all my life in Moscow. For the last three years, I have been living in the USA. I am a mathematician, graduated from the Moscow Mekhmat (Mechanical and Mathematical Faculty of Moscow State University), PhD in Mathematics. I worked as a mathematician and IT specialist. Currently retired.<br><br>I started researching my family history 20 years ago, in 2005. I could not find almost anything interesting on the Internet at that time, so I worked in the archives of Moscow, and also dealt with the archives of Ryazan, Kirovograd (now Kropyvnytskyi) and Odessa. I was able to trace my family's genealogy back to the beginning of the 19th century, and on some lines even further. Along the way, I unearthed various intriguing details. For example, I learned that the infamous pogrom of 1881 in Elisavetgrad began in a liquor store owned by my great-great-grandfather. The sites JewishGen and the Russian-language “????????? ?????” (“Jewish Roots”) proved particularly useful in my search. Unfortunately, the database on the latter site is currently down. Geographically, my interests are localized to Elisavetgrad, Odessa, Ochakov and Zhvanets. I would very much like to have access to some records in the Odessa archive and to the 1918 metric book in the Lugansk archive, although the latter seems an unattainable dream.",
+    "email": ""
+  },
+  {
+    "id": "dimitry-vaysburg",
+    "name": "Dimitry Vaysburg",
+    "photo": "/people/images/DVay.jpg",
+    "bio": "Through the Galut:<br>I was born in Kiev. My immediate family is a mix of different waves of Jewish migrations to Ukraine. Some were longtime residents of Kiev, others migrated to Kiev via Poland-Belarus in the 1700s, others yet came from Germany during the early 1800s. Before the red revolution, various branches of the family resided in the city of Kiev, and throughout the pale (Kiev and Chernigov gubernia). We are a very typical Jewish family. That is to say, we had religious zealots, businessmen, Haskalah enthusiasts, early American immigrants, Zionists, and high-ranking red army officers too.<br><br>My professional background:<br>I have a Computers degree from Riga Polytechnic Institute. I reside in the San Francisco Bay Area. Decades of Silicon Valley tenures spanning: medical imaging, scientific metrology, networking systems, semiconductor devices, and so on. I was also involved in technical marketing and product line management. My current focus is in consumer apps and high-tech tools for people studies, trend analysis and dynamic demand generation.<br><br>Why JewishGen:<br>I have traveled throughout Ukraine extensively, and got to see lots and lots … and lots of former shtetls where Jews were no more. There were just dilapidated shul buildings, desecrated graves, and sites of the former Nazi death camps. The latter were ‘cleverly' disguised by the Nazis, and later by the communists trying to hide their military and ideological failures during WWII. In all those places, there are souls waiting for justice and hoping for remembrance … That is why I am with JewishGen.<br><br>I have three goals:<br>1) Help with the collection and classification of all kinds of Jewish records.<br>2) Build KehilaLinks for my family shtetls.<br>3) Bequeath Our Family history to my grandchildren.",
+    "email": ""
+  },
+  {
+    "id": "ana-leykin",
+    "name": "Ana Leykin",
+    "photo": "/people/images/ALey.jpg",
+    "bio": "Ana worked in various roles in the Ad-tech space, including but not limited to campaign management, product, and data analysis. An amateur genealogist with family roots in Ukraine, and further down the line in Belarus, and Lithuania (discovered with JewishGen!).<br><br>Born in Soviet Ukraine and residing in Israel since 1995, Ana uses her knowledge of Russian and Hebrew to decipher old documents and hopefully help others build their family trees.",
+    "email": ""
+  },
+  {
+    "id": "alexandra-lekhtman",
+    "name": "Alexandra Lekhtman",
+    "photo": "",
+    "bio": "I was born in the Soviet Union. Lived in Israel for 13 years, volunteered in Perach, the police and Ach Gadol. Graduated from Bar Ilan University and have a bachelor's degree in Criminology / Sociology / Anthropology, I also have a certificate in QA engineering. I am very grateful to JewishGen for helping me find my family and I believe that there are many like me who are looking for their families and use the JewishGen website.",
+    "email": ""
+  },
+  {
+    "id": "oxana-fedorova",
+    "name": "Oxana Fedorova",
+    "photo": "",
+    "bio": "I was born in the Soviet Union, moved between countries and professions, and now reside in the United States. Research and working with large amounts of information were always a part of my professional path. My private genealogical investigation, with my family having lived in Russia, Ukraine and Belarus, is my passion project. It was important for me to help people find their ancestors and relatives and make the information accessible for fellow researchers, so when I was contacted by JewishGen to volunteer, I took this chance and joined the team of Ukraine Research.",
+    "email": ""
+  },
+  {
+    "id": "stella-ulyanov",
+    "name": "Stella Ulyanov",
+    "photo": "/people/images/SUly.jpg",
+    "bio": "I am happy to introduce myself!<br><br>My home country:<br>I was born and raised in Kyiv, Ukraine. My family immigrated to the United States in 1992-1993. This was the latest massive wave of Jewish immigration from the broken-up USSR. Part of my family and friends have landed in Israel, Australia, Germany…<br><br>My family:<br>We live in the Greater Chicago area. Both my kids (a son and a daughter) are grown-up adults now. We have four grandchildren, 3 girls and 1 boy. My mom also lives close by. She is 89 now.<br><br>My professional background:<br>Technology, Data Management, and Program Management. I have an MS in Computer Engineering from the National Technical University of Ukraine (formerly the Kyiv Polytechnic Institute). I have worked for famous companies (CBOE Global Markets, Amazon, Microsoft). I have also been teaching computer classes (database designs, data modeling, data engineering and processing, etc.) for about 6 years. However, I had to drop this exciting hobby due to new leadership opportunities at CBOE Global Markets – as a Director of Data Management role.<br><br>Now:<br>I have been retired since July 2023. It is time to smell the roses! But not exactly. I quickly learned that my brain needs “food.” My interest in Jewish History and Jewish Genealogy has always been there, but it has been waiting for the right moment. Since 2019, I have started looking at genealogy websites, joined FB groups, started building my family tree, and attended online seminars. And then, I signed up for a volunteer opportunity with JewishGen.org.<br><br>Currently, I am leading the Content Checker team of the Ukrainian RD. I am also involved in JG 2.0 New System development as a Project manager. My language skills (fluent Russian, intermediate Ukrainian) are helpful for the Ukrainian Research.",
+    "email": ""
+  },
+  {
+    "id": "wendy-citron",
+    "name": "Wendy Citron",
+    "photo": "/people/images/WCit.jpg",
+    "bio": "Wendy Citron is a professional genealogist specializing in Jewish genealogy in Eastern Europe, particularly Ukrainian family histories. As a research specialist on the U.S./Canada team at the FamilySearch Library in Salt Lake City, she helps individuals tackle research challenges and uncover their family stories. Skilled in genetic genealogy, Wendy uses DNA analysis to explore biological roots and has researched immigrant communities in New York, Philadelphia, and Wisconsin, along with Irish-Canadian, Norwegian, and French-Canadian ancestry. Wendy serves as an admin on JewishGen's Ukraine Research Division Data Acquisition Team, working to preserve and make vital records accessible. Wendy is passionate about helping others connect with their heritage and sharing the stories of past generations.",
+    "email": ""
+  },
+  {
+    "id": "juliana-berland",
+    "name": "Juliana Berland",
+    "photo": "",
+    "bio": "Juliana has been a bartender, travel agent, bookkeeper, office manager, project manager, and overall small business and marketing specialist in Chicago and Manhattan, working in electronic engineering, retail, e-commerce, internet and print advertising, and diamonds and watches. After moving to France, she began editing scientific and other manuscripts. Impromptu DNA testing uncovered a gazillion cousins, so she and her dad started a family tree to figure out how they might be related, and this “detective work” proved addictive. Time not spent working or skirmishing with her kid is now devoted to gardening, local volunteer projects, and diving into innumerable genealogical rabbit holes.",
+    "email": ""
+  },
+  {
+    "id": "chuck-weinstein",
+    "name": "Chuck Weinstein",
+    "photo": "/people/images/CWei.jpg",
+    "bio": "Chuck Weinstein began his own family search in 1992. In 1995, he became a moderator for the JewishGen Discussion Group. After three years, he was asked to become Project Manager for what was then known as ShtetLinks. At that time, ShtetLinks had 65 pages, most of them very simple. By the time he resigned from that position in 2004, ShtetLinks (now KehilaLinks), had grown to over 250 individual towns from 16 countries, many of which had developed into very extensive commemorations of their towns. Serving as a Moderator for the Ukraine Discussion Group from 2005 to 2012, he joined the Board of the Ukraine Research Division in 2012 as Towns Director. JewishGen recognized his long service to the organization in 2019, awarding him the first Susan E. King Volunteer of the Year.<br><br>A board member of the Jewish Genealogy Society of Long Island since 2002, Chuck served as President in 2007, 2008, and 2011. He has also served as President of two of his professional organizations in the insurance industry. He was Co-Chair of the 2016 IAJGS Conference on Jewish Genealogy in Seattle and Lead Chair of the 2023 IAJGS Conference in London.<br><br>His roots in Ukraine run deep. His Weinstein and Schnayer ancestors come from Korostyshiv in what was the Volhynia Guberniya, and he also has maternal Weinstein ancestors in Voznesensk in Kherson Guberniya. Other roots are found in Lithuania and Romania. He is able to trace two lines back well into the 15th century and most of his other lines to early in the 19th century.<br><br>Chuck currently lives in Bellport, NY, midway out on Long Island. He has 4 children and 7 grandchildren.",
+    "email": ""
+  },
+  {
+    "id": "joel-spector",
+    "name": "Joel Spector",
+    "photo": "/people/images/JSpe.jpg",
+    "bio": "Joel is a Past President of the Jewish Genealogical [and Archival] Society of Greater Philadelphia, where he has also been chairperson of its Russian Special Interest Group.<br><br>Joel is a former Secretary of the International Association of Jewish Genealogical Societies (IAJGS) and served as its Archivist. He has served as Program Chair for two IAJGS Conferences, most recently in London in 2023. Currently, Joel is a member of the Ukraine Research Division and serves as a Policy Advisor.<br><br>Joel has been actively engaged in genealogy for over 30 years, and has been conducting research in several historic Russian-language encyclopedias. He has given presentations and workshops on the Russian language, both contemporary and pre-Revolutionary, and has provided translations of documents to individuals and groups. He has created an index for the Russian-language Evreiskaya Entsiklopedia.",
+    "email": ""
+  },
+  {
+    "id": "paul-finelt",
+    "name": "Paul Finelt",
+    "photo": "/people/images/PFin.jpg",
+    "bio": "Paul is a native of Laurelton, Queens, NY. He holds a BS in Industrial and Systems Engineering from Lehigh University.<br><br>He has been interested in genealogy and family history for 30 years. He has led classes and computer workshops on genealogy and has assisted friends and family in researching and preserving their family history.<br><br>As the Town Leader and KehilaLinks owner for Bershad and Ol'gopol, he is leading the Olgopol Translation Project and has initiated the translation of the Bershad Yizkor Book.<br><br>Paul is a geek and loves to figure out how to make things.",
+    "email": ""
+  },
+  {
+    "id": "hal-bookbinder",
+    "name": "Hal Bookbinder",
+    "photo": "/people/images/HBoo.jpg",
+    "bio": "Hal is past president of the JGS Los Angeles and the IAJGS. He has chaired or served in a Leadership role for eight IAJGS conferences, has published numerous articles on research techniques, Jewish history, border changes and safe computing, and has lectured at most recent annual conferences. In 2010, he was honored with the IAJGS Lifetime Achievement Award and was elected to the JewishGen Board of Governors. He currently chairs JewishGen's Strategic Planning Committee and is the Director of Special Projects for the JewishGen Ukraine RD. Hal created and continues to edit the Jewish Genealogy Yearbook. The 2011 edition includes almost 200 organizations involved in Jewish genealogy and history.<br><br>Hal has identified over 3,500 relatives, taking two lines back into the mid-18th Century. His family roots include Barenberg from Snitivka (Khmel'nyts'ka Oblast, Ukraine), Bookbinder from Dubno (Rivne Oblast, Ukraine), Muhlstein from Soroca (Soroca District, Moldova) and Sacharow from Poltava (Poltava Oblast, Ukraine).<br><br>Hal is originally from Newark, NJ, moving to Ulster County, NY when his folks acquired a small hotel there. After obtaining a Master's degree in computing from New York University, he entered the US Air Force where he tracked satellites from within Colorado Springs' Cheyenne Mountain Complex and earned a second Master's degree in business from the University of Northern Colorado. Upon his departure from active duty, he and his family settled in the Los Angeles area.<br><br>Hal currently directs Information Technology Finance and Administration for the UCLA (University of California, Los Angeles) Health System, teaches courses in business, information technology and mathematics for the Southern California Campus of the University of Phoenix and directs a work readiness program for recovering addicts at Los Angeles' Midnight Mission. Hal, his wife Marci, their four adult children and four grandchildren all reside in the northwestern Los Angeles area.",
+    "email": ""
+  },
+  {
+    "id": "natasha.touchinski",
+    "name": "Natasha Touchinski",
+    "photo": "",
+    "bio": "",
+    "email": ""
+  },
+  {
+    "id": "gil-bardige",
+    "name": "Gil Bardige",
+    "photo": "/people/images/GBar.jpg",
+    "bio": "Gil Bardige, born & raised in Chicago, currently lives in the Columbus, Ohio area. A graduate of the New York Institute of Technology, Gil retired in 2019 after a long career in air conditioning and refrigeration, most recently as a National Business Development Leader for Trane Technologies.<br><br>At the \"instruction\" of his mother, Gil began his genealogy adventure in 1979 with 54 people in his tree. Today his family tree, including Mishpocha, is over 2,800 people, tracing four branches back to his 5th great-grandfathers born about 1740. His family arrived in Chicago in the early 1900s.<br><br>For over 17 years, Gil has expanded his knowledge base to Genetic Genealogy, testing at each of the four major DNA companies, and currently manages three Y-DNA projects at Family Tree DNA as a Volunteer Administrator. He loves to help people manage their expectations and begin to remove confusion from the DNA results, whether it's Y-DNA, mtDNA, or Autosomal DNA. He has spoken at dozens of local events and international conferences, including at IAJGS in Orlando, Cleveland, Virtual San Diego, Virtual Philadelphia, and most recently in London.<br><br>Gil is the Chair of the Genealogy Committee of the Columbus Jewish Historical Society (CJHS). He co-hosts live Genetic Genealogy Q&A sessions at JGS Illinois and JGS Toronto. Gil developed and hosts the monthly CJHS Kvell & Kvetch genealogy Q&A in Columbus. Gil has managed the Mentoring Program for IAJGS and co-hosts the Apple Users & Jewish Genealogy Facebook page and monthly virtual BOF (Birds of a Feather) meeting.<br><br>Gil firmly believes that you can use DNA results as a tool in your genealogical research, as it generates clues that can help people confirm/deny relationships. His speaking style is high-energy (you won't be bored) and he loves to take questions. People have said of his presentations, \"Thank you, Gil, I am no longer confused!\"",
+    "email": ""
+  },
+  {
+    "id": "karen-steinfeld",
+    "name": "Karen Steinfeld",
+    "photo": "/people/images/KSte.jpg",
+    "bio": "Karen is a recently retired Business Development executive after a 40-year career in the aerospace and defense industry. With her newfound \"free time,\" she is eagerly jumping into new genealogical endeavors and is looking forward to new roles with the Ukraine RD. She lives in Rockville, Maryland.<br><br>Karen began her genealogical and family history journey in 1982, inspired by both the mini-series \"Roots\" and the loss of her grandfather. After more than 40 years of research, she still has mysteries to solve and new family lines to explore.<br><br>Karen has served as the Town Leader and KehilaLinks owner for Moshny since 2014. As the Moshny Town Leader, Karen led a document acquisition and indexing project adding over 900 new vital records, spanning 1845-1918, to the Ukraine RD Database.<br><br>Karen is a member of the Jewish Genealogical Society of Greater Washington and the Jewish Genealogy Society (New York). She is currently leading a project for JGSGW and the JewishGen USA Research Division to provide online access to over 10,000 records in the Jewish Names in the U.S. State Department Files (RG 59) pertaining to the protection of interests of US citizens abroad during the period 1910-1929.",
+    "email": ""
+  },
+  {
+    "id": "ariel-parkansky",
+    "name": "Ariel Parkansky",
+    "photo": "/people/images/APar.jpg",
+    "bio": "Ariel is an Information Technology professional. He has brought his professional and managerial skills to Ukraine SIG.<br><br>His first contribution to the SIG, when he joined it in 2011, was the complete restructuring of the website, creating a town-based integrated platform that includes a very friendly user interface, a centralized database, and a management panel. He has also created new organizational and information tools.<br><br>Ariel is also a Member of the Board of the Bessarabia SIG and the Town Leader and KehilaLinks owner for Odessa, Chechelnik, Kishinev, Kiliya, and Akkerman. For each of those sites, he has compiled databases (under the research section) and five ongoing projects that already contain together almost 150,000 individual records and image documents.<br><br>As a town leader, he managed (some are ongoing) several translation projects (Odessa Tombstones Book, Kiliya Cemetery, Odessa Vital Records indexes, Odessa 1897 Census, Bendery Vital Records...).<br><br>In 2016, Ariel donated to JewishGen the SIG website platform that he had developed for the Ukraine SIG. The platform is already in use by the Subcarpathia SIG and in construction for the German and Bessarabia ones. He also created a KehilaLinks template that is being used by several dozen sites.<br><br>Before becoming involved with JewishGen and the Ukraine and Bessarabia SIGs, Ariel organized a project to collect, translate, and publish Odessa vital records obtained by individual researchers (today integrated into the All Odessa database) and was part of the project for the \"Museum of the Jewish Colonies\" website in Argentina.<br><br>Ariel began researching his family roots in the late 1990s and later added his wife's family to his research. His family comes originally from Bessarabia and Ukraine. They emigrated to Argentina at the turn of the 20th century. He grew up in Buenos Aires and has lived in Paris, France, since 2003.<br><br>His family \"forest\" numbers 1,550 individuals, of whom about 700 are living today in 18 different countries on 4 continents. His family genealogy website contains more than 700 pictures and documents going back in some cases to the 17th century. You can visit it at www.thefamilytree.info.",
+    "email": ""
+  },
+  {
+    "id": "gary-pokrassa",
+    "name": "Gary Pokrassa",
+    "photo": "/people/images/GPok.jpg",
+    "bio": "Gary retired in 2015 as a public company CFO after a 46-year career as a CFO/CPA. He is the Data Acquisition Director and a member of the advisory board for the Ukraine Research Division of JewishGen, town leader of 5 shtetls, treasurer and director of JRI-Poland, and VP of Programming for the JGS of Long Island. He published the Alex Krakovsky Project in Avotaynu (Summer 2020) and has given many lectures, both advanced and beginner.",
+    "email": ""
+  },
+  {
+    "id": "stefani-twyford",
+    "name": "Stefani Twyford",
+    "photo": "/people/images/STwy.jpg",
+    "bio": "Stefani served as the former President of the Greater Houston Jewish Genealogical Society and has been an active volunteer with JewishGen since 2016. In her role as the town leader for Bar, Ukraine, and Verkhivka, Ukraine, and the Kehila manager for Mogilev-Podolski, she has contributed to fundraising efforts and facilitated the translation of record sets for the Ukraine Research Division. Additionally, Stefani has played a key role in overseeing the translation of four Yizkor Books.<br><br>Stefani initiated her exploration of family history in 2008, prompted by comprehensive DNA testing of both her parents. Grounded in family narratives, she successfully traced two ancestral lines back to the early 1700s, one to the mid-1800s, and, via a DNA BigY project, one astonishingly extending to the early 1300s.<br><br>In 2002, Stefani established Legacy Multimedia with the goal of aiding individuals in organizing their family histories, ephemera, and photographs into compelling narratives that convey their heritage for the enlightenment and enjoyment of future generations. Leveraging her expertise in genealogical research, she now routinely assists clients in uncovering additional layers of their family histories.",
+    "email": ""
+  },
+  {
+    "id": "phyllis-berenson",
+    "name": "Phyllis Berenson",
+    "photo": "/people/images/PBer.jpg",
+    "bio": "Phyllis Gold Berenson was born in Detroit and graduated from the University of Michigan in Russian language and literature. She obtained her law degree from Golden Gate University in San Francisco, followed by an LL.M (tax) degree. She lives in San Francisco and Sonoma.<br><br>Phyllis has served as president of San Francisco Bay Area Women Tax Lawyers, Inner Sunset Park Neighbors, Symphony Parnassus, and recently served on the Alumni Council of Interlochen Center for the Arts. She founded the Mogilev Podolskiy town research group in 2010 and is a Ukraine SIG Town Leader.<br><br>Her checkered employment history includes social worker, bookstore owner, carpenter's assistant, professional musician, trust, estates and tax lawyer, as well as volunteer symphony orchestra manager.<br><br>She is a lawyer, tomato farmer, and harpist by day and a genealogist by night, finding lost alumni as a volunteer for Interlochen and researching especially her maternal grandmother's roots in Mogilev Podolskiy, where she hopes to travel soon.",
+    "email": ""
+  },
+  {
+    "id": "ellen-kowitt",
+    "name": "Ellen Kowitt",
+    "photo": "/people/images/EKow.jpg",
+    "bio": "Ellen Shindelman Kowitt is a professional genealogist with deep JewishGen volunteer roots dating back to 1994. Prior to her transition into client research and publication work, lecturing at international conferences including RootsTech, NGS, and FEEHFS, and authoring articles for Family Tree Magazine and Avotaynu, Ellen spent twenty years working in corporate and nonprofit marketing and communication management roles for Drake Beam Morin, Thompson Publishing, Optima Direct, The Lillian Vernon Catalog, and a reform synagogue in Colorado, where she lives with her Israeli-born husband and teenage daughters.<br><br>Ellen has held various leadership roles in the broader Jewish genealogy community including as president of both the JGS Greater Washington DC and JGS Colorado, and as IAJGS board director for three years. For JewishGen, she served as ShtetlSchleppers Ukraine Group Leader; Ukraine SIG town leader; KehilaLinks content creator; Yizkor Book Project translation coordinator; and indexer for Colorado, New York, and Ukraine projects donated to JewishGen. In 2020, she founded the JewishGen USA Research Division, which she continues to direct. Ellen's current research and lecture focus is on comparing Jewish resources on the genealogy giant websites including JewishGen, other resources for researching Jews in America, and includes locating American synagogue records for inclusion on JewishGen's Shul Records America finding aid.<br><br>She will also continue to focus on areas of personal genealogical significance including Ukraine, Carpathia, Poland, Lithuania, Israel, and the former Prussian region.",
+    "email": "ekowitt@jewishgen.org"
+  },
+  {
+    "id": "susan-lauscher",
+    "name": "Susan Lauscher",
+    "photo": "/people/images/SLau.jpg",
+    "bio": "Ms. Lauscher is a retired lawyer, having worked for 40 years in the Federal Government, a private law firm, and The Nature Conservancy. She started getting serious about researching her family roots when she retired in 2017 and joined JewishGen at that time. She accelerated her research in 2021, even finding living relatives she didn't know she had. Combining her interests in American History and Jewish History, she volunteered for several projects for the USA Research Division and then decided to get more involved. Meeting in person with the Director of the USA Research Division, Ellen Kowitt, was easy since they live near each other in Colorado, and in October 2022, Susan became the Projects Director of the USA Research Division. Since then, she has managed a number of teams of volunteers as well as pursued her own projects. Ms. Lauscher is a member of the Jewish Genealogical Society of Colorado as well as several other USA Jewish Genealogy Societies.",
+    "email": ""
+  },
+  {
+    "id": "bernard-flam",
+    "name": "Bernard Flam",
+    "photo": "",
+    "bio": "",
+    "email": "bflam@jewishgen.org"
+  },
+  {
+    "id": "claire-weill",
+    "name": "Claire Weill",
+    "photo": "",
+    "bio": "",
+    "email": "cweill@jewishgen.org"
+  },
+  {
+    "id": "nolan-altman",
+    "name": "Nolan Altman",
+    "photo": "/people/images/NAlt.jpg",
+    "bio": "Nolan Altman was bit by the 'genealogy bug' when he was inspired to write his family history in 1996 in memory of his mother. After making use of the valuable information on JewishGen, he volunteered to do data entry on various projects. In time, he was asked to become the Coordinator for JewishGen's Holocaust Database and subsequently the Coordinator for the JOWBR (JewishGen's Online Worldwide Burial Registry) project. Nolan works with volunteers from around the world helping to grow both databases for the benefit of family members and researchers. Nolan currently holds the position of JewishGen's Director for Data Acquisition and focuses on growing the JOWBR, Holocaust and Memorial Plaques databases. In 2021, JOWBR won the IAJGS Outstanding Project Award. <br><br>In addition, Nolan served as President and Treasurer for his local society, the Jewish Genealogy Society of Long Island (JGSLI) and still serves as an at-large board member. He created their <a href=\"https://tinyurl.com/y85s3v3j\">award-winning YouTube library of instructive videos</a>.<br><br>He also served in various roles, including Vice-president and Chair of the Membership Development Committee, for the International Association of Jewish Genealogical Societies (IAJGS) Board from 2009-2021.<br><br>Nolan continues to write articles and present to social groups and adult education classes. He has had articles published in Avotaynu, Dorot, Stammbaum, Shemot, LIneage, and the FEEFHS Journal.<br><br>In 2021, Nolan was recognized by the IAJGS with their Lifetime Achievement Award. In addition, the organization's volunteer award was renamed in his honor, the Nolan Altman IAJGS Volunteer of the Year Award.<br><br>Mr. Altman, a NY CPA, is currently the president of NTA Consulting, a financial services consulting firm specializing in hedge fund and asset management firms.  Prior to that, he served 8 years as CFO for the hedge fund complex at Tiger Management and for 16 years before that, Financial Services audit partner at Seymour Schneidman & Associates (subsequently merged into Anchin, Block and Anchin, LLP).  He currently serves on a number of hedge fund and philanthropic Boards.",
+    "email": "naltman@jewishgen.org"
+  },
+  {
+    "id": "eric-feinstein",
+    "name": "Eric Feinstein",
+    "photo": "/people/images/EFei.jpg",
+    "bio": "Eric Feinstein has been involved with JewishGen since 1998.  Since 2011 he has worked with the JOWBR and Nolan Altman as the Assistant Director of Data Acquisition.  Besides his work with the Jewish Online Worldwide Burial Registry, Eric had headed cemetery photographic projects in Chernigov Gubernia, Kretinga, Lithuania, Adutiskis, Lithuania, Negresti, Romania and Busk, Ukraine.  He is also the Jewish Cemeteries Coordinator for the French Research Division of JewishGenas well as head of the Russian Research Division of JewishGen.  Apart from assisting to source thousands of individual record templates for the JOWBR, Eric has contributed dozens of record templates to the Holocaust, French, German, South African, Polish, Italian, Yugoslav, Greek and USA and Litvak research divisions.  Eric is a professional genealogist specializing in European archival research. Since 1998, he has dedicated his career to uncovering family histories, connecting individuals with their ancestral roots, and reuniting families separated by historical events such as the Holocaust.  Eric is also a published author in the field of military genealogy.",
+    "email": "efeinstein@jewishgen.org"
+  },
+  {
+    "id": "karen-franklin",
+    "name": "Karen Franklin",
+    "photo": "/people/images/KFra.jpg",
+    "bio": "Karen S. Franklin is the Director of Outreach for JewishGen. She is also the Director of Family Research at the Leo Baeck Institute. Karen has served as Co-chair of the Board of Governors of JewishGen, President of the International Association of Jewish Genealogical Societies, and Chair of the Memorial Museums Committee of ICOM (the International Council of Museums). She  has been an active leader, lecturer, and author in the fields of museums, genealogy and looted art.<br>Karen is a world renowned expert on German Jewish Genealogy. She has also given presentations illustrating how-to sessions with southern (American Jewish) families.  Families from Alabama, Mississippi, and South Carolina are among those she has researched. Recently, she lectured in France, Germany, Austria, Colorado and Los Angeles (on other topics). Past subjects have included: Josephine Marcus (common-law wife of Wyatt Earp).",
+    "email": "kfranklin@jewishgen.org"
+  },
+  {
+    "id": "gary-sandler",
+    "name": "Gary Sandler",
+    "photo": "/people/images/Gsan.jpg",
+    "bio": "Gary started with JewishGen in about 2008 and had been an IT professional for over 43 years before retiring in 2023. With experience running small and large systems, building new applications, and supporting a variety of technologies, Gary brings a wealth of experience to JewishGen. Gary is also a folk dancer and woodturner.",
+    "email": ""
+  }
+]

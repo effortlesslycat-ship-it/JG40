@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L&rsquo;Dor V&rsquo;Dor Legacy Program &ndash; JewishGen</title>
+
+<!-- 1. Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<!-- 2. JewishGen Global Design System -->
+<link rel="stylesheet" href="/jg-global.css">
+<!-- 3. Page-specific styles -->
+<style>
+a { text-decoration: none; color: inherit; }
+
+/* -- Dark mode page-specific overrides -- */
+body.dark-mode .page-title-band { background-color: #0d2a45 !important; }
+body.dark-mode .page-title-band p.hero-subtitle { color: rgba(255,255,255,0.85) !important; }
+body.dark-mode .applications-closed-banner { background-color: #2a2d1e !important; color: #e0e0e0 !important; border-color: #a8b361 !important; }
+body.dark-mode .facts-box,
+body.dark-mode .faculty-card,
+body.dark-mode .partner-card,
+body.dark-mode .apply-card { background-color: #1e1e1e !important; border-color: #333 !important; }
+body.dark-mode .facts-list li { border-bottom-color: #333 !important; }
+body.dark-mode .facts-list .fact-label { color: #a8b361 !important; }
+body.dark-mode .facts-list .fact-value { color: #e0e0e0 !important; }
+body.dark-mode .facts-list .fact-value--closed { color: #888 !important; }
+body.dark-mode .faculty-card h3,
+body.dark-mode .facts-box h2,
+body.dark-mode .ldv-section h2,
+body.dark-mode .partner-card h3,
+body.dark-mode .apply-card h2 { color: #e0e0e0 !important; }
+body.dark-mode .faculty-bio,
+body.dark-mode .partner-card p,
+body.dark-mode .apply-card p,
+body.dark-mode .ldv-prose p { color: #c0c0c0 !important; }
+body.dark-mode .faculty-headshot { border-color: #a8b361 !important; }
+body.dark-mode .flyer-link { color: #a8b361 !important; }
+
+/* -- Page title band -- */
+.page-title-band {
+    background-color: var(--navy);
+    padding: 44px 50px;
+    text-align: center;
+}
+.page-title-band .jg-tag-sage { margin-bottom: 14px; }
+.page-title-band h1 {
+    margin: 0 0 14px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #ffffff;
+}
+.page-title-band p.hero-subtitle {
+    margin: 0 auto;
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.88);
+    max-width: 760px;
+    line-height: 1.6;
+}
+
+/* -- Hero photo strip (4 across, sits below title band as a visual break) -- */
+.hero-photo-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+}
+.hero-photo-strip img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+/* -- Ecru content wrap -- */
+.ldv-ecru-wrap {
+    background-color: var(--ecru);
+    padding: 3rem 2rem;
+}
+.ldv-ecru-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* -- Main two-column grid (70 / 30 like Support) -- */
+.ldv-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    gap: 32px;
+    align-items: start;
+}
+
+/* -- Section headings with sage underline -- */
+.section-heading {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--navy);
+    position: relative;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--sage);
+    border-radius: 2px;
+}
+
+/* -- Left column stacking -- */
+.ldv-left > * + * { margin-top: 36px; }
+
+/* -- Applications closed banner -- */
+.applications-closed-banner {
+    background-color: #f4f1d8;
+    border: 1px solid var(--sage);
+    border-left: 4px solid var(--sage);
+    border-radius: 6px;
+    padding: 14px 20px;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--charcoal);
+}
+.applications-closed-banner strong {
+    color: var(--navy);
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* -- Prose blocks in main content -- */
+.ldv-prose p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--charcoal);
+    margin: 0 0 1rem 0;
+}
+.ldv-prose p:last-child { margin-bottom: 0; }
+.flyer-link {
+    display: inline-block;
+    color: var(--navy);
+    font-weight: bold;
+    text-decoration: underline dotted;
+    text-decoration-color: var(--sage);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    margin-top: 4px;
+}
+.flyer-link:hover { color: var(--sage); }
+
+/* -- Apply card (sage-bordered call-out) -- */
+.apply-card {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-top: 3px solid var(--sage);
+    border-radius: 8px;
+    padding: 22px 24px;
+}
+.apply-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.125rem;
+    color: var(--navy);
+    font-weight: bold;
+}
+.apply-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--charcoal);
+    margin: 0 0 14px 0;
+}
+.apply-card .apply-cta {
+    display: inline-block;
+    background-color: var(--sage);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8125rem;
+    transition: filter 0.15s;
+}
+.apply-card .apply-cta:hover { filter: brightness(1.1); color: #ffffff; }
+.apply-card .apply-disabled {
+    display: inline-block;
+    background-color: #d1caba;
+    color: #666;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8125rem;
+    cursor: not-allowed;
+}
+
+/* -- Faculty grid (3-up cards) -- */
+.faculty-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.faculty-card {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 24px 28px;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 26px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+.faculty-card:hover {
+    border-color: var(--sage);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+.faculty-headshot {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--sage);
+    flex-shrink: 0;
+    display: block;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.faculty-card__text { flex: 1; min-width: 0; }
+.faculty-card h3 {
+    color: var(--navy);
+    font-size: 1.0625rem;
+    margin: 0 0 4px 0;
+    font-weight: bold;
+}
+.faculty-card .faculty-title {
+    color: var(--sage);
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 12px;
+}
+.faculty-bio {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 0;
+}
+
+/* -- Partner section -- */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+.partner-card {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 18px 20px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.partner-card:hover {
+    border-color: var(--sage);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.partner-card h3 {
+    color: var(--navy);
+    font-size: 0.9375rem;
+    margin: 0 0 6px 0;
+    font-weight: bold;
+}
+.partner-card p {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--charcoal);
+    margin: 0 0 8px 0;
+}
+.partner-card a.partner-link {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--sage);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.partner-card a.partner-link:hover { color: var(--navy); }
+
+/* -- Right column: Quick Facts sticky card -- */
+.facts-box {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 20px 22px;
+    position: sticky;
+    top: 20px;
+}
+.facts-box h2 { margin: 0 0 16px 0; font-size: 16px; }
+.facts-box h2::after { width: 34px; }
+.facts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.facts-list li {
+    padding: 12px 0;
+    border-bottom: 1px dotted #d1caba;
+}
+.facts-list li:last-child { border-bottom: none; padding-bottom: 4px; }
+.facts-list .fact-label {
+    display: block;
+    font-size: 0.625rem;
+    font-weight: bold;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+.facts-list .fact-value {
+    font-size: 0.875rem;
+    color: var(--charcoal);
+    line-height: 1.4;
+}
+.facts-list .fact-value--closed {
+    color: #888;
+    font-style: italic;
+}
+.facts-list .fact-value a {
+    color: var(--navy);
+    font-weight: bold;
+    text-decoration: underline dotted;
+    text-decoration-color: var(--sage);
+}
+.facts-list .fact-value a:hover { color: var(--sage); }
+
+/* -- Responsive -- */
+@media (max-width: 980px) {
+    .ldv-grid { grid-template-columns: 1fr; gap: 28px; }
+    .facts-box { position: static; }
+    .hero-photo-strip { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .page-title-band { padding: 30px 20px; }
+    .page-title-band h1 { font-size: 1.875rem; }
+    .ldv-ecru-wrap { padding: 2rem 1.25rem; }
+    .partners-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+    .faculty-card { flex-direction: column; align-items: center; text-align: center; padding: 22px 20px; gap: 14px; }
+    .faculty-card .faculty-title { text-align: center; }
+    .faculty-bio { text-align: left; }
+}
+@media (max-width: 520px) {
+    .hero-photo-strip { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="site-header"></div>
+
+<!-- PAGE TITLE BAND -->
+<div class="page-title-band">
+    <span class="jg-tag-sage">Student Fellowship</span>
+    <h1>Bennett and Robin Greenspan<br>L&rsquo;Dor V&rsquo;Dor Legacy Program</h1>
+    <p class="hero-subtitle">A 10-day journey to Poland for university students to explore their Jewish roots, learn the tools of genealogical research, and help preserve a Jewish cemetery.</p>
+</div>
+
+<!-- MAIN CONTENT  -  ecru wrap -->
+<main class="ldv-ecru-wrap">
+<div class="ldv-ecru-inner">
+
+    <!-- PHOTO STRIP  -  visual break between title band and content -->
+    <div class="hero-photo-strip" aria-label="Photos from past L'Dor V'Dor Legacy Program cohorts">
+        <img src="https://www.jewishgen.org/fellowship/img/group1.jpg" alt="L'Dor V'Dor program participants in Poland">
+        <img src="https://www.jewishgen.org/fellowship/img/IMG_8549.jpg" alt="L'Dor V'Dor program participants in Poland">
+        <img src="https://www.jewishgen.org/fellowship/img/IMG_8416.jpg" alt="L'Dor V'Dor program participants in Poland">
+        <img src="https://www.jewishgen.org/fellowship/img/IMG_8594.jpg" alt="L'Dor V'Dor program participants in Poland">
+    </div>
+
+    <div class="ldv-grid">
+
+        <!-- LEFT COLUMN: program details, faculty, partners -->
+        <div class="ldv-left">
+
+            <!-- APPLICATIONS CLOSED BANNER -->
+            <div class="applications-closed-banner" role="status">
+                <strong>Applications for the 2026 program are now closed.</strong>
+                The 2026 cohort travels July 7&ndash;16. Please check back in fall 2026 for information about the 2027 program. For general inquiries, email <a href="mailto:LdorVdor@JewishGen.org">LdorVdor@JewishGen.org</a>.
+            </div>
+
+            <!-- ABOUT THE PROGRAM -->
+            <section class="ldv-prose" aria-labelledby="about-heading">
+                <h2 id="about-heading" class="section-heading">About the Program</h2>
+                <p>JewishGen is pleased to invite applications for our sixth annual <em>Bennett and Robin Greenspan L&rsquo;Dor V&rsquo;Dor Legacy Program</em> to take place from <strong>July 7 &ndash; July 16, 2026</strong>. Rising second-year undergraduate students in accredited colleges or universities through recent graduates are invited to apply.</p>
+                <p>The purpose of this program, run in partnership with <em>Friends of Jewish Heritage in Poland</em>, is to inspire and begin the training of the future generation of leaders in Jewish genealogical involvement. We will travel to Poland, and explore basic tools of genealogical research in a country which was once home to more than half of world Jewry, and share and protect the history that gave shape to that genealogy of the past and future.</p>
+                <p><a class="flyer-link" href="https://www.jewishgen.org/ldorVdor/Flyer2026.pdf">Download the 2026 program flyer (PDF) &rsaquo;</a></p>
+                <!-- FLAG: Flyer link points to 2026 PDF; will need update for 2027 program -->
+            </section>
+
+            <!-- APPLY  -  kept in HIDE comments so it can be re-enabled for 2027 -->
+            <section aria-labelledby="apply-heading">
+                <h2 id="apply-heading" class="section-heading">How to Apply</h2>
+                <div class="apply-card">
+                    <h2 style="font-family: Georgia, 'Times New Roman', serif; font-weight: normal;">Applications for 2026 are closed</h2>
+                    <p>The application period closed on March 19, 2026. Information about the 2027 program will be posted in fall 2026. To be notified when applications open, please email <a href="mailto:LdorVdor@JewishGen.org" style="color: var(--navy); font-weight: bold; text-decoration: underline dotted;">LdorVdor@JewishGen.org</a>.</p>
+                    <span class="apply-disabled" aria-disabled="true">Applications Closed</span>
+
+<!-- HIDE  -  RESTORE THIS BLOCK WHEN 2027 APPLICATIONS OPEN. REMOVE THE "CLOSED" CONTENT ABOVE.
+                    <h2 style="font-family: Georgia, 'Times New Roman', serif; font-weight: normal;">Apply for the 2027 Program</h2>
+                    <p>The application period closes at 11:59 PM ET on [DEADLINE DATE]. To request a formal application, please click the button below:</p>
+                    <a class="apply-cta" href="https://forms.gle/f2tRwKyRCBThvkKC7">Request an Application</a>
+END HIDE -->
+                </div>
+            </section>
+
+            <!-- THE JOURNEY -->
+            <section class="ldv-prose" aria-labelledby="journey-heading">
+                <h2 id="journey-heading" class="section-heading">The Journey</h2>
+                <p>On this 10-day journey, participants will visit and tour many Jewish heritage sites throughout Poland, including Warsaw, spend an inspirational Shabbat in Krakow, visit Majdanek, and ultimately participate in the clean-up and preservation of a Jewish cemetery in partnership with Polish volunteers. During this part of the program, we will focus on the role of Jewish cemeteries today in preserving the memory and legacy of former Jewish communities. Specifically, we will explore symbols and epitaphs on tombstones, the general state of Jewish cemeteries in Poland after the Holocaust, efforts to preserve them from both a communal, political, and Halachic perspective, and consider lessons that can be gleaned to inform our own life choices today.</p>
+                <p>The trip will be led by highly experienced staff and participants will have an opportunity to learn from rabbis, scholars, dignitaries, and community leaders, who will offer first-hand insights regarding the imperative (and challenges) of cleaning up cemeteries in accordance with Jewish law. They will address how local Polish communities view Jewish cemeteries in their towns, the need to preserve Jewish memory, and more.</p>
+                <p>In advance of the trip, students will meet with JewishGen genealogists to gain strategies for exploring their roots. During the trip, students will have nightly reflection exercises to discuss and internalize everything they learned during that day. Upon returning home, each participant will be expected to record a video, write a blog post, and write an essay describing their experience.</p>
+            </section>
+
+            <!-- FACULTY -->
+            <section aria-labelledby="faculty-heading">
+                <h2 id="faculty-heading" class="section-heading">Faculty</h2>
+                <div class="faculty-grid">
+
+                    <article class="faculty-card">
+                        <img class="faculty-headshot" src="/people/images/PRad.jpg" alt="Dr. Paul Radensky">
+                        <div class="faculty-card__text">
+                            <h3>Dr. Paul Radensky</h3>
+                            <span class="faculty-title">Director of JewishGen</span>
+                            <p class="faculty-bio">Paul Radensky is the director of JewishGen, the world&rsquo;s leading resource for Jewish genealogy. He has had a lifelong love of Jewish history and Jewish genealogy. Prior to coming to JewishGen, Paul was in the Education Department of the Museum of Jewish Heritage &mdash; A Living Memorial to the Holocaust. Paul completed his Ph.D. on one of the leading figures in Hasidism in Ukraine at the Jewish Theological Seminary and his master&rsquo;s in history at Columbia University. Paul is the president of the Old Broadway Synagogue in west Harlem. Paul and his wife, Laura, live in Manhattan. They have four children and four grandchildren.</p>
+                        </div>
+                    </article>
+
+                    <article class="faculty-card">
+                        <img class="faculty-headshot" src="https://www.jewishgen.org/education/images/speakers/Dan_Oren.jpg" alt="Dr. Dan Oren">
+                        <div class="faculty-card__text">
+                            <h3>Dr. Dan Oren</h3>
+                            <span class="faculty-title">President &amp; Founder, Friends of Jewish Heritage in Poland</span>
+                            <p class="faculty-bio">Dan A. Oren, M.D., associate professor of psychiatry (adjunct) at Yale University has worked for more than thirty years as a psychiatrist and faculty member at Yale University, as a Fulbright Professor at the University of Rzesz&oacute;w, Poland, and as a researcher. Oren is author of <em>The Wedding Photo</em>, a book on Jewish genealogy and family history, and has published other books and articles on Jewish history. He has been tracing his genealogy for more than forty years and has co-led this fellowship since 2019. He founded and leads FJHP as a volunteer devoted to helping Jewish descendants partner with Polish organizations to preserve their ancestral cemeteries.</p>
+                        </div>
+                    </article>
+
+                    <article class="faculty-card">
+                        <img class="faculty-headshot" src="https://www.jewishgen.org/education/images/speakers/Steven_Reece.jpg" alt="Dr. Steven Reece">
+                        <div class="faculty-card__text">
+                            <h3>Dr. Steven Reece</h3>
+                            <span class="faculty-title">Founder &amp; CEO, The Matzevah Foundation</span>
+                            <p class="faculty-bio">Dr. Steven D. Reece is a respected cross-cultural leader, Fulbright Scholar, and Founder/CEO of The Matzevah Foundation. With a Ph.D. in Leadership, he has overseen the restoration of more than 60 Jewish cemeteries and mass grave sites to foster reconciliation between Christians and Jews. As an ordained Baptist minister and a certified Holocaust educator through Yad Vashem and Tel Aviv University, he is committed to public education about the Shoah. Recognized as a &ldquo;Person of Reconciliation,&rdquo; he serves as an Adjunct Faculty member at Andrews University, where he draws on his fluency in Polish, leadership experience, and expertise in qualitative research. He is also authoring a book based on his Fulbright findings.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- PARTNER -->
+            <section class="ldv-section" aria-labelledby="partners-heading">
+                <h2 id="partners-heading" class="section-heading">Our Partner</h2>
+                <article class="partner-card">
+                    <h3>Friends of Jewish Heritage in Poland</h3>
+                    <p>FJHP partners with Polish organizations to help Jewish descendants preserve their ancestral cemeteries and Jewish heritage sites throughout Poland.</p>
+                    <a class="partner-link" href="https://jewishheritagepoland.org/" target="_blank" rel="noopener">Visit jewishheritagepoland.org &rsaquo;</a>
+                </article>
+            </section>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Quick Facts sticky card -->
+        <aside class="facts-box" aria-labelledby="facts-heading">
+            <h2 id="facts-heading" class="section-heading">Quick Facts</h2>
+            <ul class="facts-list">
+                <li>
+                    <span class="fact-label">2026 Program Dates</span>
+                    <span class="fact-value">July 7 &ndash; 16, 2026</span>
+                </li>
+                <li>
+                    <span class="fact-label">Duration</span>
+                    <span class="fact-value">10 days</span>
+                </li>
+                <li>
+                    <span class="fact-label">Cost</span>
+                    <span class="fact-value">$550 non-refundable registration fee. All other expenses (travel from NY, transportation in Poland, meals, lodging, materials) covered by JewishGen. Dietary laws observed.</span>
+                </li>
+                <li>
+                    <span class="fact-label">Eligibility</span>
+                    <span class="fact-value">Rising second-year undergraduates through recent graduates of accredited colleges and universities.</span>
+                </li>
+                <li>
+                    <span class="fact-label">2026 Application Deadline</span>
+                    <span class="fact-value fact-value--closed">March 19, 2026 (closed)</span>
+                </li>
+                <li>
+                    <span class="fact-label">Partner</span>
+                    <span class="fact-value">Friends of Jewish Heritage in Poland</span>
+                </li>
+                <li>
+                    <span class="fact-label">Contact</span>
+                    <span class="fact-value"><a href="mailto:LdorVdor@JewishGen.org">LdorVdor@JewishGen.org</a></span>
+                </li>
+                <li>
+                    <span class="fact-label">FAQ</span>
+                    <span class="fact-value"><a href="/LdorVdor/faq.html">Frequently Asked Questions</a></span>
+                </li>
+            </ul>
+        </aside>
+
+    </div>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(r => { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(html => { document.getElementById(id).innerHTML = html; })
+        .catch(err => console.warn(err));
+}
+
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html')
+]).then(() => {
+    document.querySelectorAll('.jg-nav .dropbtn').forEach(btn => {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                const menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = expanded ? 'none' : 'block';
+            }
+            if (e.key === 'Escape') {
+                this.setAttribute('aria-expanded', 'false');
+                const menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
