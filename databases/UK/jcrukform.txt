@@ -1,0 +1,56 @@
+	  <form>
+	  
+	  <p align="center">Enter <b>text</b> to search<BR>
+	  <input size="33" name="globsurname"><BR>
+	  and choose the <b>type </b>of search<BR>
+	  <select size="1" name="searchtype">
+		<option value="exact" selected>Surname -- Exact Spelling</option>
+		<option value="start">Surname -- Soundex</option>
+		<option value="fullt">Global Text Search</option>
+	  </select><br>
+	  and choose the <b>community</b> to search<br>
+	  <select size="1" name="community">
+		<option value="%" selected>All Communities</option>
+		<option value="Bath">Bath</option>
+		<option value="Bedford">Bedford</option>
+                <option value="Belfast">Belfast</option>
+                <option value="Birmingham">Birmingham</option>
+		<option value="Brighton">Brighton</option>
+		<option value="Bristol">Bristol</option>
+                <option value="Bournemouth">Bournemouth</option>
+		<option value="Cambridge">Cambridge</option>
+                <option value="Chatham">Chatham</option>
+		<option value="Coventry">Coventry</option>
+		<option value="Exeter">Exeter</option>
+		<option value="Falmouth">Falmouth</option>
+		<option value="Glasgow">Glasgow</option>
+                <option value="Grimsby">Grimsby</option>
+		<option value="Hartlepool">Hartlepool</option>
+		<option value="Hull">Hull</option>
+		<option value="IOM">Isle of Man</option>
+		<option value="Leeds">Leeds</option>
+		<option value="London">London</option>
+		<option value="Manchester">Manchester</option>
+		<option value="Middlesbrough">Middlesbrough</option>
+		<option value="Newcastle">Newcastle</option>
+		<option value="Oxford">Oxford</option>
+		<option value="Penzance">Penzance</option>
+		<option value="Plymouth">Plymouth</option>
+		<option value="Portsmouth">Portsmouth</option>
+		<option value="Sheffield">Sheffield</option>
+		<option value="Stockton-on-Tees">Stockton-on-Tees</option>
+		<option value="Stroud">Stroud</option>
+		<option value="sunderland">Sunderland</option>
+		<option value="Torquay">Torquay</option>
+		<option value="Wales">Wales</option>
+		<option value="Wolverhampton">Wolverhampton</option>
+		<option value="York">York</option>
+          </select></p>
+
+          
+	  <p align="center">
+	  <input type="submit" value="Start Search" name="Search"
+	  onClick="this.form.action='http://search.jgsgb.org.uk/alluk/mt_xglobalsearch.asp';">
+	  </p>
+	  
+	  </form>
