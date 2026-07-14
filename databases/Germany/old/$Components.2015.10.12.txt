@@ -1,0 +1,119 @@
+
+<TABLE cols="2" cellpadding="0" cellspacing="0" width="100%">
+<TR valign="top">
+<TD WIDTH="50%">
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" href="/jgff">JewishGen Family Finder</A>
+<BR>
+More than 36,000 entries by Jewish genealogists researching families in Germany.
+</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Cemetery">JewishGen Online Worldwide Burial Registry</A>
+<BR>
+More than 140,000 burial records for Germany and German landsmanshaft cemeteries worldwide.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="/databases/Holocaust">JewishGen Holocaust Database</A>
+<BR>
+More than 220,000 names from various datasets with information about 
+Holocaust victims and survivors.
+</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/yizkor">Yizkor Book Necrologies</A>
+<BR>
+7,000 entries from lists of Holocaust martyrs in Yizkor Books for towns in Germany.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="saxonweb.htm">Jewish Families of Northern Germany</A>
+<BR>
+3,000 families from Lower Saxony, North-Rhine-Westphalia, Hamburg, Bremen, and Hessen.
+</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="Gatermann.htm">The Hessen Gatermann Index</A>
+&nbsp; <IMG SRC="/images/updated_flag.gif" ALIGN="absmiddle">
+<BR>
+Surname-and-town index of 19th- and 20th-century Jewish vital records from 
+Hessen, linking to images of the records.<BR>
+To date: 73,000 records from northern and eastern Hessen.
+</LI>
+
+</UL>
+
+</TD>
+
+
+<TD>
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" HREF="Naldex.htm">Name Adoption List Index (NALDEX)</A>
+<!-- &nbsp; <img src="/images/new11.gif" ALIGN="ABSMIDDLE">-->
+<BR>
+A compilation of lists of surname-adoption by German Jews.&nbsp;
+Phase I contains 15,000 records from early 19th-century Prussia.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="/databases/Holocaust/Aufbau.htm"><I>Aufbau</I> Survivors Lists</A>
+<BR>
+More than 33,000 Holocaust survivors, published in the German-language
+newspaper <I>Aufbau</I>, New York, 1944-1946.
+</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="Westphalia.htm">Westphalian Jews and the Holocaust</A>
+<BR>
+The fate of more than 8,000 Westphalian Jews.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="Wurzburg.htm">Jews in Würzburg, 1900-1945</A>
+<BR>
+Biographical dictionary of more than 13,000 Jews living in Würzburg, 
+Lower Franconia, in the early 20th century.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="GermanTowns.htm">The 1933 German Towns Project</A>
+<BR>
+Jewish inhabitants of German towns in 1933, compiled from town sources 
+by the ITS.&nbsp;  
+35,000 entries from 178 towns. 
+<!-- 43,000 entries, from XXX towns. *** -->
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="Danzig.htm">The Danzig Database</A>
+&nbsp; <IMG SRC="/images/new11.gif" ALIGN="absmiddle">
+<BR>
+2,200 records about Jews in Danzig (now Gda&#324;sk, Poland), from 
+multiple sources. 
+</LI>
+
+</UL>
+
+
+<TABLE>
+<TR valign="top">
+<TD colspan="2">
+<A href="http://jri-poland.org"><img src="http://jri-poland.org/header_2.gif" 
+   BORDER="0" WIDTH="200" align="left"></A>
+<A CLASS="dbhead" href="http://jri-poland.org">Jewish Records Indexing - Poland</A>
+<BR>
+80,000 birth, marriage and death records from towns in Prussia.
+</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+</TABLE>

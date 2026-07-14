@@ -1,0 +1,7 @@
+<TABLE BORDER="0" WIDTH="100%">
+<TR>
+<TD>
+<A CLASS="jgbacklink" HREF="/databases/Germany/">Search the JewishGen Germany Database</A>
+</TD>
+</TR>
+</TABLE>
