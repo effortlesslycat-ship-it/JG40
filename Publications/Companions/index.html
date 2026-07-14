@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holiday Companions | JewishGen Publications</title>
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- JewishGen Global Stylesheet -->
+  <link href="/jg-global.css" rel="stylesheet">
+
+  <style>
+    /* == PAGE TITLE BAND - JG40 standard == */
+    .page-title-band {
+      background-color: var(--navy);
+      padding: 44px 50px;
+      text-align: center;
+    }
+    .page-title-band__tag {
+      display: inline-block;
+      background-color: var(--sage);
+      color: #ffffff;
+      font-size: 0.6875rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 4px 12px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .page-title-band h1 {
+      margin: 0 0 10px 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2.25rem;
+      font-weight: normal;
+      line-height: 1.15;
+      color: #ffffff;
+    }
+    .page-title-band p.hero-subtitle {
+      margin: 0 auto;
+      font-size: 0.9375rem;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 720px;
+      line-height: 1.6;
+    }
+    body.dark-mode .page-title-band { background-color: #0d2a45 !important; }
+    body.dark-mode .page-title-band p.hero-subtitle { color: rgba(255, 255, 255, 0.85) !important; }
+
+    /* == ECRU BODY WRAP == */
+    .companions-body-wrap {
+      background-color: var(--ecru);
+      flex: 1;
+    }
+    .companions-body-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* == INTRO SECTION - prose directly on ecru, no card == */
+    .companions-intro {
+      margin-bottom: 2.5rem;
+    }
+
+    /* Lede - large navy Georgia serif, wraps to two lines */
+    .companions-intro__lede {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.875rem;
+      line-height: 1.35;
+      color: var(--navy);
+      margin: 0;
+      font-weight: normal;
+    }
+    body.dark-mode .companions-intro__lede { color: #a9c0d0 !important; }
+
+    /* Sage accent rule - mirrors faq-section-accent pattern */
+    .companions-intro__accent {
+      width: 36px;
+      height: 3px;
+      background-color: var(--sage);
+      border-radius: 1px;
+      margin: 1.5rem 0 1.75rem 0;
+    }
+    body.dark-mode .companions-intro__accent {
+      background-color: #a8b361 !important;
+    }
+
+    /* Body prose - left-aligned, regular size */
+    .companions-intro__body p {
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--charcoal);
+      margin: 0 0 0.85rem 0;
+    }
+    .companions-intro__body p:last-child { margin-bottom: 0; }
+    body.dark-mode .companions-intro__body p { color: #d0d0d0 !important; }
+
+    /* == HOLIDAY SECTIONS - white cards on ecru == */
+    .holiday-section {
+      background-color: #ffffff;
+      border-left: 4px solid var(--sage);
+      border-radius: 3px;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+    body.dark-mode .holiday-section {
+      background-color: #1e1e1e !important;
+      border-left-color: #a8b361 !important;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .holiday-section summary {
+      padding: 1.15rem 1.5rem;
+      cursor: pointer;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.35rem;
+      font-weight: normal;
+      color: var(--charcoal);
+      user-select: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.2s ease;
+    }
+    .holiday-section summary:hover {
+      background-color: rgba(147, 155, 81, 0.06);
+    }
+    .holiday-section summary::-webkit-details-marker { display: none; }
+    .holiday-section summary::marker { content: ""; }
+
+    body.dark-mode .holiday-section summary { color: #e0e0e0 !important; }
+    body.dark-mode .holiday-section summary:hover {
+      background-color: rgba(168, 179, 97, 0.08) !important;
+    }
+
+    /* CSS-drawn triangle - no Unicode required */
+    .holiday-section summary::before {
+      content: "";
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 9px solid var(--sage);
+      margin-right: 1rem;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    .holiday-section[open] summary::before { transform: rotate(90deg); }
+    body.dark-mode .holiday-section summary::before {
+      border-left-color: #a8b361 !important;
+    }
+
+    /* == COVER GRID == */
+    .companions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 2rem;
+      padding: 1.5rem 1.75rem 2rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    body.dark-mode .companions-grid {
+      border-top-color: rgba(255, 255, 255, 0.06) !important;
+    }
+
+    .companion-card {
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+    .companion-card:hover { transform: translateY(-4px); }
+
+    .companion-cover {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      border: 2px solid transparent;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      background-color: #f0f0f0;
+    }
+    .companion-card:hover .companion-cover {
+      border-color: var(--sage);
+      box-shadow: 0 4px 14px rgba(147, 155, 81, 0.3);
+    }
+    body.dark-mode .companion-cover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+      background-color: #2a2a2a !important;
+    }
+    body.dark-mode .companion-card:hover .companion-cover {
+      box-shadow: 0 4px 14px rgba(168, 179, 97, 0.4) !important;
+    }
+
+    .companion-meta {
+      margin-top: 0.85rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .companion-year {
+      display: block;
+      font-weight: 600;
+      color: var(--sage);
+      margin-bottom: 2px;
+    }
+    .companion-label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--charcoal);
+    }
+    body.dark-mode .companion-year { color: #a8b361 !important; }
+    body.dark-mode .companion-label { color: #b8b8b8 !important; }
+
+    /* == RESPONSIVE == */
+    @media (max-width: 768px) {
+      .page-title-band { padding: 32px 24px; }
+      .page-title-band h1 { font-size: 1.65rem; }
+      .companions-body-inner { padding: 2rem 1.25rem; }
+      .companions-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1.5rem;
+        padding: 1.25rem 1.25rem 1.75rem;
+      }
+      .holiday-section summary {
+        font-size: 1.15rem;
+        padding: 1rem 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .companions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Fetched Header -->
+  <div id="site-header"></div>
+
+  <!-- PAGE TITLE BAND -->
+  <div class="page-title-band" role="banner">
+    <span class="page-title-band__tag">Publications</span>
+    <h1>Holiday Companions</h1>
+<p class="hero-subtitle"><i>JewishGen Holiday Companions celebrate the rich traditions and resilience of our ancestors.</i></p>
+  </div>
+
+  <!-- ECRU BODY WRAP -->
+  <div class="companions-body-wrap">
+    <div class="companions-body-inner">
+
+      <!-- Intro Card -->
+      <div class="companions-intro">
+        <p class="companions-intro__lede">About the Companions</p>
+        <div class="companions-intro__accent" aria-hidden="true"></div>
+        <div class="companions-intro__body">
+          <p>Each year, we curate collections of inspiring stories and first-hand accounts from Yizkor (Memorial) Books &mdash; translated into English by JewishGen &mdash; that describe how Jewish communities throughout Eastern Europe prepared for and observed Passover, the High holidays, and Chanukah.</p>
+          <p>These vignettes remind us that genealogy is more than dates and names; it&rsquo;s about connecting with previous generations and preserving the values they held most dear.</p>
+        </div>
+      </div>
+
+      <!-- Passover Section -->
+      <details class="holiday-section">
+        <summary>Passover</summary>
+        <div class="companions-grid">
+          <a href="/publications/companions/Passover_2025.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/Passover_2025.jpg" alt="JewishGen Passover Companion 2025" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2025 / 5785</span>
+              <span class="companion-label">Passover Companion</span>
+            </div>
+          </a>
+          <a href="/publications/companions/Passover_2024.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/Passover_2024.jpg" alt="JewishGen Passover Companion 2024" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2024 / 5784</span>
+              <span class="companion-label">Passover Companion</span>
+            </div>
+          </a>
+          <a href="/publications/companions/Passover_2023.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/Passover_2023.jpg" alt="JewishGen Passover Companion 2023" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2023 / 5783</span>
+              <span class="companion-label">Passover Companion</span>
+            </div>
+          </a>
+          <a href="/publications/companions/Passover_2022.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/Passover_2022.jpg" alt="JewishGen Passover Companion 2022" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2022 / 5782</span>
+              <span class="companion-label">Passover Companion</span>
+            </div>
+          </a>
+          <a href="/publications/companions/Passover_2021.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/Passover_2021.jpg" alt="JewishGen Passover Companion 2021" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2021 / 5781</span>
+              <span class="companion-label">Passover Companion</span>
+            </div>
+          </a>
+          <a href="/publications/companions/Passover_2019.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/Passover_2019.jpg" alt="JewishGen Passover Companion 2019" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2019 / 5779</span>
+              <span class="companion-label">Passover Companion</span>
+            </div>
+          </a>
+        </div>
+      </details>
+
+      <!-- High Holidays Section -->
+      <details class="holiday-section">
+        <summary>High Holidays</summary>
+        <div class="companions-grid">
+          <a href="/publications/companions/HighHoliday_2024.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/HighHoliday_2024.jpg" alt="JewishGen High Holiday Companion 2024" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2024 / 5785</span>
+              <span class="companion-label">High Holiday Companion</span>
+            </div>
+          </a>
+          <a href="/publications/companions/HighHoliday_2023.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/HighHoliday_2023.jpg" alt="JewishGen High Holiday Companion 2023" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2023 / 5784</span>
+              <span class="companion-label">High Holiday Companion</span>
+            </div>
+          </a>
+          <a href="/publications/companions/HighHoliday_2022.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/HighHoliday_2022.jpg" alt="JewishGen High Holiday Companion 2022" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2022 / 5783</span>
+              <span class="companion-label">High Holiday Companion</span>
+            </div>
+          </a>
+        </div>
+      </details>
+
+      <!-- Chanukah Section -->
+      <details class="holiday-section">
+        <summary>Chanukah</summary>
+        <div class="companions-grid">
+          <a href="/publications/companions/Chanukah_2025.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/Chanukah_2025.jpg" alt="JewishGen Chanukah Companion 2025" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2025 / 5785</span>
+              <span class="companion-label">Chanukah Companion</span>
+            </div>
+          </a>
+          <a href="/publications/companions/Chanukah_2024.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/Chanukah_2024.jpg" alt="JewishGen Chanukah Companion 2024" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2024 / 5785</span>
+              <span class="companion-label">Chanukah Companion</span>
+            </div>
+          </a>
+          <a href="/publications/companions/Chanukah_2023.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/Chanukah_2023.jpg" alt="JewishGen Chanukah Companion 2023" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2023 / 5784</span>
+              <span class="companion-label">Chanukah Companion</span>
+            </div>
+          </a>
+          <a href="/publications/companions/Chanukah_2021.pdf" target="_blank" class="companion-card">
+            <img src="/publications/companions/Chanukah_2021.jpg" alt="JewishGen Chanukah Companion 2021" class="companion-cover">
+            <div class="companion-meta">
+              <span class="companion-year">2021 / 5782</span>
+              <span class="companion-label">Chanukah Companion</span>
+            </div>
+          </a>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- Fetched Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Load Header and Footer -->
+  <script>
+    async function loadComponents() {
+      try {
+        const [headerResponse, footerResponse] = await Promise.all([
+          fetch('/Header_NavBar.html'),
+          fetch('/Footer.html')
+        ]);
+        if (headerResponse.ok) {
+          document.getElementById('site-header').innerHTML = await headerResponse.text();
+        }
+        if (footerResponse.ok) {
+          document.getElementById('site-footer').innerHTML = await footerResponse.text();
+        }
+      } catch (error) {
+        console.error('Error loading components:', error);
+      }
+    }
+    loadComponents();
+  </script>
+</body>
+</html>
