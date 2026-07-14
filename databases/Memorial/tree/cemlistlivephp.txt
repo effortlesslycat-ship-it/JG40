@@ -1,0 +1,1532 @@
+<UL>
+<LI id="fh">Country: Argentina (7 synagogues/societies, 2529 memorials, 2092 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Buenos Aires (4 synagogues/societies, 2138 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ARG-00155">Bet-El</A> (440 memorials, 440 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ARG-00188">Congregacion Israelita De La Republica Argentina</A> (593 memorials, 593 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ARG-00187">Gran Templo Paso</A> (668 memorials, 668 photos) (data online 20 December 2021)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ARG-00157">Nueva Comunidad Israelita (NCI)</A> (437 memorials, 0 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Catamarca (1 synagogue/society, 121 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ARG-00289">Asociaci&oacute;n Israelita Argentina De Catamarca</A> (121 memorials, 121 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Corrientes (1 synagogue/society, 21 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ARG-00417">Cementerio De La Sociedad Cultural Israelita \'Scholem Aleijem\'</A> (21 memorials, 21 photos) (data online 04 August 2021)</LI>
+</UL>
+<LI id="fh">City: Las Palmeras (1 synagogue/society, 249 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ARG-00156">Colony Las Palmeras</A> (249 memorials, 249 photos) (data online 13 December 2015)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Australia (2 synagogues/societies, 4 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Adelaide River (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ASTL-00337">Northen Territories War Memorial - Adelaide River War Cemetery</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Sydney (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ASTL-00356">Sydney War Memorial</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Belgium (4 synagogues/societies, 269 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Comines-Warneton (1 synagogue/society, 23 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=BELG-00339">Ploegsteert War Memorial</A> (23 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Ieper (1 synagogue/society, 144 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=BELG-00365">Ypres (Menin Gate) War Memorial</A> (144 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Nieuwpoort (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=BELG-00336">Niuport War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Zonnebeke (1 synagogue/society, 101 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=BELG-00359">Tyne Cot War Memorial</A> (101 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Bulgaria (1 synagogue/society, 242 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Sofia (1 synagogue/society, 242 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=BULG-00418">Central Synagogue of Sofia&nbsp;</A> (242 memorials, 0 photos) (data online 04 August 2021)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Canada (24 synagogues/societies, 12751 memorials, 10089 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">Region: British Columbia (2 synagogues/societies, 1021 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Kelowna (1 synagogue/society, 55 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00005">Beth Shalom</A> (55 memorials, 0 photos) (data online 22 May 2012)</LI>
+</UL>
+<LI id="fh">City: Vancouver (1 synagogue/society, 966 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00104">Congregation Schara Tzedeck</A> (966 memorials, 966 photos) (data online 27 December 2014)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: New Brunswick (2 synagogues/societies, 340 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Moncton (2 synagogues/societies, 340 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00429">Tiferes Israel Synagogue</A> (333 memorials, 330 photos) (data online 20 December 2021)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00430">Tiferes Israel Synagogue War Memorial</A> (7 memorials, 7 photos) (data online 20 December 2021)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Ontario (7 synagogues/societies, 5194 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Niagara Falls (1 synagogue/society, 246 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00405">Congregation B&rsquo;Nai Tikvah</A> (246 memorials, 246 photos) (data online 20 January 2021)</LI>
+</UL>
+<LI id="fh">City: Ottawa (1 synagogue/society, 4 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00338">Ottawa War Memorial</A> (4 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Thornhill (2 synagogues/societies, 1225 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00250">Beth Avraham Yoseph of Toronto (BAYT)</A> (594 memorials, 594 photos) (data online 06 June 2017)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00252">Shaar Shalom Synagogue</A> (631 memorials, 631 photos) (data online 06 June 2017)</LI>
+</UL>
+<LI id="fh">City: Toronto (3 synagogues/societies, 3719 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00251">Beth David B&rsquo;nai Israel Beth Am</A> (2625 memorials, 2625 photos) (data online 06 June 2017)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00122">Shaarei Tefillah Congregation</A> (1002 memorials, 1002 photos) (data online 29 May 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00118">Yavne Zion Congregation, Memorial Plaque of United Families/ Agudas Hamishpocha</A> (92 memorials, 0 photos) (data online 29 May 2015)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Qu&eacute;bec (13 synagogues/societies, 6196 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Montreal (12 synagogues/societies, 6063 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00086">Chevra Kadisha B'Nai Jacob Beit Hazikaron Beth Hillel</A> (806 memorials, 806 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00394">Czenstochower Society of Montreal</A> (337 memorials, 0 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00396">Jewish Canadian Military Casualties</A> (605 memorials, 0 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00397">Lubliner Landsmanshaft of Montreal</A> (483 memorials, 0 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00398">Memorial in Memory of the Jews of Pinsk and Surrounding Towns</A> (113 memorials, 0 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00401">Memorial of the Jews of Vilno & Vicinity</A> (364 memorials, 0 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00402">Memorial to the Jewish Martyrs of Zamosc, Poland</A> (286 memorials, 0 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00399">Russian-Polish Hebrew Sick Benefit Association</A> (66 memorials, 0 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00085">Shaare Zedek Congregation</A> (1223 memorials, 1223 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00133">Shaare Zion Congregation</A> (1526 memorials, 1526 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00400">Stolin and Vicinity Memorial Association</A> (180 memorials, 0 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00395">The Hebrew Sick Benefit Association of Montreal</A> (74 memorials, 0 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Westmount (Sherbrooke) (1 synagogue/society, 133 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CAN-00087">Agudath Achim Congregation</A> (133 memorials, 133 photos) (data online 27 December 2014)</LI>
+</UL>
+</UL>
+</UL>
+<LI id="fh">Country: China (1 synagogue/society, 1 memorial, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Chai Wan (Hong Kong) (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CHIN-00348">Sai Wan War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Croatia (2 synagogues/societies, 166 memorials, 166 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Dubrovnik (1 synagogue/society, 27 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CROA-00393">Old Synagogue</A> (27 memorials, 27 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Split (1 synagogue/society, 139 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CROA-00230">[no cemetery name]</A> (139 memorials, 139 photos) (data online 08 December 2016)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Czech Republic (3 synagogues/societies, 707 memorials, 707 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">Region: Bohemia (1 synagogue/society, 487 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Kolin (1 synagogue/society, 487 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CZ-00432">New Jewish Cemetery</A> (487 memorials, 487 photos) (data online 20 December 2021)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Moravia (2 synagogues/societies, 220 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Slavkov u Brna (2 synagogues/societies, 220 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CZ-00391">Memorial Of The Victims Of World War I</A> (116 memorials, 116 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=CZ-00392">Memorial Of The Victims Of World War II</A> (104 memorials, 104 photos) (data online 16 July 2020)</LI>
+</UL>
+</UL>
+</UL>
+<LI id="fh">Country: Egypt (3 synagogues/societies, 134 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Alexandria (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=EGYP-00301">Chatby War Memorial</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Cairo (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=EGYP-00298">Cairo War Memorial Cemetery</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: El Alamein (1 synagogue/society, 130 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=EGYP-00290">Alamein War Memorial (El Alamein Cemetery)</A> (130 memorials, 0 photos) (data online 16 July 2020)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: England (15 synagogues/societies, 401 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Brookwood (1 synagogue/society, 158 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00297">Brookwood War Memorial</A> (158 memorials, 0 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Egham  (1 synagogue/society, 115 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00347">Runnymede War Memorial</A> (115 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Gillingham  (1 synagogue/society, 18 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00302">Chatham Naval War Memorial</A> (18 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Lee-On-Solent (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00322">Lee-On-Solent War Memorial</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Leeds (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00325">Leeds (Gelderd Road) English Hebrew Cemetery War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Liverpool (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00327">Liverpool Naval Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: London (3 synagogues/societies, 64 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00308">Golders Green Crematorium War Memorial</A> (11 memorials, 0 photos) (data online 25 July 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00358">Tower Hill War Memorial</A> (52 memorials, 0 photos) (data online 25 July 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00361">Willesden Jewish Cemetery War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Maidenhead (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00360">United Kingdom Book of Remembrance War Memorials</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Manchester (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00332">Manchester Crematorium War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Plymouth (1 synagogue/society, 17 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00340">Plymouth War Memorial</A> (17 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Portsmouth (1 synagogue/society, 15 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00342">Portsmouth Naval War Memorial</A> (15 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Southampton (2 synagogues/societies, 7 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00311">Hollybrook War Memorial</A> (6 memorials, 0 photos) (data online 25 July 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ENG-00352">Southampton Crematorium War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: France (18 synagogues/societies, 415 memorials, 11 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Arras (2 synagogues/societies, 6 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00292">Arras Flying Services War Memorial</A> (5 memorials, 0 photos) (data online 25 July 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00293">Arras War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Authuille (1 synagogue/society, 166 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00357">Thiepval War Memorial</A> (166 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Bayeax (1 synagogue/society, 5 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00296">Bayeux War Memorial</A> (5 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Berkshire (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00306">France (1914-1918) War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Doignies (1 synagogue/society, 23 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00299">Cambrai War Memorial, Louverval</A> (23 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Dunkirk (1 synagogue/society, 7 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00304">Dunkirk War Memorial</A> (7 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Fenetrange (1 synagogue/society, 11 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00431">Fenetrange Jewish Cemetery</A> (11 memorials, 11 photos) (data online 20 December 2021)</LI>
+</UL>
+<LI id="fh">City: Givenchy-en-Gohelle (1 synagogue/society, 18 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00363">Canadian National Vimy Memorial</A> (18 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Haucourt (1 synagogue/society, 27 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00364">Vis-En-Artois War Memorial</A> (27 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: La Ferte-sous-Jouarre  (1 synagogue/society, 8 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00318">La Ferte-Sous-Jouarre War Memorial</A> (8 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: LeHavre (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00355">War Memorial - Ste. Marie Cemetery</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Loos-en-Gohelle (1 synagogue/society, 30 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00329">Loos-en-Gohelle War Memorial</A> (30 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Ovillers-la-Boisselle (1 synagogue/society, 45 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00343">Pozieres War Memorial</A> (45 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Richebourg (1 synagogue/society, 17 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00321">Le Touret War Memorial</A> (17 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Saint Valery-En-Caux (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00354">War Memorial - St. Valery-En-Caux Franco (British Cemetery)</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Soissons (1 synagogue/society, 11 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00351">Soissons War Memorial</A> (11 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Villers-Bretonneux (1 synagogue/society, 38 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=FR-00362">Villers-Bretonneux War Memorial</A> (38 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Germany (1 synagogue/society, 8 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Polch (1 synagogue/society, 8 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=GERM-00435">[no cemetery name]</A> (8 memorials, 0 photos) (data online 20 December 2021)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Gibraltar (1 synagogue/society, 1 memorial, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Gibralta (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=GIBR-00307">Gibralta War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Greece (2 synagogues/societies, 59 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Athens (1 synagogue/society, 55 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=GREC-00294">Athens War Memorial (Phaleron War Cemetery)</A> (55 memorials, 0 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Doirani  (1 synagogue/society, 4 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=GREC-00303">Doiran War Memorial</A> (4 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Hungary (4 synagogues/societies, 1084 memorials, 784 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Budapest (2 synagogues/societies, 698 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=HUNG-00280">Doh&aacute;ny Street Synagogue (aka Great Synagogue or Tabakgasse Synagogue)</A> (617 memorials, 617 photos) (data online 06 June 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=HUNG-00278">Doh&aacute;ny Street Synagogue (Great Synagogue or Tabakgasse Synagogue)</A> (81 memorials, 81 photos) (data online 06 June 2019)</LI>
+</UL>
+<LI id="fh">City: Gyor (1 synagogue/society, 86 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=HUNG-00259">Gyor Synagogue</A> (86 memorials, 86 photos) (data online 05 December 2017)</LI>
+</UL>
+<LI id="fh">City: Sz&eacute;cs&eacute;ny (1 synagogue/society, 300 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=HUNG-00434">Sz&eacute;cs&eacute;ny Cemetery Holocaust Memorial</A> (300 memorials, 0 photos) (data online 20 December 2021)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: India (1 synagogue/society, 1 memorial, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Chennai (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=INDI-00330">Madras 1914-1918 War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Indonesia (1 synagogue/society, 1 memorial, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Ambon (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=INDO-00291">Ambion War Memorial (Ambon War Cemetery aka Australian Cemetery)</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Iraq (1 synagogue/society, 8 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Zubayr (1 synagogue/society, 8 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=IRAQ-00295">Basra War Memorial</A> (8 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Israel (4 synagogues/societies, 220 memorials, 191 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Jerusalem (1 synagogue/society, 8 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ISR-00312">Jerusalem War Memorial</A> (8 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Petach Tikva (1 synagogue/society, 191 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ISR-00012">Young Israel of Kfar Ganim</A> (191 memorials, 191 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Ramle (1 synagogue/society, 19 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ISR-00345">Ramleh 1939-1945 War Memorial</A> (19 memorials, 0 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Tel Aviv-Yafo (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ISR-00324">Kiryat Shaul Cemetery War Memorial</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Italy (3 synagogues/societies, 102 memorials, 84 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Cassino (1 synagogue/society, 18 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ITA-00300">Cassino War Memorial</A> (18 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Venice (2 synagogues/societies, 84 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ITA-00212">Canton Synagogue (Schola Canton)</A> (61 memorials, 61 photos) (data online 08 December 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=ITA-00215">Levantine Synagogue</A> (23 memorials, 23 photos) (data online 08 December 2016)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Kenya (2 synagogues/societies, 3 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Mombasa (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=KENY-00335">Mombasa Cemetery- Mombasa British War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Nairobi (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=KENY-00305">East Africa War Memorial</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Macedonia (1 synagogue/society, 2 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Kalamaria (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=MACE-00334">Mikra War Memorial</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Malaysia (1 synagogue/society, 7 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Labuan (1 synagogue/society, 7 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=MALA-00319">Labuan War Memorial</A> (7 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Malta (1 synagogue/society, 28 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Floriana (1 synagogue/society, 28 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=MALT-00331">Malta War Memorial</A> (28 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Mauritania (1 synagogue/society, 1 memorial, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Nouadhibou (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=MAUT-00353">War Memorial - St. Etienne Chapel Cemetery</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Morocco (1 synagogue/society, 79 memorials, 79 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Casablanca (1 synagogue/society, 79 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=MOR-00055">Temple Beth El</A> (79 memorials, 79 photos) (data online 14 June 2014)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Myanmar (1 synagogue/society, 23 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Yangon (1 synagogue/society, 23 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=MYAN-00346">Rangoon War Memorial</A> (23 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Netherlands (1 synagogue/society, 12 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Groesbeek (1 synagogue/society, 12 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=NETH-00309">Groesbeek War Memorial</A> (12 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: New Guinea (3 synagogues/societies, 7 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Lae, Papua  (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=NEWG-00320">Lea War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Papua (2 synagogues/societies, 6 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=NEWG-00341">Port Moresby War Memorial</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=NEWG-00344">Rabaul War Memorial</A> (4 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Pakistan (1 synagogue/society, 2 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Karachi (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=PAKI-00315">Karachi 1914-1918  War Memorial</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Philippines (1 synagogue/society, 78 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Manila (1 synagogue/society, 78 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=PHIL-00433">[no cemetery name]</A> (78 memorials, 0 photos) (data online 20 December 2021)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Portugal (1 synagogue/society, 80 memorials, 80 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Lisboa (1 synagogue/society, 80 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=PORT-00279">Sinagoga Shaare Tikva Lisboa Synagogue</A> (80 memorials, 80 photos) (data online 06 June 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Scotland (1 synagogue/society, 1 memorial, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Leuchars  (1 synagogue/society, 1 memorial) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=SCOT-00326">Leuchars Cemetery War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Singapore (2 synagogues/societies, 33 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Kranji (2 synagogues/societies, 33 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=SING-00349">Singapore Civil Hospital Grave War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=SING-00350">Singapore War Memorial</A> (32 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Slovakia (2 synagogues/societies, 166 memorials, 166 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Kosice (2 synagogues/societies, 166 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=SLOV-00199">Kosice Cemetery Memorial Plaques</A> (107 memorials, 107 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=SLOV-00198">Ortodoxna Synagoga Kosice</A> (59 memorials, 59 photos) (data online 19 June 2016)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: South Africa (2 synagogues/societies, 6 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Johannesburg (2 synagogues/societies, 6 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=SAFR-00313">Jewish Guild War Memorial</A> (5 memorials, 0 photos) (data online 25 July 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=SAFR-00314">Johannesburg (West Park) Cremation War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Sudan (1 synagogue/society, 2 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Khartoum  (1 synagogue/society, 2 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=SUDA-00316">Khartoum War Memorial</A> (2 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City:  Majaz al Bab (1 synagogue/society, 8 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=TUN-00333">Medjez-El-Bab War Memorial</A> (8 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Tunisia (2 synagogues/societies, 56 memorials, 48 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Tunis (1 synagogue/society, 48 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=TUN-00265">Grande Synagogue De Tunis</A> (48 memorials, 48 photos) (data online 05 December 2017)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: Turkey (3 synagogues/societies, 55 memorials, 0 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Galipoli (1 synagogue/society, 23 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=TURK-00328">Lone Pine War Memorial</A> (23 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Gallipoli (2 synagogues/societies, 32 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=TURK-00323">Green Hill Cemetery War Memorial</A> (1 memorials, 0 photos) (data online 25 July 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=TURK-00310">Helles War Memorial</A> (31 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Country: USA (290 synagogues/societies, 206057 memorials, 136055 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">Region: Alabama (1 synagogue/society, 47 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Selma (1 synagogue/society, 47 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00264">Temple Mishkan Israel</A> (47 memorials, 47 photos) (data online 05 December 2017)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: California (10 synagogues/societies, 12542 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Chula Vista (1 synagogue/society, 134 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00272">Beth Torah Synagogue</A> (134 memorials, 134 photos) (data online 06 June 2019)</LI>
+</UL>
+<LI id="fh">City: Fountain Valley (1 synagogue/society, 674 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00202">Congregation B'nai Tzedek</A> (674 memorials, 666 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Irvine (1 synagogue/society, 249 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00114">Chabad of Irvine</A> (249 memorials, 249 photos) (data online 27 December 2014)</LI>
+</UL>
+<LI id="fh">City: Lakewood (1 synagogue/society, 1256 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00088">Congregation Shir Chadash</A> (1256 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Long Beach (1 synagogue/society, 1781 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00263">Temple Israel</A> (1781 memorials, 0 photos) (data online 05 December 2017)</LI>
+</UL>
+<LI id="fh">City: Los Angeles (3 synagogues/societies, 6849 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00138">Sinai Temple</A> (289 memorials, 289 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00153">Sinai Temple (Los Angeles)</A> (4705 memorials, 0 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00134">Temple Beth Am</A> (1855 memorials, 0 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Oakland (1 synagogue/society, 952 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00119">Temple Beth Abraham</A> (952 memorials, 0 photos) (data online 29 May 2015)</LI>
+</UL>
+<LI id="fh">City: Pomona (1 synagogue/society, 647 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00084">Temple Beth Israel</A> (647 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Colorado (7 synagogues/societies, 9867 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Boulder (2 synagogues/societies, 575 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00204">Congregation Bonai Shalom</A> (160 memorials, 160 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00203">Congregation Har HaShem</A> (415 memorials, 406 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Colorado Springs (1 synagogue/society, 472 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00380">Temple Shalom</A> (472 memorials, 468 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Denver (3 synagogues/societies, 8698 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00254">BMH-BJ Congregation</A> (4288 memorials, 4288 photos) (data online 06 June 2017)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00190">Congregation Rodef Shalom</A> (720 memorials, 720 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00288">Hebrew Educational Alliance</A> (3690 memorials, 3690 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Fort Collins (1 synagogue/society, 122 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00283">Congregation Har Shalom</A> (122 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Connecticut (2 synagogues/societies, 4467 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Waterbury (1 synagogue/society, 734 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00112">B'Nai Shalom Synagogue</A> (734 memorials, 0 photos) (data online 27 December 2014)</LI>
+</UL>
+<LI id="fh">City: West Hartford (1 synagogue/society, 3733 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00406">Congregation Beth Israel</A> (3733 memorials, 0 photos) (data online 20 January 2021)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: District of Columbia (1 synagogue/society, 819 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Washington (1 synagogue/society, 819 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00103">Tifereth Israel Congregation</A> (819 memorials, 819 photos) (data online 27 December 2014)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Florida (3 synagogues/societies, 1860 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Boca Raton (1 synagogue/society, 1023 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00233">B'Nai Torah Congregation</A> (1023 memorials, 1023 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Melbourne (1 synagogue/society, 394 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00154">Temple Israel of Brevard</A> (394 memorials, 394 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Winter Springs (1 synagogue/society, 443 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00167">Temple Israel</A> (443 memorials, 443 photos) (data online 13 December 2015)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Georgia (3 synagogues/societies, 1874 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Athens (1 synagogue/society, 162 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00179">Congregation Children of Israel</A> (162 memorials, 0 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Atlanta (1 synagogue/society, 1104 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00414">Congregation Shearith Israel</A> (1104 memorials, 0 photos) (data online 04 August 2021)</LI>
+</UL>
+<LI id="fh">City: Savannah (1 synagogue/society, 608 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00108">Congregation Mickve Israel</A> (608 memorials, 608 photos) (data online 27 December 2014)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Iowa (10 synagogues/societies, 2460 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Ames (1 synagogue/society, 127 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00376">Ames Jewish Congregation</A> (127 memorials, 127 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Cedar Rapids (1 synagogue/society, 207 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00413">Temple Judah</A> (207 memorials, 207 photos) (data online 04 August 2021)</LI>
+</UL>
+<LI id="fh">City: Des Moines (4 synagogues/societies, 1697 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00274">Children of Israel Synagogue</A> (119 memorials, 119 photos) (data online 06 June 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00281">Congregation Beth El Jacob </A> (400 memorials, 400 photos) (data online 06 June 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00384">Temple B\'nai Jeshurun</A> (412 memorials, 412 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00379">Tifereth Israel Synagogue</A> (766 memorials, 766 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Fort Dodge (1 synagogue/society, 106 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00377">Beth El Synagogue</A> (106 memorials, 0 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Marshalltown (1 synagogue/society, 95 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00277">Congregation Sons of Israel</A> (95 memorials, 95 photos) (data online 06 June 2019)</LI>
+</UL>
+<LI id="fh">City: Oskaloosa (1 synagogue/society, 31 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00388">B\'nai Israel (?)</A> (31 memorials, 0 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Ottumwa (1 synagogue/society, 197 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00152">B'Nai Jacob Synagogue</A> (197 memorials, 197 photos) (data online 13 December 2015)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Illinois (6 synagogues/societies, 7082 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Chicago (2 synagogues/societies, 4095 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00189">Congregation Shaare Tikvah / B&rsquo;nai Zion Synagogue</A> (3269 memorials, 3269 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00366">KAM Isaiah Israel</A> (826 memorials, 826 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Evanston (1 synagogue/society, 1112 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00382">Beth Emet The Free Synagogue (Temple Judea Mizpah, Temple Judea, Temple Mizpah)</A> (1112 memorials, 1112 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Park Forest (1 synagogue/society, 638 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00197">Congregation Am Echad</A> (638 memorials, 0 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Quincy (1 synagogue/society, 407 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00270">Temple Bnai Sholom</A> (407 memorials, 0 photos) (data online 08 June 2018)</LI>
+</UL>
+<LI id="fh">City: Skokie / Evanston (1 synagogue/society, 830 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00385">Congregations Beth Hamrdrosh Hagodol Kesser Maariv Anshe Luknik</A> (830 memorials, 830 photos) (data online 16 July 2020)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Indiana (2 synagogues/societies, 2340 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Fort Wayne (2 synagogues/societies, 2340 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00282">Congregation Achduth Vesholom </A> (1460 memorials, 495 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00285">Congregation B'nai Jacob</A> (880 memorials, 473 photos) (data online 16 July 2020)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Kentucky (1 synagogue/society, 69 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Harlan (1 synagogue/society, 69 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00049">B'nai Sholom Congregation</A> (69 memorials, 69 photos) (data online 14 June 2014)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Louisiana (3 synagogues/societies, 3011 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Metairie (1 synagogue/society, 848 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00378">Gates of Prayer</A> (848 memorials, 848 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: New Orleans (2 synagogues/societies, 2163 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00284">Congregation Temple Sinai</A> (1294 memorials, 1294 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00390">Touro Synagogue </A> (869 memorials, 869 photos) (data online 16 July 2020)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Massachusetts (137 synagogues/societies, 82561 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Acton (1 synagogue/society, 263 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00159">Temple Beth Elohim</A> (263 memorials, 263 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Andover (2 synagogues/societies, 1925 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00021">Congregation Beth Israel</A> (1342 memorials, 1342 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00026">Temple Emanuel</A> (583 memorials, 583 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Athol (1 synagogue/society, 116 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00183">Temple Israel</A> (116 memorials, 116 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Attleboro (1 synagogue/society, 211 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00013">Agudas Achim</A> (211 memorials, 211 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Belmont (1 synagogue/society, 616 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00236">Beth El Temple Center</A> (616 memorials, 616 photos) (data online 06 June 2017)</LI>
+</UL>
+<LI id="fh">City: Beverly (1 synagogue/society, 473 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00077">Temple B'Nai Abraham</A> (473 memorials, 473 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Boston (4 synagogues/societies, 9098 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00066">Boston Synagogue</A> (157 memorials, 157 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00065">Congregation Bnai Jacob/ Zvhil-Mezbuz Beis Medrash</A> (63 memorials, 63 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00268">Hebrew Rehabilitation Center</A> (6128 memorials, 6128 photos) (data online 08 June 2018)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00247">Temple Israel</A> (2750 memorials, 2750 photos) (data online 06 June 2017)</LI>
+</UL>
+<LI id="fh">City: Braintree (1 synagogue/society, 301 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00238">Temple B'Nai Sholom</A> (301 memorials, 301 photos) (data online 06 June 2017)</LI>
+</UL>
+<LI id="fh">City: Brighton (1 synagogue/society, 118 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00038">Shaloh House School</A> (118 memorials, 118 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Brighton (Boston) (3 synagogues/societies, 2547 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00213">Congregation Chai Odom</A> (948 memorials, 948 photos) (data online 08 December 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00120">Kadimah Toras Moshe</A> (1413 memorials, 1413 photos) (data online 29 May 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00224">Sephardic Community Center</A> (186 memorials, 186 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Brockton (2 synagogues/societies, 937 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00106">Beth Emunah</A> (785 memorials, 785 photos) (data online 27 December 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00151">Temple Israel</A> (152 memorials, 152 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Brookline (16 synagogues/societies, 9435 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00222">Congregation Beth Pinchas</A> (511 memorials, 511 photos) (data online 08 December 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00083">Congregation Kehillath Israel</A> (2439 memorials, 2439 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00219">Congregation Mishkan Tefila</A> (894 memorials, 894 photos) (data online 08 December 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00029">New England Hebrew Academy</A> (104 memorials, 104 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00241">New England Hebrew Academy</A> (133 memorials, 133 photos) (data online 06 June 2017)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00030">New England Hebrew Academy (Cong. Agudas Israel Anshi Sfard)</A> (778 memorials, 778 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00036">New England Hebrew Academy (Cong. Anshi Volin)</A> (46 memorials, 46 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00031">New England Hebrew Academy (Cong. Beth Jacob)</A> (199 memorials, 199 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00032">New England Hebrew Academy (Cong. Mishkan Israel)</A> (117 memorials, 117 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00033">New England Hebrew Academy (Cong. Paoli Zedek)</A> (117 memorials, 117 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00034">New England Hebrew Academy (Cong. Shara Tfilo)</A> (264 memorials, 264 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00035">New England Hebrew Academy (Cong. Tikvas Israel, aka Cong. Hatikvah)</A> (452 memorials, 452 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00136">Temple Beth Zion</A> (663 memorials, 663 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00164">Temple Ohabei Sholom</A> (1420 memorials, 1420 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00243">Temple Sinai</A> (441 memorials, 441 photos) (data online 06 June 2017)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00042">Young Israel</A> (857 memorials, 857 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Burlington (1 synagogue/society, 99 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00225">Temple Shalom Emeth</A> (99 memorials, 99 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Cambridge (1 synagogue/society, 930 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00048">Beth Shalom (The Tremont Street Shul)</A> (930 memorials, 930 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Canton (2 synagogues/societies, 686 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00050">Beth Abraham</A> (522 memorials, 522 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00063">Temple Beth David</A> (164 memorials, 164 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Chelsea (5 synagogues/societies, 3058 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00014">Agudas Sholom</A> (570 memorials, 570 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00004">Congregation Shaare Zion</A> (300 memorials, 0 photos) (data online 22 May 2012)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00216">Shomrei Linas Hazedek Anshei Volin</A> (422 memorials, 422 photos) (data online 08 December 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00027">Temple Emmanuel</A> (1302 memorials, 1302 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00043">Zemach Zedek Anshe Lubavitz</A> (464 memorials, 464 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Chestnut Hill (1 synagogue/society, 1077 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00210">Temple Emeth</A> (1077 memorials, 1077 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Clinton (1 synagogue/society, 124 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00195">Cong. Shaarei Zedeck</A> (124 memorials, 124 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Everett (1 synagogue/society, 855 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00080">Congregation Tifereth Israel</A> (855 memorials, 855 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Fall River (2 synagogues/societies, 2578 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00255">Temple Adas Israel</A> (531 memorials, 531 photos) (data online 05 December 2017)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00047">Temple Beth El</A> (2047 memorials, 1243 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Falmouth (1 synagogue/society, 160 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00174">Falmouth Jewish Congregation</A> (160 memorials, 160 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Framingham (2 synagogues/societies, 1744 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00207">Temple Beth Am</A> (858 memorials, 858 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00211">Temple Beth Sholom</A> (886 memorials, 886 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Gloucester (1 synagogue/society, 210 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00140">Temple Ahavat Achim</A> (210 memorials, 210 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Greenfield (1 synagogue/society, 265 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00185">Temple Israel</A> (265 memorials, 265 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Haverhill (2 synagogues/societies, 1230 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00124">Anshe Sholom</A> (230 memorials, 230 photos) (data online 29 May 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00181">Temple Emanu El</A> (1000 memorials, 1000 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Hingham (1 synagogue/society, 355 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00175">Congregation Sha'aray Sholom</A> (355 memorials, 355 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Holliston (1 synagogue/society, 295 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00161">Temple Beth Torah</A> (295 memorials, 295 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Holyoke (1 synagogue/society, 621 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00242">Rodphey Sholom</A> (621 memorials, 621 photos) (data online 06 June 2017)</LI>
+</UL>
+<LI id="fh">City: Hull (1 synagogue/society, 460 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00193">Temple Beth Sholom</A> (460 memorials, 460 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Hull (Nantasket) (1 synagogue/society, 51 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00166">Temple Israel</A> (51 memorials, 51 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Hyannis (1 synagogue/society, 355 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00143">Cape Cod Synagogue</A> (355 memorials, 355 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Lawrence (1 synagogue/society, 143 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00170">Anshe Sholum</A> (143 memorials, 143 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Leominster (1 synagogue/society, 764 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00015">Congregation Agudat Achim</A> (764 memorials, 754 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Lexington (2 synagogues/societies, 1166 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00245">Temple Emunah</A> (547 memorials, 547 photos) (data online 06 June 2017)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00176">Temple Isaiah</A> (619 memorials, 619 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Lowell (1 synagogue/society, 520 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00028">Montefiore Orthodox Synagogue</A> (520 memorials, 520 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Lynn (1 synagogue/society, 726 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00062">Ahabat Sholom</A> (726 memorials, 726 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Malden (4 synagogues/societies, 3440 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00116">Agudas Achim Ezrath Israel</A> (1511 memorials, 1511 photos) (data online 29 May 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00160">Congregation Beth Israel</A> (1095 memorials, 1095 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00045">Temple Tifereth Israel</A> (616 memorials, 616 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00186">Young Israel of Malden</A> (218 memorials, 218 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Marblehead (2 synagogues/societies, 1208 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00182">Temple Emanue-El</A> (689 memorials, 689 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00068">Temple Sinai</A> (519 memorials, 519 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Marlboro (1 synagogue/society, 63 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00196">Temple Emanuel</A> (63 memorials, 63 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Melrose (1 synagogue/society, 120 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00142">Temple Beth Shalom</A> (120 memorials, 120 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Milford (1 synagogue/society, 204 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00046">Temple Beth Shalom</A> (204 memorials, 204 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Millis (1 synagogue/society, 272 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00169">Congregation Ael Chunon</A> (272 memorials, 272 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Milton (1 synagogue/society, 1656 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00237">Congregation Beth Shalom of the Blue Hills</A> (1656 memorials, 0 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Natick (1 synagogue/society, 783 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00227">Temple Israel of Natick</A> (783 memorials, 783 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Needham (1 synagogue/society, 546 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00148">Temple Beth Shalom</A> (546 memorials, 546 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: New Bedford (2 synagogues/societies, 1465 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00017">Ahavath Achim</A> (599 memorials, 599 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00061">Tefereth Israel Congregation</A> (866 memorials, 866 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Newburyport (1 synagogue/society, 217 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00123">Temple Ahavat Achim</A> (217 memorials, 217 photos) (data online 29 May 2015)</LI>
+</UL>
+<LI id="fh">City: Newton (1 synagogue/society, 1952 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00267">Temple Emanuel</A> (1952 memorials, 1952 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Newton Centre (3 synagogues/societies, 2381 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00165">Congregation Shaarei Tefilah</A> (164 memorials, 164 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00172">Temple Beth Avodah</A> (1031 memorials, 1031 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00064">Temple Beth El-Atereth Israel</A> (1186 memorials, 1186 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: North Adams (1 synagogue/society, 359 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00125">Congregation Beth Israel</A> (359 memorials, 359 photos) (data online 29 May 2015)</LI>
+</UL>
+<LI id="fh">City: Northampton (1 synagogue/society, 358 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00249">Congregation B'Nai Israel</A> (358 memorials, 358 photos) (data online 06 June 2017)</LI>
+</UL>
+<LI id="fh">City: Norwood (1 synagogue/society, 256 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00150">Temple Shaare Tefilah</A> (256 memorials, 256 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Peabody (3 synagogues/societies, 1254 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00110">Congregation Sons of Israel</A> (436 memorials, 436 photos) (data online 27 December 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00111">Congregation Tifereth Israel</A> (112 memorials, 112 photos) (data online 27 December 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00099">Temple Ner Tamid of the North Shore</A> (706 memorials, 706 photos) (data online 27 December 2014)</LI>
+</UL>
+<LI id="fh">City: Plymouth (1 synagogue/society, 295 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00141">Congregation Beth Jacob</A> (295 memorials, 295 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Quincy (2 synagogues/societies, 956 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00173">Congregation Beth Israel</A> (542 memorials, 542 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00020">Temple Beth El</A> (414 memorials, 414 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Randolph (4 synagogues/societies, 2657 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00058">Temple Beth Am</A> (1158 memorials, 1158 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00059">Temple Beth Am (Hadrath Kodesh / Adas Israel / Adas Hadrath)</A> (453 memorials, 453 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00057">Temple Beth Am (Temple Adas Israel / Adas Hadrath / Hadrath Israel)</A> (190 memorials, 190 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00075">Young Israel Kehilleth Jacob</A> (856 memorials, 856 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Revere (3 synagogues/societies, 1458 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00076">Congregation Ahavas Achim Anshe Shfard</A> (237 memorials, 237 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00022">Temple Bnai Israel of Beachmont</A> (543 memorials, 543 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00070">Temple Tifereth Israel</A> (678 memorials, 678 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Salem (1 synagogue/society, 691 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00126">Temple Sholom</A> (691 memorials, 691 photos) (data online 29 May 2015)</LI>
+</UL>
+<LI id="fh">City: Saugus (1 synagogue/society, 144 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00158">Congregation Ahavas Sholom</A> (144 memorials, 144 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Sharon (6 synagogues/societies, 2797 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00162">Chabad Center of Sharon</A> (35 memorials, 35 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00163">Congregation Etz Chaim</A> (78 memorials, 78 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00235">Temple Adath Sharon</A> (432 memorials, 432 photos) (data online 06 June 2017)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00246">Temple Israel</A> (1517 memorials, 1517 photos) (data online 06 June 2017)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00178">Temple Sinai</A> (547 memorials, 547 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00228">Young Israel of Sharon</A> (188 memorials, 188 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Somerville (1 synagogue/society, 394 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00194">Temple B'nai Brith</A> (394 memorials, 394 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: South Easton (1 synagogue/society, 197 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00239">[no cemetery name]</A> (197 memorials, 197 photos) (data online 06 June 2017)</LI>
+</UL>
+<LI id="fh">City: Springfield (1 synagogue/society, 654 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00244">Temple Sinai</A> (654 memorials, 654 photos) (data online 06 June 2017)</LI>
+</UL>
+<LI id="fh">City: Stoughton (3 synagogues/societies, 745 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00016">Ahavath Torah</A> (553 memorials, 553 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00039">Shaloh House</A> (92 memorials, 92 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00037">Shaloh House (Ohel Jacob Yeshiva of Greeenfield St.)</A> (100 memorials, 100 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Sudbury (2 synagogues/societies, 199 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00209">Congregation B'nai Torah</A> (73 memorials, 73 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00220">Congregation Beth El</A> (126 memorials, 126 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Swampscott (2 synagogues/societies, 866 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00223">Chabad Lubavitch of the North Shore</A> (78 memorials, 78 photos) (data online 08 December 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00105">Congregation Shirat Hayam of the North Shore</A> (788 memorials, 788 photos) (data online 27 December 2014)</LI>
+</UL>
+<LI id="fh">City: Taunton (1 synagogue/society, 368 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00139">Congregation Agudas Achim and Jewish Comminuty House</A> (368 memorials, 368 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Vinyard Haven (1 synagogue/society, 313 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00149">Martha's Vineyard Hebrew Center</A> (313 memorials, 313 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Wakefield (1 synagogue/society, 121 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00184">Temple Emmanuel</A> (121 memorials, 121 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Waltham (1 synagogue/society, 572 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00192">Temple Beth Israel</A> (572 memorials, 572 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: West Roxbury (2 synagogues/societies, 1190 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00051">Temple Hillel Bnai Torah</A> (100 memorials, 100 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00052">Temple Hillel Bnai Torah</A> (1090 memorials, 1090 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Westborough (1 synagogue/society, 252 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00208">Congregation Bnai Sholom</A> (252 memorials, 252 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Westwood (1 synagogue/society, 407 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00221">Temple Beth David</A> (407 memorials, 407 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Winchester (1 synagogue/society, 58 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00226">Temple Sher Tikvah</A> (58 memorials, 58 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Winthrop (2 synagogues/societies, 1265 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00069">Temple Tifereth Abraham</A> (254 memorials, 254 photos) (data online 29 May 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00041">Temple Tifereth Israel</A> (1011 memorials, 1011 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Worcester (5 synagogues/societies, 4916 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00097">Congregation Beth Israel</A> (1026 memorials, 1026 photos) (data online 27 December 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00132">Jewish Health Center</A> (2358 memorials, 2358 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00067">Shaari Torah West</A> (380 memorials, 380 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00240">Temple Emanuel Sinai</A> (232 memorials, 232 photos) (data online 06 June 2017)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00102">Yeshiva Synagogue Chabad, Cong. Tifereth Israel, Sons of Jacob</A> (920 memorials, 920 photos) (data online 19 June 2016)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Maryland (3 synagogues/societies, 5456 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Baltimore (1 synagogue/society, 5134 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00256">Beth Tfiloh Congregation</A> (5134 memorials, 0 photos) (data online 05 December 2017)</LI>
+</UL>
+<LI id="fh">City: Pocomoke City (1 synagogue/society, 101 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00128">Congregation of Israel</A> (101 memorials, 101 photos) (data online 29 May 2015)</LI>
+</UL>
+<LI id="fh">City: Rockville (1 synagogue/society, 221 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00386">Congregation Ezras Israel of Rockville, MD / Washington, D.C.</A> (221 memorials, 220 photos) (data online 16 July 2020)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Michigan (3 synagogues/societies, 832 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Detroit (1 synagogue/society, 584 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00427">Congregation B\'nai David (Formerly Beth David / Rusisher Shul)</A> (584 memorials, 584 photos) (data online 20 December 2021)</LI>
+</UL>
+<LI id="fh">City: Iron Mountain (1 synagogue/society, 61 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00234">Congregation Anshe Knesseth Israel</A> (61 memorials, 61 photos) (data online 06 June 2017)</LI>
+</UL>
+<LI id="fh">City: South Haven (1 synagogue/society, 187 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00258">First Hebrew Congregation</A> (187 memorials, 187 photos) (data online 05 December 2017)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Missouri (2 synagogues/societies, 6440 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Jefferson City (1 synagogue/society, 86 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00262">Temple Beth El (aka Congregation Beth El)</A> (86 memorials, 0 photos) (data online 05 December 2017)</LI>
+</UL>
+<LI id="fh">City: St. Louis (1 synagogue/society, 6354 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00426">Shaare Zedek, Brith Sholom, and Kneseth Israel (Currently Kol Rinah)</A> (6354 memorials, 0 photos) (data online 20 December 2021)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Mississippi (2 synagogues/societies, 454 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Natchez (1 synagogue/society, 176 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00231">Temple B'nai Israel</A> (176 memorials, 0 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Vicksburg (1 synagogue/society, 278 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00232">Ansche Chesed Temple</A> (278 memorials, 0 photos) (data online 08 December 2016)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: North Carolina (6 synagogues/societies, 1424 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Davidson (1 synagogue/society, 107 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00415">Temple Kol Tikvah</A> (107 memorials, 107 photos) (data online 04 August 2021)</LI>
+</UL>
+<LI id="fh">City: Jackson Springs (1 synagogue/society, 73 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00121">Sandhills Jewish Congregation Beth Shalom</A> (73 memorials, 73 photos) (data online 29 May 2015)</LI>
+</UL>
+<LI id="fh">City: Raleigh (3 synagogues/societies, 1109 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00117">Beth Meyer Synagogue</A> (570 memorials, 570 photos) (data online 16 July 2020)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00409">Congregation Sha'arei Israel</A> (114 memorials, 0 photos) (data online 20 January 2021)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00135">Temple Beth Or</A> (425 memorials, 425 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Rocky Mount (1 synagogue/society, 135 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00253">Temple Beth El</A> (135 memorials, 135 photos) (data online 06 June 2017)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: New Hampshire (3 synagogues/societies, 728 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Keene (1 synagogue/society, 166 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00286">Congregation Ahavas Achim</A> (166 memorials, 166 photos) (data online 25 July 2019)</LI>
+</UL>
+<LI id="fh">City: Laconia (1 synagogue/society, 199 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00421">Temple B'nai Israel</A> (199 memorials, 199 photos) (data online 20 December 2021)</LI>
+</UL>
+<LI id="fh">City: Nashua (1 synagogue/society, 363 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00287">Temple Beth Abraham</A> (363 memorials, 363 photos) (data online 25 July 2019)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: New Jersey (10 synagogues/societies, 4173 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Glen Rock (1 synagogue/society, 583 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00074">Glen Rock Jewish Center</A> (583 memorials, 583 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Hillside (2 synagogues/societies, 507 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00422">Congregation Chevra Anshe Lubovitz</A> (341 memorials, 341 photos) (data online 20 December 2021)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00424">Hebrew Orphanage and Sheltering Home</A> (166 memorials, 166 photos) (data online 20 December 2021)</LI>
+</UL>
+<LI id="fh">City: Hoboken (1 synagogue/society, 331 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00054">United Synagogue of Hoboken</A> (331 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Livingston (1 synagogue/society, 922 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00411">Kushner Academy, Young Israel</A> (922 memorials, 922 photos) (data online 20 January 2021)</LI>
+</UL>
+<LI id="fh">City: Maplewood (1 synagogue/society, 410 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00404">Congregation Ahavath Zion, Congregation Ahavath Zion (Newark)</A> (410 memorials, 410 photos) (data online 20 January 2021)</LI>
+</UL>
+<LI id="fh">City: Montclair (1 synagogue/society, 846 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00261">Congregation Shomrei Emunah</A> (846 memorials, 837 photos) (data online 05 December 2017)</LI>
+</UL>
+<LI id="fh">City: Mt. Holly (1 synagogue/society, 374 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00271">Temple Har Zion</A> (374 memorials, 374 photos) (data online 08 June 2018)</LI>
+</UL>
+<LI id="fh">City: Newark (1 synagogue/society, 179 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00095">Congregation Ahavas Sholom</A> (179 memorials, 179 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Woodbridge (1 synagogue/society, 21 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00367">Beth Israel Memorial Park, Kotzker Sick and  Benevolent Association (Block 01) (Holocaust Memorials)</A> (21 memorials, 21 photos) (data online 16 July 2020)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: New York (32 synagogues/societies, 28126 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Albany (2 synagogues/societies, 2097 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00002">B'nai Shalom Reform Congregation</A> (492 memorials, 0 photos) (data online 22 May 2012)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00009">Temple Israel</A> (1605 memorials, 1605 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Beacon (1 synagogue/society, 255 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00107">Beacon Hebrew Alliance</A> (255 memorials, 0 photos) (data online 27 December 2014)</LI>
+</UL>
+<LI id="fh">City: Bronx (2 synagogues/societies, 1170 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00144">Bronx Park East Chotiner Jewish Center</A> (519 memorials, 519 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00040">Temple Emanuel of Parkchester</A> (651 memorials, 651 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Brooklyn (2 synagogues/societies, 634 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00003">Brooklyn Jewish Center</A> (592 memorials, 0 photos) (data online 22 May 2012)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00276">Iglesia Pentecostal, Independent Chevra Sphard of Pereyaslaw</A> (42 memorials, 0 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: East Northport (1 synagogue/society, 176 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00056">Young Israel of East Northport</A> (176 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Hudson (1 synagogue/society, 603 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00200">Congregation Anshe Emeth</A> (603 memorials, 0 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Huntington (1 synagogue/society, 749 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00019">Temple Beth El</A> (749 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Kings Park (1 synagogue/society, 327 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00201">Kings Park Jewish Center</A> (327 memorials, 0 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Kingston (3 synagogues/societies, 1677 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00089">Congregation Agudas Achim</A> (597 memorials, 0 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00090">Congregation Ahavath Israel</A> (758 memorials, 0 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00093">Temple Emanuel</A> (322 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Manhattan (1 synagogue/society, 2628 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00260">Mount Sinai Jewish Center</A> (2628 memorials, 0 photos) (data online 05 December 2017)</LI>
+</UL>
+<LI id="fh">City: Monticello (1 synagogue/society, 293 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00177">Temple Sholom</A> (293 memorials, 0 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: New York (2 synagogues/societies, 4169 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00001">Bialystoker Center</A> (3986 memorials, 0 photos) (data online 27 December 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00073">Gemiluth Chessed of Greater New York, Inc</A> (183 memorials, 183 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Newburgh (2 synagogues/societies, 1983 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00060">Congregation Agudas Israel</A> (1263 memorials, 0 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00129">Temple Beth Jacob</A> (720 memorials, 0 photos) (data online 29 May 2015)</LI>
+</UL>
+<LI id="fh">City: North Bellmore (1 synagogue/society, 1557 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00383">Temple Beth-el of Bellmore</A> (1557 memorials, 0 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Oakdale (2 synagogues/societies, 2090 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00011">B'nai Israel Reform Temple</A> (1549 memorials, 0 photos) (data online 22 May 2012)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00257">B'nai Israel Reform Temple (Formerly Sinai Reform Temple)</A> (541 memorials, 0 photos) (data online 05 December 2017)</LI>
+</UL>
+<LI id="fh">City: Poughkeepsie (3 synagogues/societies, 2275 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00091">Congregation Schomre Israel</A> (611 memorials, 0 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00092">Temple Beth El</A> (1242 memorials, 0 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00094">Vassar Temple</A> (422 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Queens (2 synagogues/societies, 1784 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00425">Maspeth Jewish Center</A> (842 memorials, 694 photos) (data online 20 December 2021)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00389">Sunnyside Jewish Center</A> (942 memorials, 0 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Queens (Astoria) (1 synagogue/society, 1150 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00171">Astoria Center of Israel</A> (1150 memorials, 1150 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Stony Brook (1 synagogue/society, 5 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00419">Temple Isaiah</A> (5 memorials, 0 photos) (data online 04 August 2021)</LI>
+</UL>
+<LI id="fh">City: Walden (1 synagogue/society, 259 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00420">Walden Jewish Community Center / Congregation Beth Hillel</A> (259 memorials, 259 photos) (data online 04 August 2021)</LI>
+</UL>
+<LI id="fh">City: White Plains (1 synagogue/society, 2245 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00023">Congregation Kol Ami</A> (2245 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Ohio (4 synagogues/societies, 7187 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Cleveland Heights (1 synagogue/society, 2356 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00078">Oheb Zedek-Taylor Road Synagogue</A> (2356 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Columbus (2 synagogues/societies, 1483 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00416">B'nai Israel - Lancaster, OH (Held at Ahavas Sholom)</A> (62 memorials, 0 photos) (data online 04 August 2021)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00423">Congregation Agudas Achim</A> (1421 memorials, 0 photos) (data online 20 December 2021)</LI>
+</UL>
+<LI id="fh">City: Pepper Pike (1 synagogue/society, 3348 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00082">B'nai Jeshurun Congregation</A> (3348 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Oregon (1 synagogue/society, 420 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Eugene (1 synagogue/society, 420 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00206">Temple Beth Israel</A> (420 memorials, 420 photos) (data online 19 June 2016)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Pennsylvania (11 synagogues/societies, 7958 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Erie (1 synagogue/society, 881 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00412">Brith Sholom</A> (881 memorials, 881 photos) (data online 04 August 2021)</LI>
+</UL>
+<LI id="fh">City: Havertown (1 synagogue/society, 2994 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00115">Suburban Jewish Community Center Bnai Aaron</A> (2994 memorials, 0 photos) (data online 27 December 2014)</LI>
+</UL>
+<LI id="fh">City: Lewistown (1 synagogue/society, 230 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00410">Ohev Sholom Synagogue </A> (230 memorials, 230 photos) (data online 20 January 2021)</LI>
+</UL>
+<LI id="fh">City: Lock Haven (1 synagogue/society, 251 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00217">Beth Yehuda Synagogue</A> (251 memorials, 251 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: New Castle (1 synagogue/society, 509 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00269">Temple Hadar Israel</A> (509 memorials, 0 photos) (data online 08 June 2018)</LI>
+</UL>
+<LI id="fh">City: Newtown (1 synagogue/society, 994 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00248">Congregation Brothers of Israel</A> (994 memorials, 994 photos) (data online 06 June 2017)</LI>
+</UL>
+<LI id="fh">City: Philadelphia (3 synagogues/societies, 1406 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00010">Congregation Bnai Abraham</A> (458 memorials, 0 photos) (data online 22 May 2012)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00130">Congregation Shivtei Yeshuron Ezras Israel</A> (306 memorials, 0 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00275">Minyan Sulam Yaakov (Gershman Y)</A> (642 memorials, 642 photos) (data online 06 June 2019)</LI>
+</UL>
+<LI id="fh">City: Pittsburgh (1 synagogue/society, 276 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00131">Congregation Beth Shalom</A> (276 memorials, 276 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Pottstown (1 synagogue/society, 417 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00408">Congregation Hesed Shel Emet, Congregation Mercy & Truth</A> (417 memorials, 417 photos) (data online 20 January 2021)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Rhode Island (1 synagogue/society, 335 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Providence (1 synagogue/society, 335 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00044">Congregation Sons of Jacob</A> (335 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: South Carolina (17 synagogues/societies, 5528 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Aiken (1 synagogue/society, 102 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00109">Adath Yeshurun Sons of Israel Cemetery</A> (102 memorials, 102 photos) (data online 27 December 2014)</LI>
+</UL>
+<LI id="fh">City: Anderson (1 synagogue/society, 89 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00018">Temple B'Nai Israel</A> (89 memorials, 89 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Camden (1 synagogue/society, 83 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00127">Beth El</A> (83 memorials, 83 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Charleston (3 synagogues/societies, 2208 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00071">Brith Sholom Beth Israel</A> (987 memorials, 987 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00079">Emanu-El Synagogue</A> (658 memorials, 658 photos) (data online 14 June 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00072">Kahal Kadosh Beth Elohim</A> (563 memorials, 563 photos) (data online 20 December 2021)</LI>
+</UL>
+<LI id="fh">City: Columbia (3 synagogues/societies, 1239 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00146">Beth Shalom</A> (711 memorials, 711 photos) (data online 06 June 2019)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00137">Chabad of South Carolina</A> (20 memorials, 20 photos) (data online 13 December 2015)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00147">Tree of Life</A> (508 memorials, 508 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Dillon (1 synagogue/society, 96 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00024">Ohav Shalom</A> (96 memorials, 0 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Florence (1 synagogue/society, 283 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00025">Florence Beth Israel</A> (283 memorials, 283 photos) (data online 14 June 2014)</LI>
+</UL>
+<LI id="fh">City: Greenville (2 synagogues/societies, 805 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00096">Beth Israel</A> (472 memorials, 472 photos) (data online 27 December 2014)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00101">Temple of Israel</A> (333 memorials, 331 photos) (data online 08 December 2016)</LI>
+</UL>
+<LI id="fh">City: Rock Hill (1 synagogue/society, 13 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00428">Temple Beth-El</A> (13 memorials, 0 photos) (data online 20 December 2021)</LI>
+</UL>
+<LI id="fh">City: Spartanburg (1 synagogue/society, 336 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00145">B'Nai Israel</A> (336 memorials, 336 photos) (data online 13 December 2015)</LI>
+</UL>
+<LI id="fh">City: Sumter (1 synagogue/society, 228 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00100">Temple Sinai</A> (228 memorials, 228 photos) (data online 27 December 2014)</LI>
+</UL>
+<LI id="fh">City: Walterboro (1 synagogue/society, 46 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00229">Temple Mt. Sinai</A> (46 memorials, 46 photos) (data online 08 December 2016)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Texas (6 synagogues/societies, 4789 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Bellaire (1 synagogue/society, 640 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00113">Congregation Brith Shalom</A> (640 memorials, 640 photos) (data online 27 December 2014)</LI>
+</UL>
+<LI id="fh">City: El Paso (2 synagogues/societies, 1212 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00180">Congregation B'Nai Zion Talmud</A> (667 memorials, 667 photos) (data online 19 June 2016)</LI>
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00381">Temple Mt. Sinai</A> (545 memorials, 545 photos) (data online 16 July 2020)</LI>
+</UL>
+<LI id="fh">City: Fort Worth (1 synagogue/society, 732 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00273">Beth-El Congregation</A> (732 memorials, 732 photos) (data online 06 June 2019)</LI>
+</UL>
+<LI id="fh">City: Houston (1 synagogue/society, 2076 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00191">United Orthodox Synagogues of Houston</A> (2076 memorials, 1918 photos) (data online 19 June 2016)</LI>
+</UL>
+<LI id="fh">City: Sherman (1 synagogue/society, 129 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00053">Temple Beth Emeth</A> (129 memorials, 129 photos) (data online 14 June 2014)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Virginia (1 synagogue/society, 1749 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Richmond (1 synagogue/society, 1749 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00403">Temple Beth-El</A> (1749 memorials, 1749 photos) (data online 16 July 2020)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Vermont (1 synagogue/society, 1339 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Burlington (1 synagogue/society, 1339 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00387">Ohavi Zedek Synagogue</A> (1339 memorials, 1339 photos) (data online 16 July 2020)</LI>
+</UL>
+</UL>
+<LI id="fh">Region: Wyoming (1 synagogue/society, 120 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Cheyenne (1 synagogue/society, 120 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=USA-00205">Mount Sinai</A> (120 memorials, 120 photos) (data online 19 June 2016)</LI>
+</UL>
+</UL>
+</UL>
+<LI id="fh">Country: Wales (1 synagogue/society, 21 memorials, 8 photos) </LI>
+<UL id="fl" style="display:none">
+<LI id="fh">City: Merthyr Tydfil (1 synagogue/society, 21 memorials) </LI>
+<UL id="fl" style="display:none">
+<LI><A HREF="/databases/memorial/memorialshow.php?ID=WAL-00218">Merthyr Hebrew Congregation</A> (21 memorials, 8 photos) (data online 08 December 2016)</LI>
+</UL></UL></UL>
+<P>
+<P>
+Total Countries = 41<BR>
+Total Synagogues/Sections = 417<BR>
+Total Memorials = 225,822<BR>
+Total Photos = 150,560<BR>
+<P>
+Wednesday 5th of January 2022 02:30:13 PM<br>

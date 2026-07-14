@@ -1,0 +1,61 @@
+<TABLE ALIGN="RIGHT" WIDTH="33%" CELLSPACING="0" CELLPADDING="10"
+       BORDER="1" BGCOLOR="#E8E1D1" RULES="all" 
+       STYLE="margin-left:10px; margin-bottom:10px;">
+<TR>
+<TD CLASS="smalltext">
+The <A HREF="/databases/Memorial" STYLE="text-decoration: none"><B>JewishGen 
+Memorial Plaques Database</B></A> 
+aims to index information from synagogue yahrzeit plaques 
+and other memorial records.&nbsp;  
+The JewishGen Memorial Plaques Database is a 
+<A HREF="/databases/Memorial">searchable database</A>
+of names and associated information.&nbsp;  
+As of December 2021, the JewishGen Memorial Plaques Database 
+contains 225,000 memorial records from
+<A HREF="/databases/Memorial/tree/MemList.htm">417 Synagogues</A>.
+
+
+<!-- To Do: Change these bullets to a CSS Style -->
+<TABLE WIDTH="95%" BORDER="0" ALIGN="CENTER">
+<TR>
+<TD CLASS="smalltext" COLSPAN="2">
+    <IMG SRC="/JG/images/favicon_s.gif" border="0" width="10" height="10"> 
+    <A HREF="/databases/Memorial">Search the Memorial Plaques Database</A></TD>
+    </TD>
+</TR>
+
+<TR>
+<TD CLASS="smalltext">
+    <IMG SRC="/JG/images/favicon_s.gif" border="0" width="10" height="10"> 
+    <A HREF="/databases/Memorial/tree/MemList.htm">Data Inventory</A>
+    </TD>
+<TD CLASS="smalltext">
+    <IMG SRC="/JG/images/favicon_s.gif" border="0" width="10" height="10"> 
+    <A HREF="/databases/Memorial/Submit.htm">Submitting Data</A>
+    </TD>
+</TR>
+
+<TR>
+<TD COLSPAN="2" CLASS="smalltext">
+    <IMG SRC="/JG/images/favicon_s.gif" border="0" width="10" height="10"> 
+    <A HREF="/databases/Memorial/WhyMemorial.htm">Why a Memorial Plaques Database?</A>
+    </TD>
+</TR>
+
+<!--
+<TR>
+<TD CLASS="smalltext">
+    <IMG SRC="/JG/images/favicon_s.gif" border="0" width="10" height="10"> 
+    <A HREF="/databases/Memorial/Mem_Features.htm">JewishGen Memorial Plaque Database Features</A>
+    </TD>
+<TD CLASS="smalltext">
+    <IMG SRC="/JG/images/favicon_s.gif" border="0" width="10" height="10"> 
+    <A HREF="/databases/Memorial/Mem_Updates.htm">JewishGen Memorial Plaque Database Updates</A>
+    </TD>
+</TR>
+-->
+</TABLE>
+
+</TD>
+</TR>
+</TABLE>
