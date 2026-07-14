@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Germany Research Division &mdash; JewishGen</title>
+<meta name="description" content="The JewishGen Germany Research Division focuses on Germany and German-speaking areas of Alsace, Lorraine, Switzerland, and Poland..">
+
+<!-- 1. Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<!-- 2. JewishGen Global Design System -->
+<link rel="stylesheet" href="/jg-global.css">
+<!-- 3. JewishGen Research Division stylesheet -->
+<link rel="stylesheet" href="/RD/jg-rd.css">
+<!-- 4. Page-specific styles (page-title-band only) -->
+<style>
+a { text-decoration: none; color: inherit; }
+
+/* -- Page title band (will move to jg-global post-launch) -- */
+.page-title-band {
+    background-color: var(--navy);
+    padding: 44px 50px;
+    text-align: center;
+}
+.page-title-band h1 {
+    margin: 0 0 10px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #ffffff;
+}
+.page-title-band p.hero-subtitle {
+    margin: 0 auto;
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 620px;
+    line-height: 1.6;
+}
+body.dark-mode .page-title-band { background-color: #0d2a45 !important; }
+
+@media (max-width: 800px) {
+    .page-title-band { padding: 36px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="site-header"></div>
+
+<!-- TITLE BAND -->
+  <div class="page-title-band">
+    <span class="tagline">Germany Research Division</span>
+    <h1>Germany Research Division</h1>
+    <p class="hero-subtitle">Preserving and sharing the histories of Jewish communities from Germany and German-speaking areas of Alsace, Lorraine, Switzerland, and Poland.</p>
+</div>
+
+<!-- PAGE BODY -->
+<div class="rd-body-wrap">
+    <div class="rd-body-inner rd-body-inner--narrow">
+
+        <!-- Sidebar (loaded from RD_Sidebar.html via fetch) -->
+        <aside id="rd-sidebar" class="rd-sidebar"></aside>
+
+        <!-- Main content -->
+        <main>
+
+            <!-- About -->
+            <section>
+                <span class="section-heading">About the Division</span>
+                <div class="green-accent-line"></div>
+                <div class="rd-intro">
+                    <p>The JewishGen German Research Division (RD), formerly GerSIG, is a group of researchers dedicated to learning more about the lives of our Jewish ancestors who lived in current and former German-speaking regions of Europe. This includes not only modern-day Germany, but also regions that are today part of Poland and France.</p>
+                   <p>Our group actively looks to collect and exchange histories, resources, data, and research tips. We do this online through <a href= "https://www.jewishgen.org/GerSIG/"> our dedicated website</a> and the <a href="/RD/Germany/databases.html">JewishGen Germany database</a>. We meet annually at the IAJGS genealogy conference, where the German Research Division often sponsors a speaker.</p>
+<p>If you have questions, or want to contribute something of your own, <a href="https://www.jewishgen.org/CURE/Contact.asp?to=7713AC">contact us.</a></p>
+                </div>
+
+                <!-- Currently working on -->
+                <div class="rd-current-card">
+                    <span class="rd-current-label">Currently Working On</span>
+                    <p class="rd-current-text">The Division is currently working on a number of projects- please visit <a href="/RD/Germany/donate.html"> our dedicated donation page</a> to learn more about how you can contribute</p>
+                </div>
+            </section>
+
+            <!-- Our Team (populated from people.json) -->
+            <section class="rd-section">
+                <span class="section-heading">Our Team</span>
+                <div class="green-accent-line"></div>
+                <div id="rd-team-container"></div>
+            </section>
+
+            <!-- Volunteer strip -->
+            <div class="volunteer-strip rd-section">
+                The JewishGen German RD couldn't exist without its dedicated members. Please join us by volunteering for one of our projects! Contact <a href="https://www.jewishgen.org/CURE/Contact.asp?to=7713AC">Alex Calzareth</a> to get started!
+            </div>
+
+           <!-- External Site -->
+            <section class="rd-section">
+                <span class="section-heading">More Resources</span>
+                <div class="green-accent-line"></div>
+                <div class="rd-external-card">
+                    <div>
+                        <h3>German Research Division Website</h3>
+                        <p>For additional resources, town pages, and research guides, visit the dedicated Germany Research Division website.</p>
+                    </div>
+                    <a href="https://www.jewishgen.org/GerSIG/" class="rd-external-btn" target="_blank" rel="noopener noreferrer">
+                        Visit Site
+                        <span class="ext-icon" aria-hidden="true">&#8599;</span>
+                    </a>
+                </div>
+            </section>
+          
+            <!-- Centered donation block -->
+            <section class="rd-section">
+                <span class="section-heading">Support the Germany Research Division</span>
+                <div class="green-accent-line"></div>
+                <div class="rd-donation-block">
+                    <p>Our projects are made possible through the donations of our members and researchers.  We appreciate your support.</p>
+                    <a href="https://jewishgen.net/donation/germany-research-division-general" class="rd-btn-donate-solid">Support the Germany Research Division</a>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/jg-rd-sidebar.js"></script>
+<script>
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function(r) { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(function(html) { document.getElementById(id).innerHTML = html; })
+        .catch(function(err) { console.warn(err); });
+}
+
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html'),
+    loadComponent('rd-sidebar', '/RD/Germany/RD_Sidebar.html')
+        .then(function() { if (window.JG && JG.setActiveSidebarLink) JG.setActiveSidebarLink(); })
+]).then(function() {
+    document.querySelectorAll('.jg-nav .dropbtn, .main-nav .dropbtn').forEach(function(btn) {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var menu = this.nextElementSibling;
+                if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+            if (e.key === 'Escape') {
+                var menu = this.nextElementSibling;
+                if (menu) menu.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+<script src="/people/jg-people-loader.js"></script>
+<script>
+JG.loadTeam({
+    container: 'rd-team-container',
+    roster: [
+        { id: 'alex-calzareth', role: 'Director of the German Research Division' },
+   ]
+});
+</script>
+</body>
+</html>
