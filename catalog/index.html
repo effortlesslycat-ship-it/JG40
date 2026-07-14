@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Records Catalog &mdash; JewishGen</title>
+<meta name="description" content="Browse and filter JewishGen's complete catalog of genealogical databases, indexes, and records collections.">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/jg-global.css">
+<link rel="stylesheet" href="/catalog/jg-catalog.css?v=7">
+
+<style>
+a { text-decoration: none; color: inherit; }
+</style>
+</head>
+<body>
+
+<!-- Meta-row icon sprite (navy via currentColor; flips in dark mode) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="jg-ic-date" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+        <line x1="4" y1="9" x2="20" y2="9" stroke="currentColor" stroke-width="1.7"/>
+        <line x1="8" y1="3" x2="8" y2="6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <line x1="16" y1="3" x2="16" y2="6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="jg-ic-records" viewBox="0 0 24 24">
+        <path d="M6 3h8l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M14 3v4h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <line x1="9" y1="12" x2="15" y2="12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <line x1="9" y1="16" x2="15" y2="16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="jg-ic-language" viewBox="0 0 24 24">
+        <path d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 4v-4H5a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="jg-ic-updated" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+</svg>
+
+<div id="site-header"></div>
+
+<!-- Navy hero -->
+<div class="catalog-hero-band" role="banner">
+    <div class="catalog-inner">
+        <span class="catalog-hero-tag">JewishGen Records Catalog</span>
+        <h1>Browse the Records Catalog</h1>
+        <p class="catalog-hero-sub">Every searchable dataset in the JewishGen collection &mdash; filter by record type, region, or time period to find records and their full descriptions.</p>
+    </div>
+</div>
+
+<!-- Filter zone -->
+<div class="catalog-filters">
+    <div class="catalog-inner">
+
+        <div class="catalog-tips-row">
+            <button type="button" class="jg-tips-link" id="tipsBtn" aria-expanded="false" aria-controls="tipsPanel">
+                Tips for getting the most out of your results
+                <img src="/images/site/TipsBulbReg.svg"  alt="" class="jg-tips-link__icon light-logo" aria-hidden="true">
+                <img src="/images/site/TipsBulbDark.svg" alt="" class="jg-tips-link__icon dark-logo"  aria-hidden="true">
+            </button>
+        </div>
+        <div class="jg-tips-card-panel" id="tipsPanel" role="region" aria-label="Catalog tips">
+            <div class="jg-tips-panel__grid">
+                <div><strong>Filter by Record Type:</strong> Narrow results to births, marriages, deaths, censuses, and more.</div>
+                <div><strong>Filter by Region:</strong> Choose a country, then refine by historical sub-region or gubernia.</div>
+                <div><strong>Date Range:</strong> Find records that overlap a specific time period.</div>
+                <div><strong>Text Search:</strong> Search dataset titles and descriptions for any keyword.</div>
+                <div><strong>Clickable Tags:</strong> Click any tag on a result to instantly filter by that value.</div>
+                <div><strong>New &amp; Updated:</strong> Use the Show filter to see only recently added or updated datasets.</div>
+            </div>
+            <div class="jg-tips-panel__footer">
+                <a href="/HowToFAQ/howto.html">Need more help? Read our complete "How to JewishGen" guide &rarr;</a>
+            </div>
+        </div>
+
+        <div class="filter-rows">
+            <!-- Line 1 -->
+            <div class="filter-line">
+                <div class="filter-group search-group">
+                    <label for="textSearch">Search Datasets</label>
+                    <input type="text" id="textSearch" placeholder="e.g. birth records, Bessarabia, business directory&hellip;" autocomplete="off" aria-label="Search dataset titles and descriptions">
+                </div>
+
+                <div class="filter-group">
+                    <label for="filterType">Record Type</label>
+                    <select id="filterType" aria-label="Filter by record type">
+                        <option value="">All Record Types</option>
+                        <optgroup label="Vital Records">
+                            <option value="vital">Vital Records (BMD)</option>
+                            <option value="birth">Birth / Brit Milah</option>
+                            <option value="marriage">Marriage / Ketubot</option>
+                            <option value="death">Death / Burial</option>
+                        </optgroup>
+                        <optgroup label="Census &amp; Lists">
+                            <option value="census">Census / Revision Lists</option>
+                            <option value="names">Name Lists</option>
+                            <option value="immigration">Passenger / Immigration</option>
+                        </optgroup>
+                        <optgroup label="Other Record Types">
+                            <option value="directory">Business Directory</option>
+                            <option value="holocaust">Holocaust</option>
+                            <option value="military">Military</option>
+                            <option value="yizkor">Yizkor Books</option>
+                            <option value="legal">Notary / Judicial</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filterGeo">Region / Country</label>
+                    <select id="filterGeo" aria-label="Filter by region or country">
+                        <option value="">All Regions</option>
+                        <optgroup label="Topical Databases">
+                            <option value="holocaust">Holocaust (All Regions)</option>
+                            <option value="sephardic">Sephardic</option>
+                        </optgroup>
+                        <optgroup label="Eastern &amp; Central Europe">
+                            <option value="austria">Austria / Czechia</option>
+                            <option value="belarus">Belarus</option>
+                            <option value="germany">Germany</option>
+                            <option value="hungary">Hungary / Slovakia</option>
+                            <option value="latvia">Latvia</option>
+                            <option value="lithuania">Lithuania</option>
+                            <option value="poland">Poland</option>
+                            <option value="romania">Romania / Moldova</option>
+                            <option value="ukraine">Ukraine</option>
+                        </optgroup>
+                        <optgroup label="Western &amp; Southern Europe">
+                            <option value="scandinavia">Scandinavia</option>
+                        </optgroup>
+                        <optgroup label="North America">
+                            <option value="canada">Canada</option>
+                            <option value="usa">United States</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="date-range-group">
+                    <label>Date Range</label>
+                    <div class="date-range-inputs">
+                        <input type="number" id="dateFrom" placeholder="From" min="1600" max="2026" aria-label="Date range from year">
+                        <span aria-hidden="true">&ndash;</span>
+                        <input type="number" id="dateTo" placeholder="To" min="1600" max="2026" aria-label="Date range to year">
+                    </div>
+                </div>
+
+                <button class="btn-reset" id="resetBtn" aria-label="Reset all filters">&times; Reset</button>
+            </div>
+
+            <!-- Line 2: cascade -->
+            <div class="filter-line">
+                <div class="filter-group hidden" id="subregionGroup" style="min-width:280px; flex:1;">
+                    <label for="filterSubregion" id="subregionLabel">Sub-Region</label>
+                    <select id="filterSubregion" aria-label="Filter by sub-region">
+                        <option value="">All Sub-Regions</option>
+                    </select>
+                </div>
+                <div class="filter-group hidden" id="townGroup" style="min-width:200px; flex:1;">
+                    <label for="filterTown">Town / City</label>
+                    <input type="text" id="filterTown" placeholder="e.g. Kishinev, Kaunas, Denver&hellip;" autocomplete="off" aria-label="Filter by town or city">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Active filter chips -->
+<div class="active-filters" aria-live="polite" aria-label="Active filters">
+    <div class="catalog-inner" id="activeFilters"></div>
+</div>
+
+<!-- Results header -->
+<div class="results-header">
+    <div class="catalog-inner">
+        <div class="results-count">
+            Showing <strong id="resultCount">0</strong> datasets
+            <span class="results-total" id="resultTotal"></span>
+        </div>
+        <div class="result-controls">
+            <div class="sort-control">
+                <label for="filterStatus">Show:</label>
+                <select id="filterStatus" aria-label="Filter by status">
+                    <option value="">All Datasets</option>
+                    <option value="new">New Only</option>
+                    <option value="updated">Recently Updated</option>
+                    <option value="new updated">New &amp; Updated</option>
+                </select>
+            </div>
+            <div class="sort-control">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect" aria-label="Sort results">
+                    <option value="name">Name (A&ndash;Z)</option>
+                    <option value="updated-desc">Most Recently Updated</option>
+                    <option value="date-asc">Earliest Records First</option>
+                    <option value="date-desc">Latest Records First</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Catalog list -->
+<main class="catalog-list" id="catalogList" aria-label="Dataset catalog results"></main>
+
+<div class="catalog-empty" id="emptyState" aria-live="polite">
+    <h3>No datasets match your filters</h3>
+    <p>Try broadening your search &mdash; remove a filter or adjust the date range.</p>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function(r){ if(!r.ok) throw new Error('Cannot load '+file); return r.text(); })
+        .then(function(h){ document.getElementById(id).innerHTML = h; })
+        .catch(function(e){ console.warn(e); });
+}
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html')
+]);
+</script>
+
+<!-- ====================================================================
+     SUB-REGION TAXONOMY (canonical) + FILTER ENGINE
+     ==================================================================== -->
+<script>
+(function () {
+
+    var DATA_URL   = '/catalog/datasets-unified.json';
+    var SEARCH_URL = 'https://www.jewishgen.org/databases/all/';
+    var UPDATED_WINDOW_DAYS = 183;   /* "Recently Updated" threshold approx 6 months */
+
+    /* ---- Canonical sub-region taxonomy (ported verbatim from mockup) ---- */
+    var SUB_REGIONS = {
+        austria: { label: "Refine by Region (Austria / Czechia / Galicia):", options: [
+            { val:'bohemia', label:'Bohemia (B\u00f6hmen)', bold:true },
+            { val:'prague', label:'Prague (Prag)', indent:true },
+            { val:'bukovina_aus', label:'Bukovina (Bucovina / Bukowina)', bold:true },
+            { val:'chernivtsi_aus', label:'Czernowitz (Chernivtsi/Cern\u0103u\u021bi)', indent:true },
+            { val:'burgenland', label:'Burgenland', bold:true },
+            { val:'galicia_aus', label:'Galicia (Galizien)', bold:true },
+            { val:'krakow_aus', label:'Krak\u00f3w (Krakau)', indent:true },
+            { val:'lviv_aus', label:'Lemberg (Lw\u00f3w/Lviv)', indent:true },
+            { val:'stanislau_aus', label:'Stanislau (Ivano-Frankivsk/Stanis\u0142aw\u00f3w)', indent:true },
+            { val:'tarnopol_aus', label:'Tarnopol (Ternopil)', indent:true },
+            { val:'lower_austria_vienna', label:'Lower Austria & Vienna', bold:true },
+            { val:'lower_austria_p', label:'Lower Austria (Nieder\u00f6sterreich)', indent:true },
+            { val:'vienna', label:'Vienna (Wien)', indent:true },
+            { val:'moravia', label:'Moravia (M\u00e4hren)', bold:true },
+        ]},
+        belarus: { label: "Refine by Historical Region (Belarus):", options: [
+            { val:'grodno_bel', label:'Grodno (Grodnenskaya Guberniya)', indent:true },
+            { val:'minsk', label:'Minsk (Minskaya Guberniya)', indent:true },
+            { val:'mogilev', label:'Mogilev (Mogilevskaya Guberniya)', indent:true },
+            { val:'vilna_bel', label:'Vilna (Vilenskaya Guberniya)', indent:true },
+            { val:'vitebsk', label:'Vitebsk (Vitebskaya Guberniya)', indent:true },
+        ]},
+        canada: { label: "Refine by Province/Territory (Canada):", options:
+            ["Alberta","British Columbia","Manitoba","New Brunswick","Newfoundland and Labrador","Nova Scotia","Northwest Territories","Nunavut","Ontario","Prince Edward Island","Qu\u00e9bec","Saskatchewan","Yukon"].map(function(p){ return { val:p.toLowerCase(), label:p }; })
+        },
+        hungary: { label: "Refine by Historical Region (Hungary / Slovakia / Croatia):", options: [
+            { val:'banat', label:'Banat / Ba\u010dka (B\u00e1ns\u00e1g / B\u00e1cska)', bold:true },
+            { val:'croatia_slavonia', label:'Croatia-Slavonia (Hrvatska-Slavonija)', bold:true },
+            { val:'hungary_mod', label:'Hungary (Magyarorsz\u00e1g)', bold:true },
+            { val:'budapest', label:'Budapest & Pest', indent:true },
+            { val:'zemplen_hun', label:'Zempl\u00e9n (Southern portion)', indent:true },
+            { val:'maramures', label:'Maramure\u0219 (M\u00e1ramaros)', bold:true },
+            { val:'slovakia', label:'Slovakia (Slovensko / Felvid\u00e9k)', bold:true },
+            { val:'zemplen_svk', label:'Zempl\u00edn (Northern portion)', indent:true },
+            { val:'subcarpathia', label:'Subcarpathia (Zakarpattia / K\u00e1rp\u00e1talja)', bold:true },
+            { val:'transylvania', label:'Transylvania (Transilvania / Erd\u00e9ly)', bold:true },
+        ]},
+        latvia: { label: "Refine by Historical Region (Latvia):", options: [
+            { val:'courland', label:'Courland (Kurland)', indent:true },
+            { val:'estland', label:'Estland (Estonia)', indent:true },
+            { val:'livland', label:'Livland (Vidzeme)', indent:true },
+            { val:'vitebsk_lat', label:'Vitebsk (Latgale)', indent:true },
+        ]},
+        lithuania: { label: "Refine by Historical Region (Lithuania):", options: [
+            { val:'kovno_all', label:'Kovno Gubernia (Kauno gubernija)', bold:true },
+            { val:'kaunas', label:'Kaunas (Kovno uyezd)', indent:true },
+            { val:'panevezys', label:'Panev\u0117\u017eys (Ponevezh uyezd)', indent:true },
+            { val:'raseiniai', label:'Raseiniai (Rossieny uyezd)', indent:true },
+            { val:'siauliai', label:'\u0160iauliai (Shavl uyezd)', indent:true },
+            { val:'telsiai', label:'Tel\u0161iai (Telshi uyezd)', indent:true },
+            { val:'ukmerge', label:'Ukmerg\u0117 (Vilkomir uyezd)', indent:true },
+            { val:'zarasai', label:'Zarasai (Novo-Aleksandrovsk uyezd)', indent:true },
+            { val:'prussia_lit', label:'Prussia (Preu\u00dfen)', bold:true },
+            { val:'suwalki_all', label:'Suwalki Gubernia (Suvalk\u0173 gubernija)', bold:true },
+            { val:'kalvarija', label:'Kalvarija (Kalwarya uyezd)', indent:true },
+            { val:'naumiestis', label:'Kudirkos Naumiestis (W\u0142adys\u0142aw\u00f3w uyezd)', indent:true },
+            { val:'marijampole', label:'Marijampol\u0117 (Mariampol uyezd)', indent:true },
+            { val:'sejny_uyezd', label:'Sejny (Sejny uyezd)', indent:true },
+            { val:'vilkaviskis', label:'Vilkavi\u0161kis (Wy\u0142kowyszki uyezd)', indent:true },
+            { val:'vilna_all', label:'Vilna Gubernia (Vilniaus gubernija)', bold:true },
+            { val:'ashmyany', label:'Ashmyany (Oshmyany uyezd)', indent:true },
+            { val:'disna', label:'Disna (Disna uyezd)', indent:true },
+            { val:'lida', label:'Lida (Lida uyezd)', indent:true },
+            { val:'svencionys', label:'\u0160ven\u010dionys (Sventsyany uyezd)', indent:true },
+            { val:'trakai', label:'Trakai (Troki uyezd)', indent:true },
+            { val:'vileyka', label:'Vileyka (Vilejka uyezd)', indent:true },
+            { val:'vilnius_uyezd', label:'Vilnius (Vilna uyezd)', indent:true },
+        ]},
+        poland: { label: "Refine by Historical Region (Poland):", options: [
+            { val:'congress_poland', label:'Congress Poland (Russian Empire)', bold:true },
+            { val:'kalisz', label:'Kalisz', indent:true },
+            { val:'kielce', label:'Kielce', indent:true },
+            { val:'lomza', label:'\u0141om\u017ca', indent:true },
+            { val:'lublin', label:'Lublin', indent:true },
+            { val:'piotrkow', label:'Piotrk\u00f3w', indent:true },
+            { val:'plock', label:'P\u0142ock', indent:true },
+            { val:'radom', label:'Radom', indent:true },
+            { val:'siedlce', label:'Siedlce', indent:true },
+            { val:'suwalki_pol', label:'Suwalki (Suwa\u0142ki)', indent:true },
+            { val:'warszawa', label:'Warsaw (Warszawa)', indent:true },
+            { val:'galicia_pol', label:'Galicia (Galizien)', bold:true },
+            { val:'krakow', label:'Krak\u00f3w (Krakau)', indent:true },
+            { val:'lwow_pol', label:'Lw\u00f3w (Lviv/Lemberg)', indent:true },
+            { val:'stanislawow_pol', label:'Stanis\u0142aw\u00f3w (Ivano-Frankivsk / Stanislau)', indent:true },
+            { val:'tarnopol_pol', label:'Tarnopol (Ternopil)', indent:true },
+            { val:'pale_pol', label:'Pale of Settlement (Russian Empire)', bold:true },
+            { val:'grodno_pol', label:'Grodno (Hrodna)', indent:true },
+            { val:'vilna_pol', label:'Vilna (Vilnius)', indent:true },
+            { val:'volhynia_pol', label:'Volhynia (Volyn)', indent:true },
+            { val:'prussia_pol', label:'Prussia (Preu\u00dfen)', bold:true },
+        ]},
+        romania: { label: "Refine by Historical Region (Romania / Moldova):", options: [
+            { val:'aus_rom', label:'Bukovina (Austrian Empire)', bold:true },
+            { val:'chernivtsi_rom', label:'Cern\u0103u\u021bi (Chernivtsi/Czernowitz)', indent:true },
+            { val:'russian_rom', label:'Former Russian Empire (Republic of Moldova)', bold:true },
+            { val:'bessarabia', label:'Bessarabia', indent:true },
+            { val:'transnistria', label:'Transnistria', indent:true },
+            { val:'kingdom_romania', label:'Kingdom of Romania', bold:true },
+            { val:'dobrogea', label:'Dobrogea', indent:true },
+            { val:'moldavia', label:'Moldavia (Moldova)', indent:true },
+            { val:'muntenia_oltenia', label:'Wallachia (Muntenia/Oltenia)', indent:true },
+            { val:'hung_rom', label:'Pre-WWI Hungary', bold:true },
+            { val:'banat', label:'Banat', indent:true },
+            { val:'crisana', label:'Cri\u0219ana', indent:true },
+            { val:'maramures', label:'Maramure\u0219 (M\u00e1ramaros)', indent:true },
+            { val:'transylvania', label:'Transylvania (Transilvania / Erd\u00e9ly)', indent:true },
+        ]},
+        scandinavia: { label: "Refine by Country (Scandinavia):", options: [
+            { val:'denmark', label:'Denmark (Danmark)' },
+            { val:'finland', label:'Finland (Suomi)' },
+            { val:'norway', label:'Norway (Norge)' },
+            { val:'sweden', label:'Sweden (Sverige)' },
+        ]},
+        ukraine: { label: "Refine by Historical Region (Ukraine):", options: [
+            { val:'bukovina_ukr', label:'Bukovina (Bucovina / Bukowina)', bold:true },
+            { val:'chernivtsi_ukr', label:'Chernivtsi (Czernowitz)', indent:true },
+            { val:'galicia_ukr', label:'Eastern Galicia (Austrian Partition)', bold:true },
+            { val:'lviv_ukr', label:'Lviv (Lemberg / Lw\u00f3w)', indent:true },
+            { val:'stanislau_ukr', label:'Stanislau (Ivano-Frankivsk / Stanis\u0142aw\u00f3w)', indent:true },
+            { val:'ternopil_ukr', label:'Ternopil (Tarnopol)', indent:true },
+            { val:'pale_ukr', label:'Pale of Settlement (Russian Partition)', bold:true },
+            { val:'chernigov', label:'Chernigov (Chernihiv)', indent:true },
+            { val:'kherson', label:'Kherson', indent:true },
+            { val:'kiev_ukr', label:'Kiev (Kyiv / Kij\u00f3w)', indent:true },
+            { val:'podolia', label:'Podolia (Podillia / Podole)', indent:true },
+            { val:'poltava', label:'Poltava', indent:true },
+            { val:'volhynia', label:'Volhynia (Volyn / Wo\u0142y\u0144)', indent:true },
+            { val:'yekaterinoslav', label:'Yekaterinoslav (Dnipro)', indent:true },
+            { val:'southern_ukraine', label:'Southern Ukraine & Crimea', bold:true },
+            { val:'crimea', label:'Crimea (Krym)', indent:true },
+            { val:'odessa', label:'Odessa (Odesa)', indent:true },
+            { val:'transcarpathia_ukr', label:'Transcarpathia (Hungarian Partition)', bold:true },
+            { val:'sub_ukr', label:'Subcarpathia (Zakarpattia / K\u00e1rp\u00e1talja)', indent:true },
+        ]},
+        usa: { label: "Refine by State (United States):", options:
+            ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"].map(function(s){ return { val:s.toLowerCase(), label:s }; })
+        }
+    };
+
+    var REGION_LABELS = {
+        romania:'Romania / Moldova', bessarabia:'Bessarabia', subcarpathia:'Subcarpathia',
+        ukraine:'Ukraine', hungary:'Hungary / Slovakia', moldova:'Moldova',
+        austria:'Austria / Czechia', russia:'Russia', maramaros:'Maramaros',
+        bukovina:'Bukovina', czechoslovakia:'Czechoslovakia', sephardic:'Sephardic',
+        usa:'USA', 'europe-multiple':'Europe (multiple)', germany:'Germany',
+        poland:'Poland', belarus:'Belarus', latvia:'Latvia', lithuania:'Lithuania',
+        holocaust:'Holocaust', canada:'Canada', scandinavia:'Scandinavia'
+    };
+
+    var TYPE_LABELS = {
+        birth:'Birth', marriage:'Marriage', death:'Death / Burial', vital:'Vital Records',
+        census:'Census', directory:'Business Directory', holocaust:'Holocaust',
+        military:'Military', yizkor:'Yizkor Books', immigration:'Immigration',
+        names:'Name List', legal:'Notary / Judicial', burials:'Burials',
+        'court-legal':'Legal Records', 'business-directory':'Directory'
+    };
+
+    var state = { datasets: [] };
+
+    /* ---- Schema accessors (handle old + unified field names) ---- */
+    function getName(d)      { return d.display_name || d.name || ''; }
+    function getYears(d)     { return d.years || '\u2014'; }
+    function getCountNum(d)  { var n = d.record_count != null ? d.record_count : d.recordCount; return typeof n === 'number' ? n : (parseInt(String(n).replace(/[^0-9]/g,''),10) || 0); }
+    function getCount(d)     { var n = getCountNum(d); return n ? n.toLocaleString('en-US') : '\u2014'; }
+    function getLanguage(d)  { return d.source_language || d.language || '\u2014'; }
+    function getUpdatedRaw(d){ return d.last_updated || d.lastUpdated || ''; }
+    function getDesc(d)      { return (d.description || '').trim(); }
+    function getInfoUrl(d)   { return d.info_url || d.infoUrl || ''; }
+    function getSource(d)    { return d.source_citation || d.sources || '\u2014'; }
+    function getYearStart(d) { return d.year_start != null ? d.year_start : null; }
+    function getYearEnd(d)   { return d.year_end != null ? d.year_end : null; }
+    function getRegions(d)   { return (d.regions && d.regions.length) ? d.regions : []; }
+    function getSubregion(d) { return (d.subregion || '').toLowerCase(); }
+    function getRecordTypes(d){
+        if (d.record_types && d.record_types.length) return d.record_types;
+        return (d.recordType || '').split(',').map(function(s){ return s.trim(); }).filter(Boolean);
+    }
+
+    /* ---- Badge derivation ----
+       UPDATED: last_updated within window. NEW: explicit badge field set by
+       the weekly cache generator (needs first-seen tracking; not derivable
+       client-side). Explicit d.badge always wins. */
+    function parseDate(s) {
+        if (!s) return null;
+        s = String(s);
+        if (s.indexOf('/') !== -1) { var p=s.split('/'); if(p.length===3) return new Date(+p[2], +p[0]-1, +p[1]); }
+        if (s.indexOf('-') !== -1) { var q=s.split('-'); if(q.length>=2) return new Date(+q[0], +q[1]-1, +(q[2]||1)); }
+        if (/^\d{4}$/.test(s)) return new Date(+s, 0, 1);
+        return null;
+    }
+    function badgeFor(d) {
+        if (d.badge && d.badge !== 'none') return d.badge;   /* explicit override */
+        var dt = parseDate(getUpdatedRaw(d));
+        if (!dt) return 'none';
+        var days = (Date.now() - dt.getTime()) / 86400000;
+        return days >= 0 && days <= UPDATED_WINDOW_DAYS ? 'updated' : 'none';
+    }
+
+    function typeBuckets(d) {
+        var lower = getRecordTypes(d).join(' ').toLowerCase();
+        var map = {
+            vital:['birth','marriage','death','vital'], birth:['birth'], marriage:['marriage'],
+            death:['death','burial'], census:['census','revision','family list'],
+            names:['name list','voter','duma'], immigration:['immigration','passenger','migration'],
+            directory:['directory','business'], holocaust:['holocaust'], military:['military','war'],
+            yizkor:['yizkor'], legal:['legal','notary','judicial','court']
+        };
+        var out = [];
+        Object.keys(map).forEach(function(k){
+            if (map[k].some(function(kw){ return lower.indexOf(kw)!==-1; })) out.push(k);
+        });
+        return out;
+    }
+
+    function regionLabel(r) { return REGION_LABELS[r] || titleCase(r); }
+    function typeLabel(t)   { return TYPE_LABELS[t] || titleCase(t); }
+    function titleCase(s)   { return (s||'').replace(/[-_]/g,' ').toLowerCase().replace(/\b([a-z])/g,function(_,c){return c.toUpperCase();}); }
+    function esc(s){ if(s==null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+    function formatMonthYear(s) {
+        var dt = parseDate(s);
+        if (!dt) return s || '';
+        var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        return months[dt.getMonth()] + ' ' + dt.getFullYear();
+    }
+
+    /* ---- Build one card ---- */
+    function buildCard(d, idx) {
+        var badge = badgeFor(d);
+        var badgeHtml = badge === 'new'
+            ? '<span class="ds-badge ds-badge-new">New</span>'
+            : badge === 'updated'
+            ? '<span class="ds-badge ds-badge-updated">Updated</span>' : '';
+
+        var typeChips = getRecordTypes(d).map(function(rt){
+            return '<span class="ds-chip chip-record" data-filter="type" data-val="'+esc(typeBuckets({record_types:[rt]})[0]||'')+'" role="button" tabindex="0" title="Filter by record type">'+esc(titleCase(rt))+'</span>';
+        }).join('');
+        var geoChips = getRegions(d).map(function(g){
+            return '<span class="ds-chip chip-geo" data-filter="geo" data-val="'+esc(g)+'" role="button" tabindex="0" title="Filter by region">'+esc(regionLabel(g))+'</span>';
+        }).join('');
+
+        var regions = getRegions(d);
+        var regionText = regions.length ? regions.map(regionLabel).join(' & ') : '\u2014';
+        var typeText = getRecordTypes(d).map(titleCase).join(' \u00b7 ') || '\u2014';
+
+        var facts = [
+            { label:'Date',            value: esc(getYears(d)) },
+            { label:'Region',          value: esc(regionText) },
+            { label:'Total Records',   value: esc(getCount(d)) },
+            { label:'Source Language', value: esc(getLanguage(d)) },
+            { label:'Record Type',     value: esc(typeText) },
+            { label:'Source',          value: esc(getSource(d)) },
+            { label:'Last Updated',    value: esc(formatMonthYear(getUpdatedRaw(d)) || '\u2014') }
+        ].map(function(f){
+            return '<div class="ds-fact"><span class="ds-fact-label">'+f.label+'</span><span class="ds-fact-value">'+f.value+'</span></div>';
+        }).join('');
+
+        var infoUrl = getInfoUrl(d);
+        var cta = '';
+        if (infoUrl) cta += '<a href="'+esc(infoUrl)+'" class="ds-btn ds-btn-navy" target="_blank" rel="noopener noreferrer">View Description &rarr;</a>';
+        cta += '<a href="'+SEARCH_URL+'" class="ds-btn ds-btn-sage" target="_blank" rel="noopener noreferrer">Search Records</a>';
+
+        var cardId = 'ds-' + idx;
+        return '<article class="ds-card" id="'+cardId+'" aria-expanded="false">'
+            + '<button type="button" class="ds-summary" aria-controls="'+cardId+'-panel" aria-expanded="false">'
+                + '<div>'
+                    + '<div class="ds-title-row"><h3 class="ds-card-name">'+esc(getName(d))+'</h3>'+badgeHtml+'</div>'
+                    + '<div class="ds-meta-row">'
+                        + '<span class="ds-meta-item"><svg class="ds-meta-icon" aria-hidden="true"><use href="#jg-ic-date"></use></svg> <span class="ds-meta-label">Years:</span> <span class="ds-meta-value">'+esc(getYears(d))+'</span></span>'
+                        + '<span class="ds-meta-item"><svg class="ds-meta-icon" aria-hidden="true"><use href="#jg-ic-records"></use></svg> <span class="ds-meta-label">Records:</span> <span class="ds-meta-value">'+esc(getCount(d))+'</span></span>'
+                        + '<span class="ds-meta-item"><svg class="ds-meta-icon" aria-hidden="true"><use href="#jg-ic-language"></use></svg> <span class="ds-meta-label">Language:</span> <span class="ds-meta-value">'+esc(getLanguage(d))+'</span></span>'
+                        + '<span class="ds-meta-item"><svg class="ds-meta-icon" aria-hidden="true"><use href="#jg-ic-updated"></use></svg> <span class="ds-meta-label">Updated:</span> <span class="ds-meta-value">'+esc(formatMonthYear(getUpdatedRaw(d)) || '\u2014')+'</span></span>'
+                    + '</div>'
+                    + '<div class="ds-chips">'+typeChips+geoChips+'</div>'
+                + '</div>'
+                + '<span class="chevron-toggle" aria-hidden="true">&#9662;</span>'
+            + '</button>'
+            + '<div class="ds-expand" id="'+cardId+'-panel" role="region">'
+                + '<div class="ds-expand-inner">'
+                    + '<div>'
+                        + (getDesc(d) ? '<p class="ds-description">'+esc(getDesc(d))+'</p>' : '')
+                        + '<div class="ds-facts">'+facts+'</div>'
+                    + '</div>'
+                    + '<div class="ds-cta-col">'+cta+'</div>'
+                + '</div>'
+            + '</div>'
+        + '</article>';
+    }
+
+    /* ---- DOM refs ---- */
+    var el = {
+        list:        document.getElementById('catalogList'),
+        empty:       document.getElementById('emptyState'),
+        text:        document.getElementById('textSearch'),
+        type:        document.getElementById('filterType'),
+        geo:         document.getElementById('filterGeo'),
+        subGroup:    document.getElementById('subregionGroup'),
+        sub:         document.getElementById('filterSubregion'),
+        subLabel:    document.getElementById('subregionLabel'),
+        townGroup:   document.getElementById('townGroup'),
+        town:        document.getElementById('filterTown'),
+        status:      document.getElementById('filterStatus'),
+        sort:        document.getElementById('sortSelect'),
+        from:        document.getElementById('dateFrom'),
+        to:          document.getElementById('dateTo'),
+        count:       document.getElementById('resultCount'),
+        total:       document.getElementById('resultTotal'),
+        chips:       document.getElementById('activeFilters')
+    };
+
+    /* ---- Cascade: region -> sub-region -> town ---- */
+    function onRegionChange() {
+        var v = el.geo.value;
+        el.sub.value = '';
+        el.town.value = '';
+        el.townGroup.classList.add('hidden'); el.townGroup.classList.remove('revealed');
+        if (v && SUB_REGIONS[v]) {
+            var data = SUB_REGIONS[v];
+            el.subLabel.textContent = data.label.toUpperCase().replace('REFINE BY ','').replace(/:$/,'');
+            var html = '<option value="">All Sub-Regions</option>';
+            data.options.forEach(function(o){
+                var style = o.bold ? ' style="font-weight:bold;"' : '';
+                var prefix = o.indent ? '\u00a0\u00a0\u00a0' : '';
+                html += '<option value="'+o.val+'"'+style+'>'+prefix+o.label+'</option>';
+            });
+            el.sub.innerHTML = html;
+            el.subGroup.classList.remove('hidden'); el.subGroup.classList.add('revealed');
+        } else {
+            el.subGroup.classList.add('hidden'); el.subGroup.classList.remove('revealed');
+        }
+        applyFilters();
+    }
+    function onSubChange() {
+        el.town.value = '';
+        if (el.sub.value) { el.townGroup.classList.remove('hidden'); el.townGroup.classList.add('revealed'); }
+        else { el.townGroup.classList.add('hidden'); el.townGroup.classList.remove('revealed'); }
+        applyFilters();
+    }
+
+    /* ---- Filtering + sorting ---- */
+    function matches(d, f) {
+        if (f.text) {
+            var hay = (getName(d)+' '+getDesc(d)+' '+getSource(d)).toLowerCase();
+            if (hay.indexOf(f.text) === -1) return false;
+        }
+        if (f.type && typeBuckets(d).indexOf(f.type) === -1) return false;
+        if (f.geo) {
+            var regions = getRegions(d).map(function(r){return r.toLowerCase();});
+            if (regions.indexOf(f.geo) === -1) {
+                var hay2 = (getName(d)+' '+getDesc(d)).toLowerCase();
+                if (hay2.indexOf(f.geo) === -1) return false;
+            }
+        }
+        if (f.sub) {
+            var regions2 = getRegions(d).map(function(r){return r.toLowerCase();});
+            var subField = getSubregion(d);
+            var hay3 = (getName(d)+' '+getDesc(d)).toLowerCase();
+            var subWord = f.sub.replace(/_[a-z]+$/,'');   /* strip _aus/_pol/_ukr suffix */
+            if (regions2.indexOf(f.sub) === -1 && subField.indexOf(subWord) === -1 && hay3.indexOf(subWord) === -1) return false;
+        }
+        if (f.town) {
+            var hay4 = (getName(d)+' '+getDesc(d)+' '+getSubregion(d)).toLowerCase();
+            if (hay4.indexOf(f.town) === -1) return false;
+        }
+        if (f.from || f.to) {
+            var ys = getYearStart(d), ye = getYearEnd(d);
+            if (f.from && ye != null && ye < f.from) return false;
+            if (f.to && ys != null && ys > f.to) return false;
+        }
+        if (f.status) {
+            var b = badgeFor(d);
+            if (f.status.split(' ').indexOf(b) === -1) return false;
+        }
+        return true;
+    }
+
+    function sortList(list, key) {
+        var c = list.slice();
+        switch (key) {
+            case 'name':         c.sort(function(a,b){ return getName(a).localeCompare(getName(b)); }); break;
+            case 'date-asc':     c.sort(function(a,b){ return (getYearStart(a)||9999)-(getYearStart(b)||9999); }); break;
+            case 'date-desc':    c.sort(function(a,b){ return (getYearEnd(b)||0)-(getYearEnd(a)||0); }); break;
+            case 'updated-desc':
+                c.sort(function(a,b){
+                    var da = parseDate(getUpdatedRaw(a)), db = parseDate(getUpdatedRaw(b));
+                    var ta = da ? da.getTime() : -Infinity;   /* undated records sort last */
+                    var tb = db ? db.getTime() : -Infinity;
+                    return tb - ta;
+                });
+                break;
+        }
+        return c;
+    }
+
+    function readFilters() {
+        return {
+            text:   el.text.value.toLowerCase().trim(),
+            type:   el.type.value.toLowerCase(),
+            geo:    el.geo.value.toLowerCase(),
+            sub:    el.sub.value.toLowerCase(),
+            town:   el.town.value.toLowerCase().trim(),
+            status: el.status.value.toLowerCase(),
+            from:   parseInt(el.from.value,10) || null,
+            to:     parseInt(el.to.value,10) || null
+        };
+    }
+
+    function applyFilters() {
+        var f = readFilters();
+        var matched = state.datasets.filter(function(d){ return matches(d, f); });
+        var sorted = sortList(matched, el.sort.value);
+
+        el.list.innerHTML = sorted.map(buildCard).join('');
+        wireCards();
+
+        var totalRecords = matched.reduce(function(sum,d){ return sum + getCountNum(d); }, 0);
+        el.count.textContent = matched.length;
+        el.total.textContent = matched.length ? '\u2014 ' + totalRecords.toLocaleString('en-US') + ' total records' : '';
+        el.empty.classList.toggle('visible', matched.length === 0);
+
+        renderChips(f);
+    }
+
+    function wireCards() {
+        el.list.querySelectorAll('.ds-summary').forEach(function(btn){
+            btn.addEventListener('click', function(e){
+                if (e.target.classList.contains('ds-chip')) return;  /* tag clicks handled separately */
+                var card = btn.closest('.ds-card');
+                var open = card.getAttribute('aria-expanded') === 'true';
+                card.setAttribute('aria-expanded', open?'false':'true');
+                btn.setAttribute('aria-expanded', open?'false':'true');
+                card.classList.toggle('is-open', !open);
+            });
+        });
+        el.list.querySelectorAll('.ds-chip[data-filter]').forEach(function(chip){
+            function act(e){
+                e.stopPropagation();
+                var dim = chip.getAttribute('data-filter');
+                var val = chip.getAttribute('data-val');
+                if (!val) return;
+                if (dim === 'type') { el.type.value = val; applyFilters(); }
+                else if (dim === 'geo') { el.geo.value = val; onRegionChange(); }
+            }
+            chip.addEventListener('click', act);
+            chip.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); act(e); } });
+        });
+    }
+
+    /* ---- Active chips ---- */
+    function renderChips(f) {
+        el.chips.innerHTML = '';
+        var statusLabels = { new:'New Only', updated:'Recently Updated', 'new updated':'New & Updated' };
+        var chips = [];
+        if (f.text)   chips.push({ label:'"'+el.text.value.trim()+'"', clear:function(){ el.text.value=''; applyFilters(); } });
+        if (f.type)   chips.push({ label:typeLabel(f.type), clear:function(){ el.type.value=''; applyFilters(); } });
+        if (f.geo)    chips.push({ label:regionLabel(f.geo), clear:function(){ el.geo.value=''; onRegionChange(); } });
+        if (f.sub) {
+            var rd = SUB_REGIONS[el.geo.value];
+            var opt = rd && rd.options.filter(function(o){ return o.val===f.sub; })[0];
+            chips.push({ label: opt ? opt.label : f.sub, clear:function(){ el.sub.value=''; onSubChange(); } });
+        }
+        if (f.town)   chips.push({ label:'Town: '+el.town.value.trim(), clear:function(){ el.town.value=''; applyFilters(); } });
+        if (f.status) chips.push({ label:statusLabels[f.status]||f.status, clear:function(){ el.status.value=''; applyFilters(); } });
+        if (f.from)   chips.push({ label:'From '+f.from, clear:function(){ el.from.value=''; applyFilters(); } });
+        if (f.to)     chips.push({ label:'To '+f.to, clear:function(){ el.to.value=''; applyFilters(); } });
+
+        chips.forEach(function(c){
+            var d = document.createElement('div');
+            d.className = 'active-chip';
+            d.innerHTML = esc(c.label)+' <button aria-label="Remove filter">&times;</button>';
+            d.querySelector('button').addEventListener('click', c.clear);
+            el.chips.appendChild(d);
+        });
+    }
+
+    /* ---- Reset ---- */
+    function reset() {
+        el.text.value=''; el.type.value=''; el.geo.value=''; el.status.value='';
+        el.sort.value='name'; el.from.value=''; el.to.value=''; el.town.value='';
+        el.subGroup.classList.add('hidden'); el.subGroup.classList.remove('revealed');
+        el.townGroup.classList.add('hidden'); el.townGroup.classList.remove('revealed');
+        applyFilters();
+    }
+
+    /* ---- Wire controls ---- */
+    el.text.addEventListener('input', applyFilters);
+    el.type.addEventListener('change', applyFilters);
+    el.geo.addEventListener('change', onRegionChange);
+    el.sub.addEventListener('change', onSubChange);
+    el.town.addEventListener('input', applyFilters);
+    el.status.addEventListener('change', applyFilters);
+    el.sort.addEventListener('change', applyFilters);
+    el.from.addEventListener('input', applyFilters);
+    el.to.addEventListener('input', applyFilters);
+    document.getElementById('resetBtn').addEventListener('click', reset);
+    document.getElementById('tipsBtn').addEventListener('click', function(){
+        var panel = document.getElementById('tipsPanel');
+        var open = panel.classList.toggle('open');
+        this.setAttribute('aria-expanded', String(open));
+    });
+
+    /* ---- URL param presets (deep-linking) ----
+       Lets other pages link into the catalog with a filter/sort already
+       engaged, e.g. the Recently Updated view:
+           /catalog/catalog.html?show=updated&sort=updated-desc
+       Only whitelisted values are honored, so a malformed URL can never
+       wedge the controls. Runs once, on initial load only.  CHW */
+    function applyUrlParams() {
+        var q = new URLSearchParams(window.location.search);
+        var show = q.get('show');
+        var sort = q.get('sort');
+        var SHOW_OK = { '': 1, 'new': 1, 'updated': 1, 'new updated': 1 };
+        var SORT_OK = { 'name': 1, 'updated-desc': 1, 'date-asc': 1, 'date-desc': 1 };
+        if (show !== null && SHOW_OK[show] === 1) el.status.value = show;
+        if (sort !== null && SORT_OK[sort] === 1) el.sort.value = sort;
+    }
+
+    /* ---- Boot ---- */
+    applyUrlParams();
+    fetch(DATA_URL)
+        .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+        .then(function(data){
+            state.datasets = Array.isArray(data) ? data
+                : (data.datasets && Array.isArray(data.datasets)) ? data.datasets : [];
+            applyFilters();
+        })
+        .catch(function(err){
+            console.error('Catalog load error:', err);
+            el.list.innerHTML = '<div class="catalog-empty visible"><h3>Catalog could not be loaded</h3><p>Please try again later.</p></div>';
+        });
+
+})();
+</script>
+</body>
+</html>

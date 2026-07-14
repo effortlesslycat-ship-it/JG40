@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================================================================
+     JewishGen Communities Database  -  Locality (Town) Page TEMPLATE  [JG40]
+     Filled by community.php via str_replace on the <%= ... %> tokens.
+     ASCII-SAFE BUILD: no literal non-ASCII characters.
+
+
+     REQUIRES from community.php ERA_DATA (see notes by the script): every era now
+     needs coords{lat,lng} + country; historical eras need a border key
+     ("1900" | "1930" | "1960").  Border files live at BORDER_BASE below.
+
+	By CHW
+============================================================================ -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%=shtetls.SHTETL_NAM %>, <%=shtetls.SHTETL_COU %> &mdash; JewishGen Communities Database</title>
+<meta name="robots" content="index,follow">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/jg-global.css">
+<link rel="stylesheet" href="/Communities/jg-community.css?v=10">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+    <!-- TITLE BAND & HEADER -->
+    <div class="jg-community-hero">
+        <div class="jg-community-hero__inner">
+            <a href="/Communities/search.php" class="jg-back-link-light" aria-label="Back to Communities Database search">
+                <span class="arrow" aria-hidden="true">&larr;</span> Back to Communities Search
+            </a>
+            <span class="jg-tag-sage" style="margin-bottom: 15px;">JewishGen Communities Database</span>
+            <h1><%=shtetls.SHTETL_NAM %>, <%=shtetls.SHTETL_COU %></h1>
+            <p class="coords"><%=loc %></p>
+        </div>
+    </div>
+
+    <!-- MAIN TAB NAVIGATION -->
+    <div class="community-tabs-band">
+        <div class="community-tabs-inner" role="tablist">
+            <button class="main-tab-pill active" role="tab" id="tab-geo" onclick="switchTab('geo')">Geography &amp; Context</button>
+            <button class="main-tab-pill" role="tab" id="tab-resources" onclick="switchTab('resources')">Essential Resources</button>
+            <button class="main-tab-pill" role="tab" id="tab-records" onclick="switchTab('records')">Records &amp; Catalogue</button>
+            <button class="main-tab-pill" role="tab" id="tab-search" onclick="switchTab('search')">Search the Database</button>
+            <button class="main-tab-pill" role="tab" id="tab-connect" onclick="switchTab('connect')">Connect &amp; Share</button>
+        </div>
+    </div>
+
+    <!-- TAB 1: GEOGRAPHY & CONTEXT -->
+    <div class="tab-panel active" id="panel-geo" role="tabpanel">
+        <div style="max-width: 1180px; margin: 0 auto; padding: 40px 50px;">
+
+            <!-- LOCATION OVERVIEW (town facts) -->
+            <div class="jg-town-card">
+                <h2 class="jg-town-card-title">Location Overview</h2>
+                <div class="jg-town-card-body">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                        <div>
+                            <span class="meta-label">Alternate Names</span>
+                            <div class="meta-value">
+                                <%=altnames %>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="meta-label">Jewish Population</span>
+                            <div class="meta-value" style="font-size: 1.125rem;"><%=pp1900 %> <span style="font-size: 0.75rem; font-weight: normal; color: var(--charcoal); opacity: 0.7;">(c. 1900)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HERO: TIME-MACHINE MAP (cards-as-toggle + map) -->
+            <div class="jg-town-card map-card">
+                <div class="era-card-strip-head">
+                    <span class="meta-label" style="margin:0;">Historical Jurisdictions</span>
+                    <span class="instr">Click an era below to see it on the map</span>
+                </div>
+                <div class="era-card-strip" id="era-cards" role="radiogroup" aria-label="Select a historical era"></div>
+
+                <div class="map-shell">
+                    <div class="map-container" id="map-container"></div>
+                    <div id="google-note"></div>
+                    <div class="country-label" id="country-label"></div>
+                    <div class="map-era-badge" id="era-badge"></div>
+                    <label class="today-toggle" id="today-wrap" style="display:none;">
+                        <input type="checkbox" id="today-toggle"> Overlay today's borders
+                    </label>
+                </div>
+                <div class="map-source-note" id="map-source-note"></div>
+            </div>
+
+            <!-- NOTES (below the hero) -->
+            <div class="jg-town-card">
+                <div class="jg-town-card-body" style="padding:20px 30px;">
+                    <div class="notes-box" style="margin-top:0;"><strong style="color: var(--navy);">Notes:</strong> <%=sn %></div>
+                </div>
+            </div>
+
+            <!-- NEARBY COMMUNITIES (bottom, full width) -->
+            <div class="jg-town-card nearby-card">
+                <h3 class="nearby-heading">Nearby Communities</h3>
+                <div class="nearby-scroll-area">
+                    <ul class="nearby-list"><%=mtnearby %></ul>
+                </div>
+            </div>
+
+        </div>
+    </div><!-- /panel-geo -->
+
+    <!-- TAB 2: ESSENTIAL RESOURCES -->
+    <div class="tab-panel" id="panel-resources" role="tabpanel">
+        <div class="resources-layout"><%=resources %></div>
+    </div>
+
+    <!-- TAB 3: RECORDS & CATALOGUE -->
+    <div class="tab-panel" id="panel-records" role="tabpanel">
+        <div class="records-layout">
+            <div class="records-coming-soon">
+                <div class="cs-icon" aria-hidden="true"></div>
+                <h3>Record Inventory Coming Soon</h3>
+                <p>We are building a comprehensive catalogue of all JewishGen records associated with <%=shtetls.SHTETL_NAM %>, drawn from our Records Catalogue and indexed datasets. Check back soon, or <a href="/databases/all/">search the database directly</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 4: SEARCH THE DATABASE -->
+    <div class="tab-panel" id="panel-search" role="tabpanel">
+        <div class="search-layout">
+            <%=searchcard_db %>
+            <%=searchcard_web %>
+        </div>
+    </div>
+
+    <!-- TAB 5: CONNECT & SHARE -->
+    <div class="tab-panel" id="panel-connect" role="tabpanel">
+        <div class="connect-layout">
+            <%=jgff %>
+            <%=additionalinfo %>
+            <%=projcard %>
+        </div>
+    </div>
+</main>
+
+<div id="site-footer"></div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+/* ---------- Component loader (JG40 header/footer) ---------- */
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(r => { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(html => { document.getElementById(id).innerHTML = html; })
+        .catch(err => console.warn(err));
+}
+Promise.all([
+    loadComponent('site-header', '/header_navbar.html'),
+    loadComponent('site-footer', '/footer.html')
+]);
+
+/* ---------- Era data (community.php emits this via json_encode) ----------
+   Each era: { label, town, district, province, country, coords:{lat,lng},
+               mapType:'leaflet'|'google', border:'1900'|'1930'|'1960', sourceNote } */
+const ERA_DATA = <%=eradata %>;
+
+/* ---------- Where the curated border files live (host these; they never change) ---------- */
+const BORDER_BASE = '/Communities/maps/';   // hist_borders_1900.json, _1930, _1960, _present
+
+/* ---------- Orientation anchors (era-aware names: [1900,1930,1960,present]) ---------- */
+const ERA_IDX = { prewwi:0, interwar:1, postwar:2, present:3 };
+const ANCHORS = [
+  {lat:52.23,lng:21.01,n:"Warsaw"},
+  {lat:48.21,lng:16.37,n:"Vienna"},
+  {lat:47.50,lng:19.04,n:"Budapest"},
+  {lat:50.08,lng:14.44,n:"Prague"},
+  {lat:52.52,lng:13.40,n:"Berlin"},
+  {lat:49.84,lng:24.03,n:["Lemberg","Lwow","Lwow","Lviv"]},
+  {lat:54.69,lng:25.28,n:["Vilna","Wilno","Vilnius","Vilnius"]},
+  {lat:51.11,lng:17.04,n:["Breslau","Breslau","Wroclaw","Wroclaw"]},
+  {lat:54.35,lng:18.65,n:["Danzig","Danzig","Gdansk","Gdansk"]},
+  {lat:53.13,lng:23.16,n:"Bialystok"},
+  {lat:51.25,lng:22.57,n:"Lublin"},
+  {lat:53.90,lng:27.56,n:"Minsk"},
+  {lat:50.45,lng:30.52,n:["Kiev","Kiev","Kiev","Kyiv"]},
+  {lat:46.48,lng:30.72,n:"Odesa"},
+  {lat:44.43,lng:26.10,n:"Bucharest"},
+  {lat:40.64,lng:22.94,n:["Salonica","Thessaloniki","Thessaloniki","Thessaloniki"]},
+  {lat:41.01,lng:28.98,n:["Constantinople","Istanbul","Istanbul","Istanbul"]},
+  {lat:48.86,lng:2.35,n:"Paris"},
+  {lat:41.90,lng:12.50,n:"Rome"},
+  {lat:53.55,lng:9.99,n:"Hamburg"},
+  {lat:50.06,lng:8.80,n:"Bremen"},
+  {lat:50.05,lng:19.95,n:"Krakow"},
+  {lat:55.76,lng:37.61,n:"Moscow"},
+  {lat:59.93,lng:30.36,n:["Saint Petersburg","Petrograd","Leningrad","Saint Petersburg"]},
+  {lat:47.16,lng:27.59,n:"Iasi"},
+  {lat:31.77,lng:35.22,n:"Jerusalem"},
+  {lat:35.71,lng:51.40,n:"Tehran"},
+  {lat:51.51,lng:-0.12,n:"London"},
+  {lat:40.73,lng:-73.94,n:"New York"},
+  {lat:56.95,lng:24.11,n:"Riga"},
+  {lat:55.87,lng:26.53,n:["Dvinsk","Daugavpils","Daugavpils","Daugavpils"]},
+  {lat:33.51,lng:36.28,n:"Damascus"},
+  {lat:36.74,lng:3.09,n:"Algiers"},
+  {lat:33.80,lng:10.88,n:"Djerba"},
+  {lat:43.55,lng:10.31,n:"Livorno"},
+  {lat:32.89,lng:13.19,n:"Tripoli"},
+  {lat:22.57,lng:88.36,n:["Calcutta","Calcutta","Calcutta","Kolkata"]},
+  {lat:33.31,lng:44.36,n:"Baghdad"},
+  {lat:12.78,lng:45.04,n:"Aden"},
+  {lat:36.34,lng:43.13,n:"Mosul"},
+  {lat:33.57,lng:-7.59,n:"Casablanca"},
+  {lat:31.20,lng:29.92,n:"Alexandria"},
+  {lat:36.22,lng:37.17,n:"Aleppo"},
+  {lat:35.71,lng:-0.63,n:"Oran"},
+  {lat:36.81,lng:10.18,n:"Tunis"},
+  {lat:39.86,lng:-4.02,n:"Toledo"},
+  {lat:41.15,lng:-8.63,n:"Porto"},
+  {lat:40.42,lng:-3.70,n:"Madrid"},
+  {lat:44.84,lng:-0.58,n:"Bordeaux"},
+  {lat:49.63,lng:1.62,n:"Cherbourg"}
+];
+
+/* ---------- helpers ---------- */
+function escHtml(str){return String(str==null?'':str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function anchorName(a, eraKey){ return Array.isArray(a.n) ? a.n[ERA_IDX[eraKey]] : a.n; }
+function aliasTarget(eraKey, country){
+    // only place the database name differs from the curated polygon name
+    if (eraKey === 'prewwi' && (country === 'Austrian Empire' || country === 'Hungary')) return 'Austria Hungary';
+    return country;
+}
+const SUBJECT = (ERA_DATA.present && ERA_DATA.present.coords)
+             || (ERA_DATA.prewwi && ERA_DATA.prewwi.coords) || {lat:0,lng:0};
+
+/* ---------- Tab switcher ---------- */
+function switchTab(name){
+    document.querySelectorAll('.main-tab-pill').forEach(btn=>{
+        const active = btn.id === 'tab-' + name;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', String(active));
+    });
+    document.querySelectorAll('.tab-panel').forEach(panel=>{
+        panel.classList.toggle('active', panel.id === 'panel-' + name);
+    });
+    if (name === 'geo' && LMAP) setTimeout(()=>LMAP.invalidateSize(), 0);
+}
+
+/* ---------- Era cards (built from ERA_DATA) ---------- */
+function buildCards(){
+    const wrap = document.getElementById('era-cards');
+    wrap.innerHTML = '';
+    Object.keys(ERA_DATA).forEach(key=>{
+        const e = ERA_DATA[key];
+        const b = document.createElement('button');
+        b.className = 'jurisdiction-card era-' + key + (key===currentEra ? ' is-selected' : '');
+        b.id = 'jcard-' + key;
+        b.setAttribute('role','radio');
+        b.setAttribute('aria-checked', String(key===currentEra));
+        const line2 = [e.district, e.province].filter(Boolean).join(' &middot; ');
+        b.innerHTML = '<span class="j-era">' + escHtml(e.label) + '</span>'
+            + '<span class="j-town">' + escHtml(e.town) + '</span>'
+            + '<span class="j-dist">' + (line2 ? line2 + '<br>' : '') + '<strong>' + escHtml(e.country) + '</strong></span>';
+        b.onclick = ()=>switchEra(key);
+        wrap.appendChild(b);
+    });
+}
+function setSelectedCard(key){
+    document.querySelectorAll('.jurisdiction-card').forEach(c=>{
+        const on = c.id === 'jcard-' + key;
+        c.classList.toggle('is-selected', on);
+        c.setAttribute('aria-checked', String(on));
+    });
+}
+
+/* ---------- Map (one persistent Leaflet instance; layers swap, view holds) ---------- */
+
+let LMAP=null, borderLayer=null, todayLayer=null, anchorGroup=null, pinLayer=null, labelGroup=null;
+let currentEra='prewwi', showToday=false, fitted=false;
+const borderCache = {};
+const LABEL_POS = {"Russian Empire":[52.5,23], "Soviet Union":[54,32], "Ottoman Empire":[39,33]};
+const ANCHOR_LABEL_MINZOOM = 5;
+
+function loadBorders(key){
+    if (borderCache[key]) return Promise.resolve(borderCache[key]);
+    return fetch(BORDER_BASE + 'hist_borders_' + key + '.json')
+        .then(r=>r.json()).then(gj=>{ borderCache[key]=gj; return gj; });
+}
+function styleFor(isHL){
+    return isHL ? {fillColor:'#b4502f',fillOpacity:.45,color:'#8a3a1f',weight:1.4}
+                : {fillColor:'#cdbf9f',fillOpacity:.25,color:'#b3a884',weight:.5};
+}
+
+function labelWorthy(layer){ const b = layer.getBounds(); return (b.getNorth()-b.getSouth()) + (b.getEast()-b.getWest()) > 6; 
+}
+
+function updateAnchorLabels(){
+    if (!LMAP) return;
+    const hide = LMAP.getZoom() < ANCHOR_LABEL_MINZOOM;
+    document.querySelectorAll('.leaflet-tooltip.anchor-tt').forEach(el=>{
+        el.style.display = hide ? 'none' : '';
+    });
+}
+
+function ensureMap(){
+    if (LMAP) return;
+    LMAP = L.map(document.getElementById('map-container'),
+        {minZoom:3, maxZoom:8, zoomControl:true, attributionControl:false});
+    LMAP.setView([SUBJECT.lat, SUBJECT.lng], 5);
+    LMAP.on('zoomend', updateAnchorLabels);
+    setTimeout(()=>LMAP.invalidateSize(), 0);
+}
+
+async function swapLayers(key){
+    const e = ERA_DATA[key];
+    const gj = await loadBorders(e.border);
+    if (currentEra !== key) return;
+    [borderLayer, todayLayer, anchorGroup, pinLayer, labelGroup].forEach(l=>{ if (l) LMAP.removeLayer(l); });
+    labelGroup = null;
+    const target = aliasTarget(key, e.country);
+    const hl = [];
+    borderLayer = L.geoJSON(gj, {
+        style: f => styleFor(f.properties.NAME === target),
+        onEachFeature: (f, layer)=>{
+            const isHL = f.properties.NAME === target;
+            if (isHL) hl.push(layer);
+            const nm = f.properties.NAME;
+            if (nm && !isHL && labelWorthy(layer)) {     // skip in-focus country (already named top-right)
+                if (LABEL_POS[nm]) {
+                    labelGroup = labelGroup || L.layerGroup();
+                    L.tooltip({permanent:true, direction:'center', className:'country-tt', interactive:false})
+                        .setContent(nm).setLatLng(LABEL_POS[nm]).addTo(labelGroup);
+                } else {
+                    layer.bindTooltip(nm, {permanent:true, direction:'center', className:'country-tt', interactive:false});
+                }
+            }
+        }
+    }).addTo(LMAP);
+    if (labelGroup) labelGroup.addTo(LMAP);
+
+    if (showToday){
+        const pgj = await loadBorders('present');
+        if (currentEra !== key) return;
+        todayLayer = L.geoJSON(pgj, {interactive:false,
+            style:()=>({fill:false, color:'#2c3e50', weight:1, dashArray:'3 3', opacity:.6})}).addTo(LMAP);
+    }
+
+    anchorGroup = L.layerGroup();
+    ANCHORS.forEach(a=>{
+        if (Math.abs(a.lng-SUBJECT.lng)<0.15 && Math.abs(a.lat-SUBJECT.lat)<0.15) return;
+        L.circleMarker([a.lat,a.lng], {radius:3, color:'#fff', weight:.8, fillColor:'#5b6b78', fillOpacity:.8})
+            .bindTooltip(anchorName(a,key), {permanent:true, direction:'right', className:'anchor-tt', offset:[2,0]})
+            .addTo(anchorGroup);
+    });
+    anchorGroup.addTo(LMAP);
+
+    pinLayer = L.circleMarker([SUBJECT.lat, SUBJECT.lng],
+        {radius:6, color:'#fff', weight:1.5, fillColor:'#9e2b25', fillOpacity:1})
+        .bindTooltip(e.town, {permanent:true, direction:'top', className:'town-tt', offset:[0,-6]}).addTo(LMAP);
+
+    // frame ONCE on first historical render; never yank the camera on later clicks
+    if (!fitted && hl.length){
+        LMAP.fitBounds(L.featureGroup(hl).getBounds(), {padding:[18,18], maxZoom:7, animate:false});
+        fitted = true;
+    }
+    updateAnchorLabels();
+}
+
+function renderLeaflet(key){
+    document.getElementById('google-note').style.display = 'none';
+    document.getElementById('today-wrap').style.display = '';
+    ensureMap();
+    swapLayers(key);
+}
+function renderGoogle(key){
+    const e = ERA_DATA[key];
+    document.getElementById('today-wrap').style.display = 'none';
+    const c = e.coords || SUBJECT;
+    const n = document.getElementById('google-note');
+    n.innerHTML = '<iframe src="https://maps.google.com/maps?q=' + c.lat + ',' + c.lng + '&z=11&output=embed"'
+        + ' title="Map (present day)" aria-label="Google Map showing present-day location"'
+        + ' loading="lazy" referrerpolicy="no-referrer-when-downgrade"'
+        + ' style="width:100%;height:100%;border:none;display:block;"></iframe>';
+    n.style.display = 'block';
+}
+function switchEra(key){
+    currentEra = key;
+    setSelectedCard(key);
+    const e = ERA_DATA[key];
+    document.getElementById('era-badge').textContent = e.label;
+    document.getElementById('country-label').textContent = e.country;
+    document.getElementById('map-source-note').textContent = e.sourceNote || '';
+    if (e.mapType === 'google') renderGoogle(key); else renderLeaflet(key);
+}
+
+/* ---------- today overlay ---------- */
+document.getElementById('today-toggle').addEventListener('change', ev=>{
+    showToday = ev.target.checked;
+    if (ERA_DATA[currentEra].mapType !== 'google') swapLayers(currentEra);
+});
+
+/* ---------- keyboard nav across cards + tabs ---------- */
+function addArrowKeyNav(selector){
+    document.querySelectorAll(selector).forEach(btn=>{
+        btn.addEventListener('keydown', function(e){
+            const items = Array.from(document.querySelectorAll(selector));
+            const idx = items.indexOf(this);
+            if (e.key === 'ArrowRight'){ e.preventDefault(); const n=items[(idx+1)%items.length]; n.focus(); n.click(); }
+            else if (e.key === 'ArrowLeft'){ e.preventDefault(); const p=items[(idx-1+items.length)%items.length]; p.focus(); p.click(); }
+        });
+    });
+}
+
+/* ---------- init ---------- */
+function initPage(){
+    buildCards();
+    addArrowKeyNav('.main-tab-pill');
+    addArrowKeyNav('.jurisdiction-card');
+    switchEra('prewwi');
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPage);
+else initPage();
+</script>
+
+<%=ajax %>
+
+</body>
+</html>

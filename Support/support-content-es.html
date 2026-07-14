@@ -1,0 +1,1090 @@
+<!-- support-content-es.html -- CHW
+     Spanish Support Center content fragment for /support/index.html.
+     No html/head/body tags -- fragment only.
+     All characters ASCII or HTML entities (SFTP safe).
+     Accordions re-initialized by initAccordions() in the shell after inject.
+
+     Source: legacy Spanish Support Center (v2.01, translated by Jenni Hymoff,
+     Aug 2006; source page itself last updated Aug 20 2004).
+
+     STRUCTURE: conformed to the English fragment (q1.1 - q5.2).
+     - q3.10 ("distintas direcciones de e-mail") DROPPED to match EN.
+       Its cross-reference from q2.3 has been removed accordingly.
+     - Section 4 and 5 have no intro lede in EN; same here.
+
+     FIXES APPLIED (confirmed by CHW):
+     - q4.2: ShtetLinks -> KehilaLinks (wrong product name AND misspelled in
+       source). Links repointed to https://kehilalinks.jewishgen.org/.
+     - q4.2: Warren Blatt referral replaced with the JewishGen Support Desk.
+     - q5.2: /InfoFiles/faq.html -> /HowToFAQ/faq.html.
+
+     TRANSLATION IS OLDER THAN THE ENGLISH -- flagged, NOT machine-translated.
+     The following answers still describe the pre-Auth0 flow. The Spanish copy
+     below is the existing human translation, left intact. Supply new Spanish
+     copy and it drops straight in:
+     - q1.1  ES describes the old CURE registration form; EN now describes
+             Auth0 "Sign up as a new user".
+     - q1.5  ES describes the old password-request-by-email flow; EN now
+             describes the Auth0 "Forgot or change password" link.
+     - q1.9  ES describes the old multi-step CURE registration; EN describes
+             the Auth0 email-verification flow.
+     - q1.9.2 / q1.9.3  ES references the old acknowledgement email.
+     - q3.x  ES ListManager / listserv mechanics predate groups.io.
+     - q1.9.4 cookie instructions reference IE6 / Netscape 7 -- stale.
+     - Version credit at foot retained. -->
+
+
+<!-- =====================================================
+     SECCION 1: Registro y Clave de Acceso
+===================================================== -->
+<div class="support-section" id="q1">
+<h2 class="support-section-heading">1. Registrarse y Login</h2>
+<p class="support-section-intro">JewishGen requiere que todos los usuarios se
+den de alta y accedan por login para hacer uso de ciertos servicios de
+JewishGen, tales como el Buscador de Familias &ldquo;JewishGen Family Finder
+(JGFF)&rdquo;, el &Aacute;rbol Geneal&oacute;gico del Pueblo Jud&iacute;o
+&ldquo;Family Tree of the Jewish People (FTJP)&rdquo;, y las listas de correo
+&ldquo;Mailing Lists&rdquo;.</p>
+
+<div class="jg-collapsible" id="q1.1">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.1. &iquest;C&oacute;mo puedo darme de alta con JewishGen?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <!-- FLAG: describes the pre-Auth0 CURE registration form. -->
+            <p>Para darse de alta, vaya al formulario de <b>Nuevo Usuario de
+            JewishGen (JewishGen New User Registration)</b> en la
+            direcci&oacute;n
+            <a href="https://www.jewishgen.org/CURE">https://www.jewishgen.org/cure</a>.
+            Cumplimente el formulario completa y ver&iacute;dicamente y haga
+            click en el bot&oacute;n de &ldquo;Registrarse como nuevo usuario de
+            JewishGen&rdquo; en la parte baja de esa p&aacute;gina.</p>
+            <p>Se le enviar&aacute; un <b>mensaje de confirmaci&oacute;n por
+            e-mail</b>. Para completar el proceso de alta, deber&aacute; seguir
+            las instrucciones incluidas en el mensaje de confirmaci&oacute;n.
+            Haga click en el hiperv&iacute;nculo incluido en el mensaje y acceda
+            a JewishGen.</p>
+            <p>Si experimenta dificultades al darse de alta, vea la
+            <a href="#q1.9">Pregunta n&uacute;mero 1.9</a> para saber
+            m&aacute;s.</p>
+            <p>Solo deber&aacute; darse de alta <b>una vez</b>. A
+            continuaci&oacute;n, podr&aacute; acceder utilizando su n&uacute;mero
+            de identificaci&oacute;n de JewishGen (o direcci&oacute;n de correo
+            electr&oacute;nico) y contrase&ntilde;a (vea
+            <a href="#q1.2">Pregunta n&uacute;mero 1.2</a>).</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.2">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.2. &iquest;C&oacute;mo accedo a JewishGen?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Para acceder a JewishGen, vaya a la p&aacute;gina &ldquo;JewishGen
+            Login&rdquo; en
+            <a href="/CURE/">https://www.jewishgen.org/CURE</a>. En dicha
+            p&aacute;gina, introduzca su direcci&oacute;n de correo
+            electr&oacute;nico o su n&uacute;mero de identificaci&oacute;n
+            JewishGen en la casilla superior, la contrase&ntilde;a seleccionada
+            por usted en la casilla inferior y pulse el bot&oacute;n
+            &ldquo;Login&rdquo;.</p>
+            <p>Si olvida su n&uacute;mero de identificaci&oacute;n
+            &ldquo;JewishGen ID Number&rdquo;, vea la
+            <a href="#q1.4">Pregunta n&uacute;mero 1.4</a>.<br>
+            Si olvida su contrase&ntilde;a, vea la
+            <a href="#q1.5">Pregunta n&uacute;mero 1.5</a>.</p>
+            <p>Solo hace falta entrar con contrase&ntilde;a <b>una vez</b> por
+            cada sesi&oacute;n. Su navegador recordar&aacute; los datos de acceso
+            mientras siga funcionando. Si reiniciara su navegador, tendr&aacute;
+            que acceder a JewishGen nuevamente con su contrase&ntilde;a.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.3">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.3. &iquest;C&oacute;mo puedo obtener una identificaci&oacute;n y contrase&ntilde;a de JewishGen?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Se obtiene un n&uacute;mero de identificaci&oacute;n (ID)
+            JewishGen y contrase&ntilde;a al darse de alta con JewishGen (vea la
+            <a href="#q1.1">Pregunta n&uacute;mero 1.1</a>).</p>
+            <p>Al darse de alta con JewishGen, &eacute;ste le asignar&aacute; un
+            n&uacute;mero de identificaci&oacute;n (JGID), y le pide que cree su
+            propia contrase&ntilde;a.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.4">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.4. He olvidado mi n&uacute;mero de identificaci&oacute;n JewishGen (JGID).
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Se requiere un n&uacute;mero de identificaci&oacute;n JewishGen
+            (llamado anteriormente un c&oacute;digo de investigador &ldquo;JGFF
+            Researcher Code&rdquo;) para acceder a ciertos servicios de
+            JewishGen. Se le asignar&aacute; este n&uacute;mero al darse de alta
+            con JewishGen (ver
+            <a href="#q1.1">Pregunta n&uacute;mero 1.1</a>). Si olvidara su
+            n&uacute;mero de identificaci&oacute;n JewishGen, existen varias
+            maneras de volver a recuperarlo:</p>
+            <ol>
+                <li><p>En todos los mensajes de confirmaci&oacute;n de JewishGen
+                se incluye el n&uacute;mero de identificaci&oacute;n JewishGen.
+                Busque en su buz&oacute;n de entrada o papelera por si tuviese
+                alg&uacute;n mensaje de confirmaci&oacute;n que haya recibido de
+                JewishGen.</p></li>
+                <li><p>Puede
+                <a href="/CURE/jgidview.php"><b>hacer click aqu&iacute;</b></a>
+                &mdash; e insertar su direcci&oacute;n de correo
+                electr&oacute;nico y contrase&ntilde;a &mdash; y podr&aacute;
+                acceder a los datos de su alta con JewishGen, que incluye su
+                n&uacute;mero de ID.</p></li>
+                <li><p>Cumplimente el formulario de solicitud de
+                contrase&ntilde;a tal y como se explica en la respuesta a la
+                <a href="#q1.5">Pregunta n&uacute;mero 1.5</a>. La respuesta que
+                le enviaremos desde el soporte de JewishGen incluir&aacute; su
+                n&uacute;mero de identificaci&oacute;n JGID.</p></li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.5">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.5. He olvidado mi contrase&ntilde;a.
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <!-- FLAG: describes the old password-request-by-email flow.
+                 EN now says: click "Forgot or change password" on the login
+                 screen. Spanish copy left intact -- supply new copy to replace. -->
+            <p>Si ha olvidado su contrase&ntilde;a, puede rellenar un formulario
+            de solicitud de contrase&ntilde;a:
+            <a href="/CURE/password.html">solicitud de contrase&ntilde;a</a>.
+            Dicho formulario pide su direcci&oacute;n de correo electr&oacute;nico
+            actual y si fuese id&eacute;ntica a la que tenemos en nuestra base de
+            datos, se le enviar&iacute;a su contrase&ntilde;a a dicha
+            direcci&oacute;n enseguida.</p>
+            <p>Si hubiera cambiado de direcci&oacute;n de correo
+            electr&oacute;nico, se le pedir&aacute; que rellene otro formulario
+            con su nombre completo, direcciones actual y anterior y otros datos
+            que le identifiquen. Un voluntario en el soporte de claves de acceso
+            le enviar&aacute; su contrase&ntilde;a por correo
+            electr&oacute;nico.</p>
+            <p>Si lo desea, podr&aacute;
+            <a href="#q1.6">modificar su contrase&ntilde;a</a>.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.6">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.6. &iquest;C&oacute;mo puedo modificar mi contrase&ntilde;a?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Para modificar sus datos de contacto en JewishGen (nombre,
+            direcci&oacute;n postal, direcci&oacute;n de correo
+            electr&oacute;nico, etc.), sus
+            <a href="/jgff/FAQ/#q4.5">Opciones de Pantalla</a>, o su
+            contrase&ntilde;a,
+            <a href="/CURE/myprofile.asp"><b>haga click aqu&iacute;</b></a>.</p>
+            <p>Para modificar sus datos de contacto en JewishGen, deber&aacute;
+            acceder a JewishGen, bien mediante su direcci&oacute;n de correo
+            electr&oacute;nico bien por el n&uacute;mero de
+            identificaci&oacute;n JewishGen, y su contrase&ntilde;a.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.7">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.7. Ha cambiado mi direcci&oacute;n de correo electr&oacute;nico. &iquest;C&oacute;mo se lo notifico a JewishGen?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Vea la <a href="#q1.6">Pregunta n&uacute;mero 1.6</a>.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.8">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.8. Me he mudado. &iquest;C&oacute;mo cambio mi direcci&oacute;n postal?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Vea la <a href="#q1.6">Pregunta n&uacute;mero 1.6</a>.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.9">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.9. Problemas al darse de alta
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <!-- FLAG: describes the old multi-step CURE registration flow. -->
+            <p>El proceso de registrarse en JewishGen consiste en varios pasos.
+            Aqu&iacute; est&aacute;n las instrucciones detalladas del proceso
+            completo:</p>
+            <ol>
+                <li><p><b>Cumplimente el formulario de registro de alta.</b><br>
+                El primer paso es cumplimentar el formulario de Usuario de
+                JewishGen en
+                <a href="https://www.jewishgen.org/CURE">https://www.jewishgen.org/CURE</a>.
+                Rellene el formulario y haga click en el bot&oacute;n de
+                &ldquo;Registrarse como nuevo usuario de JewishGen&rdquo; a pie
+                de la p&aacute;gina. Se le enviar&aacute; un <b>correo
+                electr&oacute;nico de confirmaci&oacute;n</b>. (Si no lo
+                recibiera, vea
+                <a href="#q1.9.3">Pregunta n&uacute;mero 1.9.3</a>; <b>no</b>
+                rellene el formulario m&aacute;s de una vez.)</p></li>
+
+                <li><p><b>Recibir&aacute; el correo de
+                confirmaci&oacute;n.</b><br>
+                El correo electr&oacute;nico de confirmaci&oacute;n le
+                ser&aacute; enviado cuando haya cumplimentado el formulario de
+                alta. Este correo contendr&aacute; un v&iacute;nculo de
+                &ldquo;confirmaci&oacute;n URL&rdquo;, a una direcci&oacute;n de
+                Internet a la que hay que acudir para confirmar el alta. (Para
+                recibir otra vez el correo de confirmaci&oacute;n, deber&aacute;
+                ver la
+                <a href="#q1.9.2">Pregunta n&uacute;mero 1.9.2</a>.)</p></li>
+
+                <li><p><b>Haga click en el v&iacute;nculo de confirmaci&oacute;n
+                URL.</b><br>
+                Haga click en el v&iacute;nculo que el mensaje le brinda y este
+                v&iacute;nculo le llevar&aacute; a la p&aacute;gina de acceso
+                &ldquo;Login to JewishGen&rdquo;.</p></li>
+
+                <li><p><b>Acceder a JewishGen.</b><br>
+                La p&aacute;gina &ldquo;Login to JewishGen&rdquo; est&aacute;
+                encabezada por &ldquo;Por favor acceda para confirmar y completar
+                su alta.&rdquo; Introduzca su n&uacute;mero de
+                identificaci&oacute;n JewishGen (o direcci&oacute;n de correo
+                electr&oacute;nico) en la casilla superior e introduzca su
+                contrase&ntilde;a en la casilla inferior. Cliquee en el
+                bot&oacute;n &ldquo;Login&rdquo;.</p></li>
+
+                <li><p><b>Confirme sus detalles de contacto.</b><br>
+                En la siguiente p&aacute;gina, revise sus detalles de contacto
+                (nombre, direcci&oacute;n postal, n&uacute;mero de
+                tel&eacute;fono, direcci&oacute;n de correo electr&oacute;nico)
+                para asegurarse de que todo est&eacute; correcto. Si est&aacute;
+                conforme, haga click en &ldquo;Yes&rdquo; (s&iacute;) en la
+                pregunta &ldquo;Are these details correct?&rdquo;</p></li>
+
+                <li><p><b>Se confirmar&aacute; ahora su alta.</b><br>
+                Llegar&aacute; a una p&aacute;gina encabezada por &ldquo;JewishGen
+                Registration Confirmation&rdquo;. Su alta ya se ha
+                completado.</p></li>
+            </ol>
+            <p>Puede encontrarse con algunos problemas durante el proceso de alta
+            y estos se detallan a continuaci&oacute;n.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.9.1">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.9.1. &iquest;C&oacute;mo confirmar mi alta?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Si su estado se notifica como &ldquo;AC Awaiting
+            Confirmation&rdquo; (en espera de confirmaci&oacute;n), tendr&aacute;
+            que confirmar su alta completando los pasos 2 a 6 en la
+            <a href="#q1.9">Pregunta n&uacute;mero 1.9</a> arriba indicada.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.9.2">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.9.2. &iquest;C&oacute;mo puedo obtener el v&iacute;nculo URL de confirmaci&oacute;n?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Solo se obtiene el v&iacute;nculo URL de confirmaci&oacute;n
+            mediante el <b>correo electr&oacute;nico de confirmaci&oacute;n</b>,
+            y dicho mensaje se le env&iacute;a cuando se da de alta la primera vez
+            con JewishGen o cuando cambie su direcci&oacute;n de correo
+            electr&oacute;nico.</p>
+            <p>Para recibir nuevamente el correo electr&oacute;nico de
+            confirmaci&oacute;n que contiene el v&iacute;nculo URL de
+            confirmaci&oacute;n:</p>
+            <ol>
+                <li>Acceda a JewishGen en
+                <a href="/CURE/">https://www.jewishgen.org/CURE</a>, usando su
+                direcci&oacute;n de correo electr&oacute;nico o n&uacute;mero de
+                identificaci&oacute;n JewishGen y contrase&ntilde;a. Cliquee en el
+                bot&oacute;n &ldquo;Login&rdquo;.</li>
+                <li>Cerca del pie de la p&aacute;gina siguiente, si su alta
+                hubiese sido asignada el estado &ldquo;AC pendiente de
+                confirmaci&oacute;n&rdquo;, ver&aacute; las palabras &ldquo;To
+                receive another email with the details request them here&rdquo;
+                (para recibir otro correo electr&oacute;nico con los detalles,
+                solic&iacute;telos aqu&iacute;). Haga click sobre &ldquo;request
+                them here&rdquo;.</li>
+                <li>Se le enviar&aacute; otro correo electr&oacute;nico de
+                confirmaci&oacute;n a la direcci&oacute;n que cumpliment&oacute;
+                en su alta. Dicho mensaje contendr&aacute; el v&iacute;nculo a la
+                URL de confirmaci&oacute;n. (Si no recibiera el mensaje de
+                confirmaci&oacute;n, vea
+                <a href="#q1.9.3">Pregunta n&uacute;mero 1.9.3</a>.)</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.9.3">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.9.3. No he recibido el mensaje de confirmaci&oacute;n.
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>El v&iacute;nculo a la URL de confirmaci&oacute;n solo est&aacute;
+            disponible mediante el mensaje de correo electr&oacute;nico de
+            confirmaci&oacute;n. Dicho mensaje se le env&iacute;a al darse de alta
+            inicialmente con JewishGen, o cuando cambie su direcci&oacute;n de
+            correo electr&oacute;nico.</p>
+            <p>Para obtener otra copia del mensaje de confirmaci&oacute;n que
+            contiene el v&iacute;nculo a la URL de confirmaci&oacute;n, vea la
+            <a href="#q1.9.2">Pregunta n&uacute;mero 1.9.2</a>.</p>
+            <p>Si no le llegara el correo electr&oacute;nico de
+            confirmaci&oacute;n, pueden haber varios motivos posibles:</p>
+            <ol>
+                <li><p>Usted tiene habilitado un filtro de &ldquo;spam&rdquo; en
+                su sistema de correo electr&oacute;nico que est&aacute; bloqueando
+                los correos que le llegan desde el dominio
+                &ldquo;jewishgen.org&rdquo;. Cambie su filtro de spam para
+                permitir que accedan correos de
+                &ldquo;*@*.jewishgen.org&rdquo;, y luego
+                <a href="#q1.9.2">solicite otro mensaje de correo
+                electr&oacute;nico de confirmaci&oacute;n</a>.</p></li>
+                <li><p>Tiene habilitado un filtro de correos para su buz&oacute;n
+                de entrada. Compruebe si en su buz&oacute;n de eliminados o
+                papelera puede haber sido colocado autom&aacute;ticamente el
+                correo electr&oacute;nico de confirmaci&oacute;n de JewishGen por
+                el filtro.</p></li>
+                <li><p>La direcci&oacute;n de correo electr&oacute;nico puede
+                haberse escrito incorrectamente en su registro de alta. Por favor
+                verif&iacute;quela
+                <a href="/CURE/jgidview.php">editando sus datos de contacto en
+                JewishGen</a>.</p></li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q1.9.4">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        1.9.4. &iquest;C&oacute;mo habilito los cookies en mi navegador?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>El sitio web de JewishGen requiere que se coloque una cookie en su
+            ordenador para controlar su sesi&oacute;n de uso. Dicha cookie
+            contiene informaci&oacute;n que identifica su ordenador ante el
+            nuestro de forma exclusiva. Se borra autom&aacute;ticamente al salir
+            del navegador.</p>
+            <ul>
+                <li><p>Para habilitar las cookies en Microsoft <b>Internet
+                Explorer</b> (versi&oacute;n 6.X), seleccione
+                &ldquo;Herramientas&rdquo; del men&uacute; principal y luego
+                &ldquo;Opciones de Internet...&rdquo;. Seleccione el control
+                &ldquo;Privacidad&rdquo;, y posicione el control a
+                &ldquo;Media&rdquo; o m&aacute;s bajo.</p></li>
+                <li><p>Para habilitar las cookies en <b>Netscape</b>
+                (versi&oacute;n 7.X), seleccione &ldquo;Editar&rdquo; del
+                men&uacute; principal y luego &ldquo;Preferencias...&rdquo;. En
+                el men&uacute; de la izquierda, seleccione &ldquo;Privacidad y
+                Seguridad&rdquo; y luego &ldquo;Cookies&rdquo;. Seleccione una de
+                las opciones que habiliten cookies.</p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- =====================================================
+     SECCION 2: El Buscador de Familias JewishGen (JGFF)
+===================================================== -->
+<div class="support-section" id="q2">
+<h2 class="support-section-heading">2. El Buscador de Familias JewishGen (JGFF)</h2>
+<p class="support-section-intro">El Buscador de Familias <b>JewishGen Family
+Finder (JGFF)</b> es una base de datos de apellidos y poblaciones ancestrales que
+est&aacute;n siendo investigados por gene&aacute;logos jud&iacute;os en todo el
+mundo. El JGFF es una herramienta en red dise&ntilde;ada para conectar a los
+gene&aacute;logos que compartan intereses de investigaci&oacute;n.</p>
+<p class="support-section-intro">Su prop&oacute;sito es el de permitir que
+aquellas personas que est&eacute;n investigando los mismos apellidos y
+poblaciones puedan encontrarse y compartir informaci&oacute;n entre ellas. Se
+anima a todos los gene&aacute;logos jud&iacute;os a que participen. Si desea
+informaci&oacute;n m&aacute;s completa, mire en
+<a href="/jgff/FAQ/"><i>JGFF FAQ: Preguntas m&aacute;s frecuentes acerca del
+Buscador de Familias de JewishGen</i></a>.</p>
+
+<div class="jg-collapsible" id="q2.1">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        2.1. He olvidado mi contrase&ntilde;a.
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Vea la <a href="#q1.5">Pregunta n&uacute;mero 1.5</a>.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q2.2">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        2.2. He olvidado mi n&uacute;mero de identificaci&oacute;n JewishGen (JGID).
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Vea la <a href="#q1.4">Pregunta n&uacute;mero 1.4</a>.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q2.3">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        2.3. Ha cambiado mi direcci&oacute;n de correo electr&oacute;nico. &iquest;C&oacute;mo puedo cambiarla en la base de datos de JGFF?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Para modificar sus datos de contacto en JewishGen (su nombre,
+            direcci&oacute;n postal, direcci&oacute;n de correo
+            electr&oacute;nico, etc.), sus
+            <a href="/jgff/FAQ/#q4.5">Opciones de Pantalla</a> o su
+            contrase&ntilde;a,
+            <a href="/CURE/jgidview.php"><b>haga click aqu&iacute;</b></a>.</p>
+            <p>Para modificar sus datos de contacto en JewishGen, deber&aacute;
+            acceder a JewishGen, usando bien su direcci&oacute;n de correo
+            electr&oacute;nico o su n&uacute;mero de identificaci&oacute;n (JGID)
+            JewishGen y su contrase&ntilde;a.</p>
+            <!-- q3.10 cross-reference removed: q3.10 dropped to match EN. -->
+            <p>Tome nota de que al modificar su direcci&oacute;n de correo
+            electr&oacute;nico en el JGFF (su <b>direcci&oacute;n de correo
+            electr&oacute;nico principal</b>), tambi&eacute;n modificar&aacute; la
+            direcci&oacute;n de correo electr&oacute;nico para cualquier
+            suscripci&oacute;n a listas de correo que tenga bajo esa
+            direcci&oacute;n.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q2.4">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        2.4. Otros asuntos JGFF.
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Lo relacionado a otras preguntas sobre el Buscador de Familias
+            JewishGen (JGFF) lo podr&aacute; encontrar en la informaci&oacute;n
+            completa del JGFF en
+            <a href="/jgff/FAQ/"><i>JGFF FAQ: Preguntas m&aacute;s frecuentes
+            acerca del JewishGen Family Finder</i></a>.</p>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- =====================================================
+     SECCION 3: Listas de Correo
+===================================================== -->
+<div class="support-section" id="q3">
+<h2 class="support-section-heading">3. Listas de Correo</h2>
+<p class="support-section-intro">JewishGen ofrece varias <b>listas de correo</b>
+para que los investigadores gene&aacute;logos puedan intercambiar
+informaci&oacute;n, ideas, m&eacute;todos, sugerencias, t&eacute;cnicas y
+recursos. Existe la lista principal
+<a href="/JewishGen/DiscussionGroup.htm">JewishGen Discussion Group</a> del grupo
+de debate y varias listas de grupos de intereses espec&iacute;ficos.</p>
+
+<div class="jg-collapsible" id="q3.1">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        3.1. &iquest;C&oacute;mo puedo suscribirme a una lista de correo?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Para suscribirse a cualquiera de las listas de correo de
+            JewishGen, vaya a la p&aacute;gina de administraci&oacute;n de listas
+            de correo en
+            <a href="https://groups.jewishgen.org/g/main">https://groups.jewishgen.org/g/main</a>.</p>
+            <p>Tome nota de que deber&aacute; ya estar dado de alta y haber
+            accedido a JewishGen para poder hacer uso de las p&aacute;ginas de
+            administraci&oacute;n de las listas de correo. Si no hubiese accedido,
+            en este punto se le pedir&aacute; que lo haga.</p>
+            <p>Encuentre la lista de correo a la que desea suscribirse y haga
+            click en la casilla de &ldquo;Subscribe&rdquo; correspondiente en el
+            extremo derecho de la p&aacute;gina. En la p&aacute;gina siguiente,
+            seleccione el modo de suscripci&oacute;n que desea:</p>
+            <ul>
+                <li>MAIL (correo) &ndash; Reciba los correos tal y como entran a
+                la lista, en forma de mensajes individuales.</li>
+                <li>DIGEST (resumen) &ndash; Reciba un resumen diario con los
+                mensajes de ese d&iacute;a.</li>
+                <li>INDEX (&iacute;ndice) &ndash; Reciba un &iacute;ndice diario
+                con los asuntos de los mensajes de ese d&iacute;a.</li>
+            </ul>
+            <p>Luego cliquee en el bot&oacute;n &ldquo;Subscribe&rdquo; en el pie
+            de esa misma p&aacute;gina.</p>
+            <p>Deber&aacute; haberse podido dar de alta en la lista
+            seleccionada.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q3.2">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        3.2. &iquest;C&oacute;mo darme de baja de una lista de correo?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Para darse de baja de cualquier lista de correo de JewishGen, vaya
+            a la p&aacute;gina de administraci&oacute;n de listas de correo en
+            <a href="https://groups.jewishgen.org/g/main">https://groups.jewishgen.org/g/main</a>.
+            Encuentre la lista de correo de la que desea darse de baja y haga
+            click en la X roja en la columna de &ldquo;Un-Subscribe&rdquo; en el
+            extremo derecho de la p&aacute;gina. En la p&aacute;gina siguiente,
+            haga click en el bot&oacute;n &ldquo;Confirm Un-Subscribe&rdquo;
+            (confirmar baja) y se habr&aacute; dado de baja en la lista de correo
+            seleccionada.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q3.3">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        3.3. Ha cambiado mi direcci&oacute;n de correo electr&oacute;nico. &iquest;C&oacute;mo puedo notificar a JewishGen?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Para modificar sus datos de contacto en JewishGen (su nombre,
+            direcci&oacute;n postal, direcci&oacute;n de correo
+            electr&oacute;nico, etc.), su contrase&ntilde;a, etc.,
+            <a href="/CURE/jgidview.php"><b>haga click aqu&iacute;</b></a>.</p>
+            <p>Para modificar sus datos de contacto en JewishGen, tendr&aacute;
+            que acceder a JewishGen, haciendo uso bien de su direcci&oacute;n de
+            correo electr&oacute;nico o de su n&uacute;mero de ID de JewishGen y
+            su contrase&ntilde;a.</p>
+            <p>Nuestro sistema ha sido dise&ntilde;ado para facilitarle efectuar
+            modificaciones por su cuenta &mdash; JewishGen no cuenta con personal
+            para realizar estos cambios por usted.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q3.4">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        3.4. &iquest;C&oacute;mo modifico el formato de la lista de correo?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Para modificar el formato de la lista de correo, vaya a la
+            p&aacute;gina de administraci&oacute;n de listas de correo en
+            <a href="https://groups.jewishgen.org/g/main">https://groups.jewishgen.org/g/main</a>,
+            y complete los siguientes pasos para cada una de las listas a las que
+            est&aacute; suscrito:</p>
+            <ol>
+                <li>Haga click en el icono <b>&ldquo;Modify
+                Subscription&rdquo;</b> (modificar suscripci&oacute;n).</li>
+                <li>En la p&aacute;gina &ldquo;Modify Mailing List
+                Options&rdquo; (modificar opciones de listas de correo), elija la
+                nueva selecci&oacute;n que desea asignar. Seleccione una de las
+                cuatro opciones:
+                <ul>
+                    <li>MAIL (correo) &ndash; Reciba los correos seg&uacute;n se
+                    van agregando, en forma de mensajes individuales.</li>
+                    <li>DIGEST (resumen) &ndash; Reciba un resumen diario con
+                    todos los mensajes del d&iacute;a en curso.</li>
+                    <li>INDEX (&iacute;ndice) &ndash; Reciba un &iacute;ndice
+                    diario con el listado de los asuntos de los mensajes del
+                    d&iacute;a.</li>
+                    <li>NO MAIL (ning&uacute;n correo) &ndash; No reciba
+                    ning&uacute;n correo; parar de forma temporal el correo.</li>
+                </ul>
+                </li>
+                <li>Cliquee en &ldquo;Update my Subscription Settings&rdquo;
+                (actualizar mis selecciones de suscripci&oacute;n) al pie de la
+                p&aacute;gina &ldquo;Modify Mailing List Options&rdquo;.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q3.5">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        3.5. &iquest;C&oacute;mo puedo parar temporalmente la suscripci&oacute;n a la lista de correo?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Hemos dise&ntilde;ado nuestro sistema para que usted mismo pueda
+            realizar este cambio &mdash; JewishGen no cuenta con personal para
+            efectuarlo por usted.</p>
+            <p><b>Para suspender temporalmente su suscripci&oacute;n a la lista de
+            correo</b>, al grupo de debate de JewishGen o a cualesquiera de las
+            listas de correo de los Grupos de Inter&eacute;s Espec&iacute;fico:</p>
+            <p>Vaya a la p&aacute;gina de administraci&oacute;n de listas de
+            correo en
+            <a href="https://groups.jewishgen.org/g/main">https://groups.jewishgen.org/g/main</a>,
+            y para cada una de las listas de correo a la que est&aacute; suscrito,
+            complete los siguientes pasos:</p>
+            <ol>
+                <li>Cliquee en el icono de <b>Modify Subscription</b> (modificar
+                suscripci&oacute;n).</li>
+                <li>En el rengl&oacute;n &ldquo;Membership Kind&rdquo; (tipo de
+                afiliaci&oacute;n) escoja la opci&oacute;n <b>NO MAIL</b> (no
+                correo).</li>
+                <li>Cliquee en el bot&oacute;n &ldquo;Update my Subscription
+                Settings&rdquo; al pie de la p&aacute;gina &ldquo;Modify Mailing
+                List Options&rdquo;.</li>
+            </ol>
+            <p>Se parar&aacute; temporalmente su suscripci&oacute;n a las listas
+            de correo y no recibir&aacute; ning&uacute;n correo hasta que no
+            vuelva a inscribirse.</p>
+
+            <hr class="support-inner-rule">
+
+            <p><b>Para recuperar sus suscripciones a listas de correo</b> a su
+            regreso de las vacaciones:</p>
+            <p>Dir&iacute;jase a la p&aacute;gina de administraci&oacute;n de
+            listas de correo en
+            <a href="https://groups.jewishgen.org/g/main">https://groups.jewishgen.org/g/main</a>,
+            y por cada lista de correo a la cual est&aacute; suscrito, realice los
+            pasos siguientes:</p>
+            <ol>
+                <li>Haga click en el icono <b>Modify Subscription</b> (modificar
+                suscripci&oacute;n).</li>
+                <li>En el rengl&oacute;n &ldquo;Membership Kind&rdquo; (tipo de
+                afiliaci&oacute;n) seleccione una de las opciones de <b>MAIL</b>
+                (correo), <b>DIGEST</b> (resumen) o <b>INDEX</b>
+                (&iacute;ndice).</li>
+                <li>Cliquee en &ldquo;Update my Subscription Settings&rdquo; al
+                pie de la p&aacute;gina &ldquo;Modify Mailing List
+                Options&rdquo;.</li>
+            </ol>
+            <p>Se restituir&aacute; su suscripci&oacute;n a la lista de
+            correo.</p>
+            <p><b>Para recuperar los correos que perdi&oacute; durante su
+            ausencia</b>, siga las instrucciones en la
+            <a href="#q3.8">Pregunta 3.8</a> abajo.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q3.6">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        3.6. &iquest;C&oacute;mo enviar un mensaje a una lista de correo?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <ul>
+                <li><p>Para enviar un mensaje a todos los participantes en la
+                lista de correos del grupo de debate
+                <b><a href="/JewishGen/DiscussionGroup.htm">JewishGen Discussion
+                Group</a></b>, debe dirigirlo a la direcci&oacute;n
+                <a href="mailto:main@groups.jewishgen.org">main@groups.jewishgen.org</a>.</p>
+                <p>Antes de enviar un mensaje, rogamos lea las normas y
+                directrices en
+                <a href="/InfoFiles/rules.htm">Rules and Guidelines of the
+                JewishGen Discussion Group</a>.</p></li>
+                <li><p>Para enviar un mensaje a todos los participantes en una
+                lista de correo de un Grupo de Inter&eacute;s Especial
+                <b>(Special Interest Group, SIG)</b>, primero deber&aacute;
+                suscribirse a la lista de dicho Grupo SIG. Haga uso de la
+                p&aacute;gina de
+                <a href="https://groups.jewishgen.org/g/main">administraci&oacute;n
+                de listas de correo</a> para darse de alta y se le enviar&aacute;n
+                las instrucciones en un mensaje de bienvenida al SIG.</p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q3.7">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        3.7. &iquest;C&oacute;mo puedo enviar mensajes en formato &ldquo;Plain Text&rdquo;?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>El servidor de las listas de correo de JewishGen solo puede leer y
+            enviar mensajes en formato &ldquo;Plain Text&rdquo; (texto sencillo).
+            Los mensajes que se env&iacute;en en otros formatos como MultiPart,
+            MIME o HTML no son legibles para muchos destinatarios, por lo cual las
+            listas de correo de JewishGen requieren que se env&iacute;en
+            exclusivamente en formato &ldquo;Plain Text&rdquo;.</p>
+            <p>Las instrucciones acerca de c&oacute;mo usar el formato &ldquo;Plain
+            Text&rdquo; en distintos programas de correo electr&oacute;nico se
+            pueden encontrar en el archivo de informaci&oacute;n InfoFile
+            &ldquo;<a href="/InfoFiles/PlainText.html">Sending Plain Text
+            Email</a>&rdquo;.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q3.8">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        3.8. &iquest;C&oacute;mo puedo recuperar mensajes viejos?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Se pueden recuperar los res&uacute;menes de listados de mensajes
+            anteriores. Visite
+            <a href="https://groups.jewishgen.org/g/main">https://groups.jewishgen.org/g/main</a>.</p>
+            <p>Por ejemplo:</p>
+            <ul>
+                <li>Para obtener el resumen del Grupo de Debate JewishGen del
+                d&iacute;a 23 de enero de 2002, teclee:<br>
+                &nbsp;&nbsp;<tt>get jewishgen 20020123</tt></li>
+                <li>Para recibir el resumen del foro Sefard&iacute; del d&iacute;a
+                15 de marzo de 2001, teclee:<br>
+                &nbsp;&nbsp;<tt>get sefard 20010315</tt></li>
+                <li>Para que le enviemos los res&uacute;menes del Grupo de
+                Inter&eacute;s Espec&iacute;fico de Belar&uacute;s de los
+                d&iacute;as 24 de julio al 3 de agosto de 2001, escriba:<br>
+                &nbsp;&nbsp;<tt>get belarus 20010724-20010803</tt></li>
+            </ul>
+            <p class="support-placeholder-note">[Cuadro de referencia con los
+            nombres de las listas de correo omitido: era un &ldquo;server-side
+            include&rdquo; que no puede cargarse dentro de un fragmento.
+            Se&ntilde;alado para la revisi&oacute;n de contenido.]</p>
+            <p>Tambi&eacute;n puede efectuar una <b>b&uacute;squeda</b> entre
+            todos los mensajes publicados en cualquier lista de correo:</p>
+            <ul>
+                <li>Los archivos
+                <a href="/databases/archive.htm">JewishGen Discussion Group
+                Message Archives</a> (mensajes del Grupo de Debate JewishGen),
+                desde 1993 hasta la fecha.</li>
+                <li>Los archivos
+                <a href="/databases/sigarchive.htm">JewishGen SIG Lists Message
+                Archives</a> (listas de mensajes de Grupos de Inter&eacute;s
+                Espec&iacute;fico), entre 1998 y el d&iacute;a de hoy.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q3.9">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        3.9. Ya no recibo correos de JewishGen. &iquest;Qu&eacute; ocurri&oacute;?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Existen varios motivos por los cuales puede haber dejado de recibir
+            correo de alguna lista de correo JewishGen a la que puede haber estado
+            suscrito:</p>
+            <ul>
+                <li>Si los correos electr&oacute;nicos que le enviamos han sido
+                devueltos a nuestro servidor (lo cual puede ser ocasionado por
+                alg&uacute;n problema puntual en su proveedor de servicios de
+                Internet &ldquo;ISP&rdquo;; por problemas en la red; porque su
+                buz&oacute;n puede estar lleno, etc.) durante varios d&iacute;as,
+                se mantendr&aacute; su suscripci&oacute;n autom&aacute;ticamente
+                en estado &ldquo;guardar&rdquo;.</li>
+                <li>Si recibimos de usted un correo electr&oacute;nico portador de
+                un virus, pondremos su suscripci&oacute;n en estado &ldquo;correo
+                no&rdquo;.</li>
+                <li>Si hubiese cambiado su direcci&oacute;n de correo
+                electr&oacute;nico y no nos hubiera notificado de ello a cada una
+                de las listas de correo a las que estuviera suscrito (ver
+                <a href="#q3.3">Pregunta 3.3</a>).</li>
+            </ul>
+            <p>El primer paso en el proceso de restablecimiento es averiguar su
+            estado. Dirija todos los correos electr&oacute;nicos acerca del estado
+            de sus suscripciones a
+            <a href="mailto:support@jewishgen.org">support@jewishgen.org</a>.</p>
+            <ol>
+                <li><p>Si no se acuerda a qu&eacute; lista(s) se hab&iacute;a
+                suscrito, su mensaje al servidor deber&aacute; contener solamente
+                la palabra &ldquo;<tt>which</tt>&rdquo; (cu&aacute;l).</p>
+                <p>El servidor le devolver&aacute; un mensaje de correo
+                electr&oacute;nico indic&aacute;ndole las listas a las que
+                est&aacute; suscrito. Si le llegase devuelto un mensaje
+                inform&aacute;ndole de que no tiene ninguna suscripci&oacute;n, es
+                porque ha utilizado una direcci&oacute;n diferente a aquella con
+                la que se suscribi&oacute; y esta otra no aparece en nuestro
+                sistema. La soluci&oacute;n m&aacute;s f&aacute;cil es
+                suscribirse nuevamente, tal y como se describe en la
+                <a href="#q3.1">Pregunta 3.1</a>.</p></li>
+                <li><p>Para saber el estado actual de su suscripci&oacute;n a cada
+                lista, env&iacute;e un correo electr&oacute;nico al servidor con
+                las palabras &ldquo;<tt>query <i>listname</i></tt>&rdquo;
+                (consulta <i>nombre de la lista</i>). Ponga cada consulta en un
+                rengl&oacute;n diferente en su mensaje. Por ejemplo, si solicita
+                conocer el estado de su suscripci&oacute;n a tres listas de correo
+                &mdash; JewishGen, Belar&uacute;s y Galicia &mdash; su mensaje
+                ser&iacute;a as&iacute;:<br>
+                &nbsp;&nbsp;<tt>query jewishgen</tt><br>
+                &nbsp;&nbsp;<tt>query belarus</tt><br>
+                &nbsp;&nbsp;<tt>query galicia</tt></p>
+                <p>El servidor le devolver&aacute; un mensaje inform&aacute;ndole
+                del estado de su suscripci&oacute;n a cada lista de correo. Los
+                estados posibles son: &ldquo;held&rdquo; (retenido);
+                &ldquo;nomail&rdquo; (correo no); o uno de los estados
+                &ldquo;activos&rdquo;: &ldquo;mail&rdquo; (correo),
+                &ldquo;index&rdquo; (&iacute;ndice) o &ldquo;digest&rdquo;
+                (resumen).</p></li>
+                <li><p>Si estuviera en &ldquo;hold&rdquo; (retenido) o puesto en
+                &ldquo;nomail&rdquo; (correo no), haga uso de los formularios
+                descritos en la <a href="#q3.4">Pregunta 3.4</a> para reactivar su
+                suscripci&oacute;n.</p>
+                <p>Si el servidor le confirma que el estado de su
+                suscripci&oacute;n es &ldquo;activo&rdquo; (o sea, que su estado
+                est&aacute; en &ldquo;mail&rdquo;, &ldquo;index&rdquo; o
+                &ldquo;digest&rdquo;) y a&uacute;n as&iacute; no estuviera
+                recibiendo correos, deber&aacute; alertar a su ISP (proveedor de
+                Internet) para que puedan averiguar el motivo por el cual no les
+                est&aacute; llegando su correo. Si no se pudiera resolver el
+                problema a ese nivel, rogamos contacte con el soporte t&eacute;cnico
+                en <a href="/JewishGen/TechSupport.asp">JewishGen Technical
+                Support</a> con los detalles completos.</p></li>
+            </ol>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- =====================================================
+     SECCION 4: Donativos
+===================================================== -->
+<div class="support-section" id="q4">
+<h2 class="support-section-heading">4. Donativos</h2>
+
+<div class="jg-collapsible" id="q4.1">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        4.1. &iquest;C&oacute;mo puedo hacer llegar una aportaci&oacute;n econ&oacute;mica a JewishGen?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>JewishGen es una entidad sin &aacute;nimo de lucro con una
+            plantilla m&iacute;nima de empleados remunerados que percibe apoyo de
+            cientos de voluntarios que se dedican a la conservaci&oacute;n de la
+            historia jud&iacute;a y que ayudan a los dem&aacute;s a investigar su
+            genealog&iacute;a jud&iacute;a.</p>
+            <p>Dependemos de las aportaciones de ustedes para financiar todos los
+            proyectos y servicios singulares que pueden encontrar en JewishGen, y
+            que requieren de servicios y mantenimiento continuos.</p>
+            <p>Se pueden realizar donativos mediante el programa de
+            <a href="/JewishGen-erosity/">JewishGen-erosity</a> en
+            <a href="/JewishGen-erosity/">https://www.jewishgen.org/JewishGen-erosity</a>.
+            JewishGen-erosity acepta talones bancarios y todas las tarjetas de
+            cr&eacute;dito principales, por fax, correo y por nuestro servidor
+            seguro.</p>
+            <p>Sus aportaciones, las cuales agradecemos enormemente, hacen posible
+            que JewishGen pueda continuar sirviendo a la creciente comunidad
+            mundial de JewishGen, y nos permiten aumentar la informaci&oacute;n
+            que ofrecemos como servicio p&uacute;blico a todos aquellos que se
+            interesen por la investigaci&oacute;n de sus antepasados
+            jud&iacute;os, a la vez que sus aportaciones de hoy ayudan a conservar
+            para el futuro la historia del pueblo jud&iacute;o.</p>
+            <p>JewishGen, Inc. es una entidad sin &aacute;nimo de lucro que opera
+            bajo ep&iacute;grafe tipo 501(c)(3), lo cual significa que todos los
+            donativos aportados por ciudadanos de los Estados Unidos, y en algunos
+            casos tambi&eacute;n por ciudadanos canadienses, son desgravables.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q4.2">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        4.2. &iquest;C&oacute;mo puedo donar material a JewishGen?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>JewishGen agradece la aportaci&oacute;n de material relevante para
+            publicarlo en su sitio web. El proceso para realizarlo es sencillo.</p>
+            <p>Primero, determine en cu&aacute;l &aacute;rea de JewishGen
+            deber&iacute;a publicarse dicho material:</p>
+            <ul>
+                <li><b>FTJP</b>: Los &aacute;rboles geneal&oacute;gicos
+                deber&aacute;n ser aportados a
+                <a href="/gedcom/">Family Tree of the Jewish People</a>
+                (&Aacute;rbol Geneal&oacute;gico del Pueblo Jud&iacute;o).
+                [<a href="/gedcom/faq/">Informaci&oacute;n para donativos</a>].</li>
+                <!-- FIX: source said "ShtetLinks" (wrong product, and misspelled).
+                     Corrected to KehilaLinks and repointed. -->
+                <li><b>KehilaLinks</b>: La informaci&oacute;n acerca de un poblado
+                o localidad espec&iacute;fica podr&iacute;a aportarse a una
+                p&aacute;gina de
+                <a href="https://kehilalinks.jewishgen.org/">KehilaLinks</a>.
+                [<a href="https://kehilalinks.jewishgen.org/documentation/writing.htm">Informaci&oacute;n
+                para donativos</a>].</li>
+                <li><b>InfoFiles</b>: La informaci&oacute;n educativa, de
+                referencia general y el material instructivo podr&iacute;an formar
+                un archivo informativo
+                <a href="/InfoFiles/">JewishGen InfoFile</a>.</li>
+                <li><b>Yizkor</b>: Las traducciones de libros memoriales Yizkor y
+                otro material relacionado con el Holocausto deber&iacute;an formar
+                parte del <a href="/Yizkor/">Yizkor Book Project</a> de JewishGen.
+                [<a href="/yizkor/donation/">Informaci&oacute;n para
+                donativos</a>].</li>
+                <li><b>Bases de datos</b>: Las cantidades mayores de datos
+                (m&aacute;s de mil apuntes) deber&aacute;n ser colocadas en una
+                base de datos con capacidad de b&uacute;squeda
+                <a href="/databases/">JewishGen Database</a>.
+                [<a href="/JewishGen/agree/dbase_letter.htm">Informaci&oacute;n
+                para donativos</a>].</li>
+            </ul>
+            <!-- FIX: Warren Blatt referral replaced with the Support Desk. -->
+            <p>Cuando exista alguna duda acerca del mejor emplazamiento, consulte
+            por favor con el Servicio de Soporte de JewishGen en
+            <a href="mailto:support@jewishgen.org">support@jewishgen.org</a>.
+            JewishGen cumple con las leyes de derecho de autor (copyright) y se
+            reserva el derecho a rechazar material inapropiado.</p>
+            <p>A continuaci&oacute;n, visite
+            <a href="/JewishGen/agree/">https://www.jewishgen.org/JewishGen/agree</a>,
+            haga click en el Acuerdo de Donativo apropiado, impr&iacute;malo o
+            b&aacute;jelo, cumplimente la informaci&oacute;n solicitada y
+            env&iacute;elo por correo postal o fax a la direcci&oacute;n que
+            aparece en el formulario. Cualquier pregunta podr&aacute; ser dirigida
+            al Director de Proyecto correspondiente.</p>
+            <p>Los donativos de material que se efect&uacute;en a JewishGen
+            podr&iacute;an ser desgravados, pero es mejor consultar con
+            antelaci&oacute;n a su asesor fiscal para determinar si es aplicable a
+            sus circunstancias personales.</p>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- =====================================================
+     SECCION 5: Contactar con JewishGen
+===================================================== -->
+<div class="support-section" id="q5">
+<h2 class="support-section-heading">5. Contactar con JewishGen</h2>
+
+<div class="jg-collapsible" id="q5.1">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        5.1. &iquest;C&oacute;mo hago llegar una consulta a JewishGen?
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Primero, rogamos compruebe con antelaci&oacute;n si su consulta ya
+            ha sido respondida en una de las preguntas arriba indicadas.</p>
+            <ul>
+                <li><p>Si su consulta tiene que ver con la <b>genealog&iacute;a</b>,
+                por favor dir&iacute;jase al
+                <a href="#q5.2">Grupo de Debate de JewishGen</a>.</p></li>
+                <li><p>Si la pregunta trata acerca de alg&uacute;n tema
+                <b>t&eacute;cnico acerca del uso de los servicios JewishGen</b>,
+                entonces rogamos cumplimente el formulario de soporte
+                t&eacute;cnico
+                <a href="/JewishGen/TechSupport.asp">Technical Support
+                Form</a>.</p></li>
+                <li><p>Puede dirigir cualesquiera otras preguntas al
+                <b>JewishGen Support Desk</b>, siguiendo las directrices que abajo
+                se establecen.</p></li>
+            </ul>
+            <p>Cuando se dirija al Soporte de JewishGen (Support Desk), por favor
+            ind&iacute;quenos <b>exactamente</b> cu&aacute;l es su problema, pues
+            si nos dice &uacute;nicamente &ldquo;JewishGen no funciona&rdquo;, no
+            podremos ayudarle. Sea lo m&aacute;s <b>espec&iacute;fico</b> posible,
+            indicando exactamente a qu&eacute; p&aacute;gina o servicio se
+            est&aacute; refiriendo, qu&eacute; desea lograr, qu&eacute; resultados
+            esperaba y cu&aacute;les fueron los que obtuvo.</p>
+            <p>En cada mensaje al Soporte, ind&iacute;quenos:</p>
+            <ul>
+                <li>Su <b>nombre</b> y <b>direcci&oacute;n de correo
+                electr&oacute;nico</b> completos.</li>
+                <li>Su <b>n&uacute;mero de identificaci&oacute;n
+                JewishGen</b>.</li>
+                <li>La <b>URL</b>: a qu&eacute; p&aacute;gina o sitio web se
+                est&aacute; refiriendo (por ejemplo, algo que comienza con
+                &ldquo;https://&rdquo;).</li>
+                <li>Qu&eacute; <b>navegador</b> est&aacute; utilizando.</li>
+                <li>Qu&eacute; <b>sistema operativo</b> usa su ordenador.</li>
+            </ul>
+            <p>Su mensaje deber&aacute; ser coherente y consistir en varias
+            oraciones completas. Establezca un contexto y expl&iacute;quenos
+            qu&eacute; intenta lograr. Si no podemos interpretar su mensaje, no
+            podremos ayudarle. Env&iacute;e su consulta completa al Soporte de
+            JewishGen a
+            <a href="mailto:support@jewishgen.org">support@jewishgen.org</a>.</p>
+            <p>El Soporte de JewishGen (Support Desk) solamente se ocupa de
+            consultas y problemas relacionados con el sitio web JewishGen. <b>No</b>
+            es un servicio de ayuda geneal&oacute;gica. Para consultas acerca de la
+            investigaci&oacute;n geneal&oacute;gica, vea la
+            <a href="#q5.2">siguiente pregunta</a>.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jg-collapsible" id="q5.2">
+    <button class="jg-collapsible-trigger" aria-expanded="false">
+        5.2. Consultas Geneal&oacute;gicas
+        <span class="jg-chevron">&#9660;</span>
+    </button>
+    <div class="jg-collapsible-body">
+        <div class="jg-collapsible-inner">
+            <p>Todas las consultas acerca de la genealog&iacute;a o la
+            investigaci&oacute;n geneal&oacute;gica deber&aacute;n ser dirigidas al
+            grupo de debate
+            <a href="/JewishGen/DiscussionGroup.htm">JewishGen Discussion
+            Group</a>.</p>
+            <p>JewishGen se complace en poder acompa&ntilde;arle en su
+            b&uacute;squeda, pero no podemos ofrecer servicios de
+            investigaci&oacute;n personalizados.</p>
+            <p>Para consultas acerca de la investigaci&oacute;n
+            geneal&oacute;gica, dir&iacute;jase por favor a
+            <i><a href="/HowToFAQ/faq.html">JewishGen FAQ: Preguntas m&aacute;s
+            frecuentes acerca de la genealog&iacute;a jud&iacute;a</a></i>, los
+            archivos <a href="/InfoFiles/">JewishGen InfoFiles</a>, busque en los
+            <a href="/databases/archive.htm">JewishGen Discussion Group
+            Archives</a> y en el
+            <a href="/JewishGen/Search.htm">sitio web de JewishGen</a>.</p>
+            <p>Tambi&eacute;n podr&aacute; publicar una consulta al grupo de debate
+            <a href="/HowToFAQ/faq.html#JEWISHGEN">JewishGen Discussion Group</a>,
+            por medio de su lista de correo en
+            <a href="mailto:main@groups.jewishgen.org">main@groups.jewishgen.org</a>.</p>
+        </div>
+    </div>
+</div>
+
+<p class="support-placeholder-note">Autores: Warren Blatt, Iris Folkson, Paula
+Zieselman, Barry Spinak, Carol Skydell. &nbsp; Traducci&oacute;n al espa&ntilde;ol:
+Jenni Hymoff, agosto de 2006. &nbsp; Versi&oacute;n 2.01</p>
+</div>

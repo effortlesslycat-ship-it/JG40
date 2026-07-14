@@ -1,0 +1,544 @@
+/* ============================================================================
+   JG-CATALOG.CSS  -  JewishGen Records Catalog stylesheet
+   Project Shorashim / JG40-Build
+   ----------------------------------------------------------------------------
+   Companion to jg-global.css. Loaded ONLY on catalog section pages.
+   Load order:
+       1. Bootstrap CDN
+       2. /jg-global.css
+       3. /catalog/jg-catalog.css   <-- this file
+   ----------------------------------------------------------------------------
+   Intentionally separate from jg-rd.css. The catalog is not a Research
+   Division page and must not depend on RD infrastructure. The dataset-card
+   block (section 6) mirrors jg-rd.css section 5 so cards render identically
+   in both contexts; any change to card styling must be made in BOTH files.
+   ----------------------------------------------------------------------------
+   Metadata tag color system (canonical):
+       Sage  = Record Type      Navy = Geography
+       Cream/navy border = Topic    Charcoal = Years
+   ----------------------------------------------------------------------------
+   CHW
+============================================================================ */
+
+
+/* ============================================================================
+   1. PAGE SHELL
+============================================================================ */
+
+.catalog-body { background-color: var(--white); flex: 1; }
+
+.catalog-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/* ============================================================================
+   2. NAVY HERO  (centered tag + serif title + italic subtitle)
+   Matches the JG40 page-band pattern used across the site. Navy hardcoded
+   (#09497a) because var(--navy) flips in dark mode.
+============================================================================ */
+
+.catalog-hero-band {
+    background-color: #09497a;
+    color: #ffffff;
+    padding: 40px 50px 36px;
+    text-align: center;
+}
+body.dark-mode .catalog-hero-band { background-color: #0d2a45; }
+
+.catalog-hero-tag {
+    display: inline-block;
+    background-color: var(--sage);
+    color: #ffffff;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+}
+.catalog-hero-band h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.125rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0 0 10px;
+    line-height: 1.2;
+}
+.catalog-hero-sub {
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: #a9c0d0;
+    margin: 0 auto;
+    max-width: 620px;
+    line-height: 1.6;
+}
+
+
+/* ============================================================================
+   3. FILTER ZONE  (cream band)
+============================================================================ */
+
+.catalog-filters {
+    background-color: var(--ecru);
+    padding: 26px 20px;
+    border-bottom: 1px solid #e3ddd0;
+}
+body.dark-mode .catalog-filters { background-color: #1a1a1a; border-bottom-color: #2a2a2a; }
+
+/* Tips toggle row - right-aligned, uses canonical .jg-tips-link +
+   .jg-tips-card-panel from jg-global.css */
+.catalog-tips-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+}
+
+/* Filter rows */
+.filter-rows { display: flex; flex-direction: column; gap: 12px; }
+.filter-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.filter-group { display: flex; flex-direction: column; gap: 6px; }
+.filter-group label {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--navy);
+}
+body.dark-mode .filter-group label { color: #c8d3df; }
+.filter-group input,
+.filter-group select {
+    padding: 10px 12px;
+    border: 1px solid #cfc7b6;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background: var(--white);
+    color: var(--charcoal);
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+.filter-group input:focus,
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--navy);
+    box-shadow: 0 0 0 2px rgba(9,73,122,0.12);
+}
+body.dark-mode .filter-group input,
+body.dark-mode .filter-group select { background: #1e1e1e; color: #e0e0e0; border-color: #333; }
+
+/* Search input: primary, full-width, with a leading magnifier */
+.filter-group.search-group { flex: 1; min-width: 260px; }
+.filter-group.search-group input {
+    width: 100%;
+    padding: 11px 14px 11px 38px;
+    font-size: 15px;
+    cursor: text;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2309497a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 13px center;
+}
+body.dark-mode .filter-group.search-group input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238ab0c9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+}
+
+/* Date range */
+.date-range-group { display: flex; flex-direction: column; gap: 5px; }
+.date-range-group label {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--navy);
+}
+body.dark-mode .date-range-group label { color: #c8d3df; }
+.date-range-inputs { display: flex; align-items: center; gap: 8px; }
+.date-range-inputs input {
+    width: 90px;
+    padding: 10px 10px;
+    border: 1px solid #cfc7b6;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background: var(--white);
+    color: var(--charcoal);
+}
+.date-range-inputs input:focus {
+    outline: none;
+    border-color: var(--navy);
+    box-shadow: 0 0 0 2px rgba(9,73,122,0.12);
+}
+.date-range-inputs span { font-size: 13px; color: var(--charcoal); font-weight: bold; }
+body.dark-mode .date-range-inputs input { background: #1e1e1e; color: #e0e0e0; border-color: #333; }
+body.dark-mode .date-range-inputs span { color: #c0c0c0; }
+
+/* Reset button */
+.btn-reset {
+    padding: 9px 18px;
+    background: transparent;
+    border: 1.5px solid var(--charcoal);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--charcoal);
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
+    align-self: flex-end;
+}
+.btn-reset:hover { background: var(--charcoal); color: var(--white); }
+body.dark-mode .btn-reset { border-color: #888; color: #c0c0c0; }
+body.dark-mode .btn-reset:hover { background: #888; color: #121212; }
+
+/* Cascade reveal */
+.filter-group.hidden { display: none; }
+.filter-group.revealed { display: flex; animation: catFadeIn 0.25s ease; }
+@keyframes catFadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+
+/* ============================================================================
+   4. ACTIVE FILTER CHIPS
+============================================================================ */
+
+.active-filters { padding: 0 20px; background: var(--ecru); }
+body.dark-mode .active-filters { background: #1a1a1a; }
+.active-filters .catalog-inner:empty { display: none; }
+.active-filters .catalog-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    padding-bottom: 16px;
+}
+.active-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #09497a;
+    color: #ffffff;
+    padding: 4px 10px 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    animation: catChipIn 0.2s ease;
+}
+@keyframes catChipIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+.active-chip button {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.active-chip button:hover { color: #ffffff; }
+body.dark-mode .active-chip { background: #5a7a95; }
+
+
+/* ============================================================================
+   5. RESULTS HEADER
+============================================================================ */
+
+.results-header {
+    padding: 16px 20px;
+    background: var(--white);
+    border-bottom: 1px solid var(--cream);
+}
+body.dark-mode .results-header { border-bottom-color: #333; }
+.results-header .catalog-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.results-count { font-size: 15px; color: var(--charcoal); }
+.results-count strong { color: var(--navy); font-size: 17px; }
+body.dark-mode .results-count { color: #c0c0c0; }
+body.dark-mode .results-count strong { color: #c8d3df; }
+.results-total { color: #888; font-size: 13px; margin-left: 8px; }
+
+.result-controls { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.sort-control { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--charcoal); }
+.sort-control label { font-size: 13px; font-weight: bold; color: var(--navy); }
+body.dark-mode .sort-control { color: #c0c0c0; }
+body.dark-mode .sort-control label { color: #c8d3df; }
+.sort-control select {
+    padding: 6px 10px;
+    border: 1px solid #d1caba;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    background: var(--white);
+    color: var(--charcoal);
+    cursor: pointer;
+}
+body.dark-mode .sort-control select { background: #1e1e1e; color: #e0e0e0; border-color: #333; }
+
+
+/* ============================================================================
+   6. CATALOG LIST + DATASET CARD
+   Card block mirrors jg-rd.css section 5. Layout enriched with badges and
+   clickable geography tags per the catalog format.
+============================================================================ */
+
+.catalog-list {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+    width: 100%;
+}
+
+.ds-card {
+    background-color: var(--white);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    margin-bottom: 0.875rem;
+    overflow: hidden;
+    transition: box-shadow 0.15s;
+}
+.ds-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
+.ds-card[aria-expanded="true"] { box-shadow: 0 4px 18px rgba(0,0,0,0.10); }
+
+.ds-summary {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+    font-family: inherit;
+}
+.ds-summary:focus-visible { outline: 2px solid var(--sage); outline-offset: -2px; }
+
+.ds-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 9px;
+}
+.ds-card-name {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.0625rem;
+    font-weight: bold;
+    color: var(--navy);
+    line-height: 1.3;
+    margin: 0;
+}
+body.dark-mode .ds-card-name { color: #b0c8de; }
+
+/* Badges */
+.ds-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+.ds-badge-new     { background: var(--sage); color: #ffffff; }
+.ds-badge-updated { background: #09497a; color: #ffffff; }
+body.dark-mode .ds-badge-new     { background: #6e7945; color: #fff; }
+body.dark-mode .ds-badge-updated { background: #5a7a95; color: #fff; }
+
+/* Meta row */
+.ds-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 1.5rem;
+    margin-bottom: 11px;
+    font-size: 0.8125rem;
+}
+.ds-meta-item { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.ds-meta-icon { width: 15px; height: 15px; flex-shrink: 0; color: #09497a; display: inline-block; vertical-align: middle; }
+.ds-meta-label { font-weight: 600; color: var(--charcoal); }
+.ds-meta-value { color: var(--charcoal); opacity: 0.9; }
+body.dark-mode .ds-meta-icon { color: #8ab0c9; }
+body.dark-mode .ds-meta-label { color: #999; }
+body.dark-mode .ds-meta-value { color: #c8c8c8; }
+
+/* Tag/chip row -- Sage = record type, Navy = geography */
+.ds-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ds-chip {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 3px 11px;
+    border-radius: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: filter 0.15s;
+}
+.ds-chip:hover { filter: brightness(0.92); }
+.chip-record { background-color: var(--sage); color: #ffffff; }
+.chip-geo    { background-color: transparent; border: 1px solid var(--navy); color: var(--navy); }
+.chip-topic  { background-color: var(--cream); color: var(--charcoal); border: 1px solid var(--navy); }
+.chip-years  { background-color: transparent; border: 1px solid var(--charcoal); color: var(--charcoal); cursor: default; }
+.chip-years:hover { filter: none; }
+body.dark-mode .chip-record { background-color: #6e7945; color: #fff; }
+body.dark-mode .chip-geo    { border-color: #5a7a95; color: #8ab0c9; }
+body.dark-mode .chip-topic  { background-color: #2a2a2a; border-color: #5a7a95; color: #c8c8c8; }
+body.dark-mode .chip-years  { border-color: #888; color: #aaa; }
+
+/* Chevron */
+.chevron-toggle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.12);
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    flex-shrink: 0;
+    transition: transform 0.2s, color 0.15s, border-color 0.15s, background 0.15s;
+    background: var(--white);
+}
+.ds-card[aria-expanded="true"] .chevron-toggle {
+    transform: rotate(180deg);
+    color: #ffffff;
+    background: #09497a;
+    border-color: #09497a;
+}
+body.dark-mode .chevron-toggle { color: #888; border-color: #333; background: #1e1e1e; }
+body.dark-mode .ds-card[aria-expanded="true"] .chevron-toggle { color: #fff; background: #5a7a95; border-color: #5a7a95; }
+
+/* Expanded panel */
+.ds-expand { display: none; padding: 0 1.5rem 1.5rem; }
+.ds-card.is-open .ds-expand { display: block; }
+.ds-expand-inner {
+    background-color: var(--ecru);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 1.75rem;
+    align-items: start;
+}
+body.dark-mode .ds-expand-inner { background-color: #181818; border-color: #333; }
+
+.ds-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin: 0 0 1.25rem 0;
+}
+.ds-description:empty { display: none; }
+body.dark-mode .ds-description { color: #c8c8c8; }
+
+/* Fact boxes */
+.ds-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 0.75rem;
+}
+.ds-fact {
+    background-color: var(--white);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 6px;
+    padding: 0.625rem 0.875rem;
+}
+.ds-fact-label {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--sage);
+    margin-bottom: 4px;
+}
+.ds-fact-value {
+    font-size: 0.875rem;
+    color: var(--charcoal);
+    font-weight: 600;
+    line-height: 1.4;
+    word-break: break-word;
+}
+body.dark-mode .ds-fact { background-color: #121212; border-color: #333; }
+body.dark-mode .ds-fact-label { color: #a8b361; }
+body.dark-mode .ds-fact-value { color: #e0e0e0; }
+
+/* CTA column */
+.ds-cta-col { display: flex; flex-direction: column; gap: 0.625rem; align-items: stretch; }
+.ds-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: filter 0.15s, transform 0.1s;
+    text-decoration: none;
+}
+.ds-btn-navy { background-color: #09497a; color: #ffffff; border: 1px solid #09497a; }
+.ds-btn-navy:hover { filter: brightness(1.15); color: #ffffff; transform: translateY(-1px); }
+.ds-btn-sage { background-color: var(--sage); color: #ffffff; }
+.ds-btn-sage:hover { filter: brightness(1.08); color: #ffffff; transform: translateY(-1px); }
+body.dark-mode .ds-btn-navy { background-color: #5a7a95; border-color: #5a7a95; }
+body.dark-mode .ds-btn-sage { background-color: #a8b361; color: #1a1a1a; }
+body.dark-mode .ds-btn-sage:hover { color: #1a1a1a; }
+
+
+/* ============================================================================
+   7. EMPTY STATE
+============================================================================ */
+
+.catalog-empty {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--charcoal);
+}
+.catalog-empty.visible { display: block; }
+.catalog-empty h3 { color: var(--navy); font-size: 20px; margin: 0 0 10px; }
+.catalog-empty p { font-size: 14px; color: #666; margin: 0; }
+body.dark-mode .catalog-empty h3 { color: #c8d3df; }
+body.dark-mode .catalog-empty p { color: #999; }
+
+
+/* ============================================================================
+   8. RESPONSIVE
+============================================================================ */
+
+@media (max-width: 768px) {
+    .catalog-hero-band { padding: 28px 20px 24px; }
+    .catalog-hero-band h1 { font-size: 1.75rem; }
+    .filter-group.search-group { min-width: 100%; }
+    .ds-expand-inner { grid-template-columns: 1fr; gap: 1.25rem; }
+    .ds-cta-col { align-items: stretch; }
+    .results-header .catalog-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+    .ds-facts { grid-template-columns: 1fr; }
+    .ds-meta-row { gap: 0.5rem 1rem; }
+}
+
+/* ============================================================================
+   END jg-catalog.css
+============================================================================ */

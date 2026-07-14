@@ -1,0 +1,2113 @@
+{
+  "meta": {
+    "title": "JewishGen Glossary",
+    "updated": "2026-07-07",
+    "author": "CHW",
+    "categories": [
+      {
+        "slug": "general",
+        "label": "General Genealogy, Archival & Legal Terms"
+      },
+      {
+        "slug": "jewish",
+        "label": "Jewish Genealogy, Cultural & Religious Terms"
+      },
+      {
+        "slug": "history",
+        "label": "Historical Events, Geographies & Jurisdictions"
+      },
+      {
+        "slug": "jewishgen",
+        "label": "JewishGen-Specific Terminology"
+      },
+      {
+        "slug": "yizkor",
+        "label": "Yizkor Book Terms"
+      }
+    ]
+  },
+  "terms": [
+    {
+      "id": "akta",
+      "term": "Akta",
+      "aliases": [
+        "akt",
+        "akta stanu cywilnego"
+      ],
+      "lang": "Polish/Russian",
+      "definition": "(Polish/Russian) Documents, acts, or files. In genealogy, it most frequently refers to the vital records themselves (e.g., Akta Stanu Cywilnego - civil status records). It is also commonly used in citations to indicate the specific record number within a register (e.g., \"Nowy S\u0105cz, marriages, 1914, akta 12\" refers to marriage record number 12 for that year and town).",
+      "seeAlso": [
+        "vital-record",
+        "citation"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "bmd",
+      "term": "BMD",
+      "aliases": [
+        "birth marriage death"
+      ],
+      "definition": "A standard genealogical acronym for Birth, Marriage, and Death records.",
+      "seeAlso": [
+        "vital-record"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "calendar",
+      "term": "Calendar",
+      "aliases": [
+        "gregorian calendar",
+        "julian calendar",
+        "hebrew calendar"
+      ],
+      "definition": "A system for organizing and tracking time. In genealogical and historical research, it is crucial to recognize that different calendars exist and were used concurrently or sequentially. For example, researchers frequently have to convert dates between the Gregorian calendar, the Julian calendar (used in the Russian Empire until 1918), the Hebrew calendar, and/or the Islamic/Muslim calendars (such as the Hijri and Rumi calendars used in the Ottoman Empire).",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "census",
+      "term": "Census",
+      "aliases": [
+        "censuses"
+      ],
+      "definition": "An official government count or survey of a population, typically recording demographic details like age, occupation, and household structure.",
+      "seeAlso": [
+        "revision-list",
+        "communal-registry"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "citation",
+      "term": "Citation",
+      "aliases": [
+        "citations"
+      ],
+      "definition": "A standardized reference to a specific source of information, providing enough detail (such as URL, Archive, Fond, Opis, Delo, or page number) to allow other researchers to locate the exact original record.",
+      "seeAlso": [
+        "fond-opis-record-group",
+        "provenance"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "civil-registration",
+      "term": "Civil registration",
+      "aliases": [
+        "civil registry"
+      ],
+      "definition": "The system by which a government officially records the vital events (births, marriages, deaths) of its citizens, rather than relying on church or religious registers.",
+      "seeAlso": [
+        "civil-registration-by-community",
+        "vital-record",
+        "parish-register"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "civil-registration-by-community",
+      "term": "Civil registration by community",
+      "aliases": [],
+      "definition": "A system of vital record-keeping where civil registration duties were delegated to the clergy of individual religious denominations rather than a single secular municipal clerk. For example, in the Russian Empire, state-appointed Crown Rabbis (kazyonny ravvin) were legally responsible for maintaining the official vital registers (metricheskie knigi) for the Jewish community, just as Russian Orthodox priests and Lutheran pastors did for their respective congregations.",
+      "seeAlso": [
+        "civil-registration",
+        "metrical-books"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "communal-registry",
+      "term": "Communal registry",
+      "aliases": [
+        "communal register"
+      ],
+      "definition": "A local census or ledger maintained by a religious or municipal community (such as a kahal) to track its residents, often used historically for taxation, voting, or conscription purposes.",
+      "seeAlso": [
+        "census",
+        "pinkas"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "consanguinity",
+      "term": "Consanguinity",
+      "aliases": [
+        "consanguineous"
+      ],
+      "definition": "The state of being descended from the same ancestor (blood relationship). In genetic genealogy, consanguinity increases the amount of DNA shared between relatives.",
+      "seeAlso": [
+        "endogamy"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "dataset",
+      "term": "Dataset / Record set",
+      "aliases": [
+        "record set",
+        "datasets"
+      ],
+      "definition": "A cohesive collection of historical records or data points that share a common source, location, or theme, often indexed and searchable as a single entity.",
+      "seeAlso": [
+        "record",
+        "index"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "emigration",
+      "term": "Emigration",
+      "aliases": [
+        "emigrant",
+        "emigrated"
+      ],
+      "definition": "The act of leaving one's native country or region to settle in another. In genealogy, emigration records document departure, such as outbound passenger lists from ports like Bremen or Hamburg, or exit visa applications.",
+      "seeAlso": [
+        "immigration",
+        "manifest",
+        "visa"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "endogamy",
+      "term": "Endogamy",
+      "aliases": [
+        "endogamous"
+      ],
+      "definition": "The practice of marrying strictly within a specific local community, clan, or religious group over many generations. Highly relevant in Jewish genealogy, as historical endogamy causes complex inheritance patterns and higher amounts of shared DNA among descendants.",
+      "seeAlso": [
+        "consanguinity",
+        "intermarriage"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "false-illegitimate",
+      "term": "False / Illegitimate",
+      "aliases": [
+        "illegitimate",
+        "false marriage"
+      ],
+      "definition": "Often appears in vital records to denote a child born out of wedlock.",
+      "note": "Galicianer Caveat: In the Austro-Hungarian province of Galicia, Jewish religious marriages were not recognized by the state unless accompanied by a separate civil ceremony and a heavy tax. Consequently, the government officially recorded children of these religiously valid marriages as \"illegitimate\" or born of a \"false\" marriage, legally requiring them to be registered under their mother's maiden name.",
+      "seeAlso": [
+        "galicianer",
+        "maiden-name"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "fond-opis-record-group",
+      "term": "Fond / Opis / Record Group",
+      "aliases": [
+        "fond",
+        "opis",
+        "record group",
+        "delo"
+      ],
+      "lang": "Russian",
+      "definition": "Archival structural terms. A Fond (Record Group) is a collection of records from a specific creator or organization. An Opis (Inventory) is a subdivision or index of a Fond.",
+      "seeAlso": [
+        "repository-archive",
+        "citation"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "gazette",
+      "term": "Gazette",
+      "aliases": [
+        "government gazette"
+      ],
+      "definition": "An official government journal or newspaper that publishes public notices, legal announcements, and administrative news (e.g., the Russian Gubernskie Vedomosti or the Austro-Hungarian Gazeta Lwowska).",
+      "seeAlso": [
+        "vedomosti"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "immigration",
+      "term": "Immigration",
+      "aliases": [
+        "immigrant",
+        "immigrated"
+      ],
+      "definition": "The act of arriving and settling in a new country or region. In genealogy, immigration records document arrival and integration, such as inbound passenger manifests at Ellis Island, border crossings, and naturalization documents.",
+      "seeAlso": [
+        "emigration",
+        "manifest",
+        "naturalization"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "index",
+      "term": "Index",
+      "aliases": [
+        "indexes",
+        "indices"
+      ],
+      "definition": "A searchable list or database of names, dates, and basic details extracted from original documents, designed to act as a \"finding aid.\" It is crucial to remember that an index is not the record itself. It is merely a signpost pointing you to the original source (like a vital register, census, or passenger manifest). Because indexes only capture limited data fields and are subject to transcription errors, researchers should always use the index to locate and verify the original record.",
+      "seeAlso": [
+        "record",
+        "transcription"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "intermarriage",
+      "term": "Intermarriage",
+      "aliases": [],
+      "definition": "Marriage between people of different religions, ethnic groups, or denominations.",
+      "seeAlso": [
+        "endogamy"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "maiden-name",
+      "term": "Maiden name",
+      "aliases": [
+        "maiden names",
+        "nee"
+      ],
+      "definition": "A woman's original family surname before adopting a new surname upon marriage.",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "manifest",
+      "term": "Manifest",
+      "aliases": [
+        "passenger manifest",
+        "passenger list",
+        "manifests"
+      ],
+      "definition": "A formal list of passengers or cargo on a ship or vehicle. Passenger manifests are primary sources for determining arrival dates, origins, and traveling companions.",
+      "seeAlso": [
+        "immigration",
+        "emigration"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "matronymic",
+      "term": "Matronymic",
+      "aliases": [
+        "matronymics"
+      ],
+      "definition": "A surname or identifier derived from the given name of a mother or a female ancestor (e.g., Rivkin, derived from Rivka; Sorkin, derived from Sora).",
+      "seeAlso": [
+        "patronymic",
+        "toponym"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "microfilm-microfiche",
+      "term": "Microfilm / Microfiche",
+      "aliases": [
+        "microfilm",
+        "microfiche"
+      ],
+      "definition": "Analog storage media containing scaled-down photographic reproductions of documents, widely used by archives to preserve and share records prior to digital imaging.",
+      "seeAlso": [
+        "repository-archive"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "naturalization",
+      "term": "Naturalization",
+      "aliases": [
+        "naturalized",
+        "naturalisation"
+      ],
+      "definition": "The legal process by which a non-citizen acquires the citizenship or nationality of a country.",
+      "seeAlso": [
+        "immigration"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "notary",
+      "term": "Notary",
+      "aliases": [
+        "notarial",
+        "notaries"
+      ],
+      "definition": "A public official authorized to authenticate legal documents, record contracts, and take affidavits. In European research, notarial records are rich sources for property deeds, prenuptial agreements, and business dealings.",
+      "seeAlso": [
+        "registrar-clerk"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "parish-register",
+      "term": "Parish register",
+      "aliases": [
+        "parish registers",
+        "church register"
+      ],
+      "definition": "A book containing records of baptisms, marriages, and burials maintained by a church. Often used by genealogists as a substitute for civil registration before government mandates were enacted.",
+      "seeAlso": [
+        "civil-registration",
+        "metrical-books"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "passport",
+      "term": "Passport",
+      "aliases": [
+        "internal passport",
+        "passports"
+      ],
+      "definition": "An official government document certifying the holder's identity and citizenship. Historically, internal passports were also used in empires (like Russia) to control and track domestic movement.",
+      "seeAlso": [
+        "visa"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "patronymic",
+      "term": "Patronymic",
+      "aliases": [
+        "patronymics",
+        "ben",
+        "bat"
+      ],
+      "definition": "A name or identifier derived from the given name of a father or male ancestor. In Slavic languages (like Russian), the patronymic functions as an official middle name that appears consistently in historical records (e.g., Abramovich = son of Abram, Abramovna = daughter of Abram). In Hebrew and Jewish religious tradition, patronymics form a person's traditional name using ben (son of) or bat (daughter of) (e.g., Yitzhak ben Moshe). Additionally, many hereditary surnames are patronymic in origin (e.g., Mendelssohn = son of Mendel).",
+      "seeAlso": [
+        "matronymic",
+        "hebrew-name"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "probate",
+      "term": "Probate",
+      "aliases": [],
+      "definition": "The legal process of administering the estate of a deceased person, resolving all claims, and distributing property.",
+      "seeAlso": [
+        "will"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "provenance",
+      "term": "Provenance",
+      "aliases": [],
+      "definition": "The chronology of the ownership, custody, or location of a historical document or artifact, which proves its authenticity and archival context.",
+      "seeAlso": [
+        "citation",
+        "repository-archive"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "record",
+      "term": "Record",
+      "aliases": [
+        "records"
+      ],
+      "definition": "A piece of historical documentation preserving information about a specific event, person, or transaction. In plain English: Think of a record as a historical \"receipt\" for a life event. Just like you get a receipt when you buy groceries, when your ancestor was born, got married, or boarded a ship to America, a government clerk or rabbi wrote it down to prove it happened. That piece of paper (or the digital picture of it) is the \"record.\"",
+      "seeAlso": [
+        "index",
+        "vital-record",
+        "dataset"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "registrar-clerk",
+      "term": "Registrar / Clerk",
+      "aliases": [
+        "registrar",
+        "clerk"
+      ],
+      "definition": "An official responsible for maintaining official records and registers, such as vital statistics or land deeds.",
+      "seeAlso": [
+        "notary",
+        "civil-registration"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "repository-archive",
+      "term": "Repository / Archive",
+      "aliases": [
+        "repository",
+        "archive",
+        "archives"
+      ],
+      "definition": "A physical or digital facility where historical records, documents, and other materials are preserved, stored, and made accessible to researchers.",
+      "seeAlso": [
+        "fond-opis-record-group",
+        "provenance"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "revision-list",
+      "term": "Revision List",
+      "aliases": [
+        "revision lists",
+        "revizskie skazki"
+      ],
+      "definition": "An enumeration document used in the Russian Empire during the 18th and 19th centuries, primarily for taxation (the poll tax) and military conscription. Unlike a standard census, which records where people are physically living on a specific day (demographic data), a Revision List tracked the \"taxable estate\" based on a person's legal town of registration, regardless of where they actually resided. Additionally, Revision Lists were designed as audits, explicitly tracking changes in a household (such as deaths, births, and conscripts) since the time of the previous \"revision.\"",
+      "seeAlso": [
+        "census"
+      ],
+      "categories": [
+        "general",
+        "history"
+      ]
+    },
+    {
+      "id": "soundex",
+      "term": "Soundex / Phonetic Search",
+      "aliases": [
+        "soundex",
+        "phonetic search",
+        "daitch-mokotoff"
+      ],
+      "definition": "An algorithm that groups and searches for names based on how they sound rather than how they are spelled. The Daitch-Mokotoff Soundex was explicitly created to handle the complexities of Eastern European Jewish names.",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "toponym",
+      "term": "Toponym",
+      "aliases": [
+        "toponymic",
+        "toponyms"
+      ],
+      "definition": "A place name, or a word coined in association with the name of a place. Many surnames are toponymic (e.g., Berliner, Posner, Krakower).",
+      "seeAlso": [
+        "patronymic",
+        "matronymic"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "transcription",
+      "term": "Transcription",
+      "aliases": [
+        "transcribe",
+        "transcribed"
+      ],
+      "definition": "Copying text word for word from what is written in the original document.",
+      "seeAlso": [
+        "translation",
+        "transliteration"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "translation",
+      "term": "Translation",
+      "aliases": [
+        "translate",
+        "translated"
+      ],
+      "definition": "Converting the meaning of the text from one language into another.",
+      "seeAlso": [
+        "transcription",
+        "transliteration"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "transliteration",
+      "term": "Transliteration",
+      "aliases": [
+        "transliterate",
+        "transliterated"
+      ],
+      "definition": "Mapping the characters of one alphabet/script to the corresponding characters of another (e.g., Cyrillic \"\u0428\" to Latin \"Sh\"), focusing on pronunciation rather than meaning.",
+      "seeAlso": [
+        "transcription",
+        "translation"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "vedomosti",
+      "term": "Vedomosti",
+      "aliases": [
+        "gubernskie vedomosti"
+      ],
+      "lang": "Russian",
+      "definition": "(Russian) News or gazette. Frequently refers to Gubernskie Vedomosti (provincial gazettes) containing notices of conscription, estate sales, or missing persons.",
+      "seeAlso": [
+        "gazette"
+      ],
+      "categories": [
+        "general",
+        "history"
+      ]
+    },
+    {
+      "id": "vel",
+      "term": "Vel",
+      "aliases": [],
+      "lang": "Latin",
+      "definition": "Latin for \"or\" or \"also known as.\" It is frequently used in Polish and Eastern European records to indicate an alias, a dual surname, or a formalized name change (e.g., Katz vel Cohen).",
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "visa",
+      "term": "Visa",
+      "aliases": [
+        "visas"
+      ],
+      "definition": "An endorsement on a passport indicating that the holder is officially permitted to enter, leave, or stay for a specified period in a country.",
+      "seeAlso": [
+        "passport",
+        "emigration",
+        "immigration"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "vital-record",
+      "term": "Vital record",
+      "aliases": [
+        "vital records",
+        "vital registration"
+      ],
+      "definition": "Government or religious documents recording major life events, specifically births, marriages, divorces, and deaths.",
+      "seeAlso": [
+        "bmd",
+        "civil-registration",
+        "record"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "will",
+      "term": "Will",
+      "aliases": [
+        "wills",
+        "testament"
+      ],
+      "definition": "A legal document expressing a person's wishes regarding the distribution of their property and guardianship of their children after death.",
+      "seeAlso": [
+        "probate"
+      ],
+      "categories": [
+        "general"
+      ]
+    },
+    {
+      "id": "aliyah",
+      "term": "Aliyah",
+      "aliases": [
+        "make aliyah",
+        "aliyot"
+      ],
+      "lang": "Hebrew",
+      "definition": "Has two primary meanings: (1) The immigration of Jews from the diaspora to the Land of Israel (e.g., \"They made aliyah in 1924\"). (2) The honor of being called up to the bimah to recite a blessing over the reading of the Torah during a synagogue service.",
+      "seeAlso": [
+        "youth-groups"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "ashkenazi",
+      "term": "Ashkenazi",
+      "aliases": [
+        "ashkenazim",
+        "ashkenazic"
+      ],
+      "lang": "Hebrew",
+      "definition": "A major Jewish diaspora group. While sharing an ancient genetic and historical origin in the Land of Israel with other Jewish populations, Ashkenazim trace their specific diasporic development to the medieval communities of the Rhineland (modern-day Germany and northern France). Escaping persecution and seeking economic opportunity, they migrated eastward over centuries, establishing massive populations in Central and Eastern Europe (Poland, Lithuania, the Russian Empire, Romania, and Hungary). Their historical vernacular is Yiddish (a blend of medieval German, Hebrew, and Slavic languages).",
+      "note": "Genealogical Note: Due to a severe population bottleneck in the Middle Ages followed by strict endogamy, Ashkenazi Jews share a very high degree of genetic similarity, which makes interpreting autosomal DNA matches highly complex.",
+      "seeAlso": [
+        "sephardic",
+        "mizrahi",
+        "endogamy"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "bris",
+      "term": "Bris / Brit",
+      "aliases": [
+        "bris",
+        "brit",
+        "brit milah",
+        "mohel"
+      ],
+      "lang": "Hebrew/Yiddish",
+      "definition": "The ritual circumcision of a male Jewish child on the eighth day of life, signifying the covenant with God. The ceremony traditionally includes the formal giving of the child's Hebrew name. Records of these events, kept by the circumciser (mohel), are genealogical goldmines.",
+      "seeAlso": [
+        "hebrew-name"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "bund",
+      "term": "Bund / Bundism",
+      "aliases": [
+        "bund",
+        "bundist",
+        "bundism"
+      ],
+      "lang": "Yiddish/German",
+      "definition": "A secular, socialist Jewish political movement founded in the Russian Empire in 1897. The Bund strongly opposed Zionism, advocating instead for Jewish cultural autonomy, labor rights, and the promotion of the Yiddish language within Eastern Europe.",
+      "seeAlso": [
+        "youth-groups"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "chazzan",
+      "term": "Chazzan",
+      "aliases": [
+        "cantor",
+        "hazzan",
+        "chazan"
+      ],
+      "lang": "Hebrew",
+      "definition": "A cantor; the official who leads a synagogue congregation in liturgical prayer and song.",
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "cheder",
+      "term": "Cheder",
+      "aliases": [
+        "heder",
+        "chederim"
+      ],
+      "lang": "Hebrew/Yiddish",
+      "definition": "A traditional elementary school where young Jewish children (historically boys) were taught the basics of Judaism, reading, and the Hebrew language.",
+      "seeAlso": [
+        "melamed",
+        "yeshiva"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "chevra-kadisha",
+      "term": "Chevra Kadisha",
+      "aliases": [
+        "chevrah kadisha",
+        "burial society"
+      ],
+      "lang": "Aramaic",
+      "definition": "Literally the \"holy society.\" A volunteer burial society responsible for preparing the bodies of deceased Jews for burial according to strict Jewish tradition (taharah) and ensuring a proper, respectful interment. They frequently maintained their own record books (pinkasim).",
+      "seeAlso": [
+        "pinkas",
+        "matzevah"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "cohen",
+      "term": "Cohen",
+      "aliases": [
+        "kohen",
+        "cohanim",
+        "kohanim",
+        "hacohen"
+      ],
+      "lang": "Hebrew",
+      "definition": "A tribal and religious designation passed down purely through the patrilineal line, denoting a priest descended from Aaron. The designation frequently appears as a suffix to Hebrew names (e.g., HaCohen) and is often symbolized on gravestones by hands raised in the priestly blessing.",
+      "seeAlso": [
+        "levite",
+        "matzevah"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "conservative-masorti",
+      "term": "Conservative / Masorti",
+      "aliases": [
+        "conservative judaism",
+        "masorti"
+      ],
+      "lang": "Hebrew",
+      "definition": "A major branch of modern Judaism that views traditional Jewish law (halakha) as both binding and subject to historical evolution and contemporary adaptation. Outside of North America, it is generally known as the Masorti movement.",
+      "seeAlso": [
+        "orthodox",
+        "reform-progressive"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "gabbai",
+      "term": "Gabbai",
+      "aliases": [
+        "gabbaim"
+      ],
+      "lang": "Hebrew",
+      "definition": "A synagogue official or warden responsible for the logistical and financial management of the congregation, or the person who assists with the Torah reading during services.",
+      "seeAlso": [
+        "parnes"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "galicianer",
+      "term": "Galicianer",
+      "aliases": [
+        "galitzianer"
+      ],
+      "lang": "Yiddish",
+      "definition": "A Jew from Galicia, a historical region that spanned what is now southeastern Poland and western Ukraine, formerly part of the Austro-Hungarian Empire. Historically and culturally, they were often contrasted with Litvaks.",
+      "seeAlso": [
+        "litvak",
+        "false-illegitimate"
+      ],
+      "categories": [
+        "jewish",
+        "history"
+      ]
+    },
+    {
+      "id": "get",
+      "term": "Get",
+      "aliases": [
+        "gittin"
+      ],
+      "lang": "Hebrew",
+      "definition": "A formal religious divorce document in Jewish law, written by a scribe (sofer) and presented by a husband to his wife.",
+      "seeAlso": [
+        "sofer",
+        "ketubah"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "ghetto",
+      "term": "Ghetto",
+      "aliases": [
+        "ghettos",
+        "ghettoes"
+      ],
+      "lang": "Italian",
+      "definition": "Historically, a segregated quarter of a city where Jews were legally required to live (originating in 16th-century Venice). During the Holocaust, Nazi Germany established hundreds of ghettos across occupied Europe to isolate, control, and exploit Jewish populations prior to deportation or murder.",
+      "categories": [
+        "jewish",
+        "history"
+      ]
+    },
+    {
+      "id": "hasidism",
+      "term": "Hasidism",
+      "aliases": [
+        "hasidic",
+        "chasidic",
+        "hasid",
+        "chassidism",
+        "rebbe"
+      ],
+      "lang": "Hebrew",
+      "definition": "A Jewish religious movement that began in 18th-century Eastern Europe. It emphasizes mysticism, joyful worship, and a strong, devoted connection to a charismatic spiritual leader known as a Rebbe.",
+      "seeAlso": [
+        "litvak"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "hebrew-name",
+      "term": "Hebrew name",
+      "aliases": [
+        "hebrew names"
+      ],
+      "definition": "The traditional name given to a Jewish person (e.g., Moshe ben Avraham), used in religious ceremonies, marriage contracts (ketubot), divorces (gets), and on gravestones (matzevot). It is crucial for researchers to recognize that an ancestor's Hebrew name was frequently entirely different from the secular \"everyday\" name they used in government vital records or passenger manifests.",
+      "seeAlso": [
+        "patronymic",
+        "ketubah",
+        "matzevah"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "hias",
+      "term": "HIAS",
+      "aliases": [
+        "hebrew immigrant aid society"
+      ],
+      "definition": "(Hebrew Immigrant Aid Society) A major organization founded in the United States in 1881 to assist Jewish immigrants and refugees. They provided food, shelter, travel aid, and legal assistance. HIAS case files and arrival records are highly valuable for tracing 20th-century migrant movement.",
+      "seeAlso": [
+        "immigration"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "ketubah",
+      "term": "Ketubah",
+      "aliases": [
+        "ketubot",
+        "ketuba"
+      ],
+      "lang": "Hebrew",
+      "definition": "A Jewish prenuptial agreement or marriage contract outlining the financial and personal responsibilities of the groom to the bride. Written in Aramaic, it is highly valuable for genealogy as it records the Hebrew names of the bride, the groom, and their fathers.",
+      "seeAlso": [
+        "hebrew-name",
+        "get"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "landsmanshaftn",
+      "term": "Landsmanshaftn",
+      "aliases": [
+        "landsmanshaft",
+        "landsman",
+        "landslayt"
+      ],
+      "lang": "Yiddish",
+      "definition": "Hometown associations formed by Jewish immigrants from the same town or region in Eastern Europe. These societies provided mutual aid, social networks, sick benefits, and communal burial plots in the new country. A Landsman is a fellow countryman or someone from the same hometown.",
+      "seeAlso": [
+        "shtetl",
+        "yizkor"
+      ],
+      "categories": [
+        "jewish",
+        "yizkor"
+      ]
+    },
+    {
+      "id": "levite",
+      "term": "Levite",
+      "aliases": [
+        "levi",
+        "leviim",
+        "halevi"
+      ],
+      "lang": "Hebrew",
+      "definition": "A tribal and religious designation passed down purely through the patrilineal line, denoting a descendant of the Tribe of Levi. The designation frequently appears as a suffix to Hebrew names (e.g., HaLevi) and is often symbolized on gravestones by a water pitcher or basin, reflecting their traditional role of washing the hands of the Cohanim.",
+      "seeAlso": [
+        "cohen",
+        "matzevah"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "litvak",
+      "term": "Litvak",
+      "aliases": [
+        "litvaks",
+        "litvish",
+        "misnagdim"
+      ],
+      "lang": "Yiddish",
+      "definition": "A Lithuanian Jew. Geographically, \"Lita\" extended beyond modern-day Lithuania to include parts of Belarus, Latvia, and northeastern Poland. Culturally, Litvaks are historically associated with the Misnagdim (opponents of Hasidism) and a culture emphasizing strict, intellectual, text-based Torah study. Often contrasted with Galicianer.",
+      "seeAlso": [
+        "galicianer",
+        "hasidism"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "matzevah",
+      "term": "Matzevah",
+      "aliases": [
+        "matzeva",
+        "matzevot",
+        "gravestone"
+      ],
+      "lang": "Hebrew",
+      "definition": "A Jewish gravestone or monument. The inscriptions typically contain the deceased's Hebrew name, their father's Hebrew name, and the date of death according to the Hebrew calendar.",
+      "seeAlso": [
+        "hebrew-name",
+        "yahrzeit",
+        "chevra-kadisha",
+        "rabbi"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "melamed",
+      "term": "Melamed",
+      "aliases": [
+        "melamdim"
+      ],
+      "lang": "Hebrew",
+      "definition": "A teacher in a traditional Jewish elementary school (cheder).",
+      "seeAlso": [
+        "cheder"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "metrical-books",
+      "term": "Metrical books",
+      "aliases": [
+        "metricheskie knigi",
+        "metrical book",
+        "matrikeln"
+      ],
+      "lang": "Russian",
+      "definition": "(Metricheskie Knigi) The official vital registers (births, marriages, divorces, and deaths) mandated by the Russian Empire and Congress Poland. Crown Rabbis were legally required to maintain duplicate copies of these books for the Jewish community. (Note: In the Austro-Hungarian Empire, such as in Galicia, these vital registers were known in German as Matrikeln).",
+      "seeAlso": [
+        "civil-registration-by-community",
+        "vital-record"
+      ],
+      "categories": [
+        "jewish",
+        "general"
+      ]
+    },
+    {
+      "id": "mikveh",
+      "term": "Mikveh",
+      "aliases": [
+        "mikvah",
+        "mikvaot"
+      ],
+      "lang": "Hebrew",
+      "definition": "A ritual bath used for spiritual purification in Judaism, most notably by women after menstruation or childbirth, and by converts to Judaism.",
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "minyan",
+      "term": "Minyan",
+      "aliases": [
+        "minyanim"
+      ],
+      "lang": "Hebrew",
+      "definition": "The quorum of ten Jewish adults (only men in Orthodox tradition) required for certain religious obligations, such as public prayer and reciting the Mourner's Kaddish.",
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "mizrahi",
+      "term": "Mizrahi",
+      "aliases": [
+        "mizrahim",
+        "mizrachi"
+      ],
+      "lang": "Hebrew",
+      "definition": "A major Jewish diaspora group. While sharing an ancient genetic and historical origin in the Land of Israel with other Jewish populations, Mizrahim are indigenous to the broader Middle East, North Africa, the Caucasus, and Central Asia. They maintain continuous communities in these regions dating back to antiquity (such as the Babylonian exile in 586 BCE), with major historic populations in Iraq, Iran, Syria, Yemen, and Egypt. Their traditional vernaculars include various dialects of Judeo-Arabic, Judeo-Persian, and Aramaic.",
+      "note": "Genealogical Note: While they are sometimes broadly grouped with Sephardic Jews because they share similar religious liturgy and rites (Nusach Sephard), Mizrahi Jews have a completely distinct geographic and cultural heritage separate from the Iberian Peninsula.",
+      "seeAlso": [
+        "ashkenazi",
+        "sephardic"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "orthodox",
+      "term": "Orthodox",
+      "aliases": [
+        "orthodox judaism"
+      ],
+      "definition": "A major branch of modern Judaism that strictly adheres to traditional Jewish law (halakha) and theology, viewing it as divinely given and immutable. (Note: Before the 19th-century emergence of distinct denominations, this was simply standard Jewish practice).",
+      "seeAlso": [
+        "reform-progressive",
+        "conservative-masorti"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "parnes",
+      "term": "Parnes",
+      "aliases": [
+        "parnas",
+        "parnassim"
+      ],
+      "lang": "Hebrew/Yiddish",
+      "definition": "The president, chief administrator, or lay leader of a Jewish community or synagogue.",
+      "seeAlso": [
+        "gabbai"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "pinkas",
+      "term": "Pinkas",
+      "aliases": [
+        "pinkasim"
+      ],
+      "lang": "Hebrew",
+      "definition": "A handwritten record book or ledger maintained by a Jewish community (kahal), synagogue, or organization (such as a Chevra Kadisha or craftsmen's guild). They contain meeting minutes, financial records, regulations, and chronicles of historical events.",
+      "seeAlso": [
+        "chevra-kadisha",
+        "communal-registry"
+      ],
+      "categories": [
+        "jewish",
+        "yizkor"
+      ]
+    },
+    {
+      "id": "rabbi",
+      "term": "Rabbi",
+      "aliases": [
+        "rabbis",
+        "reb",
+        "harav",
+        "semicha"
+      ],
+      "lang": "Hebrew",
+      "definition": "A spiritual leader, teacher, and legal decisor in Judaism who has received formal rabbinic ordination (semicha).",
+      "note": "Important Gravestone Note (Reb vs. HaRav): On documents and gravestones, the Hebrew abbreviation \"R'\" stands for Reb, an honorific title (similar to \"Mr.\") given to any respected, observant Jewish man. It does not mean the person was a rabbi. An actual ordained rabbi is typically denoted by the title HaRav.",
+      "seeAlso": [
+        "matzevah"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "reform-progressive",
+      "term": "Reform / Progressive",
+      "aliases": [
+        "reform judaism",
+        "progressive judaism"
+      ],
+      "definition": "A major branch of modern Judaism, originating in 19th-century Germany, that views traditional Jewish law as evolving and non-binding, placing a stronger emphasis on ethical teachings and adapting Jewish traditions to modern life. Outside of North America, it is frequently referred to as Progressive Judaism.",
+      "seeAlso": [
+        "orthodox",
+        "conservative-masorti"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "sephardic",
+      "term": "Sephardic",
+      "aliases": [
+        "sephardi",
+        "sephardim",
+        "ladino"
+      ],
+      "lang": "Hebrew",
+      "definition": "A major Jewish diaspora group. While sharing an ancient genetic and historical origin in the Land of Israel with other Jewish populations, Sephardim trace their specific diasporic ancestry to the Iberian Peninsula (modern-day Spain and Portugal). Following the Spanish Inquisition and the expulsion of 1492 (and subsequent expulsions and forced conversions in Portugal in 1497), they dispersed globally. They established major communities in the Ottoman Empire, North Africa, and later in Western Europe and the Americas. Their traditional vernacular is Ladino (Judeo-Spanish).",
+      "note": "Genealogical Note: Sephardic research involves distinct naming patterns (e.g., it is traditional to name children after living grandparents, unlike Ashkenazi custom) and relies on different archival sources, including Inquisition tribunal records and Ottoman census registers.",
+      "seeAlso": [
+        "ashkenazi",
+        "mizrahi"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "shadchan",
+      "term": "Shadchan",
+      "aliases": [
+        "shadchen",
+        "shadchanim"
+      ],
+      "lang": "Hebrew/Yiddish",
+      "definition": "A traditional Jewish matchmaker.",
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "shochet",
+      "term": "Shochet",
+      "aliases": [
+        "shochtim",
+        "shechita"
+      ],
+      "lang": "Hebrew",
+      "definition": "A ritual slaughterer trained and certified to slaughter kosher animals according to Jewish law (shechita).",
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "shtetl",
+      "term": "Shtetl",
+      "aliases": [
+        "shtetls",
+        "shtetlach"
+      ],
+      "lang": "Yiddish",
+      "definition": "A small town or village with a large, sometimes majority, Jewish population in Eastern Europe, particularly within the Russian Pale of Settlement before the Holocaust.",
+      "seeAlso": [
+        "landsmanshaftn"
+      ],
+      "categories": [
+        "jewish",
+        "yizkor"
+      ]
+    },
+    {
+      "id": "sofer",
+      "term": "Sofer",
+      "aliases": [
+        "sofrim",
+        "scribe"
+      ],
+      "lang": "Hebrew",
+      "definition": "A specially trained Jewish scribe who handwrites Torah scrolls, tefillin, mezuzot, and other legal religious documents (like ketubot and gets) according to strict halakhic rules.",
+      "seeAlso": [
+        "get",
+        "ketubah"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "yahrzeit",
+      "term": "Yahrzeit",
+      "aliases": [
+        "yahrzeits",
+        "yortsayt",
+        "yahrtzeit"
+      ],
+      "lang": "Yiddish",
+      "definition": "The Yiddish term for the anniversary of a person's death. It is observed annually on the Hebrew date of death by lighting a 24-hour memorial candle and reciting the Mourner's Kaddish.",
+      "seeAlso": [
+        "matzevah",
+        "calendar"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "yeshiva",
+      "term": "Yeshiva",
+      "aliases": [
+        "yeshivas",
+        "yeshivot"
+      ],
+      "lang": "Hebrew",
+      "definition": "An institute for advanced traditional Jewish learning, primarily focused on the rigorous study of the Talmud and rabbinic literature.",
+      "seeAlso": [
+        "cheder"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "yizkor",
+      "term": "Yizkor",
+      "aliases": [
+        "yizkor book",
+        "yizkor books"
+      ],
+      "lang": "Hebrew/Yiddish",
+      "definition": "Has two primary applications: (1) A memorial prayer service held four times a year in synagogue. (2) Yizkor Books: Memorial books compiled after the Holocaust by survivors and former residents (landsmanshaftn) to document the history, culture, and destruction of their specific hometowns (shtetls).",
+      "seeAlso": [
+        "landsmanshaftn",
+        "shtetl"
+      ],
+      "categories": [
+        "jewish",
+        "yizkor"
+      ]
+    },
+    {
+      "id": "youth-groups",
+      "term": "Youth Groups",
+      "aliases": [
+        "hashomer hatzair",
+        "betar",
+        "dror",
+        "bnei akiva"
+      ],
+      "definition": "In a historical context, particularly in pre-war Europe, these were highly politicized, ideologically driven organizations (such as Hashomer Hatzair, Betar, Dror, and Bnei Akiva). They focused on education, socialist or Zionist ideals, and physical training to prepare young Jews for Aliyah (emigration to Palestine), and later played a massive role in organizing partisan resistance during the Holocaust.",
+      "seeAlso": [
+        "aliyah",
+        "bund"
+      ],
+      "categories": [
+        "jewish"
+      ]
+    },
+    {
+      "id": "anschluss",
+      "term": "Anschluss",
+      "aliases": [],
+      "categories": [
+        "history"
+      ],
+      "lang": "German",
+      "definition": "The annexation of Austria into Nazi Germany on March 12, 1938. Genealogically relevant because it immediately applied severe Nazi anti-Semitic laws to Austrian Jews, triggering a massive wave of desperate emigration, asset seizures, and refugee crises.",
+      "seeAlso": [
+        "shoah-holocaust",
+        "emigration"
+      ]
+    },
+    {
+      "id": "austro-hungarian-empire",
+      "term": "Austro-Hungarian Empire",
+      "aliases": [
+        "austria-hungary",
+        "habsburg"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "A major Central European empire that existed from 1867 until its collapse at the end of World War I in 1918. It contained a massive, diverse Jewish population, particularly in regions like Galicia, Bukovina, Bohemia, Moravia, and Hungary. Its vital records (Matrikeln) and administrative structures are entirely distinct from the Russian Empire.",
+      "seeAlso": [
+        "galicia",
+        "bukovina",
+        "metrical-books"
+      ]
+    },
+    {
+      "id": "bessarabia",
+      "term": "Bessarabia",
+      "aliases": [],
+      "categories": [
+        "history"
+      ],
+      "definition": "A historical region in Eastern Europe, bounded by the Dniester and Prut rivers, roughly corresponding to modern-day Moldova and parts of southwestern Ukraine. Frequently shifting hands between the Russian Empire and Romania, it had a very large Jewish population and was the site of the infamous Kishinev Pogrom.",
+      "seeAlso": [
+        "kishinev-pogrom",
+        "russian-empire"
+      ]
+    },
+    {
+      "id": "black-plague-massacres",
+      "term": "Black Plague (massacres)",
+      "aliases": [
+        "black death",
+        "plague massacres"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "A series of violent attacks and massacres against Jewish communities in Europe between 1348 and 1351. Jews were falsely scapegoated and accused of poisoning wells to cause the Bubonic Plague, leading to the destruction of hundreds of communities, particularly in the Holy Roman Empire (Germany/France), accelerating the Jewish eastward migration into Poland.",
+      "seeAlso": [
+        "expulsion",
+        "pogrom"
+      ]
+    },
+    {
+      "id": "bukovina",
+      "term": "Bukovina",
+      "aliases": [
+        "bucovina"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "A historical region on the northern slopes of the central Carpathian Mountains, now divided between Romania and Ukraine. Formerly a crownland of the Austro-Hungarian Empire, it was known for a highly assimilated, German-speaking Jewish population (centered in the capital, Czernowitz) living alongside deeply traditional Hasidic communities.",
+      "seeAlso": [
+        "austro-hungarian-empire",
+        "hasidism"
+      ]
+    },
+    {
+      "id": "congress-poland",
+      "term": "Congress Poland",
+      "aliases": [
+        "kingdom of poland"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "(Kingdom of Poland) A polity created in 1815 at the Congress of Vienna, existing in a personal union with the Russian Empire. Crucially for genealogists, it maintained its own distinct legal and administrative systems- including civil registration strictly utilizing the Napoleonic format for vital records- which differ significantly from the rest of the Russian Empire.",
+      "seeAlso": [
+        "russian-empire",
+        "polish-partitions",
+        "metrical-books"
+      ]
+    },
+    {
+      "id": "courland",
+      "term": "Courland",
+      "aliases": [
+        "kurland"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "A historical region on the Baltic coast, corresponding to the western part of modern-day Latvia. As a governorate of the Russian Empire, it was legally outside the Pale of Settlement, but its long-standing Jewish population was permitted to remain there. Culturally and linguistically, it was heavily influenced by German customs.",
+      "seeAlso": [
+        "pale-of-settlement",
+        "russian-empire"
+      ]
+    },
+    {
+      "id": "dp-camp",
+      "term": "DP (Displaced Persons) camp",
+      "aliases": [
+        "displaced persons camp",
+        "dp camps"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "Temporary facilities established in Germany, Austria, and Italy after World War II to house refugees, including Holocaust survivors who had no homes to return to. Administered by Allied forces and the UNRRA, these camps operated from 1945 to 1952, and their records (like those held at the Arolsen Archives) are essential for tracking post-war Jewish migrations, marriages, and births.",
+      "seeAlso": [
+        "shoah-holocaust"
+      ]
+    },
+    {
+      "id": "expulsion",
+      "term": "Expulsion",
+      "aliases": [
+        "expulsions"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "The forced removal of a Jewish population from a specific city, region, or country by government decree. Major historical examples include the expulsion from England (1290), Spain (1492), and Portugal (1497), but localized expulsions occurred frequently throughout history (e.g., from Moscow in 1891).",
+      "seeAlso": [
+        "sephardic",
+        "inquisition"
+      ]
+    },
+    {
+      "id": "galicia",
+      "term": "Galicia",
+      "aliases": [],
+      "categories": [
+        "history"
+      ],
+      "definition": "A historical region spanning southeastern Poland and western Ukraine, created in 1772 as a crownland of the Habsburg/Austro-Hungarian Empire. It was home to a massive, vibrant, and largely impoverished Jewish population, heavily influenced by Hasidism.",
+      "seeAlso": [
+        "galicianer",
+        "austro-hungarian-empire",
+        "false-illegitimate"
+      ]
+    },
+    {
+      "id": "gubernia",
+      "term": "Gubernia",
+      "aliases": [
+        "guberniya",
+        "gubernias"
+      ],
+      "categories": [
+        "history"
+      ],
+      "lang": "Russian",
+      "definition": "A province or governorate in the Russian Empire (e.g., Kiev Gubernia, Minsk Gubernia). It was the primary top-level administrative division, and knowing a town's gubernia is usually required to locate its records in modern Eastern European state archives.",
+      "seeAlso": [
+        "uyezd",
+        "russian-empire",
+        "vedomosti"
+      ]
+    },
+    {
+      "id": "interwar-period",
+      "term": "Interwar period",
+      "aliases": [
+        "interwar"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "The years between the end of World War I (1918) and the beginning of World War II (1939). In Eastern Europe, this period was characterized by dramatically redrawn borders (such as the rebirth of an independent Poland) and a flourishing of Jewish political and cultural life, alongside rising state-sponsored antisemitism.",
+      "seeAlso": [
+        "poland",
+        "numerus-clausus"
+      ]
+    },
+    {
+      "id": "inquisition",
+      "term": "Inquisition",
+      "aliases": [
+        "spanish inquisition",
+        "portuguese inquisition",
+        "conversos"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "A judicial institution established by the papacy (and later by the Spanish and Portuguese crowns) to combat heresy. For Jewish genealogy, the Spanish Inquisition (est. 1478) and Portuguese Inquisition (est. 1536) are paramount, as they targeted Conversos (Jews forced to convert to Catholicism) who were suspected of secretly practicing Judaism. Their meticulous tribunal records are a major genealogical source.",
+      "seeAlso": [
+        "sephardic",
+        "expulsion"
+      ]
+    },
+    {
+      "id": "kishinev-pogrom",
+      "term": "Kishinev Pogrom",
+      "aliases": [
+        "kishinev"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "A devastating, violently anti-Semitic riot in Kishinev, Bessarabia (modern-day Moldova) in April 1903. It resulted in dozens of deaths and shocked the global Jewish community, directly spurring early Zionism, the formation of Jewish self-defense groups, and a massive wave of Jewish emigration to the United States.",
+      "seeAlso": [
+        "pogrom",
+        "bessarabia"
+      ]
+    },
+    {
+      "id": "numerus-clausus",
+      "term": "Numerus Clausus",
+      "aliases": [],
+      "categories": [
+        "history"
+      ],
+      "lang": "Latin",
+      "definition": "Latin for \"closed number.\" A quota system used to limit the number of Jews permitted to attend universities or enter certain professions, heavily utilized in the Russian Empire, interwar Poland, Hungary, and other European nations to stifle Jewish social mobility.",
+      "seeAlso": [
+        "interwar-period"
+      ]
+    },
+    {
+      "id": "ottoman-empire",
+      "term": "Ottoman Empire",
+      "aliases": [
+        "nufus"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "A vast empire that existed from 1299 to 1922, controlling much of Southeast Europe, Western Asia, and North Africa. It became a major refuge for Sephardic Jews following the 1492 Spanish expulsion. Its administrative and census registers (N\u00fcfus) are crucial for Sephardic, Mizrahi, and early Eretz Yisrael (Ottoman Palestine) genealogy.",
+      "seeAlso": [
+        "sephardic",
+        "mizrahi"
+      ]
+    },
+    {
+      "id": "pale-of-settlement",
+      "term": "Pale of Settlement",
+      "aliases": [
+        "the pale"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "The massive western region of the Russian Empire (encompassing modern-day Belarus, Lithuania, Moldova, and much of Ukraine and Poland) where permanent Jewish residency was legally restricted from 1791 to 1917. The vast majority of Ashkenazi Jews tracing their roots to the Russian Empire originated within the Pale.",
+      "seeAlso": [
+        "russian-empire",
+        "shtetl"
+      ]
+    },
+    {
+      "id": "pogrom",
+      "term": "Pogrom",
+      "aliases": [
+        "pogroms"
+      ],
+      "categories": [
+        "history"
+      ],
+      "lang": "Russian/Yiddish",
+      "definition": "A violently organized, often state-sanctioned or condoned massacre or riot aimed at a specific ethnic group, overwhelmingly targeting Jews in the Russian Empire and Eastern Europe during the 19th and early 20th centuries.",
+      "seeAlso": [
+        "kishinev-pogrom"
+      ]
+    },
+    {
+      "id": "poland",
+      "term": "Poland",
+      "aliases": [],
+      "categories": [
+        "history"
+      ],
+      "definition": "A Central European nation whose borders have shifted dramatically throughout history. It was the historical epicenter of Ashkenazi Jewish life for centuries. Because it was partitioned out of existence for over 100 years, \"Polish\" genealogical research often actually involves Russian, Austrian, or Prussian archives depending on the era.",
+      "seeAlso": [
+        "polish-partitions",
+        "congress-poland"
+      ]
+    },
+    {
+      "id": "polish-partitions",
+      "term": "Polish Partitions",
+      "aliases": [
+        "partitions of poland"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "A series of three territorial divisions (1772, 1793, 1795) in which the Polish-Lithuanian Commonwealth was entirely divided up and annexed by the Russian Empire, the Kingdom of Prussia, and the Habsburg Monarchy (Austria). This is why researchers often find that an ancestor's town \"changed countries\" without the family ever actually moving.",
+      "seeAlso": [
+        "russian-empire",
+        "prussia",
+        "poland"
+      ]
+    },
+    {
+      "id": "prussia",
+      "term": "Prussia",
+      "aliases": [
+        "posen"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "A historically prominent German state that dominated northern Central Europe. During the Polish Partitions, Prussia acquired significant territory with large Jewish populations (such as the Province of Posen). Prussian record-keeping was famously meticulous, though many archives were unfortunately destroyed during World War II.",
+      "seeAlso": [
+        "polish-partitions"
+      ]
+    },
+    {
+      "id": "russian-empire",
+      "term": "Russian Empire",
+      "aliases": [],
+      "categories": [
+        "history"
+      ],
+      "definition": "A massive empire spanning Eurasia, existing from 1721 until the Russian Revolution of 1917. As a result of the Polish Partitions, it acquired the largest Jewish population in the world, subsequently confining them primarily to the Pale of Settlement.",
+      "seeAlso": [
+        "pale-of-settlement",
+        "gubernia",
+        "uyezd",
+        "revision-list"
+      ]
+    },
+    {
+      "id": "shoah-holocaust",
+      "term": "Shoah / Holocaust",
+      "aliases": [
+        "shoah",
+        "holocaust"
+      ],
+      "categories": [
+        "history",
+        "jewish",
+        "yizkor"
+      ],
+      "lang": "Hebrew",
+      "definition": "The systematic, state-sponsored genocide of six million Jews by the Nazi regime and its collaborators between 1933 and 1945. Shoah is the Hebrew term meaning \"catastrophe\" or \"utter destruction\" and is the preferred term within Jewish communities and Israeli remembrance.",
+      "seeAlso": [
+        "ghetto",
+        "dp-camp",
+        "yizkor"
+      ]
+    },
+    {
+      "id": "subcarpathia",
+      "term": "Subcarpathia (Carpathian Ruthenia)",
+      "aliases": [
+        "carpathian ruthenia",
+        "sub-carpathia",
+        "zakarpattia"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "A highly diverse historical region nestled in the Carpathian mountains, today forming the Zakarpattia Oblast of western Ukraine. Between the World Wars, it was part of Czechoslovakia, and prior to WWI, part of Hungary. It was known for its deeply traditional, rural, and impoverished Orthodox and Hasidic communities (such as in Munk\u00e1cs).",
+      "seeAlso": [
+        "hasidism"
+      ]
+    },
+    {
+      "id": "surname-adoption",
+      "term": "Surname adoption",
+      "aliases": [
+        "surname adoption laws",
+        "name change laws"
+      ],
+      "categories": [
+        "history"
+      ],
+      "definition": "Government mandates requiring populations to adopt permanent, hereditary family names. For Jewish genealogy, this usually refers to the late 18th and early 19th-century edicts across Central and Eastern Europe.",
+      "seeAlso": [
+        "patronymic",
+        "toponym",
+        "vel"
+      ]
+    },
+    {
+      "id": "uyezd",
+      "term": "Uyezd",
+      "aliases": [
+        "uezd",
+        "uyezds"
+      ],
+      "categories": [
+        "history"
+      ],
+      "lang": "Russian",
+      "definition": "A secondary administrative subdivision in the Russian Empire, roughly equivalent to a county or district. A gubernia (province) was made up of several uyezds.",
+      "seeAlso": [
+        "gubernia",
+        "russian-empire"
+      ]
+    },
+    {
+      "id": "communities-database",
+      "term": "Communities Database",
+      "aliases": [],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "A comprehensive directory providing historical and geographical information about thousands of Jewish communities. It serves as a central hub for a town, aggregating links to its specific Yizkor Books, KehilaLinks, and relevant JGFF entries.",
+      "seeAlso": [
+        "kehilalinks",
+        "yizkor",
+        "jgff"
+      ]
+    },
+    {
+      "id": "discussion-groups",
+      "term": "Discussion Groups",
+      "aliases": [
+        "mailing lists"
+      ],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "JewishGen's dedicated mailing lists and online forums. They allow researchers worldwide to ask questions, share resources, overcome brick walls, and collaborate on specific genealogical challenges.",
+      "seeAlso": [
+        "research-division"
+      ]
+    },
+    {
+      "id": "infofile",
+      "term": "InfoFile",
+      "aliases": [
+        "infofiles"
+      ],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "A vast library of instructional articles, research guides, and directories created over the 40 years of JewishGen's existence by volunteers and experts. They cover everything from beginner methodology to highly advanced, country-specific archival strategies."
+    },
+    {
+      "id": "jewishgen-gazetteer",
+      "term": "JewishGen Gazetteer",
+      "aliases": [
+        "town finder"
+      ],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "A geographic database containing the names of over one million localities in Europe, North Africa, and the Middle East. It helps researchers find exact map coordinates, track historical name changes, and identify all towns within a specific radius of an ancestral town or region.",
+      "seeAlso": [
+        "communities-database",
+        "gazette"
+      ]
+    },
+    {
+      "id": "jgff",
+      "term": "JGFF (JewishGen Family Finder)",
+      "aliases": [
+        "jewishgen family finder",
+        "family finder"
+      ],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "A global networking database of ancestral towns and surnames currently being researched by genealogists. It allows users to discover, contact, and collaborate with distant cousins or others studying the exact same families and locations.",
+      "seeAlso": [
+        "communities-database"
+      ]
+    },
+    {
+      "id": "jowbr",
+      "term": "JOWBR (JewishGen Online Worldwide Burial Registry)",
+      "aliases": [
+        "burial registry",
+        "online worldwide burial registry"
+      ],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "A massive, searchable database containing millions of names, vital dates, and photographs from Jewish cemeteries and burial records across the globe.",
+      "seeAlso": [
+        "matzevah",
+        "chevra-kadisha"
+      ]
+    },
+    {
+      "id": "kehilalinks",
+      "term": "KehilaLinks",
+      "aliases": [
+        "shtetlinks"
+      ],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "(Formerly known as ShtetLinks) Volunteer-created memorial webpages dedicated to specific towns and communities where Jews have lived. They are rich repositories of local history, photographs, memoirs, and localized genealogical data.",
+      "seeAlso": [
+        "communities-database",
+        "shtetl"
+      ]
+    },
+    {
+      "id": "research-division",
+      "term": "Research Division",
+      "aliases": [
+        "research divisions",
+        "sig",
+        "sigs",
+        "special interest group"
+      ],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "Specialized groups within JewishGen focused on the genealogy and history of specific geographic regions (e.g., the Ukraine Research Division, the Belarus Research Division) or groups (e.g., the Sephardic Research Division). They actively coordinate the acquisition, translation, and indexing of records for their respective areas. (Note: Historically referred to as Special Interest Groups, or SIGs).",
+      "seeAlso": [
+        "discussion-groups"
+      ]
+    },
+    {
+      "id": "unified-global-search",
+      "term": "Unified / Global Search",
+      "aliases": [
+        "global search",
+        "unified search"
+      ],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "The primary, most powerful search engine on JewishGen. It allows users to query across all of JewishGen's distinct regional and topical databases simultaneously, heavily utilizing Soundex technology to catch spelling variations.",
+      "seeAlso": [
+        "soundex"
+      ]
+    },
+    {
+      "id": "vas",
+      "term": "Value-Added Services (VAS)",
+      "aliases": [
+        "value-added services",
+        "value added services",
+        "vas"
+      ],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "A program that provides enhanced search capabilities and site features as a benefit to users who make an annual qualifying donation to JewishGen. VAS allows for more advanced data filtering, broader search parameters, and additional benefits."
+    },
+    {
+      "id": "viewmate",
+      "term": "ViewMate",
+      "aliases": [],
+      "categories": [
+        "jewishgen"
+      ],
+      "definition": "A crowdsourcing tool on the JewishGen website where users can upload photographs of historical documents, gravestones, or artifacts to request free translation, transcription, or identification assistance from the community.",
+      "seeAlso": [
+        "translation",
+        "transcription",
+        "matzevah"
+      ]
+    },
+    {
+      "id": "bukh",
+      "term": "Bukh / Buch",
+      "aliases": [
+        "bukh",
+        "buch"
+      ],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Yiddish/German",
+      "definition": "Book.",
+      "seeAlso": [
+        "sefer"
+      ]
+    },
+    {
+      "id": "gedenkbuch",
+      "term": "Gedenkbuch",
+      "aliases": [
+        "gedenkbuecher"
+      ],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "German",
+      "definition": "Memorial or commemoration book, used primarily for books in German memorializing German Jews; from the German and Yiddish root gedenken, to remember, and buch, book.",
+      "seeAlso": [
+        "memorbuch",
+        "sefer-zikaron"
+      ]
+    },
+    {
+      "id": "kehilat",
+      "term": "Kehilat",
+      "aliases": [
+        "kehilot",
+        "kehila",
+        "kehillah"
+      ],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Hebrew",
+      "definition": "Community of, usually followed in Yizkor book titles by a community name (e.g., kehilat Lomza); from the root kehila, community.",
+      "seeAlso": [
+        "kehilalinks"
+      ]
+    },
+    {
+      "id": "memorbuch",
+      "term": "Memorbuch",
+      "aliases": [
+        "memorbuecher"
+      ],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "German",
+      "definition": "A community prayer book common in Central Europe from the Middle Ages to the 19th century, which included lists of deceased persons; perhaps from the Old German memorieren, to memorize, and buch, book.",
+      "seeAlso": [
+        "gedenkbuch",
+        "pinkas"
+      ]
+    },
+    {
+      "id": "seviva",
+      "term": "Seviva",
+      "aliases": [
+        "ve-ha-seviva"
+      ],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Hebrew",
+      "definition": "Surroundings or vicinity, used in Yizkor book titles in the phrase ve-ha-seviva, and the vicinity."
+    },
+    {
+      "id": "sefer",
+      "term": "Sefer",
+      "aliases": [
+        "sfarim"
+      ],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Hebrew",
+      "definition": "Book.",
+      "seeAlso": [
+        "bukh",
+        "sefer-zikaron"
+      ]
+    },
+    {
+      "id": "sefer-zikaron",
+      "term": "Sefer Zikaron / Sefer Yizkor",
+      "aliases": [
+        "sefer zikaron",
+        "sefer yizkor"
+      ],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Hebrew",
+      "definition": "Memorial book.",
+      "seeAlso": [
+        "yizkor",
+        "zikaron",
+        "sefer"
+      ]
+    },
+    {
+      "id": "yehudei",
+      "term": "Yehudei",
+      "aliases": [],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Hebrew",
+      "definition": "Jews of, followed in a Yizkor book title by a community name (e.g., Yehudei Jedrzejow).",
+      "seeAlso": [
+        "yidn",
+        "yahadut"
+      ]
+    },
+    {
+      "id": "yehudi",
+      "term": "Yehudi / Yehudit",
+      "aliases": [
+        "yehudi",
+        "yehudit"
+      ],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Hebrew",
+      "definition": "Jewish.",
+      "seeAlso": [
+        "yidish"
+      ]
+    },
+    {
+      "id": "yahadut",
+      "term": "Yahadut",
+      "aliases": [],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Hebrew",
+      "definition": "Jewry, Jews.",
+      "seeAlso": [
+        "yehudei",
+        "yidn"
+      ]
+    },
+    {
+      "id": "yidn",
+      "term": "Yidn",
+      "aliases": [
+        "yid"
+      ],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Yiddish",
+      "definition": "Jews (e.g., Yidn in Plotsk, Jews in Plotsk); the singular form is yid, Jew.",
+      "seeAlso": [
+        "yehudei",
+        "yahadut"
+      ]
+    },
+    {
+      "id": "yidish",
+      "term": "Yidish / Yidishe / Yidisher / Yidishn",
+      "aliases": [
+        "yidish",
+        "yidishe",
+        "yidisher",
+        "yidishn"
+      ],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Yiddish",
+      "definition": "Jewish; takes different forms depending on what it is modifying (e.g., di yidishe froy, the Jewish woman; der yidisher man, the Jewish man).",
+      "seeAlso": [
+        "yehudi"
+      ]
+    },
+    {
+      "id": "zikaron",
+      "term": "Zikaron",
+      "aliases": [],
+      "categories": [
+        "yizkor"
+      ],
+      "lang": "Hebrew",
+      "definition": "In memory of, memorial; as in sefer zikaron, memorial book.",
+      "seeAlso": [
+        "sefer-zikaron",
+        "yizkor"
+      ]
+    }
+  ]
+}

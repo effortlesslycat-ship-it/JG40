@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================================================================
+     JewishGen Communities Database  -  Search Results TEMPLATE
+     Filled by jgcd.php via str_replace on the <%= ... %> tokens.
+     Sibling of jgcd.php in /Communities/.  ASCII-safe (dev SFTP corrupts
+     non-ASCII bytes - use HTML entities, never literal special characters).
+     Header/footer are fetched JG40 components.  Pagination + column sorting
+     run client-side over the full result set (one POST, JS does the rest).
+============================================================================ -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JewishGen Communities Database &mdash; Search Results</title>
+<meta name="robots" content="noindex,follow">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/jg-global.css">
+<link rel="stylesheet" href="/Communities/jg-community.css?v=9">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+    <!-- TITLE BAND -->
+    <div class="jg-community-hero">
+        <div class="jg-community-hero__inner">
+            <a href="/Communities/search.php" class="jg-back-link-light" aria-label="Start a new search">
+                <span class="arrow" aria-hidden="true">&larr;</span> New Search
+            </a>
+            <span class="jg-tag-sage" style="margin-bottom: 15px;">JewishGen Communities Database</span>
+            <h1>Search Results</h1>
+            <p class="coords"><%=summary %></p>
+        </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="sr-layout">
+
+        <div class="sr-toolbar">
+            <span class="sr-count"><strong><%=count %></strong> matches</span>
+            <div class="sr-pager" id="sr-pager-top" role="navigation" aria-label="Results pages (top)"></div>
+        </div>
+
+        <div class="sr-table-wrap">
+            <table class="sr-table" id="sr-table">
+                <thead>
+                    <tr>
+                        <th data-sort="s">Modern Town &amp; Country</th>
+                        <th data-sort="s">Other Names</th>
+                        <th data-sort="s">c. 1950<br><span class="sr-th-sub">After WWII</span></th>
+                        <th data-sort="s">c. 1930<br><span class="sr-th-sub">Between Wars</span></th>
+                        <th data-sort="s">c. 1900<br><span class="sr-th-sub">Before WWI</span></th>
+                        <th data-sort="n">JGFF<br><span class="sr-th-sub">Entries</span></th>
+                    </tr>
+                </thead>
+                <tbody id="sr-body"><%=rows %></tbody>
+            </table>
+        </div>
+
+        <div class="sr-pager" id="sr-pager-bottom" role="navigation" aria-label="Results pages (bottom)"></div>
+
+    </div>
+</main>
+
+<div id="site-footer"></div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ---------- Component loader (JG40 header/footer) ---------- */
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(r => { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(html => { document.getElementById(id).innerHTML = html; })
+        .catch(err => console.warn(err));
+}
+Promise.all([
+    loadComponent('site-header', '/header_navbar.html'),
+    loadComponent('site-footer', '/footer.html')
+]);
+
+/* ---------- Sort + paginate (client-side, full result set) ---------- */
+(function () {
+    var PER = 50, page = 1, sortCol = -1, sortDir = 1;
+    var tbody = document.getElementById('sr-body');
+    if (!tbody) return;
+    var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr.sr-row'));
+    var ths = document.querySelectorAll('#sr-table thead th');
+
+    function cellVal(tr, i, type) {
+        var td = tr.children[i];
+        if (!td) return type === 'n' ? 0 : '';
+        var t = td.textContent.trim();
+        if (type === 'n') { return parseFloat(t.replace(/[^0-9.\-]/g, '')) || 0; }
+        return t.toLowerCase();
+    }
+
+    function pager(pages) {
+        var html = '<button class="sr-page-btn" data-go="prev"' + (page <= 1 ? ' disabled' : '') + '>' +
+                   '<span aria-hidden="true">&larr;</span> Prev</button>' +
+                   '<span class="sr-page-info">Page ' + page + ' of ' + pages + '</span>' +
+                   '<button class="sr-page-btn" data-go="next"' + (page >= pages ? ' disabled' : '') + '>' +
+                   'Next <span aria-hidden="true">&rarr;</span></button>';
+        ['sr-pager-top', 'sr-pager-bottom'].forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) el.innerHTML = html;
+        });
+    }
+
+    function render() {
+        var total = rows.length;
+        var pages = Math.max(1, Math.ceil(total / PER));
+        if (page > pages) page = pages;
+        var start = (page - 1) * PER, end = start + PER;
+        rows.forEach(function (tr, idx) { tr.style.display = (idx >= start && idx < end) ? '' : 'none'; });
+        pager(pages);
+    }
+
+    document.addEventListener('click', function (e) {
+        var b = e.target.closest ? e.target.closest('.sr-page-btn') : null;
+        if (!b || b.disabled) return;
+        if (b.getAttribute('data-go') === 'prev' && page > 1) page--;
+        else if (b.getAttribute('data-go') === 'next') page++;
+        render();
+        var anchor = document.querySelector('.sr-layout');
+        if (anchor) window.scrollTo({ top: anchor.offsetTop - 20, behavior: 'smooth' });
+    });
+
+    ths.forEach(function (th, i) {
+        th.addEventListener('click', function () {
+            var type = th.getAttribute('data-sort') || 's';
+            if (sortCol === i) { sortDir = -sortDir; } else { sortCol = i; sortDir = 1; }
+            rows.sort(function (a, b) {
+                var va = cellVal(a, i, type), vb = cellVal(b, i, type);
+                if (va < vb) return -1 * sortDir;
+                if (va > vb) return 1 * sortDir;
+                return 0;
+            });
+            rows.forEach(function (tr) { tbody.appendChild(tr); });
+            ths.forEach(function (t) { t.classList.remove('sr-sort-asc', 'sr-sort-desc'); });
+            th.classList.add(sortDir > 0 ? 'sr-sort-asc' : 'sr-sort-desc');
+            page = 1;
+            render();
+        });
+    });
+
+    render();
+})();
+</script>
+
+<%=ajax %>
+
+</body>
+</html>

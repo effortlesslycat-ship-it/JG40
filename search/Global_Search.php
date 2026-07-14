@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Search &mdash; JewishGen</title>
+
+    <!-- 1. Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- 2. JewishGen Global Design System -->
+    <link rel="stylesheet" href="/jg-global.css">
+    <!-- 3. Page-specific styles -->
+    <style>
+        /* ========================================================
+           GLOBAL SEARCH PAGE - PAGE-SPECIFIC STYLES
+           Shared search infrastructure (hero, card, tips, form rows,
+           locked overlay, btn-search) lives in jg-global.css.
+           Only page-specific overrides and one-off patterns here.
+           ======================================================== */
+
+        /* sr-only utility (accessibility) */
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0;
+            margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+            white-space: nowrap; border: 0;
+        }
+
+        /* Region / Collection block */
+        .region-block { margin-top: 14px; }
+
+        /* Sub-region container - now scoped to #SubRegionsDiv so the
+           legacy setRegions() function can show/hide it directly.
+           Cemetery cascade containers share the same visual treatment. */
+        #SubRegionsDiv,
+        #CemCountryListDiv,
+        #CemRegionListDiv {
+            display: none;
+            margin-top: 12px;
+            padding: 14px 16px;
+            background: var(--light-blue);
+            border: 1px solid #c4d0d6;
+            border-radius: 6px;
+            animation: gsSubFadeIn 0.25s ease-in;
+        }
+        @keyframes gsSubFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .sub-region-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 6px;
+        }
+
+        /* Sub-region select: white bg so it reads against the light-blue container */
+        #GeoRegion,
+        #CemCountryList,
+        #CemRegionList {
+            background: var(--white) !important;
+        }
+
+        body.dark-mode #SubRegionsDiv,
+        body.dark-mode #CemCountryListDiv,
+        body.dark-mode #CemRegionListDiv {
+            background: #1a2533;
+            border-color: #333;
+        }
+        body.dark-mode .sub-region-label { color: #c8c0b0; }
+        body.dark-mode #GeoRegion,
+        body.dark-mode #CemCountryList,
+        body.dark-mode #CemRegionList {
+            background: #1e1e1e !important;
+        }
+
+        /* Submit area separator */
+        .search-submit-wrap {
+            text-align: center;
+            margin-top: 26px;
+            padding-top: 20px;
+            border-top: 1px solid var(--cream);
+        }
+        body.dark-mode .search-submit-wrap { border-top-color: #333; }
+    </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main id="main-content">
+
+    <!-- ================================================================
+         SEARCH HERO BAND - ecru wrap with centered heading + search card
+         ================================================================ -->
+ <!-- Navy banner: separate, above the search box -->
+    <div class="page-title-band">
+        <span class="tagline">Search All Databases</span>
+        <h1>JewishGen Global Search</h1>
+        <p class="hero-subtitle">Explore millions of records from around the world &mdash; including Holocaust and burial records &mdash; all in one search.</p>
+        <span class="stat-line">More than 32 million records across thousands of databases.</span>
+    </div>
+
+    <!-- Search box: inner wrapper kept -->
+    <section class="jg-band-content" aria-label="Search JewishGen databases">
+        <div class="jg-search-hero__inner">
+
+            <!-- ============================================================
+                 LEGACY INTEGRATION
+                 ============================================================
+                 The <form> below posts to the existing jgform.php endpoint
+                 with the exact field names and values the production search
+                 has used since 2017. Field naming, IDs, and option values are
+                 dictated by the four legacy JS files loaded at the bottom of
+                 this document. Do NOT rename without updating those files.
+
+                 Contract:
+                   action  : /databases/jgform.php  (POST)
+                   name    : f   (legacy JS calls document.f.*)
+                   fields  : srch1..srch4         (search text)
+                             srch1v..srch4v       (data type: S/G/T/X)
+                             srch1t..srch4t       (search type: Q/D/S/E/F1/F2/FM)
+                             SrchBOOL             (AND / OR)
+                             allcountry           (region alias - drives setRegions)
+                             GeoRegion            (sub-region; the value actually
+                                                   used by jgform.php for filtering)
+                             CemCountryList,
+                             CemRegionList        (cemetery cascade - UI only)
+                             dates, Months, Years (date filter)
+                             submitform           (legacy submit marker)
+                 ============================================================ -->
+                <form name="f" id="f" method="post" action="/search-results.php"
+                  class="jg-search-card" role="search"
+                  aria-label="JewishGen Global Database Search">
+
+                <!-- Card header: title left, tips link right -->
+                <div class="jg-search-card__header">
+                    <h2>Search All Records</h2>
+                    <button type="button"
+                            class="jg-tips-link"
+                            aria-expanded="false"
+                            aria-controls="jg-search-tips-panel"
+                            onclick="toggleSearchTips(this)">
+                        Tips &amp; Tricks
+                        <img src="/images/site/TipsBulbReg.png"  alt="" class="jg-tips-link__icon light-logo" aria-hidden="true">
+                        <img src="/images/site/TipsBulbDark.png" alt="" class="jg-tips-link__icon dark-logo"  aria-hidden="true">
+                    </button>
+                </div>
+                <hr class="jg-search-card__rule" aria-hidden="true">
+
+                <!-- Tips panel: shared component fetched into this mount -->
+                <div id="jg-search-tips"></div>
+
+                <!-- ====================== FREE ROW 1 ====================== -->
+                <div class="search-row">
+                    <div class="sf n">
+                        <label class="field-label" for="SEL1">Data Type</label>
+                        <select id="SEL1" name="srch1v"
+                                onchange="SelProc(this, 'OPT1', 'SRCH1', 0)">
+                            <option value="">Data Type</option>
+                            <option value="S" selected>Surname</option>
+                            <option value="G">Given Name</option>
+                            <option value="T">Town</option>
+                            <option value="X">Any Field</option>
+                        </select>
+                    </div>
+                    <div class="sf n">
+                        <label class="field-label" for="OPT1">Search Type</label>
+                        <select id="OPT1" name="srch1t"
+                                onchange="if(value==''){document.getElementById('SRCH1').value='';document.getElementById('SRCH1').disabled=true;}else{document.getElementById('SRCH1').disabled=false;}">
+                            <option value="">Search Type</option>
+                            <option value="Q" selected>Phonetically Like</option>
+                            <option value="D">Sounds Like</option>
+                            <option value="S">Starts With</option>
+                            <option value="E">Is Exactly</option>
+                            <option value="F1">Fuzzy Match</option>
+                            <option value="F2">Fuzzier Match</option>
+                            <option value="FM">Fuzziest Match</option>
+                        </select>
+                    </div>
+                    <div class="sf w">
+                        <label class="field-label" for="SRCH1">Search Term</label>
+                        <input type="text" id="SRCH1" name="srch1"
+                               size="25" maxlength="25"
+                               placeholder="e.g. Hollander" autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- ====================== FREE ROW 2 ====================== -->
+                <div class="search-row">
+                    <div class="sf n">
+                        <label class="field-label" for="SEL2">Data Type</label>
+                        <select id="SEL2" name="srch2v"
+                                onchange="SelProc(this, 'OPT2', 'SRCH2', 0)">
+                            <option value="" selected>Data Type</option>
+                            <option value="S">Surname</option>
+                            <option value="G">Given Name</option>
+                            <option value="T">Town</option>
+                            <option value="X">Any Field</option>
+                        </select>
+                    </div>
+                    <div class="sf n">
+                        <label class="field-label" for="OPT2">Search Type</label>
+                        <select id="OPT2" name="srch2t" disabled
+                                onchange="if(value==''){document.getElementById('SRCH2').value='';document.getElementById('SRCH2').disabled=true;}else{document.getElementById('SRCH2').disabled=false;}">
+                            <option value="" selected>Search Type</option>
+                            <option value="Q">Phonetically Like</option>
+                            <option value="D">Sounds Like</option>
+                            <option value="S">Starts With</option>
+                            <option value="E">Is Exactly</option>
+                            <option value="F1">Fuzzy Match</option>
+                            <option value="F2">Fuzzier Match</option>
+                            <option value="FM">Fuzziest Match</option>
+                        </select>
+                    </div>
+                    <div class="sf w">
+                        <label class="field-label" for="SRCH2">Search Term</label>
+                        <input type="text" id="SRCH2" name="srch2"
+                               size="25" maxlength="25"
+                               placeholder="Search term" autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- ====================== LOCKED ROWS 3 & 4 ======================
+                     Decorative placeholders for non-donors. The persistent
+                     overlay blocks interaction. When CURE-based donor detection
+                     is wired up later, real srch3v/srch3t/srch3 (and 4) inputs
+                     will replace these placeholders and the overlay will lift.
+                     For now, these rows do not submit any value, which jgform.php
+                     handles via isset() checks. =================================== -->
+                <div class="jg-locked-rows-wrapper">
+
+                    <div aria-hidden="true">
+                        <div class="search-row locked">
+                            <div class="sf n"><select tabindex="-1" disabled><option>Data Type</option></select></div>
+                            <div class="sf n"><select tabindex="-1" disabled><option>Search Type</option></select></div>
+                            <div class="sf w"><input type="text" tabindex="-1" disabled placeholder="Search term"></div>
+                        </div>
+                        <div class="search-row locked" style="margin-bottom: 0;">
+                            <div class="sf n"><select tabindex="-1" disabled><option>Data Type</option></select></div>
+                            <div class="sf n"><select tabindex="-1" disabled><option>Search Type</option></select></div>
+                            <div class="sf w"><input type="text" tabindex="-1" disabled placeholder="Search term"></div>
+                        </div>
+                    </div>
+
+                    <!-- Persistent unlock overlay -->
+                    <div class="jg-locked-overlay" role="note" aria-label="Value-added feature: donate to unlock additional search rows">
+                        <div class="jg-locked-overlay__inner">
+                            <div class="jg-locked-overlay__icon" aria-hidden="true">&#128275;</div>
+                            <div class="jg-locked-overlay__text">
+                                <strong>Unlock Two Additional Search Rows</strong>
+                                <p>A donation of $100 or more to the JewishGen General Fund unlocks multi-field search, letting you combine up to four simultaneous criteria for more precise results.</p>
+                                <a href="https://www.jewishgen.org/jewishgen-secure/donate.asp"
+                                   class="jg-btn-unlock"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    Donate Now to Unlock &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.jg-locked-rows-wrapper -->
+
+                <!-- Hidden: AND/OR logical operator. Legacy form keeps this
+                     hidden by default and only exposes it for donors. We keep
+                     the value (AND) submitted so single-row searches behave
+                     correctly. -->
+                <input type="hidden" name="SrchBOOL" id="SrchBOOL" value="AND">
+
+                <!-- ====================== REGION / COLLECTION ======================
+                     The visible <select id="allcountry"> drives setRegions() in
+                     Regions.js, which populates the GeoRegion sub-region
+                     dropdown below. GeoRegion's selected value (e.g.
+                     "00poland_01pale") is what jgform.php actually filters on.
+                     The visible allcountry value is overridden by the hidden
+                     allcountry="0*" at the bottom of the form.
+
+                     Option VALUES below MUST match the `sys` keys in
+                     RegionsData_solr.js. Labels can be anything. =============== -->
+                <div class="region-block">
+                    <div class="sf">
+                        <label class="field-label" for="allcountry">Region / Collection</label>
+                        <select id="allcountry" name="allcountry"
+                                onchange="setRegions(this.options[this.selectedIndex].getAttribute('data-sys')); ConfigSubReg();">
+                            <option value="0*" data-sys="ALLALL">Region / Collection: ALL</option>
+
+                            <optgroup label="Topical Databases">
+                                <option value="01jowbr" data-sys="DEFAULT">Cemetery Records (JOWBR)</option>
+                                <option value="CEMETERY" data-sys="CEMETERY">Search by Specific Cemetery</option>
+                                <option value="01holocaust" data-sys="HOLOCAUST">Holocaust Records</option>
+                                <option value="00Sephardic" data-sys="SEPH">Sephardic</option>
+                            </optgroup>
+
+                            <optgroup label="Africa">
+                                <option value="00Algeria" data-sys="ALGERIA">Algeria</option>
+                                <option value="00Egypt" data-sys="EGYPT">Egypt</option>
+                                <option value="00Libya" data-sys="LIBYA">Libya</option>
+                                <option value="00Morocco" data-sys="MOROCCO">Morocco</option>
+                                <option value="00SouthAfrica" data-sys="ALLSAFRICA">South Africa</option>
+                                <option value="00Tunisia" data-sys="TUNISIA">Tunisia</option>
+                            </optgroup>
+
+                            <optgroup label="Asia &amp; The Middle East">
+                                <option value="00India" data-sys="INDIA">India</option>
+                                <option value="00Iraq" data-sys="IRAQ">Iraq</option>
+                                <option value="00israel" data-sys="ISRAEL">Israel</option>
+                                <option value="00Lebanon" data-sys="LEBANON">Lebanon</option>
+                                <option value="00syria" data-sys="SYRIA">Syria</option>
+                                <option value="00Turkey" data-sys="TURKEY">Turkey</option>
+                            </optgroup>
+
+                            <optgroup label="Eastern &amp; Central Europe">
+                                <option value="00austriaczech" data-sys="ALLBOHMOR">Austria / Czechia</option>
+                                <option value="00belarus" data-sys="BELARUS">Belarus</option>
+                                <option value="00Bulgaria" data-sys="BULGARIA">Bulgaria</option>
+                                <option value="00germany" data-sys="ALLGERMANY">Germany</option>
+                                <option value="00hungary" data-sys="ALLHUNGARY">Hungary / Slovakia</option>
+                                <option value="00latvia" data-sys="LATVIA">Latvia</option>
+                                <option value="00lithuania" data-sys="ALLLITHJG">Lithuania</option>
+                                <option value="00poland" data-sys="ALLPOLAND">Poland</option>
+                                <option value="00romania" data-sys="ALLROMANIA">Romania / Moldova</option>
+                                <option value="00ukraine" data-sys="ALLUKRAINE">Ukraine</option>
+                                <option value="00Yugoslavia" data-sys="YUGOSLAVIA">Former Yugoslavia</option>
+                            </optgroup>
+
+                            <optgroup label="Western &amp; Southern Europe">
+                                <option value="00france" data-sys="ALLFRANCE">France</option>
+                                <option value="00Ireland" data-sys="IRELAND">Ireland</option>
+                                <option value="00Italy" data-sys="ITALY">Italy</option>
+                                <option value="00Holland" data-sys="NETH">Netherlands</option>
+                                <option value="00Portugal" data-sys="PORTUGAL">Portugal</option>
+                                <option value="00scandinavia" data-sys="ALLSCANDINAVIA">Scandinavia</option>
+                                <option value="00Spain" data-sys="SPAIN">Spain</option>
+                                <option value="00uk" data-sys="ALLUK">United Kingdom</option>
+                            </optgroup>
+
+                            <optgroup label="North America">
+                                <option value="00canada" data-sys="ALLCANADA">Canada</option>
+                                <option value="00usa" data-sys="ALLUSA">United States</option>
+                            </optgroup>
+
+                            <optgroup label="Central &amp; South America">
+                                <option value="00Argentina" data-sys="ARGENTINA">Argentina</option>
+                                <option value="00LatinAmerica" data-sys="ALLLATINAMERICA">Latin America</option>
+                                <option value="00Venezuela" data-sys="VENEZUELA">Venezuela</option>
+                            </optgroup>
+
+                            <!-- NOTE: Greece is in the design system but not in
+                                 RegionsData_solr.js. Omitted until added upstream. -->
+                        </select>
+                    </div>
+
+                    <!-- Cemetery cascade: country -> region -> specific cemetery.
+                         Shown by setRegions() when allcountry === "CEMETERY".
+                         Backing AJAX endpoint /wp_php/cemlist.php only responds
+                         when served from the live domain. -->
+                    <div id="CemCountryListDiv" role="region" aria-live="polite">
+                        <span class="sub-region-label" for="CemCountryList">Country</span>
+                        <select id="CemCountryList" name="CemCountryList"
+                                onchange="setCemRegion(this.value);"></select>
+                    </div>
+                    <div id="CemRegionListDiv" role="region" aria-live="polite">
+                        <span class="sub-region-label" for="CemRegionList">Region</span>
+                        <select id="CemRegionList" name="CemRegionList"
+                                onchange="setCemCity(this.value);"></select>
+                    </div>
+
+                    <!-- Sub-region dropdown (populated by setRegions). The
+                         legacy JS shows/hides this DIV based on whether the
+                         selected country has sub-regions. -->
+                    <div id="SubRegionsDiv" role="region" aria-live="polite">
+                        <span class="sub-region-label" for="GeoRegion">Refine Search</span>
+                        <select id="GeoRegion" name="GeoRegion" disabled>
+                            <option value="ALL" selected>All Regions</option>
+                        </select>
+                    </div>
+
+                </div><!-- /.region-block -->
+
+                <!-- Hidden: date filter (defaults to all entries). The legacy
+                     form exposes Month/Year pickers but they're hidden by
+                     default; we keep the same default-all behavior. -->
+                <input type="hidden" name="dates"  id="dates"  value="all">
+                <input type="hidden" name="Months" id="Months" value="01">
+                <input type="hidden" name="Years"  id="Years"  value="2018">
+
+                <!-- Hidden override: the visible allcountry select drives UI
+                     only. jgform.php prefers GeoRegion when present, falling
+                     back to whichever allcountry input comes LAST in the
+                     submitted form. Setting this to "0*" (ALL) means a search
+                     with no sub-region selected searches all databases - which
+                     is the documented behavior. -->
+                <input type="hidden" name="submitform" value="submitform">
+
+                <div class="search-submit-wrap">
+                    <button class="btn-search" type="button" id="SearchButton"
+                            onclick="doSubmit(document.f);">Search Databases</button>
+                </div>
+
+            </form><!-- /.jg-search-card (now also the form) -->
+        </div><!-- /.jg-search-hero__inner -->
+    </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<!-- ============================================================
+     LEGACY JS - loaded from jewishgen.org (canonical source)
+     ============================================================
+     If jewishgen.org is unreachable, swap these to local copies
+     in /legacy-search/. Order matters: FormUtils &
+     Utils first (defines doSubmit, set_cookie, getOptionValue),
+     RegionsData before Regions (data must exist when setRegions
+     iterates it), SearchForm_solr last (binds the form). =========== -->
+<script src="https://www.jewishgen.org/JG/Scripts/FormUtils.js"></script>
+<script src="https://www.jewishgen.org/Communities/Utils.js"></script>
+<script src="https://www.jewishgen.org/databases/Regions/RegionsData_solr.js"></script>
+<script src="https://www.jewishgen.org/databases/Regions/Regions.js"></script>
+<script src="https://www.jewishgen.org/databases/Regions/Overlay.js"></script>
+<script src="https://www.jewishgen.org/databases/Regions/SearchForm_solr.js"></script>
+
+<script>
+
+    /* -- Component loader -------------------------------------------------- */
+    function loadComponent(id, file) {
+        return fetch(file)
+            .then(function(r) {
+                if (!r.ok) throw new Error('Could not load ' + file);
+                return r.text();
+            })
+            .then(function(html) {
+                document.getElementById(id).innerHTML = html;
+            })
+            .catch(function(err) { console.warn(err); });
+    }
+
+    Promise.all([
+        loadComponent('site-header', '/Header_NavBar.html'),
+        loadComponent('site-footer', '/Footer.html')
+    ]).then(function() {
+        document.querySelectorAll('.jg-nav .dropbtn, .main-nav .dropbtn').forEach(function(btn) {
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    var menu = this.nextElementSibling;
+                    if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                }
+                if (e.key === 'Escape') {
+                    var menu = this.nextElementSibling;
+                    if (menu) menu.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    /* -- Tips panel: load shared component + toggle ------------------------ */
+    loadComponent('jg-search-tips', '/SearchTips.html');
+
+    function toggleSearchTips(btn) {
+        var panel = document.getElementById('jg-search-tips-panel');
+        if (!panel) return;
+        var isOpen = panel.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    /* -- ResetRegion ------------------------------------------------------
+       Ported from the inline script in the live /databases/all/ page.
+       Restores a previously-selected sub-region from cookie on page show. */
+    function ResetRegion() {
+        try {
+            var subreg = (typeof get_cookie === 'function')
+                ? get_cookie(window.location.pathname.toLowerCase())
+                : null;
+            var acSel = document.getElementById('allcountry');
+            var acOpt = acSel ? acSel.options[acSel.selectedIndex] : null;
+            var country = acOpt ? (acOpt.getAttribute('data-sys') || acOpt.value) : '0*';
+            if (typeof setRegions === 'function') setRegions(country);
+            ConfigSubReg();
+            if (subreg && typeof setOptionValue === 'function') {
+                setOptionValue('GeoRegion', subreg);
+            }
+        } catch (e) {
+            console.warn('ResetRegion: ', e);
+        }
+    }
+
+    /* -- ConfigSubReg ----------------------------------------------------
+       Ported from the live page. Hides the sub-region UI when the selected
+       country has only one (placeholder) option. */
+    function ConfigSubReg() {
+        var subreg_sel = document.getElementById('GeoRegion');
+        var subreg_div = document.getElementById('SubRegionsDiv');
+        if (!subreg_sel || !subreg_div) return;
+        subreg_div.style.display = (subreg_sel.options.length <= 1) ? 'none' : 'block';
+    }
+
+    /* -- Body-level event handlers (replacing inline OnLoad/OnPageShow/
+         OnPageHide from the live page) ------------------------------------ */
+    window.addEventListener('load', function() {
+        if (typeof InitSearchForm === 'function') InitSearchForm();
+    });
+    window.addEventListener('pageshow', function() {
+        ResetRegion();
+    });
+    window.addEventListener('pagehide', function() {
+        var gr = document.getElementById('GeoRegion');
+        if (gr && typeof set_cookie === 'function') {
+            set_cookie(gr.value);
+        }
+        if (typeof EnableForm === 'function') EnableForm(document.f);
+    });
+
+</script>
+</body>
+</html>

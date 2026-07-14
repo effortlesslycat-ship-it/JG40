@@ -1,0 +1,1621 @@
+{
+  "datasets": [
+    {
+      "slug": "TabeleBarbatilor",
+      "display_name": "Tabele Barbatilor – Census of Jewish Men in Romania, 1942",
+      "short_name": null,
+      "description": "Tabele Barbatilor Census of more than 20,000 Jewish men, 1942.",
+      "years": "1942",
+      "year_start": 1942,
+      "year_end": 1942,
+      "source_archive": null,
+      "source_citation": "Archive and Library of the Federation of Jewish Communities of Romania, in Bucharest, Fond #: III 400 E/1942.",
+      "source_language": "Romanian",
+      "info_url": "/databases/romania/TabeleBarbatilor.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "romania"
+      ],
+      "record_types": [
+        "census",
+        "holocaust"
+      ],
+      "research_divisions": [
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 20296,
+      "last_updated": "11/1/2004",
+      "extended": null
+    },
+    {
+      "slug": "PassportApps",
+      "display_name": "U.S. Consular Post, Bucharest, Romania – Emergency Passport Applications and other records",
+      "short_name": null,
+      "description": "Emergency Passport Applications and other items - nearly 1,000 records from the U.S. State Department, 1860-1941.",
+      "years": "1860-1941",
+      "year_start": 1860,
+      "year_end": 1941,
+      "source_archive": null,
+      "source_citation": "U.S. National Archives, Record Group 84 (RG 84), State Department Foreign Service Posts",
+      "source_language": "English, Romanian",
+      "info_url": "/databases/Romania/PassportApps.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "romania",
+        "usa"
+      ],
+      "record_types": [
+        "immigration"
+      ],
+      "research_divisions": [
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 942,
+      "last_updated": "4/30/2002",
+      "extended": null
+    },
+    {
+      "slug": "RomanianWarVictimsWW1",
+      "display_name": "Romanian Jews Killed and Missing in Action, World War I",
+      "short_name": null,
+      "description": "List of names of Romanian Jews killed in action in the First World War.",
+      "years": "1914-1918",
+      "year_start": 1914,
+      "year_end": 1918,
+      "source_archive": null,
+      "source_citation": "Evreii Din Romania in Razboiul de reintregire a tarii 1916-1919",
+      "source_language": "Romanian",
+      "info_url": "/databases/romania/RomanianWarVictimsWW1.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "austria",
+        "romania"
+      ],
+      "record_types": [
+        "death",
+        "military"
+      ],
+      "research_divisions": [
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 881,
+      "last_updated": "9/2/2021",
+      "extended": null
+    },
+    {
+      "slug": "CraiovaMemorial",
+      "display_name": "Memorial for the Jews of Craiova who fell in the Balkans Wars and WWI",
+      "short_name": null,
+      "description": "List of names of Jews from Craiova who were killed in action in the Balkans Wars and WWI.",
+      "years": "1912-1918",
+      "year_start": 1912,
+      "year_end": 1918,
+      "source_archive": null,
+      "source_citation": "Jeff Malka Sephardic Collection",
+      "source_language": "Romanian",
+      "info_url": "/databases/romania/CraiovaMemorial.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "romania",
+        "sephardic"
+      ],
+      "record_types": [
+        "death",
+        "military"
+      ],
+      "research_divisions": [
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 62,
+      "last_updated": "6/17/2021",
+      "extended": null
+    },
+    {
+      "slug": "RomaniaEconomicLife",
+      "display_name": "The Sephardic Jews in Romania's Economic Life",
+      "short_name": null,
+      "description": "List of surnames of The Sephardi Jews in Romania's economic life.",
+      "years": "N/A",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Jeff Malka Sephardic Collection",
+      "source_language": "English",
+      "info_url": "/databases/romania/RomaniaEconomicLife.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "romania",
+        "sephardic"
+      ],
+      "record_types": [
+        "name-list"
+      ],
+      "research_divisions": [
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 216,
+      "last_updated": "7/15/2021",
+      "extended": null
+    },
+    {
+      "slug": "RomaniaVitalRecords",
+      "display_name": "Romanian Birth Records",
+      "short_name": null,
+      "description": "More than 115,000 Jewish birth records from across Romania.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Romanian National Archives",
+      "source_language": "Romanian, German",
+      "info_url": "/databases/Romania/RomaniaVitalRecords.html",
+      "subregion": "Moldavia, Wallachia",
+      "notes": null,
+      "regions": [
+        "moldova",
+        "romania"
+      ],
+      "record_types": [
+        "birth"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 119566,
+      "last_updated": "12/19/2025",
+      "extended": null
+    },
+    {
+      "slug": "RomaniaVitalRecords",
+      "display_name": "Romanian Marriage and Divorce Records",
+      "short_name": null,
+      "description": "More than 27,000 Jewish marriage and divorce records from across Romania.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Romanian National Archives",
+      "source_language": "Romanian, German",
+      "info_url": "/databases/Romania/RomaniaVitalRecords.html",
+      "subregion": "Moldavia, Wallachia",
+      "notes": null,
+      "regions": [
+        "moldova",
+        "romania"
+      ],
+      "record_types": [
+        "divorce",
+        "marriage"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 27550,
+      "last_updated": "8/27/2025",
+      "extended": null
+    },
+    {
+      "slug": "RomaniaVitalRecords",
+      "display_name": "Romanian Death Records",
+      "short_name": null,
+      "description": "More than 32,000 Jewish death records from across Romania.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Romanian National Archives",
+      "source_language": "Romanian, German",
+      "info_url": "/databases/Romania/RomaniaVitalRecords.html",
+      "subregion": "Moldavia, Wallachia",
+      "notes": null,
+      "regions": [
+        "moldova",
+        "romania"
+      ],
+      "record_types": [
+        "death"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 32778,
+      "last_updated": "8/27/2025",
+      "extended": null
+    },
+    {
+      "slug": "BucovinaVRs",
+      "display_name": "Bukovina Birth Records",
+      "short_name": null,
+      "description": "Jewish birth records from across the former Austro-Hungarian province of Bukovina.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Suceava County branch of the National Archives of Romania",
+      "source_language": "German",
+      "info_url": "/databases/romania/BucovinaVRs.htm",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "austria",
+        "bukovina",
+        "hungary",
+        "romania",
+        "ukraine"
+      ],
+      "record_types": [
+        "birth"
+      ],
+      "research_divisions": [
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 30168,
+      "last_updated": "3/30/2026",
+      "extended": null
+    },
+    {
+      "slug": "BucovinaVRs",
+      "display_name": "Bukovina Marriage Records",
+      "short_name": null,
+      "description": "More than 6,000 Jewish marriage records from Bukovina.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Suceava County branch of the National Archives of Romania",
+      "source_language": "German",
+      "info_url": "/databases/romania/BucovinaVRs.htm",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "austria",
+        "bukovina",
+        "hungary",
+        "romania",
+        "ukraine"
+      ],
+      "record_types": [
+        "marriage"
+      ],
+      "research_divisions": [
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 6265,
+      "last_updated": "3/30/2026",
+      "extended": null
+    },
+    {
+      "slug": "BucovinaVRs",
+      "display_name": "Bukovina Death Records",
+      "short_name": null,
+      "description": "More than 16,000 Jewish death records from Bukovina.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Suceava County branch of the National Archives of Romania",
+      "source_language": "German",
+      "info_url": "/databases/romania/BucovinaVRs.htm",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "austria",
+        "bukovina",
+        "hungary",
+        "romania",
+        "ukraine"
+      ],
+      "record_types": [
+        "death"
+      ],
+      "research_divisions": [
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 16781,
+      "last_updated": "3/30/2026",
+      "extended": null
+    },
+    {
+      "slug": "Maramaros",
+      "display_name": "Maramaros Birth Records",
+      "short_name": null,
+      "description": "More than 59,000 Jewish birth records from historical Maramaros county.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Maramures County branch of the National Archives of Romania",
+      "source_language": "German, Hungarian, Romanian",
+      "info_url": "/databases/Hungary/Maramaros.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "austria",
+        "hungary",
+        "maramaros",
+        "romania",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "birth"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 59364,
+      "last_updated": "12/22/2023",
+      "extended": null
+    },
+    {
+      "slug": "Maramaros",
+      "display_name": "Maramaros Marriage Records",
+      "short_name": null,
+      "description": "More than 3,000 Jewish marriage records from historical Maramaros county.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Maramures County branch of the National Archives of Romania",
+      "source_language": "German, Hungarian, Romanian",
+      "info_url": "/databases/Hungary/Maramaros.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "austria",
+        "hungary",
+        "maramaros",
+        "romania",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "marriage"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 3355,
+      "last_updated": "12/22/2023",
+      "extended": null
+    },
+    {
+      "slug": "Maramaros",
+      "display_name": "Maramaros Death Records",
+      "short_name": null,
+      "description": "More than 20,000 Jewish death records from historical Maramaros county.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Maramures County branch of the National Archives of Romania",
+      "source_language": "German, Hungarian, Romanian",
+      "info_url": "/databases/Hungary/Maramaros.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "austria",
+        "hungary",
+        "maramaros",
+        "romania",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "death"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 20302,
+      "last_updated": "12/22/2023",
+      "extended": null
+    },
+    {
+      "slug": "PoduIloaieiCensus1898",
+      "display_name": "Podu Iloaiei 1898 Census",
+      "short_name": null,
+      "description": "723 residents listed in the 1898 census of Podul-Iloaei.",
+      "years": "1898",
+      "year_start": 1898,
+      "year_end": 1898,
+      "source_archive": null,
+      "source_citation": "Obstea evreiasca din Podu Iloaiei",
+      "source_language": "Romanian",
+      "info_url": "/databases/Romania/PoduIloaieiCensus1898.html",
+      "subregion": "Moldavia",
+      "notes": null,
+      "regions": [
+        "moldova",
+        "romania"
+      ],
+      "record_types": [
+        "census"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 723,
+      "last_updated": "2005",
+      "extended": null
+    },
+    {
+      "slug": "RomanianSurvivors",
+      "display_name": "Survivors Returning to Sighet and Maramures",
+      "short_name": null,
+      "description": "Names of 7,281 Shoah survivors who returned to Sighet and Maramures.",
+      "years": "post-Holocaust",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Jewish Community Center in Sighet, Maramures, Romania",
+      "source_language": "Romanian",
+      "info_url": "/databases/holocaust/RomanianSurvivors.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "maramaros",
+        "romania"
+      ],
+      "record_types": [
+        "holocaust",
+        "name-list"
+      ],
+      "research_divisions": [
+        "holocaust",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 7281,
+      "last_updated": "8/23/2021",
+      "extended": null
+    },
+    {
+      "slug": "RG59",
+      "display_name": "Jewish Names in U.S. State Department Files (RG59) 1910-1929",
+      "short_name": null,
+      "description": "More than 14,000 entries for Romania and Bessarabia from U.S. State Department files.",
+      "years": "1910-1929",
+      "year_start": 1910,
+      "year_end": 1929,
+      "source_archive": null,
+      "source_citation": "Central Decimal Files of the U.S. Department of State, Record Group 59",
+      "source_language": "English",
+      "info_url": "/databases/USA/RG59.html",
+      "subregion": null,
+      "notes": "Also covers other regions beyond Romania/Bessarabia.",
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 14945,
+      "last_updated": "7/23/2024",
+      "extended": null
+    },
+    {
+      "slug": "BessarabiaDuma",
+      "display_name": "Bessarabia Duma Voters List Database",
+      "short_name": null,
+      "description": "More than 128,000 voters in Bessarabia eligible for Russian Duma elections, 1906 and 1907.",
+      "years": "1906-1907",
+      "year_start": 1906,
+      "year_end": 1907,
+      "source_archive": null,
+      "source_citation": "Bessarabskie Guberniskie Vedomosti",
+      "source_language": "Russian",
+      "info_url": "/databases/Romania/BessarabiaDuma.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "name-list",
+        "voter-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 128148,
+      "last_updated": "6/16/2022",
+      "extended": null
+    },
+    {
+      "slug": "bessarabiarevisionlists",
+      "display_name": "Bessarabia Revision Lists",
+      "short_name": null,
+      "description": "Records from Reviskaya Skazka — 19th and 20th century Czarist tax censuses for more than 100 towns.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Moldova State Archives in Chisinau (MoldSA)",
+      "source_language": "Russian",
+      "info_url": "/databases/romania/bessarabiarevisionlists.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "census",
+        "revision-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 307731,
+      "last_updated": "12/12/2025",
+      "extended": null
+    },
+    {
+      "slug": "KishinevVRs",
+      "display_name": "Bessarabia Birth Records",
+      "short_name": null,
+      "description": "More than 118,000 Jewish birth records from across Bessarabia.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "National Archives of the Republic of Moldova (NARM)",
+      "source_language": "Russian",
+      "info_url": "/databases/Romania/KishinevVRs.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "birth"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 118694,
+      "last_updated": "3/9/2026",
+      "extended": null
+    },
+    {
+      "slug": "KishinevVRs",
+      "display_name": "Bessarabia Marriage and Divorce Records",
+      "short_name": null,
+      "description": "More than 38,000 Jewish marriage and divorce records from Bessarabia.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "National Archives of the Republic of Moldova (NARM)",
+      "source_language": "Russian",
+      "info_url": "/databases/Romania/KishinevVRs.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "divorce",
+        "marriage"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 38535,
+      "last_updated": "12/15/2025",
+      "extended": null
+    },
+    {
+      "slug": "KishinevVRs",
+      "display_name": "Bessarabia Death Records",
+      "short_name": null,
+      "description": "More than 52,000 Jewish death records from Bessarabia.",
+      "years": "Varies depending on locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "National Archives of the Republic of Moldova (NARM)",
+      "source_language": "Russian",
+      "info_url": "/databases/Romania/KishinevVRs.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "death"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 52341,
+      "last_updated": "12/15/2025",
+      "extended": null
+    },
+    {
+      "slug": "Business1924",
+      "display_name": "Bessarabia Business Directory, 1924",
+      "short_name": null,
+      "description": "More than 13,000 entries for Jewish businesses in 705 localities in Bessarabia.",
+      "years": "1924",
+      "year_start": 1924,
+      "year_end": 1924,
+      "source_archive": null,
+      "source_citation": "Anuarul Socec al Romaniei-mari",
+      "source_language": "Romanian",
+      "info_url": "/databases/Romania/Business1924.htm",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "business-directory",
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 13144,
+      "last_updated": "9/20/2012",
+      "extended": null
+    },
+    {
+      "slug": "chisinau_1940_commercial",
+      "display_name": "Chisinau Commercial Directory, 1940",
+      "short_name": null,
+      "description": "Nearly 1,300 apparently Jewish names in a 1940 Chisinau commercial yearbook.",
+      "years": "1940",
+      "year_start": 1940,
+      "year_end": 1940,
+      "source_archive": null,
+      "source_citation": "Anuaral Chisinaului pe anul 1940",
+      "source_language": "Romanian",
+      "info_url": "/databases/Romania/chisinau_1940_commercial.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "business-directory",
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 1278,
+      "last_updated": "6/16/2022",
+      "extended": null
+    },
+    {
+      "slug": "BessarabiaFallenSoldiers",
+      "display_name": "Russian-Jewish Fallen Soldiers of WWI",
+      "short_name": null,
+      "description": "Data about 1,559 Jewish soldiers from Bessarabia killed or wounded in WWI.",
+      "years": "1914-1916",
+      "year_start": 1914,
+      "year_end": 1916,
+      "source_archive": null,
+      "source_citation": "Russian State Library",
+      "source_language": "Russian",
+      "info_url": "/databases/Romania/BessarabiaFallenSoldiers.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania",
+        "russia"
+      ],
+      "record_types": [
+        "death",
+        "military"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 1559,
+      "last_updated": "6/16/2022",
+      "extended": null
+    },
+    {
+      "slug": "BessarabiaPublic",
+      "display_name": "Jews in Public Life in Bessarabia",
+      "short_name": null,
+      "description": "Records of Jews in the Czarist government's annual Bessarabia Reference Calendar, 1862-1914.",
+      "years": "1862-1914",
+      "year_start": 1862,
+      "year_end": 1914,
+      "source_archive": null,
+      "source_citation": "Bessarabia Reference Calendar, Akkerman Calendar and Kherson Calendar",
+      "source_language": "Russian",
+      "info_url": "/databases/Romania/BessarabiaPublic.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 2357,
+      "last_updated": "6/28/2023",
+      "extended": null
+    },
+    {
+      "slug": "vsiaweb",
+      "display_name": "Vsia Rossiia 1895 Database",
+      "short_name": null,
+      "description": "1,500 Jewish businesses in Bessarabia from the 1895 Russian business directory.",
+      "years": "1895",
+      "year_start": 1895,
+      "year_end": 1895,
+      "source_archive": null,
+      "source_citation": "Vsia Rossiia, Library of Congress",
+      "source_language": "Russian",
+      "info_url": "/databases/vsia/vsiaweb.html",
+      "subregion": "Bessarabia",
+      "notes": "Also covers other Russian Empire regions; Bessarabia portion only.",
+      "regions": [
+        "bessarabia",
+        "romania",
+        "russia"
+      ],
+      "record_types": [
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 1500,
+      "last_updated": "8/19/2003",
+      "extended": null
+    },
+    {
+      "slug": "deych",
+      "display_name": "Jewish Religious Personnel in the Russian Empire, 1853-1854",
+      "short_name": null,
+      "description": "281 Jewish religious personnel in Bessarabia Gubernia.",
+      "years": "1853-1854",
+      "year_start": 1853,
+      "year_end": 1854,
+      "source_archive": null,
+      "source_citation": "Sinagogi, Molitvenne Doma...",
+      "source_language": "Russian",
+      "info_url": "/databases/misc/deych.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania",
+        "russia"
+      ],
+      "record_types": [
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 281,
+      "last_updated": "1/17/2003",
+      "extended": null
+    },
+    {
+      "slug": "TiraspolUyezdRevisionLists",
+      "display_name": "Tiraspol Uezd Revision Lists (1796-1858)",
+      "short_name": null,
+      "description": "More than 8,000 records from Reviska Skazka, 1796-1858, including Tiraspol, Dubasari and Grigoriopol.",
+      "years": "1796-1858",
+      "year_start": 1796,
+      "year_end": 1858,
+      "source_archive": null,
+      "source_citation": "Kherson State Archive",
+      "source_language": "Russian",
+      "info_url": "/databases/Romania/TiraspolUyezdRevisionLists.html",
+      "subregion": "Transnistria",
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "census",
+        "revision-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 8941,
+      "last_updated": "4/10/2017",
+      "extended": null
+    },
+    {
+      "slug": "MoldovaDeportationJune1941",
+      "display_name": "Mass Deportation from Moldova, 13-16 June 1941",
+      "short_name": null,
+      "description": "Information about 2,517 individuals deported from Moldova by Soviet authorities in June 1941.",
+      "years": "June 1941",
+      "year_start": 1941,
+      "year_end": 1941,
+      "source_archive": null,
+      "source_citation": "Deportarile in Masa Din R.S.S. Moldoveneasca Din 13-16 Iunie 1941",
+      "source_language": "Romanian",
+      "info_url": "/databases/Romania/MoldovaDeportationJune1941.html",
+      "subregion": "Soviet Moldova",
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "holocaust"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 2517,
+      "last_updated": "8/30/2018",
+      "extended": null
+    },
+    {
+      "slug": "MoldovanVictimsSovietOppression1941-1951",
+      "display_name": "Moldavian Jewish Victims of Soviet Oppression",
+      "short_name": null,
+      "description": "List of Jews who were victims of Soviet oppression; persons convicted or deported from Moldavian SSR.",
+      "years": "1941-1951",
+      "year_start": 1941,
+      "year_end": 1951,
+      "source_archive": null,
+      "source_citation": "Book of Memory: Moldovan Victims of Soviet Oppression 1941-1951",
+      "source_language": "Romanian",
+      "info_url": "/databases/Romania/MoldovanVictimsSovietOppression1941-1951.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania",
+        "russia"
+      ],
+      "record_types": [
+        "holocaust"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 3847,
+      "last_updated": "6/16/2022",
+      "extended": null
+    },
+    {
+      "slug": "bessarabiasurvivors",
+      "display_name": "Surviving Jews in Bessarabia",
+      "short_name": null,
+      "description": "List of 1,782 Jews from Bessarabia who survived the Holocaust and returned.",
+      "years": "post-Holocaust",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "First List of Surviving Jews in Bessarabia",
+      "source_language": "English",
+      "info_url": "/databases/Romania/bessarabiasurvivors.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "holocaust",
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 1782,
+      "last_updated": "6/16/2022",
+      "extended": null
+    },
+    {
+      "slug": "VsyaRossiyaBusiness",
+      "display_name": "Vsya Rossiya Business Directory for Bessarabia",
+      "short_name": null,
+      "description": "Over 4,000 entries from the Russian business directory Vsya Rossiya for Bessarabia and Transnistria, 1897-1912.",
+      "years": "1897-1912",
+      "year_start": 1897,
+      "year_end": 1912,
+      "source_archive": null,
+      "source_citation": "Vsya Rossiya",
+      "source_language": "Russian",
+      "info_url": "/databases/Romania/VsyaRossiyaBusiness.html",
+      "subregion": "Bessarabia",
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "business-directory",
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 4014,
+      "last_updated": "1/4/2023",
+      "extended": null
+    },
+    {
+      "slug": "KishinevBusDirectory",
+      "display_name": "1916 Kishinev Business Directory",
+      "short_name": null,
+      "description": "More than 600 apparently Jewish names in the 1916 Address and Reference yearbook of Kishinev.",
+      "years": "1916",
+      "year_start": 1916,
+      "year_end": 1916,
+      "source_archive": null,
+      "source_citation": "Life of Bessarabia",
+      "source_language": "Russian",
+      "info_url": "/databases/Romania/KishinevBusDirectory.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "business-directory",
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 651,
+      "last_updated": "6/16/2022",
+      "extended": null
+    },
+    {
+      "slug": "1901Klyachkin",
+      "display_name": "1901 Klyachkin All-Russia Business Directory",
+      "short_name": null,
+      "description": "544 records of Jews in the 1901 Klyachkin All-Russia Business Directory.",
+      "years": "1901",
+      "year_start": 1901,
+      "year_end": 1901,
+      "source_archive": null,
+      "source_citation": "Klyachkin handbook",
+      "source_language": "Russian",
+      "info_url": "/databases/romania/1901Klyachkin.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania",
+        "russia"
+      ],
+      "record_types": [
+        "business-directory",
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 544,
+      "last_updated": "3/6/2016",
+      "extended": null
+    },
+    {
+      "slug": "BessarabiaCourtRecords",
+      "display_name": "Bessarabia Court Records",
+      "short_name": null,
+      "description": "Information about Jews in court cases in various Bessarabian jurisdictions, from NARM inventories.",
+      "years": "1806-1944",
+      "year_start": 1806,
+      "year_end": 1944,
+      "source_archive": null,
+      "source_citation": "National Archives of the Republic of Moldova (NARM)",
+      "source_language": "Russian, Romanian",
+      "info_url": "/databases/Romania/BessarabiaCourtRecords.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania"
+      ],
+      "record_types": [
+        "court-legal"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 11659,
+      "last_updated": "12/19/2025",
+      "extended": null
+    },
+    {
+      "slug": "BessarabiaOut-of-TownJews",
+      "display_name": "Bessarabia Out-Of-Town Jews",
+      "short_name": null,
+      "description": "Records for Jews registered in Bessarabia but living in other gubernias: Podolia, Kherson, etc.",
+      "years": "1874-1875",
+      "year_start": 1874,
+      "year_end": 1875,
+      "source_archive": null,
+      "source_citation": "National Archives of the Republic of Moldova (NARM)",
+      "source_language": "Russian",
+      "info_url": "/databases/Romania/BessarabiaOut-of-TownJews.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "bessarabia",
+        "romania",
+        "russia",
+        "ukraine"
+      ],
+      "record_types": [
+        "census",
+        "name-list"
+      ],
+      "research_divisions": [
+        "bessarabia",
+        "romania"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 2494,
+      "last_updated": "6/29/2025",
+      "extended": null
+    },
+    {
+      "slug": "SubcarpathiaCivil",
+      "display_name": "Subcarpathia and Vicinity Marriages",
+      "short_name": null,
+      "description": "More than 30,000 marriage records from towns in former Hungarian counties of Bereg, Maramaros, and Ugocsa.",
+      "years": "varies by locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "State Archive of Zakarpattia Oblast",
+      "source_language": "German, Hungarian, and others",
+      "info_url": "/databases/subcarpathia/SubcarpathiaCivil.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "czechoslovakia",
+        "hungary",
+        "maramaros",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "marriage"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 30470,
+      "last_updated": "2026-01-08",
+      "extended": null
+    },
+    {
+      "slug": "SubcarpathiaCivil",
+      "display_name": "Subcarpathia and Vicinity Births",
+      "short_name": null,
+      "description": "Over 218,000 birth records from the region of former Subcarpathia.",
+      "years": "varies by locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "State Archive of Zakarpattia Oblast",
+      "source_language": "German, Hungarian, and others",
+      "info_url": "/databases/subcarpathia/SubcarpathiaCivil.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "czechoslovakia",
+        "hungary",
+        "maramaros",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "birth"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 218138,
+      "last_updated": "2026-01-08",
+      "extended": null
+    },
+    {
+      "slug": "SubcarpathiaCivil",
+      "display_name": "Subcarpathia Jewish Deaths (legacy)",
+      "short_name": null,
+      "description": "Legacy death records from Subcarpathia; largely superseded by Subcarpathia and Vicinity Deaths.",
+      "years": "varies by locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "State Archive of Zakarpattia Oblast",
+      "source_language": "German, Hungarian, and others",
+      "info_url": "/databases/subcarpathia/SubcarpathiaCivil.html",
+      "subregion": null,
+      "notes": "Legacy dataset; largely superseded by Subcarpathia and Vicinity Deaths.",
+      "regions": [
+        "czechoslovakia",
+        "hungary",
+        "maramaros",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "death"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 344,
+      "last_updated": "2025-08-04",
+      "extended": null
+    },
+    {
+      "slug": "SubcarpathiaPassport",
+      "display_name": "Subcarpathian Passport Cases",
+      "short_name": null,
+      "description": "Passport cases from Subcarpathia.",
+      "years": "1920s-1940s",
+      "year_start": 1920,
+      "year_end": 1940,
+      "source_archive": null,
+      "source_citation": "State Archive of Zakarpattia Oblast",
+      "source_language": "Hungarian",
+      "info_url": "/databases/subcarpathia/SubcarpathiaPassport.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "czechoslovakia",
+        "hungary",
+        "maramaros",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "immigration"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 174,
+      "last_updated": "2023-08-06",
+      "extended": null
+    },
+    {
+      "slug": "SubcarpathiaCivil",
+      "display_name": "Subcarpathia and Vicinity Deaths",
+      "short_name": null,
+      "description": "Over 91,000 death records from the historical region of Subcarpathia.",
+      "years": "varies by locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "State Archive of Zakarpattia Oblast",
+      "source_language": "German, Hungarian, and others",
+      "info_url": "/databases/subcarpathia/SubcarpathiaCivil.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "czechoslovakia",
+        "hungary",
+        "maramaros",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "death"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 91397,
+      "last_updated": "2026-01-08",
+      "extended": null
+    },
+    {
+      "slug": "SubcarpathiaCivil",
+      "display_name": "Subcarpathia and Vicinity Family Lists",
+      "short_name": null,
+      "description": "Family list records from Subcarpathia.",
+      "years": "varies by locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "State Archive of Zakarpattia Oblast",
+      "source_language": "German, various",
+      "info_url": "/databases/subcarpathia/SubcarpathiaCivil.html",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "czechoslovakia",
+        "hungary",
+        "maramaros",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "census"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 7743,
+      "last_updated": "2025-08-04",
+      "extended": null
+    },
+    {
+      "slug": "Names",
+      "display_name": "Yizkor Book Master Name Index – Transcarpathia",
+      "short_name": null,
+      "description": "Entries from lists of Holocaust martyrs in Yizkor Books for Transcarpathia.",
+      "years": "Holocaust",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Various Yizkor Books",
+      "source_language": "English, various original",
+      "info_url": "/databases/yizkor/Names/",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "czechoslovakia",
+        "hungary",
+        "maramaros",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "death",
+        "holocaust",
+        "yizkor"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 62,
+      "last_updated": "2013-06-24",
+      "extended": null
+    },
+    {
+      "slug": "Names",
+      "display_name": "Yizkor Book Necrology Database – Transcarpathia",
+      "short_name": null,
+      "description": "Entries from Holocaust martyrs in Yizkor Books for Transcarpathia.",
+      "years": "Holocaust",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Various Yizkor Books",
+      "source_language": "English, various original",
+      "info_url": "/databases/yizkor/Names/",
+      "subregion": null,
+      "notes": null,
+      "regions": [
+        "czechoslovakia",
+        "hungary",
+        "maramaros",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "death",
+        "holocaust",
+        "yizkor"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 5832,
+      "last_updated": "2016-07-03",
+      "extended": null
+    },
+    {
+      "slug": "subcarpathia1921census",
+      "display_name": "1921 Karpatalja Subcarpathia Census",
+      "short_name": null,
+      "description": "All Jewish entries from the 1921 Karpatalja Subcarpathia Census.",
+      "years": "1921",
+      "year_start": 1921,
+      "year_end": 1921,
+      "source_archive": null,
+      "source_citation": "Hungaricana",
+      "source_language": "Hungarian",
+      "info_url": "/databases/Hungary/subcarpathia1921census.html",
+      "subregion": "Karpatalja / Zakarpatska Oblast",
+      "notes": null,
+      "regions": [
+        "czechoslovakia",
+        "hungary",
+        "maramaros",
+        "subcarpathia",
+        "ukraine"
+      ],
+      "record_types": [
+        "census"
+      ],
+      "research_divisions": [
+        "romania",
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 5013,
+      "last_updated": "2025-08-06",
+      "extended": null
+    },
+    {
+      "slug": "cemetery",
+      "display_name": "JOWBR – Transcarpathia",
+      "short_name": null,
+      "description": "More than 20,000 burial records in Transcarpathia.",
+      "years": "varies by locale",
+      "year_start": null,
+      "year_end": null,
+      "source_archive": null,
+      "source_citation": "Various – see records for details",
+      "source_language": "Various",
+      "info_url": "/databases/cemetery/",
+      "subregion": null,
+      "notes": "Part of the global JOWBR burial registry; not a standalone dataset.",
+      "regions": [
+        "subcarpathia"
+      ],
+      "record_types": [
+        "burial",
+        "death"
+      ],
+      "research_divisions": [
+        "subcarpathia"
+      ],
+      "contributors": [],
+      "is_searchable": true,
+      "is_active": true,
+      "is_featured": false,
+      "record_count": 20582,
+      "last_updated": "2021-01-20",
+      "extended": null
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary &mdash; JewishGen</title>
+    <meta name="description" content="A glossary of key terms for Jewish genealogical research: archival and legal terminology, Jewish cultural and religious terms, historical geography, and JewishGen-specific tools.">
+
+    <!-- 1. Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- 2. JewishGen Global Design System -->
+    <link rel="stylesheet" href="/jg-global.css">
+    <!-- 3. Glossary section styles -->
+    <link rel="stylesheet" href="/jg-glossary.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- TITLE BAND -->
+<div class="glo-page-band">
+    <div class="glo-section-tag">Reference</div>
+    <h1>Glossary</h1>
+    <p class="glo-page-band__sub">Key terms for Jewish genealogical research &mdash; from archival jargon to the words you will meet on gravestones, records, and JewishGen itself.</p>
+</div>
+
+<div id="htfaq-subnav"></div>
+
+<main>
+<div class="glo-content">
+<div class="glo-inner">
+
+    <div class="glo-main">
+
+        <!-- CONTROLS -->
+        <div class="glo-controls">
+            <label class="glo-filter-label" for="glo-filter">Filter terms</label>
+            <input type="text" id="glo-filter" class="glo-filter-input"
+                   placeholder="Start typing a term..." autocomplete="off">
+            <div class="glo-pills" role="group" aria-label="Filter by category">
+                <button type="button" class="glo-pill active" data-cat="all">All</button>
+                <button type="button" class="glo-pill" data-cat="general">General</button>
+                <button type="button" class="glo-pill" data-cat="jewish">Jewish Cultural</button>
+                <button type="button" class="glo-pill" data-cat="history">Historical</button>
+                <button type="button" class="glo-pill" data-cat="jewishgen">JewishGen</button>
+                <button type="button" class="glo-pill" data-cat="yizkor">Yizkor Book</button>
+            </div>
+            <p class="glo-count" id="glo-count" aria-live="polite"></p>
+        </div>
+
+        <!-- TERM LIST (rendered by JS) -->
+        <div id="glo-list"></div>
+        <p class="glo-empty" id="glo-empty">No terms match your filter. Try a shorter word, or clear the category pills.</p>
+
+        <p class="glo-credit">
+            The Yizkor Book terms in this glossary were compiled by Martin Kessel from a variety
+            of references, with assistance from Arthur S. Abramson, Leonard Markowitz, and Robert Weiss.
+        </p>
+
+    </div>
+
+    <!-- A-Z RAIL (div, not <nav>, to avoid the global nav cascade) -->
+    <div class="glo-rail" role="navigation" aria-label="Jump to letter" id="glo-rail"></div>
+
+</div><!-- /.glo-inner -->
+</div><!-- /.glo-content -->
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+    /* =========================================================
+       JEWISHGEN GLOSSARY - PAGE SCRIPT
+       Data source: /HowToFAQ/glossary.json
+       All init lives here in the host page (injected component
+       scripts do not execute). ES5 only (var, no arrows). - CHW
+       ========================================================= */
+
+    var GLO_CATS = {};       /* slug -> label, from json meta */
+    var GLO_TERMS = [];      /* sorted term objects */
+    var GLO_ACTIVE_CAT = 'all';
+
+    var GLO_TAG_LABEL = {
+        general:   'General',
+        jewish:    'Jewish Cultural',
+        history:   'Historical',
+        jewishgen: 'JewishGen',
+        yizkor:    'Yizkor Book'
+    };
+
+    function gloEscape(s) {
+        return String(s)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    /* First A-Z letter of a term, skipping punctuation */
+    function gloLetter(term) {
+        var m = String(term).match(/[A-Za-z]/);
+        return m ? m[0].toUpperCase() : '#';
+    }
+
+    function gloSortKey(term) {
+        return String(term).replace(/[^A-Za-z0-9 ]/g, '').toLowerCase();
+    }
+
+    /* -- Render the full list once; filtering shows/hides ---- */
+    function gloRender() {
+        var list = document.getElementById('glo-list');
+        var html = '';
+        var currentLetter = '';
+        var i, t, j, tags, see, seeHtml, termById = {};
+
+        for (i = 0; i < GLO_TERMS.length; i++) {
+            termById[GLO_TERMS[i].id] = GLO_TERMS[i];
+        }
+
+        for (i = 0; i < GLO_TERMS.length; i++) {
+            t = GLO_TERMS[i];
+            var letter = gloLetter(t.term);
+
+            if (letter !== currentLetter) {
+                if (currentLetter !== '') { html += '</div>'; }
+                currentLetter = letter;
+                html += '<div class="glo-letter-section" data-letter="' + letter + '">';
+                html += '<h2 class="glo-letter-heading" id="glo-' + letter + '">' + letter + '</h2>';
+            }
+
+            tags = '';
+            for (j = 0; j < t.categories.length; j++) {
+                var cat = t.categories[j];
+                tags += '<span class="glo-tag glo-tag--' + gloEscape(cat) + '">'
+                      + gloEscape(GLO_TAG_LABEL[cat] || cat) + '</span>';
+            }
+
+            seeHtml = '';
+            if (t.seeAlso && t.seeAlso.length) {
+                see = [];
+                for (j = 0; j < t.seeAlso.length; j++) {
+                    var ref = termById[t.seeAlso[j]];
+                    if (ref) {
+                        see.push('<a href="#e-' + gloEscape(ref.id) + '">'
+                               + gloEscape(ref.term) + '</a>');
+                    }
+                }
+                if (see.length) {
+                    seeHtml = '<p class="glo-see">See also: ' + see.join(', ') + '</p>';
+                }
+            }
+
+            html += '<div class="glo-entry" id="e-' + gloEscape(t.id) + '"'
+                  + ' data-cats="' + gloEscape(t.categories.join(' ')) + '"'
+                  + ' data-search="' + gloEscape((t.term + ' ' + (t.aliases || []).join(' ')).toLowerCase()) + '">'
+                  + '<h3 class="glo-entry__term">' + gloEscape(t.term)
+                  + (t.lang ? '<span class="glo-entry__lang">' + gloEscape(t.lang) + '</span>' : '')
+                  + tags + '</h3>'
+                  + '<p class="glo-entry__def">' + gloEscape(t.definition) + '</p>'
+                  + (t.note ? '<p class="glo-entry__note">' + gloEscape(t.note) + '</p>' : '')
+                  + seeHtml
+                  + '</div>';
+        }
+        if (currentLetter !== '') { html += '</div>'; }
+        list.innerHTML = html;
+    }
+
+    /* -- Build the A-Z rail ----------------------------------- */
+    function gloBuildRail() {
+        var rail = document.getElementById('glo-rail');
+        var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+        var present = {};
+        var i;
+        for (i = 0; i < GLO_TERMS.length; i++) {
+            present[gloLetter(GLO_TERMS[i].term)] = true;
+        }
+        var html = '';
+        for (i = 0; i < letters.length; i++) {
+            var L = letters[i];
+            if (present[L]) {
+                html += '<a href="#glo-' + L + '">' + L + '</a>';
+            } else {
+                html += '<a class="disabled" aria-disabled="true" tabindex="-1">' + L + '</a>';
+            }
+        }
+        rail.innerHTML = html;
+    }
+
+    /* -- Apply filter box + category pill state ---------------- */
+    function gloApplyFilters() {
+        var q = document.getElementById('glo-filter').value.toLowerCase().replace(/^\s+|\s+$/g, '');
+        var entries = document.querySelectorAll('.glo-entry');
+        var visible = 0;
+        var i;
+
+        for (i = 0; i < entries.length; i++) {
+            var el = entries[i];
+            var okCat = (GLO_ACTIVE_CAT === 'all') ||
+                        ((' ' + el.getAttribute('data-cats') + ' ').indexOf(' ' + GLO_ACTIVE_CAT + ' ') > -1);
+            var okText = (q === '') ||
+                         (el.getAttribute('data-search').indexOf(q) > -1);
+            var show = okCat && okText;
+            el.style.display = show ? '' : 'none';
+            if (show) { visible++; }
+        }
+
+        /* Hide letter sections with no visible entries; sync rail */
+        var sections = document.querySelectorAll('.glo-letter-section');
+        var visibleLetters = {};
+        for (i = 0; i < sections.length; i++) {
+            var sec = sections[i];
+            var any = false;
+            var kids = sec.querySelectorAll('.glo-entry');
+            for (var k = 0; k < kids.length; k++) {
+                if (kids[k].style.display !== 'none') { any = true; break; }
+            }
+            sec.style.display = any ? '' : 'none';
+            if (any) { visibleLetters[sec.getAttribute('data-letter')] = true; }
+        }
+        var railLinks = document.querySelectorAll('#glo-rail a');
+        for (i = 0; i < railLinks.length; i++) {
+            var a = railLinks[i];
+            var L = a.textContent;
+            if (visibleLetters[L]) {
+                a.classList.remove('disabled');
+                a.removeAttribute('aria-disabled');
+                a.removeAttribute('tabindex');
+                a.setAttribute('href', '#glo-' + L);
+            } else {
+                a.classList.add('disabled');
+                a.setAttribute('aria-disabled', 'true');
+                a.setAttribute('tabindex', '-1');
+                a.removeAttribute('href');
+            }
+        }
+
+        document.getElementById('glo-count').textContent =
+            'Showing ' + visible + ' of ' + GLO_TERMS.length + ' terms';
+        document.getElementById('glo-empty').style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    function gloClearFilters() {
+        document.getElementById('glo-filter').value = '';
+        GLO_ACTIVE_CAT = 'all';
+        var pills = document.querySelectorAll('.glo-pill');
+        for (var i = 0; i < pills.length; i++) {
+            pills[i].classList.toggle('active', pills[i].getAttribute('data-cat') === 'all');
+        }
+        gloApplyFilters();
+    }
+
+    function gloWire() {
+        document.getElementById('glo-filter').addEventListener('input', gloApplyFilters);
+
+        var pills = document.querySelectorAll('.glo-pill');
+        for (var i = 0; i < pills.length; i++) {
+            pills[i].addEventListener('click', function() {
+                GLO_ACTIVE_CAT = this.getAttribute('data-cat');
+                for (var j = 0; j < pills.length; j++) {
+                    pills[j].classList.toggle('active', pills[j] === this);
+                }
+                gloApplyFilters();
+            });
+        }
+
+        /* See-also links: clear filters first so the target is visible */
+        document.getElementById('glo-list').addEventListener('click', function(e) {
+            var a = e.target;
+            if (a.tagName === 'A' && a.parentNode &&
+                a.parentNode.className === 'glo-see') {
+                gloClearFilters();
+            }
+        });
+    }
+
+    /* -- Load data ---------------------------------------------- */
+    fetch('/HowToFAQ/glossary.json')
+        .then(function(r) {
+            if (!r.ok) throw new Error('Could not load glossary.json');
+            return r.json();
+        })
+        .then(function(data) {
+            var i;
+            for (i = 0; i < data.meta.categories.length; i++) {
+                GLO_CATS[data.meta.categories[i].slug] = data.meta.categories[i].label;
+            }
+            GLO_TERMS = data.terms.slice().sort(function(a, b) {
+                var ka = gloSortKey(a.term), kb = gloSortKey(b.term);
+                return ka < kb ? -1 : ka > kb ? 1 : 0;
+            });
+            gloRender();
+            gloBuildRail();
+            gloWire();
+            gloApplyFilters();
+        })
+        .catch(function(err) {
+            document.getElementById('glo-list').innerHTML =
+                '<p class="glo-empty" style="display:block">The glossary could not be loaded. Please refresh the page or try again later.</p>';
+            console.warn(err);
+        });
+
+    /* -- Component loader (mirrors searchguide.html) ------------- */
+    function loadComponent(id, file) {
+        return fetch(file)
+            .then(function(r) {
+                if (!r.ok) throw new Error('Could not load ' + file);
+                return r.text();
+            })
+            .then(function(html) {
+                document.getElementById(id).innerHTML = html;
+            })
+            .catch(function(err) { console.warn(err); });
+    }
+
+    loadComponent('htfaq-subnav', '/HowToFAQ/HowToFAQ_SubNav.html').then(function() {
+        var path = window.location.pathname;
+        document.querySelectorAll('.htfaq-nav a').forEach(function(a) {
+            var href = a.getAttribute('href');
+            if (!href || !href.startsWith('/')) return;
+            if (path === href) a.classList.add('active');
+        });
+    });
+
+    Promise.all([
+        loadComponent('site-header', '/Header_NavBar.html'),
+        loadComponent('site-footer', '/Footer.html')
+    ]).then(function() {
+        document.querySelectorAll('.jg-nav .dropbtn, .main-nav .dropbtn').forEach(function(btn) {
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    var menu = this.nextElementSibling;
+                    if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                }
+                if (e.key === 'Escape') {
+                    var menu = this.nextElementSibling;
+                    if (menu) menu.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

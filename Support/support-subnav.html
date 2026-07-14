@@ -1,0 +1,59 @@
+<!-- support-subnav.html -- CHW
+     Fetched sidebar component for the Support Center shell (Support.htm).
+     Pure HTML + CSS only -- NO inline script (scripts in injected
+     innerHTML do not execute). The shell binds .lang-toggle clicks in
+     its Promise.all().then() block after this component is injected.
+
+     Two boxes:
+       1. On This Page -- in-page jump list to the 5 sections (#q1..#q5)
+       2. Language     -- EN / ES / FR / HE selector (.lang-toggle buttons)
+
+     Section labels are English-only, consistent with the JGFF subnav's
+     English nav box; the section targets themselves are localized.
+     All characters ASCII or HTML entities (SFTP safe).
+----------------------------------------------------------- -->
+<!-- Styles for this component live in /jg-support.css (section 5).
+     Kept out of this file so all Support Center CSS has one home. -->
+
+<!-- BOX 1: On This Page (in-page jump list) -->
+<div class="support-subnav-box" role="navigation" aria-label="On this page">
+    <h2 class="support-subnav-heading">On This Page</h2>
+    <ul class="support-subnav-list" role="list">
+        <li><a href="#q1">Registration &amp; Login</a></li>
+        <li><a href="#q2">Family Finder (JGFF)</a></li>
+        <li><a href="#q3">Mailing Lists</a></li>
+        <li><a href="#q4">Contributions</a></li>
+        <li><a href="#q5">Contacting JewishGen</a></li>
+    </ul>
+</div>
+
+<!-- BOX 2: Language selector (.lang-toggle clicks bound by the shell) -->
+<div class="support-subnav-box" role="navigation" aria-label="Language">
+    <h2 class="support-subnav-heading">Language</h2>
+    <ul class="support-subnav-lang-list" role="list">
+        <li>
+            <button type="button" class="lang-toggle" data-target-lang="en"
+                    data-page-title="JewishGen Support Center">
+                <span class="support-subnav-lang-tag">EN</span> English
+            </button>
+        </li>
+        <li>
+            <button type="button" class="lang-toggle" data-target-lang="es"
+                    data-page-title="Soporte JewishGen en espa&ntilde;ol">
+                <span class="support-subnav-lang-tag">ES</span> Espa&ntilde;ol
+            </button>
+        </li>
+        <li>
+            <button type="button" class="lang-toggle" data-target-lang="fr"
+                    data-page-title="Centre de d&eacute;pannage de JewishGen">
+                <span class="support-subnav-lang-tag">FR</span> Fran&ccedil;ais
+            </button>
+        </li>
+        <li>
+            <button type="button" class="lang-toggle" data-target-lang="he"
+                    data-page-title="JewishGen &#1502;&#1512;&#1499;&#1494; &#1492;&#1514;&#1502;&#1497;&#1499;&#1492; &#1513;&#1500;">
+                <span class="support-subnav-lang-tag">HE</span> &#1506;&#1489;&#1512;&#1497;&#1514;
+            </button>
+        </li>
+    </ul>
+</div>

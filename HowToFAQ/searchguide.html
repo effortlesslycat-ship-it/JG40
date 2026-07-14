@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Guide &mdash; JewishGen</title>
+    <meta name="description" content="A complete reference for searching JewishGen: search fields, match types, operators, and wildcards, with examples of what each one does.">
+
+    <!-- 1. Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- 2. JewishGen Global Design System -->
+    <link rel="stylesheet" href="/jg-global.css">
+    <!-- 3. Page-specific styles -->
+    <style>
+        /* =====================================================
+           SEARCH GUIDE - PAGE-SPECIFIC STYLES
+           searchguide.html (HowToFAQ section)
+           Shell styles (page band, content, inner, tip-card)
+           mirror howto.html. See note to CHW: these are now
+           duplicated across HowToFAQ pages and are a candidate
+           for a shared section stylesheet.
+           ===================================================== */
+
+        main { flex: 1; }
+
+        /* -- Page Title Band --------------------------------- */
+        .htfaq-page-band {
+            background-color: #09497a;   /* hardcoded - navy washes out in dark mode */
+            padding: 34px 50px;
+            text-align: center;
+        }
+        body.dark-mode .htfaq-page-band { background-color: #0d2a45; }
+
+        .htfaq-section-tag {
+            display: inline-block;
+            background-color: var(--sage);
+            color: #ffffff;
+            font-size: 0.6875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 4px 12px;
+            border-radius: 3px;
+            margin-bottom: 12px;
+        }
+
+        .htfaq-page-band h1 {
+            margin: 0 0 10px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 2.125rem;
+            font-weight: normal;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .htfaq-page-band__sub {
+            font-size: 0.9375rem;
+            font-style: italic;
+            color: #a9c0d0;
+            margin: 0 auto;
+            max-width: 620px;
+            line-height: 1.6;
+        }
+
+        /* -- Content Area ------------------------------------ */
+        .htfaq-content {
+            background-color: var(--ecru);
+            padding: 44px 50px;
+        }
+        body.dark-mode .htfaq-content { background-color: #1a1a1a; }
+
+        .htfaq-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* -- Section headings -------------------------------- */
+        .sg-section-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.375rem;
+            font-weight: normal;
+            color: #09497a;                 /* hardcoded navy */
+            margin: 42px 0 6px;
+            line-height: 1.3;
+        }
+        .sg-section-title:first-of-type { margin-top: 0; }
+        body.dark-mode .sg-section-title { color: #a9c0d0; }
+
+        .sg-section-intro {
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin: 0 0 18px;
+            max-width: 780px;
+        }
+        body.dark-mode .sg-section-intro { color: #b8b8b8; }
+
+        /* -- Anatomy intro card ------------------------------ */
+        .sg-anatomy {
+            background-color: var(--cream);
+            border-radius: 8px;
+            border-top: 4px solid #09497a;
+            padding: 26px 28px;
+            margin-bottom: 8px;
+        }
+        body.dark-mode .sg-anatomy { background-color: #252a2a; }
+        .sg-anatomy h2 {
+            margin: 0 0 14px;
+            font-size: 1.0625rem;
+            font-weight: bold;
+            color: #09497a;
+        }
+        body.dark-mode .sg-anatomy h2 { color: #a9c0d0; }
+        .sg-anatomy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .sg-anatomy-step h3 {
+            font-size: 0.9375rem;
+            font-weight: bold;
+            color: var(--charcoal);
+            margin: 0 0 6px;
+        }
+        body.dark-mode .sg-anatomy-step h3 { color: #d6d6d6; }
+        .sg-anatomy-step p {
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: var(--charcoal);
+            margin: 0;
+        }
+        body.dark-mode .sg-anatomy-step p { color: #b0b0b0; }
+        .sg-anatomy-num {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: var(--sage);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 22px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* -- Reference tables -------------------------------- */
+        .sg-table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border: 1px solid var(--cream);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        body.dark-mode .sg-table-wrap { border-color: #333; }
+
+        .sg-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            background-color: var(--white);
+        }
+        body.dark-mode .sg-table { background-color: #1e1e1e; }
+
+        .sg-table thead th {
+            background-color: #09497a;      /* hardcoded navy header */
+            color: #ffffff;
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 0.6875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            white-space: nowrap;
+        }
+        body.dark-mode .sg-table thead th { background-color: #0d2a45; }
+
+        .sg-table td {
+            padding: 13px 16px;
+            border-top: 1px solid var(--cream);
+            vertical-align: top;
+            line-height: 1.65;
+            color: var(--charcoal);
+        }
+        body.dark-mode .sg-table td { border-top-color: #333; color: #c4c4c4; }
+
+        .sg-table tbody tr:nth-child(even) td { background-color: rgba(9, 73, 122, 0.03); }
+        body.dark-mode .sg-table tbody tr:nth-child(even) td { background-color: rgba(255, 255, 255, 0.02); }
+
+        .sg-table td:first-child { white-space: nowrap; font-weight: 600; }
+        .sg-table .sg-example { color: #5a6a6a; font-style: italic; }
+        body.dark-mode .sg-table .sg-example { color: #9a9a9a; }
+
+        .sg-table .sg-works { font-weight: 600; color: #09497a; white-space: nowrap; }
+        body.dark-mode .sg-table .sg-works { color: #a9c0d0; }
+
+        /* Monospace chip for symbols and typed operators.
+           --light-blue does NOT flip in dark mode - dark chip hardcoded. */
+        .sg-code {
+            font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+            background-color: var(--light-blue);
+            color: #09497a;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        body.dark-mode .sg-code { background-color: #22343f; color: #a9c0d0; }
+
+        /* Small inline chips (Default / Where offered) */
+        .sg-chip {
+            display: inline-block;
+            font-size: 0.625rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 7px;
+            border-radius: 3px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .sg-chip--default { background-color: var(--sage); color: #ffffff; }
+        .sg-chip--note {
+            background-color: var(--cream);
+            color: #09497a;
+            border: 1px solid #09497a;
+        }
+        body.dark-mode .sg-chip--note {
+            background-color: transparent;
+            color: #a9c0d0;
+            border-color: #5a7a95;
+        }
+
+        /* -- Concept card grid (reuses tip-card look) -------- */
+        .sg-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 8px;
+        }
+        .tip-card {
+            background-color: var(--cream);
+            border-radius: 8px;
+            padding: 26px 28px;
+            border-top: 4px solid #09497a;
+        }
+        body.dark-mode .tip-card { background-color: #252a2a; }
+        .tip-card.sage-top { border-top-color: var(--sage); }
+        .tip-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.0625rem;
+            font-weight: bold;
+            color: #09497a;
+            line-height: 1.3;
+        }
+        body.dark-mode .tip-card h3 { color: #a9c0d0; }
+        .tip-card p {
+            margin: 0 0 12px;
+            font-size: 0.875rem;
+            line-height: 1.75;
+            color: var(--charcoal);
+        }
+        .tip-card p:last-child { margin-bottom: 0; }
+        body.dark-mode .tip-card p { color: #b8b8b8; }
+        .tip-card strong { color: #09497a; }
+        body.dark-mode .tip-card strong { color: #a9c0d0; }
+
+        /* -- Closing callout --------------------------------- */
+        .sg-callout {
+            margin-top: 44px;
+            border-top: 1px solid #d1caba;
+            padding-top: 28px;
+            text-align: center;
+        }
+        body.dark-mode .sg-callout { border-top-color: #3a3f3f; }
+        .sg-callout p {
+            font-size: 0.875rem;
+            line-height: 1.75;
+            color: var(--charcoal);
+            margin: 0;
+            font-style: italic;
+        }
+        body.dark-mode .sg-callout p { color: #b0b0b0; }
+        .sg-callout a {
+            color: #09497a;
+            font-weight: bold;
+            text-decoration: underline dotted;
+        }
+        .sg-callout a:hover { color: var(--sage); }
+        body.dark-mode .sg-callout a { color: #a9c0d0; }
+
+        /* -- Responsive -------------------------------------- */
+        @media (max-width: 900px) {
+            .htfaq-content { padding: 32px 24px; }
+            .htfaq-page-band { padding: 28px 24px; }
+            .htfaq-page-band h1 { font-size: 1.75rem; }
+            .sg-anatomy-grid { grid-template-columns: 1fr; gap: 16px; }
+        }
+        @media (max-width: 640px) {
+            .sg-card-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- TITLE BAND -->
+<div class="htfaq-page-band">
+    <div class="htfaq-section-tag">Search Reference</div>
+    <h1>Search Guide</h1>
+    <p class="htfaq-page-band__sub">Every field, match type, operator, and wildcard &mdash; and exactly what each one does.</p>
+</div>
+
+<div id="htfaq-subnav"></div>
+
+<main>
+<div class="htfaq-content">
+<div class="htfaq-inner">
+
+    <!-- ================================================
+         ANATOMY OF A SEARCH
+         ================================================ -->
+    <div class="sg-anatomy">
+        <h2>Anatomy of a search</h2>
+        <div class="sg-anatomy-grid">
+            <div class="sg-anatomy-step">
+                <h3><span class="sg-anatomy-num">1</span>Search Field</h3>
+                <p>Where to look &mdash; Surname, Given Name, Town, or Any Field. This tells the engine which part of each record to match against.</p>
+            </div>
+            <div class="sg-anatomy-step">
+                <h3><span class="sg-anatomy-num">2</span>Search Type</h3>
+                <p>How to match &mdash; phonetic, exact, starts-with, and so on. This controls how forgiving the match is.</p>
+            </div>
+            <div class="sg-anatomy-step">
+                <h3><span class="sg-anatomy-num">3</span>Search Term</h3>
+                <p>What to type &mdash; the name or place itself, where you can add operators and wildcards for finer control.</p>
+            </div>
+        </div>
+    </div>
+<br>
+    <!-- ================================================
+         SEARCH FIELD (DATA TYPE)
+         ================================================ -->
+    <h2 class="sg-section-title">Search Field &mdash; where to look</h2>
+    <p class="sg-section-intro">Each row of the search form lets you pick which part of the record your term applies to. You can combine several rows to require, for example, a surname <em>and</em> a town.</p>
+
+    <div class="sg-table-wrap">
+        <table class="sg-table">
+            <thead>
+                <tr>
+                    <th scope="col">Field</th>
+                    <th scope="col">What it searches</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Surname</td>
+                    <td>Family names as recorded in the index (the most common starting point).</td>
+                </tr>
+                <tr>
+                    <td>Given Name</td>
+                    <td>First names. Pairs well with <strong>Is Exactly</strong>, which also pulls in JewishGen's built-in name synonyms.</td>
+                </tr>
+                <tr>
+                    <td>Town</td>
+                    <td>Place of residence, birth, or event as recorded. Historical spellings vary widely, so phonetic matching helps here too.</td>
+                </tr>
+                <tr>
+                    <td>Any Field</td>
+                    <td>Searches across all indexed text at once. Broadest option &mdash; useful when you are not sure which field holds your term.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ================================================
+         SEARCH TYPE
+         ================================================ -->
+    <h2 class="sg-section-title">Search Type &mdash; how to match</h2>
+    <p class="sg-section-intro">The Search Type controls how closely a record must match your term. JewishGen defaults to <strong>Phonetically Like</strong>, which is tuned for Jewish and Eastern European names &mdash; in most cases you should leave it there.</p>
+
+    <div class="sg-table-wrap">
+        <table class="sg-table">
+            <thead>
+                <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">What it does</th>
+                    <th scope="col">Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Phonetically Like<span class="sg-chip sg-chip--default">Default</span></td>
+                    <td>Groups names that sound alike across languages using the Beider-Morse system, which understands how one name is written in German, Polish, Russian, Yiddish, and more. It works from the linguistic root of a name rather than a fixed code, so it forgives the v/w, tz/z, and vowel shifts that fill transliterated records. This is the right choice for almost every surname search &mdash; leave it here unless you have a reason not to.</td>
+                    <td class="sg-example">Schwartz &rarr; Shvarts, Cvartz</td>
+                </tr>
+                <tr>
+                    <td>Sounds Like (D-M)</td>
+                    <td>Matches on Daitch-Mokotoff Soundex codes: each name is reduced to a numeric code, and names sharing that code come back together. It is a coarser, rule-based grouping than Beider-Morse &mdash; it can surface variants the default misses, and miss some the default catches. Use it as a second pass when Phonetically Like does not turn up a spelling you are confident exists.</td>
+                    <td class="sg-example">Moskowitz &rarr; Muszkat, Moskovic</td>
+                </tr>
+                <tr>
+                    <td>Starts With</td>
+                    <td>Matches names that begin with your letters.</td>
+                    <td class="sg-example">Gold &rarr; Goldberg, Goldstein</td>
+                </tr>
+                <tr>
+                    <td>Contains</td>
+                    <td>Matches your text anywhere inside the name &mdash; beginning, middle, or end.</td>
+                    <td class="sg-example">gold &rarr; Feingold, Goldberg</td>
+                </tr>
+                <tr>
+                    <td>Is Exactly</td>
+                    <td>Matches the spelling you type, with one important twist: it still expands JewishGen's standard given-name synonym groups, so it is not literally letter-for-letter. Searching one form quietly returns the whole family. It is also the only Search Type that honors wildcards and brackets (see the operators table below).</td>
+                    <td class="sg-example">Chana &rarr; Hannah, Anna</td>
+                </tr>
+                <tr>
+                    <td>Fuzzy</td>
+                    <td>Allows roughly one letter of difference from your term &mdash; enough to catch a single typo or transcription slip without widening the net much.</td>
+                    <td class="sg-example">Cohen &rarr; Cohan, Kohen</td>
+                </tr>
+                <tr>
+                    <td>Fuzzier</td>
+                    <td>Allows roughly two letters of difference. A wider net that trades precision for reach, so expect more unrelated names to mix into the results.</td>
+                    <td class="sg-example">Rosen &rarr; Rosin, Rozan, Roson</td>
+                </tr>
+                <tr>
+                    <td>Fuzziest</td>
+                    <td>Allows several letters of difference, scaled to how long your term is. Casts the widest net of the three &mdash; best kept as a last resort when the other types come up empty.</td>
+                    <td class="sg-example">Abramowitz &rarr; Abramovic, Abromowits</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- ================================================
+         OPERATORS AND WILDCARDS
+         ================================================ -->
+    <h2 class="sg-section-title">Operators &amp; wildcards</h2>
+    <p class="sg-section-intro">These symbols go directly in the Search Term box for finer control than the dropdowns alone. One catch to know up front: wildcards and brackets only work with the <strong>Is Exactly</strong> search type, while the comma (OR) works with every type <em>except</em> Exact.</p>
+
+    <div class="sg-table-wrap">
+        <table class="sg-table">
+            <thead>
+                <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Works with</th>
+                    <th scope="col">What it does</th>
+                    <th scope="col">Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="sg-code">*</span></td>
+                    <td>Wildcard</td>
+                    <td><span class="sg-works">Is Exactly only</span></td>
+                    <td>Stands in for one or more unknown letters, anywhere in the term &mdash; including the middle. Useful for poor handwriting or uncertain spellings. Switch the Search Type to Is Exactly first; the phonetic default ignores it.</td>
+                    <td class="sg-example">Sch*artz &rarr; Schwartz, Schvartz<br>Sp*l*ng &rarr; Spelling, Sperling</td>
+                </tr>
+                <tr>
+                    <td><span class="sg-code">[ ]</span></td>
+                    <td>Bracket</td>
+                    <td><span class="sg-works">Is Exactly only</span></td>
+                    <td>Forces a specific starting letter, so you only get names that begin the way you expect. Like the wildcard, it needs the Is Exactly search type.</td>
+                    <td class="sg-example">[F]isch &rarr; Fish, but not Visz</td>
+                </tr>
+                <tr>
+                    <td><span class="sg-code">,</span></td>
+                    <td>Comma (OR)</td>
+                    <td><span class="sg-works">All except Exact</span></td>
+                    <td>Matches records containing <em>either</em> term &mdash; good for a name with two known spellings. Does not work with Is Exactly.</td>
+                    <td class="sg-example">Schwartz, Weiss &rarr; records with either name</td>
+                </tr>
+                <tr>
+                    <td><span class="sg-code">space</span></td>
+                    <td>Space (AND)</td>
+                    <td><span class="sg-works">All types</span></td>
+                    <td>Requires <em>both</em> terms in the same record.</td>
+                    <td class="sg-example">Schwartz Weiss &rarr; records with both names</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- ================================================
+         GOOD HABITS - CONCEPT CARDS
+         ================================================ -->
+    <h2 class="sg-section-title">Good habits</h2>
+
+    <div class="sg-card-grid">
+
+        <div class="tip-card">
+            <h3>Trust the phonetic default</h3>
+            <p>Leave the Search Type on <strong>Phonetically Like</strong>. It is built specifically for Jewish and Eastern European names, mathematically grouping names that share roots or sounds &mdash; so you will not miss a record just because a clerk swapped a "v" for a "w."</p>
+            <p>Jumping straight to <strong>Is Exactly</strong> is the most common beginner mistake.</p>
+        </div>
+
+        <div class="tip-card sage-top">
+            <h3>Less is more</h3>
+            <p>It is tempting to fill in every box &mdash; name, town, and dates. Resist. Old records are incomplete, and over-filtering hides the very record you need.</p>
+            <p><strong>Start broad</strong> with just a surname. If you get too many results, <strong>add a given name</strong>, then a town or region &mdash; one filter at a time.</p>
+        </div>
+
+        <div class="tip-card sage-top">
+            <h3>Two phonetic tools, not one</h3>
+            <p><strong>Phonetically Like</strong> (Beider-Morse) is your default. If a spelling you expect does not surface, try <strong>Sounds Like (D-M)</strong> &mdash; it groups sounds differently and sometimes catches names the default does not.</p>
+        </div>
+
+        <div class="tip-card">
+            <h3>"Exact" still means synonyms</h3>
+            <p>Even <strong>Is Exactly</strong> expands standard given-name variants. A search for one form quietly returns its whole family &mdash; for example <em>Jankel = Jakob = Jacob = Jack</em>. Handy to know before you assume a name is missing.</p>
+        </div>
+
+        <div class="tip-card">
+            <h3>The index is a signpost</h3>
+            <p>Most results are <strong>indexes</strong> &mdash; a short summary of a record, not the full document. Click the collection title to learn where the data came from and how to request the original, which often holds far more detail.</p>
+        </div>
+
+        <div class="tip-card sage-top">
+            <h3>Narrow by place last</h3>
+            <p>A geographic filter is powerful but blunt: borders and place names changed constantly. Add a region only after a name search returns too much &mdash; and if it hides expected results, loosen it again.</p>
+        </div>
+
+    </div>
+<br>
+    <!-- CLOSING CALLOUT -->
+    <div class="sg-callout">
+        <p>New to all this? Walk through the full <a href="/HowToFAQ/howto.html">How to JewishGen</a> guide, or head straight to the <a href="/search/Global_Search.php">Global Search</a> and try these out.</p>
+    </div>
+
+</div><!-- /.htfaq-inner -->
+</div><!-- /.htfaq-content -->
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+    /* -- Component loader ----------------------------------------- */
+    function loadComponent(id, file) {
+        return fetch(file)
+            .then(function(r) {
+                if (!r.ok) throw new Error('Could not load ' + file);
+                return r.text();
+            })
+            .then(function(html) {
+                document.getElementById(id).innerHTML = html;
+            })
+            .catch(function(err) { console.warn(err); });
+    }
+
+    /* -- Load sub-nav, then set active link ----------------------- */
+    loadComponent('htfaq-subnav', '/HowToFAQ/HowToFAQ_SubNav.html').then(function() {
+        var path = window.location.pathname;
+        document.querySelectorAll('.htfaq-nav a').forEach(function(a) {
+            var href = a.getAttribute('href');
+            if (!href || !href.startsWith('/')) return;
+            if (path === href) a.classList.add('active');
+        });
+    });
+
+    /* -- Load header and footer ----------------------------------- */
+    Promise.all([
+        loadComponent('site-header', '/Header_NavBar.html'),
+        loadComponent('site-footer', '/Footer.html')
+    ]).then(function() {
+        document.querySelectorAll('.jg-nav .dropbtn, .main-nav .dropbtn').forEach(function(btn) {
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    var menu = this.nextElementSibling;
+                    if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                }
+                if (e.key === 'Escape') {
+                    var menu = this.nextElementSibling;
+                    if (menu) menu.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
