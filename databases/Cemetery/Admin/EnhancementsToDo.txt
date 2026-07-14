@@ -1,0 +1,233 @@
+
+JOWBR Enhancements:
+~~~~~~~~~~~~~~~~~~
+
+Potential enhancements to JOWBR.
+Warren Blatt
+2/2004, 3/2004, 10/2004, 3/2007, 4/2009, 2/2012, 7/2018
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+1.  Hebrew-language data and search capabilities:
+
+Petach Tikvah data (52K names, Micha Reisel).
+Sample search at < http://www.jewishgen.org/databases/pt.html >.
+
+* Searching does only exact-spelling match, ignoring the
+"Search Type" selection (Soundex, etc.)
+* Searching appears to work only on IE (not Netscape).
+The Hebrew displays fine on all browsers.
+
+*** This was implemented in July 2004, and integrated
+***   into JOWBR.
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+2.  Given name searches:
+
+Allow searches by Given Name and Father's Given Name.
+Useful for older tombstones, which generally do not have
+surnames.
+
+Michael created a prototype demo search form (9/2003) at:
+http://www.jewishgen.org/databases/Cemetery/indexgivenfather.htm
+
+Add this as an "advanced" search form at bottom of main page.
+Needs documentation, to explain search methods and limitations.
+(Michael needs to provide details).
+
+*** Completed and Announced, 7/2005.
+
+*** Note that this feature was *REMOVED* when we developed the 
+***   "Stop-Gap" system, circa 2015.  It was one of the few features
+***   removed in the "Stop-Gap" migration, because we moved to a 
+***   generic search form for all "All Country" and "All Topic" databases.
+***   This Given-Name fielded search feature needs to be re-added, 
+***   in one of our subsequent developments ("Ultimate" system).
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+3.  Allow display of an entire cemetery:
+
+We might want to allow users to display ALL of the tombstones
+in a cemetery -- for selected small older cemeteries --
+primarily those without surnames.
+
+Most East European tombstones before the mid-19th-century do NOT
+have surnames, so a surname-based search engine wouldn't find them. 
+(see item #2 above).  For example, in the Grodno Cemetery list
+at < https://www.jewishgen.org/belarus/lists/grodno_cemetery.htm >,
+fewer than half the tombstones contain surnames...  
+and those that do contain surnames are the later ones.
+A visual perusal of ALL the tombstones in a small cemetery 
+can be a useful way of making connections. 
+
+This type of "browse" display can be extremely useful for research. 
+Databases which are searchable by surname are useful only when 
+you know exactly what you're searching for.  A locality-based
+display is useful when you *don't* know what you're searching for.
+When you're looking through a list of all items for your town, 
+you might find something  that you'd never think to search for... 
+the name of a relative that you'd forgotten about, or a name 
+misspelled so badly that even soundex wouldn't have found it, etc.
+All types serendipitous finds can be made by visually scanning 
+a town-based list, that could never be discovered via a search 
+engine... because sometimes, you didn't even know that that's 
+what you're searching for!
+
+Note that we currently have this "Display Entire Cemetery"
+feature within the JOWBR Admin Panel.
+
+Also note that according to JewishGen KehilaLinks Policy, XI.3,
+https://KehilaLinks.jewishgen.org/documentation/Policy.htm#11
+a KehilaLinks site may display static lists of burial data
+for their town, providing that the data is *also* submitted
+to JOWBR.
+
+Implementation: 
+
+a) Allowing the display of an entire cemetery should be
+allowed or disallowed on a case-by-case basis for each cemetery -- 
+possibily in consultation with the donor of each dataset.  
+We would only want to allow this feature for smaller cemeteries.
+
+ * A new Boolean field should be added to the "Cemetery Table" 
+   and corresponding JOWBR Admin table interface, indicating 
+   whether or not complete display is allowed.  
+   The default should be FALSE.
+   
+ * For cemeteries which do allow full display, add a link for
+   "Display Entire Cemetery" to the "Cemetery Information" page, e.g.:
+   https://www.jewishgen.org/databases/cemetery/jowbrshow.php?ID=POL-08091
+   which would then display all of the records for that cemetery.  
+   
+   This display could be generated in several different formats.
+   1) The easiest would be our current JOWBR "Stage Two" listing.  
+   2) More sophisticaled would be a browsable display of tombstone 
+      *photographs*, as a series of tiles on a grid, much like some 
+      KehilaLinks sites currently build statically (for example:
+      https://KehilaLinks.jewishgen.org/Berehove/Berehove-Tombstones.htm ),
+      or similar to the display formay JewishGen ViewMate's "Image Gallery"  
+      at < https://www.jewishgen.org/ViewMate/view.asp >.
+   
+   The image tile could have some text beneath the photo, containing 
+   basic info about the burial.  Clicking on the photo would then bring
+   the user to the full "Stage Three" display for that burial record. 
+   This "browsable" display would be ideal for KehilaLinks site to link to, 
+   and much easier than each coding their own image display pages.  
+   
+This "Display Entire Cemetery" feature should be enabled ONLY for 
+small cemeteries -- primarily those in small towns in Europe, where
+many tombstones lack surnames.  It should NOT be enabled for larger
+new-world cemeteries, where it would serve little purpose, other
+than enabling data-mining.  
+
+We do need to ensure that all of our data-mining checks 
+are still in effect, so that this new feature does not allow
+someone to download significant chunks of a dataset.
+
+---
+
+b) Allow search by "Town of Burial":
+Currently, "Town" searches of JOWBR search only the "Place of Birth" 
+and "Place of Death" fields -- which are rarely filled in.  
+"Town" searches do *not* search the cemetery location (place of
+burial) -- because this is not a field in the "burial" table.
+This field exists only in the "Cemeteries" table.
+
+Allowing "Town of Burial" as a search parameter could be very
+useful, and has been requested by users several times, e.g.
+this would allow them to find all of the "Moshe"s or "SHWARTZ"s
+in Pinsk -- a refinement that is not currently possible.
+
+*** Note that this "Town of Burial" (Town of Cemetery) search has
+***   now been implemented.  This isn't a full single-page browse, 
+***   but is displayed page-by-page, 50 records at a time.
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+4.  Date converter pop-up:
+
+How about having hyperlinks from Death Dates (both Hebrew
+and English) to a small pop-up window containing the date
+converted into the opposite calendar.  Hopefully we could
+use the existing JOS engine...  just passing the parameters
+differently.  The links would be created *only* from
+validly-formed dates (dd-mmm-yyyy), or else maybe always
+create the link if that's easier, and an error message would
+come up if there's a date format problem.
+
+Could have a small button next to or under the date, to 
+link to the converted date, an X-year Yahrzeit calendar, 
+etc.
+
+Note that this feature would also be useful not just for JOWBR, 
+but in ANY other dataset which contains Hebrew/Gregorian dates, 
+such as Czarist vital records.
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+5. Multiple images per tombstone:
+
+Several people have asked if we accommodate more than one 
+photograph/image for a single data line.  For example: a 
+headstone and a footstone; or by people who have taken 
+multiple images of the same tombstone, at different angles
+or resolutions; front and back; tombstone and burial record;
+etc.
+
+There is currently no way that JOWBR can accomodate more than 
+one photograph per entry.  The only way to do this would be 
+for the submitter to combine the two photographs into one 
+single JPG file, using image editing software.
+
+MAYBE someday in the future, we could accomodate multiple photos
+per entry...  by putting several filenames in the "Photo Filename"
+cell, separated by commas or semicolons...  but this would take
+a lot of manipulation on the display side...  we could either
+display the photos all at once, or have the end user choose 
+from a list or set of thumbnails.
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+6. JOWBR FAQ Document:
+
+Create a "Frequently Asked Questions about JOWBR" document.
+
+Sections might be:
+ - Procedures (submitting data)
+ - Spreadsheet/Template issues
+ - Photographs
+ - Searching the Database
+ 
+*** Completed and online, 2/2012: 
+*** https://www.jewishgen.org/databases/Cemetery/JOWBR_FAQ.htm
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+7. User Annotations:
+
+See < https://www.jewishgen.org/projects/desc/GeneralToDo.txt >, 
+Item #27.
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+8. Add "Date Last Updated" to Cemetery display:
+
+Include the "Data Data Last Updated" in the description of
+the cemetery, so that users know how recent this data is.
+
+*** This was implemented in 2011, in both the "Cemetery Information"
+***   results display, and in the "Cemetery Inventory" page at 
+***   https://www.jewishgen.org/databases/Cemetery/tree/CemList.htm
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------

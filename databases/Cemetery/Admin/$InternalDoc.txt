@@ -1,0 +1,47 @@
+JOWBR Internal Documentation:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Warren Blatt, 
+Dec 2007
+
+
+
+JOWBR Admin Panel:
+~~~~~~~~~~~~~~~~~
+
+http://data.jewishgen.org/wconnect/wc.dll?jg~jgsys~admin~&S=JOWBR&ADMIN=Y&V2=AUS
+
+Access to the JOWBR Admin Panel is controlled via JGID.  
+
+The initial view is filtered for Country="Austria" ("&V2=AUS" in URL).
+To see *all* data, enter "all" into the "Cemetery ID" column header, 
+and then press the "Apply Data Filter" button at the top center. 
+(Note that viewing *all* data can be quite time-consuming, since
+there's a large quantity of data in the Admin Panel; it's best to
+filter by country or some other criteria).
+
+
+Cemetery Descriptions:
+~~~~~~~~~~~~~~~~~~~~~
+
+Descriptions of each cemetery typically go into the 
+"Cemetery Description" field in the JOWBR Admin Panel.
+
+This information can be written in either straight text
+format, or with some very simple HTML codes (i.e. <P>,
+<B>, <I>, <A HREF...></A> -- nothing more complex).  
+
+If the cemetery description information is more than
+two or three paragraphs, or if it includes photos, maps,
+etc., then the description should include external files,
+which reside in the directory "/imagedata/JOWBR/CemID/"
+on the DATA server (where "CemID" is the particular
+Cemetery ID number, from the JOWBR Admin Panel).
+The directory "DATA:/imagedata/JOWBR/" is mapped to the 
+URL < http://data.jewishgen.org/imagedata/jowbr/ >.
+
+For an example of an external cemetery description, see 
+the Segulah Cemetery in Petach Tikva, Israel, at
+< http://www.jewishgen.org/databases/Cemetery/tree/g.asp?ID=ISR-01047 >, 
+with its external file at
+< http://data.jewishgen.org/imagedata/jowbr/ISR-01047/pt.html >.
+

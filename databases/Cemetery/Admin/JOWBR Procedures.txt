@@ -1,0 +1,410 @@
+JOWBR file-handling procedures:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+July, 2004
+
+What we need to write-up is:
+* The procedures from the beginning, i.e. what happens when something
+arrives at the "jowbrsubmissions@jewishgen.org" email address --
+what happens initially, how do things get into the Admin Panel.
+and
+* How the Admin Panel needs to be adjusted at each of these
+stages -- I've only noted the XLS file movement below, and
+assume that a corresponding chang is made to the Admin Panel
+at each step.  Please add that info. 
+
+
+Data structures:
+~~~~~~~~~~~~~~~
+
+On data.jewishgen.org, Drive E:, directory "E:/data/JOWBR/"
+
+/working/ --
+   Cemetery files that are being worked on.
+   Each XLS file is named with its CemId.
+
+   Subdirectories:
+   /check/
+   /Needs CEM ID/
+   /Needs LITTLE Work/
+   /Needs LOTS of Work/
+   /Needs SOME Work/
+   /Needs templated/
+   /Not usable/
+   /Updates/
+
+   Susan -- Please explain each of these subdirectories.
+
+   Once work is complete, Susan moves these XLS files into
+   the /qa/ directory.
+   
+/qa/ --
+   Cemetery files ready for QA.
+   Each XLS file is named with its CemId.
+
+   Once checked, Warren moved these XLS files into the 
+   /uploads/ directory.
+
+/uploads/ --
+   Cemetery files ready to go online.  
+   These files have been through the QA process.
+
+   If a file is an UPDATE is should be named with "new" or
+   "replace" as part of the filename.
+
+   Once processed, Michael moves these XLS files into the
+   /archive/ directory.
+
+/archive/ -- 
+   Completely processed Cemetery files.
+   This is where the XLS files go after they have been fully
+   processed and are online.  Michael move files into this 
+   directory from the /uploads/ directory.
+   
+   It there are UPDATES to a Cemetery file, then there will
+   be multiple versions of a file in this directory, each
+   named with a different date in the filename.
+
+
+Other directories under data's "E:/data/JOWBR/":
+
+/Cemetery Descriptions/ --
+   In-process original files of extended Cemetery Descriptions.
+   Contains a sub-directory for each cemetery, where needed,
+   named with the CemID.
+
+   When work is complete, the Cemetery Description data will 
+   be incorporated into the Cemetery Table via the Admin Panel,
+   and if the data is large or contains photographs or other
+   external material, it will be in a CemId-named subdirectory 
+   of "E:/imagedata/jowbr/CemId/desc/".  The web-accessible URL:
+   < http://data.jewishgen.org/imagedata/jowbr/CemId/desc/ >.
+
+   These files will then be moved into the subdirectory
+   "E:/data/JOWBR/Cemetery Descriptions/archive/".
+
+
+/Original Submissions/ --
+   ??? - Empty
+
+   [Michael says on 5/14: I moved some test files there temporarily 
+   from the initial test system.  Can be deleted.]
+
+/Region Files/ --
+   ??? -- XLS Files, named by country, dated 4/18/2003.
+   Michael -- is this still needed?
+
+   [MT: These (and subdirs) are the sets of data now in the system.
+   Remember we initially were aiming for regional excel files....
+
+   These should now be moved to the archives area to be together
+   with the individual cemetery_id named files...]
+
+/Setup Files/ --
+   Contains 4 files: 2 DBF, 2 FPT
+   Michael -- please explain.
+
+   [MT: These are just backup copies for me....  
+   JOWBR now uses a SINGLE set of info/layout files 
+   (rather than having one for each JOWBR_region datafile....  
+   These are the files that I keep copies of for 'safekeeping'.]
+
+-------------------------------------------------------------------
+
+Images --
+   Are stored in "E:/imagedata/jowbr/"
+
+   which contains one subdirectory for each CemId,
+   when needed.
+
+   This directory is web-mapped as /imagedata/, and thus
+   can be accessed as 
+   http://data.jewishgen.org/imagadata/jowbr/CemId/
+
+   These sub-directories also contains the extended 
+   "Cemetery Description" materials, in a /desc/ subdirectory, 
+   when needed, i.e. "/E:/imagedata/jowbr/CemId/desc/", or
+   http://data.jewishgen.org/imagedata/jowbr/CemId/desc/.
+   The main file within these directory should be named
+   "index.htm", if possible.
+
+There's also an "E:/imagedata/jowbr/translations/"
+   sub-directory...  which contains files used by the
+   JOWBR Image Panel.
+
+   It contains one subdirectory for each cemetery in progress,
+   named with the CemID.
+
+   Where are the "needs editing" image files stored/notated?
+
+-------------------------------------------------------------------
+
+URLs:
+ - JOWBR public interface:
+     < http://www.jewishgen.org/databases/cemetery >
+
+ - JOWBR Admin Panel:
+     < http://data.jewishgen.org/wconnect/wc.isa?jg~jgsys~jowbr_admin~&ADMIN=Y >
+
+ - JOWBR Image Translation Panel:
+     < http://data.jewishgen.org/jowbriti >
+     See JB msgs of 5/17/03
+
+ - JOWBR "All Cems List" folding menu tree:
+     < http://www.jewishgen.org/databases/JOWBR/tree/AllCemList.htm >
+
+ - JOWBR Regions list:
+     < http://www.jewishgen.org/databases/Cemetery/JOWBR_Regions.htm >
+     "Region" is the same as the country name, with the exception of
+        United States (use two-letter state abbreviation), and
+        Poland, Belarus, Lithuania, Latvia, Ukraine, Romania.
+        For these six countries, Warren assigns region -- unless obvious.
+     Also applies to landsmanshaftn plots, for "All Country" integration.
+
+-------------------------------------------------------------------
+
+Admin Panel Status Codes:
+
+Status of Data
+   DataPromised
+   NeedFind
+   NeedLittle
+   NeedSome
+   NeedLots
+   NeedTemplated
+   NeedTranslated
+   QA
+   UploadedReady
+   CannotUse
+   Complete
+
+Status of Images
+   NeedFind
+   NA
+   NeedScan
+   NeedEdit
+   QA
+   UploadedReady
+   Complete
+
+Status of Submission
+   NeedDonor
+   NeedCode
+   NeedDA
+   NeedInfo
+   Complete
+
+Data in System?
+   Live
+   Hidden
+   No
+
+-------------------------------------------------------------------
+
+
+Current JOWBR QA issues:
+
+* USA-00765: Contains multiple landsmanshaft plots.
+    Really should be broken up into separate files,
+    for integration into the All Country systems.
+
+---
+
+Previous JOWBR QA issues (completed):
+
+* BEL-00448: All of the "Father's Names" are in all uppercase,
+     and are patronymics (not surnames) which should be converted  
+     to Initial Caps.  Michael.
+* GER-00384: Wrong columns, wrong use of "Other Surnames" (Susan).
+
+Other errors: Misunderstanding of Hebrew and Russian names:
+  Second part of Hebrew kinnui double name pairs 
+     (e.g. Dov Ber, Arya Leib, Shmuel Zanvil, etc.)
+     and Russian patronymics misinterpreted as surnames.
+  "HaKohen" and "HaLevi" are NOT surnames.  
+     They should NOT be capitalized.
+  Date format errors.
+  Data in the wrong column.
+  Extra columns; not enough columns.
+  Missing all 'Column R' CemIDs.
+
+Issue: Slavic surnames ending in "-OVA".  
+  Need to add masculine moninative form as Other Surname,
+  otherwise Soundex won't find it.
+
+
+-------------------------------------------------------------------
+
+Comments from Susan, 5/14/2003:
+
+I am toying with the concept of two lists. The one that exists
+where the submission is received and those involved in ADMINISTERING
+processes the information into the panel, and another LIST where the
+technical people reside who don't touch anything until the submission
+has been identified in the panel.
+
+Here's what's happening. We get the file, it is not in the system, the
+file sits in the list for there is no clear cut way to save the file
+with the naming convention to put it through the work queue when it has
+no CEMID.
+
+So, I am going through hundreds of emails to find the files once this
+happens. 
+
+Now, what I would like to see happen is as follows:
+
+1. The submission is received in jowbrsubmissions.
+2. The administrators of JOWBR process the submission into the Admin
+Panel, documenting any notes they know of. 
+3. The administrators take a quick look to make sure that the submission
+includes all the elements. The cemetery description, the images that are
+referred to in the submission. 
+4. They address the submitter with any missing information, document the
+record, and then only then, does the submission get forwarded to
+technical for processing. 
+
+>From the technical perspective.
+
+1. The submission is received in jowbrtechnical. When forwarded it is
+identified with a CEMID number in either the SUBJECT line or the first
+line of the BODY.
+2. The technical manager saves the file and all the elements under the
+naming conventions we have established. 
+   (a) original file is saved to an originals directory labeled
+CEMID_original.xls
+   (b) images are saved to the directory on data2\imagedata\jowbr\CEMID
+   (c) additional material for cemetery descriptions are saved to
+CEMID_description.xls
+3. The technical manager than assesses the submission from the following
+criteria.
+   (a) how much work needs to be performed to get the submission JOWBR
+ready
+   (b) how much work needs to be performed to get the images JOWBR ready
+4. The technical manager than notates the record and saves a copy of the
+file to the appropriate directory.
+    (a) The excel sheet is saved and Admin panel notated as to whether
+it needs Little, Some, Lots, Templated, Translated categories.
+    (b) communicates with the administrators about any
+information/details that are missing based on this initial QA phase.
+5. In a perfect world, what I would like to see happen from this point
+forward is as follows:
+     (a) JewishGen will have defined volunteers with certain levels of
+skills ranging from translators who can translate Hebrew tombstones, to
+those who have basic levels of Excel who can template information from
+other document sources, those with basic Excel skills who can move data
+around, to those who have some extended Excel skills who can use
+advanced functions, to those who have database manipulation skills and
+then those who have graphic/image manipulation skills.
+     (b) These volunteers will be assigned access to download from the
+appropriate directories where the submissions are stored based on the
+work necessary to get it JOWBR ready and can do so at their leisure and
+get the job done. If they pick up a file, they will put the online copy
+of the file in a lower directory, called pickedup, (similar to FTJP).
+So, if I download a file today to work on, and you go to pick up a file,
+it shouldn't be there and there should be no duplication of effort. They
+note the ADMIN panel that they have the file. Working: Susan
+     (c) The front end QA technical manager will make some notes in the
+files indicating the work they see needs to be performed in the file.
+They will add the CEMID column and then after that column create the
+NOTES of the work they see that needs to be performed on the file.
+      (d) The volunteer performs the work and returns the file to the QA
+directory and so notes the ADMIN Panel.
+      (e) The back end technical manager reviews the files in QA,
+removes the notes from the file and moves the files into the UPLOADS
+area, verifying the images have been dealt with and makes sure they are
+in the proper directory.
+      (f) Images would be processed in much the same way. A zip file
+would be created of the images and would be named CEMID_images.zip. The
+volunteers would pick up the images from the directory established. The
+technical manager will create a "readme.txt" file with instructions. The
+volunteer would then move the original files to a sub directory called
+CEMID/originals and place the manipulated images in the root directory
+under CEMID.
+      (g) The back end technical manager will then check for all TEST
+data and will do a last minute verification to make sure all the images
+are there, takes a final look at the data and then flips the switch to
+LIVE. 
+
+The system needs to be designed similar to FTJP where there can be many
+hands at work. 
+
+Theoretically I see the following volunteer needs. 
+
+Data Procurement - VP Research
+
+1. Project Manager, who oversee's the work of everyone. MUST have a good
+command of the technical aspects of this project. 
+2. Administrative Manager, who enters in the submissions, follows up
+with missing elements. Harriet has agreed to continue to serve in this
+capacity. 
+3. Administrative Staff, who will keep track of donor agreements and
+donor information so that it conforms to GM and for the future CURE.
+4. 2 Technical Managers. One who manages and QA's the submission at the
+beginning of the process and the second who manages the QA's at the end
+of the process. These folks need to know their stuff. Ernie might be
+able to continue to serve in one of these capacities.         
+5. 1 Image Manager. Who reviews the images, creates the work notes and
+coordinates the activities of those manipulating the images.
+6. 1 Translation Manager. Who would receive the submissions which need
+translating and coordinates the effort of getting the images into
+Translation PANEL and solicits and trains volunteers who are translating
+the tombstones. (Must have technical skills and a command of Hebrew
+initially.) 
+7. Volunteer pool. Ideally we could probably use 2-3 volunteers per
+category of work queues that we have established with the appropriate
+skill base. This may grow as we begin to get more submissions. Since I
+have pretty much CLEANED OUT the queues <GRIN> we can start clean with
+this.
+
+
+-------------------------------------------------------------------
+
+Comments from Susan, 7/30/2003.
+   These should be incorporated into the procedures document,
+   once details have been added.
+
+Here are the tasks as I see them
+
+NO IMAGES
+
+1. Inventory new submissions in ADMIN Panel
+2. Verify submissions to determine work needed to prep file for JOWBR
+3. Assign work to volunteers
+4. QA work from volunteers
+5. Upload files to QA
+6. Update ADMIN Panel
+7. Letter to donor with final copy and how to submit updates
+
+IMAGES
+
+1. Inventory new submissions in ADMIN Panel
+2. Verify submissions to determine work needed to prep file for JOWBR
+3. Assign to volunteers
+4. Upload images (edit/manipulate) to data server through Translation/QA
+Panel
+5. Verify images are of tombstones. Those that are not create Cemetery
+Description Directory
+6. QA submission file from volunteers
+7. Upload file to QA
+8. Upload images to imagedata directory
+9. Update ADMIN Panel
+10. Verify images to spreadsheet
+11. Letter to donor with final copy and how to submit updates
+
+TRANSLATIONS
+
+1. Inventory new submissions in ADMIN Panel
+2. Upload images to translation panel directory
+3. Create Cemetery in Translation Panel
+4. QA Images and Remove those which are not tombstones and put them in
+Cemetery Description Directory
+5. Assign to translation volunteer
+6. QA translation
+7. Export data from Translation Panel to Excel
+8. Upload to QA
+9. Export images to imagedata directory and edit/manipulate images to
+appropriate size
+10. Update ADMIN Panel
+11. Verify images to spreadsheet
+12. Letter to donor with final copy and how to submit updates
+
+-------------------------------------------------------------------
