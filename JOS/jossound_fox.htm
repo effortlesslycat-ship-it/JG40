@@ -1,0 +1,51 @@
+<HTML>
+
+<HEAD>
+   <TITLE>JOS Soundex Calculator</TITLE>
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</HEAD>
+
+<BODY onload="initEvents(); document.forms[0].elements[0].focus();">
+
+<!--#include virtual="/JG/header.txt"-->
+
+<SCRIPT SRC="/JG/Scripts/HighlightForm.js"></SCRIPT>
+
+<CENTER>
+<H1>JOS Soundex Calculator</H1>
+</CENTER>
+
+
+<form Method="POST"
+      Action="http://data.jewishgen.org/wconnect/wc.dll?jg~jgsys~jossound">
+
+<TABLE Border="1" CellPadding="10" CellSpacing="0" BGCOLOR="#F5F5F5" ALIGN="CENTER">
+<TR>
+<TD ALIGN="CENTER">
+
+<P>Enter a word to calculate soundex codes for:
+<input name="word" size="25" maxlength="25">
+</P>
+
+<input TYPE="submit" VALUE=" Calculate soundex codes ">
+
+</TD>
+</TR>
+</TABLE>
+
+</form>
+
+
+<HR>
+
+
+<P>For more information about Soundex coding, see the JewishGen InfoFile
+<A HREF="/InfoFiles/soundex.html">Soundex</A>.</P>
+
+
+<HR>
+
+
+<!--#include virtual="/jos/footer.txt"-->
+
+<!--#include virtual="/JG/footer.txt"-->

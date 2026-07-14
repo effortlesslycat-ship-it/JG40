@@ -1,0 +1,84 @@
+<HTML>
+
+<HEAD>
+   <TITLE>JOS Distance Calculator</TITLE>
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</HEAD>
+
+<BODY onload="initEvents(); document.forms[0].elements[0].focus();">
+
+<!--#include virtual="/JG/header.txt"-->
+
+<SCRIPT SRC="/JG/Scripts/HighlightForm.js"></SCRIPT>
+<SCRIPT SRC="/JG/Scripts/DataChecks.js"></SCRIPT>
+
+<CENTER>
+<H1>JOS Distance Calculator</H1>
+</CENTER>
+
+
+<BLOCKQUOTE>
+<P>Enter two latitude/longitude locations, and JOS will calculate the
+distance/direction from the first to the second.<BR>
+If you do not know the precise latitude/longitudes, you should visit the
+<A HREF="/Communities/LocTown.asp">JewishGen Gazetteer</a>,
+and note the coordinates before proceeding here.</P>
+</BLOCKQUOTE>
+
+
+<form Method="POST"
+      Action="/databases/josdist.php">
+
+<TABLE Border="1" CellPadding="10" CellSpacing="0" BGCOLOR="#F5F5F5" ALIGN="CENTER">
+<TR>
+<TD ALIGN="CENTER">
+
+<P>
+Location 1 &#151; Latitude:
+<input name="lat1" size="2" maxlength="2" onkeypress="return numbersonly(event)">&deg;
+<input name="lat2" size="2" maxlength="2" onkeypress="return numbersonly(event)">&#146;&nbsp;
+<select ID="LATHEM1" NAME="LATHEM1">
+<option VALUE="N" SELECTED>N
+<option VALUE="S">S
+</select>
+Longitude:
+<input name="lon1" size="2" maxlength="2" onkeypress="return numbersonly(event)">&deg;
+<input name="lon2" size="2" maxlength="2" onkeypress="return numbersonly(event)">&#146;
+<select ID="LONGHEM1" NAME="LONGHEM1">
+<option VALUE="E" SELECTED>E
+<option VALUE="W">W
+</select>
+<BR>
+Location 2 &#151; Latitude:
+<input name="mat1" size="2" maxlength="2" onkeypress="return numbersonly(event)">&deg;
+<input name="mat2" size="2" maxlength="2" onkeypress="return numbersonly(event)">&#146;&nbsp;
+<select ID="LATHEM2" NAME="LATHEM2">
+<option VALUE="N" SELECTED>N
+<option VALUE="S">S
+</select>
+Longitude:
+<input name="mon1" size="2" maxlength="2" onkeypress="return numbersonly(event)">&deg;
+<input name="mon2" size="2" maxlength="2" onkeypress="return numbersonly(event)">&#146;
+<select ID="LONGHEM2" NAME="LONGHEM2">
+<option VALUE="E" SELECTED>E
+<option VALUE="W">W
+</select>
+</P>
+
+<P>
+<input TYPE="submit" VALUE=" Calculate ">
+</P>
+
+</TD>
+</TR>
+</TABLE>
+
+</form>
+
+
+<HR>
+
+
+<!--#include virtual="/JOS/footer.txt"-->
+
+<!--#include virtual="/JG/footer.txt"-->

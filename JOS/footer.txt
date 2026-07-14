@@ -1,0 +1,18 @@
+
+<TABLE BORDER="0" WIDTH="100%">
+<TR>
+
+<TD WIDTH="50%">
+<A CLASS="jgbacklink" HREF="/JOS/">JOS Start Page</A>
+</TD>
+
+<TD WIDTH="50%">
+<A CLASS="jghomelink" HREF="/">JewishGen Home Page</A>
+</TD>
+
+</TR>
+</TABLE>
+
+<P CLASS="smalltext" ALIGN="RIGHT"><CITE>
+JOS conceived by Bernard Israelite Kouchel, programmed by Michael Tobias.
+</CITE></P>

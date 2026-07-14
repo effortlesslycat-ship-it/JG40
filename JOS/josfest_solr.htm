@@ -1,0 +1,63 @@
+<HTML>
+
+<HEAD>
+   <TITLE>JOS Jewish Holiday Calendar</TITLE>
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</HEAD>
+
+<BODY onload="initEvents(); document.forms[0].elements[0].focus();">
+
+<!--#include virtual="/JG/header.txt"-->
+
+<SCRIPT SRC="/JG/Scripts/HighlightForm.js"></SCRIPT>
+<SCRIPT SRC="/JG/Scripts/DataChecks.js"></SCRIPT>
+
+<CENTER>
+<H1>JOS Jewish Festival Dates</H1>
+</CENTER>
+
+
+<BLOCKQUOTE>
+<P>The JOS Jewish Holiday Calendar can display a list of all
+Jewish holidays for any year -- a civil year (Gregorian calendar)
+or a Jewish year (Hebrew calendar).&nbsp;  For more information
+about the Jewish calendar see the InfoFile
+<A HREF="/InfoFiles/m_calint.htm"><NOBR>An Introduction</NOBR>
+to the Jewish Calendar</A>.</P>
+</BLOCKQUOTE>
+
+
+
+<FORM Method="POST"
+      Action="/databases/josfest.php">
+
+<TABLE Border="1" CellPadding="10" CellSpacing="0" BGCOLOR="#F5F5F5" ALIGN="CENTER">
+<TR>
+<TD ALIGN="CENTER">
+
+<P>Calendar Type:
+<SELECT name="caltype">
+<OPTION value="jyear">Hebrew Calendar
+<OPTION value="gyear" selected>Gregorian Calendar
+</SELECT>
+&nbsp;
+Year: <input type="text" size="4" maxlength="4" name="jyear"
+             onkeypress="return numbersonly(event)">
+</P>
+
+<P>
+<INPUT TYPE="submit" VALUE=" Show Festival Dates ">
+</P>
+
+</TD>
+</TR>
+</TABLE>
+
+</FORM>
+
+
+<HR>
+
+
+<!--#include virtual="/JOS/footer.txt"-->
+<!--#include virtual="/JG/footer.txt"-->

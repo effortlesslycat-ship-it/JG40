@@ -1,0 +1,242 @@
+<HTML>
+
+<HEAD>
+   <TITLE>JOS Calendar Conversion</TITLE>
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</HEAD>
+
+<BODY onload="initEvents(); document.forms[0].elements[0].focus();">
+
+<!--#include virtual="/JG/header.txt"-->
+
+<SCRIPT SRC="/JG/Scripts/HighlightForm.js"></SCRIPT>
+
+<CENTER>
+<H1>JOS Calendar Conversion</H1>
+</CENTER>
+
+<BLOCKQUOTE>
+<P>The JOS Calendar Converter can convert a civil
+(Gregorian calendar) date into the equivalent date on the
+Hebrew calendar, and vice versa.&nbsp;  It can also display
+Yahrzeit dates for consecutive years.&nbsp;  For more
+information about the Jewish calendar see the InfoFile
+<NOBR><A HREF="/InfoFiles/m_calint.htm">An Introduction to the
+Jewish Calendar</A></NOBR>.</P>
+</BLOCKQUOTE>
+
+
+<FORM Method="POST"
+      Action="https://data.jewishgen.org/wconnect/wc.dll?jg~jgsys~josdates">
+
+<TABLE Border="1" CellPadding="10" CellSpacing="0" BGCOLOR="#F5F5F5" ALIGN="CENTER">
+<TR>
+<TD ALIGN="CENTER">
+
+<p>Enter a Civil (Gregorian) Date to convert into the Jewish Calendar:
+
+<p>Day: <select size="1" name="Gday">
+<option selected>1
+<option>2
+<option>3
+<option>4
+<option>5
+<option>6
+<option>7
+<option>8
+<option>9
+<option>10
+<option>11
+<option>12
+<option>13
+<option>14
+<option>15
+<option>16
+<option>17
+<option>18
+<option>19
+<option>20
+<option>21
+<option>22
+<option>23
+<option>24
+<option>25
+<option>26
+<option>27
+<option>28
+<option>29
+<option>30
+<option>31
+</select>
+
+Month: <select size="1" name="Gmonth">
+<option selected>1 January
+<option>2 February
+<option>3 March
+<option>4 April
+<option>5 May
+<option>6 June
+<option>7 July
+<option>8 August
+<option>9 September
+<option>10 October
+<option>11 November
+<option>12 December
+</select>
+
+Year: <select size="1" name="Gcent">
+<option>16
+<option>17
+<option>18
+<option>19
+<option selected>20
+<option>21
+<option>22
+</select>
+
+<select size="1" name="Gdec">
+<option selected>0
+<option>1
+<option>2
+<option>3
+<option>4
+<option>5
+<option>6
+<option>7
+<option>8
+<option>9
+</select>
+
+<select size="1" name="Gyear">
+<option>0
+<option>1
+<option>2
+<option>3
+<option>4
+<option selected>5
+<option>6
+<option>7
+<option>8
+<option>9
+</select>
+
+<HR>
+
+and/or enter a Jewish Date to convert into the Civil
+(Gregorian) Calendar:
+<p>Day: <select size="1" name="Jday">
+<option selected>1
+<option>2
+<option>3
+<option>4
+<option>5
+<option>6
+<option>7
+<option>8
+<option>9
+<option>10
+<option>11
+<option>12
+<option>13
+<option>14
+<option>15
+<option>16
+<option>17
+<option>18
+<option>19
+<option>20
+<option>21
+<option>22
+<option>23
+<option>24
+<option>25
+<option>26
+<option>27
+<option>28
+<option>29
+<option>30
+</select>
+
+Month: <select size="1" name="Jmonth">
+<option selected>7 Tishri
+<option>8 Cheshvan
+<option>9 Kislev
+<option>10 Tevet
+<option>11 Sh'vat
+<option>12 Adar
+<option>13 Adar II
+<option>1 Nisan
+<option>2 Iyyar
+<option>3 Sivan
+<option>4 Tammuz
+<option>5 Av
+<option>6 Elul
+</select>
+
+Year: <select size="1" name="Jcent">
+<option>54
+<option>55
+<option>56
+<option selected>57
+<option>58
+<option>59
+</select>
+
+<select size="1" name="Jdec">
+<option>0
+<option>1
+<option>2
+<option>3
+<option>4
+<option>5
+<option selected>6
+<option>7
+<option>8
+<option>9
+</select>
+
+<select size="1" name="Jyear">
+<option>0
+<option>1
+<option>2
+<option>3
+<option>4
+<option selected>5
+<option>6
+<option>7
+<option>8
+<option>9
+</select>
+
+<hr>
+
+<P>The civil date should be computed for
+<select size="1" name="Multiple">
+<option selected>1
+<option>2
+<option>3
+<option>4
+<option>5
+<option>6
+<option>7
+<option>8
+<option>9
+<option>10
+</select> consecutive Jewish years
+(beginning with the year chosen above).
+</P>
+
+<INPUT TYPE="submit" VALUE=" Convert dates ">
+
+</TD>
+</TR>
+</TABLE>
+
+</FORM>
+
+
+<HR>
+
+
+<!--#include virtual="/jos/footer.txt"-->
+<!--#include virtual="/JG/footer.txt"-->
