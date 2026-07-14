@@ -1,7 +1,0 @@
-<TABLE BORDER="0" WIDTH="100%">
-<TR>
-<TD>
-<A CLASS="jgbacklink" HREF="/databases/Canada/">Search the JewishGen Canada Database</A>
-</TD>
-</TR>
-</TABLE>
