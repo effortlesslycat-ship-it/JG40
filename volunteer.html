@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved &mdash; JewishGen</title>
+    <meta name="description" content="Volunteer with JewishGen and help preserve Jewish family history for future generations. Complete our volunteer form to be matched with current opportunities.">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/jg-global.css">
+
+    <!-- ==========================================================
+         Get Involved (volunteer) page - local styles (CHW)
+         ========================================================== -->
+    <style>
+        /* Body prose - same rule used on the About page.
+           Candidate to promote into jg-global.css so content
+           pages share one definition. */
+        .jg-prose {
+            font-size: 1rem;
+            line-height: 1.65;
+            margin-top: 0;
+        }
+
+        /* Fallback link shown above the embedded form */
+        .vol-fallback {
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin: 0 0 1.5rem 0;
+            color: var(--charcoal);
+        }
+        .vol-fallback a {
+            color: var(--navy);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+        }
+        .vol-fallback a:hover { color: var(--sage); }
+        /* --navy flips to light gray in dark mode; pin the link to a
+           readable light blue instead. */
+        body.dark-mode .vol-fallback a { color: #8ab0c9; }
+
+        /* Embedded Google Form wrapper.
+           Note: the form iframe always renders in Google's own light
+           theme - only the frame around it responds to dark mode. */
+        .vol-form-frame {
+            background-color: var(--white);
+            border: 1px solid #e6dfcf;
+            border-radius: 6px;
+            padding: 0.75rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .vol-form-frame iframe {
+            width: 100%;
+            min-height: 2262px;   /* CHW measured height from the legacy embed */
+            border: 0;
+            display: block;
+            border-radius: 4px;
+        }
+        body.dark-mode .vol-form-frame {
+            background-color: #1e1e1e;
+            border-color: #333333;
+        }
+
+        /* Form runs taller on narrow screens as fields stack */
+        @media (max-width: 768px) {
+            .vol-form-frame iframe { min-height: 2400px; }
+        }
+    </style>
+</head>
+<body class="volunteer-page">
+
+<div id="site-header"></div>
+
+<main>
+
+    <div class="page-title-band">
+        <div class="page-title-band__inner">
+            <span class="tagline jg-tag-sage">Get Involved</span>
+            <h1>Volunteer with JewishGen</h1>
+        </div>
+    </div>
+
+    <section class="jg-section">
+        <p class="jg-prose">It is only with the support and dedication of our volunteers that we are able to help the thousands of family researchers throughout the world who so desperately rely on our services. Your involvement will help us continue our mission of preserving our history for future generations. Please complete the following form to help us match you with our current volunteer opportunities.</p>
+
+        <p class="vol-fallback">If the form does not appear below, you can <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAy8iOeSDtzYUS2TQ9aqENK7V8mngzVoRdG5sYtwJXvrvt8w/viewform" target="_blank" rel="noopener">open it directly in a new tab</a>.</p>
+
+        <div class="vol-form-frame">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdAy8iOeSDtzYUS2TQ9aqENK7V8mngzVoRdG5sYtwJXvrvt8w/viewform?embedded=true"
+                title="JewishGen volunteer form"
+                loading="lazy">
+                Loading volunteer form&hellip;
+            </iframe>
+        </div>
+    </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function(r) { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(function(html) { document.getElementById(id).innerHTML = html; })
+        .catch(function(err) { console.warn(err); });
+}
+
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html')
+]).then(function() {
+    // Accessibility for dropdown menus
+    document.querySelectorAll('.jg-nav .dropbtn, .main-nav .dropbtn').forEach(function(btn) {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var menu = this.nextElementSibling;
+                if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+            if (e.key === 'Escape') {
+                var menu = this.nextElementSibling;
+                if (menu) {
+                    menu.style.display = 'none';
+                    this.focus();
+                }
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

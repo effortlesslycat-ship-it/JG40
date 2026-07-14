@@ -1,0 +1,33 @@
+<!-- =========================================================================
+     SHARED SEARCH TIPS PANEL
+     Loaded into the search card on every name-search page.
+       - JS pages  (Global_Search.php):
+             loadComponent('jg-search-tips', '/SearchTips.html')
+       - PHP pages (JOWBRsearch.php, search-results.php):
+             include DOCUMENT_ROOT . '/SearchTips.html'  (standard PHP include)
+     IMPORTANT: this file is itself PHP-included, so it must contain NO PHP
+     tags. A live include tag written here would include this file again and
+     recurse until PHP fatals. Keep the usage examples above as plain text only.
+
+     The toggle button lives in the page's card header and opens/closes
+     #jg-search-tips-panel. Panel styling is owned by jg-global.css; the only
+     local rule below stacks the two footer links (scoped to this panel).
+     ========================================================================= -->
+<style>
+#jg-search-tips-panel .jg-tips-panel__footer a { display: block; }
+#jg-search-tips-panel .jg-tips-panel__footer a + a { margin-top: 0.35rem; }
+</style>
+<div class="jg-tips-card-panel" id="jg-search-tips-panel" role="region" aria-label="Search tips">
+    <div class="jg-tips-panel__grid">
+        <div><strong>Phonetically Like (the default):</strong> Groups names that sound alike across languages. Best for almost every search.<br><em>Schwartz also finds Shvarts, Cvartz.</em></div>
+        <div><strong>Is Exactly:</strong> Your exact spelling, plus JewishGen's built-in name synonyms. The only mode that reads wildcards.<br><em>Chana also finds Hannah, Anna.</em></div>
+        <div><strong>Wildcards (*):</strong> Fill in unknown letters anywhere in a name. Works only with Is Exactly.<br><em>Sch*artz finds Schwartz, Schvartz.</em></div>
+        <div><strong>Comma = OR, Space = AND:</strong> A comma finds either name; a space requires both.<br><em>Schwartz, Weiss vs. Schwartz Weiss.</em></div>
+        <div><strong>Fuzzy matches:</strong> Allow one, two, or more letters of difference (Fuzzy, Fuzzier, Fuzziest).<br><em>Cohen finds Cohan, Kohen.</em></div>
+        <div><strong>Narrow by place last:</strong> Search by name first; add a region only if you get too many hits.</div>
+    </div>
+    <div class="jg-tips-panel__footer">
+        <a href="/HowToFAQ/howto.html">Need more help? Read the full How to JewishGen guide &rarr;</a>
+        <a href="/HowToFAQ/searchguide.html">What do these search terms mean? See the Search Guide &rarr;</a>
+    </div>
+</div>

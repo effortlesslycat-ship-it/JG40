@@ -1,0 +1,403 @@
+/* =========================================================
+   JEWISHGEN GLOSSARY - SECTION STYLESHEET
+   /jg-glossary.css
+   Used by: /HowToFAQ/glossary.html
+   Depends on: Bootstrap 5.3.3, /jg-global.css (load order)
+   Notes:
+   - Navy fills are HARDCODED (var(--navy) washes out in
+     dark mode). Light #09497a / dark #0d2a45.
+   - A-Z rail is a div[role="navigation"], never <nav>.
+   - Tag colors follow the search-page metadata system:
+     sage = General, cream+navy border = Jewish Cultural,
+     navy = Historical/Geographic, charcoal = JewishGen.
+     Candidate for promotion to jg-global.css when the
+     inline glossary script ships. - CHW
+   ========================================================= */
+
+main { flex: 1; }
+
+/* -- Page Title Band (mirrors HowToFAQ section shell) ---- */
+.glo-page-band {
+    background-color: #09497a;   /* hardcoded - navy washes out in dark mode */
+    padding: 34px 50px;
+    text-align: center;
+}
+body.dark-mode .glo-page-band { background-color: #0d2a45; }
+
+.glo-section-tag {
+    display: inline-block;
+    background-color: var(--sage);
+    color: #ffffff;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+}
+
+.glo-page-band h1 {
+    margin: 0 0 10px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.125rem;
+    font-weight: normal;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.glo-page-band__sub {
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: #a9c0d0;
+    margin: 0 auto;
+    max-width: 620px;
+    line-height: 1.6;
+}
+
+/* -- Content shell ---------------------------------------- */
+.glo-content {
+    background-color: var(--ecru);
+    padding: 44px 50px;
+}
+body.dark-mode .glo-content { background-color: #1a1a1a; }
+
+.glo-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+.glo-main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* -- Controls: filter box + category pills ---------------- */
+.glo-controls { margin-bottom: 26px; }
+
+.glo-filter-label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: bold;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+}
+body.dark-mode .glo-filter-label { color: #b8b8b8; }
+
+.glo-filter-input {
+    width: 100%;
+    max-width: 420px;
+    padding: 9px 14px;
+    font-size: 0.9375rem;
+    border: 1px solid #c5bfb3;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: var(--charcoal);
+}
+.glo-filter-input:focus {
+    outline: 2px solid #09497a;
+    outline-offset: 1px;
+}
+body.dark-mode .glo-filter-input {
+    background-color: #2a2a2a;
+    border-color: #444444;
+    color: #e0e0e0;
+}
+body.dark-mode .glo-filter-input:focus { outline-color: #a8b361; }
+
+.glo-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.glo-pill {
+    font-size: 0.8125rem;
+    padding: 5px 14px;
+    border-radius: 16px;
+    border: 1px solid #c5bfb3;
+    background-color: #ffffff;
+    color: var(--charcoal);
+    cursor: pointer;
+}
+.glo-pill:hover { border-color: #09497a; }
+.glo-pill.active {
+    background-color: var(--sage);
+    border-color: var(--sage);
+    color: #ffffff;
+    font-weight: bold;
+}
+body.dark-mode .glo-pill {
+    background-color: #2a2a2a;
+    border-color: #444444;
+    color: #e0e0e0;
+}
+body.dark-mode .glo-pill:hover { border-color: #a8b361; }
+body.dark-mode .glo-pill.active {
+    background-color: #a8b361;
+    border-color: #a8b361;
+    color: #121212;
+}
+
+.glo-count {
+    font-size: 0.8125rem;
+    color: #6b6b60;
+    margin-top: 12px;
+}
+body.dark-mode .glo-count { color: #999999; }
+
+/* -- Letter section headings ------------------------------ */
+.glo-letter-heading {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #09497a;                 /* hardcoded navy */
+    border-bottom: 2px solid #09497a;
+    padding-bottom: 4px;
+    margin: 34px 0 6px;
+    scroll-margin-top: 90px;
+}
+.glo-letter-section:first-of-type .glo-letter-heading { margin-top: 0; }
+body.dark-mode .glo-letter-heading {
+    color: #a9c0d0;
+    border-bottom-color: #a9c0d0;
+}
+
+/* -- Term entries ------------------------------------------ */
+.glo-entry {
+    padding: 16px 0;
+    border-bottom: 1px solid #d8d2c4;
+    scroll-margin-top: 90px;
+}
+body.dark-mode .glo-entry { border-bottom-color: #333333; }
+
+.glo-entry__term {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.0625rem;
+    font-weight: bold;
+    color: var(--charcoal);
+    margin: 0 0 6px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+body.dark-mode .glo-entry__term { color: #e0e0e0; }
+
+.glo-entry__def {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin: 0;
+    max-width: 720px;
+}
+body.dark-mode .glo-entry__def { color: #b8b8b8; }
+
+.glo-entry__note {
+    font-size: 0.875rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background-color: var(--cream);
+    border-left: 3px solid var(--sage);
+    padding: 10px 14px;
+    margin: 10px 0 0;
+    max-width: 720px;
+}
+body.dark-mode .glo-entry__note {
+    background-color: #242424;
+    color: #b8b8b8;
+}
+
+.glo-see {
+    font-size: 0.8125rem;
+    margin: 8px 0 0;
+    color: #6b6b60;
+}
+body.dark-mode .glo-see { color: #999999; }
+.glo-see a {
+    color: #09497a;
+    text-decoration: underline;
+}
+body.dark-mode .glo-see a { color: #a9c0d0; }
+
+/* -- Category tags (search-page metadata color system) ----- */
+.glo-tag {
+    display: inline-block;
+    font-family: 'Arial', sans-serif;   /* do not inherit Georgia from .glo-entry__term */
+    font-size: 0.625rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+/* Sage = General Genealogy/Archival/Legal */
+.glo-tag--general {
+    background-color: var(--sage);
+    color: #ffffff;
+}
+body.dark-mode .glo-tag--general {
+    background-color: #a8b361;
+    color: #121212;
+}
+
+/* Cream + navy border = Jewish Cultural/Religious */
+.glo-tag--jewish {
+    background-color: var(--cream);
+    border: 1px solid #09497a;
+    color: #09497a;
+}
+body.dark-mode .glo-tag--jewish {
+    background-color: #1e1e1e;
+    border-color: #a9c0d0;
+    color: #a9c0d0;
+}
+
+/* Navy = Historical Events/Geographies (hardcoded fills) */
+.glo-tag--history {
+    background-color: #09497a;
+    color: #ffffff;
+}
+body.dark-mode .glo-tag--history {
+    background-color: #0d2a45;
+    color: #ffffff;
+}
+
+/* Charcoal = JewishGen-Specific (hardcoded fills) */
+.glo-tag--jewishgen {
+    background-color: #232b2b;
+    color: #ffffff;
+}
+body.dark-mode .glo-tag--jewishgen {
+    background-color: #3a3f3f;
+    color: #e0e0e0;
+}
+
+/* Light-blue = Yizkor Book Terms. --light-blue does not flip in
+   dark mode, so only the text color needs a dark override. */
+.glo-tag--yizkor {
+    background-color: var(--light-blue);
+    color: #09497a;
+}
+body.dark-mode .glo-tag--yizkor {
+    background-color: var(--light-blue);
+    color: #0d2a45;
+}
+
+/* -- Language marker (Hebrew / Yiddish / German) -------------- */
+.glo-entry__lang {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.6875rem;
+    font-style: italic;
+    font-weight: normal;
+    color: #6b6b60;
+    text-transform: none;
+    letter-spacing: 0;
+}
+body.dark-mode .glo-entry__lang { color: #999999; }
+
+/* -- Source credit line (Yizkor glossary attribution) --------- */
+.glo-credit {
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: #6b6b60;
+    border-top: 1px solid #d8d2c4;
+    margin-top: 34px;
+    padding-top: 16px;
+    max-width: 720px;
+}
+body.dark-mode .glo-credit {
+    color: #999999;
+    border-top-color: #333333;
+}
+
+/* -- Empty state -------------------------------------------- */
+.glo-empty {
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: #6b6b60;
+    padding: 30px 0;
+    display: none;
+}
+body.dark-mode .glo-empty { color: #999999; }
+
+/* -- A-Z rail ------------------------------------------------ */
+/* Sticky works here: no overflow-x:auto ancestor in this layout. */
+.glo-rail {
+    position: sticky;
+    top: 90px;
+    flex-shrink: 0;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    background-color: #ffffff;
+    border: 1px solid #d8d2c4;
+    border-radius: 8px;
+    padding: 8px 0;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+}
+body.dark-mode .glo-rail {
+    background-color: #2a2a2a;
+    border-color: #444444;
+}
+
+.glo-rail a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 1.7;
+    color: #09497a;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.glo-rail a:hover {
+    background-color: var(--light-blue);
+}
+.glo-rail a.disabled {
+    color: #b5b0a4;
+    pointer-events: none;
+}
+body.dark-mode .glo-rail a { color: #a9c0d0; }
+body.dark-mode .glo-rail a:hover { background-color: #3a3a3a; }
+body.dark-mode .glo-rail a.disabled { color: #555555; }
+
+/* -- Responsive: rail becomes a horizontal strip ------------- */
+@media (max-width: 720px) {
+    .glo-content { padding: 30px 20px; }
+    .glo-inner { flex-direction: column-reverse; }
+    .glo-rail {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+        max-height: none;
+        overflow-y: visible;
+        padding: 6px 4px;
+    }
+    .glo-rail a {
+        width: 30px;
+        line-height: 2;
+    }
+}
+
+/* -- Print: content only, hardcoded fills --------------------- */
+@media print {
+    .glo-rail, .glo-controls { display: none; }
+    .glo-page-band { background-color: #09497a !important; }
+    .glo-content { background-color: #ffffff; padding: 20px; }
+    .glo-entry { break-inside: avoid; }
+}

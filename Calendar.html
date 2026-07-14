@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events Calendar &mdash; JewishGen</title>
+
+    <!-- 1. Bootstrap (layout only &mdash; design tokens override below) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- 2. JewishGen Global Design System -->
+    <link rel="stylesheet" href="jg-global.css">
+
+    <!-- 3. Page-specific styles (Events Calendar only) -->
+    <style>
+
+        a { text-decoration: none; color: inherit; }
+
+
+
+        
+        /* -- Full-width ecru wrapper --------------------------- */
+        .cal-ecru-wrap {
+            background-color: var(--ecru);
+            padding: 3rem 2rem;
+        }
+        .cal-ecru-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* -- Top row: Kalikow + Talks cards side by side ------- */
+        .cal-top-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* -- Cards: Kalikow + Talks (icon left, content right) - */
+        .kalikow-block,
+        .cta-block {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 28px 32px;
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            column-gap: 24px;
+        }
+
+        .card-icon { width: 64px; height: 64px; display: block; }
+        .card-icon .light-logo { display: block; }
+        .card-icon .dark-logo  { display: none; }
+        body.dark-mode .card-icon .light-logo { display: none; }
+        body.dark-mode .card-icon .dark-logo  { display: block; }
+        .card-icon img { width: 100%; height: auto; display: block; }
+
+        .card-body { display: flex; flex-direction: column; }
+
+        .kalikow-block h2,
+        .cta-block h2 {
+            margin: 0 0 4px 0;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            font-weight: bold;
+        }
+        .kalikow-block .kalikow-name,
+        .cta-block .talks-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--navy);
+            margin: 0 0 16px 0;
+            line-height: 1.35;
+        }
+
+        /* Hours: day label + time on the same row */
+        .hours-grid {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 6px 28px;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+        .hours-day  { font-weight: bold; color: var(--charcoal); }
+        .hours-time { color: var(--charcoal); }
+        .closure-notice {
+            font-size: 12px;
+            color: var(--charcoal);
+            opacity: 0.75;
+            font-style: italic;
+            line-height: 1.5;
+            margin: 0 0 18px 0;
+        }
+
+        /* Talks card description (3 prose lines) */
+        .cta-desc {
+            font-size: 14px;
+            color: var(--charcoal);
+            line-height: 1.55;
+            margin: 0 0 18px 0;
+        }
+
+        /* -- Sage CTA button (Book / Watch) -------------------- */
+        .btn-sage-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background-color: var(--sage);
+            color: var(--white);
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 11px 22px;
+            border-radius: 4px;
+            border: none;
+            transition: filter 0.2s;
+            width: fit-content;
+            cursor: pointer;
+            margin-top: auto;
+        }
+        .btn-sage-cta:hover { filter: brightness(1.08); color: var(--white); }
+
+        /* -- Section divider (navy rule, separating cards from calendar) -- */
+        .section-divider {
+            height: 4px;
+            background-color: var(--navy);
+            border: none;
+            border-radius: 4px;
+            margin: 0 0 24px 0;
+        }
+
+        /* -- Controls bar -------------------------------------- */
+        .controls-bar {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            margin-bottom: 24px;
+            gap: 12px;
+        }
+        .controls-spacer { /* left grid cell, keeps month-nav centered */ }
+
+        .month-nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            justify-content: center;
+        }
+        .month-nav button {
+            background: none;
+            border: none;
+            color: var(--sage);
+            width: 32px; height: 32px;
+            font-size: 22px; line-height: 1;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: color 0.2s ease, transform 0.15s ease;
+            padding: 0;
+        }
+        .month-nav button:hover  { color: var(--navy); }
+        .month-nav button:focus-visible { outline: 2px solid var(--sage); outline-offset: 2px; border-radius: 4px; }
+        .month-nav button:active { transform: scale(0.92); }
+
+        .month-label {
+            font-size: 18px;
+            color: var(--navy);
+            min-width: 180px;
+            text-align: center;
+        }
+        .month-label .month-name { font-weight: bold; }
+        .month-label .month-year { font-weight: normal; margin-left: 6px; }
+
+        /* Grid/List toggle - lightweight, icon + label */
+        .view-toggle {
+            display: flex;
+            gap: 14px;
+            justify-content: flex-end;
+        }
+        .view-toggle button {
+            background: none;
+            border: none;
+            padding: 4px 6px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--navy);
+            opacity: 0.55;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s ease;
+        }
+        .view-toggle button:hover  { opacity: 0.85; }
+        .view-toggle button.active { opacity: 1; }
+        .view-toggle button:focus-visible { outline: 2px solid var(--sage); outline-offset: 2px; border-radius: 4px; }
+        .view-toggle .toggle-icon { font-size: 14px; line-height: 1; }
+
+        /* -- Grid calendar ------------------------------------- */
+        .calendar-grid-wrap { display: block; }
+        .calendar-list-wrap { display: none; }
+
+        .cal-header-row { display: grid; grid-template-columns: repeat(7, 1fr); background-color: var(--navy); color: var(--white); border-radius: 8px 8px 0 0; overflow: hidden; }
+        .cal-header-row span { text-align: center; padding: 10px 4px; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+
+        .cal-body { display: grid; grid-template-columns: repeat(7, 1fr); border-left: 1px solid #d1caba; border-bottom: 1px solid #d1caba; }
+
+        .cal-day { min-height: 90px; border-right: 1px solid #d1caba; border-top: 1px solid #d1caba; padding: 6px; position: relative; background-color: var(--white); vertical-align: top; }
+        .cal-day.empty            { background-color: #f7f4ee; }
+        .cal-day.kalikow-open     { background-color: #f0f4e8; }
+        .cal-day.kalikow-closed-override { background-color: var(--white); }
+
+        .day-num { font-size: 12px; font-weight: bold; color: var(--charcoal); display: block; margin-bottom: 4px; }
+        .kalikow-open .day-num { color: var(--navy); }
+
+        .kalikow-badge { font-size: 10px; font-weight: bold; color: var(--sage); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px; }
+
+        .cal-event-chip { background-color: var(--navy); color: var(--white); border-radius: 4px; font-size: 10px; padding: 3px 5px; margin-bottom: 3px; line-height: 1.3; cursor: pointer; display: block; transition: background-color 0.15s ease; }
+        .cal-event-chip:hover   { background-color: var(--sage); }
+        .cal-event-chip.virtual { background-color: var(--sage); }
+        .cal-event-chip.virtual:hover { background-color: var(--navy); }
+
+        .cal-day.today { outline: 2px solid var(--sage); outline-offset: -2px; }
+        .cal-day.today .day-num { background-color: var(--sage); color: var(--white); width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
+
+        /* -- List view ----------------------------------------- */
+        .event-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+        .event-list-item {
+            display: grid;
+            grid-template-columns: 92px 1fr auto;
+            gap: 0 24px;
+            align-items: center;
+            padding: 22px 28px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .event-date-col   { text-align: center; }
+        .event-date-month { font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--navy); font-weight: bold; display: block; }
+        .event-date-day   { font-size: 38px; font-weight: bold; color: var(--navy); line-height: 1; display: block; margin-top: 2px; }
+        .event-date-dow   { display: none; }  /* day-of-week now lives in subtitle */
+
+        .event-info h3 { margin: 0 0 6px 0; font-size: 17px; line-height: 1.35; }
+        .event-info h3 a { color: var(--navy); font-weight: bold; }
+        .event-info h3 a:hover { color: var(--sage); text-decoration: underline; }
+        .event-time { font-size: 14px; color: var(--charcoal); margin: 0 0 8px 0; }
+
+        .event-badge { display: inline-block; font-size: 11px; font-weight: bold; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .badge-virtual  { background-color: var(--sage); color: var(--white); }
+        .badge-inperson { background-color: var(--navy); color: var(--white); }
+
+        /* Circular sage CTA arrow button */
+        .event-learn-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: var(--sage);
+            color: var(--white);
+            border-radius: 50%;
+            transition: filter 0.2s, transform 0.15s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .event-learn-btn:hover { filter: brightness(1.08); transform: translateX(2px); color: var(--white); }
+        .event-learn-btn::before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid var(--white);
+            border-right: 2px solid var(--white);
+            transform: rotate(45deg);
+            margin-left: -3px;  /* visual centering */
+        }
+        .event-learn-btn .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+        .no-events { text-align: center; padding: 48px 0; color: var(--charcoal); opacity: 0.55; font-size: 15px; }
+
+        /* -- Legend -------------------------------------------- */
+        .legend { display: flex; gap: 20px; font-size: 12px; color: var(--charcoal); margin-top: 14px; flex-wrap: wrap; align-items: center; }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+        .swatch-kalikow { background-color: #f0f4e8; border: 1px solid var(--sage); }
+        .swatch-event   { background-color: var(--navy); }
+        .swatch-virtual { background-color: var(--sage); }
+        .swatch-today   { background-color: var(--white); border: 2px solid var(--sage); }
+
+        /* -- Modal --------------------------------------------- */
+        .modal-overlay { display: none; position: fixed; inset: 0; background-color: rgba(9,73,122,0.45); z-index: 500; justify-content: center; align-items: center; padding: 20px; }
+        .modal-overlay.open { display: flex; }
+        .modal-box { background-color: var(--white); border-radius: 10px; max-width: 520px; width: 100%; padding: 32px; position: relative; box-shadow: 0 8px 40px rgba(0,0,0,0.25); }
+        .modal-close { position: absolute; top: 14px; right: 18px; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--charcoal); line-height: 1; }
+        .modal-badge { margin-bottom: 10px; }
+        .modal-title { margin: 0 0 10px 0; font-size: 20px; color: var(--navy); line-height: 1.3; }
+        .modal-meta  { font-size: 14px; color: var(--charcoal); margin-bottom: 18px; line-height: 1.6; }
+        .modal-link  { display: inline-block; padding: 10px 20px; background-color: var(--navy); color: var(--white); font-weight: bold; font-size: 14px; border-radius: 7px; transition: opacity 0.2s ease; }
+        .modal-link:hover { opacity: 0.82; }
+
+               /* Ecru wrap flips to #1a1a1a automatically; white cards pin to #1e1e1e to stay distinguishable */
+        body.dark-mode .kalikow-block,
+        body.dark-mode .cta-block            { background-color: #1e1e1e; }
+        body.dark-mode .kalikow-block h2,
+        body.dark-mode .cta-block h2         { color: #c8c0b0; }
+        body.dark-mode .kalikow-block .kalikow-name,
+        body.dark-mode .cta-block .talks-name { color: var(--sage); }
+        body.dark-mode .hours-day            { color: #e8e1d1; }
+        body.dark-mode .hours-time           { color: #c8c0b0; }
+        body.dark-mode .closure-notice       { color: #a09888; }
+        body.dark-mode .cta-desc             { color: #c8c0b0; }
+        body.dark-mode .btn-sage-cta         { color: var(--white); }
+        body.dark-mode .section-divider      { background-color: #3a4a4a; }
+        body.dark-mode .month-nav button     { color: var(--sage); }
+        body.dark-mode .month-nav button:hover { color: #e0e0e0; }
+        body.dark-mode .month-label          { color: #e0e0e0; }
+        body.dark-mode .view-toggle button   { color: #e0e0e0; }
+        body.dark-mode .cal-header-row       { background-color: #0a3a5c; }
+        body.dark-mode .cal-body             { border-color: #3a4a4a; }
+        body.dark-mode .cal-day              { background-color: #1e2424; border-color: #3a4a4a; }
+        body.dark-mode .cal-day.empty        { background-color: #171c1c; }
+        body.dark-mode .cal-day.kalikow-open { background-color: #1e2b1e; }
+        body.dark-mode .day-num              { color: #c8c0b0; }
+        body.dark-mode .kalikow-open .day-num { color: var(--sage); }
+        body.dark-mode .event-list-item      { background-color: #1e1e1e; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+        body.dark-mode .event-date-month     { color: var(--sage); }
+        body.dark-mode .event-date-day       { color: var(--sage); }
+        body.dark-mode .event-info h3 a      { color: var(--sage); }
+        body.dark-mode .event-time           { color: #c8c0b0; }
+        body.dark-mode .modal-box            { background-color: #1e2424; color: #e8e1d1; }
+        body.dark-mode .modal-close          { color: #e8e1d1; }
+        body.dark-mode .modal-title          { color: var(--sage); }
+        body.dark-mode .modal-meta           { color: #c8c0b0; }
+        body.dark-mode .legend               { color: #c8c0b0; }
+        body.dark-mode .swatch-kalikow       { border-color: var(--sage); background-color: #1e2b1e; }
+        body.dark-mode .no-events            { color: #c8c0b0; }
+
+        /* -- Responsive ---------------------------------------- */
+        @media (max-width: 768px) {
+            .cal-ecru-wrap { padding: 2rem 1rem; }
+            .cal-top-row { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+            /* 2a: drop card icons on mobile */
+            .kalikow-block, .cta-block { grid-template-columns: 1fr; }
+            .card-icon { display: none; }
+            .controls-bar { grid-template-columns: 1fr; gap: 16px; }
+            .month-nav { justify-content: center; }
+            .view-toggle { justify-content: center; }
+            .calendar-grid-wrap { display: none !important; }
+            .calendar-list-wrap { display: block !important; }
+            .view-toggle { display: none; }
+            .event-list-item { grid-template-columns: 72px 1fr 44px; gap: 0 16px; padding: 18px 20px; }
+            .event-date-day { font-size: 32px; }
+        }
+
+        @media (max-width: 480px) {
+            .kalikow-block, .cta-block { padding: 22px 20px; }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- ===========================================================
+     HEADER + NAV &mdash; loaded from Header_NavBar.html
+=========================================================== -->
+<div id="site-header"></div>
+
+<!-- ==========================================
+     MAIN CONTENT
+========================================== -->
+<main>
+        <!-- PAGE HEADING -->
+    <div class="page-title-band">
+    <span class="tagline">Events &amp; Programs</span>
+    <h1>Upcoming Events Calendar</h1>
+    <p class="hero-subtitle">Programs from JewishGen and the Museum of Jewish Heritage</p>
+</div>
+
+<div class="cal-ecru-wrap">
+    <div class="cal-ecru-inner">
+
+
+      
+        <!-- TOP ROW: Kalikow + Talks cards -->
+        <section class="cal-top-row" aria-label="Kalikow Center and quick links">
+
+            <div class="kalikow-block">
+                <div class="card-icon" aria-hidden="true">
+                    <img src="/images/site/KalCalReg.svg"  alt="" class="light-logo">
+                    <img src="/images/site/KalCalDark.svg" alt="" class="dark-logo">
+                </div>
+                <div class="card-body">
+                    <h2>Visit Us In Person</h2>
+                    <p class="kalikow-name">Peter &amp; Mary Kalikow<br>Jewish Genealogy Center</p>
+                    <div class="hours-grid" role="list" aria-label="Kalikow Center hours">
+                        <span class="hours-day"  role="listitem">Wednesday</span>
+                        <span class="hours-time">12:00 PM &ndash; 5:00 PM</span>
+                        <span class="hours-day"  role="listitem">Thursday</span>
+                        <span class="hours-time">12:00 PM &ndash; 8:00 PM</span>
+                        <span class="hours-day"  role="listitem">Sunday</span>
+                        <span class="hours-time">10:00 AM &ndash; 5:00 PM</span>
+                    </div>
+                    <p class="closure-notice">
+                        Hours subject to change when the museum is closed.<br>
+                        Highlighted days on the calendar reflect standard open days.
+                    </p>
+                    <a id="jg-kalikow-book-btn"
+                   href="https://898a.blackbaudhosting.com/898a/Peter-and-Mary-Kalikow-Jewish-Genealogy-Research-Center-Appointment"
+                   class="btn-sage-cta"
+                   target="_blank" rel="noopener noreferrer"
+                      aria-label="Schedule an appointment at the Kalikow Center">
+                        Book an Appointment
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-block">
+                <div class="card-icon" aria-hidden="true">
+                    <img src="/images/site/CameraReg.svg"  alt="" class="light-logo">
+                    <img src="/images/site/CameraDark.svg" alt="" class="dark-logo">
+                </div>
+                <div class="card-body">
+                    <h2>Miss a JewishGen Talk?</h2>
+                    <p class="talks-name">JewishGen Talks Archive</p>
+                    <p class="cta-desc">
+                        Expert talks on Jewish genealogy and history from JewishGen and the Museum of Jewish Heritage. New talks added regularly &mdash; free to watch anytime.
+                    </p>
+                    <a href="/talks.html" class="btn-sage-cta"
+                       aria-label="Watch the JewishGen Talks archive">
+                        Watch Now
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ─── Navy rule: separates cards from calendar grid ─── -->
+        <hr class="section-divider" aria-hidden="true">
+
+        <!-- CONTROLS BAR -->
+        <div class="controls-bar">
+            <div class="controls-spacer" aria-hidden="true"></div>
+            <div class="month-nav" role="group" aria-label="Navigate calendar months">
+                <button id="prev-month" aria-label="Previous month">&#8249;</button>
+                <span class="month-label" id="month-label" aria-live="polite"></span>
+                <button id="next-month" aria-label="Next month">&#8250;</button>
+            </div>
+            <div class="view-toggle" role="group" aria-label="Switch calendar view">
+                <button id="btn-grid" class="active" aria-pressed="true"  onclick="setView('grid')">
+                    <span class="toggle-icon" aria-hidden="true">▦</span> Grid
+                </button>
+                <button id="btn-list" aria-pressed="false" onclick="setView('list')">
+                    <span class="toggle-icon" aria-hidden="true">☰</span> List
+                </button>
+            </div>
+        </div>
+
+        <!-- GRID VIEW -->
+        <div class="calendar-grid-wrap" id="grid-view" aria-label="Monthly calendar grid">
+            <div class="cal-header-row" aria-hidden="true">
+                <span>Sun</span><span>Mon</span><span>Tue</span>
+                <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+            <div class="cal-body" id="cal-body"></div>
+        </div>
+
+        <!-- LIST VIEW -->
+        <div class="calendar-list-wrap" id="list-view">
+            <ul class="event-list" id="event-list" aria-label="Upcoming events list"></ul>
+        </div>
+
+        <!-- LEGEND -->
+        <div class="legend" id="cal-legend" aria-label="Calendar legend">
+            <div class="legend-item">
+                <div class="legend-swatch swatch-kalikow" aria-hidden="true"></div>
+                <span>Kalikow Center open</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-swatch swatch-event" aria-hidden="true"></div>
+                <span>In-person event</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-swatch swatch-virtual" aria-hidden="true"></div>
+                <span>Virtual event</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-swatch swatch-today" aria-hidden="true"></div>
+                <span>Today</span>
+            </div>
+        </div>
+
+    </div><!-- /.cal-ecru-inner -->
+</div><!-- /.cal-ecru-wrap -->
+
+</main>
+
+<!-- ==========================================
+     EVENT DETAIL MODAL
+========================================== -->
+<div class="modal-overlay" id="event-modal" role="dialog" aria-modal="true"
+     aria-labelledby="modal-title-text" tabindex="-1">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()" aria-label="Close event details">✕</button>
+        <div class="modal-badge" id="modal-badge"></div>
+        <h2 class="modal-title" id="modal-title-text"></h2>
+        <div class="modal-meta" id="modal-meta"></div>
+        <a href="#" class="modal-link" id="modal-link" target="_blank" rel="noopener">
+            Learn More at the Museum of Jewish Heritage ↗
+        </a>
+    </div>
+</div>
+
+<!-- ===========================================================
+     FOOTER &mdash; loaded from Footer.html
+=========================================================== -->
+<div id="site-footer"></div>
+
+<!-- ===========================================================
+     SCRIPTS
+=========================================================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* -- Component Loader ----------------------------------------- */
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function(r) {
+            if (!r.ok) throw new Error('Could not load ' + file);
+            return r.text();
+        })
+        .then(function(html) {
+            document.getElementById(id).innerHTML = html;
+        })
+        .catch(function(err) { console.warn(err); });
+}
+
+Promise.all([
+    loadComponent('site-header', 'Header_NavBar.html'),
+    loadComponent('site-footer', 'Footer.html')
+]).then(function() {
+    document.querySelectorAll('.jg-nav .dropbtn').forEach(function(btn) {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                var menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = expanded ? 'none' : 'block';
+            }
+            if (e.key === 'Escape') {
+                this.setAttribute('aria-expanded', 'false');
+                var menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = 'none';
+            }
+        });
+    });
+});
+/* -- Kalikow Link Update Script  ----------------------------------------- */
+    function jgUpdateKalikowLink() {
+    var link = document.getElementById('jg-kalikow-book-btn');
+    if (!link) return;
+    try {
+        var parts = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'America/New_York',
+            day: '2-digit', month: 'short', year: 'numeric'
+        }).formatToParts(new Date());
+        var day   = parts.find(function(p) { return p.type === 'day';   }).value;
+        var month = parts.find(function(p) { return p.type === 'month'; }).value;
+        var year  = parts.find(function(p) { return p.type === 'year';  }).value;
+        link.href = 'https://898a.blackbaudhosting.com/898a/'
+                  + 'Peter-and-Mary-Kalikow-Jewish-Genealogy-Research-Center-Appointment-'
+                  + day + month + year;
+    } catch (err) {
+        console.warn('Kalikow link: falling back to base booking page.', err);
+    }
+}
+jgUpdateKalikowLink();
+</script>
+
+<!-- CHANGE 1: jg-events.js loaded here, before the calendar script that calls it -->
+<script src="jg-events.js"></script>
+
+<script>
+    /* ---------------------------------------------------------
+       CONFIGURATION
+       CHANGE 2: EVENTS populated from MJH API via initCalendarPage()
+    --------------------------------------------------------- */
+    var EVENTS = [];
+
+    // Days the Kalikow Center is normally open (0=Sun, 3=Wed, 4=Thu)
+    const KALIKOW_OPEN_DAYS = [0, 3, 4];
+
+    // Museum/Kalikow closure dates &mdash; update whenever the museum announces a closure
+    const KALIKOW_CLOSURES = [
+        "2026-04-20", // Passover / museum closed
+        "2026-05-25", // Memorial Day weekend
+    ];
+
+    /* ---------------------------------------------------------
+       CALENDAR STATE
+    --------------------------------------------------------- */
+    const today = new Date();
+    let currentYear  = today.getFullYear();
+    let currentMonth = today.getMonth();
+
+    const MONTH_NAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const DOW_NAMES   = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+    function dateStr(y, m, d) {
+        return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    }
+
+    function isKalikowOpen(y, m, d) {
+        const dow = new Date(y, m, d).getDay();
+        const ds  = dateStr(y, m, d);
+        if (KALIKOW_CLOSURES.includes(ds)) return false;
+        return KALIKOW_OPEN_DAYS.includes(dow);
+    }
+
+    function eventsOnDate(ds) { return EVENTS.filter(e => e.date === ds); }
+    function eventsInMonth(y, m) {
+        const prefix = `${y}-${String(m+1).padStart(2,'0')}`;
+        return EVENTS.filter(e => e.date.startsWith(prefix));
+    }
+
+    /* ---------------------------------------------------------
+       GRID RENDER
+    --------------------------------------------------------- */
+    function renderGrid() {
+        document.getElementById('month-label').innerHTML =
+            '<span class="month-name">' + MONTH_NAMES[currentMonth] + '</span>' +
+            '<span class="month-year">' + currentYear + '</span>';
+        const body = document.getElementById('cal-body');
+        body.innerHTML = '';
+        const firstDow = new Date(currentYear, currentMonth, 1).getDay();
+        const daysInMo = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+        for (let i = 0; i < firstDow; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'cal-day empty';
+            cell.setAttribute('aria-hidden', 'true');
+            body.appendChild(cell);
+        }
+
+        for (let d = 1; d <= daysInMo; d++) {
+            const ds    = dateStr(currentYear, currentMonth, d);
+            const open  = isKalikowOpen(currentYear, currentMonth, d);
+            const evts  = eventsOnDate(ds);
+            const isToday = (d === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear());
+
+            const cell = document.createElement('div');
+            cell.className = 'cal-day' + (open ? ' kalikow-open' : '') + (isToday ? ' today' : '');
+
+            const num = document.createElement('span');
+            num.className = 'day-num';
+            num.textContent = d;
+            cell.appendChild(num);
+
+            if (open) {
+                const badge = document.createElement('span');
+                badge.className = 'kalikow-badge';
+                badge.textContent = 'Kalikow Open';
+                badge.setAttribute('aria-hidden', 'true');
+                cell.appendChild(badge);
+            }
+
+            evts.forEach(evt => {
+                const chip = document.createElement('button');
+                chip.className = 'cal-event-chip' + (evt.virtual ? ' virtual' : '');
+                chip.textContent = evt.title;
+                chip.setAttribute('aria-label', `Event: ${evt.title}, ${evt.time} ${evt.timezone}`);
+                chip.addEventListener('click', () => openModal(evt));
+                cell.appendChild(chip);
+            });
+
+            let cellLabel = `${MONTH_NAMES[currentMonth]} ${d}`;
+            if (open)        cellLabel += ', Kalikow Center open';
+            if (evts.length) cellLabel += `, ${evts.length} event${evts.length>1?'s':''}`;
+            cell.setAttribute('aria-label', cellLabel);
+            body.appendChild(cell);
+        }
+    }
+
+    /* ---------------------------------------------------------
+       LIST RENDER
+    --------------------------------------------------------- */
+    function renderList() {
+        const list = document.getElementById('event-list');
+        list.innerHTML = '';
+        const evts = eventsInMonth(currentYear, currentMonth);
+
+        if (evts.length === 0) {
+            const li = document.createElement('li');
+            li.className = 'no-events';
+            li.textContent = 'No genealogy events scheduled for this month.';
+            list.appendChild(li);
+            return;
+        }
+
+        evts.sort((a,b) => a.date.localeCompare(b.date));
+        evts.forEach(evt => {
+            const d   = new Date(evt.date + 'T12:00:00');
+            const mon = MONTH_NAMES[d.getMonth()].slice(0,3).toUpperCase();
+            const day = d.getDate();
+            const dow = DOW_NAMES[d.getDay()];
+            const dowFull = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+            const li  = document.createElement('li');
+            li.className = 'event-list-item';
+            li.innerHTML = `
+                <div class="event-date-col" aria-hidden="true">
+                    <span class="event-date-month">${mon}</span>
+                    <span class="event-date-day">${day}</span>
+                </div>
+                <div class="event-info">
+                    <span class="event-badge ${evt.virtual ? 'badge-virtual' : 'badge-inperson'}">
+                        ${evt.virtual ? 'Virtual' : 'In Person'}
+                    </span>
+                    <h3><a href="${evt.link}" target="_blank" rel="noopener">${evt.title}</a></h3>
+                    <p class="event-time">
+                        <time datetime="${evt.date}">${dowFull}, ${MONTH_NAMES[d.getMonth()]} ${day} &nbsp;·&nbsp; ${evt.time} ${evt.timezone}</time>
+                    </p>
+                </div>
+                <a href="${evt.link}" target="_blank" rel="noopener"
+                   class="event-learn-btn"
+                   aria-label="Learn more about ${evt.title}"></a>
+            `;
+            list.appendChild(li);
+        });
+    }
+
+    /* ---------------------------------------------------------
+       VIEW TOGGLE
+    --------------------------------------------------------- */
+    function setView(v) {
+        const gridWrap = document.getElementById('grid-view');
+        const listWrap = document.getElementById('list-view');
+        const legend   = document.getElementById('cal-legend');
+        const btnGrid  = document.getElementById('btn-grid');
+        const btnList  = document.getElementById('btn-list');
+        if (v === 'grid') {
+            gridWrap.style.display = 'block'; listWrap.style.display = 'none'; legend.style.display = 'flex';
+            btnGrid.classList.add('active');    btnGrid.setAttribute('aria-pressed','true');
+            btnList.classList.remove('active'); btnList.setAttribute('aria-pressed','false');
+        } else {
+            gridWrap.style.display = 'none'; listWrap.style.display = 'block'; legend.style.display = 'none';
+            btnList.classList.add('active');    btnList.setAttribute('aria-pressed','true');
+            btnGrid.classList.remove('active'); btnGrid.setAttribute('aria-pressed','false');
+        }
+    }
+
+    /* ---------------------------------------------------------
+       MONTH NAVIGATION
+    --------------------------------------------------------- */
+    document.getElementById('prev-month').addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+        renderAll();
+    });
+
+    document.getElementById('next-month').addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+        renderAll();
+    });
+
+    function renderAll() { renderGrid(); renderList(); }
+
+    /* ---------------------------------------------------------
+       MODAL
+    --------------------------------------------------------- */
+    function openModal(evt) {
+        const d   = new Date(evt.date + 'T12:00:00');
+        const mon = MONTH_NAMES[d.getMonth()];
+        const day = d.getDate();
+        const dow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+        document.getElementById('modal-title-text').textContent = evt.title;
+        document.getElementById('modal-meta').innerHTML = `<strong>${dow}, ${mon} ${day}</strong><br>${evt.time} ${evt.timezone}`;
+        document.getElementById('modal-badge').innerHTML = `<span class="event-badge ${evt.virtual ? 'badge-virtual' : 'badge-inperson'}">${evt.virtual ? 'Virtual' : 'In Person'}</span>`;
+        document.getElementById('modal-link').href = evt.link;
+        const overlay = document.getElementById('event-modal');
+        overlay.classList.add('open');
+        overlay.focus();
+    }
+
+    function closeModal() { document.getElementById('event-modal').classList.remove('open'); }
+
+    document.getElementById('event-modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    /* ---------------------------------------------------------
+       INIT &mdash; CHANGE 3: fetch from API then render
+    --------------------------------------------------------- */
+    JGEvents.initCalendarPage(function(loadedEvents) {
+        EVENTS = loadedEvents;
+        renderAll();
+    });
+
+</script>
+</body>
+</html>

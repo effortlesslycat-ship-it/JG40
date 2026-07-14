@@ -1,0 +1,2163 @@
+/* ============================================================
+   JewishGen Global Stylesheet — Project Shorashim
+   Load ORDER: Bootstrap CDN → this file → page-specific overrides
+   
+   All color values use CSS custom properties defined in :root.
+   Dark mode is toggled via body.dark-mode class.
+   DO NOT add hex codes outside of :root and explicit dark-mode
+   overrides without approval.
+   ============================================================ */
+
+/* == Reset & Base =========================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 100%; }
+
+/* == Design Tokens ========================================== */
+:root {
+    --cream:    #e8e1d1;
+    --sage:     #939b51;
+    --navy:     #09497a;
+    --charcoal: #232b2b;
+    --white:    #ffffff;
+    --light-blue: #dce5ea;
+    --light-green: #C7CC82;
+    --light-sage: #949c51;
+    --ecru: #f7f4f2;
+
+    /* Wall of Honor plaque tints */
+    --tint-memory: #e8e1d1;   /* cream wash - In Memory Of */
+    --tint-honor:  #dce5ea;   /* light-blue wash - In Honor Of */
+    --tint-thanks: #c7cc82;   /* light-green wash - Special Thanks To */
+
+}
+
+/* == Base Body ============================================== */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--charcoal);
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* == Dark Mode Token Overrides ============================== */
+body.dark-mode {
+    --cream:    #1e1e1e;
+    --sage:     #a8b361;
+    --navy:     #e0e0e0;
+    --charcoal: #a0a0a0;
+    --white:    #121212;
+    --light-blue: #1e2a33;
+    --light-green: #C7CC82;
+    --ecru:        #1a1a1a;
+    --tint-memory: #2a2620;
+    --tint-honor:  #1e2a33;
+    --tint-thanks: #2d2f1c;
+}
+
+/* ======= Logo Swap========= */
+.light-logo { display: block; }
+.dark-logo  { display: none; }
+body.dark-mode .light-logo { display: none !important; }
+body.dark-mode .dark-logo  { display: block !important; }
+
+/* ============
+   HEADER
+========== */
+.jg-header {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px 40px 0 40px;
+    min-height: 180px;
+    background-color: #09497a;  
+    position: relative;
+
+}
+
+.jg-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background-color: rgba(255,255,255,0.4);
+}
+body.dark-mode .jg-header::after {
+    background-color: rgba(255,255,255,0.2);
+}
+   
+/* Inset rule at bottom of header — spans nav width only */
+.jg-nav {
+    padding-bottom: 10px;
+}
+
+body.dark-mode .jg-header { background-color: #1a1a1a; 
+
+}
+
+ 
+.jg-header__logo a { display: block; line-height: 0; }
+.jg-header__logo img {
+    height: 150px;
+    width: auto;
+    object-fit: contain;
+}
+   
+/* Center column: utility row (top) + nav row (bottom) */
+.jg-header__center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+    min-width: 0;
+    padding-top: 5px;
+}
+ 
+/* Utility row: auth + icons + divider, pushed right */
+.jg-header__utility {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+ 
+.jg-auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+ 
+/* Sign Up / Sign Out — light-green text link on navy.
+   --light-green does not flip in dark mode, so no override needed. */
+.jg-auth-link {
+    color: var(--light-green);
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: inherit;
+    padding: 4px 6px;
+    transition: color 0.2s ease;
+}
+   
+.jg-auth-link:hover { color: #ffffff; }
+.jg-auth-link:hover { color: #ffffff; }
+body.dark-mode .jg-auth-link { color: #a8b361; }
+body.dark-mode .jg-auth-link:hover { color: #ffffff; }
+ 
+/* Profile icon (greenprof.svg) */
+.jg-profile-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: opacity 0.2s ease;
+}
+.jg-profile-icon img { height: 28px; width: auto; display: block; }
+.jg-profile-icon:hover { opacity: 0.8; }
+   
+/* Dark mode toggle (icon-only, darkmode.svg) */
+.jg-dark-toggle {
+    background: transparent;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+.jg-dark-toggle:hover { opacity: 0.8; }
+.jg-dark-toggle img { height: 24px; width: auto; display: block; }
+body.dark-mode .jg-dark-toggle { background: transparent; }
+ 
+
+.jg-btn {
+    display: inline-block;
+    padding: 0.4375rem 0.9375rem;
+    font-size: 0.8125rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    border: 2px solid transparent;
+    transition: filter 0.15s ease;
+}
+.jg-btn:hover { filter: brightness(1.08); }
+.jg-btn--primary   { background-color: #939b51; color: #ffffff; border-color: #939b51; }
+.jg-btn--secondary { background-color: transparent; color: #09497a; border-color: #09497a; }
+.jg-btn--secondary:hover { background-color: #09497a; color: #ffffff; filter: none; }
+body.dark-mode .jg-btn--primary  { background-color: #a8b361; border-color: #a8b361; }
+body.dark-mode .jg-btn--secondary { color: #e0e0e0; border-color: #e0e0e0; }
+body.dark-mode .jg-btn--secondary:hover { background-color: #e0e0e0; color: #121212; }
+
+/* Vertical divider (utility row, right end) */
+.jg-header__divider {
+    width: 1px;
+    height: 18px;
+    background-color: rgba(255,255,255,0.3);
+}
+body.dark-mode .jg-header__divider {
+    background-color: rgba(255,255,255,0.15);
+}
+ 
+/* Right column: MJH (single image, text baked in) */
+.jg-header__affiliation { display: flex; align-items: center; }
+.jg-header__affiliation a { display: block; line-height: 0; }
+.jg-mjh-logo { height: 130px; width: auto; }
+
+/* ========
+   NAVIGATION
+============== */
+.jg-nav {
+    background-color: #09497a;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8125rem;
+
+}
+body.dark-mode .jg-nav { background-color: #1a1a1a; }
+.jg-nav .dropdown { position: relative; display: inline-block; }
+.jg-nav .dropbtn { display: block; padding: 0.875rem 1.125rem; cursor: pointer; color: #ffffff; user-select: none; }
+.jg-nav .dropdown:hover .dropbtn,
+.jg-nav .dropbtn:focus { color: #939b51; outline: none; }
+.jg-nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 260px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    border-top: 3px solid #939b51;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+}
+body.dark-mode .jg-nav .dropdown-content { background-color: #1e1e1e; border-top-color: #a8b361; }
+.jg-nav .dropdown-content a {
+    color: #09497a;
+    padding: 0.6875rem 1.25rem;
+    text-decoration: none;
+    display: block;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 0.875rem;
+    letter-spacing: 0;
+    border-bottom: 1px solid #e8e1d1;
+}
+.jg-nav .dropdown-content a:last-child { border-bottom: none; }
+.jg-nav .dropdown-content a:hover { background-color: #e8e1d1; font-weight: bold; }
+body.dark-mode .jg-nav .dropdown-content a { color: #e0e0e0; border-bottom-color: #333; }
+body.dark-mode .jg-nav .dropdown-content a:hover { background-color: #2a2a2a; }
+.jg-nav .dropdown:hover .dropdown-content,
+.jg-nav .dropdown:focus-within .dropdown-content { display: block; }
+
+/* ======================================================
+   SPONSOR BANNER
+====================================================== */
+.jg-sponsor-banner {
+    background-color: var(--light-blue);
+    color: var(--navy);
+    text-align: center;
+    padding: 0.75rem 1.25rem 0.5rem 1.25rem;
+    font-size: 0.9375rem;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+body.dark-mode .jg-sponsor-banner { background-color: #1a1a1a; border-bottom-color: #333; color: #a0a0a0; }
+.jg-sponsor-banner strong { color: var(--navy); font-weight: bold; font-style: normal; }
+body.dark-mode .jg-sponsor-banner strong { color: #e0e0e0; }
+.jg-sponsor-slide { position: absolute; width: 100%; top: 0; left: 0; padding: 0.75rem 1.25rem 0.5rem 1.25rem; opacity: 0; transition: opacity 1s ease-in-out; pointer-events: none; }
+.jg-sponsor-slide.active { position: relative; opacity: 1; pointer-events: auto; }
+.jg-sponsor-banner__dedicate { display: block; margin-top: 0.3rem; font-size: 0.8125rem; font-style: normal; }
+.jg-sponsor-banner__dedicate a { color: var(--navy); text-decoration: underline; font-weight: bold; }
+.jg-sponsor-banner__dedicate a:hover { color: var(--sage); }
+
+/* Light Back Link for Navy Background */
+.jg-back-link-light {
+    display: inline-block;
+    color: #a9c0d0;
+    font-size: 0.8125rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+    transition: color 0.2s ease;
+}
+.jg-back-link-light:hover { color: var(--white); }
+
+@media (min-width: 900px) {
+    .jg-back-link-light { position: absolute; top: 0; left: 0; margin-bottom: 0; }
+
+
+}
+
+/* ======================================================
+   HERO SEARCH
+====================================================== */
+.jg-hero {
+    background-color: #09497a;
+    background-image: url('/images/site/JGStarT.png');
+    background-repeat: no-repeat;
+    background-position: right -100px bottom -350px;
+    background-size: 800px auto;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+}
+body.dark-mode .jg-hero {
+    background-color: #1a1a1a;
+    background-image: none;
+}
+ 
+/* Split layout: intro left, search right */
+.jg-hero__layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+ 
+/* == Left column: headline + description ============= */
+.jg-hero__intro {
+    flex: 0 0 380px;
+    text-align: left;
+    padding-top: 8px;
+}
+ 
+.jg-hero__intro h1 {
+    color: var(--light-green);
+    font-size: 2.5rem;
+    line-height: 1.15;
+    margin: 0 0 1.5rem 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: normal;
+}
+/* --light-green doesn't flip, so no dark-mode override needed */
+ 
+.jg-hero__intro p {
+    font-size: 0.9375rem;
+    color: #ffffff;
+    line-height: 1.65;
+    margin: 0 0 1rem 0;
+}
+ 
+.jg-hero__tagline {
+    font-size: 0.9375rem;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: bold;
+    margin: 0;
+}
+ 
+/* == Right column: search form ======================= */
+.jg-hero__search-col {
+    flex: 1;
+    min-width: 0;
+}
+ 
+/* Container — no card framing on navy; just a layout wrapper */
+.jg-search-container {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    text-align: left;
+}
+body.dark-mode .jg-search-container { background: transparent; border: none; }
+ 
+/* Heading row: "Start Your Research" + Tips pill */
+.jg-search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+ 
+.jg-search-container h2 {
+    color: var(--light-green);
+    font-size: 1.75rem;
+    text-align: left;
+    margin: 0;
+    text-transform: none;
+    letter-spacing: normal;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: normal;
+}
+ 
+/* Tips toggle — prominent sage/light-green pill */
+.jg-tips-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--light-green);
+    color: #09497a;                       /* hardcoded; var(--navy) flips in dark mode */
+    border: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 24px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.jg-tips-toggle:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.jg-tips-toggle:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+.jg-tips-toggle[aria-expanded="true"] {
+    background: #ffffff;
+}
+ 
+/* Tips panel — light card on navy */
+.jg-tips-panel {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease, margin 0.4s ease, padding 0.4s ease;
+    background: #ffffff;
+    border-left: 4px solid var(--light-green);
+    border-radius: 6px;
+    padding: 0 1.25rem;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--charcoal);
+}
+.jg-tips-panel.open {
+    max-height: 600px;
+    opacity: 1;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+body.dark-mode .jg-tips-panel { background: #1e1e1e; color: #e0e0e0; }
+ 
+.jg-tips-panel__title {
+    color: #09497a;                      /* hardcoded so it stays navy on white panel */
+    font-size: 0.9375rem;
+    display: block;
+    margin-bottom: 0.9rem;
+}
+body.dark-mode .jg-tips-panel__title { color: #a8b361; }
+ 
+.jg-tips-panel__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+}
+.jg-tips-panel__grid em {
+    color: #666;
+    font-style: italic;
+}
+body.dark-mode .jg-tips-panel__grid em { color: #a0a0a0; }
+ 
+.jg-tips-panel__footer {
+    margin-top: 0.9rem;
+    border-top: 1px solid #dce4e8;
+    padding-top: 0.625rem;
+    text-align: right;
+}
+body.dark-mode .jg-tips-panel__footer { border-top-color: #333; }
+.jg-tips-panel__footer a {
+    font-size: 0.75rem;
+    color: #09497a;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+.jg-tips-panel__footer a:hover { color: var(--sage); }
+body.dark-mode .jg-tips-panel__footer a { color: #a8b361; }
+ 
+/* == Form rows ======================================= */
+.jg-search-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    align-items: flex-end;
+}
+.jg-search-row__narrow { flex: 1; }
+.jg-search-row__wide   { flex: 2; }
+ 
+/* Labels — white on navy, title case not uppercase */
+.jg-field-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+    display: block;
+    text-transform: none;
+    letter-spacing: normal;
+}
+ 
+/* Inputs — light-blue background on navy, per mockup */
+.jg-search-container select,
+.jg-search-container input[type="text"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--light-blue);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--charcoal);
+    background-color: var(--light-blue);
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.jg-search-container select:focus,
+.jg-search-container input[type="text"]:focus {
+    border-color: var(--light-green);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(199, 204, 130, 0.4);
+}
+body.dark-mode .jg-search-container select,
+body.dark-mode .jg-search-container input[type="text"] {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+ 
+/* Placeholder styling — keep subtle */
+.jg-search-container input[type="text"]::placeholder {
+    color: #6c7a85;
+    opacity: 1;
+}
+ 
+/* Region/Collection select — same treatment as other inputs */
+.jg-region-wrapper { margin-bottom: 0.75rem; }
+ 
+.jg-region-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--light-blue);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--charcoal);
+    background-color: var(--light-blue);
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.jg-region-select:focus {
+    border-color: var(--light-green);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(199, 204, 130, 0.4);
+}
+body.dark-mode .jg-region-select {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+ 
+/* Sub-region container — styled to read on navy */
+.jg-subregion-container {
+    display: none;
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    animation: jgFadeIn 0.3s ease-in;
+}
+body.dark-mode .jg-subregion-container {
+    background: rgba(255,255,255,0.04);
+    border-color: #333;
+}
+@keyframes jgFadeIn { from { opacity: 0; } to { opacity: 1; } }
+ 
+.jg-subregion-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-transform: none;
+    letter-spacing: normal;
+}
+ 
+/* Search submit — left-aligned rectangular, sage */
+.jg-btn-search {
+    display: inline-block;
+    width: auto;
+    max-width: none;
+    margin: 1.5rem 0 0 0;
+    background-color: var(--light-sage);
+    color: #ffffff;
+    border: none;
+    padding: 0.875rem 2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: inherit;
+    transition: filter 0.2s ease;
+}
+.jg-btn-search:hover { filter: brightness(1.1); }
+.jg-btn-search:focus { outline: 3px solid var(--light-green); outline-offset: 2px; }
+body.dark-mode .jg-btn-search { background-color: #a8b361; }
+ 
+/* ======================================================
+   ANNOUNCEMENT
+====================================================== */
+.jg-announcement {
+    background-color: var(--light-sage);
+    color: #ffffff;
+    text-align: center;
+    padding: 0.9375rem;
+    font-size: 0.9375rem;
+    letter-spacing: 0.5px;
+}
+body.dark-mode .jg-announcement { background-color: #1a1a1a; border-bottom: 1px solid #333; }
+.jg-announcement__label { color: #ffffff; font-weight: bold; margin-right: 0.5rem; }
+.jg-announcement a { color: #ffffff; text-decoration: underline; }
+.jg-announcement a:hover { color: #09497a; }
+
+/* ======================================================
+   TITLE BAND DARK MODE FIX
+====================================================== */
+
+body.dark-mode .page-title-band h1,
+body.dark-mode .page-title-band p,
+body.dark-mode .page-title-band .stat-line {
+    color: #ffffff;
+}
+
+body.dark-mode .page-title-band {
+    background-color: #0d2a45;
+}
+
+/* ======================================================
+   SECTIONS
+====================================================== */
+.jg-section {
+    padding: 3.125rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+.jg-section-title {
+    color: var(--navy);
+    border-bottom: 2px solid var(--sage);
+    padding-bottom: 0.625rem;
+    margin-bottom: 1.875rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* ======================================================
+   RESOURCE CARDS
+====================================================== */
+ 
+/* Section wrapper — cream background, rounded, centered */
+.jg-cards-section {
+    background-color: var(--cream-subtle);   /* ← changed from var(--cream) */
+    padding: 3rem 4rem;
+}
+body.dark-mode .jg-cards-section { background-color: #121212; }
+
+ 
+.jg-cards-section__intro {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 2.1875rem auto;
+}
+
+.jg-cards-section__intro h2 {
+    color: var(--navy);
+    font-size: 1.75rem;
+    font-family: Georgia, 'Times New Roman', serif;   
+    font-weight: normal;
+    text-transform: none;                              
+    margin: 0 0 0.625rem 0;
+}
+.jg-cards-section__intro p {
+    font-size: 0.9375rem;
+    color: var(--charcoal);
+    margin: 0;
+}
+
+/* Event cards reuse .jg-cards-section wrapper — override to white on ecru */
+.jg-cards-section .jg-card {
+    background-color: var(--white);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.jg-cards-section .jg-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+body.dark-mode .jg-cards-section .jg-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+ 
+/* Grid*/
+.jg-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.jg-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.875rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ 
+/* == Cards ===========================================
+   Whole card is an <a>. Uses flex column so the chevron
+   can be pushed to the bottom via margin-top: auto.     */
+.jg-feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--white);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;                           /* equal height in grid row */
+}
+.jg-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    text-decoration: none;
+    color: inherit;
+}
+.jg-feature-card:focus-visible {
+    outline: 2px solid var(--sage);
+    outline-offset: 3px;
+}
+body.dark-mode .jg-feature-card {
+    background: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+ 
+/* Icon area — fixed height container.
+   Handles both <img> (real cards) and emoji text (placeholders). */
+.jg-feature-card__icon {
+    height: 64px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    line-height: 1;
+}
+.jg-feature-card__icon img {
+    max-height: 100%;
+    width: auto;
+}
+ 
+/* Light/dark icon swap (mirrors the .light-logo / .dark-logo pattern) */
+.jg-feature-card__icon-light { display: block; }
+.jg-feature-card__icon-dark  { display: none; }
+body.dark-mode .jg-feature-card__icon-light { display: none; }
+body.dark-mode .jg-feature-card__icon-dark  { display: block; }
+ 
+/* Title — sage/olive (flips to lighter variant in dark mode via --sage) */
+.jg-feature-card h3 {
+    color: var(--sage);
+    font-size: 1.125rem;
+    margin: 0 0 0.75rem 0;
+    font-weight: bold;
+}
+ 
+/* Description — navy body text, pushes chevron to bottom via flex: 1 */
+.jg-feature-card p {
+    color: var(--navy);
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin: 0 0 1.25rem 0;
+    flex: 1;
+}
+body.dark-mode .jg-feature-card p { color: #c0c0c0; }
+/* Note: var(--navy) flips to #e0e0e0 in dark mode, which is readable here.
+   Explicit override above just tightens it. */
+ 
+/* Chevron at bottom — slides right on card hover */
+.jg-feature-card__chevron {
+    display: block;
+    color: var(--sage);
+    font-size: 1.75rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: auto;
+    transition: transform 0.2s ease;
+}
+.jg-feature-card:hover .jg-feature-card__chevron {
+    transform: translateX(4px);
+}
+ 
+/* Placeholders — dimmed, non-interactive */
+.jg-feature-card--placeholder {
+    opacity: 0.45;
+    pointer-events: none;
+}
+/* ======================================================
+   KALIKOW
+   Outer section is a full-width navy band; inner wrapper
+   constrains content to 1100px and holds a 2-column layout.
+====================================================== */
+
+/* Outer: full-width navy band. Hardcoded -- var(--navy) flips. */
+.jg-kalikow {
+    background-color: #09497a;
+    padding: 3.5rem 3.125rem;
+}
+body.dark-mode .jg-kalikow { background-color: #1a1a1a; }
+
+/* Inner: constrained 2-column layout */
+.jg-kalikow__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    color: #ffffff;
+}
+body.dark-mode .jg-kalikow__inner { color: #e0e0e0; }
+
+/* Photo: circular, sage ring, drop shadow */
+.jg-kalikow__photo { flex: 0 0 280px; }
+.jg-kalikow__photo img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--sage);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: block;
+}
+
+/* Body: heading + paragraph + CTA + email + note, all stacked */
+.jg-kalikow__body { flex: 1; min-width: 0; }
+
+.jg-kalikow__body h2 {
+    color: var(--light-green);      /* does not flip */
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+}
+
+.jg-kalikow__body p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #ffffff;
+    margin: 0 0 1.25rem 0;
+}
+body.dark-mode .jg-kalikow__body p { color: #c0c0c0; }
+
+.jg-kalikow__body p strong { color: #ffffff; font-weight: bold; }
+body.dark-mode .jg-kalikow__body p strong { color: #e0e0e0; }
+
+/* CTA: sage rectangular button, matches other primary CTAs */
+.jg-kalikow__cta-btn {
+    display: inline-block;
+    background-color: var(--sage);
+    color: #ffffff;
+    padding: 0.875rem 1.875rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.875rem;
+    transition: filter 0.2s ease;
+}
+.jg-kalikow__cta-btn:hover { filter: brightness(1.1); color: #ffffff; }
+.jg-kalikow__cta-btn:focus { outline: 3px solid var(--light-green); outline-offset: 2px; }
+
+/* Email line */
+.jg-kalikow__cta-email {
+    font-size: 0.875rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+.jg-kalikow__cta-email a {
+    color: var(--light-green);      /* does not flip */
+    font-weight: bold;
+    text-decoration: underline;
+}
+.jg-kalikow__cta-email a:hover { color: #ffffff; }
+
+/* Italic note */
+.jg-kalikow__cta-note {
+    font-size: 0.75rem;
+    color: #a9bccc;
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0;
+}
+body.dark-mode .jg-kalikow__cta-note { color: #a0a0a0; }
+
+/* ======================================================
+   EVENT CARDS
+====================================================== */
+.jg-card {
+    background-color: var(--cream);
+    border-radius: 8px;
+    padding: 1.25rem;
+    position: relative;
+    overflow: visible;
+    transition: transform 0.2s ease;
+}
+.jg-card:hover { transform: translateY(-3px); }
+body.dark-mode .jg-card { background-color: #1e1e1e; }
+
+.jg-speaker-bio {
+    visibility: hidden;
+    width: 240px;
+    background-color: var(--charcoal);
+    color: #ffffff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 0.9375rem;
+    position: absolute;
+    z-index: 100;
+    bottom: 105%;
+    left: 50%;
+    margin-left: -120px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.jg-speaker-bio::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--charcoal) transparent transparent transparent;
+}
+.jg-card:hover .jg-speaker-bio { visibility: visible; opacity: 1; }
+
+.jg-card__date   { font-size: 0.75rem; font-weight: bold; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; }
+.jg-card__type   { font-size: 0.75rem; color: var(--charcoal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; opacity: 0.7; }
+.jg-card h3      { color: var(--navy); font-size: 1rem; margin: 0 0 0.5rem 0; }
+.jg-card__speaker { font-size: 0.875rem; color: var(--navy); font-weight: 600; margin: -0.75rem 0 1.25rem 0; display: block; }
+.jg-card__meta   { display: flex; justify-content: space-between; font-size: 0.75rem; color: #666; margin-top: 0.625rem; padding-top: 0.625rem; border-top: 1px solid rgba(0,0,0,0.05); }
+body.dark-mode .jg-card__meta { color: #a0a0a0; border-top-color: #333; }
+
+.jg-btn-card {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.9375rem;
+    background-color: #09497a;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 0.8125rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: filter 0.2s ease;
+}
+.jg-btn-card:hover { filter: brightness(1.15); }
+.jg-btn-card--sage { background-color: var(--sage) !important; }
+
+.jg-events-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.jg-events-links__sep {
+    color: var(--charcoal);
+    opacity: 0.35;
+    font-weight: normal;
+    user-select: none;
+}
+.jg-events-links a { display: flex; align-items: center; gap: 0.5rem; color: var(--navy); font-weight: bold; font-size: 0.9375rem; text-decoration: none; }
+.jg-events-links a:hover { color: var(--sage); }
+
+/* ======================================================
+   PUBLICATIONS
+   Outer section is a full-width light-blue band; inner
+   wrapper constrains content to 1100px.
+====================================================== */
+
+/* Outer: full-width light-blue band. --light-blue does not flip,
+   so we override directly for dark mode. */
+.jg-publications {
+    background-color: var(--light-blue);
+    padding: 3rem 3.125rem;
+}
+body.dark-mode .jg-publications { background-color: #1a1a1a; }
+
+/* Inner: constrained wrapper */
+.jg-publications__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header: centered title, no bottom border (band provides separation) */
+.jg-publications__header {
+    text-align: center;
+    margin-bottom: 1.875rem;
+}
+.jg-publications__header h2 {
+    color: var(--navy);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 1.75rem;
+    text-transform: none;
+    letter-spacing: normal;
+    margin: 0;
+}
+
+/* Publication cards (white on light-blue) */
+.jg-card--pub {
+    background-color: var(--white) !important;
+    border: 1px solid #d1caba !important;
+    padding: 0.9375rem 1.25rem;
+}
+body.dark-mode .jg-card--pub { background-color: #1e1e1e !important; border-color: #333 !important; }
+.jg-card--pub h3 { color: var(--navy); margin: 0 0 0.5rem 0; font-size: 1.0625rem; }
+.jg-card--pub p  { font-size: 0.8125rem; color: var(--charcoal); margin-bottom: 0.9375rem; }
+
+/* == Mailing list band (sits between publications & footer) == */
+.jg-mailing-band {
+    background-color: var(--sage);
+    padding: 0.5rem 2.5rem;
+    text-align: center;
+}
+body.dark-mode .jg-mailing-band { background-color: #a8b361; }
+
+.jg-mailing-band a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    transition: opacity 0.2s ease;
+}
+.jg-mailing-band a:hover { opacity: 0.85; color: #ffffff; text-decoration: none; }
+.jg-mailing-band a:focus-visible { outline: 2px solid #ffffff; outline-offset: 4px; }
+
+.jg-mailing-band__chevron {
+    font-size: 1.25rem;
+    line-height: 1;
+    font-weight: normal;
+}
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 900px) {
+    .jg-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .jg-hero { padding: 40px 25px; }
+    .jg-hero { background-image: none; }
+    .jg-hero__layout { flex-direction: column; gap: 28px; }
+    .jg-hero__intro { flex: none; width: 100%; text-align: center; }
+    .jg-hero__intro h1 { font-size: 2rem; }
+    .jg-search-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}
+@media (max-width: 768px) {
+.jg-header { flex-flow: row wrap; align-items: center; padding: 15px 20px; gap: 15px; min-height: auto; }
+    .jg-header__logo { order: 0; }
+    .jg-header__affiliation { order: 1; }
+    .jg-header__center { order: 2; flex: 0 0 100%; width: 100%; padding-top: 0; }
+    .jg-header__logo img { height: 65px; }
+    .jg-mjh-logo { height: 55px; }
+    .jg-header__utility { justify-content: center; flex-wrap: wrap; }
+    .jg-header__divider { display: none; }
+    .jg-header::after { left: 20px; right: 20px; }
+    .jg-nav .dropbtn { padding: 10px 12px; font-size: 0.75rem; }
+    .jg-nav .dropdown-content { left: 50%; transform: translateX(-50%); }
+    .jg-hero { padding: 30px 15px; }
+    .jg-search-row { flex-direction: column; gap: 0.75rem; }
+    .jg-search-row__narrow, .jg-search-row__wide { flex: none; width: 100%; }
+    .jg-tips-panel__grid { grid-template-columns: 1fr; }
+    .jg-btn-search { width: 100%; }
+    .jg-search-container { padding: 20px; }
+    .jg-section { padding: 1.875rem 0.9375rem; }
+    .jg-cards-section { padding: 2rem 1.25rem; }
+    .jg-grid-4, .jg-grid-3 { grid-template-columns: 1fr; }
+    .jg-kalikow { padding: 2rem 1.25rem; }
+    .jg-kalikow__inner { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .jg-kalikow__photo { flex: none; }
+    .jg-kalikow__photo img { width: 200px; height: 200px; }
+    .jg-events-links { flex-direction: column; gap: 1.25rem; text-align: center; }
+    .jg-events-links__sep { display: none; }
+    .jg-speaker-bio { visibility: visible; opacity: 1; position: static; width: 100%; margin: 0 0 0.75rem 0; box-shadow: none; }
+    .jg-speaker-bio::after { display: none; }
+    .jg-publications { padding: 2rem 1.25rem; }
+    .jg-mailing-band { padding: 1rem 1.25rem; }
+    .jg-mailing-band a { font-size: 0.875rem; letter-spacing: 1px; }
+}
+
+/* ===================================================
+   JG TAG: SAGE
+   Reusable sage block tag � used as page-title-band
+   eyebrow, record-type metadata tag, section eyebrows,
+   and other sage badges. Margin is page-scoped.
+   =================================================== */
+.jg-tag-sage {
+    display: inline-block;
+    background-color: var(--sage);
+    color: #ffffff;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 3px;
+}
+body.dark-mode .jg-tag-sage {
+    background-color: #a8b361;
+    color: #121212;
+}
+
+/* ======================================================
+   LOCKED ROWS — Value-Added Contributor Feature
+   Reusable component for search pages.
+   Usage:
+     <div class="jg-locked-rows-wrapper">
+       <div aria-hidden="true">
+         <!-- dimmed row(s) here -->
+       </div>
+       <div class="jg-locked-overlay" role="note">
+         <div class="jg-locked-overlay__inner">
+           <div class="jg-locked-overlay__icon" aria-hidden="true">🔓</div>
+           <div class="jg-locked-overlay__text">
+             <strong>Unlock Two Additional Search Rows</strong>
+             <p>...</p>
+             <a href="..." class="jg-btn-unlock">Donate Now to Unlock →</a>
+           </div>
+         </div>
+       </div>
+     </div>
+====================================================== */
+.jg-locked-rows-wrapper {
+    position: relative;
+    margin-top: 6px;
+    transition: padding-bottom 0.3s ease; /* Animates the container expanding */
+}
+
+.jg-locked-rows-wrapper:hover,
+.jg-locked-rows-wrapper.revealed {
+    padding-bottom: 80px; 
+}
+
+.jg-locked-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(232, 225, 209, 0.45);
+    border-radius: 8px;
+    border: 1px solid #d1caba;
+    z-index: 2;
+    padding: 20px 28px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+}
+
+.jg-locked-rows-wrapper:hover .jg-locked-overlay,
+.jg-locked-rows-wrapper.revealed .jg-locked-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body.dark-mode .jg-locked-overlay {
+    background: rgba(30, 30, 30, 0.6);
+    border-color: #444;
+}
+
+.jg-locked-overlay__inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 560px;
+    width: 100%;
+}
+
+.jg-locked-overlay__icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.jg-locked-overlay__text {
+    flex: 1;
+    font-size: 13px;
+    color: var(--charcoal);
+    line-height: 1.55;
+}
+
+.jg-locked-overlay__text strong {
+    color: var(--navy);
+    font-size: 14px;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.jg-locked-overlay__text p {
+    margin: 0 0 10px 0;
+}
+
+.jg-btn-unlock {
+    display: inline-block;
+    background-color: var(--sage);
+    color: #ffffff;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: filter 0.2s;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+.jg-btn-unlock:hover { filter: brightness(1.1); color: #ffffff; }
+.jg-btn-unlock:focus { outline: 3px solid var(--navy); outline-offset: 2px; }
+
+/* Dark mode */
+body.dark-mode .jg-locked-overlay {
+    background: rgba(30, 30, 30, 0.85);
+    border-color: #444;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+body.dark-mode .jg-locked-overlay__text { color: #c0c0c0; }
+body.dark-mode .jg-locked-overlay__text strong { color: #a8b361; }
+
+/* ==========================================================================
+   SHARED SEARCH PAGE SYSTEM
+   Append this block to jg-global.css.
+   Used by: Global_Search.html, Holocaust.html, JOWBR.html (and future search pages)
+   After appending, remove duplicate rules from Holocaust.html page <style> block:
+     .jg-search-hero, .jg-search-card, .jg-tips-link, .jg-tips-card-panel,
+     .search-row (scoped), .sf, .field-label (scoped), .jg-search-card select/input,
+     .btn-search
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   SEARCH HERO BAND
+   Full-width ecru band wrapping page heading + search card.
+   Replaces the old navy .page-title-band on all search pages.
+   -------------------------------------------------------------------------- */
+.jg-search-hero {
+    background-color: var(--ecru);
+    padding: 3rem 2rem 2.5rem;
+}
+.jg-search-hero__inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+.jg-search-hero__heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.jg-search-hero__heading h1 {
+    margin: 0 0 10px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    line-height: 1.15;
+    color: var(--navy);
+}
+.jg-search-hero__heading .lede {
+    margin: 0 auto;
+    max-width: 640px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    opacity: 0.85;
+}
+.jg-search-hero__heading .stat-line {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.8125rem;
+    font-style: italic;
+    color: var(--charcoal);
+    opacity: 0.65;
+}
+/* --navy flips to #e0e0e0 in dark mode - acceptable for heading on dark ecru */
+body.dark-mode .jg-search-hero__heading .lede,
+body.dark-mode .jg-search-hero__heading .stat-line {
+    color: #c8c0b0;
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   SEARCH CARD
+   White card floating on ecru. Shadow only -- no border.
+   Note: --ecru flips to #1a1a1a; --white flips to #121212.
+   Pin card to #1e1e1e so it stays visually distinct from the band.
+   -------------------------------------------------------------------------- */
+.jg-search-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.75rem 2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+body.dark-mode .jg-search-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* Card header: h2 left, tips link right */
+.jg-search-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.jg-search-card__header h2 {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--navy);
+    line-height: 1.25;
+}
+body.dark-mode .jg-search-card__header h2 { color: #e0e0e0; }
+
+/* Sage rule beneath the header row */
+.jg-search-card__rule {
+    border: none;
+    border-top: 2px solid var(--sage);
+    margin: 0.875rem 0 1.25rem;
+    opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   TIPS LINK
+   Text-link toggle with lightbulb icon and sage dotted underline.
+   Uses .light-logo / .dark-logo swap pattern (same as footer logos).
+   -------------------------------------------------------------------------- */
+.jg-tips-link {
+    background: none;
+    border: none;
+    padding: 4px 6px;
+    margin: 0;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: underline dotted;
+    text-decoration-color: var(--sage);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+}
+.jg-tips-link:hover,
+.jg-tips-link:focus-visible {
+    color: var(--sage);
+}
+.jg-tips-link[aria-expanded="true"] {
+    color: var(--sage);
+    text-decoration-style: solid;
+}
+body.dark-mode .jg-tips-link { color: #e0e0e0; }
+body.dark-mode .jg-tips-link:hover,
+body.dark-mode .jg-tips-link:focus-visible,
+body.dark-mode .jg-tips-link[aria-expanded="true"] { color: #a8b361; }
+
+/* Lightbulb icon inside the flex button row.
+   Override global .light-logo { display: block } so images stay inline. */
+.jg-tips-link__icon {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+.jg-tips-link .light-logo,
+.jg-tips-link .dark-logo { display: none; }
+.jg-tips-link .light-logo { display: inline-block; }
+body.dark-mode .jg-tips-link .light-logo { display: none !important; }
+body.dark-mode .jg-tips-link .dark-logo { display: inline-block !important; }
+
+/* --------------------------------------------------------------------------
+   TIPS CARD PANEL
+   Expandable panel beneath the card header rule.
+   Uses --light-blue which does NOT flip in dark mode -- safe on all backgrounds.
+   -------------------------------------------------------------------------- */
+.jg-tips-card-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.35s ease, margin 0.35s ease;
+    background: var(--light-blue);
+    border-left: 4px solid var(--sage);
+    border-radius: 4px;
+    padding: 0 1rem;
+    margin-bottom: 0;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--charcoal);
+}
+.jg-tips-card-panel.open {
+    max-height: 500px;
+    opacity: 1;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+.jg-tips-card-panel strong { color: var(--navy); }
+body.dark-mode .jg-tips-card-panel { background: #2a2a2a; color: #c8c0b0; }
+body.dark-mode .jg-tips-card-panel strong { color: #a8b361; }
+
+/* --------------------------------------------------------------------------
+   SEARCH FORM ROWS
+   .sf wrappers place label directly above its input (no separate header row).
+   Scoped to .jg-search-card to avoid cascade conflicts on other pages.
+   -------------------------------------------------------------------------- */
+.jg-search-card .search-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-end;
+}
+.jg-search-card .sf {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.jg-search-card .sf.n { flex: 1.1; min-width: 130px; }
+.jg-search-card .sf.w { flex: 2; }
+.jg-search-card .field-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 2px;
+}
+
+/* Input and select fields */
+.jg-search-card select,
+.jg-search-card input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #c4d0d6;
+    border-radius: 4px;
+    font-size: 13.5px;
+    color: var(--charcoal);
+    background: var(--light-blue);
+    font-family: inherit;
+    transition: border-color 0.2s, background 0.2s;
+}
+.jg-search-card select:focus,
+.jg-search-card input[type="text"]:focus {
+    border-color: var(--navy);
+    outline: none;
+    background: var(--white);
+    box-shadow: 0 0 0 2px rgba(9,73,122,0.12);
+}
+body.dark-mode .jg-search-card select,
+body.dark-mode .jg-search-card input[type="text"] {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+body.dark-mode .jg-search-card select:focus,
+body.dark-mode .jg-search-card input[type="text"]:focus {
+    background: #1e1e1e;
+    border-color: #a8b361;
+}
+
+/* --------------------------------------------------------------------------
+   LOCKED ROWS OVERLAY (persistent -- always visible, not hover-reveal)
+   The overlay covers the locked rows at all times to communicate the
+   value-added feature. No hover/revealed toggling.
+   -------------------------------------------------------------------------- */
+.jg-locked-rows-wrapper {
+    position: relative;
+    margin-top: 14px;
+    padding-bottom: 68px; /* fixed space for the overlay CTA */
+}
+.search-row.locked {
+    opacity: 0.35;
+    pointer-events: none;
+}
+.jg-search-card .search-row.locked select,
+.jg-search-card .search-row.locked input[type="text"] {
+    background-color: #e4e9ec;
+}
+body.dark-mode .jg-search-card .search-row.locked select,
+body.dark-mode .jg-search-card .search-row.locked input[type="text"] {
+    background-color: #222;
+}
+
+.jg-locked-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(232,225,209,0.6);
+    border-radius: 8px;
+    border: 1px solid #d1caba;
+    z-index: 2;
+    padding: 20px 28px;
+}
+body.dark-mode .jg-locked-overlay {
+    background: rgba(30,30,30,0.78);
+    border-color: #444;
+}
+
+.jg-locked-overlay__inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 560px;
+    width: 100%;
+}
+.jg-locked-overlay__icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+.jg-locked-overlay__text {
+    flex: 1;
+    font-size: 13px;
+    color: var(--charcoal);
+    line-height: 1.55;
+}
+.jg-locked-overlay__text strong {
+    color: var(--navy);
+    font-size: 14px;
+    display: block;
+    margin-bottom: 3px;
+}
+.jg-locked-overlay__text p { margin: 0 0 10px; }
+body.dark-mode .jg-locked-overlay__text { color: #c0c0c0; }
+body.dark-mode .jg-locked-overlay__text strong { color: #a8b361; }
+
+.jg-btn-unlock {
+    display: inline-block;
+    background-color: var(--sage);
+    color: #ffffff;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: filter 0.2s;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+.jg-btn-unlock:hover { filter: brightness(1.1); color: #ffffff; }
+.jg-btn-unlock:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+body.dark-mode .jg-btn-unlock { background-color: #a8b361; color: #1a1a1a; }
+body.dark-mode .jg-btn-unlock:hover { color: #1a1a1a; }
+
+/* --------------------------------------------------------------------------
+   SEARCH SUBMIT BUTTON
+   Compact centered block replacing the old wide pill.
+   -------------------------------------------------------------------------- */
+.btn-search {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    background-color: var(--sage);
+    color: #ffffff;
+    border: none;
+    padding: 11px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: inherit;
+    transition: filter 0.2s;
+}
+.btn-search:hover { filter: brightness(1.1); }
+.btn-search:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+body.dark-mode .btn-search { background-color: #a8b361; color: #1a1a1a; }
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+    .jg-search-hero { padding: 2rem 1.25rem 2rem; }
+    .jg-search-card { padding: 1.25rem 1.125rem 1rem; }
+    .jg-search-card .search-row { flex-direction: column; align-items: stretch; }
+    .jg-search-card .sf.n,
+    .jg-search-card .sf.w { flex: unset; width: 100%; min-width: unset; }
+    .jg-locked-overlay__inner { flex-direction: column; text-align: center; }
+    .jg-locked-overlay { padding: 16px; }
+}
+
+/* ============================================================
+   RESEARCH DIVISION SIDEBAR
+   Used on RD pages (Subcarpathia, Romania, etc.).
+   Two-column layout: sticky sidebar (nav + donate) + main content.
+   Sidebar markup is fetched per-RD from /RD/{slug}/RD_Sidebar.html.
+   Active state applied at runtime by /jg-rd-sidebar.js.
+   PLACEMENT: insert immediately before the FOOTER banner section.
+============================================================ */
+
+/* -- Page body wrap (ecru background) ---------------------- */
+.rd-body-wrap {
+    background-color: var(--ecru);
+    flex: 1;
+}
+.rd-body-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+.rd-body-inner--narrow {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 2.5rem 2rem;
+   display: grid;
+   grid-template-columns: 240px 1fr;
+   gap: 2.5rem;
+   align-items: start;
+}
+
+/* -- Sidebar wrapper (sticky stack) ------------------------ */
+.rd-sidebar {
+    position: sticky;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* -- Sidebar nav card -------------------------------------- */
+.rd-sidebar-card {
+    background-color: var(--white);
+    border-left: 3px solid var(--navy);
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    padding: 0 0 16px;
+    overflow: hidden;
+}
+.rd-sidebar-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--navy);
+    background-color: var(--cream);
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    margin-bottom: 8px;
+}
+.rd-sidebar-card a {
+    display: block;
+    padding: 9px 18px 9px 15px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    border-left: 3px solid transparent;
+    transition: color 0.15s, background-color 0.15s;
+    line-height: 1.4;
+    text-decoration: none;
+}
+.rd-sidebar-card a:hover {
+    color: var(--navy);
+    background-color: var(--ecru);
+}
+.rd-sidebar-card a.active {
+    color: var(--navy);
+    border-left-color: var(--navy);
+    background-color: var(--ecru);
+}
+
+/* -- Sidebar donate card (navy band w/ sage CTA) ----------- */
+.rd-sidebar-donate {
+    background-color: var(--navy);
+    border-radius: 8px;
+    padding: 18px 18px 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.rd-sidebar-donate p {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.55;
+    margin: 0 0 12px 0;
+}
+.rd-btn-donate-full {
+    display: block;
+    background-color: var(--sage);
+    color: #ffffff;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: filter 0.15s, transform 0.15s;
+    text-decoration: none;
+}
+.rd-btn-donate-full:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* -- Dark mode --------------------------------------------- */
+/* var(--navy) flips to light gray in dark mode, so the donate */
+/* card background is hardcoded to keep the navy fill intact.  */
+body.dark-mode .rd-sidebar-card {
+    background-color: #1e1e1e;
+    border-left-color: #5a7a95;
+}
+body.dark-mode .rd-sidebar-label {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-bottom-color: #333;
+}
+body.dark-mode .rd-sidebar-card a {
+    color: #c8c8c8;
+}
+body.dark-mode .rd-sidebar-card a:hover {
+    color: #a8b361;
+    background-color: #2a2a2a;
+}
+body.dark-mode .rd-sidebar-card a.active {
+    color: #a8b361;
+    border-left-color: #a8b361;
+    background-color: #2a2a2a;
+}
+body.dark-mode .rd-sidebar-donate {
+    background-color: #0d2a45;
+}
+body.dark-mode .rd-sidebar-donate p {
+    color: rgba(255,255,255,0.85);
+}
+body.dark-mode .rd-btn-donate-full {
+    background-color: #a8b361;
+    color: #121212;
+}
+body.dark-mode .rd-btn-donate-full:hover {
+    color: #121212;
+}
+
+/* -- Mobile (under 800px): collapse to horizontal pill row -- */
+@media (max-width: 800px) {
+    .rd-body-inner {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+    .rd-sidebar { position: static; }
+    .rd-sidebar-card {
+        display: flex;
+        flex-wrap: wrap;
+        border-left: none;
+        border-top: 3px solid var(--navy);
+        border-radius: 6px;
+        padding: 0;
+    }
+    .rd-sidebar-label {
+        width: 100%;
+        flex: 1 0 100%;
+        margin-bottom: 0;
+    }
+    .rd-sidebar-card a {
+        padding: 8px 14px;
+        flex: 1 0 auto;
+        text-align: center;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+    .rd-sidebar-card a.active {
+        border-left: none;
+        border-bottom-color: var(--navy);
+    }
+}
+
+/* ==========================================================================
+   VOLUNTEER STRIP
+   Thin light-blue band with an RD-specific volunteer contact.
+   Used on RD home pages (above donation block), RD database pages
+   (below filters, above card list), and the RD directory.
+   --light-blue does NOT flip in dark mode - charcoal via explicit override.
+   ========================================================================== */
+.volunteer-strip {
+    background-color: var(--light-blue);
+    border-top: 1px solid rgba(9,73,122,0.08);
+    border-bottom: 1px solid rgba(9,73,122,0.08);
+    padding: 12px 50px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+}
+.volunteer-strip a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: underline;
+}
+.volunteer-strip a:hover { color: var(--sage); }
+
+body.dark-mode .volunteer-strip {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-color: transparent;
+}
+body.dark-mode .volunteer-strip a { color: #a8b361; }
+
+@media (max-width: 640px) {
+    .volunteer-strip { padding: 12px 20px; }
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+ .jg-footer {
+    background-color: var(--white);
+    padding: 35px 50px 20px 50px;
+    font-family: 'Gotham', 'Arial', sans-serif;
+}
+body.dark-mode .jg-footer {
+    background-color: #1a1a1a;
+}
+
+     .jg-footer__logos {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 30px;
+         margin-bottom: 20px;
+     }
+
+     .jg-footer__logo-jg a { display: block; line-height: 0; }
+     .jg-footer__logo-jg img {
+         height: 75px;
+         width: auto;
+         object-fit: contain;
+     }
+
+     .jg-footer__logo-divider {
+         width: 1px;
+         height: 75px;
+         background-color: #09497a;
+     }
+     body.dark-mode .jg-footer__logo-divider {
+         background-color: #a8b361;
+     }
+
+     .jg-footer__logo-mjh a { display: block; line-height: 0; }
+     .jg-footer__logo-mjh img {
+         height: 75px;
+         width: auto;
+         object-fit: contain;
+     }
+
+     .jg-footer__address {
+         text-align: center;
+         font-size: 13px;
+         line-height: 1.8;
+         color: var(--charcoal);
+         margin-bottom: 15px;
+     }
+     .jg-footer__address a {
+         color: var(--navy);
+         text-decoration: underline;
+         font-weight: bold;
+     }
+     .jg-footer__address a:hover { color: var(--sage); }
+     body.dark-mode .jg-footer__address { color: #a0a0a0; }
+     body.dark-mode .jg-footer__address a { color: #a8b361; }
+
+     .jg-footer__legal {
+         padding-top: 15px;
+         border-top: 1px solid #d1caba;
+         text-align: center;
+         font-size: 12px;
+         color: var(--charcoal);
+         opacity: 0.75;
+     }
+     body.dark-mode .jg-footer__legal {
+         border-top-color: #333;
+         color: #a0a0a0;
+     }
+     .jg-footer__legal a {
+         color: var(--charcoal);
+         text-decoration: none;
+         font-weight: normal;
+     }
+     .jg-footer__legal a:hover {
+         color: var(--sage);
+         text-decoration: underline;
+     }
+     body.dark-mode .jg-footer__legal a { color: #a0a0a0; }
+     body.dark-mode .jg-footer__legal a:hover { color: #a8b361; }
+
+     .jg-footer__legal-sep {
+         margin: 0 8px;
+         opacity: 0.4;
+     }
+
+     @media (max-width: 768px) {
+         .jg-footer { padding: 25px 20px 15px 20px; }
+         .jg-footer__logos { flex-direction: column; gap: 15px; }
+         .jg-footer__logo-divider { display: none; }
+         .jg-footer__logo-jg img,
+         .jg-footer__logo-mjh img { height: 60px; }
+         .jg-footer__legal { font-size: 11px; }
+     }
+
+/* Mobile */
+@media (max-width: 640px) {
+    .jg-locked-overlay__inner { flex-direction: column; text-align: center; }
+}
+/* == Page title band == */
+.page-title-band {
+    background-color: var(--navy);
+    padding: 44px 50px;
+    text-align: center;
+}
+/* SAGE BLOCK TAG */
+.page-title-band .tagline {
+    display: inline-block;
+    background-color: var(--sage);
+    color: #ffffff;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+}
+.page-title-band h1 {
+    margin: 0 0 10px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    line-height: 1.15;
+    color: #ffffff;
+}
+
+.page-title-band h1 a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
+.page-title-band h1 a:hover { text-decoration-thickness: 2px; }
+.page-title-band p.hero-subtitle {
+    margin: 0 auto;
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    max-width: 720px;
+    line-height: 1.6;
+}
+
+.page-title-band__inner {
+	position: relative; 
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+
+.page-title-band .stat-line {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.8125rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.7);
+}
+
+/* Neutral content wrapper - holds the form/results below a navy band */
+.jg-band-content {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 4rem; 
+}
+
+body.dark-mode 
+.page-title-band .tagline { 
+	background-color: #a8b361 !important;
+	 color: #121212 !important; 
+}
+
+/* ============================================================
+   ALPHA JUMP BAR  -  shared A-Z navigation strip
+   ------------------------------------------------------------
+   Sticky horizontal strip of letter links for long alphabetical
+   listings (Yizkor translations, JOWBR cemetery inventory, etc.).
+   Letters with no entries take .disabled.
+
+   IMPORTANT: apply to <div role="navigation" class="jump-bar">,
+   NOT <nav class="jump-bar"> - a literal <nav> triggers the global
+   nav {} cascade (navy background + padding). 
+   ============================================================ */
+.jump-bar {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.jump-bar__label {
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--charcoal);
+    opacity: 0.6;
+    padding: 6px 8px 6px 4px;
+    margin-right: 4px;
+    align-self: center;
+}
+.jump-bar a {
+    display: inline-block;
+    padding: 6px 9px;
+    font-size: 0.8125rem;
+    font-weight: bold;
+    color: var(--navy);
+    border-radius: 4px;
+    transition: background-color 0.15s, color 0.15s;
+    min-width: 28px;
+    text-align: center;
+    text-decoration: none;
+}
+.jump-bar a:hover,
+.jump-bar a:focus {
+    background-color: rgba(147,155,81,0.15);
+    color: var(--sage);
+    outline: none;
+}
+.jump-bar a.disabled {
+    color: #c0b9a9;
+    pointer-events: none;
+    cursor: default;
+}
+
+/* -- Jump bar dark mode -- */
+body.dark-mode .jump-bar {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+body.dark-mode .jump-bar a { color: #e0e0e0; }
+body.dark-mode .jump-bar a:hover,
+body.dark-mode .jump-bar a:focus {
+    background-color: #2a2a2a;
+    color: var(--sage);
+}
+body.dark-mode .jump-bar a.disabled { color: #555; }
+
+/* On narrow screens the bar is easier to use un-stuck */
+@media (max-width: 760px) {
+    .jump-bar { position: static; }
+}
+/* ============================================================
+   Tips Panel Formatting for Search Pages
+   ------------------------------------------------------------
+	Drop down information about how to use the search
+   ============================================================ */
+
+.jg-tips-panel__footer a { display: block; }
+.jg-tips-panel__footer a + a { margin-top: 0.35rem; }
+
+/* ============================================================================
+   RETURN-TO-TOP FLOATING BUTTON 
+============================================================================ */
+
+.db-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 900;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 26px;
+    background-color: #09497a;   /* hardcoded - var(--navy) flips in dark mode */
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.28);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s, background-color 0.15s;
+}
+.db-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.db-to-top:hover { background-color: #0d5c99; }
+.db-to-top:focus-visible { outline: 2px solid var(--sage); outline-offset: 2px; }
+.db-to-top svg { width: 18px; height: 18px; flex-shrink: 0; }
+body.dark-mode .db-to-top { background-color: #5a7a95; }
+body.dark-mode .db-to-top:hover { background-color: #6b8aa5; }
+
+@media (max-width: 640px) {
+    .db-to-top { bottom: 16px; right: 16px; padding: 11px 18px; font-size: 0.9rem; }
+}

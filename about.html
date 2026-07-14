@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us &mdash; JewishGen</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/jg-global.css">
+
+    <!-- ==========================================================
+         About page - local styles (CHW)
+         B) body prose class + uniform content width across sections
+         ========================================================== -->
+    <style>
+
+        
+        .jg-prose {
+            font-size: 1rem;
+            line-height: 1.65;
+            margin-top: 0;
+        }
+
+        .about-page .jg-cards-section {
+            padding-top: 2rem;
+    	    padding-bottom: 2rem;
+	    padding-left: 0;
+            padding-right: 0;
+        }
+        .about-page .jg-cards-section__intro,
+        .about-page .jg-cards-section .jg-grid-3 {
+            max-width: 1100px;
+            padding-left: 3.125rem;
+            padding-right: 3.125rem;
+        }
+
+	.about-page .jg-cards-section__intro h2.jg-section-title {
+    		font-family: 'Arial', sans-serif;
+    		font-weight: 500;
+    		font-size: 1.5rem;
+    		text-transform: uppercase;
+    		margin: 0 0 1.875rem 0;
+	}
+
+        /* The intro paragraph sits under the stronger
+           .jg-cards-section__intro p rule (0.9375rem); pin it to
+           body size so it matches the other sections. */
+        .about-page .jg-cards-section__intro p.jg-prose {
+            font-size: 1rem;
+            line-height: 1.65;
+            color: var(--charcoal);
+        }
+
+        @media (max-width: 768px) {
+            .about-page .jg-cards-section__intro,
+            .about-page .jg-cards-section .jg-grid-3 {
+                padding-left: 0.9375rem;
+                padding-right: 0.9375rem;
+            }
+        }
+
+	.about-page .jg-section {
+   	    padding-top: 2rem;
+            padding-bottom: 2rem;
+	}
+    </style>
+</head>
+<body class="about-page">
+
+<div id="site-header"></div>
+
+<main>
+    <div class="page-title-band">
+        <div class="page-title-band__inner">
+            <span class="tagline jg-tag-sage">Mission &amp; History</span>
+            <h1>About JewishGen</h1>
+            <p class="hero-subtitle">The Global Home for Jewish Genealogy</p>
+        </div>
+    </div>
+
+    <section class="jg-section">
+        <h2 class="jg-section-title">Our Mission</h2>
+        <p class="jg-prose">
+            <strong>JewishGen serves as the global home for Jewish genealogy.</strong> Operating as the genealogical research division of the Museum of Jewish Heritage, A Living Memorial to the Holocaust, our core mission is to preserve our Jewish family history and heritage for future generations. We look at the past to reclaim the memory of what was, allowing these memories to shape our identity today and influence what we will transmit to the future.
+        </p>
+    </section>
+
+    <section class="jg-cards-section">
+        <div class="jg-cards-section__intro" style="text-align: left;">
+            <h2 class="jg-section-title">What We Do</h2>
+            <p class="jg-prose">Offered as a free public resource, JewishGen provides unparalleled access to millions of records from around the globe. Our platform helps you uncover your roots through:</p>
+        </div>
+        
+        <div class="jg-grid-3">
+            <a href="/catalog/" class="jg-feature-card">
+                <div class="jg-feature-card__icon">
+                    <img src="/images/site/catalog-icon-reg.svg" class="jg-feature-card__icon-light" alt="Records Icon">
+                    <img src="/images/site/catalog-icon-dark.svg" class="jg-feature-card__icon-dark" alt="Records Icon">
+                </div>
+                <h3>Historical Records</h3>
+                <p>Search millions of global records. Our databases include more than 4 million records related to the Holocaust, and more than 4.2 million burial records. Records are continually added each month.</p>
+                <span class="jg-feature-card__chevron" aria-hidden="true">&rarr;</span>
+            </a>
+
+            <a href="/JGFF/" class="jg-feature-card">
+                <div class="jg-feature-card__icon">
+                    <img src="/images/site/ComBlue.svg" class="jg-feature-card__icon-light" alt="Community Icon">
+                    <img src="/images/site/ComDark.svg" class="jg-feature-card__icon-dark" alt="Community Icon">
+                </div>
+                <h3>Making Connections</h3>
+                <p>We offer award-winning resources such as the Discussion Groups, Family Finder, and ViewMate. These tools empower researchers to connect with tens of thousands of other JewishGen members who share similar interests.</p>
+                <span class="jg-feature-card__chevron" aria-hidden="true">&rarr;</span>
+            </a>
+
+            <a href="/yizkor/" class="jg-feature-card">
+                <div class="jg-feature-card__icon">
+                    <img src="/images/site/SourceBlue.svg" class="jg-feature-card__icon-light" alt="Education Icon">
+                    <img src="/images/site/SourceDark.svg" class="jg-feature-card__icon-dark" alt="Education Icon">
+                </div>
+                <h3>Community &amp; Context</h3>
+                <p>Explore informational, educational and historical offerings, such as the Jewish Communities Database, Yizkor Book translations, InfoFiles, and KehilaLinks. These resources provide critical insights, first-hand accounts, and context about Jewish communal and familial life throughout the world.</p>
+                <span class="jg-feature-card__chevron" aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="jg-section">
+        <h2 class="jg-section-title">Powered by Community</h2>
+        <p class="jg-prose">
+            Founded in 1987, JewishGen has grown into a world-class organization thanks to the dedication of nearly 1,000 volunteers. For us, genealogy is more than names and dates &mdash; it is the ongoing work of preserving Jewish family history for the generations to come. Together, we have made thousands of family connections possible, helping researchers gather, document, and preserve their findings and share them with the Jewish community worldwide.
+        </p>
+        
+        <div style="margin-top: 2rem;">
+            <a href="/volunteer.html" class="jg-btn jg-btn--primary">Join Our Volunteer Team</a>
+            <a href="/JewishGen-erosity/" class="jg-btn jg-btn--secondary" style="margin-left: 10px;">Support JewishGen</a>
+        </div>
+    </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function(r) { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(function(html) { document.getElementById(id).innerHTML = html; })
+        .catch(function(err) { console.warn(err); });
+}
+
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html')
+]).then(function() {
+    // Accessibility for dropdown menus
+    document.querySelectorAll('.jg-nav .dropbtn, .main-nav .dropbtn').forEach(function(btn) {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var menu = this.nextElementSibling;
+                if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+            if (e.key === 'Escape') {
+                var menu = this.nextElementSibling;
+                if (menu) {
+                    menu.style.display = 'none';
+                    this.focus();
+                }
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

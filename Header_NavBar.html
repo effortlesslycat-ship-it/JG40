@@ -1,0 +1,251 @@
+<!-- ============================================================
+     JewishGen Redesign - Header_NavBar.html (JG40)
+     Replaces: /JG/header.txt
+     CSS: Classes below mirror jg-global.css - keep in sync.
+     JS dependencies:
+       - /JG/scripts/dropdowncontent.js
+       - /JG/scripts/CookieUtils.js
+       - /JG/scripts/CreateLoginLink.js
+
+     STRUCTURE NOTE:
+     The <nav class="jg-nav"> lives INSIDE <header> as part of a
+     three-column flex layout:
+       [JewishGen logo] [utility + nav stack] [MJH logo]
+     The inset rule below the nav is a ::after pseudo on .jg-header.
+
+     Utility row has dividers between every item:
+       Sign Up | div | profile icon | div | dark toggle
+     ============================================================
+
+     == CSS BLOCK (mirrors jg-global.css) ======================
+
+     :root {
+         --cream:       #e8e1d1;
+         --sage:        #939b51;
+         --navy:        #09497a;
+         --charcoal:    #232b2b;
+         --white:       #ffffff;
+         --light-blue:  #dce5ea;
+         --light-green: #c7cc82;   /* headings/accents on navy; does not flip in dark mode */
+     }
+
+     .jg-header__divider { width: 1px; height: 18px; background-color: rgba(255,255,255,0.3); }
+
+     (Remaining rules are in jg-global.css not duplicated here to avoid drift.)
+
+     == END CSS BLOCK ========================================= -->
+
+
+<!-- ===========================================================
+     LOGIN SCRIPTS — must load before CreateLoginLink() call
+=========================================================== -->
+<script src="https://www.jewishgen.org/JG/scripts/dropdowncontent.js"></script>
+<script src="https://www.jewishgen.org/JG/scripts/CookieUtils.js"></script>
+<script src="https://www.jewishgen.org/JG/scripts/CreateLoginLink.js"></script>
+
+
+<!-- ===========================================================
+     HEADER (three-column: JewishGen | center stack | MJH)
+=========================================================== -->
+<header class="jg-header" role="banner">
+
+    <!-- == Left column: JewishGen logo ====================== -->
+    <div class="jg-header__logo">
+        <a href="https://dev.jewishgen.org/" title="JewishGen Home Page">
+            <img src="/images/site/LOGOJGStarTopWh.png"
+                 alt="JewishGen: The Global Home for Jewish Genealogy">
+        </a>
+    </div>
+
+    <!-- == Center column: utility row above nav row ========= -->
+    <div class="jg-header__center">
+
+        <!-- Utility row: dividers between every item -->
+        <div class="jg-header__utility">
+
+            <!-- LOGGED OUT: Sign Up | div | profile → login -->
+            <div class="jg-auth-buttons" id="auth-logged-out">
+                <a href="https://www.jewishgen.org/jewishgen/register.asp"
+                   class="jg-auth-link"
+                   aria-label="Create a JewishGen account">Sign Up</a>
+
+                <div class="jg-header__divider" aria-hidden="true"></div>
+
+                <a href="https://www.jewishgen.org/jewishgen/login.asp"
+                   class="jg-profile-icon"
+                   aria-label="Log in to JewishGen"
+                   title="Log in">
+                    <img src="/images/site/greenprof.svg" alt="">
+                </a>
+            </div>
+
+            <!-- LOGGED IN: Sign Out | div | profile → profile -->
+            <div class="jg-auth-buttons" id="auth-logged-in" style="display:none;">
+                <a href="https://www.jewishgen.org/jewishgen/logout.asp"
+                   class="jg-auth-link"
+                   aria-label="Sign out of JewishGen">Sign Out</a>
+
+                <div class="jg-header__divider" aria-hidden="true"></div>
+
+                <a href="/myprofile.html"
+                   class="jg-profile-icon"
+                   aria-label="View your JewishGen profile"
+                   title="My Profile">
+                    <img src="/images/site/greenprof.svg" alt="">
+                </a>
+            </div>
+
+            <!-- Divider between auth block and dark toggle -->
+            <div class="jg-header__divider" aria-hidden="true"></div>
+
+            <!-- Dark mode toggle -->
+            <button class="jg-dark-toggle"
+                    onclick="document.body.classList.toggle('dark-mode')"
+                    aria-label="Toggle dark mode"
+                    title="Toggle dark mode">
+                <img src="/images/site/darkmode.svg" alt="">
+            </button>
+
+        </div>
+
+        <!-- Nav row (full, all 6 dropdowns) -->
+        <nav class="jg-nav" aria-label="Main navigation">
+
+            <!-- Databases -->
+            <div class="dropdown">
+                <span class="dropbtn" tabindex="0" role="button"
+                      aria-haspopup="true" aria-expanded="false"
+                      aria-controls="nav-databases">Databases ▾</span>
+                <div class="dropdown-content" id="nav-databases" role="menu">
+                    <a href="/search/Global_Search.php" role="menuitem">Global Search</a>
+                    <a href="/databases/" role="menuitem">Country &amp; Regional Databases</a>
+                    <a href="/RD/Holocaust/databases.php" role="menuitem">Holocaust Database</a>
+                     <a href="https://www.jewishgen.org/sra/" role="menuitem">Shul Records America</a>
+                    <a href="/databases/Cemetery/" role="menuitem">Burial Registry (JOWBR)</a>
+                    <a href="/catalog/" role="menuitem">Records Catalog</a>
+                    <a href="https://www.jewishgen.org/gedcom/" role="menuitem">Family Trees (FTJP)</a>
+                    <a href="https://www.jewishgen.org/jewishgen/search.asp" role="menuitem">Text Search</a>
+                </div>
+            </div>
+
+            <!-- Communities -->
+            <div class="dropdown">
+                <span class="dropbtn" tabindex="0" role="button"
+                      aria-haspopup="true" aria-expanded="false"
+                      aria-controls="nav-communities">Communities ▾</span>
+                <div class="dropdown-content" id="nav-communities" role="menu">
+                    <a href="/RD/" role="menuitem">Regional/Topical Research Divisions</a>
+                    <a href="/Communities/search.php" role="menuitem">Town Finder (Communities Database)</a>
+                    <a href="https://kehilalinks.jewishgen.org/" role="menuitem">KehilaLinks</a>
+                    <a href="/Yizkor/translations/" role="menuitem">Yizkor Books</a>
+                </div>
+            </div>
+
+            <!-- Learn & Connect -->
+            <div class="dropdown">
+                <span class="dropbtn" tabindex="0" role="button"
+                      aria-haspopup="true" aria-expanded="false"
+                      aria-controls="nav-learn">Learn &amp; Connect ▾</span>
+                <div class="dropdown-content" id="nav-learn" role="menu">
+                    <a href="https://www.jewishgen.org/Education/" role="menuitem">Online Classes</a>
+                    <a href="/HowToFAQ/howto.html" role="menuitem">How to JewishGen &amp; FAQ</a>
+                    <a href="/Kalikow/" role="menuitem">Peter &amp; Mary Kalikow Center</a>
+                    <a href="/JGFF/" role="menuitem">Family Finder</a>
+                    <a href="https://groups.jewishgen.org/g/main" role="menuitem">Discussion Group</a>
+                    <a href="https://www.jewishgen.org/ViewMate/" role="menuitem">ViewMate</a>
+                </div>
+            </div>
+
+            <!-- Events & Programs -->
+            <div class="dropdown">
+                <span class="dropbtn" tabindex="0" role="button"
+                      aria-haspopup="true" aria-expanded="false"
+                      aria-controls="nav-events">Events &amp; Programs ▾</span>
+                <div class="dropdown-content" id="nav-events" role="menu">
+                    <a href="/Calendar.html" role="menuitem">Upcoming Events Calendar</a>
+                    <a href="/talks.html" role="menuitem">View Past JewishGen Talks</a>
+                    <a href="/ldorvdor/" role="menuitem">Student Program in Poland</a>
+                </div>
+            </div>
+
+            <!-- Publications -->
+            <div class="dropdown">
+                <span class="dropbtn" tabindex="0" role="button"
+                      aria-haspopup="true" aria-expanded="false"
+                      aria-controls="nav-publications">Publications ▾</span>
+                <div class="dropdown-content" id="nav-publications" role="menu">
+                    <a href="/shop/books/" role="menuitem">JewishGen Press</a>
+                    <a href="#" role="menuitem"><!-- TODO: new Newsletters URL -->Newsletter Archive</a>
+                    <a href="/publications/companions/index.html" role="menuitem">Holiday Companions</a>
+                    <a href="/Blog/" role="menuitem">Blog</a>
+                </div>
+            </div>
+
+            <!-- About & Support -->
+            <div class="dropdown">
+                <span class="dropbtn" tabindex="0" role="button"
+                      aria-haspopup="true" aria-expanded="false"
+                      aria-controls="nav-about">About &amp; Support ▾</span>
+                <div class="dropdown-content" id="nav-about" role="menu">
+                    <a href="/About.html" role="menuitem">About JewishGen</a>
+                    <a href="/bios/" role="menuitem">Our Team</a>
+                    <a href="/JewishGen-erosity/" role="menuitem">Donate Now</a>
+                    <a href="/shop/" role="menuitem">JewishGen Shop</a>
+                    <a href="/jewishgen-erosity/Honors/" role="menuitem">Wall of Honor</a>
+                    <a href="/Contact.html" role="menuitem">Contact Us</a>
+                    <a href="/volunteer.html" role="menuitem">Volunteer</a>
+                    <a href="/Support/" role="menuitem">Site Support</a>
+
+
+                </div>
+            </div>
+
+        </nav>
+
+    </div>
+
+    <!-- == Right column: MJH affiliation (text baked in) ==== -->
+    <div class="jg-header__affiliation">
+        <a href="https://mjhnyc.org"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="The Genealogical Research Division of the Museum of Jewish Heritage — A Living Memorial to the Holocaust">
+            <img src="/images/site/LOGOGeneMJHWh.png"
+                 alt="The Genealogical Research Division of the Museum of Jewish Heritage — A Living Memorial to the Holocaust"
+                 class="jg-mjh-logo">
+        </a>
+    </div>
+
+    <!-- Legacy login dropdown retained for compatibility.
+         TODO: remove once new auth system is confirmed. -->
+    <div id="loginbox"
+         style="position:absolute; visibility:hidden; z-index:1000;
+                border: outset 6px #939b51;
+                background-color: #ffffff;
+                padding: 4px;">
+    </div>
+
+</header>
+
+
+<!-- Keyboard accessibility for nav dropdowns -->
+<script>
+document.querySelectorAll('.jg-nav .dropbtn').forEach(function(btn) {
+    btn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!expanded));
+            var menu = document.getElementById(this.getAttribute('aria-controls'));
+            if (menu) menu.style.display = expanded ? 'none' : 'block';
+        }
+        if (e.key === 'Escape') {
+            this.setAttribute('aria-expanded', 'false');
+            var menu = document.getElementById(this.getAttribute('aria-controls'));
+            if (menu) menu.style.display = 'none';
+        }
+    });
+});
+</script>
+
+

@@ -1,0 +1,951 @@
+/* ==========================================================================
+   jg-dataset.css -- JewishGen Project Shorashim
+   Stylesheet for all dataset description pages (RD-flavored detail pages).
+   Load ORDER: Bootstrap CDN -> jg-global.css -> THIS FILE -> page overrides.
+
+   All color values use CSS custom properties from jg-global.css :root.
+   Dark mode is toggled via body.dark-mode class.
+   ASCII only in comments per SFTP encoding rule.
+   CHW
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   1. PAGE LAYOUT
+   .browse-zone wraps the entire page body in the ecru tone.
+   .page-body is the 2-column flex container (sidebar + main).
+   -------------------------------------------------------------------------- */
+.browse-zone {
+    background-color: var(--ecru);
+    flex-grow: 1;
+    padding-bottom: 80px;
+}
+.page-body {
+    display: flex;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 40px 50px;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+/* Reset link defaults inside the page so per-element link colors win.
+   Header/footer link styling in jg-global.css uses higher-specificity
+   selectors so this does not affect them. */
+.browse-zone a { text-decoration: none; color: inherit; }
+
+
+/* --------------------------------------------------------------------------
+   2. SIDEBAR -- shell
+   -------------------------------------------------------------------------- */
+.dataset-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+/* Generic sidebar card -- white panel with navy left border.
+   The search card overrides background; the contributors card reuses as-is. */
+.jg-sidebar-card {
+    background: var(--white);
+    border-left: 3px solid var(--navy);
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+body.dark-mode .jg-sidebar-card {
+    background: #1e1e1e;
+    border-left-color: #5a7a95;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. SIDEBAR -- AT A GLANCE
+   Sage header band followed by a stack of meta rows (icon + label + value).
+   -------------------------------------------------------------------------- */
+.jg-sidebar-card__header--green {
+    background-color: var(--sage);
+    color: var(--white);
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+body.dark-mode .jg-sidebar-card__header--green {
+    background-color: #a8b361;
+    color: #1a1a1a;
+}
+
+.sidebar-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 24px;
+    font-size: 13px;
+}
+.sidebar-row:last-child { margin-bottom: 0; }
+
+.sidebar-icon {
+    width: 20px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+.sidebar-icon img { width: 100%; height: auto; }
+
+.sidebar-label {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 4px;
+}
+.sidebar-value {
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 13.5px;
+    line-height: 1.5;
+}
+body.dark-mode .sidebar-value { color: #e0e0e0; }
+
+/* Placeholder variant -- red italic, for "needs to be filled in" notes. */
+.sidebar-value-placeholder {
+    font-weight: 600;
+    color: #d9534f;
+    font-size: 13.5px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* Optional sub-secondary text under a value (e.g. "Fond #: III 400 E/1942"). */
+.sidebar-value-sub {
+    display: block;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+/* Total Records split pills -- the T1/T2/T3 or Births/Marriages/Deaths row
+   that appears under the Total Records value on some datasets. */
+.glance-split-pills {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+.glance-split-pills__pill {
+    flex: 1;
+    background: var(--light-blue);
+    padding: 8px 4px;
+    text-align: center;
+    border-radius: 6px;
+}
+.glance-split-pills__label {
+    display: block;
+    font-size: 9px;
+    opacity: 0.7;
+    font-weight: bold;
+    color: var(--navy);
+}
+.glance-split-pills__count {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--navy);
+}
+body.dark-mode .glance-split-pills__label,
+body.dark-mode .glance-split-pills__count { color: #e0e0e0; }
+
+
+/* --------------------------------------------------------------------------
+   4. SIDEBAR -- BACK LINK
+   The dotted-underline link above the At a Glance card.
+   -------------------------------------------------------------------------- */
+.dataset-sidebar-back {
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: underline dotted;
+    margin-bottom: 25px;
+    display: block;
+    color: var(--navy);
+}
+.dataset-sidebar-back:hover { color: var(--sage); }
+body.dark-mode .dataset-sidebar-back { color: #e0e0e0; }
+
+
+/* --------------------------------------------------------------------------
+   5. SIDEBAR -- SEARCH CARD (navy variant)
+   -------------------------------------------------------------------------- */
+.jg-sidebar-card--search {
+    background: var(--navy);
+    border-left-color: var(--sage);
+    padding: 20px;
+    color: var(--white);
+}
+body.dark-mode .jg-sidebar-card--search {
+    background: #1a1a1a;
+    border-left-color: var(--sage);
+}
+
+.sidebar-search-title {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+.sidebar-search-label {
+    font-size: 10px;
+    font-weight: bold;
+    opacity: 0.8;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+.sidebar-search-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: var(--light-blue);
+    margin-bottom: 12px;
+    font-size: 13px;
+    box-sizing: border-box;
+    color: var(--charcoal);
+}
+.sidebar-search-btn {
+    width: 100%;
+    background: var(--sage);
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+}
+.sidebar-search-btn:hover { filter: brightness(1.1); }
+body.dark-mode .sidebar-search-btn { background-color: #a8b361; color: #1a1a1a; }
+
+
+/* --------------------------------------------------------------------------
+   6. SIDEBAR -- CONTRIBUTORS CARD
+   Reuses .jg-sidebar-card with padding. The heading row gets its own class.
+   -------------------------------------------------------------------------- */
+.sidebar-card-heading {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--navy);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    display: block;
+    letter-spacing: 1px;
+}
+body.dark-mode .sidebar-card-heading {
+    color: #e0e0e0;
+    border-bottom-color: #333;
+}
+
+.contributor-group { margin-bottom: 12px; }
+.contributor-group:last-child { margin-bottom: 0; }
+
+
+/* --------------------------------------------------------------------------
+   7. MAIN COLUMN -- shell + header
+   -------------------------------------------------------------------------- */
+.main-column {
+    flex: 1;
+    min-width: 0;
+}
+
+.dataset-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.dataset-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.25rem;
+    color: var(--navy);
+    margin: 0;
+    font-weight: normal;
+    line-height: 1.15;
+}
+body.dark-mode .dataset-title { color: #e0e0e0; }
+
+.dataset-record-count {
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0.5;
+    color: var(--charcoal);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    padding-left: 12px;
+}
+body.dark-mode .dataset-record-count { color: #c8c0b0; }
+
+/* Taxonomy subtitle line under H1 -- "Record Type . Region . Country". */
+.dataset-subtitle {
+    color: var(--sage);
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin: 5px 0 0 0;
+    letter-spacing: 0.5px;
+}
+body.dark-mode .dataset-subtitle { color: #a8b361; }
+
+/* Optional author byline -- italic line under the subtitle. */
+.dataset-author-byline {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--charcoal);
+    margin-top: 8px;
+}
+body.dark-mode .dataset-author-byline { color: #c8c0b0; }
+
+
+/* --------------------------------------------------------------------------
+   8. MAIN COLUMN -- dividers + section headings
+   -------------------------------------------------------------------------- */
+.jg-hr-navy {
+    border: none;
+    border-top: 3px solid var(--navy);
+    margin: 25px 0;
+}
+body.dark-mode .jg-hr-navy { border-top-color: var(--sage); }
+
+.section-heading {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 8px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+body.dark-mode .section-heading { color: #e0e0e0; }
+
+.green-accent-line {
+    width: 40px;
+    height: 3px;
+    background-color: var(--sage);
+    margin-bottom: 20px;
+}
+
+/* Standard body prose inside .main-column -- used for the Background and
+   other prose sections. Override font-size as needed inline. */
+.main-column p { line-height: 1.7; }
+
+
+/* --------------------------------------------------------------------------
+   9. WHITE CARD + INTERNAL DIVIDER
+   Generic white-panel card with shadow, used as wrapper for fields grid,
+   category cards, indexed-towns list, etc.
+   -------------------------------------------------------------------------- */
+.white-card {
+    background: var(--white);
+    border-radius: 6px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    margin-bottom: 25px;
+}
+body.dark-mode .white-card { background: #1e1e1e; }
+
+.card-internal-divider {
+    border: none;
+    border-top: 1px solid #dce5ea;
+    margin: 15px 0;
+}
+body.dark-mode .card-internal-divider { border-top-color: #333; }
+
+
+/* --------------------------------------------------------------------------
+   10. SOURCE CALLOUT
+   Light-blue box with sage left border. Used for "Source & Acquisition",
+   "Important Note", and similar inline notes inside Background.
+   --light-blue does NOT flip in dark mode, so explicit override below.
+   -------------------------------------------------------------------------- */
+.source-callout {
+    background: var(--light-blue);
+    border-left: 4px solid var(--sage);
+    padding: 20px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+body.dark-mode .source-callout {
+    background: #2a2a2a;
+    color: #c8c0b0;
+}
+
+
+/* --------------------------------------------------------------------------
+   11. FIGURE FLOAT (image with caption)
+   Float-right inside Background prose; mobile drops to centered block.
+   -------------------------------------------------------------------------- */
+.jg-figure-float {
+    float: right;
+    width: 240px;
+    margin: 0 0 20px 30px;
+}
+.jg-figure-float__frame {
+    background: var(--white);
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+body.dark-mode .jg-figure-float__frame { background: #1e1e1e; }
+
+.jg-figure-float__img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.jg-figure-float__caption {
+    font-size: 11px;
+    color: var(--charcoal);
+    margin-top: 10px;
+    font-style: italic;
+    opacity: 0.75;
+    line-height: 1.4;
+    text-align: center;
+}
+body.dark-mode .jg-figure-float__caption { color: #c8c0b0; }
+
+
+/* --------------------------------------------------------------------------
+   12. CATEGORY CARDS GRID
+   The 3-card row used for T1/T2/T3, Births/Marriages/Deaths, etc.
+   Each card is a .white-card with a tag pill + h4 title + description +
+   internal divider + page/record count.
+   -------------------------------------------------------------------------- */
+.category-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.category-card__tag {
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 12px;
+    display: inline-block;
+}
+/* Bold variant: navy fill, white text (Tabele Barbatilor, Subcarpathia Civil) */
+.category-card__tag--navy {
+    background: var(--navy);
+    color: #ffffff;
+}
+body.dark-mode .category-card__tag--navy {
+    background: #0d2a45;
+    color: #ffffff;
+}
+/* Soft variant: light-blue fill, navy text (Bucovina) */
+.category-card__tag--soft {
+    background: var(--light-blue);
+    color: var(--navy);
+}
+body.dark-mode .category-card__tag--soft {
+    background: #2a2a2a;
+    color: #a8b361;
+}
+
+.category-card__title {
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 12px 0 8px;
+    font-size: 13px;
+    color: var(--navy);
+    font-weight: bold;
+}
+body.dark-mode .category-card__title { color: #e0e0e0; }
+
+.category-card__desc {
+    font-size: 12px;
+    color: var(--charcoal);
+    min-height: 45px;
+    margin: 0;
+    line-height: 1.5;
+}
+body.dark-mode .category-card__desc { color: #c8c0b0; }
+
+.category-card__meta {
+    font-size: 12px;
+    color: var(--navy);
+    font-weight: bold;
+}
+body.dark-mode .category-card__meta { color: #e0e0e0; }
+
+
+/* --------------------------------------------------------------------------
+   13. TOTAL SUMMARY LINE
+   The "This database contains all X records from..." summary that follows
+   a category-cards-grid.
+   -------------------------------------------------------------------------- */
+.total-summary-line {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 30px 0;
+    text-align: left;
+    color: var(--charcoal);
+}
+.total-summary-line strong { color: var(--navy); }
+body.dark-mode .total-summary-line { color: #c8c0b0; }
+body.dark-mode .total-summary-line strong { color: #e0e0e0; }
+
+
+/* --------------------------------------------------------------------------
+   14. COVERAGE TABLE
+   Used to show coverage by town + record type (Bucovina).
+   -------------------------------------------------------------------------- */
+.coverage-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: var(--white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    margin-bottom: 30px;
+}
+body.dark-mode .coverage-table { background: #1e1e1e; }
+
+.coverage-table thead { background: var(--light-blue); }
+body.dark-mode .coverage-table thead { background: #2a2a2a; }
+
+.coverage-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--navy);
+    border-bottom: 2px solid var(--navy);
+}
+body.dark-mode .coverage-table th {
+    color: #e0e0e0;
+    border-bottom-color: var(--sage);
+}
+
+.coverage-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #dce5ea;
+    color: var(--charcoal);
+}
+body.dark-mode .coverage-table td {
+    border-bottom-color: #333;
+    color: #c8c0b0;
+}
+.coverage-table tr:last-child td { border-bottom: none; }
+
+.coverage-table .town-primary {
+    font-weight: 600;
+    color: var(--navy);
+}
+body.dark-mode .coverage-table .town-primary { color: #e0e0e0; }
+
+.coverage-table .town-secondary { font-style: italic; }
+.coverage-table .no-data { color: #aaa; }
+
+
+/* --------------------------------------------------------------------------
+   15. ADDRESS / GENERIC INLINE TABLE
+   Smaller table used inside research drawers for term-to-translation maps.
+   -------------------------------------------------------------------------- */
+.address-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 10px;
+}
+.address-table th {
+    text-align: left;
+    border-bottom: 2px solid var(--navy);
+    padding: 8px;
+    color: var(--navy);
+}
+body.dark-mode .address-table th {
+    color: #e0e0e0;
+    border-bottom-color: var(--sage);
+}
+.address-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+body.dark-mode .address-table td { border-bottom-color: #333; }
+
+
+/* --------------------------------------------------------------------------
+   16. LINKS BOX
+   Pair of buttons (one filled, one outline) below the Background block.
+   -------------------------------------------------------------------------- */
+.links-box {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+.links-box a {
+    flex: 1;
+    text-align: center;
+    background: var(--navy);
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid var(--navy);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+.links-box a:hover { filter: brightness(1.1); color: #ffffff; }
+.links-box a.outline-btn {
+    background: transparent;
+    color: var(--navy);
+}
+.links-box a.outline-btn:hover {
+    background: var(--navy);
+    color: #ffffff;
+    filter: none;
+}
+body.dark-mode .links-box a {
+    background: #0d2a45;
+    border-color: #0d2a45;
+}
+body.dark-mode .links-box a.outline-btn {
+    background: transparent;
+    color: #e0e0e0;
+    border-color: #e0e0e0;
+}
+body.dark-mode .links-box a.outline-btn:hover {
+    background: #e0e0e0;
+    color: #1a1a1a;
+}
+
+
+/* --------------------------------------------------------------------------
+   17. RESEARCH DRAWERS (accordion)
+   Used for Research Notes and (optionally) Fields Recorded.
+   Uses native <details><summary> with a custom +/- indicator.
+   -------------------------------------------------------------------------- */
+.research-drawer {
+    background: var(--white);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border: 1px solid #dce5ea;
+    overflow: hidden;
+}
+body.dark-mode .research-drawer {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+.research-drawer summary {
+    padding: 18px 25px;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    color: var(--navy);
+    font-weight: bold;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+}
+.research-drawer summary::-webkit-details-marker { display: none; }
+body.dark-mode .research-drawer summary { color: #e0e0e0; }
+
+.research-drawer summary:hover { background: #f8f9fa; }
+body.dark-mode .research-drawer summary:hover { background: #252525; }
+
+/* Custom +/- toggle indicator. Use ASCII chars; the closed state shows '+',
+   the open state shows a Unicode minus via escape. */
+.research-drawer summary::after {
+    content: '+';
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--sage);
+}
+.research-drawer[open] summary::after { content: '\2212'; }
+
+.drawer-content {
+    padding: 0 25px 25px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--charcoal);
+}
+body.dark-mode .drawer-content { color: #c8c0b0; }
+
+
+/* --------------------------------------------------------------------------
+   18. DRAWER FIELDS GRID
+   Two-column field list used inside a fields-as-drawers drawer (Bucovina).
+   Distinct from the flat .fields-grid below in two ways:
+     - 2-col on desktop with tighter row gap
+     - small italic note span permitted next to field name
+   -------------------------------------------------------------------------- */
+.drawer-fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 30px;
+    margin-top: 10px;
+}
+.drawer-field {
+    font-size: 13.5px;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    color: var(--navy);
+}
+body.dark-mode .drawer-field {
+    color: #c8c0b0;
+    border-bottom-color: #333;
+}
+.drawer-field-note {
+    font-size: 12px;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+
+/* --------------------------------------------------------------------------
+   19. VILLAGE LIST
+   Inline village list (Bucovina surrounding-villages drawer).
+   -------------------------------------------------------------------------- */
+.village-list {
+    font-size: 13.5px;
+    line-height: 1.9;
+    color: var(--charcoal);
+    margin-top: 10px;
+}
+body.dark-mode .village-list { color: #c8c0b0; }
+.village-list .v-primary {
+    font-weight: 600;
+    color: var(--navy);
+}
+body.dark-mode .village-list .v-primary { color: #e0e0e0; }
+.village-list .v-secondary {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+
+/* --------------------------------------------------------------------------
+   20. FIELDS GRID (flat list)
+   Two-column list of indexed fields. Used when Fields Recorded is rendered
+   as a single flat list (most pages). For per-record-type drawers see
+   .drawer-fields-grid above.
+   -------------------------------------------------------------------------- */
+.fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 40px;
+}
+.field-item {
+    font-size: 14px;
+    color: var(--navy);
+    padding: 8px 0;
+    border-bottom: 1px solid #dce5ea;
+}
+body.dark-mode .field-item {
+    color: #c8c0b0;
+    border-bottom-color: #333;
+}
+
+
+/* --------------------------------------------------------------------------
+   21. IN-MEMORIAM BLOCK
+   Light-blue panel with navy left border, italic prose. Used for tribute
+   text above Acknowledgements (Bucovina).
+   -------------------------------------------------------------------------- */
+.in-memoriam {
+    background: var(--light-blue);
+    border-left: 4px solid var(--navy);
+    padding: 16px 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-style: italic;
+    color: var(--charcoal);
+}
+body.dark-mode .in-memoriam {
+    background: #2a2a2a;
+    color: #c8c0b0;
+    border-left-color: #5a7a95;
+}
+
+
+/* --------------------------------------------------------------------------
+   22. ACKNOWLEDGEMENTS
+   Plain prose section. Class is a hook for any future restyling.
+   -------------------------------------------------------------------------- */
+.ack-section p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+.ack-text {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+/* --------------------------------------------------------------------------
+   23. DONATION BLOCK (bottom of main column)
+   Light-green box with intro paragraph and a sage CTA button.
+   Note: the sidebar donate card (.jg-sidebar-donate) lives in jg-global.css
+   and is reused here as-is; do NOT redefine it.
+   -------------------------------------------------------------------------- */
+.donation-block {
+    background-color: #dfe3cd;
+    padding: 40px;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 50px;
+}
+body.dark-mode .donation-block { background-color: #2a2d1e; }
+
+.donation-block p {
+    font-size: 16px;
+    color: var(--charcoal);
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    line-height: 1.6;
+}
+body.dark-mode .donation-block p { color: #c8c0b0; }
+
+.btn-donate-solid {
+    background-color: var(--sage);
+    color: #ffffff !important;
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+.btn-donate-solid:hover {
+    filter: brightness(1.1);
+    color: #ffffff;
+}
+body.dark-mode .btn-donate-solid {
+    background-color: #a8b361;
+    color: #1a1a1a;
+}
+body.dark-mode .btn-donate-solid:hover { color: #1a1a1a; }
+
+/* Sidebar donate card (mirrors .rd-sidebar-donate from jg-global.css) */
+.jg-sidebar-donate {
+    background-color: #09497a;
+    border-radius: 8px;
+    padding: 18px 18px 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+.jg-sidebar-donate p {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.55;
+    margin: 0 0 12px 0;
+}
+.jg-btn-donate-full {
+    display: block;
+    background-color: var(--sage);
+    color: #ffffff !important;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: filter 0.15s, transform 0.15px;
+    text-decoration: none;
+}
+.jg-btn-donate-full:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    color: #ffffff !important;
+}
+body.dark-mode .jg-sidebar-donate { background-color: #0d2a45; }
+body.dark-mode .jg-sidebar-donate p { color: rgba(255,255,255,0.85); }
+body.dark-mode .jg-btn-donate-full { background-color: #a8b361; color: #ffffff !important; }
+body.dark-mode .jg-btn-donate-full:hover { color: #ffffff !important; }
+
+
+/* --------------------------------------------------------------------------
+   24. LAST-UPDATED FOOTER LINE
+   Tiny italic centered line at the bottom of main content with an optional
+   "contact the RD" link.
+   -------------------------------------------------------------------------- */
+.dataset-last-updated {
+    margin-top: 30px;
+    font-size: 12px;
+    font-style: italic;
+    opacity: 0.6;
+    text-align: center;
+    color: var(--charcoal);
+    line-height: 1.6;
+}
+body.dark-mode .dataset-last-updated { color: #a0a0a0; }
+.dataset-last-updated a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--navy);
+}
+.dataset-last-updated a:hover { color: var(--sage); }
+body.dark-mode .dataset-last-updated a { color: #a8b361; }
+
+
+/* --------------------------------------------------------------------------
+   25. UTILITIES
+   -------------------------------------------------------------------------- */
+.text-center { text-align: center; }
+.clear-both  { clear: both; }
+
+
+/* --------------------------------------------------------------------------
+   26. RESPONSIVE
+   Single breakpoint at 900px collapses the sidebar above the main column
+   and drops grid layouts to single-column.
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .page-body {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+    .dataset-sidebar { width: 100%; }
+
+    .fields-grid,
+    .drawer-fields-grid {
+        grid-template-columns: 1fr;
+    }
+    .category-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .links-box { flex-direction: column; }
+
+    .jg-figure-float {
+        float: none;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 20px auto;
+    }
+
+    .coverage-table { font-size: 12.5px; }
+    .coverage-table th,
+    .coverage-table td { padding: 10px 8px; }
+}
+
+/* End of jg-dataset.css */

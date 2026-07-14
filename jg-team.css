@@ -1,0 +1,151 @@
+/* ============================================================================
+   JG-TEAM.CSS
+   Our Team page - section layout, staff/volunteer divider, contact button.
+
+   Pairs with /RD/jg-rd.css, which supplies the card and tile system
+   (.rd-team-card, .rd-photo, .bio-grid, .bio-panel). Load order:
+
+       Bootstrap -> jg-global.css -> /RD/jg-rd.css -> jg-team.css
+
+   Everything here is additive. Nothing overrides an RD rule, so the RD
+   pages are unaffected.
+
+   CHW
+============================================================================ */
+
+
+/* -- Page title band ------------------------------------------------------
+   --navy flips to light gray in dark mode, so the dark fill is hardcoded. */
+body.dark-mode .page-title-band { background-color: #0d2a45 !important; }
+body.dark-mode .page-title-band h1,
+body.dark-mode .page-title-band p.hero-subtitle { color: #ffffff !important; }
+
+
+/* -- Content wrap --------------------------------------------------------- */
+.team-wrap {
+    background-color: var(--ecru);
+    padding: 3rem 1.5rem 4rem;
+}
+.team-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+body.dark-mode .team-wrap { background-color: #161616; }
+
+
+/* -- Section -------------------------------------------------------------- */
+.team-section + .team-section { margin-top: 3rem; }
+
+.team-section-heading {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--navy);
+    margin: 0 0 0.4rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--sage);
+}
+.team-section-blurb {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 0 0 1.5rem 0;
+    max-width: 660px;
+}
+body.dark-mode .team-section-heading { color: #e0e0e0; border-bottom-color: #a8b361; }
+body.dark-mode .team-section-blurb   { color: #c8c8c8; }
+
+
+/* -- Staff / volunteer divider -------------------------------------------
+   Full-width band: outer element carries the color, inner wrapper is
+   max-width constrained. Navy fill hardcoded in both modes. */
+.team-divider {
+    background-color: #09497a;
+    padding: 2.25rem 1.5rem;
+    text-align: center;
+}
+body.dark-mode .team-divider { background-color: #0d2a45; }
+
+.team-divider-inner {
+    max-width: 660px;
+    margin: 0 auto;
+}
+.team-divider h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+}
+.team-divider p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+}
+
+
+/* -- Photo column --------------------------------------------------------
+   Wrapper around .rd-photo so a contact button can sit beneath it. Occupies
+   the same 130px grid column the bare <img> used to. */
+.rd-photo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+}
+
+
+/* -- Contact button ------------------------------------------------------
+   Opt-in per page: add  contact: true  to a roster entry. Renders only when
+   the person also has an email in people.json.
+
+   --sage flips to #a8b361 in dark mode on its own, so no override is needed
+   for the fill. White text on sage clears WCAG AA at this weight and size. */
+.jg-contact-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--sage);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid var(--sage);
+    border-radius: 4px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+.jg-contact-btn:hover,
+.jg-contact-btn:focus {
+    background-color: transparent;
+    color: var(--sage);
+    text-decoration: none;
+}
+.jg-contact-btn:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+}
+body.dark-mode .jg-contact-btn:hover,
+body.dark-mode .jg-contact-btn:focus { color: #a8b361; }
+body.dark-mode .jg-contact-btn:focus-visible { outline-color: #e0e0e0; }
+
+
+/* -- Loader state --------------------------------------------------------- */
+.team-loading {
+    font-size: 0.875rem;
+    color: var(--charcoal);
+    opacity: 0.65;
+}
+body.dark-mode .team-loading { color: #c8c8c8; }
+
+
+/* -- Narrow screens ------------------------------------------------------
+   jg-rd.css collapses .rd-team-card to a single column here, so the photo
+   column stops being a column. Keep the button tied to the photo width
+   rather than letting it stretch the full card. */
+@media (max-width: 640px) {
+    .rd-photo-wrap { align-items: flex-start; width: 110px; }
+    .jg-contact-btn { width: 100%; }
+}
