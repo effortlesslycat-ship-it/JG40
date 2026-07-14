@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volunteer with the Holocaust Research Division &mdash; JewishGen</title>
+<meta name="description" content="Join JewishGen's Holocaust Research Division as a volunteer Group Leader, Transcriber, or Validator and help preserve the names of Holocaust victims and survivors.">
+
+<!-- 1. Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<!-- 2. JewishGen Global Design System -->
+<link rel="stylesheet" href="/jg-global.css">
+<!-- 3. JewishGen Research Division stylesheet -->
+<link rel="stylesheet" href="/RD/jg-rd.css?v=13">
+<!-- 4. Page-specific styles -->
+<style>
+a { text-decoration: none; color: inherit; }
+
+/* ==========================================================================
+   PAGE TITLE BAND - kept inline until migrated to jg-global.css
+   ========================================================================== */
+.page-title-band {
+    background-color: var(--navy);
+    padding: 44px 50px;
+    text-align: center;
+}
+.page-title-band h1 {
+    margin: 0 0 10px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #ffffff;
+}
+.page-title-band p.hero-subtitle {
+    margin: 0 auto;
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 620px;
+    line-height: 1.6;
+}
+body.dark-mode .page-title-band { background-color: #0d2a45 !important; }
+
+@media (max-width: 800px) {
+    .page-title-band { padding: 36px 24px; }
+}
+
+/* ==========================================================================
+   VOLUNTEER-SPECIFIC: qualifications checklist
+   Subtle sage checkmarks on a plain list. Page-specific for now;
+   promote to /RD/jg-rd.css if other RDs need a recruitment checklist.
+   CHW
+   ========================================================================== */
+.rd-qualifications {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.5rem;
+}
+.rd-qualifications li {
+    position: relative;
+    padding: 0.55rem 0 0.55rem 1.85rem;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--charcoal);
+    border-bottom: 1px solid rgba(147, 155, 81, 0.2);
+}
+.rd-qualifications li:last-child {
+    border-bottom: none;
+}
+.rd-qualifications li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 0.95rem;
+    width: 9px;
+    height: 5px;
+    border-left: 2px solid var(--sage);
+    border-bottom: 2px solid var(--sage);
+    transform: rotate(-45deg);
+}
+body.dark-mode .rd-qualifications li {
+    color: #c8c0b0;
+    border-bottom-color: rgba(168, 179, 97, 0.25);
+}
+
+/* ==========================================================================
+   VOLUNTEER-SPECIFIC: role cards (Group Leader / Transcriber / Validator)
+   Sage left-border accent, navy serif title, brief recruitment summary.
+   Page-specific for now; promote to /RD/jg-rd.css if other RDs use roles.
+   CHW
+   ========================================================================== */
+.rd-role-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 1rem 0 1.5rem;
+}
+.rd-role-card {
+    background: var(--white);
+    border-left: 3px solid var(--sage);
+    padding: 14px 18px;
+    border-radius: 0 4px 4px 0;
+}
+.rd-role-card h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin: 0 0 6px 0;
+    font-weight: normal;
+}
+.rd-role-card p {
+    font-size: 0.8125rem;
+    color: var(--charcoal);
+    line-height: 1.5;
+    margin: 0;
+}
+body.dark-mode .rd-role-card {
+    background: #1e1e1e;
+    border-left-color: #a8b361;
+}
+body.dark-mode .rd-role-card h3 { color: #e0e0e0; }
+body.dark-mode .rd-role-card p { color: #c8c0b0; }
+
+@media (max-width: 700px) {
+    .rd-role-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   PRE-LAUNCH PLACEHOLDER NOTES
+   Small italic gray inline reminders for content that needs confirmation
+   before launch. Strip these (and the surrounding bracketed text) before
+   going live.
+   ========================================================================== */
+.rd-placeholder-note {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #8a8a8a;
+    display: inline;
+}
+body.dark-mode .rd-placeholder-note { color: #888; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="site-header"></div>
+
+<!-- TITLE BAND -->
+  <div class="page-title-band">
+    <span class="tagline">Holocaust Research Division</span>
+    <h1>Volunteer with the Holocaust Research Division</h1>
+    <p class="hero-subtitle">Join our volunteer team and help preserve the names and stories of Holocaust victims and survivors.</p>
+</div>
+
+<!-- RD TOOLBAR (Holocaust-specific; replaces the sidebar on this search-led page) -->
+<div id="rd-toolbar"></div>
+
+
+<!-- PAGE BODY -->
+<div class="rd-body-wrap">
+    <div class="rd-body-inner--full">
+
+        <!-- Main content -->
+        <main>
+
+            <!-- Volunteer Opportunities -->
+            <section>
+                <span class="section-heading">Volunteer Opportunities</span>
+                <div class="green-accent-line"></div>
+
+                <div class="rd-intro">
+                    <p>Are you interested in volunteering with JewishGen? Do you believe it is important to preserve not only the names of your own family members, but the names of others who perished as well?</p>
+                    <p>If yes, you would be a welcome member of our volunteer team &mdash; provided you can also meet the following:</p>
+                </div>
+
+                <ul class="rd-qualifications">
+                    <li>You are comfortable using Excel, or can find your way around comparable spreadsheet software.</li>
+                    <li>You are able to commit a minimum of six hours per week to the project.</li>
+                </ul>
+
+                <div class="rd-intro">
+                    <p>The Holocaust Database Project is supported by a team of over 100 active volunteers, and we are always looking for new contributors in the following roles:</p>
+                </div>
+
+                <div class="rd-role-grid">
+                    <div class="rd-role-card">
+                        <h3>Group Leader</h3>
+                        <p>Coordinates a list-indexing project, recruits and manages transcribers and validators, and reports monthly progress to the Technical Coordinator.</p>
+                    </div>
+                    <div class="rd-role-card">
+                        <h3>Transcriber</h3>
+                        <p>Transcribes assigned sections of a record list into a project template, following established transcription conventions.</p>
+                    </div>
+                    <div class="rd-role-card">
+                        <h3>Validator</h3>
+                        <p>Reviews and verifies the accuracy of transcribed sections before they are submitted for upload to the database.</p>
+                    </div>
+                </div>
+
+                <div class="rd-intro">
+                    <p>If we do not have immediate opportunities for you, your name will be added to our list of volunteers for upcoming projects.</p>
+                </div>
+ <div class="volunteer-strip rd-section">
+                <a href= "https://www.jewishgen.org/JewishGen/Contact.asp?to=5089NA">Please contact Nolan Altman to express your interest in volunteering.</a></div>
+
+                <!-- Currently working on -->
+                <div class="rd-current-card">
+                    <span class="rd-current-label">Currently Working On</span>
+                    <p class="rd-current-text">The Division is in the middle of multiple indexing projects, with new records added to JewishGen as transcription and verification are completed. </p>
+                </div>
+            </section>
+
+
+        </main>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/jg-rd-sidebar.js"></script>
+<script>
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function(r) { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(function(html) { document.getElementById(id).innerHTML = html; })
+        .catch(function(err) { console.warn(err); });
+}
+
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html'),
+    loadComponent('rd-toolbar', '/RD/Holocaust/RD_Toolbar.html')
+]).then(function() {
+    var path = window.location.pathname;
+    document.querySelectorAll('.rd-toolbar-links a').forEach(function(a) {
+        if (a.getAttribute('href') === path) {
+            a.classList.add('is-active');
+            a.setAttribute('aria-current', 'page');
+        }
+    });
+});
+</script>
+<script>
+
+
+/* -- Toolbar active link (runs immediately - DOM is server-included) -- */
+(function() {
+    var path = window.location.pathname;
+    document.querySelectorAll('.rd-toolbar-links a').forEach(function(a) {
+        if (a.getAttribute('href') === path) {
+            a.classList.add('is-active');
+            a.setAttribute('aria-current', 'page');
+        }
+    });
+})();
+</script>
+
+</body>
+</html>
