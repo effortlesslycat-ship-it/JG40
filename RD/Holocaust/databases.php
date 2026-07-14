@@ -1,0 +1,1530 @@
+<?php
+/**
+ * /RD/Holocaust/databases.php - Holocaust Databases search + browse
+ * Converted from .html. PHP includes for header/footer/toolbar.
+ */
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holocaust Databases - JewishGen</title>
+
+<!-- 1. Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<!-- 2. JewishGen Global Design System -->
+<link rel="stylesheet" href="/jg-global.css?v=3">
+<!-- 3. JewishGen Research Division stylesheet -->
+<link rel="stylesheet" href="/RD/jg-rd.css">
+<!-- 4. Page-specific styles -->
+<style>
+/* ==========================================================================
+   HOLOCAUST PAGE - PAGE-SPECIFIC STYLES
+   Candidate for migration to jg-global.css once shared with Global + JOWBR
+   ========================================================================== */
+
+a { text-decoration: none; color: inherit; }
+
+/* --------------------------------------------------------------------------
+   SEARCH HERO BAND - full-width ecru wrap (Calendar pattern)
+   Wraps page heading + white search card. Replaces the old navy title band.
+   -------------------------------------------------------------------------- */
+.jg-search-hero {
+    background-color: var(--ecru);
+    padding: 3rem 2rem 2.5rem;
+}
+.jg-search-hero__inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+.jg-search-hero__heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.jg-search-hero__heading h1 {
+    margin: 0 0 10px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+    line-height: 1.15;
+    color: var(--navy);
+}
+.jg-search-hero__heading .lede {
+    margin: 0 auto;
+    max-width: 640px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   SEARCH CARD - white card on ecru, holds the multi-row search form
+   Distinct class from .jg-search-container (Hero) to allow different h2
+   color and shadow treatment without fighting global cascade.
+   -------------------------------------------------------------------------- */
+.jg-search-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.75rem 2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+body.dark-mode .jg-search-card {
+    /* ecru flips to #1a1a1a; white flips to #121212. Pin card to #1e1e1e
+       so it stays visually distinct from the band behind it. */
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.jg-search-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.jg-search-card__header h2 {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--navy);
+    line-height: 1.25;
+}
+body.dark-mode .jg-search-card__header h2 { color: #e0e0e0; }
+
+/* Sage underline divider beneath the header row */
+.jg-search-card__rule {
+    border: none;
+    border-top: 2px solid var(--sage);
+    margin: 0.875rem 0 1.25rem;
+    opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   TIPS & TRICKS LINK - text-link with lightbulb + sage dotted underline
+   Distinct from Hero's .jg-tips-toggle pill. Reuses jgToggleTips() JS.
+   -------------------------------------------------------------------------- */
+.jg-tips-link {
+    background: none;
+    border: none;
+    padding: 4px 6px;
+    margin: 0;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: underline dotted;
+    text-decoration-color: var(--sage);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+}
+.jg-tips-link:hover,
+.jg-tips-link:focus-visible {
+    color: var(--sage);
+}
+.jg-tips-link[aria-expanded="true"] {
+    color: var(--sage);
+    text-decoration-style: solid;
+}
+body.dark-mode .jg-tips-link { color: #e0e0e0; }
+body.dark-mode .jg-tips-link:hover,
+body.dark-mode .jg-tips-link:focus-visible,
+body.dark-mode .jg-tips-link[aria-expanded="true"] { color: #a8b361; }
+.jg-tips-link__icon {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+/* Override the global .light-logo { display: block } rule so the
+   bulb images stay inline inside the flex button row */
+.jg-tips-link .light-logo,
+.jg-tips-link .dark-logo {
+    display: none;
+}
+.jg-tips-link .light-logo {
+    display: inline-block;
+}
+body.dark-mode .jg-tips-link .light-logo {
+    display: none !important;
+}
+body.dark-mode .jg-tips-link .dark-logo {
+    display: inline-block !important;
+}
+
+/* --------------------------------------------------------------------------
+   TIPS PANEL - reuses Hero's structure but scoped to this page's class
+   so we don't fight the global .jg-tips-panel rules.
+   -------------------------------------------------------------------------- */
+.jg-tips-card-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.35s ease, margin 0.35s ease;
+    background: var(--light-blue);
+    border-left: 4px solid var(--sage);
+    border-radius: 4px;
+    padding: 0 1rem;
+    margin-bottom: 0;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--charcoal);
+}
+.jg-tips-card-panel.open {
+    max-height: 500px;
+    opacity: 1;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+.jg-tips-card-panel strong { color: var(--navy); }
+body.dark-mode .jg-tips-card-panel { background: #2a2a2a; color: #c8c0b0; }
+body.dark-mode .jg-tips-card-panel strong { color: #a8b361; }
+
+/* --------------------------------------------------------------------------
+   SEARCH FORM ROWS
+   -------------------------------------------------------------------------- */
+.search-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-end; }
+.sf { display: flex; flex-direction: column; gap: 4px; }
+.sf.n { flex: 1.1; min-width: 130px; }
+.sf.w { flex: 2; }
+.field-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 2px;
+}
+.jg-search-card select,
+.jg-search-card input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #c4d0d6;
+    border-radius: 4px;
+    font-size: 13.5px;
+    color: var(--charcoal);
+    background: var(--light-blue);
+    font-family: inherit;
+    transition: border-color 0.2s, background 0.2s;
+}
+.jg-search-card select:focus,
+.jg-search-card input[type="text"]:focus {
+    border-color: var(--navy);
+    outline: none;
+    background: var(--white);
+    box-shadow: 0 0 0 2px rgba(9,73,122,0.12);
+}
+body.dark-mode .jg-search-card select,
+body.dark-mode .jg-search-card input[type="text"] {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+.search-divider { border: none; border-top: 1px solid #d1caba; margin: 14px 0 10px; }
+body.dark-mode .search-divider { border-top-color: #333; }
+
+.match-row { display: flex; gap: 32px; justify-content: center; margin: 6px 0 12px; }
+.match-row label {
+    font-size: 13px;
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+.match-row input[type="radio"] { accent-color: var(--navy); }
+body.dark-mode .match-row label { color: #c8c0b0; }
+
+.btn-search {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    background-color: var(--sage);
+    color: #ffffff;
+    border: none;
+    padding: 11px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-family: inherit;
+    transition: filter 0.2s;
+}
+.btn-search:hover { filter: brightness(1.1); }
+.btn-search:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+body.dark-mode .btn-search { background-color: #a8b361; color: #1a1a1a; }
+
+/* --------------------------------------------------------------------------
+   VOLUNTEER STRIP - light-blue band (does not flip in dark mode)
+   -------------------------------------------------------------------------- */
+.volunteer-strip {
+    background-color: var(--light-blue);
+    border-top: 1px solid rgba(9,73,122,0.08);
+    border-bottom: 1px solid rgba(9,73,122,0.08);
+    padding: 12px 50px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--charcoal);
+    margin-bottom: 0; 
+}
+.volunteer-strip a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: underline;
+}
+.volunteer-strip a:hover { color: var(--sage); }
+body.dark-mode .volunteer-strip {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-color: transparent;
+}
+body.dark-mode .volunteer-strip a { color: #a8b361; }
+
+/* --------------------------------------------------------------------------
+   BROWSE HEADER - serif title on white, sage filter button (no cream band)
+   -------------------------------------------------------------------------- */
+.browse-header {
+    background-color: var(--ecru);
+    padding: 32px 50px 14px;
+}
+.browse-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+.browse-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: var(--navy);
+    margin: 0;
+    letter-spacing: 0;
+}
+body.dark-mode .browse-title { color: #e0e0e0; }
+
+.browse-db-search { display: flex; gap: 8px; }
+.browse-db-search input {
+    padding: 8px 12px;
+    border: 1px solid #c4d0d6;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--charcoal);
+    background: var(--light-blue);
+    font-family: inherit;
+    width: 320px;
+    transition: border-color 0.2s;
+}
+.browse-db-search input:focus { border-color: var(--navy); outline: none; }
+body.dark-mode .browse-db-search input {
+    background: #1e1e1e;
+    border-color: #444;
+    color: #e0e0e0;
+}
+.browse-db-search button {
+    padding: 8px 18px;
+    background: var(--sage);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: filter 0.15s;
+}
+.browse-db-search button:hover { filter: brightness(1.1); }
+body.dark-mode .browse-db-search button { background: #a8b361; color: #1a1a1a; }
+
+/* --------------------------------------------------------------------------
+   PAGE BODY - sidebar + cards layout
+   -------------------------------------------------------------------------- */
+.browse-zone {
+    background-color: var(--ecru);
+}
+.page-body {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8px 50px 60px;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+/* SIDEBAR - white card floating on ecru, navy left-border accent */
+.sidebar {
+    width: 210px;
+    flex-shrink: 0;
+    background: var(--white);
+    border-left: 3px solid var(--navy);
+    border-radius: 0 6px 6px 0;
+    padding: 16px 16px 20px 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+body.dark-mode .sidebar {
+    background: #1e1e1e;
+    border-left-color: #5a7a95;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0d8c8;
+}
+body.dark-mode .sidebar-header { border-bottom-color: #333; }
+
+.sidebar-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+body.dark-mode .sidebar-title { color: #e0e0e0; }
+.clear-btn {
+    font-size: 11px;
+    color: var(--charcoal);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    font-family: inherit;
+    opacity: 0.75;
+}
+.clear-btn:hover { color: var(--sage); opacity: 1; }
+
+.filter-group { margin-bottom: 20px; }
+.filter-group-title {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--sage);
+    padding-bottom: 5px;
+}
+body.dark-mode .filter-group-title { color: #e0e0e0; border-bottom-color: #a8b361; }
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 3px 0;
+    font-size: 12.5px;
+    color: var(--charcoal);
+    cursor: pointer;
+    line-height: 1.3;
+    user-select: none;
+}
+.filter-item input[type=checkbox] { accent-color: var(--navy); flex-shrink: 0; }
+.filter-count {
+    margin-left: auto;
+    font-size: 10.5px;
+    color: var(--charcoal);
+    opacity: 0.55;
+    white-space: nowrap;
+}
+.filter-more-btn {
+    display: block;
+    font-size: 11px;
+    color: var(--navy);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 0;
+    text-align: left;
+    font-family: inherit;
+    text-decoration: underline dotted;
+}
+.filter-more-btn:hover { color: var(--sage); }
+body.dark-mode .filter-more-btn { color: #a8b361; }
+.filter-extra { display: none; }
+.filter-extra.open { display: block; }
+
+.mobile-filter-toggle { display: none; }
+
+/* --------------------------------------------------------------------------
+   CARDS AREA + TOOLBAR
+   -------------------------------------------------------------------------- */
+.cards-area { flex: 1; min-width: 0; }
+.cards-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.cards-showing { font-size: 14px; color: var(--charcoal); }
+.cards-showing strong { color: var(--navy); font-size: 16px; }
+body.dark-mode .cards-showing strong { color: #e0e0e0; }
+
+.active-filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--navy);
+    color: #ffffff;
+    padding: 4px 10px 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+body.dark-mode .filter-chip { background: #0d2a45; color: #ffffff; }
+.filter-chip button {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.65);
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1;
+    padding: 0;
+    font-family: inherit;
+}
+.filter-chip button:hover { color: #ffffff; }
+
+/* --------------------------------------------------------------------------
+   CATALOG CARDS - new design (Lily mockup)
+   - Navy serif title
+   - Description
+   - Records count + sage circular arrow CTA
+   - Bullet-separated tag links (clickable filters, active-state aware)
+   -------------------------------------------------------------------------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+.catalog-card {
+    background: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 18px 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    transition: box-shadow 0.15s, transform 0.15s;
+    overflow: hidden;
+}
+.catalog-card:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.11);
+    transform: translateY(-1px);
+}
+.catalog-card.no-match { display: none; }
+body.dark-mode .catalog-card {
+    background: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+body.dark-mode .catalog-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.5); }
+
+.catalog-card__title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.0625rem;
+    font-weight: bold;
+    color: var(--navy);
+    line-height: 1.3;
+    margin: 0;
+}
+body.dark-mode .catalog-card__title { color: #e0e0e0; }
+
+.catalog-card__desc {
+    font-size: 13px;
+    color: var(--charcoal);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.catalog-card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 2px;
+    padding-bottom: 14px;
+}
+.catalog-card__count {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--charcoal);
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    opacity: 0.7;
+}
+.catalog-card__count.is-empty { opacity: 0.35; font-style: italic; }
+
+/* Sage circular arrow CTA - replaces old navy "View Dataset" rectangle */
+.catalog-card__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--sage);
+    color: #ffffff;
+    flex-shrink: 0;
+    transition: filter 0.15s, transform 0.15s;
+}
+.catalog-card__cta:hover { filter: brightness(1.1); transform: translateX(2px); color: #ffffff; }
+.catalog-card__cta:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.catalog-card__cta svg { display: block; width: 14px; height: 14px; }
+.catalog-card__cta.is-disabled {
+    background: #c0c0c0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+body.dark-mode .catalog-card__cta { background: #a8b361; color: #1a1a1a; }
+body.dark-mode .catalog-card__cta:hover { color: #1a1a1a; }
+body.dark-mode .catalog-card__cta.is-disabled { background: #444; opacity: 0.4; }
+
+/* Tag row - bullet-separated text links, barely-there tinted strip */
+.catalog-card__tags {
+    display: block;
+    background: rgba(220, 229, 234, 0.35);
+    margin: auto -20px 0;
+    padding: 10px 20px 12px;
+    font-size: 12px;
+    line-height: 1.9;
+}
+body.dark-mode .catalog-card__tags { background: rgba(220,229,234,0.05); }
+
+.catalog-tag {
+    display: inline;
+    color: var(--navy);
+    text-decoration: underline dotted;
+    text-decoration-color: rgba(9,73,122,0.4);
+    text-underline-offset: 3px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1px 2px;
+    transition: color 0.15s, background 0.15s;
+}
+.catalog-tag:hover {
+    color: var(--sage);
+    text-decoration-color: var(--sage);
+}
+.catalog-tag:focus-visible {
+    outline: 2px solid var(--sage);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+body.dark-mode .catalog-tag { color: #c8d3df; text-decoration-color: rgba(200,211,223,0.4); }
+body.dark-mode .catalog-tag:hover { color: #a8b361; text-decoration-color: #a8b361; }
+
+/* Bullet separator between tag siblings (skips first visible tag) */
+.catalog-card__tags .catalog-tag ~ .catalog-tag::before,
+.catalog-card__tags .catalog-tag ~ .catalog-tag-more::before {
+    content: '\00B7';
+    color: var(--charcoal);
+    opacity: 0.5;
+    margin: 0 0.45em;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* Active state - solid sage fill, white text, no underline */
+.catalog-tag.is-active {
+    color: #ffffff;
+    background: var(--sage);
+    text-decoration: none;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+.catalog-tag.is-active:hover { color: #ffffff; filter: brightness(1.08); }
+body.dark-mode .catalog-tag.is-active {
+    background: #a8b361;
+    color: #1a1a1a;
+}
+body.dark-mode .catalog-tag.is-active:hover { color: #1a1a1a; }
+
+/* Hidden extras (initial state for tags 5+) */
+.catalog-tag.is-extra { display: none; }
+.catalog-card__tags.is-expanded .catalog-tag.is-extra { display: inline; }
+
+/* "+ N more" inline expander - dotted-underline text link */
+.catalog-tag-more {
+    display: inline;
+    color: var(--charcoal);
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: underline dotted;
+    text-decoration-color: var(--charcoal);
+    text-underline-offset: 3px;
+    cursor: pointer;
+    padding: 1px 2px;
+    opacity: 0.75;
+    transition: color 0.15s, opacity 0.15s;
+}
+.catalog-tag-more:hover { color: var(--sage); text-decoration-color: var(--sage); opacity: 1; }
+.catalog-tag-more:focus-visible { outline: 2px solid var(--sage); outline-offset: 2px; border-radius: 2px; }
+.catalog-card__tags.is-expanded .catalog-tag-more { display: none; }
+body.dark-mode .catalog-tag-more { color: #a0a0a0; text-decoration-color: #a0a0a0; }
+body.dark-mode .catalog-tag-more:hover { color: #a8b361; text-decoration-color: #a8b361; }
+
+/* --------------------------------------------------------------------------
+   PAGINATION
+   -------------------------------------------------------------------------- */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #d1caba;
+    border-radius: 4px;
+    background: var(--white);
+    color: var(--charcoal);
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.15s;
+}
+.page-btn:hover { border-color: var(--navy); color: var(--navy); }
+.page-btn.active { background: var(--navy); color: #ffffff; border-color: var(--navy); font-weight: bold; }
+body.dark-mode .page-btn { background: #1e1e1e; border-color: #444; color: #c8c0b0; }
+body.dark-mode .page-btn:hover { border-color: #a8b361; color: #a8b361; }
+body.dark-mode .page-btn.active { background: #0d2a45; color: #ffffff; border-color: #0d2a45; }
+.page-btn.disabled { opacity: 0.35; cursor: default; pointer-events: none; }
+.page-ellipsis { padding: 0 3px; color: var(--charcoal); opacity: 0.55; font-size: 14px; }
+
+/* --------------------------------------------------------------------------
+   VIEW TOGGLE
+   -------------------------------------------------------------------------- */
+.view-toggle {
+    display: flex;
+    gap: 4px;
+}
+.view-toggle button {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--charcoal);
+    font-family: inherit;
+    transition: color 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.5;
+    border-radius: 4px;
+}
+.view-toggle button.active {
+    color: var(--navy);
+    opacity: 1;
+}
+.view-toggle button:not(.active):hover {
+    opacity: 0.8;
+}
+.view-toggle button:focus-visible { outline: 3px solid var(--sage); outline-offset: -2px; }
+body.dark-mode .view-toggle button { color: #c8d3df; }
+body.dark-mode .view-toggle button.active { color: #e0e0e0; opacity: 1; }
+
+/* --------------------------------------------------------------------------
+   LIST VIEW MODE
+   -------------------------------------------------------------------------- */
+.card-grid.list-mode {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+}
+.card-grid.list-mode .catalog-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+.card-grid.list-mode .catalog-card:last-child { border-bottom: none; }
+.card-grid.list-mode .catalog-card__title { flex: 1; font-size: 14px; order: 1; margin: 0; font-family: Georgia, serif; }
+.card-grid.list-mode .catalog-card__desc { display: none; }
+.card-grid.list-mode .catalog-card__tags { display: none; }
+.card-grid.list-mode .catalog-card__meta { order: 2; flex-shrink: 0; border: none; padding: 0; margin: 0; gap: 14px; }
+body.dark-mode .card-grid.list-mode { border-color: #333; }
+body.dark-mode .card-grid.list-mode .catalog-card { border-bottom-color: #333; }
+
+/* --------------------------------------------------------------------------
+   EMPTY / LOADING STATES
+   -------------------------------------------------------------------------- */
+#no-results {
+    display: none;
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--charcoal);
+}
+#no-results.visible { display: block; }
+#no-results h3 { color: var(--navy); font-size: 18px; margin-bottom: 8px; font-family: Georgia, serif; font-weight: normal; }
+#no-results p { font-size: 13px; }
+body.dark-mode #no-results h3 { color: #e0e0e0; }
+
+#loading-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--charcoal);
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* --------------------------------------------------------------------------
+   ACCESSIBILITY
+   -------------------------------------------------------------------------- */
+:focus-visible { outline: 3px solid var(--sage); outline-offset: 2px; }
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .card-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .jg-search-hero { padding: 2rem 1rem 1.5rem; }
+    .jg-search-hero__heading h1 { font-size: 1.75rem; }
+    .jg-search-card { padding: 1.25rem 1.25rem 1rem; }
+    .jg-search-card__header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .jg-search-card__header h2 { font-size: 1.25rem; }
+    .search-row { flex-direction: column; gap: 8px; }
+    .sf.n, .sf.w { flex: none; width: 100%; }
+    .volunteer-strip { padding: 12px 20px; }
+    .browse-header { padding: 24px 20px 12px; }
+    .browse-db-search { width: 100%; }
+    .browse-db-search input { width: 100%; }
+    .page-body { flex-direction: column; padding: 12px 20px 40px; gap: 16px; }
+    .sidebar {
+        width: 100%;
+        border-left: none;
+        border-top: 2px solid var(--navy);
+        padding-left: 0;
+        padding-top: 12px;
+    }
+    body.dark-mode .sidebar { border-top-color: #5a7a95; }
+    .sidebar-filters-body { display: none; }
+    .sidebar-filters-body.open { display: block; margin-bottom: 20px; }
+    .view-toggle { display: none; }
+    .mobile-filter-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: var(--cream);
+        border: 1px solid #d1caba;
+        border-radius: 4px;
+        padding: 10px 14px;
+        font-size: 13px;
+        font-weight: bold;
+        color: var(--navy);
+        cursor: pointer;
+        font-family: inherit;
+        margin-bottom: 12px;
+    }
+    .mobile-filter-toggle:hover { background: #d8d0bf; }
+    .mobile-filter-toggle .mft-arrow { font-size: 11px; opacity: 0.6; transition: transform 0.2s; }
+    .mobile-filter-toggle.open .mft-arrow { transform: rotate(180deg); }
+    body.dark-mode .mobile-filter-toggle { background: #2a2a2a; color: #e0e0e0; border-color: #444; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="site-header">
+<?php
+$headerPath = $_SERVER['DOCUMENT_ROOT'] . '/Header_NavBar.html';
+if (file_exists($headerPath)) { include $headerPath; }
+?>
+</div>
+
+<!-- ==========================================================================
+     SEARCH HERO BAND 
+     ========================================================================== -->
+<div class="page-title-band">
+    <span class="tagline">Holocaust Research Division</span>
+    <h1>Holocaust Databases</h1>
+    <p class="hero-subtitle">A unique and critically valuable collection of databases containing information about Holocaust victims and survivors.</p>
+    <span class="stat-line">As of May 2025, more than 6 million records are available in this continually updated collection.</span>
+</div>
+
+<!-- RD TOOLBAR (Holocaust-specific; replaces the sidebar on this search-led page) -->
+<div id="rd-toolbar">
+<?php
+$toolbarPath = $_SERVER['DOCUMENT_ROOT'] . '/RD/Holocaust/RD_Toolbar.html';
+if (file_exists($toolbarPath)) { include $toolbarPath; }
+?>
+</div>
+
+<section class="jg-band-content" aria-label="Search Holocaust records">
+
+    <div class="jg-search-hero__inner">
+        <div class="jg-search-card">
+            <div class="jg-search-card__header">
+                <h2>Search Holocaust Records</h2>
+                <button type="button"
+                        class="jg-tips-link"
+                        aria-expanded="false"
+                        aria-controls="jg-search-tips-panel"
+                        onclick="toggleSearchTips(this)">
+                    Tips &amp; Tricks
+                    <img src="/images/site/TipsBulbReg.svg"  alt="" class="jg-tips-link__icon light-logo" aria-hidden="true">
+                    <img src="/images/site/TipsBulbDark.svg" alt="" class="jg-tips-link__icon dark-logo"  aria-hidden="true">
+                </button>
+            </div>
+            <hr class="jg-search-card__rule" aria-hidden="true">
+
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/SearchTips.html'; ?>
+
+
+            <form method="post"
+                      action="/search-results.php"
+                      name="f"
+                      id="f"
+                      aria-label="JewishGen Holocaust database search">
+                <div class="search-row">
+                    <div class="sf n">
+                        <label class="field-label" for="dtype1">Data Type</label>
+                        <select id="dtype1" name="srch1v" aria-label="Search field type, row 1">
+                                <option value="">Data Type</option>
+                                <option value="S" selected>Surname</option>
+                                <option value="G">Given Name</option>
+                                <option value="T">Town</option>
+                                <option value="X">Any Field</option>
+                            </select>
+                    </div>
+                    <div class="sf n">
+                        <label class="field-label" for="stype1">Search Type</label>
+                        <select id="stype1" name="srch1t" aria-label="Search match type, row 1">
+                                <option value="">Search Type</option>
+                                <option value="Q" selected>Phonetically Like</option>
+                                <option value="D">Sounds Like</option>
+                                <option value="S">Starts With</option>
+                                <option value="E">Is Exactly</option>
+                                <option value="F1">Fuzzy Match</option>
+                                <option value="F2">Fuzzier Match</option>
+                                <option value="FM">Fuzziest Match</option>
+                            </select>
+                    </div>
+                    <div class="sf w">
+                        <label class="field-label" for="term1">Search Term</label>
+                        <input type="text" id="term1" name="srch1" placeholder="e.g. Hollander">
+                    </div>
+                </div>
+                <div class="search-row">
+                    <div class="sf n">
+                        <label class="field-label" for="dtype2">Data Type</label>
+                        <select id="dtype2" name="srch2v" aria-label="Search field type, row 2">
+                                <option value="" selected>Data Type</option>
+                                <option value="S">Surname</option>
+                                <option value="G">Given Name</option>
+                                <option value="T">Town</option>
+                                <option value="X">Any Field</option>
+                            </select>
+                    </div>
+                    <div class="sf n">
+                        <label class="field-label" for="stype2">Search Type</label>
+                        <select id="stype2" name="srch2t" aria-label="Search match type, row 2">
+                                <option value="" selected>Search Type</option>
+                                <option value="Q">Phonetically Like</option>
+                                <option value="D">Sounds Like</option>
+                                <option value="S">Starts With</option>
+                                <option value="E">Is Exactly</option>
+                                <option value="F1">Fuzzy Match</option>
+                                <option value="F2">Fuzzier Match</option>
+                                <option value="FM">Fuzziest Match</option>
+        			</select>
+			</div>
+                    <div class="sf w">
+                        <label class="field-label" for="term2">Search Term</label>
+                        <input type="text" id="term2" name="srch2" placeholder="e.g. Hollander">
+                    </div>
+                </div>
+                <div class="search-row">
+                    <div class="sf n">
+                        <label class="field-label" for="dtype3">Data Type</label>
+                        <select id="dtype3" name="srch3v" aria-label="Search field type, row 3">
+                                <option value="" selected>Data Type</option>
+                                <option value="S">Surname</option>
+                                <option value="G">Given Name</option>
+                                <option value="T">Town</option>
+                                <option value="X">Any Field</option>
+                            </select>
+                    </div>
+                    <div class="sf n">
+                        <label class="field-label" for="stype3">Search Type</label>
+                        <select id="stype3" name="srch3t" aria-label="Search match type, row 3">
+                                <option value="" selected>Search Type</option>
+                                <option value="Q">Phonetically Like</option>
+                                <option value="D">Sounds Like</option>
+                                <option value="S">Starts With</option>
+                                <option value="E">Is Exactly</option>
+                                <option value="F1">Fuzzy Match</option>
+                                <option value="F2">Fuzzier Match</option>
+                                <option value="FM">Fuzziest Match</option>
+                      </select>
+			</div>
+                    <div class="sf w">
+                        <label class="field-label" for="term3">Search Term</label>
+                        <input type="text" id="term3" name="srch3" placeholder="e.g. Hollander">
+                    </div>
+                </div>
+                <div class="search-row">
+                    <div class="sf n">
+                        <label class="field-label" for="dtype4">Data Type</label>
+                        <select id="dtype4" name="srch4v" aria-label="Search field type, row 4">
+                                <option value="" selected>Data Type</option>
+                                <option value="S">Surname</option>
+                                <option value="G">Given Name</option>
+                                <option value="T">Town</option>
+                                <option value="X">Any Field</option>
+                            </select>
+                    </div>
+                    <div class="sf n">
+                        <label class="field-label" for="stype4">Search Type</label>
+                        <select id="stype4" name="srch4t" aria-label="Search match type, row 4">
+                                <option value="" selected>Search Type</option>
+                                <option value="Q">Phonetically Like</option>
+                                <option value="D">Sounds Like</option>
+                                <option value="S">Starts With</option>
+                                <option value="E">Is Exactly</option>
+                                <option value="F1">Fuzzy Match</option>
+                                <option value="F2">Fuzzier Match</option>
+                                <option value="FM">Fuzziest Match</option>
+                           </select>
+			</div>
+                    <div class="sf w">
+                        <label class="field-label" for="term4">Search Term</label>
+                        <input type="text" id="term4" name="srch4" placeholder="e.g. Hollander">
+                    </div>
+                </div>
+                <hr class="search-divider">
+                <div class="match-row" role="radiogroup" aria-label="Match logic">
+                    <label><input type="radio" name="SrchBOOL" value="AND" checked> Match <strong>ALL</strong> of the above (AND)</label>
+                    <label><input type="radio" name="SrchBOOL" value="OR"> Match <strong>ANY</strong> of the above (OR)</label>
+                </div>
+                <button type="submit" class="btn-search">Search Records</button>
+		<input type="hidden" name="allcountry" value="01holocaust">
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+     VOLUNTEER STRIP
+     ========================================================================== -->
+<div class="volunteer-strip">
+    This is an ongoing project and we welcome <a href="#">additional volunteers</a>.
+</div>
+
+<!-- ==========================================================================
+     BROWSE HEADER
+     ========================================================================== -->
+<div class="browse-header">
+    <div class="browse-header-inner">
+        <h2 class="browse-title">Browse Component Databases</h2>
+        <div class="browse-db-search" role="search">
+            <input type="text" id="db-search" placeholder="Filter database descriptions by keyword..."
+                   aria-label="Filter database descriptions by keyword" oninput="applyFilters()">
+            <button onclick="applyFilters()" aria-label="Apply filter">Filter</button>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================================================
+     BROWSE BODY - sidebar + cards
+     ========================================================================== -->
+<div class="browse-zone">
+    <div class="page-body">
+
+        <!-- SIDEBAR FILTERS -->
+        <aside class="sidebar" aria-label="Filter databases">
+            <button class="mobile-filter-toggle"
+                    aria-expanded="false"
+                    aria-controls="sidebar-filters-body"
+                    onclick="toggleMobileFilters(this)">
+                <span>&#9660; Filter databases</span>
+                <span class="mft-arrow">&#9662;</span>
+            </button>
+            <div class="sidebar-header">
+                <span class="sidebar-title">Filters</span>
+                <button class="clear-btn" onclick="clearAllFilters()">Clear all</button>
+            </div>
+            <div id="sidebar-filters-body" class="sidebar-filters-body">
+                <div id="sidebar-filters">
+                    <p style="font-size:12px;color:var(--charcoal);opacity:0.6;">Loading filters...</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CARDS AREA -->
+        <div class="cards-area">
+            <div class="cards-toolbar">
+                <span class="cards-showing" id="cards-showing">
+                    Showing <strong id="showing-count">--</strong> of <strong id="total-count">356</strong> databases
+                </span>
+                <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                    <div class="active-filters" id="active-filters" aria-live="polite"></div>
+                    <div class="view-toggle" role="group" aria-label="Switch database view">
+                        <button id="btn-grid" class="active" aria-pressed="true" onclick="setView('card')">
+                            <svg width="13" height="13" viewBox="0 0 13 13" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="5.5" height="5.5" rx="0.5"/><rect x="7.5" y="0" width="5.5" height="5.5" rx="0.5"/><rect x="0" y="7.5" width="5.5" height="5.5" rx="0.5"/><rect x="7.5" y="7.5" width="5.5" height="5.5" rx="0.5"/></svg>
+                            Cards
+                        </button>
+                        <button id="btn-list" aria-pressed="false" onclick="setView('list')">
+                            <svg width="14" height="12" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="14" height="2" rx="1"/><rect x="0" y="5" width="14" height="2" rx="1"/><rect x="0" y="10" width="14" height="2" rx="1"/></svg>
+                            List
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading-state">Loading databases...</div>
+            <div class="card-grid" id="card-grid" style="display:none;"></div>
+
+            <div id="no-results" role="status">
+                <h3>No databases match your filters</h3>
+                <p><button class="clear-btn" style="font-size:13px;" onclick="clearAllFilters()">Clear all filters</button> to start over.</p>
+            </div>
+
+            <nav class="pagination" id="pagination" aria-label="Database list pages" style="display:none;"></nav>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div id="site-footer">
+<?php
+$footerPath = $_SERVER['DOCUMENT_ROOT'] . '/Footer.html';
+if (file_exists($footerPath)) { include $footerPath; }
+?>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+/* -- Toolbar active link (runs immediately - DOM is server-included) -- */
+(function() {
+    var path = window.location.pathname;
+    document.querySelectorAll('.rd-toolbar-links a').forEach(function(a) {
+        if (a.getAttribute('href') === path) {
+            a.classList.add('is-active');
+            a.setAttribute('aria-current', 'page');
+        }
+    });
+})();
+
+/* -- Nav dropdown keyboard handlers (runs immediately) -------- */
+document.querySelectorAll('.jg-nav .dropbtn').forEach(function(btn) {
+    btn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!expanded));
+            var menu = document.getElementById(this.getAttribute('aria-controls'));
+            if (menu) menu.style.display = expanded ? 'none' : 'block';
+        }
+        if (e.key === 'Escape') {
+            this.setAttribute('aria-expanded', 'false');
+            var menu = document.getElementById(this.getAttribute('aria-controls'));
+            if (menu) menu.style.display = 'none';
+        }
+    });
+});
+
+/* -- State -------------------------------------------------- */
+const PER_PAGE_CARD = 10;
+const PER_PAGE_LIST = 25;
+let DB          = [];
+let filtered    = [];
+let currentPage = 1;
+let viewMode    = window.innerWidth < 768 ? 'list' : 'card';
+
+function perPage() { return viewMode === 'list' ? PER_PAGE_LIST : PER_PAGE_CARD; }
+
+/* -- Helpers ------------------------------------------------ */
+function escAttr(s) { return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+function escHTML(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+/* -- View toggle -------------------------------------------- */
+function setView(mode) {
+    viewMode = mode;
+    const grid    = document.getElementById('card-grid');
+    const btnGrid = document.getElementById('btn-grid');
+    const btnList = document.getElementById('btn-list');
+    grid.classList.toggle('list-mode', mode === 'list');
+    btnGrid.classList.toggle('active', mode === 'card');
+    btnGrid.setAttribute('aria-pressed', String(mode === 'card'));
+    btnList.classList.toggle('active', mode === 'list');
+    btnList.setAttribute('aria-pressed', String(mode === 'list'));
+    currentPage = 1;
+    renderCards();
+}
+
+/* -- Mobile filter toggle ----------------------------------- */
+function toggleMobileFilters(btn) {
+    const body = document.getElementById('sidebar-filters-body');
+    const open = body.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.querySelector('span:first-child').textContent = open ? '&#9650; Filter databases' : '&#9660; Filter databases';
+}
+
+/* -- Tips panel toggle (shared component) ------------------- */
+function toggleSearchTips(btn) {
+    const panel = document.getElementById('jg-search-tips-panel');
+    if (!panel) return;
+    const open  = panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+}
+
+/* -- Load data ---------------------------------------------- */
+fetch('/databases/holocaust/holocaust-databases.json')
+    .then(r => r.json())
+    .then(data => {
+        DB = data.slice().sort((a, b) => a.name.localeCompare(b.name));
+        filtered = DB.slice();
+        buildSidebar();
+        renderCards();
+        document.getElementById('loading-state').style.display = 'none';
+        document.getElementById('card-grid').style.display = '';
+        document.getElementById('total-count').textContent = DB.length;
+        setView(viewMode);
+    })
+    .catch(err => {
+        document.getElementById('loading-state').textContent = 'Error loading database list. Please try refreshing.';
+        console.error(err);
+    });
+
+/* -- Build sidebar ------------------------------------------ */
+function countValues(field) {
+    const counts = {};
+    DB.forEach(db => {
+        (db[field] || []).forEach(v => { counts[v] = (counts[v] || 0) + 1; });
+    });
+    return counts;
+}
+
+function buildFilterGroup(title, field, counts, showTop, extraId) {
+    const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    const top    = sorted.slice(0, showTop);
+    const rest   = sorted.slice(showTop);
+
+    let html = `<div class="filter-group">
+        <div class="filter-group-title">${title}</div>`;
+
+    top.forEach(([val, cnt]) => { html += filterItem(field, val, cnt); });
+
+    if (rest.length > 0) {
+        html += `<button class="filter-more-btn" onclick="toggleMore(this,'${extraId}')">+ ${rest.length} more</button>
+        <div class="filter-extra" id="${extraId}">`;
+        rest.forEach(([val, cnt]) => { html += filterItem(field, val, cnt); });
+        html += `</div>`;
+    }
+
+    html += `</div>`;
+    return html;
+}
+
+function filterItem(field, val, cnt) {
+    const id = `fcb-${field}-${val.replace(/[^a-z0-9]/gi, '_')}`;
+    return `<label class="filter-item">
+        <input type="checkbox" class="fcb" id="${id}" data-f="${escAttr(field)}" data-v="${escAttr(val)}" onchange="applyFilters()">
+        ${escHTML(val)} <span class="filter-count">${cnt}</span>
+    </label>`;
+}
+
+function buildSidebar() {
+    document.getElementById('sidebar-filters').innerHTML =
+        buildFilterGroup('Record Type',   'recordType', countValues('recordType'),  6, 'rt-extra')  +
+        buildFilterGroup('Time Period',   'timePeriod', countValues('timePeriod'),  10, 'tp-extra') +
+        buildFilterGroup('Origin Region', 'region',     countValues('region'),      6, 'or-extra')  +
+        buildFilterGroup('Subject Group', 'subject',    countValues('subject'),     6, 'sg-extra')  +
+        buildFilterGroup('Record Nature', 'nature',     countValues('nature'),      10, 'rn-extra');
+}
+
+/* -- Card rendering ----------------------------------------- */
+const VISIBLE_TAG_COUNT = 4;
+
+/* Build per-card tag list. Splits multi-value array fields into individual
+   tags rather than concatenating them ("frankentag" fix). Skips subregion
+   since it has no corresponding sidebar filter. */
+function buildCardTags(db) {
+    const tags = [];
+    (db.recordType || []).forEach(v => tags.push({ field: 'recordType', value: v }));
+    (db.region     || []).forEach(v => tags.push({ field: 'region',     value: v }));
+    (db.timePeriod || []).forEach(v => tags.push({ field: 'timePeriod', value: v }));
+    (db.subject    || []).forEach(v => tags.push({ field: 'subject',    value: v }));
+    (db.nature     || []).forEach(v => tags.push({ field: 'nature',     value: v }));
+    return tags;
+}
+
+function renderTagHTML(tag, isExtra) {
+    const cls = ['catalog-tag'];
+    if (isExtra) cls.push('is-extra');
+    return `<button type="button" class="${cls.join(' ')}"
+            data-field="${escAttr(tag.field)}"
+            data-value="${escAttr(tag.value)}"
+            onclick="onTagClick(this)">${escHTML(tag.value)}</button>`;
+}
+
+function renderTagsBlock(tags) {
+    if (!tags.length) return '';
+    const visible = tags.slice(0, VISIBLE_TAG_COUNT);
+    const extras  = tags.slice(VISIBLE_TAG_COUNT);
+
+    let html = visible.map(t => renderTagHTML(t, false)).join('');
+    if (extras.length > 0) {
+        html += `<button type="button" class="catalog-tag-more" onclick="expandCardTags(this)" aria-expanded="false">+ ${extras.length} more</button>`;
+        html += extras.map(t => renderTagHTML(t, true)).join('');
+    }
+    return `<div class="catalog-card__tags">${html}</div>`;
+}
+
+const ARROW_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`;
+
+function buildCard(db) {
+    const tags = buildCardTags(db);
+    const tagsHTML = renderTagsBlock(tags);
+
+    const countLabel = db.count
+        ? `<span class="catalog-card__count">${db.count.toLocaleString()} Records</span>`
+        : `<span class="catalog-card__count is-empty">Coming soon</span>`;
+
+    const cta = db.url
+        ? `<a class="catalog-card__cta" href="${escAttr(db.url)}" target="_blank" rel="noopener" aria-label="View ${escAttr(db.name)} dataset">${ARROW_SVG}</a>`
+        : `<span class="catalog-card__cta is-disabled" aria-hidden="true">${ARROW_SVG}</span>`;
+
+    return `<article class="catalog-card"
+        data-recordtype="${escAttr((db.recordType||[]).join('|'))}"
+        data-timeperiod="${escAttr((db.timePeriod||[]).join('|'))}"
+        data-region="${escAttr((db.region||[]).join('|'))}"
+        data-subject="${escAttr((db.subject||[]).join('|'))}"
+        data-nature="${escAttr((db.nature||[]).join('|'))}"
+        data-title="${escAttr(db.name.toLowerCase())}">
+        <h3 class="catalog-card__title">${escHTML(db.name)}</h3>
+        <p class="catalog-card__desc">${escHTML(db.desc)}</p>
+        <div class="catalog-card__meta">
+            ${countLabel}
+            ${cta}
+        </div>
+        ${tagsHTML}
+    </article>`;
+}
+
+function renderCards() {
+    const grid = document.getElementById('card-grid');
+    const pp   = perPage();
+    const start = (currentPage - 1) * pp;
+    const page  = filtered.slice(start, start + pp);
+
+    grid.innerHTML = page.map(buildCard).join('');
+
+    document.getElementById('showing-count').textContent = filtered.length;
+    document.getElementById('no-results').classList.toggle('visible', filtered.length === 0);
+    grid.style.display = filtered.length === 0 ? 'none' : '';
+
+    renderPagination();
+    updateActiveTags();
+}
+
+/* -- Pagination --------------------------------------------- */
+function renderPagination() {
+    const nav        = document.getElementById('pagination');
+    const totalPages = Math.ceil(filtered.length / perPage());
+
+    if (totalPages <= 1) { nav.style.display = 'none'; return; }
+    nav.style.display = 'flex';
+
+    let html = `<button class="page-btn ${currentPage === 1 ? 'disabled' : ''}"
+        aria-label="Previous page" onclick="goPage(${currentPage - 1})">&lsaquo;</button>`;
+
+    for (let p = 1; p <= totalPages; p++) {
+        if (p === 1 || p === totalPages || Math.abs(p - currentPage) <= 2) {
+            html += `<button class="page-btn ${p === currentPage ? 'active' : ''}"
+                aria-label="Page ${p}" aria-current="${p === currentPage ? 'page' : 'false'}"
+                onclick="goPage(${p})">${p}</button>`;
+        } else if (Math.abs(p - currentPage) === 3) {
+            html += `<span class="page-ellipsis" aria-hidden="true">&hellip;</span>`;
+        }
+    }
+
+    html += `<button class="page-btn ${currentPage === totalPages ? 'disabled' : ''}"
+        aria-label="Next page" onclick="goPage(${currentPage + 1})">&rsaquo;</button>`;
+
+    nav.innerHTML = html;
+}
+
+function goPage(p) {
+    const totalPages = Math.ceil(filtered.length / perPage());
+    if (p < 1 || p > totalPages) return;
+    currentPage = p;
+    renderCards();
+    document.querySelector('.browse-header').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* -- Filtering ---------------------------------------------- */
+function getChecked(field) {
+    return Array.from(document.querySelectorAll(`.fcb[data-f="${field}"]:checked`)).map(cb => cb.dataset.v);
+}
+
+function applyFilters() {
+    const q         = (document.getElementById('db-search').value || '').toLowerCase().trim();
+    const recF      = getChecked('recordType');
+    const timeF     = getChecked('timePeriod');
+    const regionF   = getChecked('region');
+    const subjectF  = getChecked('subject');
+    const natureF   = getChecked('nature');
+
+    filtered = DB.filter(db => {
+        const mQ = !q ||
+            db.name.toLowerCase().includes(q) ||
+            db.desc.toLowerCase().includes(q) ||
+            (db.region || []).join(' ').toLowerCase().includes(q) ||
+            (db.recordType || []).join(' ').toLowerCase().includes(q);
+        const mR = !recF.length     || recF.some(v     => (db.recordType || []).includes(v));
+        const mT = !timeF.length    || timeF.some(v    => (db.timePeriod || []).includes(v));
+        const mG = !regionF.length  || regionF.some(v  => (db.region || []).includes(v));
+        const mS = !subjectF.length || subjectF.some(v => (db.subject || []).includes(v));
+        const mN = !natureF.length  || natureF.some(v  => (db.nature || []).includes(v));
+        return mQ && mR && mT && mG && mS && mN;
+    });
+
+    currentPage = 1;
+    renderCards();
+    renderChips(recF, timeF, regionF, subjectF, natureF);
+}
+
+function renderChips(r, t, reg, s, n) {
+    const all = [...r, ...t, ...reg, ...s, ...n];
+    document.getElementById('active-filters').innerHTML = all.map(v =>
+        `<span class="filter-chip">${escHTML(v)}
+         <button aria-label="Remove ${escAttr(v)} filter" onclick="removeChip('${v.replace(/'/g, "\\'")}')">&times;</button>
+         </span>`
+    ).join('');
+}
+
+function removeChip(val) {
+    document.querySelectorAll('.fcb').forEach(cb => {
+        if (cb.dataset.v === val) cb.checked = false;
+    });
+    applyFilters();
+}
+
+function clearAllFilters() {
+    document.querySelectorAll('.fcb').forEach(cb => cb.checked = false);
+    document.getElementById('db-search').value = '';
+    filtered = DB.slice();
+    currentPage = 1;
+    renderCards();
+    document.getElementById('active-filters').innerHTML = '';
+}
+
+/* -- Tag click -> toggle matching sidebar filter ------------- */
+function onTagClick(el) {
+    const field = el.dataset.field;
+    const value = el.dataset.value;
+    const cb = Array.from(document.querySelectorAll('.fcb'))
+        .find(c => c.dataset.f === field && c.dataset.v === value);
+    if (!cb) return;
+
+    cb.checked = !cb.checked;
+
+    /* If the matching checkbox is hidden in a "+X more" extras pane,
+       open that pane so the user can see the new state. */
+    if (cb.checked) {
+        const extra = cb.closest('.filter-extra');
+        if (extra && !extra.classList.contains('open')) {
+            const moreBtn = extra.previousElementSibling;
+            if (moreBtn && moreBtn.classList.contains('filter-more-btn')) {
+                toggleMore(moreBtn, extra.id);
+            }
+        }
+    }
+
+    applyFilters();
+}
+
+/* Sweep all rendered tags and mark active ones based on checked filters */
+function updateActiveTags() {
+    const activeMap = {};
+    document.querySelectorAll('.fcb:checked').forEach(cb => {
+        const f = cb.dataset.f;
+        if (!activeMap[f]) activeMap[f] = new Set();
+        activeMap[f].add(cb.dataset.v);
+    });
+    document.querySelectorAll('.catalog-tag').forEach(tag => {
+        const f = tag.dataset.field;
+        const v = tag.dataset.value;
+        const isActive = !!(activeMap[f] && activeMap[f].has(v));
+        tag.classList.toggle('is-active', isActive);
+    });
+}
+
+/* -- UI helpers --------------------------------------------- */
+function expandCardTags(btn) {
+    const wrap = btn.closest('.catalog-card__tags');
+    wrap.classList.add('is-expanded');
+    btn.setAttribute('aria-expanded', 'true');
+}
+
+function toggleMore(btn, id) {
+    const el   = document.getElementById(id);
+    const open = el.classList.toggle('open');
+    if (!btn._orig) btn._orig = btn.textContent;
+    btn.textContent = open ? 'Show fewer...' : btn._orig;
+}
+
+</script>
+</body>
+</html>
