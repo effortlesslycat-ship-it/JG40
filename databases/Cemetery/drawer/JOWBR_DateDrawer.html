@@ -1,0 +1,307 @@
+<style>
+/* =====================================================
+   JOWBR HEBREW DATE CONVERTER DRAWER
+   Injected via fetch() into #jowbr-datedrawer on the
+   JOWBR burial record page (Tier 3).
+   Behavior lives in jg-datedrawer.js -- inline scripts
+   inside fetched components do not execute.
+   Trigger button is injected into the record action bar
+   by jg-datedrawer.js after the record renders.
+   CHW
+   ===================================================== */
+
+/* -- Trigger button icon ------------------------------ */
+/* Trigger uses the page's .btn-print style; icon inverts to
+   white on hover (navy fill) and in dark mode, per the global
+   SVG invert convention. Swap for a dedicated dark asset if
+   one is provided. */
+.jg-dd-icon {
+    height: 14px; width: auto;
+    vertical-align: -2px;
+    margin-right: 2px;
+}
+.btn-print:hover .jg-dd-icon { filter: brightness(0) invert(1); }
+body.dark-mode .jg-dd-icon { filter: brightness(0) invert(1); }
+body.dark-mode .btn-print:hover .jg-dd-icon { filter: brightness(0) invert(0.07); }
+
+/* -- Backdrop ----------------------------------------- */
+.jg-datedrawer-backdrop {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1090;
+}
+.jg-datedrawer-backdrop.open { display: block; }
+
+/* -- Drawer shell ------------------------------------- */
+.jg-datedrawer {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: 360px; max-width: 92vw;
+    background-color: #ffffff;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.25);
+    z-index: 1100;
+    transform: translateX(105%);
+    transition: transform 0.25s ease;
+    display: flex; flex-direction: column;
+    overflow-y: auto;
+}
+.jg-datedrawer.open { transform: translateX(0); }
+body.dark-mode .jg-datedrawer { background-color: #1e1e1e; }
+@media (prefers-reduced-motion: reduce) {
+    .jg-datedrawer { transition: none; }
+}
+
+/* -- Header band (navy: hardcoded per JG40 rule) ------ */
+.jg-datedrawer__head {
+    background-color: #09497a;
+    color: #ffffff;
+    padding: 16px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px;
+    flex-shrink: 0;
+}
+body.dark-mode .jg-datedrawer__head { background-color: #0d2a45; }
+.jg-datedrawer__title {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.125rem; font-weight: normal;
+    color: #ffffff; line-height: 1.3;
+}
+.jg-datedrawer__close {
+    background: none; border: none; cursor: pointer;
+    color: #ffffff; font-size: 26px; line-height: 1;
+    padding: 2px 6px; flex-shrink: 0;
+}
+.jg-datedrawer__close:hover { color: var(--light-green); }
+.jg-datedrawer__close:focus-visible {
+    outline: 2px solid var(--light-blue); outline-offset: 2px;
+}
+
+/* -- Body --------------------------------------------- */
+.jg-datedrawer__body { padding: 18px 20px 24px; }
+
+.jg-datedrawer__section-label {
+    font-size: 12px; font-weight: bold; text-transform: uppercase;
+    letter-spacing: 1.2px; color: var(--sage);
+    margin: 0 0 10px; padding-bottom: 4px;
+    border-bottom: 1px solid rgba(147,155,81,0.25);
+}
+body.dark-mode .jg-datedrawer__section-label {
+    color: #a8b361; border-bottom-color: rgba(168,179,97,0.2);
+}
+
+.jg-datedrawer__fields {
+    display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap;
+}
+.jg-datedrawer__field { display: flex; flex-direction: column; gap: 3px; }
+.jg-datedrawer__field label {
+    font-size: 11px; font-weight: bold; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--charcoal);
+}
+body.dark-mode .jg-datedrawer__field label { color: #a0a0a0; }
+.jg-datedrawer__field select,
+.jg-datedrawer__field input {
+    font-size: 14px; padding: 6px 8px;
+    border: 1px solid #c5bca8; border-radius: 4px;
+    background-color: #ffffff; color: var(--charcoal);
+    font-family: inherit;
+}
+body.dark-mode .jg-datedrawer__field select,
+body.dark-mode .jg-datedrawer__field input {
+    background-color: #121212; color: #e0e0e0; border-color: #444;
+}
+.jg-datedrawer__field select:focus-visible,
+.jg-datedrawer__field input:focus-visible,
+.jg-datedrawer__check input:focus-visible {
+    outline: 2px solid #09497a; outline-offset: 1px;
+}
+body.dark-mode .jg-datedrawer__field select:focus-visible,
+body.dark-mode .jg-datedrawer__field input:focus-visible,
+body.dark-mode .jg-datedrawer__check input:focus-visible {
+    outline-color: #8ab4d4;
+}
+.jg-dd-day  { width: 64px; }
+.jg-dd-year { width: 84px; }
+
+.jg-datedrawer__check {
+    display: flex; align-items: center; gap: 7px;
+    margin-top: 10px; font-size: 13px; color: var(--charcoal);
+}
+body.dark-mode .jg-datedrawer__check { color: #a0a0a0; }
+.jg-datedrawer__check input { accent-color: #09497a; }
+body.dark-mode .jg-datedrawer__check input { accent-color: #a8b361; }
+
+.jg-datedrawer__convert {
+    display: inline-block; margin-top: 12px;
+    background-color: var(--sage); color: #ffffff;
+    border: none; border-radius: 4px; cursor: pointer;
+    padding: 8px 18px; font-size: 13px; font-weight: bold;
+    font-family: inherit;
+    transition: filter 0.15s;
+}
+.jg-datedrawer__convert:hover { filter: brightness(1.1); }
+.jg-datedrawer__convert:focus-visible {
+    outline: 2px solid #09497a; outline-offset: 2px;
+}
+body.dark-mode .jg-datedrawer__convert { color: #121212; }
+body.dark-mode .jg-datedrawer__convert:focus-visible { outline-color: #8ab4d4; }
+
+/* -- Result panels ------------------------------------ */
+.jg-datedrawer__result {
+    margin-top: 12px; padding: 12px 14px;
+    background-color: var(--light-blue);
+    border-left: 3px solid #09497a;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px; line-height: 1.5;
+    color: #232b2b;
+    min-height: 20px;
+}
+/* --light-blue does not flip in dark mode: safe fill,
+   but pin text dark so it stays readable either way */
+body.dark-mode .jg-datedrawer__result { border-left-color: #8ab4d4; }
+.jg-datedrawer__result strong { color: #09497a; }
+.jg-datedrawer__result .jg-dd-hebrew {
+    display: block; margin-top: 2px;
+    font-size: 1.125rem; direction: rtl; text-align: right;
+}
+.jg-datedrawer__result.jg-dd-error {
+    background-color: #f6e8e8; border-left-color: #b03030; color: #7a1f1f;
+}
+.jg-datedrawer__result[hidden] { display: none; }
+
+.jg-datedrawer__divider {
+    border: none; border-top: 1px solid var(--cream);
+    margin: 22px 0 18px;
+}
+body.dark-mode .jg-datedrawer__divider { border-top-color: #333; }
+
+/* -- Footer note + yahrzeit link ---------------------- */
+.jg-datedrawer__foot {
+    margin-top: 22px; padding-top: 14px;
+    border-top: 1px solid var(--cream);
+    font-size: 12px; line-height: 1.55; color: var(--charcoal);
+}
+body.dark-mode .jg-datedrawer__foot {
+    border-top-color: #333; color: #a0a0a0;
+}
+.jg-datedrawer__foot a {
+    color: #09497a; font-weight: bold;
+    text-decoration: underline dotted;
+    text-decoration-color: var(--sage);
+}
+body.dark-mode .jg-datedrawer__foot a { color: #8ab4d4; }
+</style>
+
+<!-- Backdrop: click closes (handled in jg-datedrawer.js) -->
+<div class="jg-datedrawer-backdrop" id="jg-datedrawer-backdrop"></div>
+
+<div class="jg-datedrawer" id="jg-datedrawer" role="dialog" aria-modal="true"
+     aria-labelledby="jg-datedrawer-title">
+
+    <div class="jg-datedrawer__head">
+        <h2 class="jg-datedrawer__title" id="jg-datedrawer-title">Hebrew Date Converter</h2>
+        <button type="button" class="jg-datedrawer__close" id="jg-datedrawer-close"
+                aria-label="Close date converter">&times;</button>
+    </div>
+
+    <div class="jg-datedrawer__body">
+
+        <!-- Gregorian to Hebrew -->
+        <section aria-labelledby="jg-dd-g2h-label">
+            <p class="jg-datedrawer__section-label" id="jg-dd-g2h-label">
+                Civil (Gregorian) to Hebrew</p>
+            <div class="jg-datedrawer__fields">
+                <div class="jg-datedrawer__field">
+                    <label for="jg-dd-gday">Day</label>
+                    <input type="number" id="jg-dd-gday" class="jg-dd-day"
+                           min="1" max="31" value="1" inputmode="numeric">
+                </div>
+                <div class="jg-datedrawer__field">
+                    <label for="jg-dd-gmonth">Month</label>
+                    <select id="jg-dd-gmonth">
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+                <div class="jg-datedrawer__field">
+                    <label for="jg-dd-gyear">Year</label>
+                    <input type="number" id="jg-dd-gyear" class="jg-dd-year"
+                           min="1600" max="2200" value="1900" inputmode="numeric">
+                </div>
+            </div>
+            <div class="jg-datedrawer__check">
+                <input type="checkbox" id="jg-dd-sunset">
+                <label for="jg-dd-sunset">Death occurred after sunset
+                    (advances the Hebrew date by one day)</label>
+            </div>
+            <button type="button" class="jg-datedrawer__convert" id="jg-dd-g2h-btn">
+                Convert to Hebrew</button>
+            <div class="jg-datedrawer__result" id="jg-dd-g2h-result"
+                 aria-live="polite" hidden></div>
+        </section>
+
+        <hr class="jg-datedrawer__divider">
+
+        <!-- Hebrew to Gregorian -->
+        <section aria-labelledby="jg-dd-h2g-label">
+            <p class="jg-datedrawer__section-label" id="jg-dd-h2g-label">
+                Hebrew to Civil (Gregorian)</p>
+            <div class="jg-datedrawer__fields">
+                <div class="jg-datedrawer__field">
+                    <label for="jg-dd-hday">Day</label>
+                    <input type="number" id="jg-dd-hday" class="jg-dd-day"
+                           min="1" max="30" value="1" inputmode="numeric">
+                </div>
+                <div class="jg-datedrawer__field">
+                    <label for="jg-dd-hmonth">Month</label>
+                    <!-- Values are hebcal month constants; Tishrei-first
+                         order matches the legacy JOS converter -->
+                    <select id="jg-dd-hmonth">
+                        <option value="7">Tishrei</option>
+                        <option value="8">Cheshvan</option>
+                        <option value="9">Kislev</option>
+                        <option value="10">Tevet</option>
+                        <option value="11">Sh&#39;vat</option>
+                        <option value="12">Adar (Adar I in leap years)</option>
+                        <option value="13">Adar II (leap years only)</option>
+                        <option value="1">Nisan</option>
+                        <option value="2">Iyyar</option>
+                        <option value="3">Sivan</option>
+                        <option value="4">Tammuz</option>
+                        <option value="5">Av</option>
+                        <option value="6">Elul</option>
+                    </select>
+                </div>
+                <div class="jg-datedrawer__field">
+                    <label for="jg-dd-hyear">Year</label>
+                    <input type="number" id="jg-dd-hyear" class="jg-dd-year"
+                           min="5360" max="5960" value="5660" inputmode="numeric">
+                </div>
+            </div>
+            <button type="button" class="jg-datedrawer__convert" id="jg-dd-h2g-btn">
+                Convert to Civil</button>
+            <div class="jg-datedrawer__result" id="jg-dd-h2g-result"
+                 aria-live="polite" hidden></div>
+        </section>
+
+        <div class="jg-datedrawer__foot">
+            <p>Hebrew calendar days begin at sunset. A date carved on a
+            headstone may be one day later than civil records if the death
+            occurred after sundown.</p>
+            <p>Need yahrzeit dates for multiple consecutive years?
+            <a href="/JOS/josdates.php" id="jg-dd-yahrzeit-link">Use the
+            multi-year calendar tool &rarr;</a></p>
+        </div>
+
+    </div>
+</div>
