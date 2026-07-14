@@ -1,0 +1,7 @@
+<TABLE BORDER="0">
+<TR>
+<TD WIDTH="50%">
+<A CLASS="jgbacklink" HREF="/databases/AustriaCzech/">JewishGen Austria-Czech Database</A>
+</TD>
+</TR>
+</TABLE>

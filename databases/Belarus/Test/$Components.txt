@@ -1,0 +1,163 @@
+<TABLE cols="2" BORDER="0" width="100%">
+<TR valign="top">
+<TD WIDTH="50%">
+
+<H4>All Belarus:</H4>
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" HREF="/jgff">JewishGen Family Finder</A> <BR>
+More than 31,000 entries by Jewish genealogists researching
+families in Belarus.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Cemetery">JewishGen Online Worldwide Burial Registry</A> <BR>
+More than 23,000 burial records for Belarus and Belarus landsmanshaft
+cemeteries worldwide.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/yizkor">Yizkor Book Necrologies</A> <BR>
+44,000 entries from lists of Holocaust martyrs in Yizkor Books
+for towns in Belarus.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/belarus/13_cds_births.htm">Birth Records</A>
+&nbsp; <IMG SRC="/images/updated_flag.gif" ALIGN="absmiddle"><BR>
+More than 14,000 complete birth records, from Bobruisk, 
+Kamen, Kobrin, Minsk, Mogilev, Rakov, Rubezhevichi, Senno and 
+Vorotinschtina-Zaverezhe.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/belarus/13_cds_marriages.htm">Marriage Records</A>
+&nbsp; <IMG SRC="/images/updated_flag.gif" ALIGN="absmiddle"><BR>
+More than 4,200 complete marriage records, from Minsk (1921), 
+Mogilev (1857-1891), and Vorotinschtina-Zaverezhe (1870-1917).</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Belarus/BelarusDeaths.htm">Death Records</a>
+&nbsp; <IMG SRC="/images/updated_flag.gif" ALIGN="absmiddle"><BR>
+More than 5,000 complete death records, from Bobruisk (1894-1900), 
+Minsk (1889), Mogilev (1875-78), and others.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/belarus/static_intro.htm">Belarus Names Database</A><BR>
+More than 58,000 names that appear on static web pages of the JewishGen 
+Belarus SIG.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/misc/deych.htm">Jewish Religious Personnel in the Russian Empire, 1853-1854</A><BR>
+1,900 Jewish religious personnel in Grodno, Minsk, Mogilev, Vilna and
+Vitebsk Gubernias.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/vsia/vsiabelarus.htm"><I>Vsia Rossiia</I> - 1903 &amp; 1911
+   Minsk and Mogilev Gubernias, 1911 Vitebsk gubernia</a> <br>
+More than 12,000 Jewish businesses, from 1903 and 1911 Russian business
+directories.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Poland/nowogrodskie.jri.htm">1929 Business Directory -
+Nowogródek Province</A><BR>
+More than 15,000 entries from a Polish business directory.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Belarus/BelarusRevisionLists.htm">Revision Lists</A>
+&nbsp; <IMG SRC="/images/updated_flag.gif" ALIGN="absmiddle"> <BR>
+More than 34,000 records from <I>Reviska Skazka</I>, 
+19th century Czarist tax censuses - from Borisov, Kobrin, Minsk, Nesvizh, 
+Slonim, Slutsk and Vileika districts.</LI>
+
+</UL>
+
+</TD>
+
+
+<TD>
+
+
+<H4>Grodno Gubernia:</H4>
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Belarus/grodno.htm">Grodno Gubernia 1912 Voters List</a> <br>
+Names of more than 26,000 men of Grodno Gubernia who were eligible
+to vote in the Russian parliamentary elections in 1912.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Belarus/brest.htm">Brest Ghetto Passports</a> <br>
+Names and demographics of more than 12,000 people
+in the Brest Ghetto; a database of Holocaust victims
+drawn from Soviet archives.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/Belarus/intro_1897_russian_census.htm">1897 Census for Grodno Gubernia</A><BR>
+Detailed family data for 8,000 individuals living in Grodno gubernia,
+as recorded in the "All Russia Census" of 1897.</LI>
+
+</UL>
+
+
+<H4>Minsk Gubernia:</H4>
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Belarus/MinskHomeowners.htm">Minsk City Homeowners Lists, 1889 and 1911</A><BR>
+Nearly 9,000 homeowners from 1889 and 1911 Minsk guidebooks.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Belarus/MinskYB.htm">Minsk Yizkor Book Index</A> <BR>
+More than 3,000 names from the index of the two-volume Minsk
+Yizkor Book <I>Minsk, Ir va-em</I>.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Belarus/minsk.htm">Minsk Surnames</a> <br>
+Index of surnames appearing in the LDS microfilms of the
+Jewish vital records of the city of Minsk.</LI>
+
+<LI><A CLASS="dbhead" HREF="/databases/Holocaust/0059_PinskSovietExtrComm.html">Pinsk Records from
+the Soviet Extraordinary Commission</A><BR>
+Compilation of testimonials about 11,704 Holocaust victims from Pinsk.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Belarus/PinskGhetto.htm">Pinsk Ghetto List, 1942</A><BR>
+Data on more than 18,000 Jews in the Pinsk ghetto in late 1941 or 1942.</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Belarus/DumaVoterLists.htm">Duma Voters Lists, 1906-1907</a> 
+<br>
+Names of more than 35,000 men of Minsk Gubernia who
+were eligible to vote in the Russian Duma elections in 1906 and 1907.</LI>
+
+</UL>
+
+
+<H4>Mogilev Gubernia:</H4>
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Belarus/mogilevb.htm">Mogilev Birth Index of boys, 1864-1894</a><BR>
+Index of more than 9,800 male births in Mogilev,
+listed by father's given name.</LI>
+
+</UL>
+
+
+<H4>Vilna Gubernia:</H4>
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" HREF="/Litvak/HTML/Revision.htm">Revision Lists</a><BR>
+More than 35,000 records from <I>Reviska Skazka</I>, 19th century
+Czarist tax censuses - from the four southern uyezds of Vilna Gubernia:
+Lida, Oshmiany, Vilieka, Disna.</LI>
+
+</UL>
+
+</TD>
+</TR>
+</TABLE>

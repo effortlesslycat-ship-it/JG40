@@ -1,0 +1,10 @@
+<TABLE BORDER="0" WIDTH="100%">
+<TR>
+<TD>
+<H3>
+<A HREF="/databases/Belarus/"><IMG SRC="/images/jgarrow.gif" BORDER="0" ALIGN="CENTER"></A>
+<A HREF="/databases/Belarus/">Search the JewishGen Belarus Database</A>
+</H3>
+</TD>
+</TR>
+</TABLE>
