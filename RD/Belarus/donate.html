@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Donate to the Belarus Research Division &mdash; JewishGen</title>
+<meta name="description" content="The Belarusian Research Division preserves and shares the histories of Jewish communities from Belarus.">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/jg-global.css"><link rel="stylesheet" href="/RD/jg-rd.css">
+
+<style>
+
+a { text-decoration: none; color: inherit; 
+}
+
+/* -- Page title band (light + dark mode) -- */
+
+.page-title-band {
+    background-color: var(--navy);
+    padding: 44px 50px;
+    text-align: center;
+}
+.page-title-band h1 {
+    margin: 0 0 10px 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.25rem;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.page-title-band p.hero-subtitle {
+    margin: 0 auto;
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 620px;
+    line-height: 1.6;
+}
+
+body.dark-mode .page-title-band {
+ background-color: #0d2a45 !important; 
+}
+
+@media (max-width: 800px) {
+    .page-title-band {
+		 padding: 36px 24px; 
+}
+}
+
+</style>
+</head>
+<body>
+
+<div id="site-header">
+</div>
+
+  <div class="page-title-band">
+    <span class="tagline">Belarus Research Division</span>
+    <h1>Donate to the Belarus Research Division</h1>
+    <p class="hero-subtitle">The former Russian Empire gubernii of Grodno, Minsk, Mogilev, Vitebsk, and southern Vilna, now in Belarus.</p></div>
+
+<div class="rd-body-wrap">
+    <div class="rd-body-inner rd-body-inner--narrow">
+        <aside id="rd-sidebar" class="rd-sidebar">
+</aside>
+        <main>
+            <section>
+                <span class="section-heading">About the Division</span>
+                <div class="green-accent-line"></div>
+                <div class="rd-intro">
+                    <p>The Belarus Research Division (formerly Belarus SIG) was formed on July 14, 1998 at the 18th Annual Seminar for Jewish Genealogy in Los Angeles, California. At the initial meeting, hosted by David Fox, twenty researchers with an interest in various towns and gubernias in Belarus decided to aid each other by forming this SIG. This group has grown over the years and currently has over 3,000 members. In 2006, leadership transitioned to co-coordinators David Feldman and Sharon Fingold. After 2006, the leadership team grew to include research coordinator Ruth Silver z'l, and database coordinator Paul Zoglin. Currently, the Belarus SIG team is lead by David Feldman and Paul Zoglin, aided by coordinators for many shtetl/towns. Our objective is to connect you to information that will further your Jewish family history research in Belarus.</p>
+                    <p>Uncovering the records of our ancestors has always been our number one goal. Our volunteers are actively working on adding translations to the All-Belarus Database and in bringing you the newest in guides, aides, and search strategies on our <a href="https://www.jewishgen.org/Belarus/index.html">division website</a>.</p>
+                    <p>If you would be interested in making a major contribution to the Belarus Research Division's efforts, please email <a href="mailto:Development@mjhnyc.org">Development@mjhnyc.org</a>.</p>
+                </div>
+                <div class="rd-current-card">
+                    <span class="rd-current-label">Currently Working On</span>
+                    <p class="rd-current-text">FILL HERE</p>
+                </div>
+            </section>
+            <section class="rd-section">
+                <span class="section-heading">Support the Belarus Research Division</span>
+                <div class="green-accent-line">
+</div>
+                <div class="rd-donation-block">
+                    <p>Donor support enables the Division to acquire new materials, index rare records, and make them widely accessible for future generations.</p>
+                    <a href="https://jewishgen.net/donation/belarus-research-general" class="rd-btn-donate-solid">Support the Belarus Research Division</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+<div id="site-footer">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="/jg-rd-sidebar.js">
+</script>
+<script>function loadComponent(id, file) {
+    return fetch(file)
+        .then(function(r) {
+ if (!r.ok) throw new Error('Could not load ' + file); return r.text();
+ })
+        .then(function(html) { document.getElementById(id).innerHTML = html;
+ })
+        .catch(function(err) { console.warn(err);
+ })
+;}
+
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html'),
+    loadComponent('rd-sidebar', '/RD/Belarus/RD_Sidebar.html')
+        .then(function() { if (window.JG && JG.setActiveSidebarLink) JG.setActiveSidebarLink(); })]).then(function() {
+    document.querySelectorAll('.jg-nav .dropbtn, .main-nav .dropbtn').forEach(function(btn) {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var menu = this.nextElementSibling;
+                if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }            if (e.key === 'Escape') {
+                var menu = this.nextElementSibling;
+                if (menu) menu.style.display = 'none';
+            }        
+});
+    });
+});
+</script>
+</body>
+</html>
