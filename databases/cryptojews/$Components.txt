@@ -1,0 +1,196 @@
+<TABLE cols="2" cellpadding="0" cellspacing="0" width="100%">
+<TR valign="top">
+<TD WIDTH="50%">
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/colombia.html">Colombia</A><BR>
+508 records
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/canaryislands.html">Canary Islands Inquisition</A><BR>
+251 records
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/ChileInquisition.html">Inquisition of Chile</A><BR>
+223 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/SevillaInquisition.html">Inquisition of Sevilla</A><BR>
+218 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/Lima-Peru.html">Inquisition of Limu, Peru</A><BR>
+560 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/GeniePersonalCollection.html">Genie Milgrom Personal Research Information</A><BR>
+1,857 records.
+</LI>
+
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/carvajal.html">Carvajal Family Information from many Diverse Sources</A><BR>
+297 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/DiverseLatinAmerica.html">Diverse Latin America Database</A><BR>
+415 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/InquisitionsofJewsSpain.html">The Inquisitions and Jews in Spain</A><BR>
+96 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/Coro.html">The Jewish Community of Coro, Venezuela</A><BR>
+292 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/JewsCryptoJewsCuba.html">Jews and Crypto-Jews of Cuba</A><BR>
+41 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/InquisitionofSevilla.html">Victims from the Inquisition of Sevilla</A><BR>
+366 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/LibroVerdedeAragon-Genealogy.html">Libro Verde de Aragon - Genealogical Data</A><BR>
+2,736 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/LibroVerdedeAragon-Conversions.html">Libro Verde de Aragon - Conversion Data</A><BR>
+107 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/Mexico.html">Inquisition of Mexico</A><BR>
+2,659 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/LibroVerdedeAragon-Inquisition.html">Libro Verde de Aragon - Inquisition Data</A><BR>
+487 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/RoshPinahTheologicalInstitute.html">Students at the Rosh Pinah Jewish Theological Institute - Porto, Portugal</A><BR>
+89 records.
+</LI>
+
+
+</UL>
+</TD>
+
+
+<TD>
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/VictimsFamousTrialsSpain.html">Victims of Famous Trials in Spain</A><BR>
+168 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/CubanVictims.html">Cuban Victims of the Inquisicion</A><BR>
+46 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/MirandoDoDouro.html">Inquisition Cases from Mirando Do Douro in Portugal</A><BR>
+32 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/InquisitioninZamora.html">Inquisition Cases in the Zamora Region of Spain</A><BR>
+27 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/zamora.html">Jewish and Converso Names from the Region of Zamora</A><BR>
+125 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/InquisitionCovilha.html">Inquisition Sentences in Covilha, Portugal</A><BR>
+<insert number> records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/BeiraBelmonte.html">Inquisition Victims in Belmonte,Portugal and Beira Interior</A><BR>
+263 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/Colilha.html">Inquisition cases from Torre de Tombo archives pertaining to Covilha in Portugal</A><BR>
+381 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/ConversosCanary.html">Jewish Conversos Canary Islands</A><BR>
+769 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/AmsterdamAliasNames.html">Notarial Archive files of the Spanish Portuguese in Amsterdam
+</A><BR>
+1,247 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/DutchNotarialDeeds.html">Dutch Notarial Deeds
+</A><BR>
+794 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/DutchNotarialDeedsGenealogy.html">Notarial Deeds Amsterdam-Spanish Portuguese
+</A><BR>
+2,203 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/JewishCommunityofCuracao.html">Jewish Community of Curacao
+</A><BR>
+178 records.
+</LI>
+
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/OuderkerkCemetery.html">Ouderkerk Spanish Portuguese Cemetery in Amsterdam </A><BR>
+91 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/JamaicaGravestones.html">Names from the Gravestones of the Jews of Jamaica
+</A><BR>
+1,431 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/SephardicMarriageRegisterAmsterdam.html">Sephardic Marriage Register - Amsterdam
+</A><BR>
+4,240 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/BethHaHaimCemetery.html">Names from Gravestones in Beth HaHaim Cemtery in Curacao</A><BR>
+2,500 records.
+</LI>
+</UL>
+
+</TD>
+</TR>
+</TABLE>
