@@ -1,0 +1,324 @@
+<%
+' SearchForm_solr.txt
+' ~~~~~~~~~~~~~~~~~~~
+'
+' #include'd in the "All Country" and "All Topic" databases'
+'    search interface pages "/databases/REGION/index.asp"
+'
+' Parameters (ASP variables):
+'   - Set in individual REGION "index.asp" files, for customizations:
+'        + region - - Country or Topic name, for Regions database
+'        + button - - Text for the Submit button
+'        + reglabel - Text before the "Regions" pulldown, or 
+'                          "NONE" to supress display of "Regions" pulldown.
+'        + num_params - Number of parameters to enable (1-4).
+'                          Default usual case is 1.
+'   - Set by "/Regions/Access.asp":
+'        + bstyle - - "OnMouseOver='OverlayPopup(this)'"   If not a VAS donor
+'        + dis  - - - " DISABLED"                          If not a VAS donor
+%>
+
+<div id="popup1" class="overlay">
+<div class="popup" style="min-width:600px">
+<a class="close" href="#" onclick="document.getElementById('popup1').style.opacity=0;document.getElementById('popup1').style.visibility = 'hidden';return false;">&times;</a>
+<div class="content" style="font-size:14pt">
+<strong>Search Hint!</strong><br><br>
+<strong>(1) Search by OR:</strong> You can uses commas to search for either of two names. For example, COHEN or GOLDBERG should be listed as COHEN,GOLDBERG.<br>
+<strong>(2) Search by AND:</strong> You can use a space to search for two names at the same time. For example, COHEN and GOLDBERG should be listed as COHEN GOLDBERG.<br>
+<br>
+<center><strong><a href="#" onclick="document.getElementById('popup1').style.opacity=0;document.getElementById('popup1').style.visibility = 'hidden';return false;" >Click here to close this window</a>.</strong></center>
+</div>
+</div>
+</div>
+<strong style="text-align: center;display: block;margin-top:-10;"><a href="#" onclick="document.getElementById('popup1').style.opacity = 1;document.getElementById('popup1').style.visibility = 'visible';return false;">How do I get the best Search Results?</a></strong>
+
+
+<FORM Method="POST" Name="f"
+      Action="https://www.jewishgen.org/databases/jgform_2.php">
+<P>
+<CENTER>
+<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="8" RULES="groups"
+       BORDERCOLOR="#DDD6E4" BGCOLOR="#F5F5F5">
+
+<%
+' See file "/JG/utils/utils.asp":
+If ( IsDatabaseDisabled (DB_AllCountry) ) Then
+%>
+<TBODY>
+  <TR>
+    <TD ALIGN="CENTER">
+      <P ALIGN="CENTER">
+      <FONT COLOR="red"><B><%= DisableDatabaseMsg%></B></FONT>
+      </P>
+    </TD>
+  </TR>
+</TBODY>
+<%
+End If 
+%>
+
+
+<% ' Parameter #1: %>
+<TBODY>
+<TR><TD>
+
+<SELECT NAME="srch1v" ID="SEL1" OnChange="SelProc(this, 'OPT1', 'SRCH1', 0)">
+<OPTION VALUE="">Data Type
+<OPTION VALUE="S" SELECTED>Surname
+<OPTION VALUE="G">GivenName
+<OPTION VALUE="T">Town
+<OPTION VALUE="X">Any Field
+</SELECT>
+
+<SELECT NAME="srch1t" ID="OPT1">
+<OPTION VALUE="">Search Type
+<OPTION VALUE="Q" SELECTED>Phonetically Like
+<OPTION VALUE="D">Sounds Like
+<OPTION VALUE="S">Starts with
+<OPTION VALUE="E">is Exactly
+<OPTION VALUE="F1">Fuzzy Match
+<OPTION VALUE="F2">Fuzzier Match
+<OPTION VALUE="FM">Fuzziest Match
+</SELECT>
+
+<INPUT name="srch1" ID="SRCH1" size="25" maxlength="25">
+
+</TD></TR>
+
+<%
+' See "/databases/Regions/Access.asp":
+If num_params = 1 Then
+%>
+</TBODY>
+
+<% ' Parameter #2: %>
+<TBODY <%= bstyle%>>
+<% End If %>
+
+<TR><TD>
+
+<SELECT NAME="srch2v" ID="SEL2" 
+        <% If num_params = 1 Then %> <%= dis%> <% End If %>
+        OnChange="SelProc(this, 'OPT2', 'SRCH2', 0)">
+<OPTION VALUE="" SELECTED>Data Type
+<OPTION VALUE="S">Surname
+<OPTION VALUE="G">GivenName
+<OPTION VALUE="T">Town
+<OPTION VALUE="X">Any Field
+</SELECT>
+
+<SELECT NAME="srch2t" ID="OPT2" DISABLED>
+<OPTION VALUE="" SELECTED>Search Type
+<OPTION VALUE="Q">Phonetically Like
+<OPTION VALUE="D">Sounds Like
+<OPTION VALUE="S">Starts with
+<OPTION VALUE="E">is Exactly
+<OPTION VALUE="F1">Fuzzy Match
+<OPTION VALUE="F2">Fuzzier Match
+<OPTION VALUE="FM">Fuzziest Match
+</SELECT>
+
+<INPUT name="srch2" ID="SRCH2" size="25" maxlength="25">
+
+</TD></TR>
+
+<%
+' See "/databases/Regions/Access.asp":
+If num_params = 2 Then
+%>
+</TBODY>
+
+<% ' Parameter #3: %>
+<TBODY <%= bstyle%>>
+<% End If %>
+
+<TR><TD>
+
+<SELECT NAME="srch3v" ID="SEL3" <%= dis%> OnChange="SelProc(this, 'OPT3', 'SRCH3', 0)">
+<OPTION VALUE="" SELECTED>Data Type
+<OPTION VALUE="S">Surname
+<OPTION VALUE="G">GivenName
+<OPTION VALUE="T">Town
+<OPTION VALUE="X">Any Field
+</SELECT>
+
+<SELECT NAME="srch3t" ID="OPT3" DISABLED>
+<OPTION VALUE="" SELECTED>Search Type
+<OPTION VALUE="Q">Phonetically Like
+<OPTION VALUE="D">Sounds Like
+<OPTION VALUE="S">Starts with
+<OPTION VALUE="E">is Exactly
+<OPTION VALUE="F1">Fuzzy Match
+<OPTION VALUE="F2">Fuzzier Match
+<OPTION VALUE="FM">Fuzziest Match
+</SELECT>
+
+<INPUT name="srch3" ID="SRCH3" size="25" maxlength="25">
+
+</TD></TR>
+
+<%
+' See "/databases/Regions/Access.asp":
+If num_params = 3 Then
+%>
+</TBODY>
+
+<% ' Parameter #4: %>
+<TBODY <%= bstyle%>>
+<% End If %>
+
+<TR><TD>
+
+<SELECT NAME="srch4v" ID="SEL4" <%= dis%> OnChange="SelProc(this, 'OPT4', 'SRCH4', 0)">
+<OPTION VALUE="" SELECTED>Data Type
+<OPTION VALUE="S">Surname
+<OPTION VALUE="G">GivenName
+<OPTION VALUE="T">Town
+<OPTION VALUE="X">Any Field
+</SELECT>
+
+<SELECT NAME="srch4t" ID="OPT4" DISABLED>
+<OPTION VALUE="" SELECTED>Search Type
+<OPTION VALUE="Q">Phonetically Like
+<OPTION VALUE="D">Sounds Like
+<OPTION VALUE="S">Starts with
+<OPTION VALUE="E">is Exactly
+<OPTION VALUE="F1">Fuzzy Match
+<OPTION VALUE="F2">Fuzzier Match
+<OPTION VALUE="FM">Fuzziest Match
+</SELECT>
+
+<INPUT name="srch4" ID="SRCH4" size="25" maxlength="25">
+
+</TD></TR>
+
+
+<%
+If (num_params = 2) OR (num_params = 3) Then
+%>
+</TBODY>
+
+<% ' Logic radio buttons: %>
+<TBODY>
+<% End If %>
+
+<TR><TD>
+
+<label for="m_all">
+   <INPUT type="radio" name="SrchBOOL" <%= dis%> id="m_all" value="AND" CHECKED>
+   Match ALL of the above (logical AND)<BR>
+</label>
+<label for="m_any">
+   <INPUT type="radio" name="SrchBOOL" <%= dis%> id="m_any" value="OR">
+   Match ANY of the above (logical OR)
+</label>
+
+</TD></TR>
+</TBODY>
+
+
+
+<% 
+' Display the "Regions" pulldown:
+'   Except in the case of this database having NO regions, 
+'   then set the GeoRegion to be the databaseID.
+
+If ( reglabel = "NONE" ) Then 
+%>
+    <INPUT TYPE="hidden" name="GeoRegion" VALUE="<%= region%>">
+<% 
+Else 
+%>
+
+<TBODY>
+    <TR>
+        <TD>
+            <%= reglabel%> &nbsp;
+            <SELECT name="GeoRegion" ID="GeoRegion" DISABLED>
+                <OPTION value="ALL" SELECTED>All Regions</OPTION>
+            </SELECT>
+        </TD>
+    </TR>
+</TBODY>
+
+<% 
+End If 
+%>
+
+
+<!--
+<% ' Dates section: %>
+<TBODY <%= bstyle%>>
+<TR><TD>
+<P>
+<label for="d_all">
+  <INPUT type="radio" name="dates" value="all"  id="d_all" 
+         <%= dis%> onClick="SensitizeDateOpts(1)" checked>ALL entries<BR>
+</label>
+<label for="d_some">
+  <INPUT type="radio" name="dates" value="some" id="d_some" 
+         <%= dis%> onClick="SensitizeDateOpts(0)">Entries added/changed since
+<nobr>
+<SELECT name="Months" size="1">
+   <option value="01" SELECTED>Jan</option>
+   <option value="02">Feb</option>
+   <option value="03">Mar</option>
+   <option value="04">Apr</option>
+   <option value="05">May</option>
+   <option value="06">Jun</option>
+   <option value="07">Jul</option>
+   <option value="08">Aug</option>
+   <option value="09">Sep</option>
+   <option value="10">Oct</option>
+   <option value="11">Nov</option>
+   <option value="12">Dec</option>
+</SELECT>
+<SELECT name="Years" size="1">
+   <option value="2011">2011</option>
+   <option value="2012">2012</option>
+   <option value="2013">2013</option>
+   <option value="2014">2014</option>
+   <option value="2015">2015</option>
+   <option value="2016" SELECTED>2016</option>
+   <option value="2017">2017</option>
+</SELECT>
+</nobr>
+</label>
+</P>
+</TD></TR>
+</TBODY>
+-->
+
+<TBODY>
+<TR>
+<TD ALIGN="CENTER">
+<P>
+<INPUT TYPE="hidden" name="allcountry" VALUE="<%= region%>">
+<INPUT TYPE="hidden" name="submitform" VALUE="submitform">
+
+<INPUT TYPE="button" ID="SearchButton" VALUE="<%= button%>"
+       OnClick="doSubmit(this.form);">
+</P>
+</TD>
+</TR>
+</TBODY>
+
+
+</TABLE>
+</CENTER>
+</P>
+
+</FORM>
+
+
+
+<%
+If ( IsDatabaseDisabled (DB_AllCountry) ) Then
+%>
+<SCRIPT>
+  DisableForm(document.f);
+</SCRIPT>
+<%
+End If 
+%>
+

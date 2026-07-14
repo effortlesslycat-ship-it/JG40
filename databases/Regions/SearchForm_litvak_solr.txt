@@ -1,0 +1,253 @@
+
+<FORM Method="POST" Name="f"
+      Action="https://www.jewishgen.org/databases/jgform.php">
+
+<P>
+<CENTER>
+<TABLE BORDER="1" CELLSPACING="0" CELLPADDING="8" RULES="groups"
+       BORDERCOLOR="#DDD6E4" BGCOLOR="#F5F5F5">
+
+<%
+' See file "/JG/utils/utils.asp":
+If DisableDatabaseForm = True THEN
+%>
+<TBODY>
+  <TR>
+    <TD ALIGN="CENTER">
+      <P ALIGN="CENTER">
+      <FONT COLOR="red"><B><%= DisableDatabaseMsg%></B></FONT>
+      </P>
+    </TD>
+  </TR>
+</TBODY>
+<%
+End If 
+%>
+
+<TBODY>
+<TR><TD>
+
+<SELECT NAME="srch1v" ID="SEL1" OnChange="SelProc(this, 'OPT1', 'SRCH1')">
+<OPTION VALUE="">Data Type
+<OPTION VALUE="S" SELECTED>Surname
+<OPTION VALUE="G">GivenName
+<OPTION VALUE="T">Town
+<OPTION VALUE="X">Any Field
+</SELECT>
+
+<SELECT NAME="srch1t" ID="OPT1">
+<OPTION VALUE="">Search Type
+<OPTION VALUE="Q" SELECTED>Phonetically Like
+<OPTION VALUE="D">Sounds Like
+<OPTION VALUE="S">Starts with
+<OPTION VALUE="E">is Exactly
+<OPTION VALUE="F1">Fuzzy Match
+<OPTION VALUE="F2">Fuzzier Match
+<OPTION VALUE="FM">Fuzziest Match
+</SELECT>
+
+<INPUT name="srch1" ID="SRCH1" size="25" maxlength="35">
+
+</TD></TR>
+
+<%
+' See "/databases/Regions/Access.asp":
+If num_params = 1 THEN
+%>
+</TBODY>
+
+<TBODY <%response.write bstyle%>>
+<% End If %>
+
+<TR><TD>
+
+<NOSCRIPT>
+<CENTER>
+<FONT COLOR="red">JavaScript must be enabled in order to <BR>
+use the advanced search features.<BR></FONT>
+</CENTER>
+</NOSCRIPT>
+
+<!--
+<CENTER>
+<FONT COLOR="red">These advanced database search features<BR> 
+are freely available only until August 14th.<BR>
+Afterwards, they will be available only to contributors,<BR>
+as a <A HREF="/JewishGen/ValueAdded.asp">Value-Added Service</A>.
+<BR></FONT>
+</CENTER>
+-->
+
+<SELECT NAME="srch2v" ID="SEL2" 
+        <% If num_params = 1 Then %> <%response.write dis%> <% End If %>
+        OnChange="SelProc(this, 'OPT2', 'SRCH2')">
+<OPTION VALUE="" SELECTED>Data Type
+<OPTION VALUE="S">Surname
+<OPTION VALUE="G">GivenName
+<OPTION VALUE="T">Town
+<OPTION VALUE="X">Any Field
+</SELECT>
+
+<SELECT NAME="srch2t" ID="OPT2" DISABLED>
+<OPTION VALUE="" SELECTED>Search Type
+<OPTION VALUE="Q">Phonetically Like
+<OPTION VALUE="D">Sounds Like
+<OPTION VALUE="S">Starts with
+<OPTION VALUE="E">is Exactly
+<OPTION VALUE="F1">Fuzzy Match
+<OPTION VALUE="F2">Fuzzier Match
+<OPTION VALUE="FM">Fuzziest Match
+</SELECT>
+
+<INPUT name="srch2" ID="SRCH2" size="25" maxlength="35">
+
+</TD></TR>
+
+<%
+' See "/databases/Regions/Access.asp":
+If num_params = 2 THEN
+%>
+</TBODY>
+
+<TBODY <%response.write bstyle%>>
+<% End If %>
+
+<TR><TD>
+
+<SELECT NAME="srch3v" ID="SEL3" <%response.write dis%> OnChange="SelProc(this, 'OPT3', 'SRCH3')">
+<OPTION VALUE="" SELECTED>Data Type
+<OPTION VALUE="S">Surname
+<OPTION VALUE="G">GivenName
+<OPTION VALUE="T">Town
+<OPTION VALUE="X">Any Field
+</SELECT>
+
+<SELECT NAME="srch3t" ID="OPT3" DISABLED>
+<OPTION VALUE="" SELECTED>Search Type
+<OPTION VALUE="Q">Phonetically Like
+<OPTION VALUE="D">Sounds Like
+<OPTION VALUE="S">Starts with
+<OPTION VALUE="E">is Exactly
+<OPTION VALUE="F1">Fuzzy Match
+<OPTION VALUE="F2">Fuzzier Match
+<OPTION VALUE="FM">Fuzziest Match
+</SELECT>
+
+<INPUT name="srch3" ID="SRCH3" size="25" maxlength="35">
+
+</TD></TR>
+
+<TR><TD>
+
+<SELECT NAME="srch4v" ID="SEL4" <%response.write dis%> OnChange="SelProc(this, 'OPT4', 'SRCH4')">
+<OPTION VALUE="" SELECTED>Data Type
+<OPTION VALUE="S">Surname
+<OPTION VALUE="G">GivenName
+<OPTION VALUE="T">Town
+<OPTION VALUE="X">Any Field
+</SELECT>
+
+<SELECT NAME="srch4t" ID="OPT4" DISABLED>
+<OPTION VALUE="" SELECTED>Search Type
+<OPTION VALUE="Q">Phonetically Like
+<OPTION VALUE="D">Sounds Like
+<OPTION VALUE="S">Starts with
+<OPTION VALUE="E">is Exactly
+<OPTION VALUE="F1">Fuzzy Match
+<OPTION VALUE="F2">Fuzzier Match
+<OPTION VALUE="FM">Fuzziest Match
+</SELECT>
+
+<INPUT name="srch4" ID="SRCH4" size="25" maxlength="35">
+
+</TD></TR>
+
+<TR><TD>
+
+<label for="m_all">
+<input type="radio" name="SrchBOOL" <%response.write dis%> id="m_all" value="AND" checked>
+Match ALL of the above (logical AND)<BR>
+</label>
+<label for="m_any">
+<input type="radio" name="SrchBOOL" <%response.write dis%> id="m_any" value="OR">
+Match ANY of the above (logical OR)
+</label>
+
+</TD></TR>
+</TBODY>
+
+<TBODY>
+<TR <%response.write regvis%> >
+<TD>
+<P <%response.write pardis%>><%response.write reglabel%> &nbsp;
+<SELECT name="GeoRegion" ID="GeoRegion" DISABLED>
+   <OPTION value="ALL" SELECTED>All Regions</OPTION>
+</SELECT>
+</P>
+</TD>
+</TR>
+</TBODY>
+
+<TBODY <%response.write bstyle%>>
+<TR><TD>
+<P>
+<label for="d_all">
+  <input type="radio" name="dates" value="all"  id="d_all" 
+  <%response.write dis%> onClick="Sensitize(1)" checked>ALL entries<BR>
+</label>
+<label for="d_some">
+  <input type="radio" name="dates" value="some" id="d_some" 
+  <%response.write dis%> onClick="Sensitize(0)">Entries added/changed since
+<nobr>
+<select name="Months" size="1">
+   <option selected value="01">Jan</option><option value="02">Feb</option>
+   <option value="03">Mar</option><option value="04">Apr</option>
+   <option value="05">May</option><option value="06">Jun</option>
+   <option value="07">Jul</option><option value="08">Aug</option>
+   <option value="09">Sep</option><option value="10">Oct</option>
+   <option value="11">Nov</option><option value="12">Dec</option>
+</select>
+<select name="Years" size="1">
+   <option value="2010">2010</option>   
+   <option value="2011">2011</option>
+   <option value="2012">2012</option>
+   <option value="2013">2013</option>
+   <option value="2014" SELECTED>2014</option>
+   <option value="2015">2015</option>
+</select>
+</nobr>
+</label>
+</P>
+</TD></TR>
+</TBODY>
+
+<TBODY>
+<TR>
+<TD ALIGN="CENTER">
+<P>
+<INPUT TYPE="hidden" name="litvak" VALUE="Y">
+<INPUT TYPE="hidden" name="submitform" VALUE="submitform">
+<INPUT TYPE="hidden" name="allcountry" VALUE="<%response.write region%>">
+<INPUT TYPE="Button" ID="SearchButton" VALUE="<%response.write button%>"
+       ONCLICK="doSubmit(this.form)">
+</P>
+</TD>
+</TR>
+</TBODY>
+</TABLE>
+</CENTER>
+</P>
+
+</FORM>
+
+
+<%
+If DisableDatabaseForm = True THEN
+%>
+<SCRIPT>
+  DisableForm(document.f);
+</SCRIPT>
+<%
+End If 
+%>
+
