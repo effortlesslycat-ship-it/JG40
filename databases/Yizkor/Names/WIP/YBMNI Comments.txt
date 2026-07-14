@@ -1,0 +1,51 @@
+Notes for YBMNI 
+Nov 2015
+
+Add this to Master Inventory XLS ***
+
+
+In answer to your questions:
+
+1) The format is good.  Just a few tweaks: 
+
+    - For the "YBID#" column, just list the YBID# itself, unprefixed, 
+        e.g.: "293" instead of "YIZK=00293".
+
+    - The contents of the "Comments" column need not be extensive.  
+        Try to keep them as short as possible.  This is only an index.
+
+    - In the "Given Name" column, you need to remove any titles, 
+        i.e.: "Mrs.", "Miss", "Dr.", etc., because that text screws up 
+        the Soundex and phonetic indexing. 
+        Move this information into the "Comments" column.  
+
+2) The procedures are:
+
+    - Group all records together by REGION, one Excel file per Region. 
+        (Each town's Region can be found on its "Communities Database" page, 
+        in the top left.  The list of all Regions are summarized at 
+        http://www.jewishgen.org/databases/cemetery/JOWBR_Regions.htm )
+
+    - Email the set of regional spreadsheets, with a summary sheet, 
+        to Michael Tobias and myself: 
+        < mtobias@jewishgen.org >, < wblatt@jewishgen.org >.
+
+    - For an example of a summary sheet, see the "Update 2013 April" tab
+        in the attached "$YBMNI.Master.Inventory.xlsx" file.
+        The last column, "New / Add / Replace" should indicate whether
+        this list is:
+          - NEW - a brand new list (which the vast majority will be), or 
+          - ADD - an addition to an existing list, or 
+          - REPLACE - the complete replacement of an existing list.
+        
+    - The files can be sent at any time.  
+        The only restrictions are: 
+          1) we prefer to receive updates no more often than once per quarter.  
+             So there should be a maximum of four updates per year.
+          2) The only "deadline" is the one we set for the IAJGS Conference.  
+             In order for a set of data to be ready in time for the annual 
+             conference, it needs to get to Michael by his announced deadline, 
+             which is usually about 6 weeks before the conference date.
+
+Thanks,
+Warren

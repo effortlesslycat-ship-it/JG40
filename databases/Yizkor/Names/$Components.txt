@@ -1,0 +1,174 @@
+<A NAME="Contents"></A>
+<H3>Contents of the Database</H3>
+
+<P>This database currently contains more than 
+90,000 <% ' **** %> entries, indexed from 
+132     <% ' **** %> different Yizkor Books, including:
+
+<% 
+' Last update: Feb 2011, Jun 2013, May 2016.
+%>
+
+<P>
+<TABLE CLASS="jgtable" ID="ContentsTable">
+<THEAD>
+<TR>
+  <TH>Town</TH>
+  <TH>Country</TH>
+  <TH>Yizkor Book</TH>
+  <TH>Description</TH>
+  <TH># of entries</TH>
+</TR>
+</THEAD>
+
+<TBODY>
+<TR><TD>Ashmiany</TD><TD>Belarus</TD>
+    <TD class="shtet" usbgn="YB109"><A HREF="../yb.asp?id=109"><I>Sefer Zikaron le-kehilat Oshmana</I></A></TD>
+    <TD>index of names listed in the book</TD><TD ALIGN="RIGHT">200</TD></TR>
+<TR><TD>Babruysk</TD><TD>Belarus</TD>
+    <TD class="shtet" usbgn="YB12"><A HREF="../yb.asp?id=12"><I>Bobroysk: Sefer Zikaron li-Kehilat Bobroysk u-Venoteha</I></A></TD>
+    <TD>paid family memorials</TD><TD ALIGN="RIGHT">180</TD></TR>
+<TR><TD>B&#281;dzin</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB9"><A HREF="../yb.asp?id=9"><I>Pinkas Bendin</I></A></TD>
+    <TD>Index of B&#281;dzin Yizkor book</TD><TD ALIGN="RIGHT">2,144</TD></TR>
+<TR><TD>Cz&#281;stochowa</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB950"><A HREF="../yb.asp?id=950"><I>Czenstochov: our legacy</I></A></TD><TD>Index to "The Jews of Cz&#281;stochowa"</TD>
+    <TD ALIGN="RIGHT">2,908</TD></TR>
+<TR><TD>Dusetos</TD><TD>Lithuania</TD>
+    <TD class="shtet" usbgn="YB350"><A HREF="../yb.asp?id=350"><I>Ayara Hayeta B'Lita; Dusiat B'Rei Hazichronot</I></A></TD>
+    <TD>list of interviewees for the book</TD><TD ALIGN="RIGHT">150</TD></TR>
+<TR><TD>G&#261;bin</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB1376"><A HREF="../yb.asp?id=1376"><I>Gombin Memories</I></A></TD>
+    <TD>Duma Czarist Voters List</TD><TD ALIGN="RIGHT">339</TD></TR>
+<TR><TD>Grodno</TD><TD>Belarus</TD>
+    <TD class="shtet" usbgn="YB41"><A HREF="../yb.asp?id=41"><I>Grodno; Volume IX, Encyclopedia of the Jewish Diaspora</I></A></TD>
+    <TD>index of names in photo captions</TD><TD ALIGN="RIGHT">601</TD></TR>
+<TR><TD>Kielce</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB410"><A HREF="../yb.asp?id=410"><I>Sefer Kielce. Toldot Kehilat Kielce. Miyom Hivsuduh V'ad Churbanah</I></A></TD>
+    <TD>Book name index</TD><TD ALIGN="RIGHT">1,902</TD></TR>
+<TR><TD>Lenin</TD><TD>Belarus</TD>
+    <TD class="shtet" usbgn="YB448"><A HREF="../yb.asp?id=448"><I>Kehilat Lenin; sefer zikaron</I></A></TD>
+    <TD>list of photographs</TD><TD ALIGN="RIGHT">218</TD></TR>
+<TR><TD>Lipno</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB454"><A HREF="../yb.asp?id=454"><I>Sefer Lipno. Skepe, Lubicz ve-ha-sevivah</I></A></TD>
+    <TD>List of names appearing in text</TD><TD ALIGN="RIGHT">130</TD></TR>
+<TR><TD>Motol'</TD><TD>Belarus</TD>
+    <TD class="shtet" usbgn="YB1254"><A HREF="../yb.asp?id=1254"><I>Hurban Motele</I></A></TD>
+    <TD>index of names listed in the book</TD><TD ALIGN="RIGHT">230</TD></TR>
+<TR><TD>Nadvornaya</TD><TD>Ukraine</TD>
+    <TD class="shtet" usbgn="YB484"><A HREF="../yb.asp?id=484"><I>Nadworna; sefer edut ve-zikaron</I></A></TD>
+    <TD>1932 Tax payers List</TD><TD ALIGN="RIGHT">332</TD></TR>
+<TR><TD>Nowy Targ</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB495"><A HREF="../yb.asp?id=495"><I>Sefer Nowy Targ ve-ha-seviva</I></A></TD>
+    <TD>List of names from Yizkor book</TD><TD ALIGN="RIGHT">242</TD></TR>
+<TR><TD>Novy Yarichev</TD><TD>Ukraine</TD>
+    <TD class="shtet" usbgn="YB388"><A HREF="../yb.asp?id=388"><I>Khurbn Jaryczow bay Lemberg; sefer zikaron le-kedoshei Jaryczow y-sevivoteha</I></A></TD>
+    <TD>List of survivors</TD><TD ALIGN="RIGHT">102</TD></TR>
+<TR><TD>Pochayev</TD><TD>Ukraine</TD>
+    <TD class="shtet" usbgn="YB113"><A HREF="../yb.asp?id=113"><I>Pitshayever yisker-bukh</I></A></TD>
+    <TD>Tombstone List</TD><TD ALIGN="RIGHT">324</TD></TR>
+<TR><TD>Przemy&#347;l</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB118"><A HREF="../yb.asp?id=118"><I>Sefer Przemysl</I></A></TD>
+    <TD>Index of names from Yizkor book</TD><TD ALIGN="RIGHT">778</TD></TR>
+<TR><TD>Radomsko</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB121"><A HREF="../yb.asp?id=121"><I>Sefer yizkor le-kehilat Radomsk ve-ha-seviva</I></A></TD>
+    <TD>List of Radomskowers who died in Israel</TD><TD ALIGN="RIGHT">101</TD></TR>
+<TR><TD>Radomy&#347;l Wielki</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB542"><A HREF="../yb.asp?id=542"><I>Radomysl Rabati ve-ha-seviva; sefer yizkor</I></A></TD>
+    <TD>Addresses of the people of Radomy&#347;l Wielki</TD><TD ALIGN="RIGHT">188</TD></TR>
+<TR><TD>&#352;iauliai</TD><TD>Lithuania</TD>
+    <TD class="shtet" usbgn="YB1116"><A HREF="../yb.asp?id=1116"><I>Azoy zaynen mir gestorbn</I></A></TD>
+    <TD>Index of names in book</TD><TD ALIGN="RIGHT">165</TD></TR>
+<TR><TD>Slutsk</TD><TD>Belarus</TD>
+    <TD class="shtet" usbgn="YB134"><A HREF="../yb.asp?id=134"><I>Pinkas Slutsk u-benoteha</I></A></TD>
+    <TD>index of names yizkor book</TD><TD ALIGN="RIGHT">2,332</TD></TR>
+<TR><TD>Soko&#322;y</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB589"><A HREF="../yb.asp?id=589"><I>Sokoly: B'maavak l'haim</I></A></TD>
+    <TD>photo name - identification list</TD><TD ALIGN="RIGHT">526</TD></TR>
+<TR><TD>Tarnów</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB146"><A HREF="../yb.asp?id=146"><I>Tarnow; kiyuma ve-hurbana shel ir yehudit</I></A></TD>
+    <TD>Book Index</TD><TD ALIGN="RIGHT">1,164</TD></TR>
+<TR><TD>Thessaloníki</TD><TD>Greece</TD>
+    <TD class="shtet" usbgn="YB564"><A HREF="../yb.asp?id=564"><I>Zikhron Saloniki; gedulata ve-hurbana shel Yerushalayim de-Balkan</I></A></TD>
+    <TD>Inscriptions on tombs of pre-Holocaust deaths</TD><TD ALIGN="RIGHT">79</TD></TR>
+<TR><TD>Tomaszów Mazowiecki</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB628"><A HREF="../yb.asp?id=628"><I>Sefer zikaron le-kehilat Tomaszow Mazowiecki</I></A></TD>
+    <TD>List of headstones</TD><TD ALIGN="RIGHT">1,064</TD></TR>
+<TR><TD>Tysmenytsya</TD><TD>Ukraine</TD>
+    <TD class="shtet" usbgn="YB223"><A HREF="../yb.asp?id=223"><I>Tismenits; a matseyve oyf di khurves fun a farnikheter yidisher kehile</I></A></TD>
+    <TD>Index of names</TD><TD ALIGN="RIGHT">595</TD></TR>
+<TR><TD>Voronovo</TD><TD>Belarus</TD>
+    <TD class="shtet" usbgn="YB658"><A HREF="../yb.asp?id=658"><I>Voronova; sefer zikaron le-kedoshei Voronova she-nispu be-shoat ha-natsim</I></A></TD>
+    <TD>list of survivors</TD><TD ALIGN="RIGHT">72</TD></TR>
+<TR><TD>W&#322;oszczowa</TD><TD>Poland</TD>
+    <TD class="shtet" usbgn="YB1410"><A HREF="../yb.asp?id=1410"><I>Vlotsheve. &#379;ydzi we W&#322;oszczowie w latach 1867-1942</I></A></TD>
+    <TD>List of community members</TD><TD ALIGN="RIGHT">239</TD></TR>
+</TBODY>
+</TABLE>
+</P>
+
+
+<SCRIPT type="text/JavaScript" SRC="/JewishGen/js/HTMLentities.js"></SCRIPT>
+<SCRIPT type="text/JavaScript" SRC="/JewishGen/js/TableSort.js"></SCRIPT>
+<SCRIPT type="text/JavaScript" SRC="/Ajax/popUpHypertext.js" ></SCRIPT>
+
+<SCRIPT>
+   initSortTable('ContentsTable', Array('S','S','S','S','N'));
+</SCRIPT>
+
+
+<A NAME="Updates"></A>
+<H3>Updates to the Database</H3>
+
+<P>If your town is not in the above list, please consider creating 
+an index of the people mentioned in your ancestral town's Yizkor Book, 
+and submitting it to the Yizkor Book Project so that it can then 
+be added to this ongoing effort.&nbsp;  See the JewishGen Yizkor Book 
+Project's <A HREF="/Yizkor/donation/">donation procedures</A>.
+</P>
+
+<P>This database was created with the assistance of 
+<A HREF="/JewishGen/Contact.asp?to=495059LR">Linda Richman</A>, 
+<!-- <A HREF="/JewishGen/Contact.asp?to=58428OH">Osnat Hazan</A>, -->
+the YBMNI Project Manager.&nbsp;  The previous Project Manager was 
+Osnat Hazan.&nbsp;  The YBMNI Project manager coordinates the
+extraction of the names from individual Yizkor Book translations,
+and inputs them into Excel spreadsheets, which are then imported 
+into this database.
+</P>
+
+<P>The visible fields in the database are:
+
+<UL>
+   <LI>Surname</LI>
+   <LI>Given Name(s)</LI>
+   <LI>Town Name, which is linked to the source,
+       the original Yizkor Book where this entry appears</LI>
+   <LI>Page Number(s)</LI>
+   <LI>Notes / Comments</LI>
+</UL>
+</P>
+
+<P>As approximately 100 new Yizkor Book translations are added to the
+JewishGen Yizkor Book Project each year, this database will be added to
+over time.&nbsp;  There are currently over 800 individual translations
+on the <A HREF="/Yizkor/translations.html">web site</A>.
+</P>
+
+
+<A NAME="Sources"></A>
+<H3>Finding sources</H3>
+
+<P>To find the original source, click on the name of the town in the 
+the displayed table of matching names.&nbsp;  
+This will lead you to a bibliographic citation of the source 
+Yizkor Book which contains that name.&nbsp;
+On that page, which contains full information about that Yizkor Book,
+there is a field labelled "Translation", which contains a clickable 
+URL to the translated portions of that Yizkor Book on the 
+JewishGen web site.
+</P>
+
+<P>For more information about Yizkor Books, see the
+<A HREF="/Yizkor/">JewishGen Yizkor Book Project</A>.
+</P>

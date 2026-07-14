@@ -1,0 +1,35 @@
+<CENTER>
+<H1>The JewishGen Yizkor Book Master Name Index</H1>
+</CENTER>
+
+<TABLE ALIGN="RIGHT" CELLSPACING="0" CELLPADDING="8"
+       BORDER="1" BGCOLOR="#F5F5F5" RULES="all" 
+       STYLE="margin-left:10px; margin-bottom:10px;">
+<TR><TD>
+  &bull; <A HREF="#Intro">Introduction</A><BR>
+  &bull; <A HREF="#Search">Search the Database</A><BR>
+  &bull; <A HREF="#Contents">Contents of the Database</A><BR>
+  &bull; <A HREF="#Updates">Updates to the Database</A><BR>
+  &bull; <A HREF="#Sources">Finding Sources</A>
+</TD><TR>
+</TABLE>
+
+
+<A NAME="Intro"></A>
+<P>The <B>JewishGen Yizkor Book Master Name Index</B> 
+(&ldquo;YBMNI&rdquo;) is a master index of all persons mentioned in 
+the translated portions of the Yizkor Books on the 
+<A HREF="/Yizkor/translations.html">JewishGen Yizkor Book Project</A> 
+website.&nbsp;    
+This database is only an index of names; it directs researchers back 
+to the Yizkor Book itself, where more information may be available.
+</P>
+
+<P>This database allows the surnames to be searched phonetically and 
+via <A HREF="/InfoFiles/Soundex.html">soundex</A>.&nbsp; 
+Because most of these names were transliterated from Hebrew and Yiddish, 
+the spellings of the surnames may not be as you are used to seeing them 
+in Latin-alphabet sources.
+</P>
+
+<A NAME="Search"></A>
