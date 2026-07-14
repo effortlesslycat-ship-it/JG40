@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JewishGen Databases</title>
+    <meta name="description" content="Browse JewishGen's genealogical databases by region and topic, from vital records and censuses to Holocaust and burial registries.">
+
+    <!-- 1. Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- 2. JewishGen Global Design System -->
+    <link rel="stylesheet" href="/jg-global.css">
+    <!-- 3. Databases section stylesheet -->
+    <link rel="stylesheet" href="/databases/jg-databases.css?v=8">
+    <style> a { text-decoration: none; color: inherit; } </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- TITLE BAND -->
+<div class="page-title-band">
+    <span class="tagline">Records &amp; Databases</span>
+    <h1>JewishGen Databases</h1>
+    <p class="hero-subtitle">Millions of records from around the world &mdash; browse by region or topic, or search everything at once.</p>
+</div>
+
+<main id="main-content" class="db-landing">
+<div class="db-landing-wrap">
+
+    <!-- Intro -->
+    <div class="db-landing-intro">
+        Explore JewishGen's collections by region and topic. Each collection brings together vital records, censuses, business directories, burial registers, and more &mdash; or use the <a class="db-textlink" href="/search/Global_Search.php">unified search</a> to query every database at once.
+    </div>
+
+    <!-- Quick-link jump nav (A-Z; jumps to each collection tile below) -->
+    <div class="db-quicknav" role="navigation" aria-label="Jump to a collection">
+        <a href="#col-algeria">Algeria</a>
+        <a href="#col-argentina">Argentina</a>
+        <a href="#col-austriaczech">Austria / Czechia</a>
+        <a href="#col-belarus">Belarus</a>
+        <a href="#col-bulgaria">Bulgaria</a>
+        <a href="#col-canada">Canada</a>
+        <a href="#col-egypt">Egypt</a>
+        <a href="#col-france">France</a>
+        <a href="#col-germany">Germany</a>
+	<a href="#col-greece">Greece</a>
+        <a href="#col-holocaust">Holocaust</a>
+        <a href="#col-hungary">Hungary</a>
+        <a href="#col-india">India</a>
+        <a href="#col-iraq">Iraq</a>
+        <a href="#col-israel">Israel</a>
+        <a href="#col-italy">Italy</a>
+        <a href="#col-latinamerica">Latin America</a>
+        <a href="#col-latvia">Latvia</a>
+        <a href="#col-lebanon">Lebanon</a>
+        <a href="#col-libya">Libya</a>
+        <a href="#col-lithuania">Lithuania</a>
+        <a href="#col-morocco">Morocco</a>
+        <a href="#col-netherlands">Netherlands</a>
+        <a href="#col-poland">Poland</a>
+        <a href="#col-portugal">Portugal</a>
+        <a href="#col-romania">Romania / Moldova</a>
+        <a href="#col-russia">Russia</a>
+        <a href="#col-scandinavia">Scandinavia</a>
+        <a href="#col-sephardic">Sephardic</a>
+        <a href="#col-safrica">South Africa</a>
+        <a href="#col-spain">Spain</a>
+        <a href="#col-syria">Syria</a>
+        <a href="#col-tunisia">Tunisia</a>
+        <a href="#col-turkey">Turkey</a>
+        <a href="#col-ukraine">Ukraine</a>
+        <a href="#col-uk">United Kingdom</a>
+        <a href="#col-usa">United States</a>
+        <a href="#col-venezuela">Venezuela</a>
+        <a href="#col-yugoslavia">Yugoslavia (Former)</a>
+
+    </div>
+
+    <!-- ============================================================ GENERAL ============================================================ -->
+    <section class="db-landing-group" aria-labelledby="grp-general">
+        <span id="grp-general" class="db-landing-section-label">General &amp; Cross-Collection</span>
+        <div class="db-accent-line"></div>
+        <div class="db-landing-grid">
+            <a class="db-tile" href="/search/Global_Search.php"><h3 class="db-tile__name">Unified Search <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Search every JewishGen database at once &mdash; millions of records worldwide, continually updated.</p></a>
+            <a class="db-tile" href="/jgff/"><h3 class="db-tile__name">JewishGen Family Finder (JGFF) <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Surnames and towns being researched by more than 110,000 Jewish genealogists worldwide.</p></a>
+            <a class="db-tile" href="/gedcom/"><h3 class="db-tile__name">Family Tree of the Jewish People (FTJP) <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Data on more than 10 million people from family trees submitted by thousands of researchers.</p></a>
+            <a class="db-tile" href="/Communities/Search.php"><h3 class="db-tile__name">Communities Database <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Historical names, jurisdictions, maps, and resources for more than 6,500 Jewish communities.</p></a>
+            <a class="db-tile" href="/databases/Cemetery/"><h3 class="db-tile__name">Burial Registry (JOWBR) <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">More than seven million burial records from 7,500 cemeteries in 128 countries.</p></a>
+            <a class="db-tile" href="/databases/Memorial/"><h3 class="db-tile__name">Memorial Plaques <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Information from synagogue yahrzeit plaques and other memorial records worldwide.</p></a>
+        </div>
+    </section>
+
+    <!-- ============================================================ TOPICAL ============================================================ -->
+    <section class="db-landing-group" aria-labelledby="grp-topical">
+        <span id="grp-topical" class="db-landing-section-label">Topical Collections</span>
+        <div class="db-accent-line"></div>
+        <div class="db-landing-grid">
+            <a class="db-tile" id="col-holocaust" href="/RD/Holocaust/databases.php"><h3 class="db-tile__name">Holocaust <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">More than 6 million entries documenting Holocaust victims and survivors, from many sources.</p></a>
+            <a class="db-tile" id="col-sephardic" href="/databases/Sephardic/"><h3 class="db-tile__name">Sephardic <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Sephardic genealogy records spanning five centuries across Europe, North Africa, the Middle East, and the Americas.</p></a>
+        </div>
+    </section>
+
+    <!-- ============================================================ EASTERN & CENTRAL EUROPE ============================================================ -->
+    <section class="db-landing-group" aria-labelledby="grp-ece">
+        <span id="grp-ece" class="db-landing-section-label">Eastern &amp; Central Europe</span>
+        <div class="db-accent-line"></div>
+        <div class="db-landing-grid">
+            <a class="db-tile" id="col-austriaczech" href="/databases/AustriaCzech/"><h3 class="db-tile__name">Austria / Czechia <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for Austria and Czechia from cemetery data, Yizkor books, and Holocaust sources.</p></a>
+            <a class="db-tile" id="col-belarus" href="/databases/Belarus/"><h3 class="db-tile__name">Belarus <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Vital records, voter lists, business directories, and ghetto records from many sources.</p></a>
+            <a class="db-tile" id="col-bulgaria" href="/databases/Bulgaria/"><h3 class="db-tile__name">Bulgaria <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish community of Bulgaria.</p></a>
+            <a class="db-tile" id="col-germany" href="/databases/Germany/"><h3 class="db-tile__name">Germany <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Citizenship records, vital records, cemetery data, survivor lists, and Holocaust sources.</p></a>
+            <a class="db-tile" id="col-hungary" href="/databases/Hungary/"><h3 class="db-tile__name">Hungary / Slovakia <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for Hungary and former Hungarian regions: vital, census, and property tax records.</p></a>
+            <a class="db-tile" id="col-latvia" href="/databases/Latvia/"><h3 class="db-tile__name">Latvia <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Courland, Livland, and Vitebsk gubernias &mdash; voter lists, census, vital, and Memorial Book records.</p></a>
+            <a class="db-tile" id="col-lithuania" href="/databases/Lithuania/"><h3 class="db-tile__name">Lithuania <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Vital records, Revision Lists, directories, Yizkor books, and the LitvakSIG All Lithuania Database.</p></a>
+            <a class="db-tile" id="col-poland" href="/databases/Poland/"><h3 class="db-tile__name">Poland <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for Poland from a wide variety of vital, census, and directory sources.</p></a>
+            <a class="db-tile" id="col-romania" href="/databases/Romania/"><h3 class="db-tile__name">Romania / Moldova <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Romania, Moldova, and Bessarabia &mdash; voter lists, census, vital records, directories, and more.</p></a>
+            <a class="db-tile" id="col-russia" href="/databases/Russia/"><h3 class="db-tile__name">Russia <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for modern Russian and former Soviet and Imperial Russian regions</p></a>
+            <a class="db-tile" id="col-ukraine" href="/databases/Ukraine/"><h3 class="db-tile__name">Ukraine <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Voter lists, business directories, vital records, diplomatic records, and Yizkor books.</p></a>
+            <a class="db-tile" id="col-yugoslavia" href="/databases/Yugoslavia/"><h3 class="db-tile__name">Former Yugoslavia <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish communities of the former Yugoslavia.</p></a>
+        </div>
+    </section>
+
+    <!-- ============================================================ WESTERN & SOUTHERN EUROPE ============================================================ -->
+    <section class="db-landing-group" aria-labelledby="grp-wse">
+        <span id="grp-wse" class="db-landing-section-label">Western &amp; Southern Europe</span>
+        <div class="db-accent-line"></div>
+        <div class="db-landing-grid">
+            <a class="db-tile" id="col-france" href="/databases/France/"><h3 class="db-tile__name">France <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for France, Belgium, Switzerland, and former French regions &mdash; marriage, cemetery, and more.</p></a>
+            <a class="db-tile" id="col-greece" href="/databases/Greece/"><h3 class="db-tile__name">Greece <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish communities of Greece, from a variety of sources.</p></a>
+	    <a class="db-tile" id="col-italy" href="/databases/Italy/"><h3 class="db-tile__name">Italy <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish communities of Italy.</p></a>
+            <a class="db-tile" id="col-netherlands" href="/databases/Netherlands/"><h3 class="db-tile__name">Netherlands <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Sephardic and Ashkenazi records for the Netherlands, Dutch colonies, and the Holocaust.</p></a>
+            <a class="db-tile" id="col-portugal" href="/databases/Portugal/"><h3 class="db-tile__name">Portugal <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish community of Portugal.</p></a>
+            <a class="db-tile" id="col-scandinavia" href="/databases/Scandinavia/"><h3 class="db-tile__name">Scandinavia <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for Denmark, Finland, Norway, and Sweden from a variety of sources.</p></a>
+            <a class="db-tile" id="col-spain" href="/databases/Spain/"><h3 class="db-tile__name">Spain <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish communities of Spain.</p></a>
+            <a class="db-tile" id="col-uk" href="/databases/UK/"><h3 class="db-tile__name">United Kingdom <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">England, Scotland, Wales, Ireland, and the Isles &mdash; marriage, cemetery, census, and directories.</p></a>
+        </div>
+    </section>
+
+    <!-- ============================================================ AFRICA ============================================================ -->
+    <section class="db-landing-group" aria-labelledby="grp-africa">
+        <span id="grp-africa" class="db-landing-section-label">Africa</span>
+        <div class="db-accent-line"></div>
+        <div class="db-landing-grid">
+            <a class="db-tile" id="col-algeria" href="/databases/Algeria/"><h3 class="db-tile__name">Algeria <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Algerian Jewish community.</p></a>
+            <a class="db-tile" id="col-egypt" href="/databases/Egypt/"><h3 class="db-tile__name">Egypt <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish communities of Egypt.</p></a>
+            <a class="db-tile" id="col-libya" href="/databases/Libya/"><h3 class="db-tile__name">Libya <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish community of Libya.</p></a>
+            <a class="db-tile" id="col-morocco" href="/databases/Morocco/"><h3 class="db-tile__name">Morocco <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jews of Morocco, from a variety of sources.</p></a>
+            <a class="db-tile" id="col-safrica" href="/databases/SAfrica/"><h3 class="db-tile__name">South Africa <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">The South African Jewish Yearbook index, cemetery records, colonial records, and more.</p></a>
+            <a class="db-tile" id="col-tunisia" href="/databases/Tunisia/"><h3 class="db-tile__name">Tunisia <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish community of Tunisia.</p></a>
+        </div>
+    </section>
+
+    <!-- ============================================================ ASIA & MIDDLE EAST ============================================================ -->
+    <section class="db-landing-group" aria-labelledby="grp-asia">
+        <span id="grp-asia" class="db-landing-section-label">Asia &amp; The Middle East</span>
+        <div class="db-accent-line"></div>
+        <div class="db-landing-grid">
+            <a class="db-tile" id="col-india" href="/databases/India/"><h3 class="db-tile__name">India <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish communities of India.</p></a>
+            <a class="db-tile" id="col-iraq" href="/databases/Iraq/"><h3 class="db-tile__name">Iraq <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish community of Iraq.</p></a>
+            <a class="db-tile" id="col-israel" href="/databases/Israel/"><h3 class="db-tile__name">Israel <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Land and State of Israel spanning 1665 to the present, including 1.6 million burials.</p></a>
+            <a class="db-tile" id="col-lebanon" href="/databases/Lebanon/"><h3 class="db-tile__name">Lebanon <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish community of Lebanon.</p></a>
+            <a class="db-tile" id="col-syria" href="/databases/Syria/"><h3 class="db-tile__name">Syria <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish communities of Syria.</p></a>
+            <a class="db-tile" id="col-turkey" href="/databases/Turkey/"><h3 class="db-tile__name">Turkey <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish communities of Turkey.</p></a>
+        </div>
+    </section>
+
+    <!-- ============================================================ NORTH AMERICA ============================================================ -->
+    <section class="db-landing-group" aria-labelledby="grp-na">
+        <span id="grp-na" class="db-landing-section-label">North America</span>
+        <div class="db-accent-line"></div>
+        <div class="db-landing-grid">
+            <a class="db-tile" id="col-canada" href="/databases/Canada/"><h3 class="db-tile__name">Canada <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Cemetery and synagogue records, newspapers, immigrant aid societies, and organizational records.</p></a>
+            <a class="db-tile" id="col-usa" href="/databases/USA/"><h3 class="db-tile__name">United States <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Cemetery records, passenger lists, synagogue records, newspapers, and organizational records.</p></a>
+        </div>
+    </section>
+
+    <!-- ============================================================ CENTRAL & SOUTH AMERICA ============================================================ -->
+    <section class="db-landing-group" aria-labelledby="grp-csa">
+        <span id="grp-csa" class="db-landing-section-label">Central &amp; South America</span>
+        <div class="db-accent-line"></div>
+        <div class="db-landing-grid">
+            <a class="db-tile" id="col-argentina" href="/databases/Argentina/"><h3 class="db-tile__name">Argentina <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Over 277,000 entries for individuals living in Argentina's Jewish communities.</p></a>
+            <a class="db-tile" id="col-latinamerica" href="/databases/LatinAmerica/"><h3 class="db-tile__name">Latin America <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">More than 300,000 entries for individuals living across Central and South America.</p></a>
+            <a class="db-tile" id="col-venezuela" href="/databases/Venezuela/"><h3 class="db-tile__name">Venezuela <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Records for the Jewish community of Venezuela.</p></a>
+        </div>
+    </section>
+
+    <!-- ============================================================ TOOLS & UTILITIES ============================================================ -->
+    <section class="db-landing-group" aria-labelledby="grp-tools">
+        <span id="grp-tools" class="db-landing-section-label">Tools &amp; Utilities</span>
+        <div class="db-accent-line"></div>
+        <div class="db-landing-grid">
+            <a class="db-tile" href="/jos/"><h3 class="db-tile__name">JewishGen Calculator <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Convert Hebrew and Gregorian dates, display Jewish holidays, Soundex-encode names, and calculate distances between towns.</p></a>
+            <a class="db-tile" href="/JewishGen/Search.htm"><h3 class="db-tile__name">Search the JewishGen Website <span class="db-tile__arrow" aria-hidden="true">&rarr;</span></h3><p class="db-tile__desc">Find any word on any static page across the JewishGen web server.</p></a>
+        </div>
+    </section>
+
+</div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function(r) { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(function(html) { document.getElementById(id).innerHTML = html; })
+        .catch(function(err) { console.warn(err); });
+}
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html?v=2')
+]).then(function() {
+    document.querySelectorAll('.jg-nav .dropbtn, .main-nav .dropbtn').forEach(function(btn) {
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var menu = this.nextElementSibling;
+                if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+            if (e.key === 'Escape') {
+                var menu = this.nextElementSibling;
+                if (menu) menu.style.display = 'none';
+            }
+        });
+    });
+});
+
+/* Return-to-top: show past 400px, smooth-scroll on click */
+(function(){
+    var btn = document.getElementById('dbToTop');
+    if (!btn) return;
+    function onScroll(){ btn.classList.toggle('is-visible', window.pageYOffset > 400); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    onScroll();
+})();
+</script>
+
+</body>
+</html>
