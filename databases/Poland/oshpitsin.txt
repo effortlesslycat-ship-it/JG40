@@ -1,0 +1,73 @@
+
+<!-- Start of included SSI text -->
+
+<P>This is a database of Jews from the town of Oshpitzin 
+(Polish: O&#347;wi&#281;cim [Oshvyentzim], German: Auschwitz).&nbsp;
+The information has been compiled from 
+<A HREF="/yizkor/oswiecim1/oswiecim.html"><I>Sefer Oshpitsin</I></A>, 
+the Oswiecim memorial book, and from other sources.&nbsp; 
+The database attempts to include all individuals who were either 
+born in Oshpitzin and surrounding townlets, or lived there for a 
+period between 1919 and 1941.&nbsp;  There are 5,511 entries. </P>
+
+<P>Here is a description of the fields contained in this database:
+
+<UL>
+<LI>Family name + first name(s)
+<LI>Maiden surname
+<LI>Date of birth or Age
+<LI>Status:
+  <UL>
+  <LI>HY'D = Holocaust victim &nbsp; ("Hashem Yikom Damam" = "May G-d avenge their blood") 
+  <LI>N'Y  = Living at time of submission of memorial &nbsp; ("Nero Ya'ir" = "May their light shine")
+  <LI>Z'L  = Died before or after the war &nbsp; ("Zichrono Livracha" = "of blessed memory")
+  <LI>P'V  = Presumed victim
+  <LI>UND  = Undetermined - possible duplicate
+  <LI>MZV  = Matzeva - tombstone at the Oshpitzin cemetery
+  <LI>RHS  = appears in Registry of Jewish Holocaust Survivors (United States Holocaust Memorial Museum, 1996)
+  </UL>
+<LI>Father
+<LI>Mother + mother's maiden surname
+<LI>Spouse + spouse's maiden surname
+
+<LI>Sources:
+  <UL>
+  <LI>HoN  = Hall of Names - <A HREF="http://www.yad-vashem.org.il">Yad Vashem</A>
+             Page of Testimony (when doubled, indicates two sources with additional 
+             or differing details)
+  <LI>Y568 = Mentioned in <A HREF="/yizkor/oswiecim1/oswiecim.html"><I>Sefer
+             Oshpitsin</I></A> Yizkor Book, on page 568.
+  <LI>SKL  = Listed in Serge Klarsfeld's Deportations List - 
+             <A HREF="/InfoFiles/FR-KLARS.txt"><I>Le memorial de la deportation 
+             des Juifs de France</I></A>.
+  <LI>JS   = Added by Joseph Schachter from personal knowledge
+  <LI>SWD  = Swedish Yizkor book by survivors - <I>Gloem Oss Inte</I> 
+             (Stockholm: Hillelforlaget, 1999)
+  <LI>TRZ  = Theresienstadt Lists - <I>Terezinska Pametni Kniha</I>, (Praha, 1995).
+  <LI>OGS  = Oorlogsgravenstichting - Dutch deportations lists
+  </UL>
+
+<LI>Photograph - A photograph exists at Yad Vashem's Photo Archives.
+  <UL>
+  <LI>A120, denotes 120th in Szrodula Ghetto list for the initial letter A.<BR>
+     (Photos were taken in 1942-3 and signed by the victims)
+  </UL>
+<LI>Remarks - Added information about individual or about family members.  
+    Not all were killed, nor were all from Oshpitzin.
+<LI>Reported by - There are often more sources, but only one is given here.
+<LI>Birthplace
+<LI>Residence pre 1939
+<LI>Lived - Where survivor or former Oshpitziner lived before or after the War.
+<LI>War Years - Only one of several possibilities. Most lived in Oshpitzin 
+    until expulsion to Szrodula or Chrzanow in 1941.  
+    By the end of 1943 the ghettoes were "liquidated".
+<LI>Death date
+<LI>Death details - KZ = Kazet = Concentration camp - forced labor
+</UL>
+</P>
+
+<P>If you discover any errors in this database or have additional information 
+or totally new entries please contact
+<A HREF="mailto:jsrachel@netvision.net.il">Rabbi Joseph Schachter</A>. </P>
+
+<!-- End of included SSI text -->

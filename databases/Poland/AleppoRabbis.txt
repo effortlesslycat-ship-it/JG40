@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+   <TITLE>Tombstone Inscriptions of Aleppo Rabbis</TITLE>
+   <META http-equiv=Content-Type content="text/html; charset=utf-8">
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</HEAD>
+
+<BODY>
+
+<!--#include virtual="/JG/header.txt"-->
+
+<h1 align="CENTER">The Jeff Malka Sephardic Collection</h1>
+<h2 style="text-align: center;"><em><strong><span>Tombstone Inscriptions of Aleppo Rabbis</span></strong></em></h2>
+<p><span></span></p>
+<p><span>This list is the transcription and translation of tombstone inscriptions of 250 rabbis from Aleppo most of whom were buried there, as reported in the Hebrew book </span><em>Sefer Asher LeKedoshim beAram Tsoba</em><book for="" the="" holy="" men="" in="" aleppo="">, by Rabbi David Tsion Laniado, published in Jerusalem in 1952.</book></p>
+<p><book for="" the="" holy="" men="" in="" aleppo="">The present index provides the surname, the given name and the father's name - when available - as well as the Hebrew year of death, the corresponding Gregorian year, the place of death and notes.</book></p>
+<h2>Acknowledgements</h2>
+<p><span>We acknowledge the tremendous contributions and lifelong dedication of Mathilde Tagger, z'l, who made this index available. In addition, we express our grateful appreciation to </span><b>Dr. Jaff Malka </b>for his monumental ongoing effort to collect and make accessible Sephardic genealogical information, and for his generosity in contributing his extraordinarily valuable collection to JewishGen.</p>
+
+
+<A NAME="Search"></A>
+<HR>
+
+<H2>Search the Database</H2>
+
+<P>The <I>Tombstone Inscriptions of Aleppo Rabbis</I> can be searched by via the <A HREF="https://www.jewishgen.org/databases/Syria/">JewishGen Syria Database</A> or the <A HREF="https://www.jewishgen.org/databases/Sephardic">JewishGen Sephardic Collection</A>
+</P>
+
+<HR>
+
+
+<!--#include virtual="/databases/Sephardic/footer.txt"-->
+
+<!--#include virtual="/databases/footer.new.txt"-->
+
+
+</DIV>
+
+
+<!--#include virtual="/JG/footer.txt"-->

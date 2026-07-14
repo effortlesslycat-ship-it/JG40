@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+   <TITLE>LDS Microfilm Master - Poland</TITLE>
+   <LINK REL="STYLESHEET" HREF="/databases/db_style.css">
+</HEAD>
+
+<BODY onload="initEvents();">
+
+<SCRIPT SRC="/JG/Scripts/HighlightForm.js"></SCRIPT>
+<SCRIPT SRC="/JG/Scripts/DataChecks.js"></SCRIPT>
+
+<!--#include virtual="/databases/header.txt"-->
+
+<CENTER>
+<H1>LDS Microfilm Master: Poland</H1>
+</CENTER>
+
+<BLOCKQUOTE>
+<FONT SIZE="+1">
+<P>The "LDS Microfilm Master" system allows you to specify the coordinates
+of a town in Poland, and obtain a list of neighboring towns which have
+microfilmed records of Jewish interest at the LDS (Mormon) Family History
+Library.&nbsp;  The resulting list of towns is arranged by the distance from
+the reference town. </P>
+</FONT>
+</BLOCKQUOTE>
+
+
+<HR>
+
+
+<H3>Instructions:</H3>
+
+<P>Specify a set of latitude/longitude coordinates as a central
+reference point, and whether you want to work in miles or kilometers.&nbsp;
+Then press the &quot;Start the Search&quot; button.&nbsp;
+The system will then list <b>all</b> towns that have microfilms of
+Jewish interest in the LDS Family History Library, in order of the
+distance from your chosen reference point.&nbsp;
+Towns within 100 miles (150 kilometers) will be shown.&nbsp;
+The direction from the reference point to each town is also given.</P>
+
+<P>On the results screen, you then have two more options for each town:
+<B>Films</B> and <B>Rebase</B>: </P>
+
+<UL>
+
+<LI><b>Films: </b> You can see a list of the microfilms available for each
+town, by selecting the <b>Films</b> button.&nbsp;  This list gives the
+LDS microfilm ordering number(s), years covered, and type(s) of record.</LI>
+
+<LI><b>Rebase: </b> You can also choose any of the towns listed to act as a
+<b>new</b> reference point, by selecting the <b>Rebase</b> button.&nbsp;
+You can continue to run the program in this way, continually changing the
+town of reference.</LI>
+</UL>
+</P>
+
+<P>If you are unaware of the exact location of your town of reference,
+you can use JewishGen's <A HREF="/ShtetlSeeker">ShtetlSeeker</a>,
+to determine a town's latitude and longitude.</P>
+
+<P>See the JewishGen InfoFile on
+<A HREF="/InfoFiles/polandv.html">Vital Records in Poland</A>
+for background information on the history of vital records in Poland,
+and the LDS holdings.&nbsp;
+See the <A HREF="/InfoFiles/faq.html#FHC">JewishGen FAQ</A>
+for information about the LDS Family History Library.</P>
+
+<P>The <B>LDS Microfilm Master</B> has been made possible through
+a joint effort of <A HREF="/">JewishGen</a>,
+<A HREF="http://www.avotaynu.com">Avotaynu</A>,
+and a number of volunteers.</P>
+
+
+<HR>
+
+
+<FORM METHOD="POST"
+      ACTION="http://data.jewishgen.org/wconnect/wc.dll?jg~jgsys~ldsfilms2">
+
+<P>
+<TABLE Border="1" CellPadding="10" CellSpacing="0"
+       BGCOLOR="#F5F5F5" ALIGN="CENTER">
+<TR>
+<TD>
+<P>List towns relative to the coordinates:<BR>
+Latitude:
+  <input name="lat1" size="2" maxlength="2"
+   value="52" onkeypress="return numbersonly(event)">&deg;
+  <input name="lat2" size="2" maxlength="2"
+   value="15" onkeypress="return numbersonly(event)">&#146;
+&nbsp;
+Longitude:
+  <input name="lon1" size="2" maxlength="2"
+   value="21" onkeypress="return numbersonly(event)">&deg;
+  <input name="lon2" size="2" maxlength="2"
+   value="00" onkeypress="return numbersonly(event)">&#146;
+<BR>
+(Use the JewishGen <A HREF="/ShtetlSeeker">ShtetlSeeker</A>
+to determine the location of your town of interest).
+</P>
+
+<P>Display distances in
+<select NAME="miles" size="1">
+<option VALUE="MILES" SELECTED>Miles
+<option VALUE="KILOMETERS">Kilometers
+</select>
+</P>
+
+<P ALIGN="CENTER">
+<input TYPE="submit" VALUE=" Start the search ">
+</P>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+</FORM>
+
+
+<HR>
+
+
+<!--#config timefmt="%#x" -->
+<P>You are visitor <b><!--#rdaycnt--></b> to this page today and
+visitor <b><!--#totcnt--></b> since <!--#lastzero-->.</P>
+
+<!--#include virtual="/databases/footer.txt"-->
+
+<P><CITE>
+Last Update: 31 Aug 2005  WSB <BR>
+Web Author: Michael Tobias <BR>
+<A HREF="/JewishGen/Disclaimer.html">Copyright &copy;1997 JewishGen, Inc.</A>
+</CITE></P>
+
+</BODY>
+</HTML>
