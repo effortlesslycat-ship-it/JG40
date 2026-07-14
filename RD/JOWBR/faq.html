@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOWBR FAQ -- JewishGen</title>
+    <meta name="description" content="Frequently asked questions about the JewishGen Online Worldwide Burial Registry (JOWBR), Jewish cemetery records, and how to contribute.">
+
+    <!-- 1. Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- 2. JewishGen Global Design System -->
+    <link rel="stylesheet" href="/jg-global.css">
+    <!-- 3. Page-specific styles -->
+    <style>
+        /* =====================================================
+           JOWBR FAQ -- PAGE-SPECIFIC STYLES
+           Deployed as /RD/JOWBR/faq.html
+
+           CHW NOTE: The .faq-* generic classes (layout, accordion,
+           sidenav, sections) are duplicated from /HowToFAQ/faq.html.
+           Strong candidate for promotion to a shared /jg-faq.css
+           stylesheet if you build more FAQ pages. Flagging for
+           future consolidation -- not blocking this build.
+           ===================================================== */
+
+        main { flex: 1; }
+
+        
+        /* -- FAQ Credit Line (under subnav) ----------------------- */
+        /* Small attribution line; sits on ecru content background */
+        .jowbr-faq-credit {
+            text-align: center;
+            font-size: 0.8125rem;
+            font-style: italic;
+            color: var(--charcoal);
+            margin: 0 0 32px;
+        }
+        .jowbr-faq-credit a {
+            color: #09497a;
+            text-decoration: underline;
+        }
+        .jowbr-faq-credit a:hover { color: var(--sage); }
+        body.dark-mode .jowbr-faq-credit { color: #a0a0a0; }
+        body.dark-mode .jowbr-faq-credit a { color: #a9c0d0; }
+
+        /* -- Content Area ----------------------------------------- */
+        .jowbr-faq-content {
+            background-color: var(--ecru);
+            padding: 44px 50px;
+        }
+        body.dark-mode .jowbr-faq-content { background-color: #1a1a1a; }
+
+        /* -- Two-column layout: main + sticky nav ----------------- */
+        .faq-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 180px;
+            gap: 48px;
+            align-items: start;
+        }
+
+        /* -- Sticky section nav ----------------------------------- */
+        .faq-sidenav { position: sticky; top: 24px; }
+        .faq-sidenav-label {
+            font-size: 0.6875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+            display: block;
+        }
+        body.dark-mode .faq-sidenav-label { color: #a0a0a0; }
+
+        .faq-sidenav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-left: 2px solid #d1caba;
+        }
+        body.dark-mode .faq-sidenav ul { border-left-color: #3a3f3f; }
+
+        .faq-sidenav li a {
+            display: block;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            line-height: 1.45;
+            color: var(--charcoal);
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            margin-left: -2px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .faq-sidenav li a:hover { color: #09497a; }
+        .faq-sidenav li a.is-active {
+            color: #09497a;
+            border-left-color: #09497a;
+            font-weight: 600;
+        }
+        body.dark-mode .faq-sidenav li a { color: #a0a0a0; }
+        body.dark-mode .faq-sidenav li a:hover,
+        body.dark-mode .faq-sidenav li a.is-active {
+            color: #a9c0d0;
+            border-left-color: #a8b361;
+        }
+
+        /* -- FAQ Sections ----------------------------------------- */
+        .faq-section { margin-bottom: 52px; scroll-margin-top: 24px; }
+        .faq-section:last-child { margin-bottom: 0; }
+
+        .faq-section-heading {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.25rem;
+            font-weight: normal;
+            color: #09497a;
+            margin: 0 0 4px;
+            line-height: 1.3;
+        }
+        body.dark-mode .faq-section-heading { color: #a9c0d0; }
+
+        .faq-section-subtitle {
+            font-size: 0.8125rem;
+            font-style: italic;
+            color: var(--charcoal);
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+        body.dark-mode .faq-section-subtitle { color: #a0a0a0; }
+
+        .faq-section-accent {
+            width: 36px;
+            height: 3px;
+            background-color: var(--sage);
+            border-radius: 1px;
+            margin-bottom: 16px;
+        }
+
+        /* -- Section intro callout (used for Section 4) ----------- */
+        /* Light-blue does NOT flip in dark mode -- need explicit override */
+        .faq-section-intro {
+            background-color: var(--light-blue);
+            border-left: 3px solid var(--sage);
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: var(--charcoal);
+            border-radius: 0 3px 3px 0;
+        }
+        body.dark-mode .faq-section-intro {
+            background-color: #2a3540;
+            color: #c0c0c0;
+        }
+        .faq-section-intro a { color: #09497a; font-weight: 600; }
+        body.dark-mode .faq-section-intro a { color: #a9c0d0; }
+
+        /* -- Individual Q&A accordion rows ------------------------ */
+        .faq-item { border-bottom: 1px solid #d1caba; }
+        body.dark-mode .faq-item { border-bottom-color: #3a3f3f; }
+        .faq-item:first-of-type { border-top: 1px solid #d1caba; }
+        body.dark-mode .faq-item:first-of-type { border-top-color: #3a3f3f; }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 16px 0;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            line-height: 1.5;
+        }
+        .faq-question:hover { color: #09497a; }
+        .faq-question[aria-expanded="true"] { color: #09497a; }
+        body.dark-mode .faq-question { color: #e0e0e0; }
+        body.dark-mode .faq-question:hover,
+        body.dark-mode .faq-question[aria-expanded="true"] { color: #a9c0d0; }
+
+        .faq-chevron {
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            transition: transform 0.2s;
+            margin-top: 4px;
+        }
+        .faq-question[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); }
+
+        .faq-answer {
+            display: none;
+            padding: 0 0 16px;
+            font-size: 0.9375rem;
+            line-height: 1.65;
+            color: var(--charcoal);
+        }
+        .faq-answer.is-open { display: block; }
+        body.dark-mode .faq-answer { color: #c0c0c0; }
+        .faq-answer p { margin: 0 0 12px; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+        .faq-answer a { color: #09497a; }
+        .faq-answer a:hover { text-decoration: underline; }
+        body.dark-mode .faq-answer a { color: #a9c0d0; }
+        .faq-answer blockquote {
+            border-left: 3px solid var(--sage);
+            padding: 6px 14px;
+            margin: 8px 0 12px;
+            font-style: italic;
+            color: var(--charcoal);
+        }
+        body.dark-mode .faq-answer blockquote { color: #b0b0b0; }
+
+        /* -- Responsive ------------------------------------------- */
+        @media (max-width: 900px) {
+            .jg-page-band { padding: 28px 20px; }
+            .jowbr-faq-content { padding: 28px 20px; }
+            .faq-layout { grid-template-columns: 1fr; gap: 24px; }
+            .faq-sidenav { position: static; order: -1; }
+        }
+        @media (max-width: 640px) {
+            .jg-page-band h1 { font-size: 1.75rem; }
+            .jg-page-band h2 { font-size: 0.9375rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main id="main-content">
+
+    <!-- ============================
+         PAGE TITLE BAND
+  
+         ============================ -->
+    <div class="page-title-band">
+    <span class="tagline">JewishGen Online Worldwide Burial Registry</span>
+    <h1>JOWBR</h1>
+    <p class="hero-subtitle">Common questions about searching the database, understanding results, and contributing data.</p>
+    </div>
+
+    <!-- ============================
+         JOWBR SUB-NAV (loaded via fetch)
+         ============================ -->
+    <div id="jowbr-subnav"></div>
+
+    <!-- ============================
+         FAQ CONTENT
+         ============================ -->
+    <section class="jowbr-faq-content">
+
+        <!-- CHW: verify Nolan Altman contact URL works on new server -->
+        <p class="jowbr-faq-credit">
+            FAQ by <a href="https://www.jewishgen.org/JewishGen/Contact.asp?to=5089NA">Nolan Altman</a>
+        </p>
+
+        <div class="faq-layout">
+
+            <div class="faq-main">
+
+                <!-- ====================================
+                     SECTION 1: GENERAL
+                     ==================================== -->
+                <section class="faq-section" id="faq-general">
+                    <h2 class="faq-section-heading">General</h2>
+                    <p class="faq-section-subtitle">About JOWBR, its sources, and scope.</p>
+                    <div class="faq-section-accent"></div>
+
+                    <div class="faq-item" id="q1a">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q1a">
+                            What is JOWBR?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q1a">
+                            <p>The <a href="/RD/JOWBR/search.html">JewishGen Online Worldwide Burial Registry (JOWBR)</a> is a searchable database of names and other identifying information from Jewish cemeteries and burial records worldwide, from the earliest records to the present.</p>
+                            <p>JOWBR's aim is to catalog extant data from Jewish cemeteries and burial records worldwide. JOWBR also includes records for Jewish burials from cemeteries that are not exclusively Jewish cemeteries. Photographs of the gravestones (<em>matzevot</em>) are also included in this database, if submitted.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q1b">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q1b">
+                            What are the sources of information for the JOWBR database?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q1b">
+                            <p>Burial information is principally accumulated from three sources: (1) headstones, (2) cemetery registers, and (3) published historical material.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q1c">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q1c">
+                            Who submits information for the JOWBR database?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q1c">
+                            <p>Volunteers like you! We encourage all JewishGen users to help us grow the JOWBR database by indexing the cemeteries or cemetery sections which include burials of interest. We also work with local genealogical societies and other groups to establish cemetery indexing projects.</p>
+                            <p>For more information, see <a href="/RD/JOWBR/contribute.html">Contribute Data</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q1d">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q1d">
+                            How do I know if JOWBR includes records for a cemetery I'm interested in?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q1d">
+                            <p>JOWBR maintains an active <a href="https://www.jewishgen.org/databases/Cemetery/tree/CemList.php">inventory of cemeteries and cemetery sections</a>. The listings are arranged in a hierarchical folding tree menu &mdash; by country, then by region, then by city, and finally by specific cemetery or cemetery section.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q1e">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q1e">
+                            What is the connection between JOWBR and the IAJGS Cemetery Project?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q1e">
+                            <p>The <a href="http://www.iajgs.org">International Association of Jewish Genealogical Societies (IAJGS)</a> operates an <a href="http://www.iajgsjewishcemeteryproject.org/">International Jewish Cemetery Project</a>.</p>
+                            <p>The IAJGS' International Jewish Cemetery Project documents Jewish burial sites worldwide. Their website lists cemeteries and burial sites around the world &mdash; but <strong>not</strong> individual burial records. If you are interested in seeing information about all "known" Jewish burial sites, please peruse the IAJGS' <a href="http://www.iajgsjewishcemeteryproject.org/">International Jewish Cemetery Project</a>.</p>
+                            <p>There is no formal connection between JewishGen's JOWBR database and the IAJGS' International Jewish Cemetery Project.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ====================================
+                     SECTION 2: SEARCH RESULTS
+                     ==================================== -->
+                <section class="faq-section" id="faq-results">
+                    <h2 class="faq-section-heading">Search Results</h2>
+                    <p class="faq-section-subtitle">Understanding what appears in your search.</p>
+                    <div class="faq-section-accent"></div>
+
+                    <div class="faq-item" id="q2a">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q2a">
+                            What information is available?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q2a">
+                            <p>As mentioned in <a href="#q1a">"What is JOWBR?"</a>, JOWBR collects data on burial records and cemeteries.</p>
+                            <p>We have designed a standard <a href="https://www.jewishgen.org/databases/Cemetery/JOWBRinstructions.htm">burial template</a> which includes the following burial data for each individual:</p>
+                            <p>Plot Location, Surname, Given Name(s), Place of Birth, Date of Birth, Place of Death, Date of Death (English), Date of Death (Hebrew), Age at Death, Date of Burial, Hebrew Name, Spouse's Name, Father's Name, Mother's Name, Other Surnames, and miscellaneous Comments. Note that not all submissions include information for all of these fields.</p>
+                            <p>The cemetery information template includes the following for each cemetery: Cemetery Name, Landsmanshaft / Section Name, Country, State, City, Street Address, Cemetery Description, and other miscellaneous Notes / Comments.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q2b">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q2b">
+                            Why isn't there information in all the fields?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q2b">
+                            <p>The JOWBR database includes only the data that is submitted to us. For example, if a volunteer is accumulating data from headstones, they are not likely to know places of birth or death unless specifically inscribed on the stone. Headstone inscriptions also vary in date detail, ranging from a complete date (month / day / year) to only a stated age. If the burial records are derived from registers, only names and date of death might be available.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q2c">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q2c">
+                            Are the records 100% accurate?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q2c">
+                            <p>As explained in <a href="#q2b">the previous question</a>, JOWBR's data is submitted by volunteers. Although we review the data for obvious errors, we do not check or verify the data. There are many reasons data may be in error: transliteration errors, errors on the headstone itself, errors recorded in a register, data entry errors when submitting the information to JOWBR, etc.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q2d">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q2d">
+                            How can I correct errors I find in the search results?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q2d">
+                            <p>We are currently working on a mechanism to post corrections and adjustments to data within JOWBR's database. At present, the only way to make a change is to completely delete a cemetery's data and then replace all the records with the adjusted data. This process takes considerable human and processing resources, and given all the other work necessary within JewishGen, such replacements are typically given a lower priority. However, significant numbers of additions, corrections, or adjustments will be processed.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q2e">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q2e">
+                            How can I make additions to the search results?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q2e">
+                            <p>Please see <a href="#q2d">the previous question</a>. At present, only significant numbers of additions, corrections, or adjustments will be processed.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q2f">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q2f">
+                            The date information includes time of day. Is that correct?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q2f">
+                            <p>If your results show dates with times of day, the data was most likely formatted incorrectly. Times of day are not entered with the dates in our database. Within our Excel templates, we format dates as text and not as dates. If the data are not formatted as text, the results will show a time of day. Please let us know if you find incorrectly formatted results, and we will correct them.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q2g">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q2g">
+                            My results included a photo of the headstone, but I can't read Hebrew. Where can I get more information on reading Jewish headstones?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q2g">
+                            <p>JewishGen has an InfoFile entitled <a href="https://www.jewishgen.org/InfoFiles/tombstones.html">Reading Hebrew Tombstones</a>. There are also a number of other excellent sites that can be found with any popular search engine to help you decode Hebrew headstones. If you are still stumped, try posting your photo on JewishGen's <a href="https://www.jewishgen.org/ViewMate/">ViewMate Project</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q2h">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q2h">
+                            When I got back my search results, I saw a little headstone icon under some names. What does that mean?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q2h">
+                            <p>The headstone icon tells you that an actual headstone photo is available for viewing. If you click on the link "View Full Burial Record," you will see all available fields as well as the actual photograph of the headstone. You can zoom and pan the headstone photograph using your mouse.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q2i">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q2i">
+                            Where can I find basic information about the cemetery for any specific burial record?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q2i">
+                            <p>You can find basic information in two ways:</p>
+                            <p>(1) Click on the hyperlink from the search results page. You will see the name of the cemetery under the "View Full Burial Record" link.</p>
+                            <p>(2) You can also access the information from the full burial record screen. Information available could include cemetery name, section name, address, contact information, other description details, and possibly links to photos, maps, or other descriptive documents.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ====================================
+                     SECTION 3: SEARCHING THE DATABASE
+                     ==================================== -->
+                <section class="faq-section" id="faq-searching">
+                    <h2 class="faq-section-heading">Searching the Database</h2>
+                    <p class="faq-section-subtitle">Tips for tricky cases.</p>
+                    <div class="faq-section-accent"></div>
+
+                    <div class="faq-item" id="q3a">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q3a">
+                            Can I see all the records for a specific cemetery?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q3a">
+                            <p>No. In an effort to deter data-mining, we do not allow searches that will return all the burial records for any given cemetery. For small European cemeteries where surnames might not be available (Hebrew names or only patronymic names), we are looking at mechanisms that may allow a review of all those records.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q3b">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q3b">
+                            What if my relatives only used patronymic names?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q3b">
+                            <p>If your relatives used only patronymic names (i.e., there is no surname on the tombstone &mdash; which is common for 19th-century East European tombstones), then you can search by <strong>given name</strong> (first name). JOWBR's search interface provides many options. Try using the "Given Name of Deceased," "Given Name of Father," or "Hebrew Name" fields when doing your searches. We tried to cover all the possibilities, but realize that if you are looking for "Moses ben Aaron," there will be quite a few hits!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q3c">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q3c">
+                            Are there any special considerations for Romanian records?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q3c">
+                            <p>Romanian patronymics create an interesting problem for women's names. A woman's patronymic may refer to either her father or her husband. Therefore, it is not clear from lists of names whether the patronymic reference should be entered in the "Father's Name" or "Spouse's Name" column. We therefore suggest that you try all possibilities when conducting your searches.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q3d">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q3d">
+                            Are there any special considerations for Sephardic records?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q3d">
+                            <p>It is sometimes difficult to determine given and surnames, as many surnames are taken from the given names of ancestors. For completeness, we suggest that you search names as both "Surname" and "Given Name." Looking at a register listing of "Joseph Elias Ezra," it is not clear whether "Elias" is part of the surname (ELIAS EZRA) or a second given name (Joseph Elias). Therefore, try searching each surname separately as well as combined. It is also possible that a given name may be the same as the surname. This complicates the matter when searching for names such as "Silas Isaac SILAS" or "Abraham Joseph ABRAHAM."</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ====================================
+                     SECTION 4: CONTRIBUTING TO JOWBR
+                     Trimmed from legacy 7 Qs to 3 Qs
+                     (4.a, 4.b, 4.d, 4.f dropped -- now live on Contribute Data page)
+                     ==================================== -->
+                <section class="faq-section" id="faq-contributing">
+                    <h2 class="faq-section-heading">Contributing to JOWBR</h2>
+                    <p class="faq-section-subtitle">How you can help grow the database.</p>
+                    <div class="faq-section-accent"></div>
+
+                    <div class="faq-section-intro">
+                        For full submission instructions, donor agreement, and the Excel template, see the <a href="/RD/JOWBR/contribute.html">Contribute Data</a> page. Common questions are answered below.
+                    </div>
+
+                    <div class="faq-item" id="q4c">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q4c">
+                            Do I retain the rights to data I donate?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q4c">
+                            <p>Absolutely. The Donor retains all of their rights to their data. All JewishGen Donor Agreements are non-exclusive. The JOWBR <a href="https://www.jewishgen.org/databases/Cemetery/working/donor.htm">Donor Agreement</a> clearly states:</p>
+                            <blockquote>"... the Donor hereby grants to JewishGen a <em>non-exclusive</em> perpetual right to use, publish, or distribute the donated material. This right gives JewishGen <em>no rights</em> to the underlying data or information, and JewishGen shall in no way amend or modify such data or information. The non-exclusivity of such right means that <em>the Donor retains all rights</em> to such data or information and may use, publish, or distribute such data or information in any way the Donor chooses."</blockquote>
+                            <p>Our goal is to make JOWBR a central repository of Jewish burial records, not to replace or diminish the importance of any Donor's site or source.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q4e">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q4e">
+                            Can I submit just my family's burials?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q4e">
+                            <p>No. JOWBR cannot accept individual family burial data. Because of the database's design, JOWBR only accepts data from an <strong>entire cemetery</strong> or an entire landsmanschaft/organization plot within a larger cemetery. Therefore, unless your family burials comprise the entirety of a distinct section, we ask that you submit <strong>all</strong> the burials for the cemeteries or sections that include your family burials.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" id="q4g">
+                        <button class="faq-question" aria-expanded="false" aria-controls="a-q4g">
+                            Can I help translate or transliterate headstone photos?
+                            <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                        </button>
+                        <div class="faq-answer" id="a-q4g">
+                            <p>Yes &mdash; we would greatly appreciate your help in transliterating or translating tombstones for the JOWBR database. Please contact <a href="https://www.jewishgen.org/JewishGen/Contact.asp?to=5089NA">Nolan Altman</a> with your availability and the languages you are familiar with.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div><!-- /.faq-main -->
+
+            <!-- STICKY SIDE NAV -->
+            <aside class="faq-sidenav" aria-label="FAQ sections">
+                <span class="faq-sidenav-label">Jump to Section</span>
+                <ul>
+                    <li><a href="#faq-general">General</a></li>
+                    <li><a href="#faq-results">Search Results</a></li>
+                    <li><a href="#faq-searching">Searching the Database</a></li>
+                    <li><a href="#faq-contributing">Contributing to JOWBR</a></li>
+                </ul>
+            </aside>
+
+        </div><!-- /.faq-layout -->
+    </section><!-- /.jowbr-faq-content -->
+
+</main>
+<div id="site-footer"></div>
+
+<script>
+    /* -- Component loader ----------------------------------------- */
+    function loadComponent(id, file) {
+        return fetch(file)
+            .then(function(r) {
+                if (!r.ok) throw new Error('Could not load ' + file);
+                return r.text();
+            })
+            .then(function(html) {
+                document.getElementById(id).innerHTML = html;
+            })
+            .catch(function(err) { console.warn(err); });
+    }
+
+    /* -- Load JOWBR sub-nav, then set active link ----------------- */
+    loadComponent('jowbr-subnav', '/RD/JOWBR/JOWBR_SubNav.html').then(function() {
+        var path = window.location.pathname;
+        document.querySelectorAll('.jowbr-nav a').forEach(function(a) {
+            if (a.getAttribute('href') === path) a.classList.add('active');
+        });
+    });
+
+    /* -- Load header and footer ----------------------------------- */
+    Promise.all([
+        loadComponent('site-header', '/Header_NavBar.html'),
+        loadComponent('site-footer', '/Footer.html')
+    ]).then(function() {
+        document.querySelectorAll('.jg-nav .dropbtn, .main-nav .dropbtn').forEach(function(btn) {
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    var menu = this.nextElementSibling;
+                    if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                }
+                if (e.key === 'Escape') {
+                    var menu = this.nextElementSibling;
+                    if (menu) menu.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    /* -- FAQ accordion -------------------------------------------- */
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var answerId = btn.getAttribute('aria-controls');
+            var answer   = document.getElementById(answerId);
+            var isOpen   = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            answer.classList.toggle('is-open', !isOpen);
+        });
+    });
+
+    /* -- Scroll-spy: highlight active section in side nav --------- */
+    var sections  = document.querySelectorAll('.faq-section');
+    var navLinks  = document.querySelectorAll('.faq-sidenav a');
+
+    function onScroll() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        var active  = null;
+        sections.forEach(function(sec) {
+            if (sec.offsetTop - 80 <= scrollY) active = sec.id;
+        });
+        navLinks.forEach(function(a) {
+            a.classList.toggle('is-active', a.getAttribute('href') === '#' + active);
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+</script>
+
+</body>
+</html>
