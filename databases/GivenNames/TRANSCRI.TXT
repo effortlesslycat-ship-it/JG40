@@ -1,0 +1,111 @@
+               TRANSCRIPTION OF NINETEENTH-CENTURY
+                EUROPEAN JEWISH GIVEN AND SURNAMES
+                FROM YIDDISH AND ASHKENAZIC HEBREW
+
+                    The Late Professor G. L. Esterson
+                        Ra'anana, Israel
+                  
+This document presents standards for transcribing 19th-century European
+given and surnames from Yiddish and Ashkenazic Hebrew to Latin characters.
+The standards are especially designed and intended for on-line data bases
+and documents that will be searched using Daitch-Mokotoff Soundex, for
+either Yiddish or Hebrew names.  The development of these Standards was
+part of research to create given names data bases for Ashkenazi Jews in
+fourteen European countries, and nine foreign countries, using archival
+records and other sources containing Yiddish and Hebrew given names.
+
+For written text, the Yiddish/Hebrew Transcription Standard uses modified
+versions of the YIVO Yiddish Standard, and of the Hebrew transcription
+standard of the Academy of the Hebrew Language, Israel.  For both, the
+Yiddish/Hebrew Transcription Standard emphasizes:  1. Compatibility with
+D-M Soundex, 2. Compatibility with classical transcriptions, 3.
+Reconstruction of the original Yiddish and Hebrew names, and 4. Flexibility
+in presenting Yiddish dialectical variations in various European countries,
+as well as recording Standard written Yiddish.
+
+                        CONSONANTS
+
+                                             Transcription
+                                     ---------------------------------
+Letter         Sound                 Yiddish             Hebrew
+-------------  ------------------    ------------------  -------------
+Alef/Ayen      Silent. Write ' only  See vowels          ' (re'uveyn)
+               if it is with shva,
+               or after resting shva.
+Beys/Beyz      B (Ball)              b (Barakh)          b (Barakh)
+[Veys/Veyz] *  V (heaVy)             [H] v (Yontev)      v (yomtoV)
+Tsvey vovn     V (heaVy)             v (Volf)            -
+Giml           G (Give)              g (Gebl)            g (Gavrieyl)
+Daled          D (Done)              d (Disya)           d (Dina)
+Hey            H (Hot)               h (Hodl)            h (Hadasa) ***
+Vov            W (Walk)              See vowels          w (daWid)
+Zayen          Z (Zebra)             z (Zakay)           z (Zakai)
+[KHes]         CH (aCHtung)          [H] kh (KHayman)    ch (CHayim)
+KHof           CH (aCHtung)          kh (baraKH)         kh (baraKH)
+Tes            T (Time)              t (Teyvka)          t (Tova)
+[Tof]          T (Time)              t (Etka)            t (esTeyr)
+Yud (b4 vowel) Y (Yet)               y (Yitskhok)        y (Yitschak)
+[Kof]          K (Kick)              [H] k (Karmi)       k (Karmi)
+Kuf            K (Kick)              k (Kehos)           q (Qehos)
+Lamed          L (Lake)              l (Leyka)           l (Leya)
+Mem            M (Mark)              m (Meyshe)          m (Moshe)
+Nun            N (Neck)              n (Noyma)           n (Naomi)
+Samekh         S (Self)              s (Saadya)          s (Saadya)
+[Sin]          S (Self)              [H] s (Sinay)       s (Sinai)
+[Sof]          S (Self)              [H] s (Simkhl)      s (Simcha)
+Pey            P (Pack)              p (Peylat)          p (Palti)
+Fey            F (Fence)             f (Froym)           f (eFrayim)
+Tsadek         TS (fruiTS)           ts (TSalik)         ts (beTSaleyl)
+Reysh          R (French: "Rue"**)   r (Ruvl)            r (Re'uveyn)
+Shin           SH (SHow)             sh (Shifre)         sh (SHifra)
+
+Zayen Shin     S (meaSure)           zh (yeyZHe)         -
+DaledZayenShin J (Jump)              dzh (DZHez)         -
+Tes Shin       CH (CHair)            tsh (TSHarna)       -
+
+*   [] These letters occur only in words derived from Hebrew or Aramaic.
+**  Trill the tip of the tongue or uvula.
+*** The unpronounced hey is not written (Sara).
+
+======================================================================
+
+                      VOWELS AND DIPHTHONGS
+
+                            YIDDISH
+
+Letter              Sound                     Transcription
+------------------  ----------------------    -----------------------
+Shtumer Alef        (silent)                  -
+Pasekh Alef         A (fAther)                a (mAnish)
+Komets Alef         O (sOrt)                  o (mOshka)
+                    U (hUt)                   u (mUnye)
+Vov                 U (pUt)                   u (blUme)
+                    OO (gOO) (syllable-final) u (elyakUm)
+Yud                 Between I (fIt), and      i (mIkhl)
+                     EE (fEEt)                i (gotlIb)
+Tsvey Yudn (2 yuds) EY (grEY)                 ey (shEYndl)
+Pasekh tsvey yudn   Y (skY)                   ay (brAYne)
+Vov Yud             OY (bOY)                  oy (OYzer)
+Ayen                E (End)                   e (shmErl)
+
+                            HEBREW
+
+Patach              A (fAther)                a (Aviezer)
+Qomets gadol        A (fAther)                a (tAmAr)
+Chataf-Patach       A (fAther)                a (-)
+
+Segol               E (End)                   e (ashEr)
+Tseyre              EY (grEY)                 ey (aryEY)
+Chataf-Segol        E (End)                   e (-)
+Shva Na             None, or E (End)          - or e
+
+Chiriq gadol        EE (fEEt)                 i (akIva)
+Chiriq qatan        I (fIt)                   i (avigayIl)
+
+Cholem              O (cOre)                  o (aharOn)
+Qomets qatan        O (cOre)                  o (miryOm)
+Chataf-Qomets       O (cOre)                  o (-)
+
+Shuruk              OO (gOO)                  u (rUs)
+Qubuts              OO (gOO)                  u (Ukhmoniya)
+
