@@ -1,0 +1,14 @@
+<CENTER>
+<H1>
+Argentina Database
+</H1>
+</CENTER>
+
+
+<BLOCKQUOTE>
+<P CLASS="lgtext">Welcome to the <B><I>
+Argentina Database
+</I></B>.
+
+</P>
+</BLOCKQUOTE>

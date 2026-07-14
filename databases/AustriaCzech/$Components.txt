@@ -1,0 +1,243 @@
+<TABLE cols="2" cellpadding="0" cellspacing="0" width="100%">
+<TR valign="top">
+<TD WIDTH="50%">
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" href="/jgff/">JewishGen Family Finder</A><BR>
+19,000 entries by Jewish genealogists researching families in 
+Austria and the Czech Republic.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="/databases/Holocaust/">JewishGen Holocaust Database</A><BR>
+15,000 names from various datasets with information about Holocaust victims 
+and survivors.
+</LI>
+
+<LI>
+<A CLASS="dbhead" HREF="/databases/Cemetery/">JewishGen Online Worldwide Burial Registry</A>
+<BR>
+250,000 burial records in Austria and the Czech Republic.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="ViennaVRs.htm">Vienna Births, Marriages, Deaths Index</A>
+<BR>
+An index of more than 548,000 Jewish birth, marriage, and death records from 
+the city of Vienna.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="PragueMarriages.html">Prague Marriages Index</A>
+<BR>
+4,914 records of Jewish marriages in the city of Prague, 
+dating from 1784 to 1865.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="TrebicVital.htm">T&#345;eb&#237;&#269; Vital Records</A>
+<BR>
+9,440 records of Jewish births, marriages, and deaths recorded in the city of
+T&#345;eb&#237;&#269; [Trebitsch], Moravia, dating from 1784 to 1942.
+</LI>
+
+</UL>
+
+</TD>
+
+
+<TD>
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" href="ConvertsfromJudaism1915-1945.html">Converts from Judaism 1915-1945</A>
+<BR>
+27,000 people who converted from Judaism between 1915-1945
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="ConvertstoJudaism1868-1945.html">Converts to Judaism 1868-1945</A>
+<BR>
+14,349 people who converted to Judaism between 1868-1945.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="DivorcesIndex1870-1942.html">Divorces Index 1870-1942</A>
+<BR>
+10,276 divorce records between 1870-1942.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="JewishDeportationsfromAustria.html">Jewish Deportations from Austria</A>
+<BR>
+62,279 records of Jews deported from Austria to various concentration camps.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="SwissBankAccounts.html">Swiss Bank Accounts</A>
+<BR>
+An index of 1,694 holders of Swiss Bank Accounts.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/PragueDeaths1680Plague.html">Prague Deaths during the Plague of 1680
+</A>
+<BR>
+A list of 2,740 Jews died in Prague between and December 1679 and December 1680.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/Prague1748Census.html">Prague: Index of the 1748 Census</A>
+<BR>
+1,473 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/TurkishViennaBirths1845-1938.html">Vienna: Births Register for the Turkish Community, 1845-1938</A>
+<BR>
+1,438 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/TurkishViennaWeddings1845-1938.html">Vienna: Marriage Register for the Turkish Community, 1845-1938</A>
+<BR>
+789 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/TurkishVienna1788-1818.html">Vienna: Turkish Community, 1788-1818</A>
+<BR>
+125 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/Prague1748Census.html">Prague: Index of the 1792-1794 Census</A>
+<BR>
+6,991 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/FamiliantsinBohemia.html">Familiants in Bohemia
+</A>
+<BR>
+5,074 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/KnopfelmacherBrisBook.html">Knopfelmacher Bris Book</A>
+<BR>
+1,323 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/PragueFire1754.html">Prague Fire 1754</A>
+<BR>
+972 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/PragerTagblatt.html">Prager Tagblatt Obituary Notices 1877-1938
+</A>
+<BR>
+32,246 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/HerzlMohelBook.html">Mohel Book of Dr. Herz Herzl, Lackenbach, Austria
+</A>
+<BR>
+903 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/PragueTaxpayers1782.html">Index of Prague Taxpayers - 1782</A>
+<BR>
+1,251 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/Bohemia1783Census.html">Bohemia 1783 Census</A>
+<BR>
+7,288 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/NeueFreiePresseDeathNotices.html">Neue Freie Presse Death Notices 1864-1939
+</A>
+<BR>
+Death notices from the Neue Freie Presse, a newspaper in Vienna, Austria, 1864-1939.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/DeathRegistersAchabHaidlerandChewra.html">Death registers from Achab Haidler and Chewra
+</A>
+<BR>
+8,668 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/Bohemia1793Census.html">Bohemia 1793 Census Index</A>
+<BR>
+18,817 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/Prague1729.html">Prague 1729 Census
+</A>
+<BR>
+2,331 Records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/AustriaCzech/Prague1546FamilyLists.html">Prague 1546 Family Lists
+</A>
+<BR>
+463 Records.
+</LI>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</UL>
+
+</TD>
+</TR>
+</TABLE>

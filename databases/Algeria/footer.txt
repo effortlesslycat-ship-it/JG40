@@ -1,0 +1,7 @@
+<TABLE BORDER="0" WIDTH="100%">
+<TR>
+<TD>
+<A CLASS="jgbacklink" HREF="/databases/Algeria/">Search the All Algeria Database</A>
+</TD>
+</TR>
+</TABLE>
