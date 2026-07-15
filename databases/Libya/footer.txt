@@ -1,7 +1,0 @@
-<TABLE BORDER="0" WIDTH="100%">
-<TR>
-<TD>
-<A CLASS="jgbacklink" HREF="/databases/Libya/">Search the JewishGen Libya Database</A>
-</TD>
-</TR>
-</TABLE>
