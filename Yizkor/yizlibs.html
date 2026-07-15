@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================================================================
+     Libraries & Archives with Yizkor Book Holdings (JG40 / Project Shorashim)
+     /yizkor/yizlibs.html   CHW
+
+     JewishGen InfoFile. Shell: global .page-title-band + Yizkor subnav +
+     shared .yzs-infotable / filter-bar component (jg-yizkor-section.css).
+     Ported from legacy yizlibs.html; replaced the tablefilter.js library with
+     a small vanilla-JS filter (Location dropdown + free-text search).
+
+     ASCII-only: verify grep -nP '[^\x00-\x7F]'. Navy hardcoded #09497a/#0d2a45.
+     Data fix: the Yale row was mislabeled "US, Colorado"; corrected to
+     "US, Connecticut" (address is New Haven, CT). Website links show the domain.
+============================================================================ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libraries &amp; Archives with Yizkor Book Holdings &mdash; JewishGen</title>
+    <meta name="description" content="Directory of libraries and archives worldwide with substantial Yizkor book collections (more than 25 volumes). A JewishGen Yizkor Book Project InfoFile.">
+
+    <!-- 1. Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- 2. JewishGen Global Design System -->
+    <link rel="stylesheet" href="/jg-global.css">
+    <!-- 3. Yizkor section styles (shared article + info-table component) -->
+    <link rel="stylesheet" href="/yizkor/jg-yizkor-section.css">
+    <style>
+        main { flex: 1; }
+    </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- TITLE BAND (global component) -->
+<div class="page-title-band">
+    <span class="tagline">Yizkor Book Project</span>
+    <h1>Libraries &amp; Archives with Yizkor Book Holdings</h1>
+    <p class="hero-subtitle yzs-sub">A JewishGen InfoFile</p>
+</div>
+
+<!-- SECTION SUBNAV (fetched component) -->
+<div id="yizkor-subnav"></div>
+
+<main>
+<div class="yzs-wrap">
+<div class="yzs-inner">
+
+    <div class="yzs-listintro">
+        <p>This file includes information about libraries and archives that have substantial collections of Yizkor books (that is, more than 25). Libraries marked with an asterisk (*) have their Yizkor book collections included in the <a href="/yizkor/database.html">Yizkor Book Database</a>.</p>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="yzs-filterbar">
+        <div class="yzs-filter-field">
+            <label for="yzs-facet">Location</label>
+            <select class="yzs-filter-select" id="yzs-facet">
+                <option value="">All locations</option>
+            </select>
+        </div>
+        <div class="yzs-filter-field">
+            <label for="yzs-search">Search</label>
+            <input class="yzs-filter-search" id="yzs-search" type="search" placeholder="Institution, city, name...">
+        </div>
+    </div>
+    <p class="yzs-result-count" id="yzs-count"></p>
+
+    <div class="yzs-table-scroll">
+    <table class="yzs-infotable" id="yzs-table">
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Institution &amp; Library / Archive</th>
+                <th>Postal Address</th>
+                <th>Contact</th>
+                <th>Chief Librarian / Archivist</th>
+                <th>No. of Books</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Australia</td><td>Jewish Holocaust Museum &amp; Research Center</td><td>13 Selwyn Street,<br>Elsternwick, Victoria<br>3185, Australia</td><td><span class="yzs-cl">Tel</span> 61-3-95281985<br><span class="yzs-cl">Fax</span> 61-3-95283758</td><td>Ursula Flicker</td><td>About 90</td></tr>
+            <tr><td>Canada</td><td>Jewish Public Library</td><td>1 Cummings Square<br>5151 Cote St. Catherine Road<br>Montreal, Quebec H3W 1M6</td><td><a href="mailto:reference@jplmontreal.org">reference@jplmontreal.org</a><br><a href="https://jewishpubliclibrary.org/" target="_blank" rel="noopener">jewishpubliclibrary.org</a><br><span class="yzs-cl">Tel</span> (514) 345-2627<br><span class="yzs-cl">Fax</span> (514) 345-6477</td><td>Eddie Paul (#3004)<br>Archivist: Shannon Hodge (#3015)</td><td>600+</td></tr>
+            <tr><td>Canada</td><td>University of Toronto,<br>John P. Robarts Research Library</td><td>130 St. George Street<br>Toronto, Ontario, Canada M5S 1A5</td><td><a href="mailto:nadav.sharon@utoronto.ca">nadav.sharon@utoronto.ca</a><br><a href="https://library.utoronto.ca/" target="_blank" rel="noopener">library.utoronto.ca</a><br><span class="yzs-cl">Tel</span> (416) 978-4319<br><span class="yzs-cl">Fax</span> (416) 978-8227</td><td>Dr. Barry Walfish, Judaica Specialist</td><td>500+</td></tr>
+            <tr><td>France</td><td>Centre de Documentation Juive Contemporaine</td><td>17, rue Geoffroy l'asnier<br>75004 Paris, France</td><td><a href="mailto:bibliotheque@memorial-cdjc.org">bibliotheque@memorial-cdjc.org</a><br><a href="https://www.memorialdelashoah.org/archives-et-documentation/le-centre-de-documentation.html" target="_blank" rel="noopener">memorialdelashoah.org</a><br><span class="yzs-cl">Tel</span> 33142774472<br><span class="yzs-cl">Fax</span> 33148871250</td><td>Sara Halperyn<br>Marcel Meslati</td><td>About 200</td></tr>
+            <tr><td>Great Britain</td><td>British Library,<br>Oriental and India Office Collections</td><td>96 Euston Road,<br>London, NW1 2DB England</td><td><span class="yzs-cl">Tel</span> 020-771-412-7332<br><span class="yzs-cl">Fax</span> 020-771-412-7268</td><td>&nbsp;</td><td>110+</td></tr>
+            <tr><td>Great Britain</td><td>Cambridge University Library</td><td>West Road,<br>Cambridge CB3 9DR England</td><td><a href="mailto:reference@lib.cam.ac.uk">reference@lib.cam.ac.uk</a><br><a href="https://www.lib.cam.ac.uk/" target="_blank" rel="noopener">lib.cam.ac.uk</a><br><span class="yzs-cl">Tel</span> 44-1223-333016<br><span class="yzs-cl">Fax</span> 44-1223-333160</td><td>Peter Fox</td><td>&nbsp;</td></tr>
+            <tr><td>Great Britain</td><td>Finchley Synagogue,<br>*Jewish Genealogical Society of Great Britain</td><td>Kinloss Gardens, Finchley<br>London N3 2SY England</td><td><a href="mailto:jgsgb@ort.org">jgsgb@ort.org</a><br><a href="https://www.jgsgb.org.uk/" target="_blank" rel="noopener">jgsgb.org.uk</a></td><td>&nbsp;</td><td>About 65</td></tr>
+            <tr><td>Great Britain</td><td>Institute of Jewish Studies,<br>London School of Jewish Studies<br>(Jews' College Library)</td><td>Schaller House,<br>44a Albert Road<br>London, NW4 2SJ England</td><td><span class="yzs-cl">Tel</span> 020-881-203-6427<br><span class="yzs-cl">Fax</span> 020-881-203-6420</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Great Britain</td><td>Oxford Centre for Hebrew and Jewish Studies,<br>*Leopold Muller Memorial Library</td><td>Yarnton Manor,<br>Yarnton, Oxfordshire OX5 1PY England</td><td><a href="mailto:muller.library@ochjs.ac.uk">muller.library@ochjs.ac.uk</a><br><a href="https://www.bodleian.ox.ac.uk/muller/ochjs/yizkor-books" target="_blank" rel="noopener">bodleian.ox.ac.uk</a><br><span class="yzs-cl">Tel</span> 018650377946<br><span class="yzs-cl">Fax</span> 01865-375079</td><td>Dr. Piet W. van Boxel</td><td>350</td></tr>
+            <tr><td>Great Britain</td><td>University of London,<br>School of Oriental and African Studies (SOAS)</td><td>Thornhaugh Street,<br>Russell Square,<br>London, WC1H 0XG England</td><td><span class="yzs-cl">Tel</span> 020-7-323-6098<br><span class="yzs-cl">Fax</span> 020-7-636-2834</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>Great Britain</td><td>Wiener Library</td><td>29 Russell Square,<br>London WC1B 5DP, England</td><td><a href="mailto:nfo@wienerlibrary.co.uk">nfo@wienerlibrary.co.uk</a><br><a href="mailto:khubschmann@wienerlibrary.co.uk">khubschmann@wienerlibrary.co.uk</a><br><a href="https://www.wienerlibrary.co.uk/" target="_blank" rel="noopener">wienerlibrary.co.uk</a><br><span class="yzs-cl">Tel</span> 020-7-636-7247</td><td>Katharina H&uuml;bschmann</td><td>About 60</td></tr>
+            <tr><td>Israel</td><td>*Ahad Haam Library in<br>&ldquo;Shar Zion Public Library - Beit Ariela&rdquo;</td><td>25 Shderot Shaul Ha'Melech,<br>Tel Aviv, Israel</td><td><span class="yzs-cl">Tel</span> 972-3-6910141 ext. 247<br><span class="yzs-cl">Fax</span> 972-3-6919024</td><td>Jochanan Arnon, Director<br>Dani Nadav</td><td>About 500</td></tr>
+            <tr><td>Israel</td><td>*Bar-Ilan University Central Library,<br>Hebrew Classification and Cataloging Dept.</td><td>Ramat-Gan, Israel 52900</td><td><a href="mailto:wilkda@mail.biu.ac.il">wilkda@mail.biu.ac.il</a><br><a href="https://lib.biu.ac.il/" target="_blank" rel="noopener">lib.biu.ac.il</a><br><span class="yzs-cl">Tel</span> 972-3-5318165<br><span class="yzs-cl">Fax</span> 972-3-5349233</td><td>Yaakov Aronson<br>Eliza Bar-Magen</td><td>About 420</td></tr>
+            <tr><td>Israel</td><td>Beit Lohamei Haghetaot</td><td>Ghetto Fighters' House,<br>D.N Western Galilee, Israel 25220</td><td><a href="mailto:dgy@gfh.org.il">dgy@gfh.org.il</a><br><a href="https://www.gfh.org.il" target="_blank" rel="noopener">gfh.org.il</a><br><span class="yzs-cl">Tel</span> 972-4-995-8080<br><span class="yzs-cl">Fax</span> 972-4-995-8007</td><td>Main Librarian - Dalia<br>Assistant - Mikah</td><td>About 500</td></tr>
+            <tr><td>Israel</td><td>*Ben Gurion University of the Negev,<br>Zalman Aranne Central Library</td><td>P. O. Box 653,<br>84105 Beer Sheva, Israel</td><td><a href="mailto:avner@bgumail.bgu.ac.il">avner@bgumail.bgu.ac.il</a><br><a href="https://in.bgu.ac.il/aranne/Pages/default.aspx" target="_blank" rel="noopener">in.bgu.ac.il</a><br><span class="yzs-cl">Tel</span> 972-8-6461413<br>972-8-6461411<br><span class="yzs-cl">Fax</span> 972-8-6472940</td><td>Avner Shmuelevitz</td><td>300+</td></tr>
+            <tr><td>Israel</td><td>*Haifa University,<br>Haifa University Library</td><td>Mount Carmel,<br>31 905 Haifa, Israel</td><td><a href="mailto:hill@lib.haifa.ac.il">hill@lib.haifa.ac.il</a><br><a href="mailto:hope@lib.haifa.ac.il">hope@lib.haifa.ac.il</a><br><a href="https://lib.haifa.ac.il/index.php/en/" target="_blank" rel="noopener">lib.haifa.ac.il</a><br><span class="yzs-cl">Tel</span> 972-04-8240529<br>972-04-8240285<br><span class="yzs-cl">Fax</span> 972-04-8249146<br>972-04-8257753</td><td>Ms. Humi Rekem</td><td>450+</td></tr>
+            <tr><td>Israel</td><td>Hebrew University, Givat Ram Campus,<br>Jewish National and University Library</td><td>P.O.B. 34165,<br>Jerusalem, 91341 Israel</td><td><a href="mailto:sjaphet@vms.huji.ac.il">sjaphet@vms.huji.ac.il</a><br><a href="https://en-science.huji.ac.il/libraries" target="_blank" rel="noopener">en-science.huji.ac.il</a><br><span class="yzs-cl">Tel</span> 972-2-6585004<br><span class="yzs-cl">Fax</span> 972-2-6511771</td><td>Prof. Sara Japhet, Director<br>Elizabeth Friedman</td><td>&nbsp;</td></tr>
+            <tr><td>Israel</td><td>Hitachdut Yotzei Polin</td><td>158 Dizengoff Street,<br>Tel Aviv, 63461, Israel</td><td><span class="yzs-cl">Tel</span> 972-3-5225078<br><span class="yzs-cl">Fax</span> 972-3-5236684</td><td>&nbsp;</td><td>200+</td></tr>
+            <tr><td>Israel</td><td>Moadon Ha'Bund-Brith Avoda,<br>The Kurski Library</td><td>48 Kaliszer St.<br>Tel Aviv, Israel</td><td><span class="yzs-cl">Tel</span> 972-3-517-6764</td><td>Dina and Mendel Schein</td><td>100+</td></tr>
+            <tr><td>Israel</td><td>Tel Aviv University,<br>Sourasky Central Library</td><td>P.O. Box 39038,<br>Tel-Aviv 61390, Israel</td><td><a href="mailto:csimcha@taulib.tau.ac.il">csimcha@taulib.tau.ac.il</a><br><a href="https://cenlib.tau.ac.il/home" target="_blank" rel="noopener">cenlib.tau.ac.il</a><br><span class="yzs-cl">Tel</span> 972-3-6408747<br><span class="yzs-cl">Fax</span> 972-3-6409598</td><td>Simcha Zaharur</td><td>About 40</td></tr>
+            <tr><td>Israel</td><td>Yad LeZehava Institute for Holocaust Research (YZI)</td><td>PO Box 513<br>Kedumim, Israel 44856</td><td><a href="mailto:a.bendov@yahoo.com">a.bendov@yahoo.com</a><br><span class="yzs-cl">Tel</span> 972-52-5666240</td><td>Meir Shilloh<br>Avigdor Ben-Dov</td><td>150+</td></tr>
+            <tr><td>Israel</td><td>Yad Vashem Martyrs' and Heroes' Remembrance Authority,<br>Yad Vashem Library</td><td>Har Hazikaron<br>P. O. Box 3477<br>Jerusalem, 91034 Israel</td><td><a href="mailto:library@yadvashem.org.il">library@yadvashem.org.il</a><br><a href="https://www.yadvashem.org/index.html" target="_blank" rel="noopener">yadvashem.org</a><br><span class="yzs-cl">Tel</span> 972-2-6443531<br><span class="yzs-cl">Fax</span> 972-2-6443443</td><td>Dr. Robert Rozett</td><td>1040</td></tr>
+            <tr><td>US, California</td><td>*Hebrew Union College-JIR,<br>Frances-Henry Library</td><td>3077 University Ave.<br>Los Angeles, CA 90007-3796</td><td><a href="mailto:hhorowitz@huc.edu">hhorowitz@huc.edu</a><br><a href="https://www.huc.edu" target="_blank" rel="noopener">huc.edu</a><br><span class="yzs-cl">Tel</span> (213) 749-3424<br><span class="yzs-cl">Fax</span> (213) 749-1937</td><td>Harvey P. Horowitz</td><td>450+</td></tr>
+            <tr><td>US, California</td><td>Los Angeles Museum of the Holocaust</td><td>100 The Grove Dr<br>Los Angeles, CA 90036</td><td><a href="mailto:info@lamoth.org">info@lamoth.org</a><br><a href="http://lamoth.info/?p=collections/collections" target="_blank" rel="noopener">lamoth.info</a><br><span class="yzs-cl">Tel</span> (323) 651-3704<br><span class="yzs-cl">Fax</span> (323) 843-9518</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>US, California</td><td>*JFCS Holocaust Center</td><td>2245 Post Street<br>San Francisco, CA 94115</td><td><a href="https://holocaustcenter.jfcs.org/library-archives/library-collections/" target="_blank" rel="noopener">holocaustcenter.jfcs.org</a><br><span class="yzs-cl">Tel</span> (415) 449-3717</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>US, California</td><td>*Simon Wiesenthal Center,<br>Library &amp; Archives</td><td>1399 S. Roxbury Drive<br>Los Angeles, CA 90035-4709</td><td><a href="mailto:library@wiesenthal.net">library@wiesenthal.net</a><br><a href="https://www.wiesenthal.com/" target="_blank" rel="noopener">wiesenthal.com</a><br><span class="yzs-cl">Tel</span> (310) 772-7605<br><span class="yzs-cl">Fax</span> (310) 277-6568</td><td>Adaire J. Klein</td><td>300</td></tr>
+            <tr><td>US, California</td><td>Stanford University,<br>Green Library</td><td>Stanford, CA 94305-6004</td><td><a href="mailto:zbaker@stanford.edu">zbaker@stanford.edu</a><br><a href="https://library.stanford.edu/libraries/cecil-h-green-library" target="_blank" rel="noopener">library.stanford.edu</a><br><span class="yzs-cl">Tel</span> (650) 725-1054<br><span class="yzs-cl">Fax</span> (650) 725-1068</td><td>Zachary M. Baker, Reinhard Family Curator of Judaica and Hebraica Collections</td><td>&nbsp;</td></tr>
+            <tr><td>US, California</td><td>*UCLA,<br>University Research Library</td><td>P.O. Box 95175<br>Los Angeles, CA 90095</td><td><a href="mailto:ecz5hir@mvs.oac.ucla.edu">ecz5hir@mvs.oac.ucla.edu</a><br><a href="mailto:dhirsch@library.ucla.edu">dhirsch@library.ucla.edu</a><br><a href="https://www.library.ucla.edu/" target="_blank" rel="noopener">library.ucla.edu</a><br><span class="yzs-cl">Tel</span> (310) 825-2930<br><span class="yzs-cl">Fax</span> (310) 206-4974</td><td>David G. Hirsch, Middle East Bibliographer</td><td>&nbsp;</td></tr>
+            <tr><td>US, California</td><td>*American Jewish University,<br>Jack M. &amp; Bell Ostrow Library</td><td>15600 Mulholland Drive<br>Los Angeles, CA 90077</td><td><span class="yzs-cl">Tel</span> (310) 476-9777<br><span class="yzs-cl">Fax</span> (310) 476-5423</td><td>Richard Burke</td><td>&nbsp;</td></tr>
+            <tr><td>US, California</td><td>University of Southern California<br>Doheny Library 101-D</td><td>Los Angeles, CA 90089-0182</td><td><a href="mailto:lsipe@usc.edu">lsipe@usc.edu</a><br><span class="yzs-cl">Tel</span> (213) 740-2929<br><span class="yzs-cl">Fax</span> (213) 740-9962</td><td>Lynn Sipe (Mr.),<br>Associate Dean for Collections</td><td>140+</td></tr>
+            <tr><td>US, Connecticut</td><td>Yale University Library,<br>Judaica Collection</td><td>Sterling Memorial Library<br>120 High Street<br>New Haven, CT 06520</td><td><a href="mailto:nanette.stahl@yale.edu">nanette.stahl@yale.edu</a><br><a href="https://web.library.yale.edu/international/judaica-collection" target="_blank" rel="noopener">library.yale.edu</a><br><span class="yzs-cl">Tel</span> (203) 432-7207<br><span class="yzs-cl">Fax</span> (203) 432-7231</td><td>Bruce Kirschner</td><td>&nbsp;</td></tr>
+            <tr><td>US, District of Columbia</td><td>Jewish War Veterans,<br>National Museum of American Jewish Military History</td><td>1811 &ldquo;R&rdquo; Street, N.W.<br>Washington, D.C. 20009</td><td><span class="yzs-cl">Tel</span> (202) 265-6280<br><span class="yzs-cl">Fax</span> (202) 462-3192</td><td>Sandor Cohen</td><td>&nbsp;</td></tr>
+            <tr><td>US, District of Columbia</td><td>Library of Congress,<br>The African and Middle Eastern Division</td><td>101 Independence Ave. SE<br>Thomas Jefferson Building, Room 220<br>Washington, D.C. 20540-4660</td><td><a href="https://www.loc.gov/research-centers/african-and-middle-eastern/about-this-research-center/" target="_blank" rel="noopener">Finding aid (loc.gov)</a><br><span class="yzs-cl">Tel</span> (202) 707-5422<br><span class="yzs-cl">Fax</span> (202) 707-1724</td><td>Michael W. Grunberger</td><td>&nbsp;</td></tr>
+            <tr><td>US, District of Columbia</td><td>U.S. Holocaust Memorial Museum</td><td>100 Raoul Wallenberg Place, SW<br>Washington, D.C. 20024-2162</td><td><a href="https://collections.ushmm.org/search/" target="_blank" rel="noopener">collections.ushmm.org</a><br><span class="yzs-cl">Tel</span> (202) 479-9717<br><span class="yzs-cl">Fax</span> (202) 479-9726</td><td>Mark Ziomek, Director of the Library</td><td>460</td></tr>
+            <tr><td>US, Florida</td><td>*Florida Atlantic University,<br>S.E. Wimberly Library<br>Fraiberg Judaica Collections</td><td>777 Glades Road<br>Boca Raton, FL 33431-0991</td><td><a href="mailto:LYSCA@fau.edu">LYSCA@fau.edu</a><br><a href="https://library.fau.edu/" target="_blank" rel="noopener">library.fau.edu</a><br><span class="yzs-cl">Tel</span> (561) 297-3787<br><span class="yzs-cl">Fax</span> (561) 297-2189</td><td>Ellen Randolph,<br>Rare Books Librarian</td><td>450+</td></tr>
+            <tr><td>US, Florida</td><td>*University of Florida,<br>Price Library of Judaica</td><td>1504 Norman Hall<br>PO Box 117051<br>Gainesville, FL 32611</td><td><a href="mailto:judaica@mail.uflib.ufl.edu">judaica@mail.uflib.ufl.edu</a><br><a href="https://uflib.ufl.edu/" target="_blank" rel="noopener">uflib.ufl.edu</a><br><span class="yzs-cl">Tel</span> (352) 392-0308<br><span class="yzs-cl">Fax</span> (352) 392-4789</td><td>Robert Singerman, Jewish Studies Bibliographer</td><td>450+</td></tr>
+            <tr><td>US, Illinois</td><td>Illinois Holocaust Museum and Education Center,<br>Brill Family Resource Center</td><td>9603 Woods Dr.<br>Skokie, IL 60077</td><td><a href="mailto:library@ilhmec.org">library@ilhmec.org</a><br><a href="https://www.ilholocaustmuseum.org/" target="_blank" rel="noopener">ilholocaustmuseum.org</a><br><span class="yzs-cl">Tel</span> (847) 967-4800<br>(847) 967-4805 (direct)<br><span class="yzs-cl">Fax</span> (847) 967-4804</td><td>Lillian Polus Gerstner</td><td>About 43</td></tr>
+            <tr><td>US, Illinois</td><td>Hebrew Theological College,<br>Saul Silber Memorial Library</td><td>7135 N. Carpenter Road<br>Skokie, IL 60077</td><td><a href="mailto:ssmlhtc@nslsilus.org">ssmlhtc@nslsilus.org</a><br><a href="mailto:ssmlhtc@htcnet.edu">ssmlhtc@htcnet.edu</a><br><a href="https://www.htc.edu/beis-midrash--mens-college/academics/library/" target="_blank" rel="noopener">htc.edu</a><br><span class="yzs-cl">Tel</span> (847) 982-2500<br><span class="yzs-cl">Fax</span> (847) 674-6381</td><td>&nbsp;</td><td>About 350</td></tr>
+            <tr><td>US, Illinois</td><td>Spertus Institute of Jewish Studies,<br>Asher Library (includes Chicago Jewish Archives)</td><td>618 S. Michigan Ave.<br>Chicago, IL 60605</td><td><a href="mailto:asherlib@spertus.edu">asherlib@spertus.edu</a><br><a href="https://www.spertus.edu" target="_blank" rel="noopener">spertus.edu</a><br><span class="yzs-cl">Tel</span> (312) 322-1749<br><span class="yzs-cl">Fax</span> (312) 922-0455</td><td>Glenn Ferdman, Director;<br>Joy Kingsolver, Archivist</td><td>&nbsp;</td></tr>
+            <tr><td>US, Indiana</td><td>*Allen County Public Library</td><td>Post Office Box 2270<br>Fort Wayne, IN 46801</td><td><a href="mailto:Genealogy@ACPL.Info">Genealogy@ACPL.Info</a><br><a href="https://www.acpl.lib.in.us/" target="_blank" rel="noopener">acpl.lib.in.us</a><br><span class="yzs-cl">Tel</span> 260-421-1225</td><td>Curt B. Witcher</td><td>200+</td></tr>
+            <tr><td>US, Maryland</td><td>*Baltimore Hebrew University,<br>Joseph Meyerhoff Library</td><td>5800 Park Heights Ave.<br>Baltimore, MD 21215</td><td><a href="mailto:bhulib@clark.net">bhulib@clark.net</a><br><span class="yzs-cl">Tel</span> (410) 578-6936</td><td>Elaine Mael and Barbara Salit-Mischel</td><td>&nbsp;</td></tr>
+            <tr><td>US, Maryland</td><td>Jewish Museum of Maryland</td><td>15 Lloyd Street<br>Baltimore, MD 21202</td><td><a href="https://jewishmuseummd.org/" target="_blank" rel="noopener">jewishmuseummd.org</a><br><span class="yzs-cl">Tel</span> (410) 732-6400<br><span class="yzs-cl">Fax</span> (410) 732-6451</td><td>Robin Waldman</td><td>&nbsp;</td></tr>
+            <tr><td>US, Massachusetts</td><td>*Boston Public Library</td><td>700 Boylston Street<br>Boston, MA 02117</td><td><a href="https://www.bpl.org/" target="_blank" rel="noopener">bpl.org</a><br><span class="yzs-cl">Tel</span> (617) 536-5400</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>US, Massachusetts</td><td>*Brandeis University,<br>Goldfarb Library</td><td>P.O. Box 9110<br>Waltham, MA 02254-9110</td><td><a href="mailto:cutter@binah.cc.brandeis.edu">cutter@binah.cc.brandeis.edu</a><br><a href="https://www.brandeis.edu/library/" target="_blank" rel="noopener">brandeis.edu</a><br><span class="yzs-cl">Tel</span> (617) 736-4685<br><span class="yzs-cl">Fax</span> (617) 736-4719</td><td>Charles Cutter, Head, Judaica &amp; Special Collection Department</td><td>About 500</td></tr>
+            <tr><td>US, Massachusetts</td><td>Center for Holocaust Studies / Clark University,<br>Goddard Library</td><td>950 Main Street<br>Worcester, MA 01610-1477</td><td><a href="mailto:chs@clarku.edu">chs@clarku.edu</a><br><a href="https://www.clarku.edu/library/" target="_blank" rel="noopener">clarku.edu</a><br><span class="yzs-cl">Tel</span> 508-793-8897<br><span class="yzs-cl">Fax</span> 508-793-8827</td><td>Gwen Arthur / Mott Linn</td><td>40</td></tr>
+            <tr><td>US, Massachusetts</td><td>*Harvard University,<br>Widener Library</td><td>Harvard Yard<br>Cambridge, MA 02138</td><td><a href="https://library.harvard.edu/libraries/widener" target="_blank" rel="noopener">library.harvard.edu</a><br><span class="yzs-cl">Tel</span> (617) 495-2411</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>US, Michigan</td><td>Holocaust Memorial Center,<br>Zekelman Family Campus</td><td>28123 Orchard Lake Road<br>Farmington Hills, MI 48334</td><td><a href="mailto:info@holocaustcenter.org">info@holocaustcenter.org</a><br><a href="mailto:feiga.weiss@holocaustcenter.org">feiga.weiss@holocaustcenter.org</a><br><a href="https://holocaustcenter.org/" target="_blank" rel="noopener">holocaustcenter.org</a><br><span class="yzs-cl">Tel</span> (248) 553-2400 ext 16<br>(248) 553-2834<br><span class="yzs-cl">Fax</span> (248) 553-2433</td><td>Feiga Weiss</td><td>1400+ (on site, non-circulating)</td></tr>
+            <tr><td>US, Missouri</td><td>St. Louis County Library,<br>Special Collections Department</td><td>1640 South Lindbergh,<br>St. Louis, MO 63131</td><td><a href="mailto:jloving@slcl.org">jloving@slcl.org</a><br><a href="https://www.slcl.org/" target="_blank" rel="noopener">slcl.org</a><br><span class="yzs-cl">Tel</span> (314) 994-3300 ext 208<br><span class="yzs-cl">Fax</span> (314) 994-9411 ext 279</td><td>Joyce Loving,<br>Manager, Special Collections</td><td>&nbsp;</td></tr>
+            <tr><td>US, New York</td><td>Columbia University Libraries,<br>Butler Library</td><td>535 W. 114th Street,<br>New York, NY 10027</td><td><a href="mailto:unlandhe@columbia.edu">unlandhe@columbia.edu</a><br><a href="https://library.columbia.edu/libraries/global/jewishstudies.html" target="_blank" rel="noopener">library.columbia.edu</a><br><span class="yzs-cl">Tel</span> (212) 854-3995<br><span class="yzs-cl">Fax</span> (212) 854-3834</td><td>Frank H. Unlandherm,<br>Jewish Studies Librarian</td><td>&nbsp;</td></tr>
+            <tr><td>US, New York</td><td>*Cornell University,<br>Olin Library</td><td>504 Olin Library<br>Ithaca, NY 14853</td><td><a href="mailto:ybs1@cornell.edu">ybs1@cornell.edu</a><br><span class="yzs-cl">Tel</span> (607) 255-6086<br><span class="yzs-cl">Fax</span> (607) 255-9346</td><td>Yoram Szekely</td><td>450</td></tr>
+            <tr><td>US, New York</td><td>*Hebrew Union College Jewish Institute of Religion,<br>Klau Library</td><td>1 W. 4th Street,<br>New York, NY 10012-1186</td><td><span class="yzs-cl">Tel</span> (212) 674-5300, Ext. 258<br>(for questions about holdings)<br><span class="yzs-cl">Fax</span> (212) 533-0129<br>Attn: Library</td><td>Philip E. Miller, Chief Librarian</td><td>&nbsp;</td></tr>
+            <tr><td>US, New York</td><td>*Jewish Theological Seminary of America,<br>Library</td><td>3080 Broadway,<br>New York, NY 10027</td><td><a href="mailto:marabinowitz@jtsa.edu">marabinowitz@jtsa.edu</a><br><span class="yzs-cl">Tel</span> (212) 678-8075<br><span class="yzs-cl">Fax</span> (212) 678-8998</td><td>Dr. Mayer E. Rabinowitz</td><td>&nbsp;</td></tr>
+            <tr><td>US, New York</td><td>Leo Baeck Institute</td><td>129 E. 73rd Street,<br>New York, NY 10021</td><td><span class="yzs-cl">Tel</span> (212) 744-6400<br><span class="yzs-cl">Fax</span> (212) 988-1305</td><td>Julia Bock - Library<br>Frank Mecklenburg - Archives</td><td>&nbsp;</td></tr>
+            <tr><td>US, New York</td><td>Museum of Jewish Heritage,<br>A Living Memorial to the Holocaust</td><td>343 Madison Ave.,<br>New York, NY 10173</td><td><span class="yzs-cl">Tel</span> (212) 687-9141<br><span class="yzs-cl">Fax</span> (212) 473-9847</td><td>Esther Brumberg and Bonnie Gurewitsch</td><td>About 170</td></tr>
+            <tr><td>US, New York</td><td>*New York Public Library,<br>Jewish Division</td><td>42nd Street &amp; Fifth Ave.,<br>New York, NY 10018-2788</td><td><a href="mailto:freidus@nypl.org">freidus@nypl.org</a><br><a href="https://www.nypl.org/collections/nypl-recommendations/guides/yizkorbooks" target="_blank" rel="noopener">nypl.org (Yizkor guide)</a><br><span class="yzs-cl">Tel</span> (212) 930-0971<br><span class="yzs-cl">Fax</span> (212) 642-0141</td><td>Michael Terry</td><td>+650</td></tr>
+            <tr><td>US, New York</td><td>*Yeshiva University,<br>Mendel Gottesman Library</td><td>500 W. 185th Street,<br>New York, NY 10033</td><td><span class="yzs-cl">Tel</span> (212) 960-5382<br><span class="yzs-cl">Fax</span> (212) 960-0066</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>US, New York</td><td>*YIVO Institute for Jewish Research</td><td>15 W 16th St,<br>New York, NY 10011</td><td><a href="mailto:archives@yivo.cjh.org">archives@yivo.cjh.org</a><br><a href="https://www.yivo.org/Archives-Library" target="_blank" rel="noopener">yivo.org</a><br><span class="yzs-cl">Tel</span> (212) 246-6080<br><span class="yzs-cl">Fax</span> (212) 292-1892</td><td>Lyudmila Sholokhova,<br>Chief Librarian/Archivist</td><td>&nbsp;</td></tr>
+            <tr><td>US, Ohio</td><td>Hebrew Union College Jewish Institute of Religion,<br>Klau Library</td><td>3101 Clifton Ave.,<br>Cincinnati, OH 45220-2488</td><td><span class="yzs-cl">Tel</span> (513) 221-1875<br><span class="yzs-cl">Fax</span> (513) 221-0519</td><td>Dr. David J. Gilner</td><td>&nbsp;</td></tr>
+            <tr><td>US, Ohio</td><td>Ohio State University Libraries</td><td>308 Main Library<br>1858 Neil Ave.<br>Columbus, OH 43210</td><td><a href="mailto:galron.1@Osu.edu">galron.1@Osu.edu</a><br><a href="https://library.osu.edu/" target="_blank" rel="noopener">library.osu.edu</a><br><span class="yzs-cl">Tel</span> (614) 292-3362<br><span class="yzs-cl">Fax</span> (614) 292-1918</td><td>Joseph Galron-Goldschlager,<br>Hebraica &amp; Jewish Studies Librarian</td><td>700+</td></tr>
+            <tr><td>US, Oregon</td><td>*Congregation Neveh Shalom,<br>Feldstein Library</td><td>2900 SW Peaceful Lane,<br>Portland, OR 97201</td><td><a href="https://nevehshalom.org/feldstein-library/" target="_blank" rel="noopener">nevehshalom.org</a><br><span class="yzs-cl">Tel</span> 503-246-8831<br><span class="yzs-cl">Fax</span> 503-246-7553</td><td>Hilde Jacob</td><td>120+</td></tr>
+            <tr><td>US, Pennsylvania</td><td>Gratz College,<br>Tuttleman Library</td><td>Old York Road &amp; Melrose Avenue,<br>Melrose Park, PA 19126</td><td><span class="yzs-cl">Tel</span> (215) 635-7300<br><span class="yzs-cl">Fax</span> (215) 635-7320</td><td>Rebecca Landau,<br>Director, Tuttleman Library</td><td>&nbsp;</td></tr>
+            <tr><td>US, Pennsylvania</td><td>Reconstruction Rabbinical College,<br>Library</td><td>Church Road &amp; Greenwood Ave.,<br>Wyndmoor, PA 19095</td><td><span class="yzs-cl">Tel</span> (215) 576-0800<br><span class="yzs-cl">Fax</span> (215) 576-6143</td><td>Elie Wise,<br>Director of Library Services</td><td>&nbsp;</td></tr>
+            <tr><td>US, Pennsylvania</td><td>University of Pennsylvania,<br>Center for Judaic Studies Library</td><td>3420 Walnut Street,<br>Philadelphia, PA 19104</td><td><a href="mailto:ruthrin@pobox.upenn.edu">ruthrin@pobox.upenn.edu</a><br><a href="https://www.library.upenn.edu/" target="_blank" rel="noopener">library.upenn.edu</a><br><span class="yzs-cl">Tel</span> (215) 573-4167<br><span class="yzs-cl">Fax</span> (215) 898-0559<br>Attn: Ruth Rin</td><td>Ruth A. Rin,<br>Hebraica Cataloger &amp; Bibliographer</td><td>About 175</td></tr>
+            <tr><td>US, Tennessee</td><td>Jewish Federation of Nashville,<br>Middle Tennessee Library &amp; Archives</td><td>801 Percy Warner Blvd.<br>Nashville, TN 37205</td><td><span class="yzs-cl">Tel</span> (615) 356-3242, Ext. 255<br><span class="yzs-cl">Fax</span> (615) 352-0056</td><td>Mrs. Lee Haas</td><td>&nbsp;</td></tr>
+            <tr><td>US, Texas</td><td>University of Texas at Austin,<br>Perry-Castaneda Library</td><td>P. O. Box P<br>Austin, TX 78713</td><td><a href="mailto:nahman@mail.utexas.edu">nahman@mail.utexas.edu</a><br><span class="yzs-cl">Tel</span> (512) 495-4250<br><span class="yzs-cl">Fax</span> (512) 495-4296</td><td>Nathan Snyder</td><td>About 250</td></tr>
+            <tr><td>US, Texas</td><td>Laurie and Milton Boniuk Library of Holocaust Museum Houston</td><td>5401 Caroline<br>Houston, Texas 77004</td><td><a href="mailto:library@hmh.org">library@hmh.org</a><br><a href="https://hmh.org/library" target="_blank" rel="noopener">hmh.org</a><br><span class="yzs-cl">Tel</span> (713) 527-1610<br><span class="yzs-cl">Fax</span> (713) 527-1652</td><td>Joel Bangilan, Librarian</td><td>200</td></tr>
+        </tbody>
+    </table>
+    </div><!-- /.yzs-table-scroll -->
+    <p class="yzs-table-empty" id="yzs-empty">No matching entries found.</p>
+
+    <p class="yzs-credit">
+        Compiled by the JewishGen Yizkor Book Project. Originally compiled by Harriet Brown.<br>
+        Web page maintained by <a href="mailto:lackerfeld@jewishgen.org">Lance Ackerfeld</a>. Updated 23 Nov 2024.
+    </p>
+
+</div><!-- /.yzs-inner -->
+</div><!-- /.yzs-wrap -->
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+    /* -- Component loader ----------------------------------------- */
+    function loadComponent(id, file) {
+        return fetch(file)
+            .then(function (r) { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+            .then(function (html) { document.getElementById(id).innerHTML = html; })
+            .catch(function (err) { console.warn(err); });
+    }
+
+    /* -- Active Yizkor subnav tab (longest-path match) ------------ */
+    function setActiveYizkorTab() {
+        function normalize(p) { return p.replace(/index\.html?$/i, '').replace(/\/+$/, '/') || '/'; }
+        var here = normalize(window.location.pathname);
+        var best = null, bestLen = -1;
+        document.querySelectorAll('.yizkor-nav a').forEach(function (a) {
+            var hp = normalize(a.getAttribute('href'));
+            if ((here === hp || (hp !== '/' && here.indexOf(hp) === 0)) && hp.length > bestLen) {
+                best = a; bestLen = hp.length;
+            }
+        });
+        if (best) best.classList.add('active');
+    }
+
+    loadComponent('yizkor-subnav', '/yizkor/Yizkor_SubNav.html').then(setActiveYizkorTab);
+
+    Promise.all([
+        loadComponent('site-header', '/Header_NavBar.html'),
+        loadComponent('site-footer', '/Footer.html')
+    ]);
+
+    /* -- Table filter: primary facet (col 0) + free-text search --- */
+    (function () {
+        var FACET_COL = 0;
+        var facet = document.getElementById('yzs-facet');
+        var search = document.getElementById('yzs-search');
+        var table = document.getElementById('yzs-table');
+        var empty = document.getElementById('yzs-empty');
+        var count = document.getElementById('yzs-count');
+        if (!table) return;
+        var rows = [].slice.call(table.tBodies[0].rows);
+
+        /* populate the facet dropdown from the column's distinct values */
+        var seen = {};
+        rows.forEach(function (r) {
+            var c = r.cells[FACET_COL];
+            var v = c ? c.textContent.trim() : '';
+            if (v) seen[v] = true;
+        });
+        Object.keys(seen).sort().forEach(function (v) {
+            var o = document.createElement('option');
+            o.value = v; o.textContent = v;
+            facet.appendChild(o);
+        });
+
+        function apply() {
+            var fv = facet.value;
+            var q = search.value.trim().toLowerCase();
+            var shown = 0;
+            rows.forEach(function (r) {
+                var c = r.cells[FACET_COL];
+                var okFacet = !fv || (c && c.textContent.trim() === fv);
+                var okText = !q || r.textContent.toLowerCase().indexOf(q) !== -1;
+                var show = okFacet && okText;
+                r.style.display = show ? '' : 'none';
+                if (show) shown++;
+            });
+            count.textContent = shown + (shown === 1 ? ' entry' : ' entries');
+            empty.style.display = shown ? 'none' : 'block';
+        }
+        facet.addEventListener('change', apply);
+        search.addEventListener('input', apply);
+        apply();
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,765 @@
+/* ============================================================================
+   jg-yizkor-section.css  -  Shared styles for Yizkor Book Project SECTION pages
+   CHW / Project Shorashim
+
+   Scope: the hub (index.html) and the ancillary content pages (database,
+   infofiles + children, ybip, insights, links, history, faq). Distinct from:
+       /yizkor/jg-yizkor.css      -> book TOC + chapter/reading + people pages
+       /yizkor/jg-yizkor-tr.css   -> fundraising / dataset-description pages
+   The translations catalog keeps its own page-local CSS.
+
+   Load AFTER /jg-global.css:
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="/jg-global.css">
+     <link rel="stylesheet" href="/yizkor/jg-yizkor-section.css">
+
+   The hero uses the GLOBAL .page-title-band component (navy band + sage
+   .tagline + serif h1 + .hero-subtitle); jg-global.css already supplies its
+   dark-mode navy fix (#0d2a45), so it is NOT redeclared here.
+
+   Navy fills are hardcoded #09497a (light) / #0d2a45 (dark): var(--navy) flips
+   to light-gray in dark mode and would wash out.
+   ASCII-only file: verify with grep -nP '[^\x00-\x7F]'.
+   ========================================================================== */
+
+/* Yizkor section pages use contextual link colour, not Bootstrap blue. */
+.yzs-wrap a { text-decoration: none; }
+
+/* hero subtitle: italic, matching the catalog hero voice */
+.page-title-band p.hero-subtitle.yzs-sub { font-style: italic; }
+
+/* ============================================================================
+   1. CONTENT WRAP
+   ========================================================================== */
+.yzs-wrap {
+    background-color: var(--ecru);
+    padding: 3rem 0 3.5rem;
+}
+.yzs-inner {
+    width: min(100% - 4rem, 1080px);
+    margin-inline: auto;
+}
+
+/* section label above each block: navy text with a sage accent underline
+   (mirrors the .green-accent-line / dataset-main h2::after pattern). Navy is
+   hardcoded because var(--navy) flips to light-gray in dark mode. */
+.yzs-eyebrow {
+    font-size: 0.6875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #09497a;
+    margin: 0 0 16px;
+    padding-bottom: 9px;
+    position: relative;
+}
+.yzs-eyebrow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--sage);
+    border-radius: 1px;
+}
+body.dark-mode .yzs-eyebrow { color: #e0e0e0; }
+
+/* slim italic intro, modeled on .rd-dir-intro. Hairlines use var(--sage)
+   (the RD page hardcoded an off-token #8b8f72); --sage flips correctly in
+   dark mode so no separate override is needed. */
+.yzs-intro {
+    text-align: center;
+    max-width: 760px;
+    margin: 0.25rem auto 2.4rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--sage);
+    border-bottom: 1px solid var(--sage);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+}
+.yzs-intro p { margin: 0; }
+
+/* ============================================================================
+   2. FEATURED CARDS  (primary "do something" destinations)
+   ========================================================================== */
+.yzs-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+    margin: 0;
+}
+/* the two search cards: a centered row beneath the top trio */
+.yzs-cards--pair {
+    grid-template-columns: repeat(2, minmax(0, 348px));
+    justify-content: center;
+    margin: 18px 0 3rem;
+}
+.yzs-card {
+    display: block;
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 20px 22px 22px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.yzs-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10), 0 4px 10px rgba(0,0,0,0.05);
+}
+body.dark-mode .yzs-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.40);
+}
+body.dark-mode .yzs-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+}
+.yzs-card__kicker {
+    font-size: 0.625rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 8px;
+}
+.yzs-card__title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #09497a;
+    line-height: 1.25;
+    margin: 0 0 7px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+body.dark-mode .yzs-card__title { color: #8ab0c9; }
+.yzs-card__title .yzs-arrow {
+    color: var(--sage);
+    font-size: 0.95rem;
+    transition: transform 0.15s;
+}
+.yzs-card:hover .yzs-card__title .yzs-arrow { transform: translateX(3px); }
+.yzs-card__desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 0;
+}
+body.dark-mode .yzs-card__desc { color: #c8c8c8; }
+
+/* static card: an entry with no link (e.g. a print-only book citation).
+   Same shell as .yzs-card but inert - no lift, no arrow, muted title. */
+.yzs-card--static {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    border: 1px dashed #ddd6ca;
+}
+.yzs-card--static:hover {
+    transform: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+.yzs-card--static .yzs-card__title { color: var(--charcoal); }
+body.dark-mode .yzs-card--static {
+    border-color: #3a3a3a;
+    box-shadow: none;
+}
+body.dark-mode .yzs-card--static:hover { box-shadow: none; }
+body.dark-mode .yzs-card--static .yzs-card__title { color: #d8d8d8; }
+
+/* ============================================================================
+   3. COMPACT LIST  (the long tail - everything else in the section)
+   ========================================================================== */
+.yzs-more { margin: 0 0 3rem; }
+.yzs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+    column-gap: 48px;
+}
+.yzs-entry {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(9,73,122,0.1);
+    break-inside: avoid;       /* keep an entry (and its sublinks) in one column */
+}
+.yzs-entry:last-child { border-bottom: none; }
+body.dark-mode .yzs-entry { border-bottom-color: #2e2e2e; }
+
+.yzs-entry__title {
+    font-size: 0.9375rem;
+    font-weight: bold;
+    margin: 0 0 3px;
+}
+.yzs-entry__title a {
+    color: #09497a;
+    text-decoration: underline dotted;
+    text-underline-offset: 2px;
+}
+.yzs-entry__title a:hover { color: var(--sage); text-decoration: none; }
+body.dark-mode .yzs-entry__title a { color: #8ab0c9; }
+body.dark-mode .yzs-entry__title a:hover { color: #a8b361; }
+
+.yzs-entry__desc {
+    font-size: 0.875rem;
+    color: var(--charcoal);
+    line-height: 1.6;
+    margin: 0;
+}
+body.dark-mode .yzs-entry__desc { color: #c8c8c8; }
+.yzs-entry__desc a {
+    color: #09497a;
+    font-weight: 600;
+    text-decoration: underline dotted;
+}
+.yzs-entry__desc a:hover { color: var(--sage); }
+body.dark-mode .yzs-entry__desc a { color: #8ab0c9; }
+
+/* inline sub-links under a long-tail entry (e.g. InfoFiles children) */
+.yzs-sublinks {
+    margin-top: 7px;
+    font-size: 0.8125rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+}
+.yzs-sublinks a {
+    color: #09497a;
+    text-decoration: underline dotted;
+    padding-right: 14px;
+    border-right: 1px solid rgba(9,73,122,0.25);
+    margin-right: 14px;
+}
+.yzs-sublinks a:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.yzs-sublinks a:hover { color: var(--sage); }
+body.dark-mode .yzs-sublinks a { color: #8ab0c9; }
+
+/* ============================================================================
+   4. ABOUT BOX + CREDITS
+   ========================================================================== */
+.yzs-about {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-top: 4px solid var(--sage);
+    border-radius: 8px;
+    padding: 26px 30px 28px;
+    margin: 0 0 2rem;
+}
+body.dark-mode .yzs-about {
+    background-color: #1e1e1e;
+    border-color: #2e2e2e;
+    border-top-color: #a8b361;
+}
+.yzs-about h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #09497a;
+    margin: 0 0 14px;
+    position: relative;
+    padding-bottom: 8px;
+}
+.yzs-about h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 36px; height: 3px;
+    background-color: var(--sage);
+    border-radius: 2px;
+}
+body.dark-mode .yzs-about h2 { color: #e0e0e0; }
+.yzs-about p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin: 0 0 12px;
+}
+.yzs-about p:last-child { margin: 0; }
+body.dark-mode .yzs-about p { color: #c8c8c8; }
+.yzs-about strong { color: #09497a; }
+body.dark-mode .yzs-about strong { color: #e0e0e0; }
+.yzs-about a {
+    color: #09497a;
+    font-weight: 600;
+    text-decoration: underline dotted;
+}
+.yzs-about a:hover { color: var(--sage); }
+body.dark-mode .yzs-about a { color: #8ab0c9; }
+
+.yzs-credits {
+    font-size: 0.8125rem;
+    color: var(--charcoal);
+    opacity: 0.7;
+    text-align: center;
+    line-height: 1.7;
+}
+body.dark-mode .yzs-credits { color: #999; opacity: 1; }
+.yzs-credits a { color: inherit; text-decoration: underline dotted; }
+
+/* ============================================================================
+   5. DONATE BAND  (page-foot CTA - navy band, reuses global .jg-btn--primary)
+   Gives the page a navy bookend at the bottom to balance the hero up top.
+   ========================================================================== */
+.yzs-donate {
+    background-color: #09497a;
+    border-radius: 8px;
+    padding: 34px 30px;
+    text-align: center;
+    margin: 0 0 2.5rem;
+}
+body.dark-mode .yzs-donate { background-color: #0d2a45; }
+.yzs-donate__head {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0 0 8px;
+}
+.yzs-donate__desc {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    max-width: 56ch;
+    margin: 0 auto 20px;
+}
+.yzs-donate .jg-btn.yzs-donate__btn {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.875rem;
+}
+/* dark-mode sage button takes dark text for contrast, matching the site's
+   other dark-mode donate buttons (e.g. .jg-btn-unlock) */
+body.dark-mode .yzs-donate .jg-btn--primary { color: #1a1a1a; }
+
+/* ============================================================================
+   6. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .yzs-wrap { padding: 2rem 0 2.5rem; }
+    .yzs-inner { width: min(100% - 2.5rem, 1080px); }
+    .yzs-cards { grid-template-columns: 1fr; gap: 14px; }
+    .yzs-cards--pair { grid-template-columns: 1fr; margin: 14px 0 2.4rem; }
+    .yzs-list { columns: 1; }
+    .yzs-about { padding: 20px; }
+    .yzs-donate { padding: 26px 20px; }
+}
+
+/* ============================================================================
+   7. ARTICLE / READING PAGES  (History, Insights, long-form content)
+   Lives inside .yzs-wrap > .yzs-inner. Single-article pages use .yzs-article
+   on its own; multi-essay pages (Insights) wrap it in .yzs-article-layout
+   alongside a sticky .yzs-essaynav.
+   Navy hardcoded #09497a / #0d2a45 (var(--navy) flips light in dark mode).
+   ========================================================================== */
+
+/* two-column shell: reading column + sticky jump list (Insights) */
+.yzs-article-layout {
+    display: grid;
+    grid-template-columns: 1fr 210px;
+    gap: 52px;
+    align-items: start;
+}
+
+/* readable article column - measure capped for comfortable long-form reading */
+.yzs-article {
+    max-width: 760px;
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--charcoal);
+}
+body.dark-mode .yzs-article { color: #c8c8c8; }
+/* single-article pages (no sticky nav): center the reading column so the ecru
+   band does not leave an empty right rail where a jump-nav would otherwise sit */
+.yzs-article--solo { margin-inline: auto; }
+.yzs-article p { margin: 0 0 1.15rem; }
+.yzs-article a {
+    color: #09497a;
+    text-decoration: underline dotted;
+    text-underline-offset: 2px;
+}
+.yzs-article a:hover { color: var(--sage); }
+body.dark-mode .yzs-article a { color: #8ab0c9; }
+.yzs-article ul,
+.yzs-article ol { margin: 0 0 1.15rem; padding-left: 1.4rem; }
+.yzs-article li { margin-bottom: 0.5rem; line-height: 1.75; }
+
+/* major section / essay title */
+.yzs-article h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #09497a;
+    line-height: 1.25;
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    position: relative;
+    scroll-margin-top: 24px;
+}
+body.dark-mode .yzs-article h2 { color: #a9c0d0; }
+/* JG40 pattern: navy heading with a short sage accent rule underneath */
+.yzs-article h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 44px;
+    height: 3px;
+    background-color: var(--sage);
+    border-radius: 2px;
+}
+
+/* subheading within a section/essay */
+.yzs-article h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.15rem;
+    font-weight: normal;
+    color: var(--charcoal);
+    margin: 2rem 0 0.6rem;
+}
+body.dark-mode .yzs-article h3 { color: #e0e0e0; }
+
+/* byline + source attribution beneath a title */
+.yzs-byline {
+    font-size: 0.9375rem;
+    font-weight: bold;
+    color: var(--charcoal);
+    margin: 0 0 4px;
+}
+body.dark-mode .yzs-byline { color: #e0e0e0; }
+/* essay deck / subtitle (sits under the title, above attribution) */
+.yzs-deck {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    color: #55606b;
+    line-height: 1.5;
+    margin: 0 0 8px;
+}
+body.dark-mode .yzs-deck { color: #b7bcc2; }
+.yzs-attrib {
+    font-size: 0.8125rem;
+    font-style: italic;
+    color: var(--charcoal);
+    opacity: 0.75;
+    margin: 0 0 1.4rem;
+    line-height: 1.6;
+}
+body.dark-mode .yzs-attrib { color: #a0a0a0; opacity: 1; }
+
+/* short sage rule under a title block */
+.yzs-rule {
+    width: 44px; height: 3px;
+    background-color: var(--sage);
+    border: 0; border-radius: 2px;
+    margin: 0 0 1.6rem;
+}
+
+/* pulled quote from a yizkor book or source */
+.yzs-article blockquote {
+    margin: 1.3rem 0;
+    padding: 0.4rem 0 0.4rem 1.4rem;
+    border-left: 3px solid var(--sage);
+    font-style: italic;
+    color: var(--charcoal);
+}
+body.dark-mode .yzs-article blockquote { color: #b8b8b8; }
+.yzs-article blockquote p { margin: 0 0 0.8rem; }
+.yzs-article blockquote p:last-child { margin: 0; }
+.yzs-article blockquote blockquote {
+    border-left-color: rgba(147,155,81,0.5);
+    margin: 0.8rem 0;
+}
+
+/* figure with caption */
+.yzs-figure { margin: 1.6rem auto; text-align: center; }
+.yzs-figure img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #d1caba;
+    border-radius: 4px;
+    padding: 6px;
+    background: var(--white);
+}
+body.dark-mode .yzs-figure img { border-color: #3a3f3f; background: #1e1e1e; }
+.yzs-figcaption {
+    font-size: 0.8125rem;
+    color: var(--charcoal);
+    opacity: 0.7;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+body.dark-mode .yzs-figcaption { color: #999; opacity: 1; }
+
+/* right-aligned signature / dateline at an essay foot */
+.yzs-signoff {
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--charcoal);
+    text-align: right;
+    margin: 1.2rem 0 0;
+    line-height: 1.6;
+}
+body.dark-mode .yzs-signoff { color: #a0a0a0; }
+
+/* author bio note (small print) */
+.yzs-bionote {
+    font-size: 0.8125rem;
+    font-style: italic;
+    color: var(--charcoal);
+    opacity: 0.8;
+    line-height: 1.65;
+    border-top: 1px solid rgba(9,73,122,0.15);
+    padding-top: 12px;
+    margin: 1rem 0 0;
+}
+body.dark-mode .yzs-bionote { color: #a0a0a0; opacity: 1; border-top-color: #2e2e2e; }
+
+/* divider between essays */
+.yzs-essay-sep {
+    border: 0;
+    height: 1px;
+    background: rgba(9,73,122,0.15);
+    margin: 3rem 0;
+}
+body.dark-mode .yzs-essay-sep { background: #2e2e2e; }
+
+.yzs-essay { scroll-margin-top: 24px; }
+
+/* ---- table of contents card (Insights top) ---- */
+.yzs-toc {
+    background-color: var(--white);
+    border: 1px solid #d1caba;
+    border-top: 4px solid var(--sage);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 0 0 2.4rem;
+}
+body.dark-mode .yzs-toc { background-color: #1e1e1e; border-color: #2e2e2e; border-top-color: #a8b361; }
+.yzs-toc h2 {
+    font-size: 0.6875rem; font-weight: bold; text-transform: uppercase;
+    letter-spacing: 1px; color: #09497a; margin: 0 0 14px;
+}
+body.dark-mode .yzs-toc h2 { color: #e0e0e0; }
+.yzs-toc ol { list-style: none; margin: 0; padding: 0; }
+.yzs-toc li {
+    padding: 9px 0; border-bottom: 1px solid #e8e1d1;
+    display: flex; justify-content: space-between; gap: 16px; align-items: baseline;
+}
+body.dark-mode .yzs-toc li { border-bottom-color: #2e2e2e; }
+.yzs-toc li:last-child { border-bottom: none; }
+.yzs-toc a {
+    color: #09497a; font-weight: 600; text-decoration: underline dotted; text-underline-offset: 2px;
+}
+.yzs-toc a:hover { color: var(--sage); }
+body.dark-mode .yzs-toc a { color: #8ab0c9; }
+.yzs-toc__author { font-size: 0.8125rem; color: var(--charcoal); opacity: 0.7; white-space: nowrap; }
+body.dark-mode .yzs-toc__author { color: #999; opacity: 1; }
+
+/* ---- sticky essay jump-nav (Insights right column) ---- */
+.yzs-essaynav { position: sticky; top: 24px; }
+.yzs-essaynav-label {
+    font-size: 0.6875rem; font-weight: bold; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--charcoal); margin-bottom: 10px; display: block;
+}
+body.dark-mode .yzs-essaynav-label { color: #a0a0a0; }
+.yzs-essaynav ul { list-style: none; margin: 0; padding: 0; border-left: 2px solid #d1caba; }
+body.dark-mode .yzs-essaynav ul { border-left-color: #3a3f3f; }
+.yzs-essaynav li a {
+    display: block; padding: 7px 12px; font-size: 0.75rem; line-height: 1.4;
+    color: var(--charcoal); text-decoration: none; border-left: 2px solid transparent;
+    margin-left: -2px; transition: color 0.15s, border-color 0.15s;
+}
+.yzs-essaynav li a:hover { color: #09497a; }
+.yzs-essaynav li a.is-active { color: #09497a; border-left-color: #09497a; font-weight: 600; }
+body.dark-mode .yzs-essaynav li a { color: #a0a0a0; }
+body.dark-mode .yzs-essaynav li a:hover,
+body.dark-mode .yzs-essaynav li a.is-active { color: #a9c0d0; border-left-color: #a8b361; }
+
+/* embedded chart wrapper (History achievements) */
+.yzs-embed {
+    margin: 1.6rem 0;
+    border: 1px solid #d1caba;
+    border-radius: 6px;
+    overflow-x: auto;            /* scroll wide charts instead of clipping them */
+    -webkit-overflow-scrolling: touch;
+    background: var(--white);
+}
+body.dark-mode .yzs-embed { border-color: #3a3f3f; background: #1e1e1e; }
+/* Google pubchart iframes have a fixed canvas; give them room so they render
+   full-width and are never clipped (the wrapper scrolls on narrow screens) */
+.yzs-embed iframe { display: block; width: 100%; min-width: 680px; border: 0; }
+
+/* ---- article-page responsive ---- */
+@media (max-width: 900px) {
+    .yzs-article-layout { grid-template-columns: 1fr; gap: 0; }
+    .yzs-essaynav { display: none; }
+    .yzs-article { max-width: 100%; }
+    .yzs-toc li { flex-direction: column; gap: 2px; }
+    .yzs-toc__author { white-space: normal; }
+}
+
+/* ==========================================================================
+   Section 8 - INFO TABLES (InfoFile listing pages)
+   Reusable filterable data table + filter bar. Used by the Yizkor InfoFiles
+   (libraries, retail sellers, translators) and available to future listings.
+   Lives inside .yzs-wrap > .yzs-inner. Navy is hardcoded (var(--navy) flips
+   light in dark mode).
+   ========================================================================== */
+
+/* intro / lead paragraph above the table.
+   NOTE: distinct from the article/hub .yzs-intro (centered serif lead with sage
+   rules). This one is a plain, LEFT-aligned body-text block that lines up with
+   the filter bar and table below it, so it must reset the article-intro's
+   text-align / borders / serif explicitly. */
+.yzs-listintro {
+    max-width: 900px;
+    margin: 0 0 1.6rem;
+    padding: 0;
+    border: 0;
+    text-align: left;
+    font-family: inherit;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+}
+body.dark-mode .yzs-listintro { color: #c8c8c8; }
+.yzs-listintro p { margin: 0 0 0.8rem; }
+.yzs-listintro p:last-child { margin-bottom: 0; }
+
+/* filter bar: primary facet dropdown + free-text search */
+.yzs-filterbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px 20px;
+    margin: 0 0 1.1rem;
+}
+.yzs-filter-field { display: flex; flex-direction: column; gap: 5px; }
+.yzs-filter-field label {
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #09497a;
+}
+body.dark-mode .yzs-filter-field label { color: #a9c0d0; }
+.yzs-filter-select,
+.yzs-filter-search {
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    background: var(--white);
+    border: 1px solid #c9c1b4;
+    border-radius: 6px;
+    padding: 8px 12px;
+    min-height: 40px;
+}
+.yzs-filter-select { min-width: 200px; }
+.yzs-filter-search { min-width: 260px; }
+.yzs-filter-select:focus,
+.yzs-filter-search:focus {
+    outline: 2px solid #939b51;
+    outline-offset: 1px;
+    border-color: #939b51;
+}
+body.dark-mode .yzs-filter-select,
+body.dark-mode .yzs-filter-search {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #3a3f3f;
+}
+.yzs-result-count {
+    font-size: 0.85rem;
+    color: #6b6b6b;
+    margin: 0 0 0.9rem;
+}
+body.dark-mode .yzs-result-count { color: #9a9a9a; }
+
+/* horizontal-scroll wrapper (wide tables scroll instead of breaking layout) */
+.yzs-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #e2ddd4;
+    border-radius: 8px;
+}
+body.dark-mode .yzs-table-scroll { border-color: #333; }
+
+/* the table itself */
+.yzs-infotable {
+    width: 100%;
+    min-width: 720px;              /* narrow tables scroll on mobile, not crush */
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background: var(--white);
+}
+body.dark-mode .yzs-infotable { background: #1a1a1a; }
+/* small inline label inside a merged Contact cell (Tel / Fax) */
+.yzs-cl {
+    font-size: 0.72rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #6b6b6b;
+    margin-right: 3px;
+}
+body.dark-mode .yzs-cl { color: #9a9a9a; }
+.yzs-infotable thead th {
+    background-color: #09497a;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.82rem;
+    letter-spacing: 0.01em;
+    padding: 11px 14px;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+body.dark-mode .yzs-infotable thead th { background-color: #0d2a45; color: #ffffff; }
+.yzs-infotable tbody td {
+    padding: 11px 14px;
+    vertical-align: top;
+    line-height: 1.5;
+    color: var(--charcoal);
+    border-top: 1px solid #ece7de;
+}
+body.dark-mode .yzs-infotable tbody td { color: #cfcfcf; border-top-color: #2c2c2c; }
+.yzs-infotable tbody tr:nth-child(even) { background-color: #faf8f6; }
+body.dark-mode .yzs-infotable tbody tr:nth-child(even) { background-color: #202020; }
+.yzs-infotable tbody tr:hover { background-color: #f0ece8; }
+body.dark-mode .yzs-infotable tbody tr:hover { background-color: #262626; }
+.yzs-infotable a { color: #09497a; text-decoration: none; overflow-wrap: anywhere; }
+.yzs-infotable a:hover { text-decoration: underline; }
+body.dark-mode .yzs-infotable a { color: #8ab0c9; }
+/* first column reads as a row label */
+.yzs-infotable tbody td:first-child { font-weight: 600; white-space: nowrap; }
+
+/* empty-state row shown when a filter matches nothing */
+.yzs-table-empty {
+    display: none;
+    padding: 24px 14px;
+    text-align: center;
+    font-style: italic;
+    color: #6b6b6b;
+}
+body.dark-mode .yzs-table-empty { color: #9a9a9a; }
+
+/* small compiled-by / updated credit under the table */
+.yzs-credit {
+    margin: 1.8rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd6ca;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: #6b6b6b;
+    line-height: 1.6;
+}
+body.dark-mode .yzs-credit { color: #9a9a9a; border-top-color: #333; }
+.yzs-credit a { color: #09497a; }
+body.dark-mode .yzs-credit a { color: #8ab0c9; }
+
+@media (max-width: 768px) {
+    .yzs-filter-field { flex: 1 1 100%; }
+    .yzs-filter-select, .yzs-filter-search { min-width: 0; width: 100%; }
+}

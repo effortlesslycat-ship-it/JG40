@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================================================================
+     Yizkor Book Project - Frequently Asked Questions (JG40 / Project Shorashim)
+     CHW
+
+     Ported from the legacy /yizkor/faq.html into the HowToFAQ setup: accordion
+     Q&A rows, sticky "Jump to Section" sidenav, scroll-spy. Two Yizkor-specific
+     swaps vs HowToFAQ: the canonical global .page-title-band (not a local band),
+     and the Yizkor subnav (#yizkor-subnav + setActiveYizkorTab).
+
+     ASCII-only: verify grep -nP '[^\x00-\x7F]'. Hebrew glyphs use numeric
+     entities. Navy fills hardcoded #09497a / #0d2a45 (var(--navy) flips in dark).
+============================================================================ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions &mdash; Yizkor Book Project &mdash; JewishGen</title>
+    <meta name="description" content="Frequently asked questions about Yizkor books: what they are, how to find and read them, and how to contribute a translation.">
+
+    <!-- 1. Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- 2. JewishGen Global Design System -->
+    <link rel="stylesheet" href="/jg-global.css">
+    <!-- 3. Page-specific styles (FAQ accordion + sidenav, carried from HowToFAQ) -->
+    <style>
+        /* =====================================================
+           YIZKOR FAQ -- PAGE-SPECIFIC STYLES
+           /yizkor/faq.html
+           Title band is the global .page-title-band (owned by
+           jg-global.css, dark-mode navy fix included); only the
+           accordion + sidenav machinery lives here.
+           ===================================================== */
+
+        main { flex: 1; }
+
+        /* -- Content area ------------------------------------ */
+        .faq-content {
+            background-color: var(--ecru);
+            padding: 44px 50px;
+        }
+        body.dark-mode .faq-content { background-color: #1a1a1a; }
+
+        /* -- Two-column layout: main + sticky nav ------------ */
+        .faq-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 180px;
+            gap: 48px;
+            align-items: start;
+        }
+
+        /* -- Sticky section nav ------------------------------ */
+        .faq-sidenav { position: sticky; top: 24px; }
+        .faq-sidenav-label {
+            font-size: 0.6875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+            display: block;
+        }
+        body.dark-mode .faq-sidenav-label { color: #a0a0a0; }
+
+        .faq-sidenav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-left: 2px solid #d1caba;
+        }
+        body.dark-mode .faq-sidenav ul { border-left-color: #3a3f3f; }
+
+        .faq-sidenav li a {
+            display: block;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            line-height: 1.45;
+            color: var(--charcoal);
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            margin-left: -2px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .faq-sidenav li a:hover { color: #09497a; }
+        .faq-sidenav li a.is-active {
+            color: #09497a;
+            border-left-color: #09497a;
+            font-weight: 600;
+        }
+        body.dark-mode .faq-sidenav li a { color: #a0a0a0; }
+        body.dark-mode .faq-sidenav li a:hover,
+        body.dark-mode .faq-sidenav li a.is-active {
+            color: #a9c0d0;
+            border-left-color: #a8b361;
+        }
+
+        /* -- FAQ sections ------------------------------------ */
+        .faq-section { margin-bottom: 52px; scroll-margin-top: 24px; }
+        .faq-section:last-child { margin-bottom: 0; }
+
+        .faq-section-heading {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.25rem;
+            font-weight: normal;
+            color: #09497a;
+            margin: 0 0 4px;
+            line-height: 1.3;
+        }
+        body.dark-mode .faq-section-heading { color: #a9c0d0; }
+
+        .faq-section-subtitle {
+            font-size: 0.8125rem;
+            font-style: italic;
+            color: var(--charcoal);
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+        body.dark-mode .faq-section-subtitle { color: #a0a0a0; }
+
+        .faq-section-accent {
+            width: 36px;
+            height: 3px;
+            background-color: var(--sage);
+            border-radius: 1px;
+            margin-bottom: 16px;
+        }
+
+        /* -- Individual Q&A accordion rows ------------------- */
+        .faq-item { border-bottom: 1px solid #d1caba; }
+        body.dark-mode .faq-item { border-bottom-color: #3a3f3f; }
+        .faq-item:first-of-type { border-top: 1px solid #d1caba; }
+        body.dark-mode .faq-item:first-of-type { border-top-color: #3a3f3f; }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 16px 0;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            line-height: 1.5;
+        }
+        .faq-question:hover { color: #09497a; }
+        .faq-question[aria-expanded="true"] { color: #09497a; }
+        body.dark-mode .faq-question { color: #e0e0e0; }
+        body.dark-mode .faq-question:hover,
+        body.dark-mode .faq-question[aria-expanded="true"] { color: #a9c0d0; }
+        .faq-question:focus-visible {
+            outline: 2px solid var(--sage);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .faq-chevron {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+            transition: transform 0.2s;
+            color: var(--sage);
+            font-size: 0.75rem;
+        }
+        .faq-question[aria-expanded="true"] .faq-chevron { transform: rotate(180deg); }
+
+        .faq-answer {
+            display: none;
+            padding: 0 32px 20px 0;
+            font-size: 0.875rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+        .faq-answer.is-open { display: block; }
+        body.dark-mode .faq-answer { color: #c8c8c8; }
+
+        .faq-answer p { margin: 0 0 12px; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+        .faq-answer ul { margin: 0 0 12px; padding-left: 20px; }
+        .faq-answer ul li { margin-bottom: 6px; }
+
+        .faq-answer a {
+            color: #09497a;
+            text-decoration: underline dotted;
+            font-weight: 600;
+        }
+        .faq-answer a:hover { color: var(--sage); }
+        body.dark-mode .faq-answer a { color: #a9c0d0; }
+
+        /* Read-more link at end of an answer */
+        .faq-readmore {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: #09497a;
+            text-decoration: underline dotted;
+        }
+        .faq-readmore:hover { color: var(--sage); }
+        body.dark-mode .faq-readmore { color: #a9c0d0; }
+
+        /* Sub-tip callout */
+        .faq-tip {
+            background-color: var(--cream);
+            border-left: 3px solid var(--sage);
+            border-radius: 0 4px 4px 0;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-size: 0.8125rem;
+            line-height: 1.7;
+        }
+        body.dark-mode .faq-tip { background-color: #252a2a; }
+        .faq-tip strong { color: #09497a; }
+        body.dark-mode .faq-tip strong { color: #a9c0d0; }
+
+        /* -- Responsive -------------------------------------- */
+        @media (max-width: 900px) {
+            .faq-content { padding: 32px 24px; }
+            .faq-layout { grid-template-columns: 1fr; gap: 0; }
+            .faq-sidenav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- TITLE BAND (global component) -->
+<div class="page-title-band">
+    <span class="tagline">Yizkor Book Project</span>
+    <h1>Frequently Asked Questions</h1>
+    <p class="hero-subtitle">What Yizkor books are, how to find and read them, and how to contribute a translation.</p>
+</div>
+
+<!-- SECTION SUBNAV (fetched component) -->
+<div id="yizkor-subnav"></div>
+
+<main>
+<div class="faq-content">
+<div class="faq-layout">
+
+    <!-- MAIN FAQ CONTENT -->
+    <div class="faq-main">
+
+        <!-- ================================================
+             SECTION 1: ABOUT YIZKOR BOOKS
+             ================================================ -->
+        <section class="faq-section" id="faq-about">
+            <h2 class="faq-section-heading">About Yizkor Books</h2>
+            <p class="faq-section-subtitle">What these memorial books are, and what they hold.</p>
+            <div class="faq-section-accent"></div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-what">
+                    What are Yizkor books?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-what">
+                    <p>Yizkor (memorial) books were written after the Holocaust as memorials to Jewish communities that were destroyed. They were usually compiled by survivors and former residents of those communities, and they contain histories and descriptions of the community, biographies of prominent people, lists of those who perished, and often photographs, maps, and other memorabilia.</p>
+                    <p>They are valuable to genealogists, since a book may include biographies or photographs of relatives, or name family members among the community's victims. They are also valuable to anyone who wants to learn about Jewish life and culture in the communities that vanished in the Holocaust.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-relatives">
+                    Can a Yizkor book help me find my relatives?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-relatives">
+                    <p>Possibly. If you are lucky, you may find stories or photographs of your relatives, or the names of family members who perished in the Holocaust. Even if you find no specific mention of your family, you can still learn a great deal about the community they came from.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-tree">
+                    Are Yizkor books the best way to trace my family tree?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-tree">
+                    <p>Yizkor books are only one source among many. For other places to begin genealogical research, see the <a href="/infofiles/faq.html">JewishGen research FAQ</a>, or start from the <a href="https://www.jewishgen.org/">JewishGen home page</a> and explore its research divisions and databases.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-holocaust">
+                    How can I learn about the Holocaust?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-holocaust">
+                    <p>Yizkor books are valuable for understanding the Holocaust as it affected a particular community. The accounts in them are often deeply personal and detailed, which can make that history feel immediate and real.</p>
+                    <p>For broader research, the <a href="/RD/Holocaust/databases.html">JewishGen Holocaust Database</a> draws together millions of records from camps, ghettos, transport lists, and survivor registries. The <a href="https://www.ushmm.org/">United States Holocaust Memorial Museum</a> is another major resource.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================
+             SECTION 2: FINDING YIZKOR BOOKS
+             ================================================ -->
+        <section class="faq-section" id="faq-finding">
+            <h2 class="faq-section-heading">Finding Yizkor Books</h2>
+            <p class="faq-section-subtitle">Locating a book, a library copy, or a translation.</p>
+            <div class="faq-section-accent"></div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-exists">
+                    How can I tell if there is a Yizkor book for a particular community?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-exists">
+                    <p>Search the <a href="/yizkor/database.html">Yizkor Book Database</a>, which lists all known Yizkor books. You can search for a particular location to see whether a book exists for it.</p>
+                    <p>Many communities &mdash; particularly in Lithuania and Latvia &mdash; do not have their own individual book but are described in a regional volume. Those are listed in the database under the region, such as Lithuania or Latvia.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-next">
+                    I searched the database. What do I do next?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-next">
+                    <p>The database tells you that a book exists; your next step is to find a copy or to view any translation. For each book, the database indicates whether the Yizkor Book Project has translated material on our website &mdash; if it does, you can follow the link to read it.</p>
+                    <p>If possible, try to see the original book as well. Even if you cannot read the original language, it is often moving simply to see the book itself, with its list of victims, photographs, and documents. To find an original, see the questions below about libraries and purchasing.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-libraries">
+                    Which libraries have the Yizkor book I want?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-libraries">
+                    <p>When you search the <a href="/yizkor/database.html">Yizkor Book Database</a>, each book lists the libraries known to hold it, along with the call number. Our records currently cover roughly sixteen libraries, including collections in New York, California, and Israel.</p>
+                    <p>Many more libraries hold substantial Yizkor book collections. Our <a href="/yizkor/links.html">Links</a> page points to sources listing holdings in New York, Boston, Detroit, Washington, and San Francisco, and our <a href="/yizkor/yizlibs.html">Libraries and Archives with Yizkor Books</a> file is a broader directory. Some readers have also obtained books through Inter-Library Loan.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-purchase">
+                    Where can I purchase a Yizkor book?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-purchase">
+                    <p>See our list of <a href="/yizkor/yizret.html">Retail Establishments with Yizkor Books</a>. We cannot say which store stocks which title, since stores generally carry a single copy of any book and their inventory changes often, but many readers have had success contacting several stores on the list.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-istranslated">
+                    How can I tell whether a particular Yizkor book has been translated?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-istranslated">
+                    <p>Search the <a href="/yizkor/database.html">Yizkor Book Database</a> for your community. Where a translation exists on our site, the entry links directly to it; otherwise the database lists contact people who may have translated part of a book or be working on one.</p>
+                    <p>Keep in mind that the database is only as complete as what people report to us. It is entirely possible that a translation exists that we have not been told about, so we encourage everyone to let us know about translations they find.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================
+             SECTION 3: TRANSLATIONS
+             ================================================ -->
+        <section class="faq-section" id="faq-translations">
+            <h2 class="faq-section-heading">Translations</h2>
+            <p class="faq-section-subtitle">Contributing a translation to the project.</p>
+            <div class="faq-section-accent"></div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-setup">
+                    How do I set up a Yizkor book translation project?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-setup">
+                    <p>See <a href="/yizkor/donation/how-to.html">How to set up a translation project</a>, part of our guidance on <a href="/yizkor/donation/">donating translations</a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-translator">
+                    Where can I find a translator?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-translator">
+                    <p>The Yizkor Book Project maintains a list of people who translate Yizkor books for a fee: see <a href="/yizkor/yiztran.html">Yizkor Book Translators</a>. We cannot recommend particular translators, and any financial or other arrangements are strictly between the translator and the client.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-putonline">
+                    How do I put my translation on the Yizkor Book Project website?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-putonline">
+                    <p>See our guidance on the <a href="/yizkor/donation/">process for donating translations</a>, which walks through preparing and submitting material for the site.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-copyright">
+                    What are the copyright issues involved in publishing a translation online?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-copyright">
+                    <p>See our <a href="/yizkor/donation/Liability.html">explanation of liability and copyright issues</a> before publishing a translation. The <a href="#faq-donating">Donating a Translation</a> section below answers the most common questions in detail.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================
+             SECTION 4: DONATING A TRANSLATION
+             Merged from the legacy /yizkor/donation/FAQ.html
+             ================================================ -->
+        <section class="faq-section" id="faq-donating">
+            <h2 class="faq-section-heading">Donating a Translation</h2>
+            <p class="faq-section-subtitle">The Donor Agreement, copyright, liability, and tax.</p>
+            <div class="faq-section-accent"></div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-profit">
+                    Is someone going to make a profit from my donation?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-profit">
+                    <p>No. JewishGen, Inc. is a not-for-profit public service organization governed by Section 501(c)(3) of the United States Internal Revenue Code. No individual profits from any JewishGen activity, and everything the organization does must further its non-profit educational goals.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-permission">
+                    Am I responsible for getting permission from the copyright holder of the original material?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-permission">
+                    <p>The Yizkor Book Translations Manager will work with you through the process. To get started, give us the details of anyone involved in publishing the original book, and help us obtain permission for JewishGen to use the material. Our information packet includes a <a href="/yizkor/donation/form4.html">sample Permissions Letter</a> to send to the copyright holder.</p>
+                    <p>This is a collaborative effort &mdash; the Project cannot do it entirely on its own &mdash; and by policy JewishGen will not post material on the web until the appropriate steps are complete.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-ownrights">
+                    Does donating prevent me from publishing the material myself? Am I giving up something by signing the Donor Agreement?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-ownrights">
+                    <p>It depends on how the translation was funded.</p>
+                    <p>If you finance the translation yourself (alone or with others), or translated the material yourself, the <a href="/JewishGen-erosity/form_donor.html">Donor Agreement</a> is on a &ldquo;non-exclusive, irrevocable, perpetual&rdquo; basis. You keep every right you already have to use the material however and whenever you wish; the agreement simply gives JewishGen the right to use it too. Both of you can use it, even at the same time. This stands in lieu of monetary payment for the work JewishGen does to keep your translation freely accessible to all researchers.</p>
+                    <p>If, instead, the funds to pay for the translation are donated to JewishGen and disbursed by JewishGen, then JewishGen owns the exclusive right to the material.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-noholder">
+                    What if we never find the original copyright holder &mdash; if they are deceased or cannot be located?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-noholder">
+                    <p>JewishGen has approved procedures that constitute a valid, concerted effort to locate copyright holders. As long as those procedures have been followed and documented, JewishGen will host the translation. As with everything here, it is a collaborative process between you and the Yizkor Book Project staff.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-anymanner">
+                    Why does the Donor Agreement cover more than publishing online &mdash; why the words &ldquo;in any manner desired&rdquo;?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-anymanner">
+                    <p>Our aim is to share Yizkor book material as widely as possible, and technology keeps changing. From time to time another non-profit or individual may want to help make the material available in additional forms &mdash; for example, in print for family members who don't use computers, perhaps alongside the original text.</p>
+                    <p>The broad wording lets JewishGen use the material for purposes it judges worthy without having to track down every contributor again each time a new medium appears &mdash; a task that could otherwise leave material unavailable in the future. If you feel strongly about limiting this, we can modify the agreement to name the specific media in which the material may be published.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-makemoney">
+                    Can't I make some money if I don't allow JewishGen to use my translation?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-makemoney">
+                    <p>With rare exceptions, publishers have been unwilling to fund reprints of Yizkor books, in translation or in the original. If your town is large or historically significant you might persuade a publisher &mdash; usually with a substantial investment of your own &mdash; but even then profits are unlikely. You are welcome to pursue that first and come back to us afterward.</p>
+                    <p>In the meantime, you might donate just the structural elements (table of contents, index, name lists, photo captions). Posting those on the web can actually boost sales of a printed edition, and we can add a link pointing readers to where they can buy it. Many of us feel this material should not be used commercially, out of respect for the lives honored in these books; the Project's goal is simply to make the information freely available.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-publishlater">
+                    What if I find out how to get a book published later?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-publishlater">
+                    <p>No problem. If you paid for the translation, JewishGen's rights are non-exclusive, so you may publish the material in any form at any time.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-liable">
+                    Does the Donor Agreement mean I am liable for something?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-liable">
+                    <p>If you translated or transliterated the material yourself, no &mdash; the agreement just lets JewishGen use it. If you obtained the translation from someone else, we need to be sure that translator won't object, and the safest protection is to have them sign a Work for Hire agreement.</p>
+                    <p>In special cases where the translation was done long ago and the translator is no longer living, cannot be found, or was never named &mdash; and a Work for Hire agreement isn't practicable &mdash; we ask you to certify in the Donor Agreement that you will be responsible if that translator ever sues JewishGen. As a non-profit, JewishGen cannot absorb the cost of defending such a suit. Make sure your understanding with your translator is clear.</p>
+                    <div class="faq-tip">
+                        <strong>Work for Hire agreements:</strong> the form is no longer posted publicly. It can be initiated only by a JewishGen Vice President; Lance Ackerfeld, Yizkor Book Director, handles distribution when a fundraising project requires it. Contact him at <a href="mailto:lackerfeld@jewishgen.org">lackerfeld@jewishgen.org</a>.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-wfh">
+                    What does &ldquo;Work for Hire&rdquo; mean?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-wfh">
+                    <p>It is a legal term meaning you hired the translator to do the work, and the resulting translation is yours. Without such a contract, a translator could later claim you both understood that they owned the translation. Like any contract, it simply documents your actual understanding, for the record.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-origlawsuit">
+                    Are you asking me to be responsible for a potential lawsuit from the original copyright holder of the book?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-origlawsuit">
+                    <p>No. You are only responsible for the English translation or transliteration you provide. The Yizkor Book Project and the donor work together to decide whether copyright permission is needed for the original book and, if so, to follow all the appropriate steps.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls="a-tax">
+                    Will I get a U.S. income tax deduction for this donation?
+                    <span class="faq-chevron" aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="faq-answer" id="a-tax">
+                    <p>JewishGen, Inc. is a 501(c)(3) non-profit, so you will receive a receipt for your donation of the material, and it is tax-deductible to the extent allowed by law. Please consult your tax advisor.</p>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- /.faq-main -->
+
+    <!-- STICKY SIDE NAV -->
+    <aside class="faq-sidenav" aria-label="FAQ sections">
+        <span class="faq-sidenav-label">Jump to Section</span>
+        <ul>
+            <li><a href="#faq-about">About Yizkor Books</a></li>
+            <li><a href="#faq-finding">Finding Yizkor Books</a></li>
+            <li><a href="#faq-translations">Translations</a></li>
+            <li><a href="#faq-donating">Donating a Translation</a></li>
+        </ul>
+    </aside>
+
+</div><!-- /.faq-layout -->
+</div><!-- /.faq-content -->
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+    /* -- Component loader ----------------------------------------- */
+    function loadComponent(id, file) {
+        return fetch(file)
+            .then(function (r) { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+            .then(function (html) { document.getElementById(id).innerHTML = html; })
+            .catch(function (err) { console.warn(err); });
+    }
+
+    /* -- Active Yizkor subnav tab (longest-path match) ------------ */
+    function setActiveYizkorTab() {
+        function normalize(p) { return p.replace(/index\.html?$/i, '').replace(/\/+$/, '/') || '/'; }
+        var here = normalize(window.location.pathname);
+        var best = null, bestLen = -1;
+        document.querySelectorAll('.yizkor-nav a').forEach(function (a) {
+            var hp = normalize(a.getAttribute('href'));
+            if ((here === hp || (hp !== '/' && here.indexOf(hp) === 0)) && hp.length > bestLen) {
+                best = a; bestLen = hp.length;
+            }
+        });
+        if (best) best.classList.add('active');
+    }
+
+    /* -- Load subnav, then set active link ------------------------ */
+    loadComponent('yizkor-subnav', '/yizkor/Yizkor_SubNav.html').then(setActiveYizkorTab);
+
+    /* -- Load header and footer ----------------------------------- */
+    Promise.all([
+        loadComponent('site-header', '/Header_NavBar.html'),
+        loadComponent('site-footer', '/Footer.html')
+    ]).then(function () {
+        document.querySelectorAll('.jg-nav .dropbtn, .main-nav .dropbtn').forEach(function (btn) {
+            btn.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    var menu = this.nextElementSibling;
+                    if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                }
+                if (e.key === 'Escape') {
+                    var menu = this.nextElementSibling;
+                    if (menu) menu.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    /* -- FAQ accordion -------------------------------------------- */
+    document.querySelectorAll('.faq-question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var answer = document.getElementById(btn.getAttribute('aria-controls'));
+            var isOpen = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            answer.classList.toggle('is-open', !isOpen);
+        });
+    });
+
+    /* -- Scroll-spy: highlight active section in the side nav ----- */
+    var sections = document.querySelectorAll('.faq-section');
+    var navLinks = document.querySelectorAll('.faq-sidenav a');
+    function onScroll() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        var active = null;
+        sections.forEach(function (sec) { if (sec.offsetTop - 80 <= scrollY) active = sec.id; });
+        navLinks.forEach(function (a) {
+            a.classList.toggle('is-active', a.getAttribute('href') === '#' + active);
+        });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+</script>
+
+</body>
+</html>

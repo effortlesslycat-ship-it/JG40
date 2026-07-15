@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yizkor (Memorial) Book of the Jewish Community of Jas&#322;o, Poland &mdash; JewishGen Press</title>
+
+<!-- 1. Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<!-- 2. JewishGen Global Design System -->
+<link rel="stylesheet" href="/jg-global.css">
+<!-- 3. Yizkor Book layout (reused: dataset-layout, meta-card, sidebar cards) -->
+<link rel="stylesheet" href="/jg-yizkor-tr.css">
+
+<!-- Page-specific one-offs: book cover + order card. Promote to a shared
+     stylesheet once the second/third Press detail page exists. -->
+<style>
+/* -- Book cover, sits at top of main column -- */
+.book-hero {
+    display: flex;
+    gap: 28px;
+    align-items: stretch;
+    margin-bottom: 30px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #d1caba;
+}
+body.dark-mode .book-hero { border-bottom-color: #333 !important; }
+.book-hero__cover {
+    flex-shrink: 0;
+    width: 190px;
+    background-color: var(--cream);
+    border: 1px solid #d1caba;
+    border-radius: 6px;
+    padding: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+}
+body.dark-mode .book-hero__cover {
+    background-color: #2a2a2a !important;
+    border-color: #333 !important;
+}
+.book-hero__cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+.book-hero__intro {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+.book-hero__romanized {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--navy);
+    margin: 0 0 20px 0;
+}
+body.dark-mode .book-hero__romanized { color: #e0e0e0 !important; }
+.book-hero__credits {
+    font-size: 0.9375rem;
+    color: var(--charcoal);
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.book-hero__credits .credit-line {
+    display: block;
+    line-height: 1.5;
+    padding: 5px 0;
+}
+.book-hero__credits .credit-line:last-child { margin-top: auto; }
+body.dark-mode .book-hero__credits { color: #c8c8c8 !important; }
+
+/* -- Order card (sidebar), parallels .donate-card -- */
+.order-card {
+    background-color: var(--navy);
+    border-radius: 8px;
+    padding: 22px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+body.dark-mode .order-card { background-color: #0d2a45 !important; }
+.order-card__label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.7);
+    font-weight: bold;
+    margin: 0 0 6px 0;
+}
+.order-card__price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1;
+    margin: 0 0 4px 0;
+}
+.order-card__note {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+}
+.btn-order {
+    display: block;
+    width: 100%;
+    background-color: var(--sage);
+    color: #ffffff;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: filter 0.15s, transform 0.15s;
+}
+.btn-order:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.btn-order:focus-visible { outline: 3px solid #ffffff; outline-offset: 2px; }
+body.dark-mode .btn-order { background-color: #a8b361; color: #121212; }
+
+/* -- Index download line under the order card -- */
+.index-note {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+    text-align: center;
+    padding: 0 4px;
+}
+body.dark-mode .index-note { color: #b0b0b0 !important; }
+.index-note a { color: var(--navy); font-weight: bold; text-decoration: underline dotted; }
+.index-note a:hover { color: var(--sage); }
+body.dark-mode .index-note a { color: #8ab0c9 !important; }
+body.dark-mode .index-note a:hover { color: var(--sage) !important; }
+
+@media (max-width: 600px) {
+    .book-hero { flex-direction: column; align-items: center; text-align: center; }
+    .book-hero__cover { width: 160px; }
+    .book-hero__intro { width: 100%; }
+    .book-hero__credits .credit-line:last-child { margin-top: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="site-header"></div>
+
+<!-- PAGE TITLE BAND -->
+<div class="page-title-band">
+    <div class="page-title-band__inner"> <a href="/shop/books/" class="jg-back-link-light" aria-label="Back to the JewishGen Book Shop">
+            <span class="arrow" aria-hidden="true">&larr;</span> Back to the JewishGen Book Shop
+        </a><br>
+    <div class="record-type-tag">JewishGen Press</div>
+    <h1>Yizkor (Memorial) Book of the Jewish Community of Jas&#322;o, Poland</h1>
+    <p class="hero-subtitle">Translation of <i>Toldot Yehudei Yaslo</i> &mdash; the memorial book of a Jewish community in Galicia, destroyed in 1939.</p>
+</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="project-ecru-wrap">
+<div class="project-ecru-inner">
+
+    <div class="dataset-layout">
+
+        <!-- MAIN COLUMN -->
+        <div class="dataset-main">
+
+            <!-- Book cover + romanized title + credits -->
+            <div class="book-hero">
+                <div class="book-hero__cover">
+                    <img src="/yizkor/images/Jaslo_book.jpg"
+                         alt="Cover of the Jaslo Yizkor Book">
+                </div>
+                <div class="book-hero__intro">
+                    <p class="book-hero__romanized">Toldot Yehudei Yaslo</p>
+                    <p class="book-hero__credits">
+                        <span class="credit-line">Original written in Hebrew</span>
+                        <span class="credit-line">Edited by Moshe Nathan Even Chaim (Rapaport), Tel Aviv 1953</span>
+                        <span class="credit-line">Translated into English by William Leibner and edited by Phyllis Kramer</span>
+                        <span class="credit-line">316 pages, 8.5&quot; by 11&quot;, hard cover, including all photos and other images</span>
+                    </p>
+                </div>
+            </div>
+
+            <h2>About This Book</h2>
+            <p>This is the translation of the Hebrew Memorial (Yizkor) Book of the Jewish community of Jas&#322;o, Poland: <i>Toldot Yehudei Yaslo</i>, which was destroyed by the Nazis in September 1939.</p>
+
+            <p>The Jas&#322;o Jewish community developed late because the Polish inhabitants refused to allow Jews to live in the city until the Austrian Imperial administration granted Jews the right to reside in the city in 1860. The Jewish population expanded very rapidly and helped the city grow commercially and financially. Jewish institutions flourished and attracted Jewish residents from nearby hamlets.</p>
+
+            <p>All of this ended on September 8, 1939 with the German occupation of Jas&#322;o. The Germans steadily pauperized the Jewish population. Edicts aimed at the Jews appeared almost daily until the final proclamation that all Jews assemble at the meeting place. In August 1942 most of the Jews were sent to the Belzec death camp where they all perished. Some young Jews were selected to work and sent to various labor camps. Thus, Jewish Jas&#322;o was destroyed.</p>
+
+            <p>Following World War II, a few Jewish survivors returned to the city but soon left. Today there are no Jews in Jas&#322;o.</p>
+
+            <p>This book provides the reader with the rich history of the town, its institutions and people, and the story of its destruction. With the publication of this book, the memory of the Jewish community of Jas&#322;o will continue to live for all the descendants of the town.</p>
+
+            <h2>Place Details</h2>
+            <p><strong>Alternate names:</strong> Jas&#322;o [Polish], Yasla [Yiddish], Jaslau [German], Yaslo.</p>
+            <p>Jaslo is located 174 mi South of Warsaw, at 49&#176; 45' North Latitude and 21&#176; 28' East Longitude.</p>
+
+            <!-- Back link at bottom of main content -->
+            <a href="/shop/books/" class="back-link">&larr; All JewishGen Press Titles</a>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="dataset-sidebar" aria-label="Order information">
+
+            <!-- ORDER CARD
+                 Price is rendered by SSI from the shared tier file, exactly as the
+                 legacy pages do. The Order Now button reads that rendered price out
+                 of #book-price at click time, sets the jgp_title / jgp_price cookies
+                 via ybip_ordering.js, and opens the cart form in a new tab. Nothing
+                 about the payment flow changes server-side. -->
+            <div class="order-card">
+                <p class="order-card__label">Hardcover</p>
+                <div class="order-card__price" id="book-price"><!--#include virtual="/yizkor/YBIP/Prices/Price019.txt"--></div>
+                <p class="order-card__note">Printed on demand and shipped directly to you. Processed securely via Stripe.</p>
+                <button type="button"
+                        class="btn-order"
+                        id="order-btn"
+                        data-order-title="Yizkor (Memorial) Book of the Jewish Community of Jaslo, Poland">
+                    Order Now
+                </button>
+            </div>
+
+            <div class="meta-card">
+                <div class="meta-card__header">Book Details</div>
+                <div class="meta-card__body">
+
+                    <div class="meta-row">
+                        <span class="meta-label">Original Title</span>
+                        <span class="meta-value citation"><strong>Toldot Yehudei Yaslo</strong><br>Edited by Moshe Nathan Even Chaim (Rapaport)<br>Tel Aviv, 1953</span>
+                    </div>
+
+                    <div class="meta-row">
+                        <span class="meta-label">Translated By</span>
+                        <span class="meta-value">William Leibner</span>
+                    </div>
+
+                    <div class="meta-row">
+                        <span class="meta-label">Edited By</span>
+                        <span class="meta-value">Phyllis Kramer</span>
+                    </div>
+
+                    <div class="meta-row">
+                        <span class="meta-label">Specifications</span>
+                        <span class="meta-value">Hardcover, 8.5&quot; x 11&quot;, 316 pages, with all photos and images</span>
+                    </div>
+
+                    <div class="meta-row">
+                        <span class="meta-label">Community Page</span>
+                        <a href="/Communities/community.php?usbgn=-505390" class="meta-link" target="_blank" rel="noopener">Jas&#322;o, Poland &rarr;</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="index-note">
+                <a href="/yizkor/indices/Jaslo_index.pdf" target="_blank" rel="noopener">Download the family-name index (PDF)</a>.
+                If you already own the book, print it and insert it into the back.
+            </p>
+
+        </aside>
+
+    </div>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Existing order utilities: setCookie / setBookCookies, base64 cookie handling -->
+<script src="/yizkor/ybip_ordering.js"></script>
+<script>
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function (r) { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(function (html) { document.getElementById(id).innerHTML = html; })
+        .catch(function (err) { console.warn(err); });
+}
+
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html')
+]).then(function () {
+    document.querySelectorAll('.jg-nav .dropbtn').forEach(function (btn) {
+        btn.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                var expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                var menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = expanded ? 'none' : 'block';
+            }
+            if (e.key === 'Escape') {
+                this.setAttribute('aria-expanded', 'false');
+                var menu = document.getElementById(this.getAttribute('aria-controls'));
+                if (menu) menu.style.display = 'none';
+            }
+        });
+    });
+});
+
+// -- Order Now: mirror the legacy openTitleLink flow exactly --
+// Read the SSI-rendered price from the DOM, set the same two cookies the cart
+// form expects, and open it in a new tab. setBookCookies comes from
+// ybip_ordering.js, so the cookie format (base64, domain, expiry) is identical.
+(function () {
+    var btn = document.getElementById('order-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+        var title = this.getAttribute('data-order-title');
+        var priceEl = document.getElementById('book-price');
+        var price = priceEl ? priceEl.textContent.trim() : '';
+        setBookCookies(title, price);
+        window.open('/auth0/YBIPcartForm.php', '_blank');
+    });
+}());
+</script>
+
+</body>
+</html>

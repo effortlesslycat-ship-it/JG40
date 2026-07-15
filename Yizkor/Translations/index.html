@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================================================================
+     JewishGen Yizkor Book Translations  -  Catalog (JG40 / Project Shorashim)
+     CHW
+
+     Custom catalog UI (replaces the legacy DataTables page). Reads the full
+     book list from /yizkor/translations/datasets.json (ASCII-safe, fetched
+     once; all filtering, search, paging done client-side).
+
+     ASCII-ONLY: dev SFTP corrupts non-ASCII bytes. Use HTML entities or
+     \uXXXX escapes for every non-ASCII character; verify before upload with
+     grep -nP '[^\x00-\x7F]'. The JSON itself is already \u-escaped.
+
+     Header/footer are fetched JG40 components. Layout is the "library
+     catalog" sidebar-facet pattern: hero search, left facets (Group,
+     Country, Status, In print), result list with expandable detail rows.
+
+     FUTURE: each record carries an (empty for now) "usbgn" field. Once the
+     Communities Database backfill runs, the linked community will point at
+     /Communities/ via that USBGN. Page reads usbgn if present, ignores if not.
+============================================================================ -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JewishGen &mdash; Yizkor Book Translations</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/jg-global.css?v=5">
+
+<style>
+/* ============================================================================
+   Page-scoped styles. Mirrors the Communities Database catalog (jg-community
+   .css: hero band, toolbar, table, pager, dark-mode) so the two feel like one
+   system. Kept page-local for now; promote shared bits to /jg-rd.css or a
+   /yizkor/jg-yizkor.css only once a second Yizkor page reuses them.
+
+   Navy fills are hardcoded #09497a (light) / #0d2a45 (dark) because
+   var(--navy) flips to light-gray in dark mode and would wash out.
+   ========================================================================== */
+
+
+/* ---- HERO SEARCH --------------------------------------------------------- */
+.yb-search { display: flex; gap: 0; max-width: 620px; background: #ffffff; border-radius: 8px;
+             overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.18); }
+body.dark-mode .yb-search { background: #1e1e1e; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+.yb-search input { flex: 1; border: none; outline: none; padding: 14px 18px; font-size: 1rem;
+                   font-family: inherit; background: transparent; color: var(--charcoal); }
+body.dark-mode .yb-search input { color: #e0e0e0; }
+.yb-search input::placeholder { color: #8a8a8a; }
+/* Magnifying glass: single element, SVG background that swaps in dark mode
+   (search_light.svg on the light search bar, search_dark.svg on the dark one). */
+.yb-search__icon { display: flex; align-items: center; padding: 0 14px 0 18px; }
+.yb-search__icon::before { content: ""; display: block; width: 18px; height: 18px;
+    background: url("/images/site/search_light.svg") center / contain no-repeat; }
+body.dark-mode .yb-search__icon::before { background-image: url("/images/site/search_dark.svg"); }
+.yb-search__clear { border: none; background: transparent; color: #8a8a8a; font-size: 1.3rem; line-height: 1;
+                    padding: 0 16px; cursor: pointer; display: none; }
+.yb-search__clear:hover { color: var(--charcoal); }
+body.dark-mode .yb-search__clear:hover { color: #e0e0e0; }
+.yb-search__clear.is-visible { display: block; }
+
+.yb-search-band {
+    background-color: #09497a;
+    padding: 26px 50px;
+    margin-top: 
+0px;         
+}
+
+body.dark-mode .yb-search-band { background-color: #0d2a45; }
+.yb-search-band__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* ---- LAYOUT: SIDEBAR + RESULTS ------------------------------------------- */
+.yb-layout { max-width: 1180px; margin: 0 auto; padding: 32px 50px 60px;
+             display: grid; grid-template-columns: 230px 1fr; gap: 34px; align-items: start; }
+
+/* ---- SIDEBAR FACETS ------------------------------------------------------ */
+.yb-facets { position: sticky; top: 18px; }
+.yb-facet { margin-bottom: 26px; }
+.yb-facet__head { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;
+                  color: var(--sage); margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid var(--light-blue); }
+body.dark-mode .yb-facet__head { border-bottom-color: #2a2a2a; }
+.yb-facet__list { list-style: none; margin: 0; padding: 0; }
+.yb-facet__item { display: block; width: 100%; text-align: left; background: transparent; border: none;
+                  font-family: inherit; font-size: 0.8125rem; color: var(--charcoal); cursor: pointer;
+                  padding: 5px 8px; border-radius: 5px; display: flex; justify-content: space-between;
+                  align-items: baseline; gap: 8px; transition: background 0.12s; }
+.yb-facet__item:hover { background: var(--ecru); }
+body.dark-mode .yb-facet__item { color: #c8c8c8; }
+body.dark-mode .yb-facet__item:hover { background: #242424; }
+.yb-facet__item.is-active { background: #09497a; color: #ffffff; font-weight: bold; }
+.yb-facet__item.is-active:hover { background: #0a528a; }
+body.dark-mode .yb-facet__item.is-active { background: #0d2a45; color: #ffffff; }
+.yb-facet__item.is-active .yb-facet__count { color: #cfe0ec; }
+.yb-facet__count { font-size: 0.75rem; color: #9a958c; font-variant-numeric: tabular-nums; }
+body.dark-mode .yb-facet__count { color: #777; }
+.yb-facet__item.is-disabled { opacity: 0.4; cursor: default; pointer-events: none; }
+.yb-facet__more { background: transparent; border: none; color: var(--navy); font-family: inherit;
+                  font-size: 0.75rem; font-weight: bold; cursor: pointer; padding: 6px 8px; }
+.yb-facet__more:hover { color: var(--sage); }
+body.dark-mode .yb-facet__more { color: #a8b361; }
+
+.yb-facet__reset { display: none; background: transparent; border: 1px solid #d1caba; border-radius: 22px;
+                   color: var(--navy); font-family: inherit; font-size: 0.75rem; font-weight: bold;
+                   cursor: pointer; padding: 7px 14px; width: 100%; transition: border-color 0.15s; }
+.yb-facet__reset:hover { border-color: var(--sage); }
+.yb-facet__reset.is-visible { display: block; }
+body.dark-mode .yb-facet__reset { color: #e0e0e0; border-color: #333; }
+
+/* ---- RESULTS COLUMN ------------------------------------------------------ */
+.yb-toolbar { display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+              margin-bottom: 14px; flex-wrap: wrap; }
+.yb-count { font-size: 0.875rem; color: var(--charcoal); }
+.yb-count strong { color: var(--navy); font-size: 1.05rem; }
+body.dark-mode .yb-count { color: #a0a0a0; }
+body.dark-mode .yb-count strong { color: #e0e0e0; }
+
+/* Active filter chips */
+.yb-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.yb-chip { display: inline-flex; align-items: center; gap: 7px; background: var(--light-blue); color: #09497a;
+           border: none; border-radius: 22px; padding: 5px 8px 5px 13px; font-size: 0.75rem; font-weight: bold;
+           font-family: inherit; cursor: pointer; }
+body.dark-mode .yb-chip { background: #1e2a33; color: #cfe0ec; }
+.yb-chip__x { font-size: 1rem; line-height: 1; }
+.yb-chip:hover { background: #cdd9e0; }
+body.dark-mode .yb-chip:hover { background: #25323d; }
+
+/* ---- RESULT LIST --------------------------------------------------------- */
+.yb-list { border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; overflow: hidden;
+           box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: var(--white); }
+body.dark-mode .yb-list { border-color: #333; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+
+.yb-item { border-bottom: 1px solid var(--ecru); }
+body.dark-mode .yb-item { border-bottom-color: #2a2a2a; }
+.yb-item:last-child { border-bottom: none; }
+
+.yb-item__row { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start;
+                padding: 15px 18px; cursor: pointer; }
+.yb-item__row:hover { background: var(--ecru); }
+body.dark-mode .yb-item__row:hover { background: #1c1c1c; }
+
+.yb-item__main { min-width: 0; }
+.yb-item__community { font-size: 1rem; font-weight: bold; color: var(--navy); margin: 0 0 3px;
+                      display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; }
+body.dark-mode .yb-item__community { color: #e0e0e0; }
+.yb-item__country { font-size: 0.75rem; font-weight: normal; color: var(--sage); text-transform: uppercase;
+                    letter-spacing: 0.5px; }
+.yb-item__book { font-size: 0.875rem; color: var(--charcoal); margin: 0; line-height: 1.45; }
+body.dark-mode .yb-item__book { color: #b8b8b8; }
+.yb-item__book a { color: var(--navy); text-decoration: none; border-bottom: 1px dotted var(--navy); }
+.yb-item__book a:hover { color: var(--sage); border-bottom-color: var(--sage); }
+body.dark-mode .yb-item__book a { color: #cfe0ec; border-bottom-color: #555; }
+
+/* right-hand meta: badges + chevron */
+.yb-item__meta { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+.yb-badges { display: flex; align-items: center; gap: 6px; }
+.yb-badge { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: bold;
+            padding: 3px 9px; border-radius: 3px; white-space: nowrap; }
+/* status colours - sage for done-ish, neutral for partial */
+.yb-badge--status { background: var(--light-blue); color: #09497a; }
+body.dark-mode .yb-badge--status { background: #1e2a33; color: #cfe0ec; }
+.yb-badge--complete { background: var(--sage); color: #ffffff; }
+body.dark-mode .yb-badge--complete { background: #a8b361; color: #121212; }
+.yb-badge--active { background: var(--light-green); color: #09497a; }
+.yb-icon-print, .yb-icon-fund { color: var(--sage); font-size: 0.95rem; display: inline-flex; }
+body.dark-mode .yb-icon-print, body.dark-mode .yb-icon-fund { color: #a8b361; }
+.yb-chevron { color: #b3ada1; font-size: 0.8rem; transition: transform 0.18s; flex-shrink: 0; }
+body.dark-mode .yb-chevron { color: #666; }
+.yb-item.is-open .yb-chevron { transform: rotate(90deg); }
+
+/* expandable detail */
+.yb-item__detail { display: none; padding: 0 18px 18px 18px; }
+.yb-item.is-open .yb-item__detail { display: block; }
+.yb-detail-grid { display: grid; grid-template-columns: max-content 1fr; gap: 7px 18px;
+                  font-size: 0.8125rem; background: var(--ecru); border-radius: 6px; padding: 14px 16px; }
+body.dark-mode .yb-detail-grid { background: #1a1a1a; }
+.yb-detail-grid dt { color: var(--sage); font-weight: bold; text-transform: uppercase;
+                     font-size: 0.6875rem; letter-spacing: 0.5px; padding-top: 2px; }
+.yb-detail-grid dd { margin: 0; color: var(--charcoal); line-height: 1.5; }
+body.dark-mode .yb-detail-grid dd { color: #c8c8c8; }
+.yb-detail-grid dd a { color: var(--navy); }
+body.dark-mode .yb-detail-grid dd a { color: #cfe0ec; }
+.yb-detail-actions { margin-top: 13px; display: flex; gap: 10px; flex-wrap: wrap; }
+.yb-action { display: inline-flex; align-items: center; gap: 7px; font-size: 0.8125rem; font-weight: bold;
+             text-decoration: none; padding: 8px 16px; border-radius: 22px; }
+.yb-action--primary { background: #09497a; color: #ffffff; }
+.yb-action--primary:hover { background: #0a528a; color: #ffffff; }
+body.dark-mode .yb-action--primary { background: #a8b361; color: #121212; }
+.yb-action--ghost { border: 1px solid #d1caba; color: var(--navy); }
+.yb-action--ghost:hover { border-color: var(--sage); color: var(--sage); }
+body.dark-mode .yb-action--ghost { color: #e0e0e0; border-color: #333; }
+
+/* fund tooltip text in detail */
+.yb-fund-note { font-size: 0.8125rem; color: var(--charcoal); }
+body.dark-mode .yb-fund-note { color: #c8c8c8; }
+.yb-fund-note a { font-weight: bold; }
+
+/* ---- EMPTY STATE --------------------------------------------------------- */
+.yb-empty { padding: 60px 24px; text-align: center; color: var(--charcoal); }
+body.dark-mode .yb-empty { color: #a0a0a0; }
+.yb-empty__icon { font-size: 2.2rem; color: #c9c2b4; margin-bottom: 12px; }
+.yb-empty h3 { font-size: 1.1rem; color: var(--navy); margin: 0 0 6px; }
+body.dark-mode .yb-empty h3 { color: #e0e0e0; }
+.yb-empty button { margin-top: 14px; background: transparent; border: 1px solid #d1caba; border-radius: 22px;
+                   color: var(--navy); font-family: inherit; font-size: 0.8125rem; font-weight: bold;
+                   cursor: pointer; padding: 8px 18px; }
+.yb-empty button:hover { border-color: var(--sage); }
+body.dark-mode .yb-empty button { color: #e0e0e0; border-color: #333; }
+
+/* ---- PAGER --------------------------------------------------------------- */
+.yb-pager { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 22px; }
+.yb-page-btn { background: var(--white); color: var(--navy); border: 1px solid #d1caba; border-radius: 22px;
+               padding: 8px 18px; font-size: 0.75rem; font-weight: bold; cursor: pointer; font-family: inherit;
+               transition: border-color 0.15s; }
+.yb-page-btn:hover:not([disabled]) { border-color: var(--sage); }
+.yb-page-btn[disabled] { opacity: 0.4; cursor: default; }
+body.dark-mode .yb-page-btn { background: #1e1e1e; color: #e0e0e0; border-color: #333; }
+.yb-page-info { font-size: 0.8125rem; color: var(--charcoal); font-variant-numeric: tabular-nums; }
+body.dark-mode .yb-page-info { color: #a0a0a0; }
+
+/* ---- LOADING ------------------------------------------------------------- */
+.yb-loading { padding: 70px 24px; text-align: center; color: var(--sage); font-size: 0.9rem; }
+
+/* ---- INTRO LINKS (donation guidance, carried from legacy page) ----------- */
+.yb-intro { max-width: 1180px; margin: 0 auto; padding: 24px 50px 0; }
+.yb-intro p { font-size: 0.9375rem; color: var(--charcoal); line-height: 1.6; margin: 0 0 8px; }
+body.dark-mode .yb-intro p { color: #c8c8c8; }
+.yb-intro a { color: var(--navy); font-weight: bold; }
+body.dark-mode .yb-intro a { color: #a8b361; }
+
+/* ---- MOBILE -------------------------------------------------------------- */
+@media (max-width: 880px) {
+    .yb-hero { padding: 28px 22px 32px; }
+    .yb-layout { grid-template-columns: 1fr; padding: 24px 20px 50px; gap: 22px; }
+    .yb-intro { padding: 20px 22px 0; }
+    .yb-facets { position: static; }
+    .yb-facet__list--scroll { max-height: none; }
+    /* On mobile, facets become a collapsible block to save vertical space */
+    .yb-facets-toggle { display: flex; }
+}
+.yb-facets-toggle { display: none; align-items: center; gap: 8px; width: 100%; justify-content: space-between;
+                    background: var(--ecru); border: 1px solid #e0d9c9; border-radius: 8px; padding: 12px 16px;
+                    font-family: inherit; font-size: 0.875rem; font-weight: bold; color: var(--navy);
+                    cursor: pointer; margin-bottom: 14px; }
+body.dark-mode .yb-facets-toggle { background: #1a1a1a; border-color: #333; color: #e0e0e0; }
+@media (max-width: 880px) {
+    .yb-facets.is-collapsed .yb-facet,
+    .yb-facets.is-collapsed .yb-facet__reset { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+
+    <!-- ===== HERO ===== -->
+<div class="page-title-band">
+    <span class="tagline">Yizkor Book Project</span>
+    <h1>Yizkor Book Translations</h1>
+    <p class="hero-subtitle">Search translated memorial books by community, region, or title. Browse by the modern name of the town or region.</p>
+</div>
+
+
+
+<!-- YIZKOR BOOK CATALOG SEARCH -->
+<div class="yb-search-band">
+    <div class="yb-search-band__inner">
+        <div class="yb-search">
+            <span class="yb-search__icon" aria-hidden="true"></span>
+            <input type="search" id="yb-q" autocomplete="off"
+                   placeholder="Search a town, region, or book title&hellip;"
+                   aria-label="Search Yizkor book translations">
+            <button class="yb-search__clear" id="yb-clear" type="button" aria-label="Clear search">&times;</button>
+        </div>
+    </div>
+</div>
+
+
+	<!-- SECTION SUBNAV (fetched component) -->
+	<div id="yizkor-subnav"></div>
+
+
+    <!-- ===== INTRO / DONATION LINKS (from legacy page) ===== -->
+    <div class="yb-intro">
+        <p>
+            Translations are available for the regions and communities below. They can also be found
+            by searching the <a href="../database.html">Yizkor Book Database</a>, which lists many further
+            translations not yet on the web.
+        </p>
+        <p>
+            <a href="../donation/">Donate a translation</a> &middot;
+            <a href="../../JewishGen-erosity/v_projectslist.asp?project_cat=23">Contribute to a translation fund</a>
+        </p>
+    </div>
+
+    <!-- ===== CATALOG ===== -->
+    <div class="yb-layout">
+
+        <!-- SIDEBAR FACETS -->
+        <aside class="yb-facets" id="yb-facets" aria-label="Filter translations">
+            <button class="yb-facets-toggle" id="yb-facets-toggle" type="button" aria-expanded="true">
+                <span>Filters</span>
+                <span aria-hidden="true">&#9662;</span>
+            </button>
+            <!-- facet groups injected here -->
+            <button class="yb-facet__reset" id="yb-reset" type="button">Clear all filters</button>
+        </aside>
+
+        <!-- RESULTS -->
+        <section aria-label="Translation results">
+            <div class="yb-toolbar">
+                <span class="yb-count" id="yb-count" aria-live="polite"></span>
+            </div>
+
+            <div class="yb-chips" id="yb-chips"></div>
+
+            <div class="yb-list" id="yb-list">
+                <div class="yb-loading" id="yb-loading">Loading translations&hellip;</div>
+            </div>
+
+            <div class="yb-pager" id="yb-pager"></div>
+        </section>
+
+    </div>
+</main>
+
+<div id="site-footer"></div>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ---------- Component loader (JG40 header/footer) ---------- */
+function loadComponent(id, file) {
+    return fetch(file)
+        .then(function (r) { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+        .then(function (html) { document.getElementById(id).innerHTML = html; })
+        .catch(function (err) { console.warn(err); });
+}
+
+/* ---------- Catalog ---------- */
+(function () {
+    'use strict';
+
+    /* Status code -> clear label (relabelled from the legacy book_status[]
+       for clarity; codes 0/1 never appear in live data so are omitted). */
+    var STATUS_LABELS = {
+        '2': 'In progress',
+        '3': 'Index complete',
+        '4': 'Translation complete',
+        '5': 'Active project'
+    };
+    /* which codes get the filled "done" treatment vs neutral */
+    var STATUS_CLASS = {
+        '2': 'yb-badge--status',
+        '3': 'yb-badge--status',
+        '4': 'yb-badge--complete',
+        '5': 'yb-badge--active'
+    };
+
+    var PER_PAGE = 25;
+    var COUNTRY_VISIBLE = 8;       /* top N countries before "show more" */
+    var FUND_URL = '/JewishGen-erosity/v_projectslist.asp?project_cat=23';
+
+    /* ----- state ----- */
+    var ALL = [];
+    var filters = { group: null, country: null, status: null, inprint: null, q: '' };
+    var page = 1;
+    var countryExpanded = false;
+
+    /* ----- elements ----- */
+    var elList    = document.getElementById('yb-list');
+    var elCount   = document.getElementById('yb-count');
+    var elFacets  = document.getElementById('yb-facets');
+    var elChips   = document.getElementById('yb-chips');
+    var elPager   = document.getElementById('yb-pager');
+    var elReset   = document.getElementById('yb-reset');
+    var elQ       = document.getElementById('yb-q');
+    var elClear   = document.getElementById('yb-clear');
+    var elFacetToggle = document.getElementById('yb-facets-toggle');
+
+    /* ----- helpers ----- */
+    function esc(s) {
+        return String(s == null ? '' : s)
+            .replace(/&(?![a-zA-Z#0-9]+;)/g, '&amp;')  /* keep existing entities intact */
+            .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+    /* book names / descriptions may contain intended HTML (<i>, <br>, &amp;);
+       render those as-is. Community/country are plain and get escaped. */
+    function rawHTML(s) { return s == null ? '' : String(s); }
+
+    function stripBrackets(s) {
+        return String(s || '').replace(/^\s*\[/, '').replace(/\]\s*$/, '').trim();
+    }
+
+    function norm(s) {
+        /* lowercase + strip diacritics + drop punctuation for forgiving search */
+        return String(s || '')
+            .toLowerCase()
+            .normalize ? String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s]/g, ' ')
+                       : String(s || '').toLowerCase();
+    }
+
+    /* a record's searchable text */
+    function haystack(r) {
+        return norm(r.community + ' ' + r.country + ' ' + r.bookName + ' ' + r.description + ' ' + r.group);
+    }
+
+    /* does record pass every filter EXCEPT the named one (for facet counts) */
+    function passes(r, except) {
+        if (except !== 'group'   && filters.group   && r.group !== filters.group) return false;
+        if (except !== 'country' && filters.country && (r.country || '(unspecified)') !== filters.country) return false;
+        if (except !== 'status'  && filters.status  && r.status !== filters.status) return false;
+        if (except !== 'inprint' && filters.inprint === 'yes' && !(r.ybipUrl && r.ybipUrl.trim())) return false;
+        if (except !== 'q' && filters.q) {
+            if (haystack(r).indexOf(filters.q) === -1) return false;
+        }
+        return true;
+    }
+
+    function currentResults() {
+        return ALL.filter(function (r) { return passes(r, null); });
+    }
+
+    /* ----- facet rendering ----- */
+    function countBy(records, keyFn) {
+        var m = {};
+        records.forEach(function (r) {
+            var k = keyFn(r);
+            if (k === '' || k == null) k = '(unspecified)';
+            m[k] = (m[k] || 0) + 1;
+        });
+        return m;
+    }
+
+    function facetGroupHTML(title, key, entries, activeVal, opts) {
+        opts = opts || {};
+        var html = '<div class="yb-facet" data-facet="' + key + '">';
+        html += '<p class="yb-facet__head">' + esc(title) + '</p>';
+        html += '<ul class="yb-facet__list">';
+        entries.forEach(function (e, i) {
+            var hiddenByMore = opts.collapse && !countryExpanded && i >= COUNTRY_VISIBLE && e.value !== activeVal;
+            if (hiddenByMore) return;
+            var active = (e.value === activeVal) ? ' is-active' : '';
+            var disabled = (e.count === 0 && e.value !== activeVal) ? ' is-disabled' : '';
+            html += '<li><button type="button" class="yb-facet__item' + active + disabled + '" ' +
+                    'data-facet="' + key + '" data-value="' + esc(e.value) + '">' +
+                    '<span>' + esc(e.label) + '</span>' +
+                    '<span class="yb-facet__count">' + e.count + '</span></button></li>';
+        });
+        html += '</ul>';
+        if (opts.collapse && entries.length > COUNTRY_VISIBLE) {
+            html += '<button type="button" class="yb-facet__more" data-more="' + key + '">' +
+                    (countryExpanded ? 'Show fewer' : 'Show all ' + entries.length) + '</button>';
+        }
+        html += '</div>';
+        return html;
+    }
+
+    function renderFacets() {
+        /* counts respect all OTHER active filters (live catalog behaviour) */
+        var forGroup   = ALL.filter(function (r) { return passes(r, 'group'); });
+        var forCountry = ALL.filter(function (r) { return passes(r, 'country'); });
+        var forStatus  = ALL.filter(function (r) { return passes(r, 'status'); });
+        var forInprint = ALL.filter(function (r) { return passes(r, 'inprint'); });
+
+        /* GROUP - fixed sensible order */
+        var gCounts = countBy(forGroup, function (r) { return r.group; });
+        var groupOrder = ['Communities', 'Encyclopedias', 'Other languages', 'Miscellaneous'];
+        var gEntries = groupOrder.filter(function (g) { return gCounts[g] != null || filters.group === g; })
+            .map(function (g) { return { value: g, label: g, count: gCounts[g] || 0 }; });
+
+        /* COUNTRY - by count desc, blanks bucketed */
+        var cCounts = countBy(forCountry, function (r) { return r.country; });
+        var cEntries = Object.keys(cCounts).map(function (k) {
+            return { value: k, label: k === '(unspecified)' ? 'Unspecified' : k, count: cCounts[k] };
+        }).sort(function (a, b) { return b.count - a.count || a.label.localeCompare(b.label); });
+
+        /* STATUS - in label order */
+        var sCounts = countBy(forStatus, function (r) { return r.status; });
+        var sEntries = Object.keys(STATUS_LABELS).filter(function (code) {
+            return sCounts[code] != null || filters.status === code;
+        }).map(function (code) {
+            return { value: code, label: STATUS_LABELS[code], count: sCounts[code] || 0 };
+        });
+
+        /* IN PRINT - yes only (with count) */
+        var printCount = forInprint.filter(function (r) { return r.ybipUrl && r.ybipUrl.trim(); }).length;
+        var pEntries = [{ value: 'yes', label: 'Available in print', count: printCount }];
+
+        var html = '';
+        html += facetGroupHTML('Collection', 'group', gEntries, filters.group);
+        html += facetGroupHTML('Country / region', 'country', cEntries, filters.country, { collapse: true });
+        html += facetGroupHTML('Status', 'status', sEntries, filters.status);
+        html += facetGroupHTML('Format', 'inprint', pEntries, filters.inprint);
+
+        /* inject before the reset button + mobile toggle */
+        var toggle = elFacets.querySelector('.yb-facets-toggle');
+        /* clear everything except toggle + reset */
+        Array.prototype.slice.call(elFacets.querySelectorAll('.yb-facet')).forEach(function (n) { n.remove(); });
+        elReset.insertAdjacentHTML('beforebegin', html);
+
+        /* show/hide reset */
+        var any = filters.group || filters.country || filters.status || filters.inprint;
+        elReset.classList.toggle('is-visible', !!any);
+    }
+
+    /* ----- chips (active filters) ----- */
+    function renderChips() {
+        var chips = [];
+        if (filters.group)   chips.push({ key: 'group',   label: filters.group });
+        if (filters.country) chips.push({ key: 'country', label: filters.country === '(unspecified)' ? 'Unspecified' : filters.country });
+        if (filters.status)  chips.push({ key: 'status',  label: STATUS_LABELS[filters.status] });
+        if (filters.inprint) chips.push({ key: 'inprint', label: 'In print' });
+        elChips.innerHTML = chips.map(function (c) {
+            return '<button class="yb-chip" data-clear="' + c.key + '">' + esc(c.label) +
+                   '<span class="yb-chip__x" aria-hidden="true">&times;</span>' +
+                   '<span class="sr-only"> &mdash; remove filter</span></button>';
+        }).join('');
+    }
+
+    /* ----- result list ----- */
+    function statusBadge(r) {
+        var label = STATUS_LABELS[r.status];
+        if (!label) return '';
+        var cls = STATUS_CLASS[r.status] || 'yb-badge--status';
+        return '<span class="yb-badge ' + cls + '">' + esc(label) + '</span>';
+    }
+
+    function itemHTML(r, idx) {
+        var community = r.community && r.community.trim() ? r.community : (r.bookName || 'Untitled');
+        var country = r.country && r.country.trim() ? r.country : '';
+        var titleLinked = r.url
+            ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + rawHTML(r.bookName) + '</a>'
+            : rawHTML(r.bookName);
+
+        var icons = '';
+        if (r.ybipUrl && r.ybipUrl.trim()) {
+            icons += '<span class="yb-icon-print" title="Available in print" aria-label="Available in print">&#128214;</span>';
+        }
+        if (r.status === '5') {
+            icons += '<span class="yb-icon-fund" title="Has a translation fund" aria-label="Has a translation fund">&#9733;</span>';
+        }
+
+        var detail = '<dl class="yb-detail-grid">';
+        if (country) detail += '<dt>Country</dt><dd>' + esc(country) + '</dd>';
+        if (r.language && r.language.trim()) detail += '<dt>Language</dt><dd>' + esc(stripBrackets(r.language)) + '</dd>';
+        if (STATUS_LABELS[r.status]) detail += '<dt>Status</dt><dd>' + esc(STATUS_LABELS[r.status]) + '</dd>';
+        if (r.description && r.description.trim()) detail += '<dt>Description</dt><dd>' + rawHTML(r.description) + '</dd>';
+        var coord = '';
+        if (r.coordinator && r.coordinator.trim()) coord += esc(r.coordinator);
+        if (r.coordinatorEmail && r.coordinatorEmail.trim()) {
+            coord += (coord ? ' ' : '') + '<a href="mailto:' + esc(r.coordinatorEmail) + '">' + esc(r.coordinatorEmail) + '</a>';
+        }
+        if (coord) detail += '<dt>Coordinator</dt><dd>' + coord + '</dd>';
+        detail += '</dl>';
+
+        if (r.status === '5') {
+            detail += '<p class="yb-fund-note" style="margin-top:12px;">' +
+                      'This project has a translation fund. ' +
+                      '<a href="' + FUND_URL + '">Can you help with a donation?</a></p>';
+        }
+
+        var actions = '<div class="yb-detail-actions">';
+        if (r.url) actions += '<a class="yb-action yb-action--primary" href="' + esc(r.url) + '" target="_blank" rel="noopener">Read translation &rarr;</a>';
+        if (r.ybipUrl && r.ybipUrl.trim()) actions += '<a class="yb-action yb-action--ghost" href="' + esc(r.ybipUrl) + '" target="_blank" rel="noopener">In-print edition</a>';
+        actions += '</div>';
+
+        return '' +
+        '<div class="yb-item" data-i="' + idx + '">' +
+          '<div class="yb-item__row" role="button" tabindex="0" aria-expanded="false">' +
+            '<div class="yb-item__main">' +
+              '<p class="yb-item__community">' + esc(community) +
+                (country ? ' <span class="yb-item__country">' + esc(country) + '</span>' : '') +
+              '</p>' +
+              '<p class="yb-item__book">' + titleLinked + '</p>' +
+            '</div>' +
+            '<div class="yb-item__meta">' +
+              '<span class="yb-badges">' + statusBadge(r) + icons + '</span>' +
+              '<span class="yb-chevron" aria-hidden="true">&#9654;</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="yb-item__detail">' + detail + actions + '</div>' +
+        '</div>';
+    }
+
+    function renderList() {
+        var results = currentResults();
+        var total = results.length;
+        var pages = Math.max(1, Math.ceil(total / PER_PAGE));
+        if (page > pages) page = pages;
+        var start = (page - 1) * PER_PAGE;
+        var slice = results.slice(start, start + PER_PAGE);
+
+        /* count line */
+        elCount.innerHTML = '<strong>' + total.toLocaleString() + '</strong> ' +
+            (total === 1 ? 'translation' : 'translations');
+
+        if (total === 0) {
+            elList.innerHTML =
+                '<div class="yb-empty">' +
+                  '<div class="yb-empty__icon" aria-hidden="true">&#128269;</div>' +
+                  '<h3>No translations match</h3>' +
+                  '<p>Try a different town or region, or clear your filters.</p>' +
+                  '<button type="button" id="yb-empty-reset">Clear all filters</button>' +
+                '</div>';
+            elPager.innerHTML = '';
+            var er = document.getElementById('yb-empty-reset');
+            if (er) er.addEventListener('click', resetAll);
+            return;
+        }
+
+        elList.innerHTML = slice.map(function (r) { return itemHTML(r, r.__i); }).join('');
+
+        /* pager */
+        if (pages > 1) {
+            elPager.innerHTML =
+                '<button class="yb-page-btn" data-go="prev"' + (page <= 1 ? ' disabled' : '') + '>' +
+                '<span aria-hidden="true">&larr;</span> Prev</button>' +
+                '<span class="yb-page-info">Page ' + page + ' of ' + pages + '</span>' +
+                '<button class="yb-page-btn" data-go="next"' + (page >= pages ? ' disabled' : '') + '>' +
+                'Next <span aria-hidden="true">&rarr;</span></button>';
+        } else {
+            elPager.innerHTML = '';
+        }
+    }
+
+    function renderAll() {
+        renderFacets();
+        renderChips();
+        renderList();
+    }
+
+    /* ----- actions ----- */
+    function setFilter(key, value) {
+        /* toggle off if same value clicked */
+        filters[key] = (filters[key] === value) ? null : value;
+        page = 1;
+        renderAll();
+    }
+    function resetAll() {
+        filters = { group: null, country: null, status: null, inprint: null, q: '' };
+        elQ.value = '';
+        elClear.classList.remove('is-visible');
+        page = 1;
+        countryExpanded = false;
+        renderAll();
+    }
+
+    /* ----- events ----- */
+    elFacets.addEventListener('click', function (e) {
+        var item = e.target.closest('.yb-facet__item');
+        if (item && !item.classList.contains('is-disabled')) {
+            setFilter(item.getAttribute('data-facet'), item.getAttribute('data-value'));
+            return;
+        }
+        var more = e.target.closest('[data-more]');
+        if (more) { countryExpanded = !countryExpanded; renderFacets(); return; }
+    });
+
+    elChips.addEventListener('click', function (e) {
+        var chip = e.target.closest('[data-clear]');
+        if (chip) { setFilter(chip.getAttribute('data-clear'), filters[chip.getAttribute('data-clear')]); }
+    });
+
+    elReset.addEventListener('click', resetAll);
+
+    elPager.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-go]');
+        if (!btn || btn.disabled) return;
+        page += (btn.getAttribute('data-go') === 'next') ? 1 : -1;
+        renderList();
+        document.querySelector('.yb-layout').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    /* expand / collapse detail rows */
+    elList.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;           /* let links work */
+        var row = e.target.closest('.yb-item__row');
+        if (!row) return;
+        var item = row.closest('.yb-item');
+        var open = item.classList.toggle('is-open');
+        row.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    elList.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        var row = e.target.closest('.yb-item__row');
+        if (!row) return;
+        e.preventDefault();
+        var item = row.closest('.yb-item');
+        var open = item.classList.toggle('is-open');
+        row.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    /* search (debounced) */
+    var qTimer;
+    elQ.addEventListener('input', function () {
+        elClear.classList.toggle('is-visible', elQ.value.length > 0);
+        clearTimeout(qTimer);
+        qTimer = setTimeout(function () {
+            filters.q = norm(elQ.value);
+            page = 1;
+            renderAll();
+        }, 160);
+    });
+    elClear.addEventListener('click', function () {
+        elQ.value = '';
+        filters.q = '';
+        elClear.classList.remove('is-visible');
+        page = 1;
+        renderAll();
+        elQ.focus();
+    });
+
+    /* mobile facet toggle */
+    elFacetToggle.addEventListener('click', function () {
+        var collapsed = elFacets.classList.toggle('is-collapsed');
+        elFacetToggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    });
+
+    /* ----- load data ----- */
+    fetch('datasets.json')
+        .then(function (r) { if (!r.ok) throw new Error('datasets.json failed to load'); return r.json(); })
+        .then(function (data) {
+            ALL = data;
+            ALL.forEach(function (r, i) { r.__i = i; });   /* stable index for rendering */
+            renderAll();
+        })
+        .catch(function (err) {
+            console.error(err);
+            elList.innerHTML = '<div class="yb-empty"><h3>Could not load the catalog</h3>' +
+                '<p>Please refresh the page. If the problem continues, the translation list may be temporarily unavailable.</p></div>';
+        });
+
+})();
+
+/* header / footer last so the catalog paints first */
+Promise.all([
+    loadComponent('site-header', '/Header_NavBar.html'),
+    loadComponent('site-footer', '/Footer.html'),
+    loadComponent('yizkor-subnav', '/yizkor/Yizkor_SubNav.html')
+]).then(setActiveYizkorTab);
+
+function setActiveYizkorTab() {
+    function normalize(p) { return p.replace(/index\.html?$/i, '').replace(/\/+$/, '/') || '/'; }
+    var here = normalize(window.location.pathname);
+    var best = null, bestLen = -1;
+    document.querySelectorAll('.yizkor-nav a').forEach(function (a) {
+        var hp = normalize(a.getAttribute('href'));
+        if ((here === hp || (hp !== '/' && here.indexOf(hp) === 0)) && hp.length > bestLen) {
+            best = a; bestLen = hp.length;
+        }
+    });
+    if (best) best.classList.add('active');
+}
+
+</script>
+</body>
+</html>

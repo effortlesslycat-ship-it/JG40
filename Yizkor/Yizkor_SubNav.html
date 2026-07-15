@@ -1,0 +1,79 @@
+<style>
+/* =====================================================
+   YIZKOR BOOK PROJECT - SHARED SUB-NAV COMPONENT
+   CHW / Project Shorashim
+
+   Injected via fetch() into #yizkor-subnav on Yizkor
+   SECTION pages (hub, translations catalog, database,
+   infofiles, ybip, insights, links, history, faq,
+   active projects). NOT used on individual book reading
+   pages - those keep their own masthead + chapter-nav.
+
+   Tabs only for now (no stats bar yet - may add later).
+
+   Active link is set by each host page's JS AFTER the
+   fetch resolves (scripts inside innerHTML do not run),
+   matching window.location.pathname against each href.
+
+   Uses div[role=navigation], NOT <nav>, to dodge the
+   global nav {} cascade. Navy values used as fills are
+   hardcoded #09497a (light) / #0d2a45 (dark): var(--navy)
+   flips to light-gray in dark mode and would wash out.
+   ASCII-only: verify grep -nP '[^\x00-\x7F]'.
+   ===================================================== */
+
+.yizkor-nav {
+    background-color: var(--white);
+    border-bottom: 2px solid var(--cream);
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+body.dark-mode .yizkor-nav {
+    background-color: #121212;
+    border-bottom-color: #333;
+}
+.yizkor-nav a {
+    display: inline-block;
+    padding: 13px 18px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s;
+}
+.yizkor-nav a:hover {
+    color: #09497a;
+    border-bottom-color: var(--sage);
+}
+.yizkor-nav a.active {
+    color: #09497a;
+    border-bottom-color: #09497a;
+}
+body.dark-mode .yizkor-nav a { color: #a0a0a0; }
+body.dark-mode .yizkor-nav a:hover,
+body.dark-mode .yizkor-nav a.active {
+    color: #e0e0e0;
+    border-bottom-color: #a8b361;
+}
+
+@media (max-width: 900px) {
+    .yizkor-nav { padding: 0 20px; }
+}
+</style>
+
+<!-- Yizkor Book Project section navigation.
+     Active class is set by each page's JS after fetch resolves. -->
+<div role="navigation" class="yizkor-nav" aria-label="Yizkor Book Project section navigation">
+    <a href="/yizkor/">Project Home</a>
+    <a href="/yizkor/translations/">Translations</a>
+    <a href="/databases/yizkor/">Necrology Index</a>
+    <a href="/databases/yizkor/Names/">Master Name Index</a>
+    <a href="/jewishgen-erosity/YizkorTr/">Active Projects</a>
+    <a href="/shop/books/">Order Books</a>
+    <a href="/yizkor/faq.html">FAQ</a>
+</div>

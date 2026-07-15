@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ============================================================================
+     Yizkor Book Links (JG40 / Project Shorashim)
+     /yizkor/links.html   CHW
+
+     Curated resource list. Reuses the existing hub link-list component from
+     jg-yizkor-section.css (.yzs-list / .yzs-entry / .yzs-eyebrow) - no new CSS.
+     Shell: global .page-title-band + Yizkor subnav.
+
+     ASCII-only: verify grep -nP '[^\x00-\x7F]'. Navy hardcoded #09497a/#0d2a45.
+
+     Link changes from legacy (per CHW):
+       - Portland OR + Seattle WA Angelfire entries removed (both links dead)
+       - San Francisco repointed to JFCS Holocaust Center
+       - Boston (Blatt, 1996) kept as an unlinked print citation
+       - KehilaLinks repointed to https://kehilalinks.jewishgen.org/
+       - Detroit relabeled Farmington Hills (matches yizlibs.html)
+       - Glossary now points to the site-wide /HowToFAQ/glossary.html
+       - Added: Once There Was a Town (Ziegelman)
+============================================================================ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yizkor Book Links &mdash; JewishGen</title>
+    <meta name="description" content="Resources for finding a Jewish community or a Yizkor book: community databases, library and archive collections, and published Yizkor book bibliographies.">
+
+    <!-- 1. Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- 2. JewishGen Global Design System -->
+    <link rel="stylesheet" href="/jg-global.css">
+    <!-- 3. Yizkor section styles -->
+    <link rel="stylesheet" href="/yizkor/jg-yizkor-section.css">
+    <style>
+        main { flex: 1; }
+        /* group spacing: each block is an eyebrow + a two-column list */
+        .yzs-linkgroup { margin: 0 0 2.6rem; }
+        .yzs-linkgroup:last-of-type { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- TITLE BAND (global component) -->
+<div class="page-title-band">
+    <span class="tagline">Yizkor Book Project</span>
+    <h1>Yizkor Book Links</h1>
+    <p class="hero-subtitle">Resources for finding a Jewish community or a Yizkor book</p>
+</div>
+
+<!-- SECTION SUBNAV (fetched component) -->
+<div id="yizkor-subnav"></div>
+
+<main>
+<div class="yzs-wrap">
+<div class="yzs-inner">
+
+    <div class="yzs-listintro">
+        <p>The following additional resources can provide valuable information on finding a Jewish community or a Yizkor book.</p>
+    </div>
+
+    <!-- START HERE -->
+    <section class="yzs-linkgroup">
+        <p class="yzs-eyebrow">Start Here</p>
+        <div class="yzs-cards">
+            <a class="yzs-card" href="/yizkor/faq.html">
+                <span class="yzs-card__kicker">Reference</span>
+                <p class="yzs-card__title">Frequently Asked Questions <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Common questions about Yizkor books and the Yizkor Book Project.</p>
+            </a>
+            <a class="yzs-card" href="/HowToFAQ/glossary.html">
+                <span class="yzs-card__kicker">Reference</span>
+                <p class="yzs-card__title">JewishGen Glossary <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Definitions of Yizkor book and Jewish genealogy terms.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- LOCATING A JEWISH COMMUNITY -->
+    <section class="yzs-linkgroup">
+        <p class="yzs-eyebrow">Locating a Jewish Community</p>
+        <div class="yzs-cards">
+            <a class="yzs-card" href="/Communities/">
+                <span class="yzs-card__kicker">Database</span>
+                <p class="yzs-card__title">JewishGen Communities Database <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Soundex searching of the U.S. Board of Geographic Names database of central and eastern European communities. Gives current name, latitude and longitude, and map location.</p>
+            </a>
+            <a class="yzs-card" href="https://www.avotaynu.com/allbooks.htm" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">Book</span>
+                <p class="yzs-card__title">Where Once We Walked <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">A Guide to the Jewish Communities Destroyed in the Holocaust. Revised Edition, by Gary Mokotoff and Sallyann Amdur Sack with Alexander Sharon (Bergenfield, NJ: Avotaynu, 2002). Locates 23,500 towns in Central and Eastern Europe where Jews resided.</p>
+            </a>
+            <div class="yzs-card yzs-card--static">
+                <span class="yzs-card__kicker">Book</span>
+                <p class="yzs-card__title">Historical Atlas of East Central Europe</p>
+                <p class="yzs-card__desc">By Paul Robert Magocsi (Seattle &amp; London: Univ. of Washington Press, 1993). Describes historical boundary changes for countries and administrative districts in East Central Europe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADDITIONAL JEWISH COMMUNITY INFORMATION -->
+    <section class="yzs-linkgroup">
+        <p class="yzs-eyebrow">Additional Jewish Community Information</p>
+        <div class="yzs-cards">
+            <a class="yzs-card" href="https://kehilalinks.jewishgen.org/" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">Project</span>
+                <p class="yzs-card__title">JewishGen KehilaLinks <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Information and resources on a number of communities, as provided by JewishGen members.</p>
+            </a>
+            <a class="yzs-card" href="/jgff/">
+                <span class="yzs-card__kicker">Database</span>
+                <p class="yzs-card__title">JewishGen Family Finder <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Lists genealogists interested in a particular Jewish community.</p>
+            </a>
+            <a class="yzs-card" href="https://www.jri-poland.org/" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">External Index</span>
+                <p class="yzs-card__title">Jewish Records Indexing &ndash; Poland <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">An online index of Jewish vital records for Poland.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- LOCATING YIZKOR BOOKS -->
+    <section class="yzs-linkgroup">
+        <p class="yzs-eyebrow">Locating Yizkor Books</p>
+        <div class="yzs-cards">
+            <a class="yzs-card" href="https://www.yiddishbookcenter.org/collections/yizkor-books" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">Amherst, MA</span>
+                <p class="yzs-card__title">National Yiddish Book Center <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Catalog of digitized Yizkor book reprints for sale.</p>
+            </a>
+            <div class="yzs-card yzs-card--static">
+                <span class="yzs-card__kicker">Boston, MA</span>
+                <p class="yzs-card__title">Resources for Jewish Genealogy in the Boston Area</p>
+                <p class="yzs-card__desc">By Warren Blatt (Newton, MA: JGS of Greater Boston, 1996).</p>
+            </div>
+            <a class="yzs-card" href="https://holocaustcenter.org/" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">Farmington Hills, MI</span>
+                <p class="yzs-card__title">Holocaust Memorial Center <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Memorial Book Collection of the Holocaust Memorial Center, Zekelman Family Campus.</p>
+            </a>
+            <a class="yzs-card" href="https://www.avotaynu.com/allbooks.htm" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">Israel</span>
+                <p class="yzs-card__title">A Guide to Genealogical Resources in Israel <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Revised Edition, by Sallyann Amdur Sack and the Israel Genealogical Society (Teaneck, NJ: Avotaynu, 1995).</p>
+            </a>
+            <a class="yzs-card" href="https://web.library.yale.edu/international/judaica-collection" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">New Haven, CT</span>
+                <p class="yzs-card__title">Yale University Libraries <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Judaica Collection, Yizkor books.</p>
+            </a>
+            <a class="yzs-card" href="https://jgsny.org/" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">New York, NY</span>
+                <p class="yzs-card__title">Genealogical Resources in New York <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Jewish Genealogical Society of New York.</p>
+            </a>
+            <a class="yzs-card" href="https://www.nypl.org/collections/nypl-recommendations/guides/yizkorbooks" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">New York, NY</span>
+                <p class="yzs-card__title">New York Public Library, Dorot Division <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Online digital images of entire Yizkor books.</p>
+            </a>
+            <a class="yzs-card" href="https://holocaustcenter.jfcs.org/library-archives/library-collections/" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">San Francisco, CA</span>
+                <p class="yzs-card__title">JFCS Holocaust Center <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Yizkor books in the Holocaust Center library collections.</p>
+            </a>
+            <a class="yzs-card" href="https://slouc.na2.iiivega.com/search?query=yizkor" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">St. Louis, MO</span>
+                <p class="yzs-card__title">St. Louis County Library <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Yizkor books in the Special Collections Department.</p>
+            </a>
+            <a class="yzs-card" href="https://collections.ushmm.org/search/" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">Washington, DC</span>
+                <p class="yzs-card__title">U.S. Holocaust Memorial Museum Library <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Online catalog.</p>
+            </a>
+            <a class="yzs-card" href="https://catalog.loc.gov/" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">Washington, DC</span>
+                <p class="yzs-card__title">Library of Congress <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">Online catalog.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- OTHER YIZKOR BOOK LISTS -->
+    <section class="yzs-linkgroup">
+        <p class="yzs-eyebrow">Other Yizkor Book Lists</p>
+        <div class="yzs-cards">
+            <a class="yzs-card" href="https://iupress.org/" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">Book</span>
+                <p class="yzs-card__title">From a Ruined Garden <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">The Memorial Books of Polish Jewry. Second Expanded Edition, edited and translated by Jack Kugelmass and Jonathan Boyarin, with Geographical Index and Bibliography by Zachary M. Baker (Bloomington, IN: Indiana University Press, 1998).</p>
+            </a>
+            <a class="yzs-card" href="https://www.avotaynu.com/allbooks.htm" target="_blank" rel="noopener">
+                <span class="yzs-card__kicker">Book</span>
+                <p class="yzs-card__title">How To Document Victims and Locate Survivors of the Holocaust <span class="yzs-arrow">&rarr;</span></p>
+                <p class="yzs-card__desc">By Gary Mokotoff (Teaneck, NJ: Avotaynu, 1995). See Appendix A, Towns with Published Yizkor Books.</p>
+            </a>
+            <div class="yzs-card yzs-card--static">
+                <span class="yzs-card__kicker">Book</span>
+                <p class="yzs-card__title">Once There Was a Town</p>
+                <p class="yzs-card__desc">The Memory Books of a Lost Jewish World. By Jane Ziegelman.</p>
+            </div>
+            <div class="yzs-card yzs-card--static">
+                <span class="yzs-card__kicker">Book</span>
+                <p class="yzs-card__title">From Generation to Generation</p>
+                <p class="yzs-card__desc">Revised Edition, by Arthur Kurzweil (New York: HarperCollins, 1994).</p>
+            </div>
+        </div>
+    </section>
+
+    <p class="yzs-credit">
+        Maintained by the <a href="mailto:lackerfeld@jewishgen.org">JewishGen Yizkor Book Project</a>. Updated 21 Jul 2025.
+    </p>
+
+</div><!-- /.yzs-inner -->
+</div><!-- /.yzs-wrap -->
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+    /* -- Component loader ----------------------------------------- */
+    function loadComponent(id, file) {
+        return fetch(file)
+            .then(function (r) { if (!r.ok) throw new Error('Could not load ' + file); return r.text(); })
+            .then(function (html) { document.getElementById(id).innerHTML = html; })
+            .catch(function (err) { console.warn(err); });
+    }
+
+    /* -- Active Yizkor subnav tab (longest-path match) ------------ */
+    function setActiveYizkorTab() {
+        function normalize(p) { return p.replace(/index\.html?$/i, '').replace(/\/+$/, '/') || '/'; }
+        var here = normalize(window.location.pathname);
+        var best = null, bestLen = -1;
+        document.querySelectorAll('.yizkor-nav a').forEach(function (a) {
+            var hp = normalize(a.getAttribute('href'));
+            if ((here === hp || (hp !== '/' && here.indexOf(hp) === 0)) && hp.length > bestLen) {
+                best = a; bestLen = hp.length;
+            }
+        });
+        if (best) best.classList.add('active');
+    }
+
+    loadComponent('yizkor-subnav', '/yizkor/Yizkor_SubNav.html').then(setActiveYizkorTab);
+
+    Promise.all([
+        loadComponent('site-header', '/Header_NavBar.html'),
+        loadComponent('site-footer', '/Footer.html')
+    ]);
+</script>
+
+</body>
+</html>
