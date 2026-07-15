@@ -1,0 +1,12 @@
+<CENTER>
+<H1>JewishGen Austria-Czech Database</H1>
+</CENTER>
+
+
+<BLOCKQUOTE>
+<P CLASS="lgtext">
+Welcome to the <B><I>JewishGen Austria-Czech Database</I></B>.&nbsp; This is a multiple database search facility, which incorporates all the databases listed below.&nbsp;<BR><br>
+As of August 2024, it encompasses more than 2.7 million records from Jewish communities which once existed in Austria and the Czech Republic (Bohemia and Moravia), including vital records, census lists and other types of documents. The database is continually updated, with new records being added regularly. <br><br>For more information, or to get involved, please contact <a href="mailto:rschoenberg@JewishGen.org">Randy Schoenberg</a>.
+</P>
+</BLOCKQUOTE>
+
