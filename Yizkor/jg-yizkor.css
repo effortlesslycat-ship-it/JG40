@@ -1,0 +1,568 @@
+/* ============================================================================
+   jg-yizkor.css  -  Shared styles for Yizkor Book Translation pages (JG40)
+   CHW / Project Shorashim
+
+   Used by every book LANDING / table-of-contents page (e.g. balti/balti.html,
+   jaslo/jaslo.html) and by the reading/CHAPTER pages (.yb-reading container).
+   Link AFTER /jg-global.css:
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="/jg-global.css">
+     <link rel="stylesheet" href="/yizkor/jg-yizkor.css">
+
+   Layout note: content width uses a responsive container - side breathing room
+   that grows with the viewport, then caps so reading lines stay comfortable.
+   The two cap values below are the single knobs to adjust width:
+       reading content (TOC + chapter text) ..... 960px   (.yb-inner, .yb-reading)
+       masthead band ............................ 1100px  (.yb-masthead__inner)
+
+   Navy fills are hardcoded #09497a (light) / #0d2a45 (dark): var(--navy) flips
+   to light-gray in dark mode and would wash out.
+   ASCII-only file: verify with grep -nP '[^\x00-\x7F]'.
+   ========================================================================== */
+
+/* Yizkor pages use plain link colour from context, not Bootstrap blue. */
+.yb-masthead a,
+.yb-wrap a,
+.yb-reading a { text-decoration: none; }
+
+/* ============================================================================
+   1. RESPONSIVE CONTAINERS  (breathing room + wider on wider monitors)
+   ========================================================================== */
+.yb-masthead__inner {
+    width: min(100% - 4rem, 1100px);   /* 2rem gutter each side, caps at 1100 */
+    margin-inline: auto;
+}
+.yb-inner {
+    width: min(100% - 3rem, 960px);    /* TOC: 1.5rem gutter each side, caps at 960 */
+    margin-inline: auto;
+}
+.yb-reading,
+.chapter-inner {
+    width: min(100% - 3rem, 840px);    /* reading prose: a touch narrower so long
+                                          translated passages stay comfortable */
+    margin-inline: auto;
+}
+
+/* ============================================================================
+   2. BOOK-HOME MASTHEAD (navy hero)
+   ========================================================================== */
+.yb-masthead { background-color: #09497a; padding: 30px 0 38px; }
+body.dark-mode .yb-masthead { background-color: #0d2a45; }
+
+.yb-back { display: inline-block; color: var(--light-green); font-size: 0.8125rem; font-weight: bold;
+           text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 22px; }
+.yb-back:hover { color: #ffffff; }
+.yb-back .arrow { margin-right: 6px; }
+
+.yb-book { display: grid; grid-template-columns: 170px 1fr; gap: 34px; align-items: start; }
+
+/* cover slot - holds either a real <img> or the generated cover (--generated) */
+.yb-cover { width: 170px; border-radius: 6px; box-shadow: 0 6px 20px rgba(0,0,0,0.28); overflow: hidden; }
+body.dark-mode .yb-cover { box-shadow: 0 6px 22px rgba(0,0,0,0.5); }
+.yb-cover img { display: block; width: 100%; height: auto; }
+
+/* generated cover for books with no cover image */
+.yb-cover--generated { aspect-ratio: 2 / 3; background: var(--ecru); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; padding: 20px 16px; }
+body.dark-mode .yb-cover--generated { background: #15212e; }
+.yb-cover__icon { width: 46px; height: auto; margin-bottom: 14px; opacity: 0.92; }
+
+/* Book icons use a SINGLE element with a background image that swaps in dark
+   mode. This is deliberately not a two-<img> swap: with only one element it is
+   structurally impossible to show both icons at once (the recurring "double
+   icon" bug). Worst case is a missing icon, never a doubled one.
+   The reg (navy) art shows in light mode; the dark (white) art in dark mode. */
+.yb-cover__icon { width: 50px; height: 42px; margin-bottom: 14px; opacity: 0.92;
+    background: url("/images/site/yizkor-book-icon-reg.png") center / contain no-repeat; }
+body.dark-mode .yb-cover__icon { background-image: url("/images/site/yizkor-book-icon-dark.png"); }
+.yb-act__icon { width: 18px; height: 16px; flex-shrink: 0;
+    background: url("/images/site/yizkor-book-icon-reg.png") center / contain no-repeat; }
+body.dark-mode .yb-act__icon { background-image: url("/images/site/yizkor-book-icon-dark.png"); }
+.yb-cover__town { font-family: Georgia, 'Times New Roman', serif; font-size: 1.35rem; line-height: 1.15;
+                  color: #09497a; margin: 0 0 8px; }
+body.dark-mode .yb-cover__town { color: #e0e0e0; }
+.yb-cover__rule { width: 30px; height: 2px; background: var(--sage); margin: 0 0 10px; }
+.yb-cover__kicker { font-size: 0.5625rem; text-transform: uppercase; letter-spacing: 1.5px;
+                    font-weight: bold; color: var(--sage); }
+
+.yb-id { min-width: 0; }
+.yb-id .record-type-tag { display: inline-block; background-color: var(--sage); color: #ffffff;
+    font-size: 0.6875rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;
+    padding: 4px 12px; border-radius: 3px; margin-bottom: 14px; }
+body.dark-mode .yb-id .record-type-tag { background-color: #a8b361; color: #121212; }
+.yb-id h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 2.15rem; font-weight: normal;
+            color: #ffffff; line-height: 1.12; margin: 0 0 6px; }
+.yb-id__english { font-size: 1rem; color: #cfe0ec; margin: 0 0 16px; }
+.yb-id__meta { font-size: 0.875rem; color: #d8e4ec; line-height: 1.7; margin: 0 0 6px; }
+.yb-id__meta em { font-style: italic; color: #b9d0df; }
+.yb-id__source { font-style: italic; color: #b9d0df; }
+.yb-id__coords { font-variant-numeric: tabular-nums; }
+.yb-id__sep { opacity: 0.5; margin: 0 8px; }
+
+/* action pills (purchase / donate) - both green, matching across pages */
+.yb-actions { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+.yb-act { display: inline-flex; align-items: center; gap: 9px; font-size: 0.8125rem; font-weight: bold;
+          padding: 9px 18px; border-radius: 24px; }
+.yb-act img { width: 17px; height: auto; }
+.yb-act--print,
+.yb-act--donate { background: var(--light-green); color: #09497a; }
+.yb-act--print:hover,
+.yb-act--donate:hover { background: #d4d98f; color: #09497a; }
+body.dark-mode .yb-act--print,
+body.dark-mode .yb-act--donate { background: #a8b361; color: #121212; }
+
+/* active-project note under the actions */
+.yb-active-note { margin-top: 14px; font-size: 0.8125rem; color: #cfe0ec; line-height: 1.6; max-width: 60ch; }
+.yb-active-note strong { color: #ffffff; }
+
+/* ============================================================================
+   3. ECRU CONTENT WRAP
+   ========================================================================== */
+.yb-wrap { background-color: var(--ecru); padding: 3rem 0 3.5rem; }
+
+/* ============================================================================
+   4. TABLE OF CONTENTS
+   ========================================================================== */
+.toc-heading { font-family: Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: normal;
+               color: var(--navy); margin: 0 0 4px; }
+body.dark-mode .toc-heading { color: #e0e0e0; }
+.toc-translator { font-size: 0.875rem; color: var(--charcoal); opacity: 0.75; margin: 0 0 8px; }
+body.dark-mode .toc-translator { color: #aaa; }
+.toc-translator strong { color: var(--sage); font-weight: bold; }
+
+/* legend explaining the linked / not-yet-translated distinction.
+   Active-project books are only partly translated, so this needs to actually be
+   read - a clear callout, not a faint caption. */
+.toc-legend { display: flex; flex-wrap: wrap; gap: 10px 28px;
+    background: var(--light-blue); border-left: 4px solid var(--sage);
+    border-radius: 0 6px 6px 0; padding: 14px 18px; margin: 6px 0 26px;
+    font-size: 0.875rem; line-height: 1.5; color: var(--charcoal); }
+body.dark-mode .toc-legend { background: #16242f; border-left-color: #a8b361; color: #cfe0ec; }
+.toc-legend__item { display: inline-flex; align-items: center; gap: 9px; }
+.toc-legend__dot { width: 11px; height: 11px; border-radius: 2px; flex-shrink: 0; }
+.toc-legend__dot--linked { background: #09497a; }
+body.dark-mode .toc-legend__dot--linked { background: #8ab0c9; }
+.toc-legend__dot--pending { background: #b3ada1; }
+body.dark-mode .toc-legend__dot--pending { background: #6c6c6c; }
+.toc-legend strong { color: #09497a; font-weight: bold; }
+body.dark-mode .toc-legend strong { color: #ffffff; }
+
+/* chapter section header (chaptered books like Balti; Jaslo is flat) */
+.toc-chapter { font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; font-weight: bold;
+    color: var(--navy); text-transform: uppercase; letter-spacing: 1px;
+    border-bottom: 2px solid rgba(9,73,122,0.18); padding-bottom: 8px; margin: 30px 0 6px; }
+body.dark-mode .toc-chapter { color: #e0e0e0; border-bottom-color: #333; }
+
+.toc-list { list-style: none; padding: 0; margin: 0; }
+.toc-entry { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 16px;
+             padding: 8px 0; border-bottom: 1px solid rgba(9,73,122,0.07); }
+.toc-entry:last-child { border-bottom: none; }
+.toc-entry.level-1 { padding-left: 22px; }
+.toc-entry.level-2 { padding-left: 44px; }
+body.dark-mode .toc-entry { border-bottom-color: #2a2a2a; }
+
+.toc-title { color: var(--navy); font-size: 0.9375rem; line-height: 1.4; text-decoration: underline dotted;
+             text-underline-offset: 2px; }
+.toc-title:hover { color: var(--sage); text-decoration: none; }
+body.dark-mode .toc-title { color: #8ab0c9; }
+body.dark-mode .toc-title:hover { color: #a8b361; }
+/* not-yet-translated entries: plain grey, no link */
+.toc-untranslated { color: var(--charcoal); opacity: 0.5; font-size: 0.9375rem; line-height: 1.4; }
+body.dark-mode .toc-untranslated { color: #777; }
+.toc-author { display: block; font-size: 0.8125rem; font-style: italic; color: var(--charcoal);
+              opacity: 0.7; margin-top: 2px; }
+body.dark-mode .toc-author { color: #888; }
+.toc-page { font-size: 0.875rem; color: var(--charcoal); white-space: nowrap; padding-top: 2px;
+            font-variant-numeric: tabular-nums; opacity: 0.8; min-width: 40px; text-align: right; }
+body.dark-mode .toc-page { color: #aaa; }
+
+/* supplementary material */
+.toc-supp-heading { font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--charcoal); opacity: 0.65; margin: 28px 0 8px; }
+body.dark-mode .toc-supp-heading { color: #999; }
+.toc-supp { padding: 6px 0; border-bottom: 1px solid rgba(9,73,122,0.07); }
+.toc-supp:last-child { border-bottom: none; }
+.toc-supp a { color: var(--navy); font-size: 0.9375rem; text-decoration: underline dotted; text-underline-offset: 2px; }
+.toc-supp a:hover { color: var(--sage); }
+body.dark-mode .toc-supp a { color: #8ab0c9; }
+
+/* ============================================================================
+   5. ABOUT THIS TRANSLATION (demoted boilerplate)
+   ========================================================================== */
+.yb-about { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(9,73,122,0.15); }
+body.dark-mode .yb-about { border-top-color: #333; }
+.yb-about__heading { font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+                     color: var(--charcoal); opacity: 0.6; margin: 0 0 12px; }
+body.dark-mode .yb-about__heading { color: #999; }
+.yb-about p { font-size: 0.8125rem; color: var(--charcoal); opacity: 0.78; line-height: 1.6; margin: 0 0 10px; }
+body.dark-mode .yb-about p { color: #999; }
+.yb-about p:last-child { margin-bottom: 0; }
+.yb-about__source { font-style: italic; }
+.yb-about a { color: var(--navy); text-decoration: underline dotted; }
+body.dark-mode .yb-about a { color: #8ab0c9; }
+
+/* ============================================================================
+   6. FOOT NAV + CREDITS
+   ========================================================================== */
+.yb-footnav { display: flex; gap: 24px; flex-wrap: wrap; padding-top: 26px; margin-top: 32px;
+              border-top: 1px solid rgba(9,73,122,0.12); }
+body.dark-mode .yb-footnav { border-top-color: #333; }
+.yb-footnav a { color: var(--navy); font-size: 0.875rem; font-weight: 600; text-decoration: underline dotted; }
+.yb-footnav a:hover { color: var(--sage); }
+body.dark-mode .yb-footnav a { color: #8ab0c9; }
+.yb-credits { font-size: 0.8125rem; color: var(--charcoal); opacity: 0.6; margin-top: 18px; line-height: 1.65; }
+body.dark-mode .yb-credits { color: #777; }
+.yb-credits a { color: inherit; text-decoration: underline dotted; }
+
+/* ============================================================================
+   7. READING / CHAPTER PAGES
+   Structure:
+       <div class="yb-chapter-band"> compact navy title + breadcrumb </div>
+       <div class="chapter-nav"> sticky prev / TOC / next </div>
+       <main class="chapter-wrap"><div class="chapter-inner">
+           <article class="chapter-body"> ... text ... </article>
+       </div></main>
+   Reading width is the responsive .chapter-inner container defined in section 1.
+   Images: wrap each <img> in <a href="full.jpg"> inside a <figure> so the
+   lightbox (jg-lightbox.js) enlarges them and pulls the <figcaption> as caption.
+   ========================================================================== */
+
+/* compact navy title band (yizkor-scoped so it never collides with the global
+   .page-title-band component used elsewhere on the site) */
+.yb-chapter-band { background-color: #09497a; padding: 22px 0; text-align: center; }
+body.dark-mode .yb-chapter-band { background-color: #0d2a45; }
+.yb-chapter-band__inner { width: min(100% - 3rem, 840px); margin-inline: auto; }
+.yb-chapter-band .breadcrumb-line { display: block; color: var(--light-green); font-size: 0.8125rem;
+    letter-spacing: 0.5px; margin-bottom: 6px; }
+.yb-chapter-band .breadcrumb-line a { color: var(--light-green); text-decoration: underline dotted;
+    text-underline-offset: 2px; }
+.yb-chapter-band .breadcrumb-line a:hover { color: #ffffff; }
+/* tagline: small sage label above the chapter title. Preferred over the
+   breadcrumb on new pages; matches the .record-type-tag on the landing masthead
+   so a chapter and its book read as the same thing. */
+.yb-chapter-band .tagline { display: inline-block; background-color: var(--sage); color: #ffffff;
+    font-size: 0.625rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;
+    padding: 3px 11px; border-radius: 3px; margin-bottom: 12px; }
+body.dark-mode .yb-chapter-band .tagline { background-color: #a8b361; color: #121212; }
+.yb-chapter-band h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 1.5rem;
+    font-weight: normal; color: #ffffff; line-height: 1.25; }
+
+/* page navigation - Previous hard-left, Table of Contents centered, Next
+   hard-right. A 3-column grid (1fr auto 1fr) keeps TOC dead-centre regardless
+   of the side link widths. Used by the sticky top bar and the bottom nav.
+   On the first/last page leave the empty slot in place (an empty <span> in the
+   prev or next cell) so the centre stays centred. */
+.chapter-nav,
+.chapter-pagenav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; }
+.chapter-nav .nav-prev, .chapter-pagenav .nav-prev { justify-self: start; }
+.chapter-nav .nav-toc,  .chapter-pagenav .nav-toc  { justify-self: center; }
+.chapter-nav .nav-next, .chapter-pagenav .nav-next { justify-self: end; }
+
+/* sticky top bar chrome */
+.chapter-nav { background-color: var(--white); border-bottom: 1px solid var(--cream);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07); padding: 9px 1.25rem; position: sticky; top: 0; z-index: 100; }
+body.dark-mode .chapter-nav { background-color: #121212; border-bottom-color: #2e2e2e;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+
+/* bottom page-nav chrome */
+.chapter-pagenav { border-top: 1px solid rgba(9,73,122,0.12); padding-top: 20px; margin-top: 2rem;
+    font-family: Arial, sans-serif; }
+body.dark-mode .chapter-pagenav { border-top-color: #2e2e2e; }
+
+/* shared nav link styling */
+.chapter-nav a, .chapter-pagenav a { font-size: 0.8125rem; font-weight: 600; color: var(--navy);
+    letter-spacing: 0.25px; }
+.chapter-pagenav a { text-decoration: underline dotted; }
+.chapter-nav a:hover, .chapter-pagenav a:hover { color: var(--sage); }
+body.dark-mode .chapter-nav a, body.dark-mode .chapter-pagenav a { color: #8ab0c9; }
+body.dark-mode .chapter-nav a:hover, body.dark-mode .chapter-pagenav a:hover { color: #a8b361; }
+
+/* reading wrap (ecru); .chapter-inner width comes from section 1 */
+.chapter-wrap { background-color: var(--ecru); padding: 3rem 0; flex: 1; }
+
+/* body text - book reading experience */
+.chapter-body { font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; line-height: 1.8;
+    color: var(--charcoal); }
+body.dark-mode .chapter-body { color: #d8d8d8; }
+.chapter-body p { margin: 0 0 1.2em; }
+.chapter-body h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.375rem; font-weight: normal;
+    color: var(--navy); text-align: center; margin: 1.5em 0 0.5em; line-height: 1.3; }
+.chapter-body h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.125rem; font-weight: bold;
+    color: var(--navy); text-align: center; margin: 1.5em 0 0.5em; }
+.chapter-body h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; font-weight: bold;
+    color: var(--charcoal); text-align: center; margin: 1.25em 0 0.4em; }
+body.dark-mode .chapter-body h1,
+body.dark-mode .chapter-body h2 { color: #e8e8e8; }
+body.dark-mode .chapter-body h3 { color: #e8e8e8; }
+
+/* page-number markers */
+.page-marker { display: block; font-family: Arial, sans-serif; font-size: 0.75rem; font-style: italic;
+    color: var(--charcoal); opacity: 0.45; margin: 1.5em 0 0.25em; user-select: none; }
+body.dark-mode .page-marker { color: #666; opacity: 1; }
+
+/* verse / quotes and centered text */
+.chapter-body blockquote { margin: 1em 0 1em 2em; padding: 0; border: none; font-style: italic; }
+.chapter-center { text-align: center; margin: 1em 0; }
+
+/* figures - the <a> wrapper is what the lightbox hooks; cursor set by the script */
+.chapter-figure { margin: 1.5em auto; text-align: center; max-width: 440px; }
+.chapter-figure a { display: inline-block; }
+.chapter-figure img { max-width: 100%; height: auto; border: 1px solid #d1caba; border-radius: 4px; }
+.chapter-figure figcaption { font-family: Arial, sans-serif; font-size: 0.8125rem; color: var(--charcoal);
+    opacity: 0.7; margin-top: 8px; line-height: 1.45; font-style: normal; }
+body.dark-mode .chapter-figure figcaption { color: #888; opacity: 1; }
+
+/* demoted disclaimer (matches the landing's About treatment) */
+.chapter-disclaimer { background-color: #f0ede8; border: 1px solid #ddd8cf; border-left: 3px solid #c8c0b2;
+    border-radius: 0 4px 4px 0; padding: 14px 18px; margin: 2.5rem 0 1.5rem; font-family: Arial, sans-serif;
+    font-size: 0.8125rem; color: var(--charcoal); opacity: 0.8; line-height: 1.6; }
+.chapter-disclaimer p { margin: 0 0 6px; }
+.chapter-disclaimer p:last-child { margin: 0; }
+body.dark-mode .chapter-disclaimer { background-color: #1a1a1a; border-color: #333; color: #888; }
+
+/* bottom nav + credits */
+.chapter-footer-nav { display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(9,73,122,0.12); padding-top: 20px; margin-top: 2rem; font-family: Arial, sans-serif; }
+body.dark-mode .chapter-footer-nav { border-top-color: #2e2e2e; }
+.chapter-footer-nav a { font-size: 0.8125rem; font-weight: 600; color: var(--navy); text-decoration: underline dotted; }
+.chapter-footer-nav a:hover { color: var(--sage); }
+body.dark-mode .chapter-footer-nav a { color: #8ab0c9; }
+body.dark-mode .chapter-footer-nav a:hover { color: #a8b361; }
+.chapter-credits { font-family: Arial, sans-serif; font-size: 0.8125rem; color: var(--charcoal); opacity: 0.6;
+    margin-top: 20px; line-height: 1.7; }
+body.dark-mode .chapter-credits { color: #666; }
+.chapter-credits a { color: inherit; text-decoration: underline dotted; }
+
+/* ============================================================================
+   8. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .yb-masthead { padding: 24px 0 30px; }
+    .yb-book { grid-template-columns: 110px 1fr; gap: 20px; }
+    .yb-cover { width: 110px; }
+    .yb-cover__town { font-size: 1rem; }
+    .yb-cover__icon { width: 34px; }
+    .yb-id h1 { font-size: 1.6rem; }
+    .yb-wrap { padding: 2rem 0 2.5rem; }
+    .yb-chapter-band { padding: 18px 0; }
+    .yb-chapter-band h1 { font-size: 1.25rem; }
+    .chapter-wrap { padding: 2rem 0; }
+    .chapter-body { font-size: 0.9375rem; }
+}
+@media (max-width: 480px) {
+    .yb-book { grid-template-columns: 1fr; }
+    .yb-cover { margin: 0 auto; }
+    .yb-id { text-align: center; }
+    .yb-actions { justify-content: center; }
+    .yb-active-note { margin-left: auto; margin-right: auto; }
+}
+
+/* ============================================================================
+   9. PEOPLE / BIOGRAPHICAL INDEX PAGES
+   Recurring across every Yizkor book: an alphabetical directory of short
+   biographies, navigated by a Hebrew-letter row. Structure:
+       <h1 class="bio-title">People</h1>
+       <p class="bio-subtitle">(alphabetical by ... )</p>
+       <div class="yb-letter-nav" id="letter-nav"> ...letter links... </div>
+       <div class="bio-letter" id="Bet"> letter glyph + Return-to-top link </div>
+       <div class="bio-entry"><h3 class="bio-name">Name</h3><p>...</p></div>
+   Letter links point either to an in-page anchor (#Bet) or another page
+   (jas123.html), exactly as the legacy image map did - just accessible now.
+   ========================================================================== */
+
+.bio-title { font-family: Georgia, 'Times New Roman', serif; font-size: 1.6rem; font-weight: normal;
+    color: var(--navy); text-align: center; margin: 0 0 0.2em; }
+body.dark-mode .bio-title { color: #e8e8e8; }
+.bio-subtitle { text-align: center; font-family: Arial, sans-serif; font-size: 0.85rem;
+    color: var(--charcoal); opacity: 0.7; margin: 0 0 1.6rem; }
+body.dark-mode .bio-subtitle { color: #999; opacity: 1; }
+
+/* Hebrew-letter navigator (replaces the legacy clickable image map) */
+.yb-letter-nav { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+    margin: 0 0 2.2rem; padding: 0; }
+.yb-letter-nav a, .yb-letter-nav span { display: inline-flex; align-items: center; justify-content: center;
+    min-width: 36px; height: 36px; padding: 0 7px; font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.2rem; line-height: 1; border: 1px solid rgba(9,73,122,0.25); border-radius: 4px;
+    color: #09497a; background: var(--white); text-decoration: none; }
+.yb-letter-nav a:hover { background: #09497a; color: #ffffff; border-color: #09497a; }
+.yb-letter-nav span { opacity: 0.35; cursor: default; }  /* letter with no entries */
+body.dark-mode .yb-letter-nav a, body.dark-mode .yb-letter-nav span { background: #1b1b1b;
+    border-color: #3a3a3a; color: #8ab0c9; }
+body.dark-mode .yb-letter-nav a:hover { background: #8ab0c9; color: #121212; border-color: #8ab0c9; }
+
+/* letter section header (anchor target) + return-to-top link */
+.bio-letter { display: flex; align-items: baseline; gap: 16px; border-top: 1px solid rgba(9,73,122,0.15);
+    padding-top: 1.3rem; margin: 2.4rem 0 1.3rem; scroll-margin-top: 64px; }
+body.dark-mode .bio-letter { border-top-color: #2e2e2e; }
+.bio-letter__glyph { font-family: Georgia, 'Times New Roman', serif; font-size: 1.9rem; font-weight: bold;
+    color: #09497a; }
+body.dark-mode .bio-letter__glyph { color: #8ab0c9; }
+.bio-letter__return { font-family: Arial, sans-serif; font-size: 0.8rem; font-weight: 600;
+    text-decoration: underline dotted; }
+
+/* a single biography: bold navy name lead-in (LEFT aligned - overrides the
+   centered .chapter-body h3) followed by the bio paragraphs */
+.bio-entry { margin: 0 0 1.6rem; scroll-margin-top: 64px; }
+.chapter-body .bio-name { font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem;
+    font-weight: bold; color: #09497a; text-align: left; margin: 0 0 0.4em; }
+body.dark-mode .chapter-body .bio-name { color: #8ab0c9; }
+.bio-entry p { margin: 0 0 0.8em; }
+
+/* section break used in the narrative pages (the legacy "* * *" centered rule) */
+.chapter-stars { text-align: center; color: var(--navy); opacity: 0.5; letter-spacing: 0.5em;
+    margin: 1.6em 0; font-size: 1rem; user-select: none; }
+body.dark-mode .chapter-stars { color: #8ab0c9; opacity: 0.6; }
+
+/* ============================================================================
+   10. NAME-LIST PAGES  (convert_yizkor_namelist.py output)        [v2]
+   Changes from v1:
+     - sticky <thead> column headers, stacked below the jump bar
+     - name-list pages widened (13-col table + one-row jump bar need room)
+     - the 3 sticky offsets are driven by 2 CSS variables so the stack nests
+       correctly: .chapter-nav (top:0) > .yb-jumpbar > thead th
+   Stack maths (desktop): thead top = nav height + bar height. Both live in the
+   vars below - tune in ONE place if the bar/nav height changes.
+   Navy fills hardcoded #09497a / #0d2a45 (var(--navy) flips in dark mode).
+   ========================================================================== */
+
+/* Name-list pages get a wider inner column than the 840px reading width, and
+   define the sticky-stack offsets the jump bar + thead both read.
+   :has() scopes this to name-list pages only; if unsupported, pages fall back
+   to the 840px container (cramped but functional). */
+.chapter-inner:has(.namelist-table) {
+    width: min(100% - 3rem, 1240px);
+    --jg-stick-nav: 38px;   /* height of the sticky .chapter-nav top bar */
+    --jg-stick-bar: 48px;   /* height of the one-row .yb-jumpbar          */
+}
+
+/* ---- A-Z letter bar (sticky; ONE row on desktop so its height is fixed) --- */
+.yb-jumpbar {
+    position: sticky;
+    top: var(--jg-stick-nav, 38px);     /* sits directly below .chapter-nav */
+    z-index: 90;                         /* under .chapter-nav (z-index:100) */
+    display: flex; flex-wrap: nowrap; gap: 2px; align-items: center;
+    overflow-x: auto;                    /* scroll A-Z if ever narrower than 26 tiles */
+    background-color: var(--white);
+    border: 1px solid #d1caba; border-radius: 8px;
+    padding: 10px 14px; margin: 0 0 1.8rem;
+}
+body.dark-mode .yb-jumpbar { background-color: #1e1e1e; border-color: #333; }
+.yb-jumpbar__label {
+    font-size: 0.6875rem; font-weight: bold; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--charcoal); opacity: 0.6;
+    padding: 6px 8px 6px 4px; margin-right: 4px; align-self: center; white-space: nowrap;
+}
+body.dark-mode .yb-jumpbar__label { color: #999; opacity: 1; }
+.yb-jumpbar a {
+    display: inline-block; min-width: 28px; text-align: center;
+    padding: 6px 9px; font-size: 0.8125rem; font-weight: bold;
+    color: #09497a; border-radius: 4px; text-decoration: none;
+    transition: background-color 0.15s, color 0.15s;
+}
+.yb-jumpbar a:hover, .yb-jumpbar a:focus {
+    background-color: rgba(147,155,81,0.15); color: var(--sage); outline: none;
+}
+body.dark-mode .yb-jumpbar a { color: #8ab0c9; }
+body.dark-mode .yb-jumpbar a:hover, body.dark-mode .yb-jumpbar a:focus {
+    background-color: #2a2a2a; color: #a8b361;
+}
+.yb-jumpbar a.disabled {
+    color: #c0b9a9; pointer-events: none; cursor: default; font-weight: bold;
+}
+body.dark-mode .yb-jumpbar a.disabled { color: #555; }
+
+/* ---- byline ("Prepared by ...") + Sources legend ------------------------- */
+.namelist-byline {
+    text-align: center; font-family: Arial, sans-serif; font-size: 0.875rem;
+    color: var(--charcoal); opacity: 0.8; margin: -0.6rem 0 1.4rem;
+}
+.namelist-byline strong { color: #09497a; font-weight: bold; }
+body.dark-mode .namelist-byline { color: #aaa; opacity: 1; }
+body.dark-mode .namelist-byline strong { color: #8ab0c9; }
+
+.namelist-sources {
+    max-width: 720px;
+    background: var(--light-blue); border-left: 4px solid var(--sage);
+    border-radius: 0 6px 6px 0; padding: 12px 18px; margin: 0 0 1.8rem;
+}
+body.dark-mode .namelist-sources { background: #16242f; border-left-color: #a8b361; }
+.namelist-sources__head {
+    font-size: 0.6875rem; font-weight: bold; text-transform: uppercase;
+    letter-spacing: 1px; color: #09497a; margin: 0 0 8px;
+}
+body.dark-mode .namelist-sources__head { color: #ffffff; }
+.namelist-sources dl {
+    display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px;
+    margin: 0; font-size: 0.85rem; line-height: 1.5;
+}
+.namelist-sources dt { font-weight: bold; color: var(--charcoal); }
+.namelist-sources dd { margin: 0; color: var(--charcoal); }
+body.dark-mode .namelist-sources dt, body.dark-mode .namelist-sources dd { color: #cfe0ec; }
+
+/* ---- the data table (desktop), with STICKY column headers ---------------- */
+.namelist-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.namelist-table thead th {
+    position: sticky;
+    top: calc(var(--jg-stick-nav, 38px) + var(--jg-stick-bar, 48px));  /* below the jump bar */
+    z-index: 80;                         /* under .yb-jumpbar (90) */
+    background-color: #09497a; color: #ffffff; text-align: left;
+    font-family: Arial, sans-serif; font-size: 0.75rem; font-weight: bold;
+    text-transform: uppercase; letter-spacing: 0.4px;
+    padding: 9px 12px; border: 1px solid #09497a; white-space: nowrap;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.10);
+}
+body.dark-mode .namelist-table thead th {
+    background-color: #0d2a45; border-color: #0d2a45; color: #ffffff;
+}
+.namelist-table tbody td {
+    padding: 8px 12px; border-bottom: 1px solid rgba(9,73,122,0.10);
+    vertical-align: top; line-height: 1.45; color: var(--charcoal);
+}
+body.dark-mode .namelist-table tbody td { border-bottom-color: #2a2a2a; color: #d8d8d8; }
+.namelist-table tbody tr:nth-child(even) td { background: rgba(247,244,242,0.55); }
+body.dark-mode .namelist-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+.namelist-table tbody td:first-child { font-weight: bold; color: #09497a; white-space: nowrap; }
+body.dark-mode .namelist-table tbody td:first-child { color: #8ab0c9; }
+
+/* ---- full-width letter divider row (reuses the .bio-letter look) --------- */
+.yb-letter-row td { padding: 0 !important; background: none !important; border: none !important; }
+.yb-letter-row .bio-letter { scroll-margin-top: 140px; }   /* clear all three sticky bars */
+.namelist-table tbody tr.yb-letter-row:nth-child(even) td { background: none; }
+
+/* ---- mobile: flip rows to stacked labelled cards; bar goes static -------- */
+@media (max-width: 768px) {
+    .yb-jumpbar { position: static; flex-wrap: wrap; overflow: visible; }
+    .namelist-table thead th { position: static; }
+
+    .namelist-table, .namelist-table tbody, .namelist-table tr, .namelist-table td {
+        display: block; width: 100%;
+    }
+    .namelist-table thead { position: absolute; left: -9999px; }
+    .namelist-table tbody tr:not(.yb-letter-row) {
+        border: 1px solid #e0dbd0; border-radius: 8px;
+        margin: 0 0 12px; padding: 6px 4px; background: var(--white);
+    }
+    body.dark-mode .namelist-table tbody tr:not(.yb-letter-row) {
+        border-color: #333; background: #1a1a1a;
+    }
+    .namelist-table tbody tr:nth-child(even) td,
+    .namelist-table tbody td:first-child { background: none; }
+    .namelist-table tbody td {
+        border: none; padding: 4px 12px; display: grid;
+        grid-template-columns: 9rem 1fr; gap: 10px; align-items: baseline;
+    }
+    .namelist-table tbody td::before {
+        content: attr(data-label); font-size: 0.6875rem; font-weight: bold;
+        text-transform: uppercase; letter-spacing: 0.5px;
+        color: var(--sage); padding-top: 2px;
+    }
+    .namelist-table tbody td:first-child {
+        font-size: 1rem; padding-top: 8px; padding-bottom: 6px;
+        border-bottom: 1px solid rgba(9,73,122,0.10); margin-bottom: 4px;
+    }
+    .namelist-table tbody td:first-child::before { color: var(--sage); }
+    .namelist-table tbody td:empty { display: none; }
+    .yb-letter-row td { display: block; }
+}
+
