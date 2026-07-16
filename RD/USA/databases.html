@@ -121,6 +121,12 @@ body.dark-mode .page-title-band { background-color: #0d2a45 !important; }
                     <div id="recordTypeFilters" role="group" aria-label="Filter by record type"></div>
                 </div>
                 <div class="filter-row">
+                    <span class="filter-label">State</span>
+                    <select id="stateSelect" class="sort-select" aria-label="Filter datasets by state">
+                        <option value="__all">All States</option>
+                    </select>
+                </div>
+                <div class="filter-row">
                     <span class="filter-label">Sort by</span>
                     <select id="sortSelect" class="sort-select" aria-label="Sort datasets">
                         <option value="updated-desc">Last Updated &mdash; Newest First</option>
@@ -128,6 +134,7 @@ body.dark-mode .page-title-band { background-color: #0d2a45 !important; }
                         <option value="name-asc">Name &mdash; A to Z</option>
                         <option value="name-desc">Name &mdash; Z to A</option>
                         <option value="records-desc">Records &mdash; Most First</option>
+                        <option value="state-asc">State &mdash; A to Z</option>
                     </select>
                     <span class="results-count" id="resultsCount" aria-live="polite"></span>
                 </div>
@@ -188,7 +195,27 @@ Promise.all([
         { id: 'holocaust',   label: 'Holocaust',                 match: ['holocaust'] }
     ];
 
-    var state = { datasets: [], activeBuckets: new Set(), sortKey: 'updated-desc' };
+    var state = { datasets: [], activeBuckets: new Set(), activeState: '__all', sortKey: 'updated-desc' };
+
+    /* --- US State filter (USA RD only): state codes live in each dataset's regions[] --- */
+    var US_STATES = {AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',PR:'Puerto Rico'};
+    function extractStates(regions) {
+        return (regions || []).map(function(x){ return String(x).toUpperCase(); })
+            .filter(function(code){ return US_STATES.hasOwnProperty(code); });
+    }
+    function stateName(d) { var s = (d.states || []); return s.length ? (US_STATES[s[0]] || s[0]) : '~'; }
+    function applyStateFilter(list) {
+        if (state.activeState === '__all') return list;
+        return list.filter(function(d) { return (d.states || []).indexOf(state.activeState) !== -1; });
+    }
+    function populateStateOptions() {
+        var sel = document.getElementById('stateSelect');
+        if (!sel) return;
+        var present = {};
+        state.datasets.forEach(function(d){ (d.states || []).forEach(function(c){ present[c] = true; }); });
+        Object.keys(present).sort(function(a,b){ return US_STATES[a].localeCompare(US_STATES[b]); })
+            .forEach(function(c){ var o = document.createElement('option'); o.value = c; o.textContent = US_STATES[c]; sel.appendChild(o); });
+    }
 
     function bucketsFor(recordType) {
         var lower = (recordType || '').toLowerCase();
@@ -329,12 +356,13 @@ Promise.all([
             case 'name-asc':     copy.sort(function(a,b){ return (a.name||'').localeCompare(b.name||''); }); break;
             case 'name-desc':    copy.sort(function(a,b){ return (b.name||'').localeCompare(a.name||''); }); break;
             case 'records-desc': copy.sort(function(a,b){ return (b.recordCount||0)-(a.recordCount||0); }); break;
+            case 'state-asc':    copy.sort(function(a,b){ return stateName(a).localeCompare(stateName(b)); }); break;
         }
         return copy;
     }
 
     function render() {
-        var filtered = applyFilters(state.datasets);
+        var filtered = applyStateFilter(applyFilters(state.datasets));
         var sorted   = applySort(filtered);
         var container = document.getElementById('datasetList');
         container.innerHTML = sorted.length
@@ -405,7 +433,8 @@ Promise.all([
             sources:     d.source_citation || d.sources || '',
             language:    d.source_language || d.language || '',
             description: d.description || '',
-            infoUrl:     d.info_url || d.infoUrl || ''
+            infoUrl:     d.info_url || d.infoUrl || '',
+            states:      extractStates(d.regions)
         };
     }
 
@@ -425,6 +454,12 @@ Promise.all([
                 bucketsFor(d.recordType).forEach(function(b) { bucketsPresent.add(b); });
             });
             renderFilterChips(Array.from(bucketsPresent));
+            populateStateOptions();
+            var stateSel = document.getElementById('stateSelect');
+            if (stateSel) stateSel.addEventListener('change', function() {
+                state.activeState = this.value;
+                render();
+            });
             document.getElementById('sortSelect').addEventListener('change', function() {
                 state.sortKey = this.value;
                 render();
