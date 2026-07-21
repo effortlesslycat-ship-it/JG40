@@ -9,7 +9,7 @@
 
        jgCollectionInit({
            regionCode: 'ALLROMANIA',   // Solr code - drives setRegions()
-           regionTag:  'romania'       // datasets-unified.json regions[] tag
+           regionTag:  'romania'       // stats datasets.json regions[] tag
        });
 
    Provides: header/footer loading, tips toggle, legacy form init wiring,
@@ -45,7 +45,6 @@ function jgCollectionInit(config) {
         return out;
     })();
     var SUBREGIONS  = config.subregions || '';   /* 'us-states' adds a State filter to the bar */
-    var DATA_URL    = config.dataUrl || '/catalog/datasets-unified.json';
     var SEARCH_URL  = config.searchUrl || 'https://www.jewishgen.org/databases/all/';
     var UPDATED_WINDOW_DAYS = 90;
 
@@ -142,22 +141,40 @@ function jgCollectionInit(config) {
     function getLanguage(d)  { return d.source_language || d.language || '\u2014'; }
     function getUpdatedRaw(d){ return d.last_updated || d.lastUpdated || ''; }
     function getDesc(d)      { return (d.description || '').trim(); }
-    function getInfoUrl(d)   { return d.info_url || d.infoUrl || ''; }
+    function getInfoUrl(d)   { return JGStats.localUrl(d.info_url || d.infoUrl || ''); }
     function getSource(d)    { return d.source_citation || d.sources || '\u2014'; }
     function getRegions(d)   { return (d.regions && d.regions.length) ? d.regions : []; }
     function getPrimary(d)   { return String(d.primary_region || '').toLowerCase(); }
     function isFeatured(d)   { return d.is_featured === true; }
+
+    /* URL-family merge (same rule as jg-glance): rows in the stats file that
+       share a new_url/info_url PATH are one combined description page (e.g.
+       Hungarian Births + Deaths + Marriages on hungaryvitalrecords.html).
+       Show ONE card per URL: record_count summed, most recent last_updated,
+       record_types and regions unioned. The slugged row (uq_slug marks the
+       primary) names the card; a multi-row card derives its title from the
+       slug (camel-case split), since sub-row names like "Hungarian Births"
+       don't describe the whole page. */
+
+    /* Data rules live in /jg-stats.js (single source of truth). Load it on
+       demand so host pages need no extra script tag. */
+    function jgEnsureStats() {
+        return new Promise(function(resolve, reject) {
+            if (window.JGStats) { resolve(); return; }
+            var s = document.createElement('script');
+            s.src = '/jg-stats.js';
+            s.onload = function() { resolve(); };
+            s.onerror = function() { reject(new Error('jg-stats.js failed to load')); };
+            document.head.appendChild(s);
+        });
+    }
 
     /* Collection membership: primary_region OR any regions[] entry equals one
        of this page's tags (case-insensitive). This is what makes crossover
        datasets (e.g. Burgenland: regions ["AustriaCzech","Hungary"]) appear on
        every listed collection's page. */
     function belongsToCollection(d) {
-        if (!REGION_TAGS.length) return false;
-        if (REGION_TAGS.indexOf(getPrimary(d)) !== -1) return true;
-        var regs = getRegions(d).map(function(r){ return String(r).toLowerCase(); });
-        for (var i=0;i<REGION_TAGS.length;i++){ if (regs.indexOf(REGION_TAGS[i]) !== -1) return true; }
-        return false;
+        return JGStats.belongs(d, '', REGION_TAGS);
     }
 
     /* US state abbreviation -> full name (for the USA listing State filter) */
@@ -170,10 +187,7 @@ function jgCollectionInit(config) {
         ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',PR:'Puerto Rico',
         RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',
         UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
-    function getRecordTypes(d){
-        if (d.record_types && d.record_types.length) return d.record_types;
-        return (d.recordType || '').split(',').map(function(s){ return s.trim(); }).filter(Boolean);
-    }
+    function getRecordTypes(d){ return JGStats.cleanTypes(d); }
 
     function parseDate(s) {
         if (!s) return null;
@@ -197,7 +211,7 @@ function jgCollectionInit(config) {
         return months[dt.getMonth()] + ' ' + dt.getFullYear();
     }
 
-    function regionLabel(r) { return REGION_LABELS[r] || titleCase(r); }
+    function regionLabel(r) { return JGStats.regionLabel(r); }
     function titleCase(s)   { return (s||'').replace(/[-_]/g,' ').toLowerCase().replace(/\b([a-z])/g,function(_,c){return c.toUpperCase();}); }
     function esc(s){ if(s==null) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 
@@ -503,11 +517,9 @@ function jgCollectionInit(config) {
 
     if (listEl && REGION_TAGS.length) {
         wireFilterBar();
-        fetch(DATA_URL)
-            .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
-            .then(function(data){
-                var all = Array.isArray(data) ? data
-                    : (data.datasets && Array.isArray(data.datasets)) ? data.datasets : [];
+        jgEnsureStats()
+            .then(function(){ return JGStats.load(config.dataUrl); })
+            .then(function(all){
                 collectionData = all.filter(belongsToCollection);
                 populateStates();
                 if (barEl) { applyFilters(); }
