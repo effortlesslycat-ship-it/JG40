@@ -88,7 +88,7 @@ $jg_collection = array(
 <script src="https://www.jewishgen.org/databases/Regions/SearchForm_solr.js"></script>
 
 <!-- Shared collection-page machinery (bump ?v= on every edit) -->
-<script src="/databases/jg-collection.js?v=7"></script>
+<script src="/databases/jg-collection.js?v=8"></script>
 <script>
     jgCollectionInit({
         regionSys:  'ALGERIA',
