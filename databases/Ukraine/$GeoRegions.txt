@@ -1,0 +1,262 @@
+Regions for the "JewishGen Ukraine Database":
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Warren Blatt
+June 2006.  Updated April 2012.
+
+
+"JewishGen Ukraine Database" --
+< http://www.jewishgen.org/databases/Ukraine >
+
+
+- Russian Empire -- one of 10 gubernias:
+   - Bessarabia
+   - Podolia
+   - Volhynia
+   - Kherson
+   - Kiev
+   - Ekaterinoslav
+   - Chernigov
+   - Kharkov 
+   - Poltava
+   - Taurida
+  
+- Austrian Empire:
+   - Galicia
+      - Lwów
+      - Tarnopol
+      - Stanislawów
+   - Bukovina
+   - Transcarpathia
+  
+These are the borders as of 1900 -- with the exception
+of Austrian Galicia, for which we are using the inter-war 
+provincial subdivisions (województwa) of Poland.  
+
+
+--------------------------------------------------------------------------
+
+
+JewishGen Communities Database:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Here are the specs to use for towns currently in Ukraine:
+
+
+1900:
+~~~~
+
+- The "Country" is:
+      either "Russian Empire" or "Austrian Empire" or "Hungary".
+- The "Province" is:
+      for "Russian Empire" -- one of the 10 gubernias:
+         "Bessarabia", "Chernigov", "Ekaterinoslav", "Kharkov", 
+         "Kherson", "Kiev", "Podolia", "Poltava", "Taurida", 
+         or "Volhynia" (and possible others, outside the Pale).
+      for "Austrian Empire" -- one of either:
+         "Bukovina", or "Galicia".
+      for "Hungary" -- one of:
+         * "Kárpátalja" (for Bereg and Ung megyes),
+         * "Máramaros"  (for Máramaros and Ugocsa megyes).
+- The "District" is:
+      for "Russian Empire" -- an uyezd (see below)
+      for "Austrian Empire" -- ???
+      for "Hungary" -- one of 4 megyes:
+         "Maramaros", "Bereg", "Ugocsa" or "Ung".
+- The "Town" name would be:
+      for "Russian Empire" -- 
+         * in the Russian language (transliterated from Cyrillic).
+      for "Austria-Hungary" -- 
+         * in the German language.
+      for "Hungary" --
+         * in the Hungarian language.
+
+Sources:      
+
+Maps: See "Historical Atlas of Central Europe", by Robert Magocsi,
+      Revised Edition (Seattle: University of Washinton Press, 2002).
+      - Map #36, page 119: "Central Europe, 1910".
+      - Map #40b, page 138: "Ukraine in the 20th Century".
+     
+Uyezds of the Russian Empire:
+   There are about 10 uyezds (districts) per gubernia (province).
+   Sources are:
+    - "Evrejskaia Entsiklopediia" ["Jewish Encyclopaedia"],
+        (St. Petersburg: Brokhaus-Efron, 1906-1913),
+        in the article on each gubernia.
+        There is also an article on each uyezd, which contains
+        the 1897 population figures for all major Jewish towns
+        within that uyezd.
+        http://brockhaus-efron-jewish-encyclopedia.ru/
+    - "Vsia Rossiia" - Russian Business Directories, 1895-1911.
+        Partial indexes online on JewishGen:
+        < http://www.jewishgen.org/databases/vsia >.
+    - "A Dictionary of Jewish Surnames from the Russian Empire"
+        by Alexander Beider.  Revised Edition (Avotaynu, 1993, 2008).
+        See map on page xxi, and list of uyezds of following pages
+        (xxii-xxvii).
+        The same map appears in "Where Once We Walked" 
+        (Avotaynu, 2002 Revised Edition), page xxviii.
+    - The 1911 "Encyclopaedia Britannica", OCR-scanned text 
+        at < http://encyclopedia.jrank.org/ >. 
+        See the articles on each gubernia.
+    - "Encyclopedia of Ukraine" website.  Incomplete, but see:
+        http://www.encyclopediaofukraine.com/display.asp?AddButton=pages\G\U\Gubernia.htm,  
+        http://www.encyclopediaofukraine.com/display.asp?AddButton=pages\C\H\Chernihivgubernia.htm
+        http://www.encyclopediaofukraine.com/display.asp?AddButton=pages\K\A\Katerynoslavgubernia.htm
+        http://www.encyclopediaofukraine.com/display.asp?AddButton=pages\K\H\Khersongubernia.htm
+    - Maps of the Russian Empire (in Cyrillic):
+        http://www.genealogia.ru/projects/maps/maps/alf.html
+
+   Kiev gubernia:
+         See < http://www.jewishgen.org/databases/Ukraine/KievDuma.htm >:
+         12 uyezds: Berdichev, Cherkassy, Chigirin, Kanev, Kiev, Lipovets,
+         Radomysl, Skvira, Tarashcha, Uman, Vasilkov, Zvenigorodka.
+   Bessarabia gubernia:
+         See < http://www.jewishgen.org/databases/Romania/BessarabiaDuma.htm >:
+         3 uyezds all or partially within modern Ukraine:
+         Akkerman, Izmail, Khotin
+         (the remainer of Bessarabia's uyezds are in modern Moldova).
+   Podolia gubernia:
+         See < http://www.jewishgen.org/Ukraine/Podolia/Podolia.xls >,
+         < http://www.shtetlinks.jewishgen.org/Litin/taxes.html >, 
+         < http://www.shtetlinks.jewishgen.org/Litin/taxes1883-3.html >.
+
+   Minsk gubernia:
+         Also note that some small portions of SW Minsk Gubernia 
+         (which is predominantly in Belarus) are now in Ukraine. 
+         i.e.: parts of Mozyr and Pinsk uyezds.  
+         See map #40a in Magocsi, page 136.
+         Can check towns included using JCDB.  
+
+
+Districts of the Austrian Empire:
+   - See < http://en.wikipedia.org/wiki/Subdivisions_of_Galicia >
+       and the links therein.
+   - Beider's DJSG ?  Which districts did he use?
+   - Austro-Hungarian gazetteers?  
+       (*** Terry, please provide details ***).
+   
+
+1930:
+~~~~
+
+- The "Country" is:
+      either "Soviet Union", "Poland", "Czechoslovakia", or "Romania".
+- The "Province" is:
+      for "Soviet Union" -- ???.
+      for "Poland" -- one of the inter-war Polish województwa:
+          "Wolyn", "Lwów", "Stanislawów" or "Tarnopol".
+      for "Czechoslovakia" -- "Subcarpathian Rus".
+      for "Romania" -- "Basarabia".
+- The "District" is:
+      for "Soviet Union" -- ???.
+      for "Poland" -- one of the inter-war Polish powiats,
+          as per the online 1929 Polish Business Directory.
+      for "Czechoslovakia" -- ???
+      for "Romania" -- "Hotin", "Ismail", "Cetatea-Alba" (?)
+- The "Town" name would be:
+      for "Soviet Union" -- ???  (in Russian or Ukrainian?)
+      for "Poland" -- in the Polish language,
+          as per the online 1929 Polish Business Directory.
+      for "Czechoslovakia" -- in the Czech language.
+      for "Romania" -- in the Romanian language.
+
+      
+Sources:
+  * Poland: (i.e.: Galicia and Volhynia):
+      The 1929 Polish Business Directory, online at
+      < http://www.jewishgen.org/jri-pl/bizdir/bd1929.htm >.
+  
+  * Soviet Union: 
+      There are no "Pinkas HaKehillot" volumes for most
+      of former Russian-Empire Ukraine, unfortunately.  
+      However, there is some coverage in other countries'
+      PHK volumes:
+      
+      - For western Volhynia gubernia, there is:
+        "Poland Volume V: Volhynia and Polesie", 1990;
+      - For Austrian-Empire Ukraine, there is: 
+        "Poland Volume II: Eastern Galicia", 1980
+        http://www.jewishgen.org/yizkor/pinkas_poland/pinkas_poland2.html ;
+      - For Transnistria [Ukrainian land in Romania during WWII, 
+        previosuly southern Podolia and western Kherson gubernias], see:
+        "Romania Volune I", 1969, pp. 349-545,
+        http://www.jewishgen.org/yizkor/pinkas_romania/rom1_00000.html ;
+      - For Romanian Ukraine [small portions of Bessarabia], see:
+        "Romania Volume II", 1980, pp. 279-418.
+      
+      "Encyclopedia of Jewish Life Before and During the Holocaust", 
+      edited by Shmuel Spector.  An English-language consolidation of 
+      "Pinkas HaKehillot", published by Yad Vashem (3 volumes, 
+      1,824 pages, c 2001).
+      This will probably be the best source of inter-war
+      district names for towns now in Ukraine, which are
+      not covered by the above sources.
+      (Note that EOJL is not always 100% accurate!)
+
+  * Romania:
+      Same sources as were used for Romania/Moldova...
+      (*** Terry, please provide. ***)
+
+  * Czechoslovakia: 
+      (Subcarpathian Rus, former Hungarian Transcarpathia):
+      ???
+
+1950:
+~~~~
+- The "Country" is:
+      always "Soviet Union".
+- We don't care about Provinces and Districts post-war. 
+- The "Town" name would be:
+     * in the Russian language (transliterated from Cyrillic)
+       (Internal note: can use <I>WOWW</I>1 name -- 
+       http://www.jewishgen.org/jgff/Admin/jgffsyn2.htm )
+
+Sources:
+  * 1960 Soviet gazetteer 
+    (*** Terry, please provide details ***).
+
+
+
+Other Sources:
+~~~~~~~~~~~~~
+ * "Archives and Manuscript Repositories in the USSR:
+   Ukraine and Moldavia", by Patricia Kennedy Grimsted. 
+   (Princeton University Press, 1988).  1,107 pages.
+   {There is a section on Ukrainian town names in
+   various languages, and when the names changed}.
+   
+ * "Jewish Roots in Ukraine and Moldova: 
+   Pages from the Past and Archival Inventories", 
+   by Miriam Weiner. 1999.  624 pages.
+   
+ * "Slownik geograficzny Królestwa Polskiego i innych 
+   krajów slowianskich" [The geographical dictionary 
+   of the Kingdom of Poland and other Slavic countries].  
+   Filip Sulimierski, Warsaw, 1880-1902.  16 volumes.
+   14,785 pages.
+ 
+--------------------------------------------------------------------------
+
+Chernigov Gubernia:
+    15 uyezds -- most are in northern Ukraine, 
+        but 4 are now all or partly in modern Russia:
+        Mglin, Novozybkov, Starodub, Surazh.
+        These are Chernigov Gubernia's four northernmost uyezds.
+    There are 14 Jewish communities now in modern Russia:    
+    
+    Churovichi (Novozybkov uyezd)
+    Klimovo (Novozybkov uyezd)
+    Klintsy (Surazh uyezd)
+    Krasnaya Gora (Surazh uyezd)
+    Mglin (Mglin uyezd)
+    Novozybkov (Novozybkov uyezd)
+    Pochëp (Mglin uyezd)
+    Pogar (Starodub uyezd) 
+    Starodub (Starodub uyezd) 
+    Surazh (Surazh uyezd)
+    Svyatsk (Surazh uyezd)
+    Unecha (Surazh uyezd)
+    Voronok (Starodub uyezd) 
+    Zlynka (Novozybkov uyezd)
+
+--------------------------------------------------------------------------
