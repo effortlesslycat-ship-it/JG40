@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+   <TITLE>CryptoJews: Libro Verde de Aragon - Inquisition Data</TITLE>
+   <!--#include virtual="/JG/HeadSection.txt"-->
+</HEAD>
+
+<BODY>
+
+<!--#include virtual="/JG/header.txt"-->
+
+<CENTER>
+<H1>CryptoJews: Libro Verde de Aragon - Inquisition Data</H1>
+</CENTER>
+
+<H2> Background </H2>
+<p>The Libro Verde De Aragon is the single most important work of Converso Genealogy that was made. In Aragon, this book listed all the names and many genealogies of those that were Condemned by the Inquisition. Their Jewish names are shown and the crimes. Old Spanish families from this region can use this valuable resource. 
+<p>In this specific dataset, you can find the origins and residence location of those that were sentenced. We see their crimes, and their family members and dates. A very valuable resource to follow the Aragon Jewish lineages.</p>
+<p style="text-align: center;">---</p>
+<p>En esta importante obra sobre la Zona de Aragon, podemos ver los or&iacute;genes y ubicaci&oacute;n de residencia de los condenados. Vemos sus cr&iacute;menes y sus familiares y fechas. Un recurso muy valioso.</p>
+
+<H2>Database</H2>
+<P>This database contains 487 records. Most of the records include the following fields:
+<ul>
+<li>First Name</li>
+<li>Last Name</li>
+<li>Alias</li>
+<li>Date Arrested</li>
+<li>Origin</li>
+<li>Residence</li>
+<li>Occupation</li>
+<li>Sentence</li>
+<li>Source</li>
+</ul>
+</P>
+
+
+<P>For further information, contact:
+<A HREF="mailto: gmilgrom@JewishGen.org">Genie Milgrom, Director of Crypto-Jewish Research</A>.
+</P>
+
+
+<HR>
+
+
+<H2>Searching the Database</H2>
+
+<P>This database can be searched via the <A HREF="https://www.jewishgen.org/databases/cryptojews/">JewishGen Crypto Jews Database</A> or the <A HREF="https://www.jewishgen.org/databases/all/">JewishGen Unified Search</A>
+</P>
+
+
+<HR>
+
+
+<!--#include virtual="/databases/footer.new.txt"-->
+
+
+<DIV CLASS="lastupdate">
+</DIV>
+
+
+<!--#include virtual="/JG/footer.txt"-->

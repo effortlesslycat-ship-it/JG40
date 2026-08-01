@@ -1,0 +1,78 @@
+<TABLE cols="2" cellpadding="0" cellspacing="0" width="100%">
+<TR valign="top">
+<TD WIDTH="50%">
+
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/colombia.html">Colombia</A><BR>
+508 records
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/canaryislands.html">Canary Islands Inquisition</A><BR>
+251 records
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/DutchNotarialDeeds.html">Dutch Notarial Deeds</A><BR>
+794 Records
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/ChileInquisition.html">Inquisition of Chile</A><BR>
+223 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/SevillaInquisition.html">Inquisition of Sevilla</A><BR>
+218 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/Limu-Peru.html">Inquisition of Limu, Peru</A><BR>
+560 records.
+</LI>
+
+</UL>
+</TD>
+
+
+<TD>
+<UL CLASS="jgcomponent">
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/LibroVerdedeAragon-Genealogy.html">Libro Verde de Aragon - Genealogical Data</A><BR>
+2,736 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/LibroVerdedeAragon-Genealogy.html">Libro Verde de Aragon - Conversion Data</A><BR>
+107 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/AmsterdamAliasNames.html">Files From the Notarial Archive of the Spanish Portuguese in Amsterdam</A><BR>
+1,247 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/Mexico.html">Inquisition of Mexico</A><BR>
+2,659 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/AmterdamMarriageRegister.html">Amsterdam Marriage Register</A><BR>
+4,240 records.
+</LI>
+
+<LI>
+<A CLASS="dbhead" href="https://www.jewishgen.org/databases/cryptojews/LibroVerdedeAragon-Inquisition.html">Libro Verde de Aragon - Inquisition Data</A><BR>
+487 records.
+</LI>
+
+</UL>
+
+</TD>
+</TR>
+</TABLE>

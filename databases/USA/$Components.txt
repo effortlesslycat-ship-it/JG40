@@ -1,0 +1,164 @@
+<TABLE cols="2" cellpadding="0" cellspacing="2" width="100%">
+<TR valign="top">
+<TD WIDTH="50%">
+
+
+<H2>All USA:</H2>
+
+<UL CLASS="jgcomponent">
+
+<li><strong><em>NEW!</em></strong> <A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/BioDictEAJews.html"><strong> Biographical Dictionary of Early American Jews: Colonial Times thru 1800</strong></a><br /> 3,829 Jewish individuals in America (including Canada to 1783) during the 17th and 18th centuries. Includes Revolutionary War service.</i>.</li>
+<li><strong><em>NEW!</em></strong> <A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/USrabbiscantors.html"><strong> AJY Rabbi & Cantor Bios 1903-1904</strong></a><br />363 biographical sketches of rabbis and cantors from the 1903-1904 <i>American Jewish Yearbook</i>.</li>
+<li><strong><em>NEW! </em></strong><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/DistinguishedJewsV2.html"><strong><em>Distinguished Jews in America</em></strong><strong> Volume Two, 1918</strong></a><br />An index to a book with 506 biographies about prominent Jewish men in America.</em></li>
+<li><strong><em>NEW!</em></strong> <A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/FirstAmerJewishFams.html"><strong><em>First American Jewish Families: 600 Genealogies, 1654-1988</em></strong></a><br />
+Searchable index of Rabbi Malcolm Stern's <i>First American Jewish Families: 600 Genealogies, 1654-1988</i>, granted by the American Jewish Archives.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/ajybweb.htm"><strong><em>American Jewish Year Book</em></strong><strong>&nbsp;Obituaries, 1948-1998</strong></a><br />Index to more than 3,000 obituaries of prominent Jews.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/DistinguishedJewsV1.html"><strong><em>Distinguished Jews in America</em></strong><strong> Volume One, 1917</strong></a><br />An index to a book with 428 biographies about prominent Jewish men in America.</em></li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/portraits.html"><strong>Early American Jewish Portrait Index &gt;1862</strong></a><br />Name index and images for over 800 paintings and drawings of prominent Jews living in America during the British Colonial and Antebellum periods through 1862.</li>
+<li><a class="dbhead" href="https://www.jewishgen.org/databases/usa/missinghusbands.html"><strong><em>Forward</em></strong><strong> &ldquo;Gallery of Missing Husbands&rdquo; Column, 1908-1914</strong></a><br />3,263 translated entries of the &ldquo;Gallery of Missing Husbands&rdquo; column which<span>&nbsp;</span><i data-stringify-type="italic">The Forward</i><span>&nbsp;</span>newspaper printed regularly to solicit community help in locating husbands who deserted wives and children<span>&nbsp;</span><i data-stringify-type="italic">(in progress through 1940s)</i>.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/SeekingRelatives.html"><b><i>The Forward: Seeking Relatives (1920-1960)</i></b></a><br /><span>About 500 names from the &ldquo;Seeking Relatives&rdquo; column which&nbsp;</span><i data-stringify-type="italic">The Forward</i><span>&nbsp;newspaper published as one- or two-line advertising notices from those seeking friends, townsfolk and relatives who could help them relocate from life threatening situations such as pogroms and wars.</span></li>
+<li><A CLASS="dbhead" HREF="https://jewishgen.org/databases/usa/RefugeeRabbis.html"><strong>German Refugee Rabbis in the United States, 1933-1990</strong></a><br />Names of 176 German Jews in America who received education at the Jewish Theological Seminary in Breslau (1854), the Hochschule f r die Wissenschaft des Judentums in Berlin (1872), or the Orthodox Rabbinical Seminary in Berlin (1873).</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/civilwar.htm"><strong>Jewish Civil War Veterans</strong></a><br />More than 7,000 Jewish-American U.S. Civil War Veterans, both Union and Confederate from Simon Wolf&rsquo;s book published in 1895. <em>This list has been disputed.</em> See more recent scholarship conducted by the <A CLASS="dbhead" HREF=""https://www.jewishgen.org/databases/usa/ShapellRoster.html">Shapell Roster of Jewish Service in the American Civil War</a>.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/spanishamerican.html"><strong>Jewish Soldiers and Sailors in the Spanish-American War, 1898</strong></a><br />2,531 names published in an article that appeared in The&nbsp;<span><em>American</em></span><em>&nbsp;Jewish Year Book</em> 1900-1901. A revised and final list may be housed at the&nbsp;<span>American</span>&nbsp;Jewish Historical Society. &ldquo;Jewish identity has not been established in every case.&rdquo;</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/jgff"><strong>JewishGen Family Finder</strong></a><br />More than 55,000 entries by Jewish genealogists researching family surnames in the USA.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/Memorial"><strong>JewishGen Memorial Plaques Database</strong></a><br />Information from 248,025 synagogue yahrzeit plaques and other memorial records in the USA.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/Cemetery"><strong>JewishGen Online Worldwide Burial Registry</strong></a><br />More than 1.6 million burial records for cemeteries in the USA. Many with images.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/SamuelLanger.htm"><strong>Rabbi Samuel Langer Database, 1930s-1960s</strong></a><br />More than 5,000 entries throughout the eastern U.S. from personal notebooks including births, bar/bas mitzvahs, marriages, funerals, unveilings, etc.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/ShapellRoster.html"><strong>Shapell Roster of Jewish Service in the American Civil War- Confederate Only</strong></a><br />An ongoing reappraisal of Jewish military participation in the American Civil War - in partnership with The Shapell Manuscript Foundation. <em>Union to be added.</em></li>
+<LI><A CLASS="dbhead" href="PassportApps.htm">U.S. Consular Post, Bucharest, Romania</A> <BR>Emergency Passport Applications and other items - nearly 1,000 records from the U.S. State Department, 1860-1941.</LI>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/Israel/group84.htm"><strong>U.S. State Dept. Consular Post Records for Jerusalem, Jaffa &amp; Haifa</strong></a><br />9,000 U.S. State Department files from foreign service posts abroad in Jerusalem (1857-1935), Jaffa (1867-1917), and Haifa (1872-1917) from Record Group 84 stored at the U.S. National Archives II, College Park, Maryland.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/EmergencyPassportApps.htm"><strong>U.S. State Dept. Emergency U.S. Passport Applications, 1915-1926</strong></a><br />6,000 Emergency Passport Applications, issued at various U.S. consular posts.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/RG59.htm"><strong>U.S. State Dept. Holocaust Survivors Claiming American Citizenship</strong></a><br />622 State Department applications filed in Zurich by Holocaust survivors claiming U.S. citizenship. NARA &amp; USHMM RG226, E109, B21.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/RG59.htm"><strong>UPDATED! U.S. State Dept. Jewish Names from RG59, 1910-1929</strong></a><br />Over 14,000 entries (most with links to digitized material) from NARA Record Group 59 for correspondence primarily from Palestine, Romania, and Austria-Hungary..</li>
+</ul>
+
+
+<H2>Colorado:</H2>
+
+<UL CLASS="jgcomponent">
+
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/CoNames.html"><strong>Colorado Names Index</strong></a><br />An ongoing compilation index including the names of Jews found in books about the history of Jews in Colorado as well as smaller unpublished lists. <em>In progress.</em></li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/NJHPatientApps.html"><strong>CO National Jewish Hospital Applicants 1899-1914</strong></a><br />3,976 applicants to the National Jewish Hospital for Consumptives in Denver circa 1899-1914. Status includes those admitted, admitted on trial, rejected, withdrawn, or cancelled.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/DenverFeldman.htm"><strong>Denver Feldman Mortuary Database, 1936-2015</strong></a><br />Records of 17,000 funerals in Denver.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/IJN.htm"><strong>Denver<em> Intermountain Jewish News</em>&nbsp;Obituaries, 1918-2011</strong></a><br />Index to 15,000 obituary notices from this Denver newspaper.</li>
+<li><strong><em>UPDATED!</em></strong> <A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/JCRS.htm"><strong>Denver Jewish Consumptives Relief Society Patient Applications, 1904-1940</strong></a><br />A names index to 9,184 patient applications found in the collection of the Jewish Consumptives Relief Society (JCRS) in Denver, Colorado. <em>In progress.</em></li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/Leadville.html"><strong>Leadville, Colorado Jewish Names Collection 1879-1930</strong></a><br />Names, birth dates, birth places, occupation, and educational information for 1,300 Jewish residents in historic Leadville, Colorado circa 1879-1930.</strong></li>
+ </li>
+
+</UL>
+
+
+<H2>Connecticut:</H2>
+
+<UL CLASS="jgcomponent">
+
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/Connecticut.htm"><strong><em>Connecticut Jewish Ledger</em></strong><strong>&nbsp;Obituaries, 1975-2002</strong></a><br />Index to 5,000 obituary notices from this New Haven newspaper.</li>
+
+</UL>
+
+<H2>Georgia:</H2>
+
+<UL CLASS="jgcomponent">
+
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/BremanOralHistories.html"><strong>Atlanta Breman Museum Oral Histories</strong></a><br />More than 1,000 names relating to interviews collected by the William Breman Jewish Heritage Museum, focusing on the documentation of Jewish life in Georgia and Alabama.</li>
+
+</UL>
+
+
+<H2>Illinois:</H2>
+
+<UL CLASS="jgcomponent">
+
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/chicago.htm"><strong>Chicago Obituaries, 1994-1998</strong></a><br />Index to 8,800 obituary notices from an Illinois newspaper.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/sinai.htm"><strong>Chicago Sinai Congregation Marriages, 1861-1905</strong></a><br />Index to 500 marriages by Rabbi Bernhard Felsenthal, Chicago.</li>
+<li><A CLASS="dbhead" HREF="https://jewishgen.org/databases/usa/JGSIJewishIllinois.html"><strong>JGSI Jewish Illinois Database</strong></a><br />A composite of obituaries, biographies, institutional, and organizational records. <em>Ongoing.</em></li>
+</UL>
+
+</TD>
+
+
+<TD>
+
+<H2>Louisiana:</H2>
+
+<UL CLASS="jgcomponent">
+
+<li><A CLASS="dbhead" HREF="https://jewishgen.org/databases/usa/nolaorphans.html"><strong>Jewish Orphans' Home of New Orleans; Children 1855-1946, Widows 1855-1885</strong></a><br />Names of 1,622 children who resided in the Home between 1855 and 1946, along with the names of 24 widows and elderly unmarried women who lived in the Home between 1855 and 1885.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/NOLAconversions.html"><strong>New Orleans Temple Sinai Conversions, 1947-1972</strong></a><br />Names of 67 men and women who underwent conversion to Judaism at Temple Sinai in New Orleans, Louisiana by Rabbi Julian B. Feibelman, Rabbi P. Irving Bloom, Rabbi Roy A. Rosenberg, and Rabbi Robert A. Rothman.</li>
+
+</UL>
+
+
+
+<H2>Massachusetts:</H2>
+
+<UL CLASS="jgcomponent">
+
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/BostonHIAS.htm"><strong>Boston Arrivals Hebrew Immigrant Aid Society (HIAS), 1882-1929</strong></a><br />Records of 24,000 Jewish immigrant arrivals via Boston.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/advocate.htm"><strong>Boston&nbsp;<em>Jewish Advocate</em>Obituaries, 1905-2020</strong></a><br />Index to more than 26,000 obituary notices from this Massachusetts newspaper.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/BostonSeekingKin.htm"><strong>Boston&nbsp;<em>Jewish Advocate</em>"Seeking Kin" Announcements, 1916-1990</strong></a><br />More than 5,000 names in "Seeking Kin" advertisements.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/advocatew.htm"><strong>Boston&nbsp;<em>Jewish Advocate</em>Wedding Announcements, 1905-2011</strong></a><br />Index to more than 27,000 wedding announcements from this Massachusetts newspaper.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/bostonrabbis.html"><strong>Boston <em>Jewish Weekly Times</em> Obituaries, 1945-1992 </strong></a><br />Index of 5,288 obituary notices which appeared in the Boston&nbsp;<em>Jewish Times</em>.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/BostonOrphanages.html"><strong>New! Boston Orphanage Residents 1900-1940</strong></a><br />Orphan children and staff residents enumerated in U.S. Federal Censuses 1900-1940 at two Boston-area orphanages..</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/bostonrabbis.html"><strong>Boston Rabbi Registrations, 1893-1939</strong></a><br />This database contains 540 registrations of rabbis issued by the city of Boston.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/gorovitz.htm"><strong>Boston Rabbi Aaron Gorovitz Marriages, 1910-1956</strong></a> <br />Index to nearly 1,000 marriages performed by Rabbi Aaron Gorovitz of Boston.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/Benkovitz.html"><strong>Chelsea Rabbi Icek Benkowitz Marriages, 1922-1954</strong></a><br />This database contains 305 records from the Rabbi's personal notebooks.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/Boruchoff.htm"><strong>Malden Rabbi Ber Boruchoff Marriages, 1906-1939</strong></a><br />Records of 1,423 marriages performed by Rabbi Ber Boruchoff of Malden.</li>
+
+</UL>
+
+
+<H2>New York:</H2>
+
+<UL CLASS="jgcomponent">
+
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/NY1925Census.CISH.htm"><strong>Central Islip State Hospital 1925 State Census</strong></a><br />Data on more than 6,000 employees and patients at this State Hospital on Long Island, from the New York State 1925 census.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/SafeHavenFortOntario.html"><strong>Fort Ontario Safe Haven Refugees</strong></a><br />Names of 989 refugees from World War II who were allowed into the United States as "guests" of President Franklin D. Roosevelt. These refugees were housed at Fort Ontario in Oswego, New York, from August 1944 until February 1946.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/1890ny.htm"><strong>New York Immigrants from Poland, Austria, and Galicia, 1890-1891</strong></a><br />An index to more than 96,000 passenger arrivals.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/NYCJewishMinisters.html"><strong>NYC Jewish Ministers 1654-1860</strong></a><br />A list of rabbis, lecturers, and hazzanim holding office in New York City from the earliest times until 1860.</strong></li></li>
+
+
+</UL>
+
+
+<H2>Ohio:</H2>
+
+<UL CLASS="jgcomponent">
+
+<li><strong><em>Updated! </em></strong><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/cleveweb.htm"><strong><em>Cleveland Jewish News</em></strong><strong>Obituaries, 1964-2025</strong></a><br />Index to more than 36,040 obituary notices from this Ohio newspaper, October 30, 1964 - 2025.<i>Ongoing</i>.</li>
+
+</UL>
+
+
+<H2>Pennsylvania:</H2>
+
+<UL CLASS="jgcomponent">
+<LI><strong><em>NEW! </em></strong><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/KMIBirthsPhilly.html">Register of Births from Mikveh Israel Congregation</A><BR>
+Register of Births of Kaal Kadosh Mickve Israel, Philadelphia, Pennsylvania from 1841-1886.</LI>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/PhilaBlitzstein.htm"><strong>Philadelphia Blitzstein Bank Passage Order Book Records, 1899-1930</strong></a><br />An index of more than 30,000 immigrants who had steamship tickets purchased for them at this Philadelphia bank.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/PhilaObits.htm"><strong>Philadelphia&nbsp;<em>Jewish Exponent</em>&nbsp;Obituaries, 1887-2013</strong></a><br />Index to more than 69,000 obituary notices from this newspaper, 1887-2013. Every year is not included.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/PhilaLipshutz.htm"><strong>Philadelphia Lipshutz Peoples Bank Passage Order Book Records, 1906-1949</strong></a><br />An index of more than 25,000 immigrants who had steamship tickets purchased for them at this Philadelphia bank.</li>
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/PhilaRosenbaum.htm"><strong>Philadelphia Rosenbaum Bank Passage Order Book Records, 1890-1934</strong></a><br />An index of nearly 83,000 immigrants who had steamship tickets purchased for them at this Philadelphia bank.</li>
+
+</UL>
+
+
+<h2>South Carolina:</h2>
+<ul class="jgcomponent">
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/HappyLand.html"><strong>Charleston<em> This Happy Land</em> Name Index</strong></a><br />More than 3,000 names and associated biographical information from the book&nbsp;<em>This Happy Land, The Jews of Colonial and Antebellum Charleston</em>.</li>
+</ul>
+
+
+<H2>Texas:</H2>
+
+<UL CLASS="jgcomponent">
+<li><A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/usa/elpaso.html"><strong>El Paso Jewish Families</strong></a><br />An index of 645 individuals found in the book&nbsp;<em>Insights and Hindsights of Some El Paso Jewish Families</em>.</li>
+<li><A CLASS="dbhead" HREF="https://jewishgen.org/databases/usa/Rabbi_Zacharia_Emmich.htm"><strong>Houston Congregation Beth Israel Rabbi Zacharias Emmich&rsquo;s Bris Book, 1851-1874</strong></a><br />Collection of abstracts and translations from Rabbi Zacharia Emmich's bris book, 1851 through 1874 housed in the Archival Collection, Congregation Beth Israel, Houston. Portion in German and Hebrew.</li>
+<li><strong><em>UPDATED!</em></strong> <A CLASS="dbhead" HREF="https://www.jewishgen.org/databases/USA/HoustonHeraldVoice.htm"><strong>Houston&nbsp;<em>Jewish Herald-Voice</em>Database, 1908-2026</strong></a><br />Index to more than 70,000 individual and couple events from this Texas newspaper. <em>This collection is updated twice a year.</em></li>
+
+</UL>
+
+</TD>
+</TR>
+</TABLE>
+
